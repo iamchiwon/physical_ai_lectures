@@ -43,6 +43,8 @@ Cloudflare Pages에 Git 저장소를 연결하고 다음과 같이 설정합니�
 | Build output directory | `apps/web/out` |
 | Production variable | `NEXT_PUBLIC_API_BASE_URL=https://<worker-domain>` |
 
+패키지 관리자는 npm이며 루트 `package-lock.json`을 사용합니다. `pnpm-lock.yaml`이나 `pnpm-workspace.yaml`을 함께 커밋하면 Cloudflare가 pnpm을 선택할 수 있으므로 포함하지 않습니다. 의존성은 저장소 루트에서 설치해야 `apps/web`과 `packages/shared`까지 설치됩니다.
+
 프리뷰 배포를 Worker CORS에서 허용하려면 예상하는 Pages preview origin을 `ALLOWED_ORIGINS`에 추가합니다. 임의 origin 허용(`*`)은 운영에서 사용하지 않습니다.
 
 ## 4. 배포 순서
