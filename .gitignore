@@ -1,3 +1,14 @@
+node_modules/
+apps/*/node_modules/
+packages/*/node_modules/
+apps/web/.next/
+apps/web/out/
+apps/api/.wrangler/
+apps/api/dist/
+apps/api/.dev.vars
+.env
+.env.local
+*.tsbuildinfo
 .DS_Store
 __pycache__/
 *.pyc
@@ -6,4 +17,3 @@ build/
 install/
 log/
 tmp/
-

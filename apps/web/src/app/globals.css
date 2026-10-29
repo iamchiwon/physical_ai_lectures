@@ -1,0 +1,124 @@
+@import "tailwindcss";
+
+:root {
+  --background: #f7faff;
+  --foreground: #0f172a;
+  --brand: #155eef;
+  --brand-dark: #0d3da8;
+  --brand-soft: #eaf2ff;
+}
+
+* {
+  box-sizing: border-box;
+  border-color: #e2e8f0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background:
+    radial-gradient(circle at 10% -10%, rgb(219 234 254 / 0.75), transparent 28rem),
+    linear-gradient(180deg, #ffffff 0, var(--background) 32rem);
+  color: var(--foreground);
+  font-family: Arial, "Apple SD Gothic Neo", "Noto Sans KR", sans-serif;
+  text-rendering: optimizeLegibility;
+}
+
+@media (min-width: 1024px) {
+  body {
+    transition: padding-right 200ms ease;
+  }
+
+  body.tutor-drawer-open {
+    padding-right: 28rem;
+  }
+}
+
+::selection {
+  background: #bfdbfe;
+  color: #172554;
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+.lesson-copy {
+  color: #334155;
+  font-size: 1rem;
+  line-height: 1.85;
+}
+
+.lesson-copy h2 {
+  margin-top: 2.5rem;
+  margin-bottom: 0.85rem;
+  color: #0f2f65;
+  font-size: 1.45rem;
+  font-weight: 800;
+  letter-spacing: -0.025em;
+}
+
+.lesson-copy h3 {
+  margin-top: 1.8rem;
+  margin-bottom: 0.6rem;
+  color: #172554;
+  font-size: 1.1rem;
+  font-weight: 750;
+}
+
+.lesson-copy p {
+  margin: 0.75rem 0;
+}
+
+.lesson-copy ul,
+.lesson-copy ol {
+  margin: 0.8rem 0;
+  padding-left: 1.4rem;
+}
+
+.lesson-copy li {
+  margin: 0.35rem 0;
+}
+
+.lesson-copy code {
+  border-radius: 0.35rem;
+  background: #eff6ff;
+  padding: 0.15rem 0.35rem;
+  color: #1d4ed8;
+  font-family: "SFMono-Regular", Consolas, monospace;
+  font-size: 0.9em;
+}
+
+.lesson-copy pre {
+  overflow-x: auto;
+  border: 1px solid #dbeafe;
+  border-radius: 1rem;
+  background: #0f172a;
+  padding: 1rem;
+  color: #e2e8f0;
+  line-height: 1.65;
+}
+
+.lesson-copy pre code {
+  background: transparent;
+  padding: 0;
+  color: inherit;
+}
+
+.learning-callout {
+  margin: 1.2rem 0;
+  border: 1px solid #bfdbfe;
+  border-left: 5px solid #2563eb;
+  border-radius: 0.9rem;
+  background: #eff6ff;
+  padding: 1rem 1.1rem;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+}
