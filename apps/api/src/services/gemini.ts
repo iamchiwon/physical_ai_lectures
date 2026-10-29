@@ -1,10 +1,7 @@
 import {
-  DEFAULT_GEMINI_LIVE_MODEL,
   DEFAULT_GEMINI_MODEL,
   type TutorRequest,
   type TutorResponse,
-  type VoiceSessionRequest,
-  type VoiceSessionResponse,
 } from "@physical-ai/shared";
 import type { Bindings } from "../env";
 
@@ -52,7 +49,11 @@ export async function answerTutorQuestion(env: Bindings, request: TutorRequest):
               text: `현재 단원 ID: ${request.lesson.id}\n현재 단원 제목: ${request.lesson.title}\n단원 요약과 핵심어:\n${request.lesson.contextSummary}\n\n학습자 질문:\n${request.question}`,
             }],
           }],
-          generationConfig: { maxOutputTokens: 700, temperature: 0.5 },
+          generationConfig: {
+            maxOutputTokens: 4096,
+            temperature: 0.5,
+            thinkingConfig: { thinkingLevel: "LOW" },
+          },
         }),
         signal: AbortSignal.timeout(25_000),
       },
@@ -65,37 +66,4 @@ export async function answerTutorQuestion(env: Bindings, request: TutorRequest):
     console.warn("Tutor API fallback to demo mode", error);
     return { answer: createDemoAnswer(request), mode: "demo", model };
   }
-}
-
-export async function createVoiceSession(env: Bindings, request: VoiceSessionRequest): Promise<VoiceSessionResponse> {
-  if (!env.GEMINI_API_KEY) throw new Error("GEMINI_API_KEY_NOT_CONFIGURED");
-
-  const model = env.GEMINI_LIVE_MODEL ?? DEFAULT_GEMINI_LIVE_MODEL;
-  const instruction = `당신은 Physical AI 로봇 제어 과정의 한국어 AI 강사다. 현재 단원은 “${request.lessonTitle}”이며, 단원 맥락은 다음과 같다: ${request.contextSummary} 정답을 바로 주기보다 짧은 비유, 유도 질문, 핵심 정리 순으로 학습자의 이해를 돕는다. 전문용어는 영어를 병기하고 실제 로봇 안전을 우선한다.`;
-  const now = Date.now();
-  const response = await fetch("https://generativelanguage.googleapis.com/v1beta/auth_tokens", {
-    method: "POST",
-    headers: { "Content-Type": "application/json", "x-goog-api-key": env.GEMINI_API_KEY },
-    body: JSON.stringify({
-      uses: 1,
-      expireTime: new Date(now + 30 * 60 * 1000).toISOString(),
-      newSessionExpireTime: new Date(now + 60 * 1000).toISOString(),
-      liveConnectConstraints: {
-        model: `models/${model}`,
-        config: {
-          sessionResumption: {},
-          responseModalities: ["AUDIO"],
-          inputAudioTranscription: {},
-          outputAudioTranscription: {},
-          systemInstruction: { parts: [{ text: instruction }] },
-        },
-      },
-    }),
-    signal: AbortSignal.timeout(15_000),
-  });
-
-  if (!response.ok) throw new Error(`Gemini auth token API ${response.status}`);
-  const token = await response.json() as { name?: string; expireTime?: string };
-  if (!token.name) throw new Error("EMPTY_EPHEMERAL_TOKEN");
-  return { token: token.name, expireTime: token.expireTime, model };
 }

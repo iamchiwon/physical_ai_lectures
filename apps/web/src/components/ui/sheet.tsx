@@ -18,7 +18,7 @@ export function SheetContent({
   return (
     <DialogPrimitive.Portal>
       {showOverlay ? <DialogPrimitive.Overlay className="fixed inset-0 z-50 bg-slate-950/25 backdrop-blur-sm" /> : null}
-      <DialogPrimitive.Content className={cn("fixed inset-y-0 right-0 z-50 flex w-full max-w-md flex-col border-l border-slate-200 bg-white shadow-2xl outline-none", className)} {...props}>
+      <DialogPrimitive.Content className={cn("fixed inset-y-0 right-0 z-50 flex min-w-0 w-full max-w-md flex-col overflow-hidden border-l border-slate-200 bg-white shadow-2xl outline-none", className)} {...props}>
         {children}
         <DialogPrimitive.Close className="absolute right-4 top-4 rounded-lg p-2 text-slate-500 hover:bg-slate-100" aria-label="닫기"><X className="size-5" /></DialogPrimitive.Close>
       </DialogPrimitive.Content>

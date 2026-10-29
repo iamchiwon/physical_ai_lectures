@@ -7,7 +7,7 @@ Cloudflare Pages (apps/web/out)
           │ HTTPS fetch
           ▼
 Cloudflare Worker (apps/api)
-     └─ Gemini REST / Live ephemeral token
+     └─ Gemini REST 텍스트 채팅
 ```
 
 학습 콘텐츠·시뮬레이션·진도 UI는 정적 Pages 자원입니다. 학습 진도와 퀴즈 점수는 브라우저 `localStorage`에만 저장되며, Worker는 Gemini `/v1/*` API 요청에만 실행됩니다.
@@ -18,7 +18,6 @@ Cloudflare Worker (apps/api)
 
 - `ALLOWED_ORIGINS`: Pages production/preview origin의 comma-separated allowlist
 - `GEMINI_MODEL`: `gemini-flash-latest`
-- `GEMINI_LIVE_MODEL`: `gemini-3.8-live`
 
 비밀키는 설정 파일에 저장하지 않습니다.
 

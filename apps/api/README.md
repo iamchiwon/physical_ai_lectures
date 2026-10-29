@@ -15,8 +15,6 @@ npm run dev
 
 - `GET /v1/health`
 - `POST /v1/tutor`
-- `GET /v1/voice/session`
-- `POST /v1/voice/session`
 
 ## 운영 설정
 
@@ -27,4 +25,4 @@ npx wrangler secret put GEMINI_API_KEY
 npm run deploy
 ```
 
-`GEMINI_MODEL`과 `GEMINI_LIVE_MODEL`은 일반 Worker 변수이며 기본값은 각각 `gemini-flash-latest`, `gemini-3.8-live`입니다.
+`GEMINI_MODEL`은 일반 Worker 변수이며 기본값은 `gemini-flash-latest`입니다.

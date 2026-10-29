@@ -24,6 +24,9 @@
     "typescript": "^5.9.3",
     "wrangler": "^4.49.0"
   },
+  "overrides": {
+    "katex": "^0.19.1"
+  },
   "engines": {
     "node": ">=22.0.0"
   }

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { ProgressProvider } from "@/components/progress-provider";
 import "./globals.css";
+import "katex/dist/katex.min.css";
 
 export const metadata: Metadata = {
   title: {
@@ -12,7 +13,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="ko">
+    <html lang="ko" suppressHydrationWarning>
       <body>
         <ProgressProvider>{children}</ProgressProvider>
       </body>

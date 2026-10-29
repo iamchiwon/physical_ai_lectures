@@ -118,6 +118,113 @@ a {
   padding: 1rem 1.1rem;
 }
 
+.tutor-markdown {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+.tutor-markdown .katex-display {
+  max-width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding: 0.3rem 0;
+}
+
+.tutor-markdown > :first-child {
+  margin-top: 0;
+}
+
+.tutor-markdown > :last-child {
+  margin-bottom: 0;
+}
+
+.tutor-markdown p,
+.tutor-markdown ul,
+.tutor-markdown ol,
+.tutor-markdown blockquote,
+.tutor-markdown pre,
+.tutor-markdown table {
+  margin: 0.65rem 0;
+}
+
+.tutor-markdown h1,
+.tutor-markdown h2,
+.tutor-markdown h3 {
+  margin: 1rem 0 0.45rem;
+  color: #172554;
+  font-weight: 800;
+  line-height: 1.4;
+}
+
+.tutor-markdown h1 { font-size: 1.1rem; }
+.tutor-markdown h2 { font-size: 1rem; }
+.tutor-markdown h3 { font-size: 0.925rem; }
+
+.tutor-markdown ul,
+.tutor-markdown ol {
+  padding-left: 1.25rem;
+}
+
+.tutor-markdown li {
+  margin: 0.25rem 0;
+}
+
+.tutor-markdown a {
+  color: #1d4ed8;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.tutor-markdown :not(pre) > code {
+  border-radius: 0.35rem;
+  background: #eff6ff;
+  padding: 0.12rem 0.32rem;
+  color: #1d4ed8;
+  font-family: "SFMono-Regular", Consolas, monospace;
+  font-size: 0.9em;
+}
+
+.tutor-markdown pre {
+  max-width: 100%;
+  overflow-x: auto;
+  border-radius: 0.75rem;
+  background: #0f172a;
+  padding: 0.75rem;
+  color: #e2e8f0;
+  white-space: pre;
+}
+
+.tutor-markdown pre code {
+  font-family: "SFMono-Regular", Consolas, monospace;
+  font-size: 0.8rem;
+}
+
+.tutor-markdown blockquote {
+  border-left: 3px solid #93c5fd;
+  padding-left: 0.75rem;
+  color: #475569;
+}
+
+.tutor-markdown table {
+  display: block;
+  max-width: 100%;
+  overflow-x: auto;
+  border-collapse: collapse;
+}
+
+.tutor-markdown th,
+.tutor-markdown td {
+  border: 1px solid #cbd5e1;
+  padding: 0.4rem 0.55rem;
+  text-align: left;
+}
+
+.tutor-markdown hr {
+  margin: 0.9rem 0;
+  border: 0;
+  border-top: 1px solid #e2e8f0;
+}
+
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }

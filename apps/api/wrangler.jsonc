@@ -6,7 +6,6 @@
   "upload_source_maps": true,
   "vars": {
     "ALLOWED_ORIGINS": "https://physical-ai-learning-web.pages.dev",
-    "GEMINI_MODEL": "gemini-flash-latest",
-    "GEMINI_LIVE_MODEL": "gemini-3.8-live"
+    "GEMINI_MODEL": "gemini-flash-latest"
   }
 }

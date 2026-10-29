@@ -1,6 +1,6 @@
 # Physical AI 로봇 제어 실무 · Web
 
-Cloudflare Pages에 배포되는 순수 정적 Next.js 프론트엔드입니다. 18개 레슨은 빌드 시 HTML로 생성되며 AI 강사와 음성 세션만 별도 Hono Worker API를 호출합니다.
+Cloudflare Pages에 배포되는 순수 정적 Next.js 프론트엔드입니다. 18개 레슨은 빌드 시 HTML로 생성되며 AI 강사 텍스트 채팅은 별도 Hono Worker API를 호출합니다.
 
 ## 로컬 실행
 
@@ -17,7 +17,7 @@ npm run dev:web
 NEXT_PUBLIC_API_BASE_URL=http://localhost:8787
 ```
 
-Gemini API 키와 모델 설정은 프론트에 두지 않습니다. `GEMINI_API_KEY`, `GEMINI_MODEL`, `GEMINI_LIVE_MODEL`은 `apps/api` Worker의 secret/variable입니다.
+Gemini API 키와 모델 설정은 프론트에 두지 않습니다. `GEMINI_API_KEY`, `GEMINI_MODEL`은 `apps/api` Worker의 secret/variable입니다.
 
 ## 정적 빌드와 Cloudflare Pages
 
@@ -39,9 +39,8 @@ npm run build:web
 - 과정 데이터와 시뮬레이션: 정적 번들
 - 학습 진도·퀴즈 점수: 브라우저 `localStorage`
 - 텍스트 AI 강사: `${NEXT_PUBLIC_API_BASE_URL}/v1/tutor`
-- 음성 세션: `${NEXT_PUBLIC_API_BASE_URL}/v1/voice/session`
 
-AI 강사 drawer는 Worker가 발급한 짧은 수명의 Gemini Live ephemeral token만 받습니다. 장기 API 키는 브라우저 번들에 포함되지 않습니다.
+장기 API 키는 브라우저 번들에 포함되지 않습니다.
 
 ## 주요 디렉터리
 

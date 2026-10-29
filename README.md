@@ -19,7 +19,7 @@ ebook/
 └── tmp/                 # 이북 빌드 임시 자료
 ```
 
-프론트엔드는 `out/` 정적 파일만 배포하며 SSR·Next.js Route Handler·Node.js 서버를 사용하지 않습니다. 학습 진도와 퀴즈 점수는 브라우저 `localStorage`에 저장하고, Gemini 요청과 Live 음성 세션 토큰만 별도 Worker API가 담당합니다.
+프론트엔드는 `out/` 정적 파일만 배포하며 SSR·Next.js Route Handler·Node.js 서버를 사용하지 않습니다. 학습 진도와 퀴즈 점수는 브라우저 `localStorage`에 저장하고, Gemini 텍스트 채팅 요청은 별도 Worker API가 담당합니다.
 
 ## 로컬 실행
 

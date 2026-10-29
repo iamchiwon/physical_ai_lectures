@@ -1,12 +1,7 @@
 import {
   tutorResponseSchema,
-  voiceSessionResponseSchema,
-  voiceStatusResponseSchema,
   type TutorRequest,
   type TutorResponse,
-  type VoiceSessionRequest,
-  type VoiceSessionResponse,
-  type VoiceStatusResponse,
 } from "@physical-ai/shared";
 
 const configuredApiBaseUrl = process.env.NEXT_PUBLIC_API_BASE_URL?.trim().replace(/\/$/, "") ?? "";
@@ -39,17 +34,6 @@ async function requestJson(path: string, init?: RequestInit): Promise<unknown> {
 
 export async function askTutor(input: TutorRequest): Promise<TutorResponse> {
   return tutorResponseSchema.parse(await requestJson("/v1/tutor", {
-    method: "POST",
-    body: JSON.stringify(input),
-  }));
-}
-
-export async function getVoiceStatus(): Promise<VoiceStatusResponse> {
-  return voiceStatusResponseSchema.parse(await requestJson("/v1/voice/session"));
-}
-
-export async function createVoiceSession(input: VoiceSessionRequest): Promise<VoiceSessionResponse> {
-  return voiceSessionResponseSchema.parse(await requestJson("/v1/voice/session", {
     method: "POST",
     body: JSON.stringify(input),
   }));
