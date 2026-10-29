@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="560" viewBox="0 0 1200 560" role="img" aria-labelledby="title desc">
+  <title id="title">LeRobotDataset v3 저장 구조</title>
+  <desc id="desc">여러 episode의 표 데이터와 카메라 영상이 Parquet와 MP4 shard에 저장되고 metadata offset으로 episode view를 복원한다.</desc>
+  <defs>
+    <marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0 0L10 5L0 10z" fill="#3454a4"/></marker>
+    <style>.b{fill:#f7f9ff;stroke:#334a8c;stroke-width:2}.m{fill:#edf9f0;stroke:#2e7d4f;stroke-width:2}.h{font:700 20px sans-serif;fill:#111827}.t{font:15px sans-serif;fill:#374151}.e{stroke:#3454a4;stroke-width:3;fill:none;marker-end:url(#a)}</style>
+  </defs>
+  <rect width="1200" height="560" fill="white"/>
+  <rect class="b" x="45" y="60" width="220" height="115" rx="14"/><text class="h" x="155" y="100" text-anchor="middle">Episode 0</text><text class="t" x="155" y="130" text-anchor="middle">state·action·2 cameras</text><text class="t" x="155" y="155" text-anchor="middle">task: pick red cube</text>
+  <rect class="b" x="45" y="225" width="220" height="115" rx="14"/><text class="h" x="155" y="265" text-anchor="middle">Episode 1</text><text class="t" x="155" y="295" text-anchor="middle">state·action·2 cameras</text><text class="t" x="155" y="320" text-anchor="middle">task: pick blue cube</text>
+  <rect class="b" x="45" y="390" width="220" height="90" rx="14"/><text class="h" x="155" y="430" text-anchor="middle">Episode N</text><text class="t" x="155" y="458" text-anchor="middle">서로 다른 길이</text>
+  <rect class="b" x="390" y="85" width="280" height="130" rx="14"/><text class="h" x="530" y="125" text-anchor="middle">data/*.parquet</text><text class="t" x="530" y="155" text-anchor="middle">timestamp·state·action</text><text class="t" x="530" y="180" text-anchor="middle">여러 episode row를 연결</text>
+  <rect class="b" x="390" y="320" width="280" height="130" rx="14"/><text class="h" x="530" y="360" text-anchor="middle">videos/{camera}/*.mp4</text><text class="t" x="530" y="390" text-anchor="middle">카메라별 frame 연결</text><text class="t" x="530" y="415" text-anchor="middle">큰 shard로 encoding</text>
+  <rect class="m" x="805" y="85" width="330" height="365" rx="14"/><text class="h" x="970" y="125" text-anchor="middle">meta/</text><text class="t" x="840" y="170">info.json: schema·fps·path template</text><text class="t" x="840" y="210">stats.json: mean·std·min·max</text><text class="t" x="840" y="250">tasks.parquet: language ↔ task id</text><text class="t" x="840" y="290">episodes/: row/frame offset·length</text><text class="h" x="970" y="350" text-anchor="middle">Logical Episode View</text><text class="t" x="970" y="382" text-anchor="middle">offset으로 Parquet/MP4 구간 복원</text><text class="t" x="970" y="410" text-anchor="middle">파일 경계 ≠ episode 경계</text>
+  <path class="e" d="M265 115H390"/><path class="e" d="M265 280C325 280 330 155 390 155"/><path class="e" d="M265 435C340 435 330 385 390 385"/><path class="e" d="M670 150H805"/><path class="e" d="M670 385H805"/>
+  <text class="t" x="45" y="525">v3 핵심: storage 효율과 episode-level API를 metadata로 분리한다.</text>
+</svg>
+

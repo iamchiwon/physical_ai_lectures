@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="420" viewBox="0 0 900 420" role="img" aria-labelledby="title desc">
+  <title id="title">ROS body와 optical frame</title><desc id="desc">ROS body는 x 전방 y 좌측 z 상방이고 optical frame은 z 전방 x 우측 y 하방이다</desc>
+  <defs><marker id="r" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#c33"/></marker><marker id="g" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#39813f"/></marker><marker id="b" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#2457a6"/></marker></defs>
+  <style>.t{font:20px sans-serif;fill:#17213a}.n{font:15px sans-serif;fill:#445}</style>
+  <text class="t" x="220" y="45" text-anchor="middle">ROS body frame</text><circle cx="220" cy="220" r="8" fill="#222"/>
+  <path d="M220 220L390 220" stroke="#c33" stroke-width="4" marker-end="url(#r)"/><text class="n" x="405" y="225">x forward</text>
+  <path d="M220 220L120 120" stroke="#39813f" stroke-width="4" marker-end="url(#g)"/><text class="n" x="55" y="110">y left</text>
+  <path d="M220 220L220 65" stroke="#2457a6" stroke-width="4" marker-end="url(#b)"/><text class="n" x="235" y="75">z up</text>
+  <text class="t" x="670" y="45" text-anchor="middle">Camera optical frame</text><circle cx="670" cy="220" r="8" fill="#222"/>
+  <path d="M670 220L825 220" stroke="#c33" stroke-width="4" marker-end="url(#r)"/><text class="n" x="795" y="205">x right</text>
+  <path d="M670 220L670 365" stroke="#39813f" stroke-width="4" marker-end="url(#g)"/><text class="n" x="685" y="365">y down</text>
+  <path d="M670 220L570 120" stroke="#2457a6" stroke-width="4" marker-end="url(#b)"/><text class="n" x="520" y="110">z forward</text>
+  <text class="n" x="450" y="395" text-anchor="middle">x_opt=-y_body, y_opt=-z_body, z_opt=x_body</text>
+</svg>
+

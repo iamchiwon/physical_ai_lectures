@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="530" viewBox="0 0 1200 530" role="img" aria-labelledby="title desc">
+  <title id="title">SmolVLA 개념 구조</title>
+  <desc id="desc">다중 카메라, 로봇 상태, 언어 지시를 VLM context로 만들고 action expert가 미래 행동 chunk를 생성한다.</desc>
+  <defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0 0L10 5L0 10z" fill="#7051a3"/></marker><style>.b{fill:#faf7ff;stroke:#654397;stroke-width:2}.c{fill:#eef7ff;stroke:#236a9c;stroke-width:2}.h{font:700 20px sans-serif;fill:#111827}.t{font:15px sans-serif;fill:#374151}.e{stroke:#7051a3;stroke-width:3;fill:none;marker-end:url(#a)}</style></defs>
+  <rect width="1200" height="530" fill="white"/>
+  <rect class="b" x="45" y="55" width="220" height="95" rx="12"/><text class="h" x="155" y="92" text-anchor="middle">Camera views</text><text class="t" x="155" y="122" text-anchor="middle">top · wrist · optional</text>
+  <rect class="b" x="45" y="215" width="220" height="95" rx="12"/><text class="h" x="155" y="252" text-anchor="middle">Robot state</text><text class="t" x="155" y="282" text-anchor="middle">joint · gripper</text>
+  <rect class="b" x="45" y="375" width="220" height="95" rx="12"/><text class="h" x="155" y="412" text-anchor="middle">Language</text><text class="t" x="155" y="442" text-anchor="middle">task instruction</text>
+  <rect class="c" x="390" y="120" width="270" height="290" rx="16"/><text class="h" x="525" y="165" text-anchor="middle">Vision-Language context</text><text class="t" x="525" y="205" text-anchor="middle">image tokenization</text><text class="t" x="525" y="240" text-anchor="middle">state projection</text><text class="t" x="525" y="275" text-anchor="middle">language tokens</text><text class="t" x="525" y="330" text-anchor="middle">cross-modal representation</text><text class="t" x="525" y="365" text-anchor="middle">pretrained VLM features</text>
+  <rect class="b" x="775" y="145" width="250" height="240" rx="16"/><text class="h" x="900" y="190" text-anchor="middle">Action expert</text><text class="t" x="900" y="230" text-anchor="middle">context conditioning</text><text class="t" x="900" y="265" text-anchor="middle">flow matching</text><text class="t" x="900" y="300" text-anchor="middle">state/action projection</text><text class="t" x="900" y="345" text-anchor="middle">LoRA / full fine-tuning</text>
+  <rect class="c" x="1080" y="190" width="95" height="150" rx="12"/><text class="h" x="1127" y="228" text-anchor="middle">Chunk</text><text class="t" x="1127" y="265" text-anchor="middle">a[t]</text><text class="t" x="1127" y="292" text-anchor="middle">…</text><text class="t" x="1127" y="319" text-anchor="middle">a[t+H]</text>
+  <path class="e" d="M265 102C335 102 330 180 390 180"/><path class="e" d="M265 262H390"/><path class="e" d="M265 422C335 422 330 350 390 350"/><path class="e" d="M660 265H775"/><path class="e" d="M1025 265H1080"/>
+  <text class="t" x="390" y="480">안전 제약은 모델 밖의 독립 계층에서 적용한다.</text>
+</svg>
+

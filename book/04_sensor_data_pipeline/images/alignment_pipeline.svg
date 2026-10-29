@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1040" height="360" viewBox="0 0 1040 360" role="img" aria-labelledby="title desc">
+  <title id="title">센서 정합 파이프라인</title><desc id="desc">카메라와 관절 센서가 캘리브레이션, TF, 시간 동기화, 기록과 품질 검사를 거쳐 학습 데이터가 된다</desc>
+  <defs><marker id="a" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#2457a6"/></marker></defs>
+  <style>.b{fill:#eef4ff;stroke:#2457a6;stroke-width:2}.q{fill:#fff3dc;stroke:#a65a00;stroke-width:2}.t{font:17px sans-serif;fill:#17213a}.n{font:13px sans-serif;fill:#445}</style>
+  <rect class="b" x="30" y="55" width="140" height="70" rx="10"/><text class="t" x="100" y="86" text-anchor="middle">카메라</text><text class="n" x="100" y="108" text-anchor="middle">RGB · depth</text>
+  <rect class="b" x="30" y="220" width="140" height="70" rx="10"/><text class="t" x="100" y="251" text-anchor="middle">관절 센서</text><text class="n" x="100" y="273" text-anchor="middle">q · action</text>
+  <rect class="b" x="220" y="55" width="155" height="70" rx="10"/><text class="t" x="298" y="86" text-anchor="middle">카메라 모델</text><text class="n" x="298" y="108" text-anchor="middle">K · distortion</text>
+  <rect class="b" x="220" y="220" width="155" height="70" rx="10"/><text class="t" x="298" y="251" text-anchor="middle">TF2</text><text class="n" x="298" y="273" text-anchor="middle">frame · pose</text>
+  <rect class="b" x="435" y="118" width="170" height="110" rx="10"/><text class="t" x="520" y="157" text-anchor="middle">시간 정합</text><text class="n" x="520" y="181" text-anchor="middle">ApproximateTime</text><text class="n" x="520" y="203" text-anchor="middle">interpolation</text>
+  <rect class="b" x="665" y="118" width="150" height="110" rx="10"/><text class="t" x="740" y="157" text-anchor="middle">원본 기록</text><text class="n" x="740" y="181" text-anchor="middle">rosbag2</text><text class="n" x="740" y="203" text-anchor="middle">MCAP</text>
+  <rect class="q" x="875" y="118" width="140" height="110" rx="10"/><text class="t" x="945" y="157" text-anchor="middle">품질 검사</text><text class="n" x="945" y="181" text-anchor="middle">metrics</text><text class="n" x="945" y="203" text-anchor="middle">Rerun</text>
+  <path d="M170 90H215 M170 255H215 M375 90H405V145H430 M375 255H405V200H430 M605 173H660 M815 173H870" fill="none" stroke="#2457a6" stroke-width="3" marker-end="url(#a)"/>
+  <text class="n" x="520" y="330" text-anchor="middle">Contract: frame · unit · measurement time · calibration version</text>
+</svg>
+

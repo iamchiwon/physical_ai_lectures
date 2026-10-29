@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="360" viewBox="0 0 1100 360" role="img" aria-labelledby="title desc">
+  <title id="title">센서 메시지의 네 가지 시각</title>
+  <desc id="desc">측정, 드라이버 생성, 미들웨어 수신, 애플리케이션 처리 시각과 각 구간의 지연을 나타낸다</desc>
+  <style>
+    .label{font:700 22px sans-serif;fill:#102a56}.sub{font:17px sans-serif;fill:#475569}
+    .delay{font:16px sans-serif;fill:#155eef}.node{fill:#eef4ff;stroke:#155eef;stroke-width:3}
+    .arrow{stroke:#64748b;stroke-width:4;marker-end:url(#arrow)}.base{stroke:#cbd5e1;stroke-width:3}
+  </style>
+  <defs><marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#64748b"/></marker></defs>
+  <line class="base" x1="110" y1="180" x2="990" y2="180"/>
+  <line class="arrow" x1="235" y1="180" x2="355" y2="180"/><line class="arrow" x1="485" y1="180" x2="605" y2="180"/><line class="arrow" x1="735" y1="180" x2="855" y2="180"/>
+  <g><circle class="node" cx="170" cy="180" r="62"/><text class="label" x="170" y="174" text-anchor="middle">측정</text><text class="sub" x="170" y="204" text-anchor="middle">t_measure</text></g>
+  <g><circle class="node" cx="420" cy="180" r="62"/><text class="label" x="420" y="174" text-anchor="middle">메시지 생성</text><text class="sub" x="420" y="204" text-anchor="middle">t_driver</text></g>
+  <g><circle class="node" cx="670" cy="180" r="62"/><text class="label" x="670" y="174" text-anchor="middle">수신</text><text class="sub" x="670" y="204" text-anchor="middle">t_receive</text></g>
+  <g><circle class="node" cx="920" cy="180" r="62"/><text class="label" x="920" y="174" text-anchor="middle">처리</text><text class="sub" x="920" y="204" text-anchor="middle">t_process</text></g>
+  <text class="delay" x="295" y="130" text-anchor="middle">드라이버 지연</text><text class="delay" x="545" y="130" text-anchor="middle">전송·큐 지연</text><text class="delay" x="795" y="130" text-anchor="middle">스케줄링 지연</text>
+  <rect x="88" y="278" width="1010" height="54" rx="12" fill="#eaf1ff"/>
+  <text class="label" x="550" y="312" text-anchor="middle">동기화 기준: 가능하면 물리 현상이 일어난 측정 시각 t_measure</text>
+</svg>

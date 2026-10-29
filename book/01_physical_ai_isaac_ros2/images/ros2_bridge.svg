@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="430" viewBox="0 0 1000 430" role="img" aria-labelledby="title desc">
+  <title id="title">Isaac Sim과 ROS 2 브리지</title><desc id="desc">시뮬레이터에서 센서와 관절 상태가 브리지를 거쳐 정책으로 가고, 정책 명령은 안전 게이트와 브리지를 거쳐 시뮬레이터로 돌아간다</desc>
+  <defs><marker id="a" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#2457a6"/></marker></defs>
+  <style>.b{fill:#eef4ff;stroke:#2457a6;stroke-width:2}.s{fill:#fff3dc;stroke:#a65a00;stroke-width:3}.t{font:18px sans-serif;fill:#17213a}.n{font:14px sans-serif;fill:#445}</style>
+  <rect class="b" x="40" y="80" width="220" height="250" rx="14"/><text class="t" x="150" y="115" text-anchor="middle">Isaac Sim</text><text class="n" x="150" y="160" text-anchor="middle">camera · joint state</text><text class="n" x="150" y="205" text-anchor="middle">PhysX articulation</text><text class="n" x="150" y="250" text-anchor="middle">simulation clock</text>
+  <rect class="b" x="315" y="105" width="170" height="200" rx="14"/><text class="t" x="400" y="145" text-anchor="middle">ROS 2 Bridge</text><text class="n" x="400" y="190" text-anchor="middle">type conversion</text><text class="n" x="400" y="220" text-anchor="middle">frame · unit</text><text class="n" x="400" y="250" text-anchor="middle">timestamp</text>
+  <rect class="b" x="555" y="70" width="190" height="100" rx="14"/><text class="t" x="650" y="111" text-anchor="middle">Perception/Policy</text><text class="n" x="650" y="140" text-anchor="middle">ROS 2 nodes</text>
+  <rect class="s" x="555" y="240" width="190" height="105" rx="14"/><text class="t" x="650" y="280" text-anchor="middle">Safety Gate</text><text class="n" x="650" y="310" text-anchor="middle">limits · TTL · owner</text>
+  <path d="M260 135H310 M485 135H550" stroke="#2457a6" stroke-width="3" marker-end="url(#a)"/><path d="M650 170V235" stroke="#2457a6" stroke-width="3" marker-end="url(#a)"/><path d="M555 295H490V275H270" fill="none" stroke="#2457a6" stroke-width="3" marker-end="url(#a)"/>
+  <rect class="b" x="805" y="150" width="155" height="110" rx="14"/><text class="t" x="882" y="190" text-anchor="middle">Logging</text><text class="n" x="882" y="220" text-anchor="middle">bag · metrics</text><path d="M745 120H882V145" fill="none" stroke="#2457a6" stroke-width="3" marker-end="url(#a)"/>
+  <text class="n" x="500" y="395" text-anchor="middle">Contract: frame · unit · rate · QoS · time · writer · timeout</text>
+</svg>
+

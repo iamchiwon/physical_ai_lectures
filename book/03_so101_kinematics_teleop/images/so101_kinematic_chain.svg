@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="430" viewBox="0 0 1000 430" role="img" aria-labelledby="title desc">
+  <title id="title">SO-101 교육용 기구학 사슬</title>
+  <desc id="desc">베이스부터 어깨, 팔꿈치, 손목 피치, 손목 롤, 그리퍼로 이어지는 다섯 팔 관절과 그리퍼 구동기 개념도</desc>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#243447"/></marker>
+    <style>
+      .link{stroke:#243447;stroke-width:16;stroke-linecap:round;fill:none}.joint{fill:#fff;stroke:#145da0;stroke-width:7}.grip{stroke:#7b2d26;stroke-width:10;fill:none;stroke-linecap:round}.label{font:18px sans-serif;fill:#111}.small{font:15px sans-serif;fill:#334}.axis{stroke:#243447;stroke-width:2;marker-end:url(#arrow)}
+    </style>
+  </defs>
+  <rect x="0" y="0" width="1000" height="430" fill="#fff"/>
+  <text x="36" y="40" class="label" font-weight="700">5-DoF arm + 1 gripper actuator</text>
+  <rect x="70" y="335" width="160" height="34" rx="4" fill="#d9eaf7" stroke="#243447" stroke-width="3"/>
+  <line x1="150" y1="335" x2="150" y2="285" class="link"/>
+  <circle cx="150" cy="280" r="19" class="joint"/>
+  <line x1="150" y1="280" x2="300" y2="205" class="link"/>
+  <circle cx="300" cy="205" r="19" class="joint"/>
+  <line x1="300" y1="205" x2="470" y2="250" class="link"/>
+  <circle cx="470" cy="250" r="19" class="joint"/>
+  <line x1="470" y1="250" x2="625" y2="165" class="link"/>
+  <circle cx="625" cy="165" r="19" class="joint"/>
+  <line x1="625" y1="165" x2="760" y2="165" class="link"/>
+  <circle cx="760" cy="165" r="19" class="joint"/>
+  <line x1="760" y1="165" x2="850" y2="165" class="link"/>
+  <line x1="850" y1="165" x2="910" y2="125" class="grip"/>
+  <line x1="850" y1="165" x2="910" y2="205" class="grip"/>
+  <text x="74" y="404" class="label">고정 베이스</text>
+  <text x="80" y="245" class="label">q1 pan</text>
+  <text x="248" y="160" class="label">q2 lift</text>
+  <text x="430" y="305" class="label">q3 elbow</text>
+  <text x="570" y="110" class="label">q4 wrist flex</text>
+  <text x="716" y="225" class="label">q5 wrist roll</text>
+  <text x="822" y="265" class="label">gripper</text>
+  <line x1="930" y1="350" x2="970" y2="350" class="axis"/><text x="935" y="340" class="small">x</text>
+  <line x1="930" y1="350" x2="930" y2="310" class="axis"/><text x="914" y="315" class="small">z</text>
+  <text x="530" y="400" class="small">주의: 축·길이·한계는 설명용이며 실제 URDF가 권위 모델이다.</text>
+</svg>
+

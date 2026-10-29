@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="500" viewBox="0 0 1080 500" role="img" aria-labelledby="title desc">
+  <title id="title">Reality Gap 정량 진단 폐루프</title>
+  <desc id="desc">시뮬레이션과 실물의 관측과 전이를 비교하여 시각, 기하, 물리, 시간, 제어, 과업 분포 오차를 측정하고 모델과 데이터에 반영하는 과정</desc>
+  <defs><marker id="a" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto"><path d="M0 0L0 6L9 3z" fill="#243447"/></marker><style>.b{fill:#eef6fb;stroke:#243447;stroke-width:3}.r{fill:#fff2cc;stroke:#7a6000;stroke-width:3}.m{fill:#e9f5e9;stroke:#285c2c;stroke-width:3}.h{font:700 20px sans-serif}.t{font:17px sans-serif}.a{stroke:#243447;stroke-width:3;fill:none;marker-end:url(#a)}</style></defs>
+  <rect width="1080" height="500" fill="white"/>
+  <text x="35" y="40" class="h">Reality gap = measurable residuals, not one mystery number</text>
+  <rect x="40" y="90" width="230" height="110" rx="12" class="b"/><text x="96" y="130" class="h">Simulation</text><text x="65" y="165" class="t">observation h_sim</text><text x="65" y="190" class="t">transition f_sim</text>
+  <rect x="810" y="90" width="230" height="110" rx="12" class="b"/><text x="895" y="130" class="h">Real</text><text x="835" y="165" class="t">observation h_real</text><text x="835" y="190" class="t">transition f_real</text>
+  <line x1="270" y1="145" x2="345" y2="145" class="a"/><line x1="810" y1="145" x2="735" y2="145" class="a"/>
+  <rect x="350" y="75" width="380" height="260" rx="12" class="r"/><text x="470" y="115" class="h">Residual audit</text>
+  <text x="385" y="155" class="t">• visual: light / exposure / texture</text><text x="385" y="190" class="t">• geometry: intrinsic / extrinsic / TF</text><text x="385" y="225" class="t">• physics: mass / friction / contact</text><text x="385" y="260" class="t">• timing: latency / jitter / stale</text><text x="385" y="295" class="t">• control/task: backlash / OOD</text>
+  <rect x="345" y="390" width="390" height="75" rx="12" class="m"/><text x="390" y="422" class="h">Update model, data, limits</text><text x="405" y="450" class="t">one hypothesis per controlled experiment</text>
+  <path d="M540 335 V385" class="a"/><path d="M345 427 H155 V205" class="a"/><path d="M735 427 H925 V205" class="a"/>
+</svg>
+

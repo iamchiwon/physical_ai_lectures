@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="420" viewBox="0 0 1200 420" role="img" aria-labelledby="title desc">
+  <title id="title">PhysX 충돌 처리 파이프라인</title>
+  <desc id="desc">시각 메시에서 단순화한 충돌 프록시를 만들고 broad phase, narrow phase, constraint solver, integration 순으로 계산하는 과정.</desc>
+  <defs>
+    <marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0 0L10 5L0 10z" fill="#0b6e75"/></marker>
+    <style>.b{fill:#f8fafc;stroke:#334155;stroke-width:2}.h{font:700 19px sans-serif;fill:#0f172a}.t{font:15px sans-serif;fill:#334155}.e{stroke:#0b6e75;stroke-width:3;fill:none;marker-end:url(#a)}.warn{fill:#fff7ed;stroke:#c2410c;stroke-width:2}</style>
+  </defs>
+  <rect width="1200" height="420" fill="white"/>
+  <rect class="b" x="30" y="75" width="180" height="105" rx="12"/><text class="h" x="120" y="112" text-anchor="middle">Visual mesh</text><text class="t" x="120" y="140" text-anchor="middle">고해상도 삼각형</text><text class="t" x="120" y="163" text-anchor="middle">렌더링 목적</text>
+  <rect class="b" x="270" y="75" width="180" height="105" rx="12"/><text class="h" x="360" y="112" text-anchor="middle">Collision proxy</text><text class="t" x="360" y="140" text-anchor="middle">primitive / convex</text><text class="t" x="360" y="163" text-anchor="middle">접촉 계산 목적</text>
+  <rect class="b" x="510" y="35" width="185" height="90" rx="12"/><text class="h" x="602" y="72" text-anchor="middle">Broad phase</text><text class="t" x="602" y="99" text-anchor="middle">후보 pair 탐색</text>
+  <rect class="b" x="510" y="165" width="185" height="90" rx="12"/><text class="h" x="602" y="202" text-anchor="middle">Narrow phase</text><text class="t" x="602" y="229" text-anchor="middle">접촉점·법선 계산</text>
+  <rect class="b" x="770" y="100" width="185" height="105" rx="12"/><text class="h" x="862" y="137" text-anchor="middle">Constraint solver</text><text class="t" x="862" y="165" text-anchor="middle">normal·friction impulse</text><text class="t" x="862" y="188" text-anchor="middle">joint constraint</text>
+  <rect class="b" x="1015" y="100" width="155" height="105" rx="12"/><text class="h" x="1092" y="137" text-anchor="middle">Integration</text><text class="t" x="1092" y="165" text-anchor="middle">pose·velocity</text><text class="t" x="1092" y="188" text-anchor="middle">다음 step</text>
+  <path class="e" d="M210 127H270"/><path class="e" d="M450 127C480 127 480 80 510 80"/><path class="e" d="M602 125V165"/><path class="e" d="M695 210C735 210 730 153 770 153"/><path class="e" d="M955 153H1015"/>
+  <rect class="warn" x="260" y="305" width="690" height="75" rx="10"/><text class="h" x="605" y="335" text-anchor="middle">설계 규칙</text><text class="t" x="605" y="361" text-anchor="middle">보이는 형상과 충돌 형상을 분리하고, 중요한 접촉면만 필요한 해상도로 모델링한다.</text>
+</svg>
+

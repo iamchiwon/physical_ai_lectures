@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="480" viewBox="0 0 1100 480" role="img" aria-labelledby="title desc">
+  <title id="title">안전한 Leader-Follower 텔레오퍼레이션 파이프라인</title>
+  <desc id="desc">Leader 측정에서 이름 매핑, 캘리브레이션, 위치 제한, 속도 제한, 데드맨과 워치독을 거쳐 Follower 드라이버로 가며 독립 비상 정지가 전원을 차단하는 구조</desc>
+  <defs><marker id="a" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto"><path d="M0 0L0 6L9 3z" fill="#243447"/></marker><style>.b{fill:#eef6fb;stroke:#243447;stroke-width:3}.safe{fill:#fff3cd;stroke:#6b5200;stroke-width:3}.hard{fill:#fde2e2;stroke:#7b2d26;stroke-width:4}.t{font:17px sans-serif}.h{font:700 20px sans-serif}.a{stroke:#243447;stroke-width:3;marker-end:url(#a);fill:none}.stop{stroke:#7b2d26;stroke-width:4;stroke-dasharray:10 7;marker-end:url(#a)}</style></defs>
+  <rect width="1100" height="480" fill="white"/>
+  <text x="35" y="38" class="h">Safety is a layered contract</text>
+  <rect x="30" y="120" width="130" height="90" rx="10" class="b"/><text x="62" y="155" class="h">Leader</text><text x="50" y="185" class="t">encoder read</text>
+  <line x1="160" y1="165" x2="205" y2="165" class="a"/>
+  <rect x="210" y="105" width="145" height="120" rx="10" class="safe"/><text x="235" y="142" class="h">Validate</text><text x="230" y="174" class="t">name / finite</text><text x="230" y="202" class="t">calibration ID</text>
+  <line x1="355" y1="165" x2="400" y2="165" class="a"/>
+  <rect x="405" y="105" width="145" height="120" rx="10" class="safe"/><text x="430" y="142" class="h">Map</text><text x="425" y="174" class="t">order / sign</text><text x="425" y="202" class="t">unit / offset</text>
+  <line x1="550" y1="165" x2="595" y2="165" class="a"/>
+  <rect x="600" y="90" width="175" height="150" rx="10" class="safe"/><text x="630" y="125" class="h">Limit</text><text x="620" y="157" class="t">joint position</text><text x="620" y="187" class="t">slew rate</text><text x="620" y="217" class="t">workspace</text>
+  <line x1="775" y1="165" x2="820" y2="165" class="a"/>
+  <rect x="825" y="105" width="130" height="120" rx="10" class="safe"/><text x="846" y="142" class="h">Gate</text><text x="842" y="174" class="t">deadman</text><text x="842" y="202" class="t">watchdog</text>
+  <line x1="955" y1="165" x2="990" y2="165" class="a"/>
+  <rect x="995" y="120" width="90" height="90" rx="10" class="b"/><text x="1007" y="155" class="h">Follow</text><text x="1008" y="185" class="t">driver</text>
+  <rect x="405" y="330" width="300" height="95" rx="10" class="hard"/><text x="450" y="365" class="h">Independent E-stop</text><text x="435" y="397" class="t">physical power/torque isolation</text>
+  <line x1="705" y1="377" x2="1025" y2="220" class="stop"/>
+  <path d="M890 225 V290 H680 V245" class="a"/><text x="725" y="315" class="t">stale → HOLD / torque-off contract</text>
+</svg>
+

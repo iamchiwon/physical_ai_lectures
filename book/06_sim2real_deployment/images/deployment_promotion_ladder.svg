@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="500" viewBox="0 0 1100 500" role="img" aria-labelledby="title desc">
+  <title id="title">안전 배포 단계적 승격 사다리</title>
+  <desc id="desc">Offline, Dry Run, Low Speed, Bounded, Nominal의 다섯 단계와 fault 발생 시 dry run으로 강등하는 흐름</desc>
+  <defs><marker id="a" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto"><path d="M0 0L0 6L9 3z" fill="#243447"/></marker><marker id="r" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto"><path d="M0 0L0 6L9 3z" fill="#8b1e1e"/></marker><style>.s{stroke:#243447;stroke-width:3}.b1{fill:#eef6fb}.b2{fill:#e9f5e9}.warn{fill:#fff2cc}.fault{fill:#fde2e2;stroke:#8b1e1e;stroke-width:4}.h{font:700 20px sans-serif}.t{font:16px sans-serif}.a{stroke:#243447;stroke-width:3;marker-end:url(#a)}.r{stroke:#8b1e1e;stroke-width:4;stroke-dasharray:10 7;fill:none;marker-end:url(#r)}</style></defs>
+  <rect width="1100" height="500" fill="white"/>
+  <text x="35" y="40" class="h">Promotion requires evidence; faults force demotion</text>
+  <rect x="35" y="315" width="180" height="110" rx="10" class="s b1"/><text x="85" y="350" class="h">OFFLINE</text><text x="62" y="382" class="t">recorded logs</text><text x="62" y="407" class="t">no motor connection</text>
+  <rect x="245" y="260" width="180" height="110" rx="10" class="s b1"/><text x="290" y="295" class="h">DRY_RUN</text><text x="275" y="327" class="t">live inputs</text><text x="275" y="352" class="t">no motor command</text>
+  <rect x="455" y="205" width="180" height="110" rx="10" class="s warn"/><text x="490" y="240" class="h">LOW_SPEED</text><text x="486" y="272" class="t">10–20% speed</text><text x="486" y="297" class="t">2-person test</text>
+  <rect x="665" y="150" width="180" height="110" rx="10" class="s warn"/><text x="710" y="185" class="h">BOUNDED</text><text x="690" y="217" class="t">limited workspace</text><text x="690" y="242" class="t">single condition</text>
+  <rect x="875" y="95" width="180" height="110" rx="10" class="s b2"/><text x="920" y="130" class="h">NOMINAL</text><text x="905" y="162" class="t">approved envelope</text><text x="905" y="187" class="t">stratified eval</text>
+  <line x1="215" y1="350" x2="240" y2="330" class="a"/><line x1="425" y1="295" x2="450" y2="275" class="a"/><line x1="635" y1="240" x2="660" y2="220" class="a"/><line x1="845" y1="185" x2="870" y2="165" class="a"/>
+  <rect x="690" y="380" width="250" height="80" rx="10" class="fault"/><text x="775" y="414" class="h">FAULT</text><text x="718" y="444" class="t">latched + human approval</text>
+  <path d="M965 205 V350 H900 V375" class="r"/><path d="M690 420 H335 V375" class="r"/><text x="400" y="455" class="t">reset always returns to DRY_RUN after pose alignment</text>
+</svg>
+

@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1050" height="560" viewBox="0 0 1050 560" role="img" aria-labelledby="title desc">
+  <title id="title">실측 기반 물리 파라미터 튜닝 루프</title>
+  <desc id="desc">실물 측정에서 초기값을 만들고 시뮬레이션, 지표 계산, 단일 파라미터 변경, 별도 검증 조건으로 이어지는 반복 절차.</desc>
+  <defs>
+    <marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0 0L10 5L0 10z" fill="#4656a6"/></marker>
+    <style>.b{fill:#f7f8ff;stroke:#3f4b8f;stroke-width:2}.g{fill:#effaf3;stroke:#287a48;stroke-width:2}.h{font:700 20px sans-serif;fill:#111827}.t{font:15px sans-serif;fill:#374151}.e{stroke:#4656a6;stroke-width:3;fill:none;marker-end:url(#a)}</style>
+  </defs>
+  <rect width="1050" height="560" fill="white"/>
+  <rect class="b" x="55" y="70" width="220" height="100" rx="16"/><text class="h" x="165" y="108" text-anchor="middle">1. 실물 측정</text><text class="t" x="165" y="137" text-anchor="middle">질량·tilt·drop·pose</text>
+  <rect class="b" x="415" y="45" width="220" height="100" rx="16"/><text class="h" x="525" y="83" text-anchor="middle">2. 초기 파라미터</text><text class="t" x="525" y="112" text-anchor="middle">mass·COM·μ·e·I</text>
+  <rect class="b" x="775" y="70" width="220" height="100" rx="16"/><text class="h" x="885" y="108" text-anchor="middle">3. 반복 simulation</text><text class="t" x="885" y="137" text-anchor="middle">고정 seed와 초기 상태</text>
+  <rect class="b" x="775" y="300" width="220" height="100" rx="16"/><text class="h" x="885" y="338" text-anchor="middle">4. 오차 지표</text><text class="t" x="885" y="367" text-anchor="middle">반동·미끄럼·정착 시간</text>
+  <rect class="b" x="415" y="325" width="220" height="100" rx="16"/><text class="h" x="525" y="363" text-anchor="middle">5. 단일 변수 변경</text><text class="t" x="525" y="392" text-anchor="middle">history와 근거 기록</text>
+  <rect class="g" x="55" y="300" width="220" height="100" rx="16"/><text class="h" x="165" y="338" text-anchor="middle">6. 별도 조건 검증</text><text class="t" x="165" y="367" text-anchor="middle">미사용 pose·속도·물체</text>
+  <path class="e" d="M275 120H415"/><path class="e" d="M635 95C700 95 710 120 775 120"/><path class="e" d="M885 170V300"/><path class="e" d="M775 350H635"/><path class="e" d="M415 375H275"/>
+  <path class="e" d="M525 325C525 240 730 250 775 190"/>
+  <text class="t" x="610" y="245">오차가 기준 초과</text>
+  <text class="t" x="330" y="350">기준 충족</text>
+  <text class="t" x="55" y="490">원칙: 평균값 하나가 아니라 반복 분포와 실패율을 기록한다.</text>
+</svg>
+

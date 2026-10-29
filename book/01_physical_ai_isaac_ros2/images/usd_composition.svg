@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="940" height="390" viewBox="0 0 940 390" role="img" aria-labelledby="title desc">
+  <title id="title">OpenUSD Layer 합성</title><desc id="desc">약한 로봇 자산과 환경 레이어 위에 작업과 실험 오버라이드가 강한 의견을 제공해 합성 스테이지를 만든다</desc>
+  <defs><marker id="a" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#38598b"/></marker></defs>
+  <style>.b{stroke:#38598b;stroke-width:2}.t{font:18px sans-serif;fill:#17213a}.n{font:14px sans-serif;fill:#445}</style>
+  <rect class="b" x="40" y="270" width="230" height="70" rx="10" fill="#e8f0fb"/><text class="t" x="155" y="301" text-anchor="middle">robot_asset.usd</text><text class="n" x="155" y="325" text-anchor="middle">weak · reusable</text>
+  <rect class="b" x="40" y="190" width="230" height="60" rx="10" fill="#edf7e8"/><text class="t" x="155" y="226" text-anchor="middle">environment.usd</text>
+  <rect class="b" x="40" y="110" width="230" height="60" rx="10" fill="#fff3dc"/><text class="t" x="155" y="146" text-anchor="middle">task.usd</text>
+  <rect class="b" x="40" y="30" width="230" height="60" rx="10" fill="#f3eafa"/><text class="t" x="155" y="66" text-anchor="middle">experiment override</text>
+  <path d="M290 55L520 150 M290 135L520 170 M290 215L520 190 M290 295L520 210" stroke="#38598b" stroke-width="3" marker-end="url(#a)"/>
+  <rect class="b" x="540" y="120" width="350" height="130" rx="14" fill="#fff"/><text class="t" x="715" y="164" text-anchor="middle">Composed Stage</text><text class="n" x="715" y="193" text-anchor="middle">one scene view</text><text class="n" x="715" y="218" text-anchor="middle">stronger opinion wins per property</text>
+  <text class="n" x="315" y="355">Layer strength: bottom → top</text>
+</svg>
+

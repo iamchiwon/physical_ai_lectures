@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="540" viewBox="0 0 1200 540" role="img" aria-labelledby="title desc">
+  <title id="title">20 Hz 비동기 폐루프 추론</title>
+  <desc id="desc">카메라와 상태 관측이 policy worker로 전달되고 action chunk queue를 control loop가 safety filter를 거쳐 로봇에 실행한다.</desc>
+  <defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0 0L10 5L0 10z" fill="#176b61"/></marker><style>.b{fill:#f3fbfa;stroke:#176b61;stroke-width:2}.w{fill:#fff6ed;stroke:#c65d16;stroke-width:2}.h{font:700 19px sans-serif;fill:#111827}.t{font:15px sans-serif;fill:#374151}.e{stroke:#176b61;stroke-width:3;fill:none;marker-end:url(#a)}.d{stroke:#c65d16;stroke-width:2;stroke-dasharray:7 6;fill:none;marker-end:url(#a)}</style></defs>
+  <rect width="1200" height="540" fill="white"/>
+  <rect class="b" x="45" y="185" width="160" height="105" rx="12"/><text class="h" x="125" y="225" text-anchor="middle">Sensors</text><text class="t" x="125" y="255" text-anchor="middle">camera · state</text>
+  <rect class="b" x="295" y="65" width="220" height="125" rx="12"/><text class="h" x="405" y="108" text-anchor="middle">Policy worker</text><text class="t" x="405" y="138" text-anchor="middle">VLM + action expert</text><text class="t" x="405" y="165" text-anchor="middle">variable latency</text>
+  <rect class="b" x="610" y="65" width="220" height="125" rx="12"/><text class="h" x="720" y="108" text-anchor="middle">Action queue</text><text class="t" x="720" y="138" text-anchor="middle">timestamped chunks</text><text class="t" x="720" y="165" text-anchor="middle">bounded buffer</text>
+  <rect class="b" x="295" y="315" width="220" height="125" rx="12"/><text class="h" x="405" y="358" text-anchor="middle">20 Hz control loop</text><text class="t" x="405" y="388" text-anchor="middle">50 ms deadline</text><text class="t" x="405" y="415" text-anchor="middle">receding horizon</text>
+  <rect class="w" x="610" y="315" width="220" height="125" rx="12"/><text class="h" x="720" y="358" text-anchor="middle">Safety filter</text><text class="t" x="720" y="388" text-anchor="middle">limit · finite · collision</text><text class="t" x="720" y="415" text-anchor="middle">watchdog · freshness</text>
+  <rect class="b" x="955" y="185" width="180" height="105" rx="12"/><text class="h" x="1045" y="225" text-anchor="middle">Robot</text><text class="t" x="1045" y="255" text-anchor="middle">actuator + plant</text>
+  <path class="e" d="M205 215C245 180 255 125 295 125"/><path class="e" d="M515 125H610"/><path class="e" d="M720 190C720 245 500 250 440 315"/><path class="e" d="M515 377H610"/><path class="e" d="M830 377C910 377 910 260 955 245"/><path class="e" d="M955 225C760 500 260 500 205 270"/>
+  <path class="d" d="M720 315V190"/><text class="t" x="745" y="265">underrun/timeout</text>
+  <text class="t" x="45" y="505">모델 지연을 queue로 흡수하되, stale observation과 안전 검사는 생략하지 않는다.</text>
+</svg>
+
