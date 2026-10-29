@@ -17,10 +17,7 @@
     "check": "npm run check --workspaces --if-present",
     "lint": "npm run lint --workspaces --if-present",
     "deploy:web": "wrangler pages deploy apps/web/out --project-name physical-ai-learning-web",
-    "deploy:api": "npm run deploy --workspace @physical-ai/api",
-    "db:generate": "npm run db:generate --workspace @physical-ai/api",
-    "db:migrate:local": "npm run db:migrate:local --workspace @physical-ai/api",
-    "db:migrate:remote": "npm run db:migrate:remote --workspace @physical-ai/api"
+    "deploy:api": "npm run deploy --workspace @physical-ai/api"
   },
   "devDependencies": {
     "concurrently": "^9.2.1",

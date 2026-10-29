@@ -7,7 +7,7 @@
 ```text
 apps/
 ├── web/                 # Next.js static export → Cloudflare Pages
-└── api/                 # Hono Worker + Gemini + D1 → Cloudflare Workers
+└── api/                 # Hono Worker + Gemini → Cloudflare Workers
 packages/
 └── shared/              # 공유 Zod schema, API type, constant
 ebook/
@@ -19,13 +19,12 @@ ebook/
 └── tmp/                 # 이북 빌드 임시 자료
 ```
 
-프론트엔드는 `out/` 정적 파일만 배포하며 SSR·Next.js Route Handler·Node.js 서버를 사용하지 않습니다. Gemini 요청, Live 음성 세션 토큰, D1 진도 동기화는 별도 Worker API가 담당합니다.
+프론트엔드는 `out/` 정적 파일만 배포하며 SSR·Next.js Route Handler·Node.js 서버를 사용하지 않습니다. 학습 진도와 퀴즈 점수는 브라우저 `localStorage`에 저장하고, Gemini 요청과 Live 음성 세션 토큰만 별도 Worker API가 담당합니다.
 
 ## 로컬 실행
 
 ```bash
 npm install
-npm run db:migrate:local
 npm run dev
 ```
 
@@ -49,7 +48,7 @@ npm run build
 - Pages output directory: `apps/web/out`
 - Worker deploy: `npm run deploy:api`
 
-최초 배포 전 D1 database ID, Pages/Worker origin, Gemini secret을 설정해야 합니다. 상세 순서는 [Cloudflare 배포 가이드](docs/CLOUDFLARE_DEPLOYMENT.md)를 참고하세요.
+최초 배포 전 Pages/Worker origin과 Gemini secret을 설정해야 합니다. 상세 순서는 [Cloudflare 배포 가이드](docs/CLOUDFLARE_DEPLOYMENT.md)를 참고하세요.
 
 ## 이북 빌드
 

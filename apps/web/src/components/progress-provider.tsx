@@ -6,11 +6,8 @@ import { ArrowRight, BookCheck, CheckCircle2, Clock3, Gauge } from "lucide-react
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Progress } from "@/components/ui/progress";
-import { getProgress, isApiConfigured, putProgress } from "@/lib/api-client";
-import type { ProgressSnapshot, ProgressUpsert } from "@physical-ai/shared";
 
 const STORAGE_KEY = "physical-ai-study-progress-v1";
-const LEARNER_ID_KEY = "physical-ai-anonymous-learner-v1";
 
 interface StoredProgress {
   completedLessons: string[];
@@ -48,83 +45,21 @@ function readStoredProgress(): StoredProgress {
   }
 }
 
-function getOrCreateLearnerId() {
-  const stored = window.localStorage.getItem(LEARNER_ID_KEY);
-  if (stored) return stored;
-  const learnerId = crypto.randomUUID();
-  window.localStorage.setItem(LEARNER_ID_KEY, learnerId);
-  return learnerId;
-}
-
-function mergeProgress(local: StoredProgress, remote: ProgressSnapshot): StoredProgress {
-  const completedLessons = [...new Set([...local.completedLessons, ...remote.completedLessons])];
-  const quizScores = { ...remote.quizScores };
-  for (const [lessonId, score] of Object.entries(local.quizScores)) {
-    quizScores[lessonId] = Math.max(quizScores[lessonId] ?? 0, score);
-  }
-  return {
-    completedLessons,
-    quizScores,
-    lastLessonId: local.lastLessonId ?? remote.lastLessonId,
-  };
-}
-
 export function ProgressProvider({ children }: { children: React.ReactNode }) {
   const [progress, setProgress] = React.useState<StoredProgress>(emptyProgress);
   const [hydrated, setHydrated] = React.useState(false);
-  const [syncReady, setSyncReady] = React.useState(false);
-  const learnerIdRef = React.useRef<string | null>(null);
-  const pendingAttemptRef = React.useRef<ProgressUpsert["attempt"]>(undefined);
 
   React.useEffect(() => {
-    let active = true;
     const hydrationTask = window.setTimeout(() => {
-      const hydrate = async () => {
-        const localProgress = readStoredProgress();
-        const learnerId = getOrCreateLearnerId();
-        learnerIdRef.current = learnerId;
-        let mergedProgress = localProgress;
-        if (isApiConfigured()) {
-          try {
-            mergedProgress = mergeProgress(localProgress, await getProgress(learnerId));
-          } catch {
-            // Offline-first: the browser copy remains usable when the Worker is unavailable.
-          }
-        }
-        if (!active) return;
-        setProgress(mergedProgress);
-        setHydrated(true);
-        setSyncReady(true);
-      };
-      void hydrate();
+      setProgress(readStoredProgress());
+      setHydrated(true);
     }, 0);
-    return () => {
-      active = false;
-      window.clearTimeout(hydrationTask);
-    };
+    return () => window.clearTimeout(hydrationTask);
   }, []);
 
   React.useEffect(() => {
     if (hydrated) window.localStorage.setItem(STORAGE_KEY, JSON.stringify(progress));
   }, [hydrated, progress]);
-
-  React.useEffect(() => {
-    if (!syncReady || !isApiConfigured() || !learnerIdRef.current) return;
-    const learnerId = learnerIdRef.current;
-    const attempt = pendingAttemptRef.current;
-    const syncTask = window.setTimeout(() => {
-      if (pendingAttemptRef.current === attempt) pendingAttemptRef.current = undefined;
-      void putProgress(learnerId, {
-        completedLessons: progress.completedLessons,
-        quizScores: progress.quizScores,
-        lastLessonId: progress.lastLessonId,
-        ...(attempt ? { attempt } : {}),
-      }).catch(() => {
-        // Local storage remains the source of truth until the next successful sync.
-      });
-    }, 600);
-    return () => window.clearTimeout(syncTask);
-  }, [progress, syncReady]);
 
   const markLessonComplete = React.useCallback((lessonId: string) => {
     setProgress((current) => ({
@@ -141,9 +76,8 @@ export function ProgressProvider({ children }: { children: React.ReactNode }) {
     [progress.completedLessons],
   );
 
-  const saveQuizScore = React.useCallback((lessonId: string, score: number, totalQuestions = 0) => {
+  const saveQuizScore = React.useCallback((lessonId: string, score: number) => {
     const safeScore = Math.min(100, Math.max(0, Math.round(score)));
-    pendingAttemptRef.current = totalQuestions > 0 ? { lessonId, score: safeScore, totalQuestions } : undefined;
     setProgress((current) => ({
       ...current,
       quizScores: { ...current.quizScores, [lessonId]: Math.max(current.quizScores[lessonId] ?? 0, safeScore) },

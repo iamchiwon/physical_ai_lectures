@@ -1,10 +1,7 @@
 import {
-  progressSnapshotSchema,
   tutorResponseSchema,
   voiceSessionResponseSchema,
   voiceStatusResponseSchema,
-  type ProgressSnapshot,
-  type ProgressUpsert,
   type TutorRequest,
   type TutorResponse,
   type VoiceSessionRequest,
@@ -58,13 +55,3 @@ export async function createVoiceSession(input: VoiceSessionRequest): Promise<Vo
   }));
 }
 
-export async function getProgress(learnerId: string): Promise<ProgressSnapshot> {
-  return progressSnapshotSchema.parse(await requestJson(`/v1/progress/${encodeURIComponent(learnerId)}`));
-}
-
-export async function putProgress(learnerId: string, input: ProgressUpsert): Promise<ProgressSnapshot> {
-  return progressSnapshotSchema.parse(await requestJson(`/v1/progress/${encodeURIComponent(learnerId)}`, {
-    method: "PUT",
-    body: JSON.stringify(input),
-  }));
-}

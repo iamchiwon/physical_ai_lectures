@@ -1,6 +1,6 @@
 # Physical AI 로봇 제어 실무 · Web
 
-Cloudflare Pages에 배포되는 순수 정적 Next.js 프론트엔드입니다. 18개 레슨은 빌드 시 HTML로 생성되며 UI 요청으로 Worker를 실행하지 않습니다. AI 강사와 선택적 진도 동기화만 별도 Hono Worker API를 호출합니다.
+Cloudflare Pages에 배포되는 순수 정적 Next.js 프론트엔드입니다. 18개 레슨은 빌드 시 HTML로 생성되며 AI 강사와 음성 세션만 별도 Hono Worker API를 호출합니다.
 
 ## 로컬 실행
 
@@ -37,8 +37,7 @@ npm run build:web
 ## 런타임 데이터 흐름
 
 - 과정 데이터와 시뮬레이션: 정적 번들
-- 학습 진도: `localStorage` 오프라인 우선
-- 원격 진도: 익명 learner ID로 D1에 best-effort 동기화
+- 학습 진도·퀴즈 점수: 브라우저 `localStorage`
 - 텍스트 AI 강사: `${NEXT_PUBLIC_API_BASE_URL}/v1/tutor`
 - 음성 세션: `${NEXT_PUBLIC_API_BASE_URL}/v1/voice/session`
 

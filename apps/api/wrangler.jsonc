@@ -8,13 +8,5 @@
     "ALLOWED_ORIGINS": "https://physical-ai-learning-web.pages.dev",
     "GEMINI_MODEL": "gemini-flash-latest",
     "GEMINI_LIVE_MODEL": "gemini-3.8-live"
-  },
-  "d1_databases": [
-    {
-      "binding": "DB",
-      "database_name": "physical-ai-learning",
-      "database_id": "00000000-0000-0000-0000-000000000000",
-      "migrations_dir": "drizzle/migrations"
-    }
-  ]
+  }
 }
