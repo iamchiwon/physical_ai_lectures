@@ -1,0 +1,61 @@
+:root {
+  --ink: #172033;
+  --muted: #526078;
+  --brand: #155eef;
+  --brand-soft: #eaf1ff;
+  --line: #d6deeb;
+  --code-bg: #f5f7fa;
+}
+
+@page {
+  size: A4;
+  margin: 20mm 18mm 22mm;
+  @bottom-center { content: counter(page); color: #64748b; font-size: 9pt; }
+}
+
+html { color: var(--ink); font-family: "Apple SD Gothic Neo", "Noto Sans CJK KR", sans-serif; font-size: 11pt; line-height: 1.65; }
+body { max-width: 980px; margin: 0 auto; }
+#title-block-header { display: none; page-break-before: avoid !important; break-before: avoid-page !important; }
+#title-block-header h1 { page-break-before: avoid !important; break-before: avoid-page !important; }
+.book-cover-page { page-break-before: avoid !important; break-before: avoid-page !important; page-break-after: always; break-after: page; text-align: center; }
+.book-cover-title { page-break-before: avoid !important; break-before: avoid-page !important; border: 0; padding: 0; margin: 0 0 .25em; color: #102a56; font-size: 26pt; text-wrap: balance; word-break: keep-all; }
+.book-cover-subtitle { max-width: 165mm; margin: 0 auto .8em; color: #334155; font-size: 11pt; line-height: 1.4; text-wrap: balance; word-break: keep-all; }
+.book-cover-image { width: min(100%, 140mm); max-height: 178mm; object-fit: contain; margin: 0 auto; }
+.book-cover-environment { color: var(--muted); font-size: 10pt; margin: 1em 0 0; }
+h1, h2, h3, h4, h5, h6 { color: #102a56; line-height: 1.25; break-after: avoid; text-wrap: balance; word-break: keep-all; overflow-wrap: break-word; hyphens: none; }
+h1 { font-size: 27pt; border-bottom: 4px solid var(--brand); padding-bottom: .25em; page-break-before: always; }
+h2 { font-size: 19pt; margin-top: 1.8em; border-left: 6px solid var(--brand); padding-left: .55em; }
+h2.chapter-section { page-break-before: always; break-before: page; }
+h3 { font-size: 14pt; margin-top: 1.5em; }
+.chapter-divider { page-break-before: always; break-before: page; page-break-after: always; break-after: page; min-height: 245mm; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; }
+.chapter-divider-kicker { margin: 0 0 .2em; color: var(--brand); font-size: 15pt; font-weight: 700; letter-spacing: .08em; }
+.chapter-divider-title { max-width: 170mm; margin: 0 0 1em; color: #102a56; font-size: 23pt; font-weight: 700; line-height: 1.25; text-wrap: balance; word-break: keep-all; }
+.chapter-divider-image { display: block; width: auto; max-width: 168mm; height: auto; max-height: 160mm; object-fit: contain; margin: .5em auto; border-radius: 10px; }
+.chapter-divider-humor { max-width: 165mm; margin: 1em auto 0; color: #475569; font-size: 11pt; font-style: italic; line-height: 1.5; text-wrap: balance; word-break: keep-all; }
+p, li { orphans: 3; widows: 3; }
+a { color: #174ea6; text-decoration: none; }
+blockquote { margin: 1em 0; padding: .7em 1em; background: var(--brand-soft); border-left: 5px solid var(--brand); }
+.learning-aid, .learning-check { margin: 1.25em 0; padding: .9em 1.1em; border-radius: 8px; break-inside: avoid; page-break-inside: avoid; }
+.learning-aid { background: #eefbf7; border: 1px solid #9bd8c8; border-left: 6px solid #158f78; }
+.learning-check { background: #fff8e8; border: 1px solid #ead49b; border-left: 6px solid #c98712; }
+.learning-aid > :first-child, .learning-check > :first-child { margin-top: 0; }
+.learning-aid > :last-child, .learning-check > :last-child { margin-bottom: 0; }
+.learning-aid strong:first-child { color: #08705e; }
+.learning-check strong:first-child { color: #955f08; }
+.learning-check ol, .learning-check ul { margin-top: .45em; margin-bottom: .55em; }
+code { font-family: "SFMono-Regular", "Noto Sans Mono CJK KR", monospace; font-size: .9em; }
+pre { background: var(--code-bg); border: 1px solid var(--line); border-radius: 6px; padding: 1em; overflow-wrap: anywhere; white-space: pre-wrap; break-inside: avoid; }
+table { border-collapse: collapse; width: 100%; margin: 1.2em 0; font-size: .92em; }
+th { background: #e9eef7; }
+th, td { border: 1px solid #b9c5d8; padding: .45em .55em; vertical-align: top; }
+img, svg { max-width: 100%; height: auto; display: block; margin: 1em auto; }
+figure { break-inside: avoid; }
+figcaption { color: var(--muted); text-align: center; font-size: .9em; }
+#TOC, .toc { page-break-after: always; break-after: page; }
+@media print {
+  body { max-width: none; }
+  a { color: inherit; }
+  h1 { page-break-before: always; }
+  .book-cover-page { height: 245mm; display: flex; flex-direction: column; justify-content: center; }
+}
+
