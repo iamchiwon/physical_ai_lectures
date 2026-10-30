@@ -4,6 +4,12 @@
   "main": "src/index.ts",
   "compatibility_date": "2026-10-29",
   "upload_source_maps": true,
+  "observability": {
+    "enabled": true,
+    "logs": {
+      "invocation_logs": false
+    }
+  },
   "vars": {
     "ALLOWED_ORIGINS": "https://physical-ai-learning-web.pages.dev",
     "GEMINI_MODEL": "gemini-flash-latest"

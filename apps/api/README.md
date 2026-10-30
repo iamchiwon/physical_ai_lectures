@@ -1,5 +1,17 @@
 # Physical AI Learning API
 
+## Gemini 진단 로그
+
+`observability`가 활성화되어 있으며 요청 본문을 기록하지 않는 구조화 로그를 사용합니다. 질문·답안·교재 맥락·생성 답변·API 키·헤더·IP·사용자 ID·Gemini 원문 오류 메시지 및 스택은 커스텀 로그에 기록하지 않습니다. 기본 요청별 invocation log도 비활성화했습니다. Cloudflare 자체가 추가하는 요청 식별 메타데이터는 플랫폼 정책을 따릅니다.
+
+- `gemini_key_missing`: 런타임 키 미설정. API 키 값은 기록하지 않습니다.
+- `gemini_request_failed`: `operation`, 임의의 `requestId`, 허용된 형식의 모델명, 처리 단계·시간, upstream HTTP 상태, 고정된 오류 분류와 힌트만 기록합니다.
+- `gemini_request_completed`: 처리 시간·종료 사유. `MAX_TOKENS`는 warning으로 기록합니다.
+
+실패 분류는 `UPSTREAM_HTTP_ERROR`, `REQUEST_TIMEOUT`, `EMPTY_TEXT_RESPONSE`, `INVALID_JSON_RESPONSE`, `NETWORK_OR_RUNTIME_ERROR`입니다. provider 상태·reason은 허용 목록만 출력하며 `hints`는 오류 본문을 고정 문구로 분류한 값입니다. 원문 오류 메시지는 요청 내용을 되비출 수 있어 기록하지 않습니다. API 키 존재 여부만 기록하며 값·길이·접두사·해시는 기록하지 않습니다.
+
+`GET /v1/health`의 `diagnosticsVersion`이 `2026-10-30.1`이면 이번 로그 변경이 배포된 것입니다. 기존 요청은 소급 기록되지 않으므로 배포 후 질문을 다시 보내고 같은 Worker invocation의 커스텀 로그를 확인하세요.
+
 Cloudflare Workers에서 실행되는 Hono API입니다. 정적 프론트엔드와 분리해 배포하며 Gemini 비밀키는 Worker secret으로만 관리합니다.
 
 ## 로컬 준비

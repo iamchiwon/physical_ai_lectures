@@ -2,6 +2,7 @@ import { Hono } from "hono";
 import { cors } from "hono/cors";
 import type { Bindings } from "./env";
 import { aiRoutes } from "./routes/ai";
+import { DIAGNOSTICS_VERSION } from "./services/gemini-diagnostics";
 
 const app = new Hono<{ Bindings: Bindings }>();
 
@@ -15,12 +16,12 @@ app.use("/v1/*", cors({
   maxAge: 86_400,
 }));
 
-app.get("/v1/health", (c) => c.json({ status: "ok", service: "physical-ai-learning-api" }));
+app.get("/v1/health", (c) => c.json({ status: "ok", service: "physical-ai-learning-api", diagnosticsVersion: DIAGNOSTICS_VERSION }));
 app.route("/v1", aiRoutes);
 
 app.notFound((c) => c.json({ error: "요청한 API 경로를 찾을 수 없습니다." }, 404));
 app.onError((error, c) => {
-  console.error("Unhandled Worker error", error);
+  console.error({ event: "unhandled_worker_error", errorType: error instanceof TypeError ? "TypeError" : "Error" });
   return c.json({ error: "서버 요청을 처리하지 못했습니다." }, 500);
 });
 
