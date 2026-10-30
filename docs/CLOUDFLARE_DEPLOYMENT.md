@@ -49,6 +49,8 @@ Cloudflare Pages에 Git 저장소를 연결하고 다음과 같이 설정합니�
 
 ## 4. 배포 순서
 
+Pages 빌드 감시 Include paths에는 `apps/web/*`, `packages/shared/*`, `ebook/book/*`, `package.json`, `package-lock.json`, `tsconfig.base.json`을 등록합니다. 교재 본문과 그림은 빌드 시 `ebook/book/`에서 가져오므로 원고 변경도 웹 재빌드 대상입니다.
+
 1. Worker secret/vars 설정
 2. Worker 배포 후 `/v1/health` 확인
 3. Worker URL을 Pages의 `NEXT_PUBLIC_API_BASE_URL`에 설정

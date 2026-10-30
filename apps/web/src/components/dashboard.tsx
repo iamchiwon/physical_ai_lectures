@@ -6,6 +6,7 @@ import { DashboardProgress } from "@/components/progress-provider";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
+import { chapterStart } from "@/lib/textbook";
 
 interface DashboardProps {
   modules: CourseModule[];
@@ -24,10 +25,11 @@ export function Dashboard({ modules, stats, firstLesson }: DashboardProps) {
               로봇 제어를 <span className="text-blue-600">작은 성공</span>으로 나누어 배웁니다
             </h1>
             <p className="mt-6 max-w-2xl text-pretty text-lg leading-8 text-slate-600">
-              Physical AI, Isaac Sim, ROS 2, SO-101, LeRobot와 Sim2Real을 짧은 레슨으로 익히고 곧바로 자가 점검하세요. 막히는 순간에는 AI 강사가 답 대신 이해의 실마리를 제공합니다.
+              Physical AI, Isaac Sim, ROS 2, SO-101, LeRobot와 Sim2Real의 개념을 배우고, 가상실습과 답안 평가로 이해를 확인하세요. 막히는 순간에는 AI 강사가 비유와 질문으로 설명합니다.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
-              <Button asChild size="lg"><Link href={`/learn/${firstLesson.id}`}>첫 레슨 시작하기 <ArrowRight className="size-4" /></Link></Button>
+              <Button asChild size="lg"><Link href={`/textbook/${chapterStart(1)!.slug}/`}>설명부터 학습하기 <ArrowRight className="size-4" /></Link></Button>
+              <Button asChild size="lg" variant="outline"><Link href="/textbook/">설명·실습·연습문제 전체 보기</Link></Button>
               <Button asChild size="lg" variant="outline"><a href="#curriculum">커리큘럼 보기</a></Button>
             </div>
           </div>
@@ -38,7 +40,7 @@ export function Dashboard({ modules, stats, firstLesson }: DashboardProps) {
 
       <section className="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8">
         <div className="grid gap-4 md:grid-cols-3">
-          <Card><CardContent className="flex items-start gap-4 p-5"><span className="rounded-xl bg-blue-50 p-3 text-blue-600"><Target className="size-5" /></span><div><p className="font-bold">오늘의 목표</p><p className="mt-1 text-sm leading-6 text-slate-500">첫 레슨을 읽고 자가 점검 2문항을 완료하세요.</p></div></CardContent></Card>
+          <Card><CardContent className="flex items-start gap-4 p-5"><span className="rounded-xl bg-blue-50 p-3 text-blue-600"><Target className="size-5" /></span><div><p className="font-bold">오늘의 목표</p><p className="mt-1 text-sm leading-6 text-slate-500">개념을 읽고 실습한 뒤, 내 말로 답안을 작성해 피드백을 받아보세요.</p></div></CardContent></Card>
           <Card><CardContent className="flex items-start gap-4 p-5"><span className="rounded-xl bg-violet-50 p-3 text-violet-600"><Bot className="size-5" /></span><div><p className="font-bold">AI 강사와 함께</p><p className="mt-1 text-sm leading-6 text-slate-500">정답보다 먼저 비유·질문·힌트로 개념을 연결합니다.</p></div></CardContent></Card>
           <Card><CardContent className="flex items-start gap-4 p-5"><span className="rounded-xl bg-amber-50 p-3 text-amber-600"><Sparkles className="size-5" /></span><div><p className="font-bold">평가 현황</p><p className="mt-1 text-sm leading-6 text-slate-500">레슨별 점검 결과를 모아 취약 개념을 확인합니다.</p></div></CardContent></Card>
         </div>
@@ -46,8 +48,8 @@ export function Dashboard({ modules, stats, firstLesson }: DashboardProps) {
 
       <section id="curriculum" className="mx-auto max-w-7xl scroll-mt-24 px-4 py-8 sm:px-6 lg:px-8">
         <div className="mb-8 flex flex-col justify-between gap-3 sm:flex-row sm:items-end">
-          <div><p className="text-sm font-semibold text-blue-700">전체 학습 경로</p><h2 className="mt-2 text-3xl font-bold tracking-tight">6개 모듈, {stats.lessonCount}개의 작은 레슨</h2></div>
-          <p className="max-w-md text-sm leading-6 text-slate-500">각 레슨은 개념 설명, 적용 예시, 즉시 피드백이 있는 점검으로 구성됩니다.</p>
+          <div><p className="text-sm font-semibold text-blue-700">전체 학습 경로</p><h2 className="mt-2 text-3xl font-bold tracking-tight">6개 모듈의 설명·실습·평가</h2></div>
+          <p className="max-w-md text-sm leading-6 text-slate-500">각 장의 설명을 빠짐없이 학습하고, {stats.lessonCount}개의 요약 레슨으로 복습할 수 있습니다.</p>
         </div>
         <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
           {modules.map((module) => <ModuleCard key={module.id} module={module} />)}

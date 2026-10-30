@@ -3,6 +3,7 @@ apps/*/node_modules/
 packages/*/node_modules/
 apps/web/.next/
 apps/web/out/
+apps/web/public/textbook-assets/
 apps/api/.wrangler/
 apps/api/dist/
 apps/api/.dev.vars

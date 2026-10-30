@@ -1,8 +1,14 @@
 import {
+  assessmentResponseSchema,
+  type AssessmentRequest,
   tutorResponseSchema,
   type TutorRequest,
   type TutorResponse,
 } from "@physical-ai/shared";
+
+export async function evaluateAnswer(input: AssessmentRequest) {
+  return assessmentResponseSchema.parse(await requestJson("/v1/assessment", { method: "POST", body: JSON.stringify(input) }));
+}
 
 const configuredApiBaseUrl = process.env.NEXT_PUBLIC_API_BASE_URL?.trim().replace(/\/$/, "") ?? "";
 

@@ -130,6 +130,15 @@ a {
   padding: 0.3rem 0;
 }
 
+.textbook-copy { font-size: 1.02rem; line-height: 1.95; }
+.textbook-copy h1 { font-size: 2rem; }
+.textbook-copy h2 { font-size: 1.65rem; margin-top: 2rem; }
+.textbook-copy h3 { font-size: 1.3rem; margin-top: 1.6rem; }
+.textbook-copy img { display: block; max-width: 100%; height: auto; margin: 1.5rem auto; }
+.textbook-copy ul { list-style: disc; }
+.textbook-copy ol { list-style: decimal; }
+.textbook-copy blockquote { background: #eff6ff; border-radius: 0.5rem; padding: 0.75rem 1rem; }
+
 .tutor-markdown > :first-child {
   margin-top: 0;
 }

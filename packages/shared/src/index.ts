@@ -24,3 +24,14 @@ export const errorResponseSchema = z.object({ error: z.string() });
 export type TutorRequest = z.infer<typeof tutorRequestSchema>;
 export type TutorResponse = z.infer<typeof tutorResponseSchema>;
 export type ErrorResponse = z.infer<typeof errorResponseSchema>;
+
+export const assessmentRequestSchema = z.object({
+  question: z.string().trim().min(2).max(16000),
+  answer: z.string().trim().min(10).max(8000),
+  reference: z.string().max(16000),
+});
+export const assessmentResponseSchema = z.object({
+  feedback: z.string(),
+  mode: z.enum(["gemini", "self-review"]),
+});
+export type AssessmentRequest = z.infer<typeof assessmentRequestSchema>;

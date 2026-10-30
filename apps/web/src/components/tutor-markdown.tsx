@@ -8,12 +8,14 @@ import remarkCjkFriendly from "remark-cjk-friendly";
 import remarkMath from "remark-math";
 import rehypeKatex from "rehype-katex";
 import { Button } from "@/components/ui/button";
+import { normalizeMathDelimiters } from "@/lib/markdown-math";
 
 interface TutorMarkdownProps {
   content: string;
+  copyable?: boolean;
 }
 
-export function TutorMarkdown({ content }: TutorMarkdownProps) {
+export function TutorMarkdown({ content, copyable = true }: TutorMarkdownProps) {
   const [copyState, setCopyState] = React.useState<"idle" | "copied" | "error">("idle");
   const resetTimerRef = React.useRef<number | null>(null);
 
@@ -42,10 +44,10 @@ export function TutorMarkdown({ content }: TutorMarkdownProps) {
             a: ({ children, ...props }) => <a {...props} target="_blank" rel="noreferrer">{children}</a>,
           }}
         >
-          {content}
+          {normalizeMathDelimiters(content)}
         </ReactMarkdown>
       </div>
-      <div className="mt-3 flex items-center justify-end border-t border-slate-100 pt-2">
+      {copyable ? <div className="mt-3 flex items-center justify-end border-t border-slate-100 pt-2">
         <Button
           type="button"
           size="sm"
@@ -57,7 +59,7 @@ export function TutorMarkdown({ content }: TutorMarkdownProps) {
           {copyState === "copied" ? <Check className="size-3.5" /> : <Copy className="size-3.5" />}
           {copyState === "copied" ? "복사했어요" : copyState === "error" ? "복사 실패" : "복사하기"}
         </Button>
-      </div>
+      </div> : null}
     </>
   );
 }

@@ -134,7 +134,7 @@ export function DashboardProgress({ lessonCount, totalMinutes, questionCount, fi
   return (
     <Card className="self-end border-blue-100 bg-white/90 shadow-xl shadow-blue-100/50">
       <CardHeader>
-        <div className="flex items-center justify-between"><span className="text-xs font-bold text-blue-700">나의 학습 현황</span><Gauge className="size-5 text-blue-600" /></div>
+        <div className="flex items-center justify-between"><span className="text-xs font-bold text-blue-700">요약·복습 레슨 학습 현황</span><Gauge className="size-5 text-blue-600" /></div>
         <CardTitle className="mt-3 text-2xl">{completedCount ? `${completedCount}개의 작은 성공` : "첫 걸음을 준비했어요"}</CardTitle>
         <CardDescription>진도와 점검 점수는 이 브라우저에 자동 저장됩니다.</CardDescription>
       </CardHeader>

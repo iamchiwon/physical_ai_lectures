@@ -15,6 +15,7 @@ npm run dev
 
 - `GET /v1/health`
 - `POST /v1/tutor`
+- `POST /v1/assessment`: 문제·답안·교재 해설을 바탕으로 학습 피드백을 반환합니다. API 키가 없으면 AI 평가 대신 자기 점검 안내를 반환합니다.
 
 ## 운영 설정
 

@@ -8,6 +8,7 @@ import { LessonCompleteButton } from "@/components/progress-provider";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
+import { chapterStart } from "@/lib/textbook";
 
 interface LessonViewProps {
   lesson: Lesson;
@@ -40,6 +41,7 @@ export function LessonView({ lesson, module, modules, previous, next }: LessonVi
         </aside>
 
         <main className="min-w-0">
+          <div className="mb-5 rounded-xl border border-blue-200 bg-blue-50 p-4 text-sm leading-6 text-blue-950">이 페이지는 핵심 요약과 자가 점검 레슨입니다. <Link className="font-bold underline" href={`/textbook/${chapterStart(lesson.chapter)!.slug}/`}>제{lesson.chapter}장 교재 전체 설명 읽기 →</Link></div>
           <nav aria-label="현재 위치" className="mb-5 flex flex-wrap items-center gap-1 text-sm text-slate-500">
             <Link href="/" className="hover:text-blue-700">학습 홈</Link><ChevronRight className="size-4" />
             <span>모듈 {module.number}</span><ChevronRight className="size-4" />

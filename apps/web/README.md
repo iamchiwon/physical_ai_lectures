@@ -44,6 +44,12 @@ npm run build:web
 
 ## 주요 디렉터리
 
+- `/textbook/`: 개념 설명·실습·평가 목차. 책의 본문 설명을 절 단위로 분할하며 원문 누락을 검사합니다. 머리말·표지·장 구분 페이지·이식 부록은 제외합니다. 실습 환경과 안전 수칙은 준비 과정으로, 용어집은 검색·복습 카드로 제공합니다.
+- `src/components/written-exercises.tsx`: 확인문제·연습문제·프로젝트·실습 보고서의 답안 입력, 브라우저 저장, AI 평가와 해설 비교.
+- `src/components/textbook-lab.tsx`: 실습별 브라우저 개념 시뮬레이션과 해설. 실제 Python/ROS 코드를 실행하지 않습니다.
+- `src/lib/textbook.ts`: 빌드 시 원고를 읽고 정적 읽기 페이지·링크를 구성합니다. 런타임 서버는 필요하지 않습니다.
+- `scripts/prepare-textbook.mjs`: `prebuild`/`predev`에서 그림·원고·예제 파일을 `public/textbook-assets/`로 준비합니다. 생성 자산은 Git에서 제외됩니다.
+
 - `src/data`: 과정·레슨·자가점검 정적 데이터
 - `src/components`: 학습 UI, 가상실습, 진도, AI 강사 drawer
 - `src/lib/api-client.ts`: Worker API 접근 경계
