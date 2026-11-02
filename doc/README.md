@@ -12,6 +12,8 @@
 - [A01 현재 구조·보존 대상 분석](v2/current_state_analysis.md)
 - [A02 카탈로그·콘텐츠 참조·준비도 계약](v2/catalog_contract.md)
 - [A02 준비도·호환 검수 사례](v2/catalog_contract_cases.md)
+- [A03 204소주제 기존 콘텐츠 매핑](v2/content_mapping.md)
+- [A03 기존 자산 보존·역색인](v2/asset_preservation.md)
 
 각 작업은 기준 확정 → 작성 → 탈고 → 검수 → 보완/재검수 → 완료 순서로 진행하고 단계마다 체크리스트를 갱신합니다.
 
