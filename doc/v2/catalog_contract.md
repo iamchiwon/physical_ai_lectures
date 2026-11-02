@@ -1,7 +1,7 @@
 # A02 통합 카탈로그·콘텐츠 참조·준비도 계약 v1
 
 - 확정일: 2026-11-02 / 적용 브랜치: `v2`
-- 상태: 설계 계약. 앱·공유 타입·API·저장소에 아직 구현되지 않음.
+- 상태: A02 확정 당시 설계 계약. 현재 B01의 공유 타입·등록 데이터·준비도 구현은 [사용 안내](runtime_catalog.md)를 참고한다. 화면·API·저장 이행은 후속 단계이다.
 - 근거: [A01 분석](current_state_analysis.md), [기존 ID 기준선](inventory/legacy-content.json), [통합 커리큘럼](../integrated_curriculum.md)
 - 검수: [작업 기록](work_items/A02.md), [사례](catalog_contract_cases.md), [축약 예시 JSON](inventory/catalog-contract-examples.json)
 

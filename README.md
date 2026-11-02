@@ -38,8 +38,12 @@ npm run dev
 ```bash
 npm run check
 npm run lint
+npm run test:catalog
+npm run test:tutor
 npm run build
 ```
+
+V2 공유 카탈로그의 사용·준비도·검수 범위는 [B01 안내](doc/v2/runtime_catalog.md)를 참고하세요.
 
 ## 배포
 

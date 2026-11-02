@@ -18,7 +18,9 @@
     "lint": "npm run lint --workspaces --if-present",
     "test:tutor": "node --test tests/tutor.test.mjs",
     "deploy:web": "wrangler pages deploy apps/web/out --project-name physical-ai-learning-web",
-    "deploy:api": "npm run deploy --workspace @physical-ai/api"
+    "deploy:api": "npm run deploy --workspace @physical-ai/api",
+    "test:catalog": "node --test tests/catalog.test.mjs",
+    "prebuild": "npm run test:catalog"
   },
   "devDependencies": {
     "concurrently": "^9.2.1",
