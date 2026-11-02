@@ -1,13 +1,14 @@
 import { DEFAULT_OPENROUTER_MODEL } from "@physical-ai/shared";
 import type { Bindings } from "../env";
 
-export const DIAGNOSTICS_VERSION = "2026-11-02.2";
+export const DIAGNOSTICS_VERSION = "2026-11-02.3";
 type Operation = "tutor" | "assessment" | "summary";
 type RecordValue = Record<string, unknown>;
 type GenerationInput = {
   messages: { role: "system" | "user" | "assistant"; content: string }[];
   temperature: number;
   maxTokens?: number;
+  responseFormat?: Record<string, unknown>;
 };
 function object(value: unknown): RecordValue {
   return value !== null && typeof value === "object" ? value as RecordValue : {};
@@ -74,9 +75,12 @@ export async function generateOpenRouterText(env: Bindings, operation: Operation
         messages: input.messages,
         temperature: input.temperature,
         max_tokens: input.maxTokens ?? 4096,
+        ...(input.responseFormat ? { response_format: input.responseFormat } : {}),
         stream: false,
+        // Leave room for the visible answer instead of spending the whole budget on reasoning.
+        reasoning: { effort: "low", exclude: true },
         // A second cost guard: only endpoints with zero token prices are eligible.
-        provider: { max_price: { prompt: 0, completion: 0 } },
+        provider: { max_price: { prompt: 0, completion: 0 }, ...(input.responseFormat ? { require_parameters: true } : {}) },
       }),
       signal: AbortSignal.timeout(timeoutMs),
     });
@@ -98,13 +102,17 @@ export async function generateOpenRouterText(env: Bindings, operation: Operation
     const choices = Array.isArray(root.choices) ? root.choices : [];
     const choice = object(choices[0]);
     const message = object(choice.message);
+    const usage = object(root.usage);
+    const tokenCount = (value: unknown) => typeof value === "number" && Number.isSafeInteger(value) && value >= 0 && value <= 10_000_000 ? value : undefined;
+    const completionTokens = tokenCount(usage.completion_tokens);
+    const reasoningTokens = tokenCount(object(usage.completion_tokens_details).reasoning_tokens);
     const text = typeof message.content === "string" ? message.content.trim() : "";
     const finishReason = known(choice.finish_reason, ["stop", "length", "content_filter", "error", "tool_calls"]);
     if (finishReason === "error" || finishReason === "content_filter" || !text) {
-      fail({ failure: "EMPTY_OR_FAILED_TEXT_RESPONSE", finishReason, choiceCount: choices.length });
+      fail({ failure: "EMPTY_OR_FAILED_TEXT_RESPONSE", finishReason, choiceCount: choices.length, completionTokens, reasoningTokens });
       throw new Error("No usable answer returned");
     }
-    const event = { event: "openrouter_request_completed", ...fields, stage, upstreamStatus, elapsedMs: Date.now() - started, finishReason, truncated: finishReason === "length" };
+    const event = { event: "openrouter_request_completed", ...fields, stage, upstreamStatus, elapsedMs: Date.now() - started, finishReason, truncated: finishReason === "length", completionTokens, reasoningTokens };
     if (finishReason === "length") console.warn(event);
     else console.info(event);
     // Return only final content, never reasoning/reasoning_details.

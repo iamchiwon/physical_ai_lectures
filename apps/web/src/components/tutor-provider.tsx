@@ -1,7 +1,7 @@
 "use client";
 
 import * as React from "react";
-import { afterMemory, buildTutorContext, selectSummaryChunk, TUTOR_MAX_HISTORY, TUTOR_RECENT_TURNS } from "@physical-ai/shared";
+import { afterMemory, buildTutorContext, selectLearnerState, TUTOR_INSTRUCTIONS, selectSummaryChunk, TUTOR_MAX_HISTORY, TUTOR_RECENT_TURNS } from "@physical-ai/shared";
 import { askTutor, summarizeTutor } from "@/lib/api-client";
 import { createTutorStore, successfulTurns, TUTOR_STORAGE_KEY, type TutorState, type TutorStore } from "@/lib/tutor-store";
 
@@ -13,8 +13,6 @@ interface TutorContextValue {
   resetConversation: (chapterId?:string) => void;
 }
 const TutorContext = React.createContext<TutorContextValue | null>(null);
-// Reserve more instruction space on the client; the Worker independently enforces the final budget.
-const INSTRUCTION_RESERVE = "x".repeat(2400);
 export function TutorProvider({ children }: {children:React.ReactNode}) {
   const [store] = React.useState(() => createTutorStore(() => window.localStorage));
   const state = React.useSyncExternalStore(store.subscribe,store.getSnapshot,store.getServerSnapshot);
@@ -45,10 +43,11 @@ export function TutorProvider({ children }: {children:React.ReactNode}) {
       const completed = successfulTurns(before.turns);
       let memory = before.memory;
       let history = afterMemory(completed,memory);
+      const learnerState = selectLearnerState(before.learnerState, `${lesson.title} ${question}`);
       let summaryFailed = false;
       // Usually one summary is enough; cap recovery work after repeated failures to two API calls.
       for (let batch=0; batch<2; batch++) {
-        const preview = buildTutorContext(INSTRUCTION_RESERVE,lesson,question,memory?.content ?? "",history);
+        const preview = buildTutorContext(TUTOR_INSTRUCTIONS,lesson,question,memory?.content ?? "",history,learnerState);
         if (!preview.omittedTurns && !preview.truncated) break;
         const older = history.slice(0,Math.max(0,history.length-TUTOR_RECENT_TURNS));
         if (!older.length) break;
@@ -67,14 +66,14 @@ export function TutorProvider({ children }: {children:React.ReactNode}) {
           summaryFailed = true; break;
         }
       }
-      const context = buildTutorContext(INSTRUCTION_RESERVE,lesson,question,memory?.content ?? "",history);
+      const context = buildTutorContext(TUTOR_INSTRUCTIONS,lesson,question,memory?.content ?? "",history,learnerState);
       // Send only the suffix that fits. Keep full raw turns locally for future summary recovery.
       const selected = history.slice(Math.max(context.omittedTurns,history.length-TUTOR_MAX_HISTORY));
       store.update({phase:"answering",contextNotice:summaryFailed ? "이전 대화 요약에 실패해 기존 요약과 최근 대화를 우선 참고합니다. 원본 대화는 보존되며 다음 질문에서 요약을 다시 시도합니다." : context.omittedTurns || context.truncated ? "대화 길이 제한으로 기존 요약과 최근 대화 일부를 참고합니다. 원본 대화는 보존됩니다." : null});
-      const result = await askTutor({question,lesson,history:selected,summary:memory?.content ?? ""},abort.signal);
+      const result = await askTutor({question,lesson,history:selected,summary:memory?.content ?? "",learnerState},abort.signal);
       if (!current()) return;
       const snapshot=store.getSnapshot();
-      store.update({turns:snapshot.turns.map((turn)=>turn.id===id?{...turn,answer:result.answer,status:"answered",mode:result.mode,model:result.model}:turn),contextNotice:result.contextLimited && !snapshot.contextNotice ? "입력 길이 제한으로 최근 대화 일부만 참고했습니다. 원본 대화는 보존됩니다." : snapshot.contextNotice},true);
+      store.update({turns:snapshot.turns.map((turn)=>turn.id===id?{...turn,answer:result.answer,status:"answered",mode:result.mode,model:result.model,learnerUpdates:result.learnerUpdates ?? []}:turn),contextNotice:result.contextLimited && !snapshot.contextNotice ? "입력 길이 제한으로 최근 대화 일부만 참고했습니다. 원본 대화는 보존됩니다." : snapshot.contextNotice},true);
     } catch (error) {
       if (!current()) return;
       const snapshot=store.getSnapshot();

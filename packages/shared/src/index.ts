@@ -1,4 +1,5 @@
 import { z } from "zod";
+import { learnerStateSchema, learnerUpdateSchema } from "./learner-state";
 
 export const DEFAULT_OPENROUTER_MODEL = "openrouter/free";
 
@@ -22,6 +23,7 @@ export type TutorSummaryRequest = z.infer<typeof tutorSummaryRequestSchema>;
 
 export const tutorRequestSchema = z.object({
   question: z.string().trim().min(2).max(1200),
+  learnerState: learnerStateSchema.default([]),
   history: z.array(conversationTurnSchema).max(24).default([]),
   summary: z.string().max(6000).default(""),
   lesson: z.object({
@@ -37,6 +39,7 @@ export const tutorResponseSchema = z.object({
   mode: z.enum(["openrouter", "gemini", "demo"]),
   model: z.string(),
   contextLimited: z.boolean().optional(),
+  learnerUpdates: z.array(learnerUpdateSchema).max(3).optional(),
 });
 
 export const errorResponseSchema = z.object({ error: z.string() });
@@ -57,3 +60,6 @@ export const assessmentResponseSchema = z.object({
 export type AssessmentRequest = z.infer<typeof assessmentRequestSchema>;
 
 export * from "./tutor-context";
+
+export * from "./learner-state";
+export * from "./tutor-prompts";

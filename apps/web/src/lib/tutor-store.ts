@@ -1,5 +1,5 @@
 import { z } from "zod";
-import { conversationTurnSchema, type ConversationMemory, type ConversationTurn } from "@physical-ai/shared";
+import { conversationTurnSchema, deriveLearnerState, learnerUpdateSchema, type LearnerTopic, type ConversationMemory, type ConversationTurn } from "@physical-ai/shared";
 
 export const TUTOR_STORAGE_KEY = "physical-ai:tutor:v1";
 const storedTurnSchema = conversationTurnSchema.omit({ answer: true }).extend({
@@ -7,6 +7,7 @@ const storedTurnSchema = conversationTurnSchema.omit({ answer: true }).extend({
   status: z.enum(["pending", "answered", "failed"]),
   mode: z.enum(["openrouter", "gemini", "demo"]).optional(),
   model: z.string().max(200).optional(),
+  learnerUpdates: z.array(learnerUpdateSchema).max(3).catch([]).optional(),
 });
 export type StoredTutorTurn = z.infer<typeof storedTurnSchema>;
 const storedSchema = z.object({
@@ -17,6 +18,7 @@ const storedSchema = z.object({
 export interface TutorState {
   turns: StoredTutorTurn[];
   memory: ConversationMemory | null;
+  learnerState: LearnerTopic[];
   hydrated: boolean;
   loading: boolean;
   phase: "answering" | "summarizing";
@@ -27,7 +29,7 @@ export interface TutorState {
   contextNotice: string | null;
   epoch: number;
 }
-const INITIAL: TutorState = { turns: [], memory: null, hydrated: false, loading: false, phase: "answering", drawerOpen: false, draft: "", error: null, storageNotice: null, contextNotice: null, epoch: 0 };
+const INITIAL: TutorState = { turns: [], memory: null, learnerState: [], hydrated: false, loading: false, phase: "answering", drawerOpen: false, draft: "", error: null, storageNotice: null, contextNotice: null, epoch: 0 };
 export function successfulTurns(turns: StoredTutorTurn[]): ConversationTurn[] {
   return turns.filter((turn) => turn.status === "answered" && turn.mode !== "demo" && Boolean(turn.answer)).map((turn) => ({ id:turn.id, chapterId:turn.chapterId, chapterTitle:turn.chapterTitle, lessonId:turn.lessonId, lessonTitle:turn.lessonTitle, question:turn.question, answer:turn.answer! }));
 }
@@ -46,7 +48,7 @@ export function createTutorStore(storage: () => Pick<Storage, "getItem" | "setIt
     const parsed = raw ? storedSchema.parse(JSON.parse(raw)) : { turns:[], memory:null };
     const turns = parsed.turns.map((turn): StoredTutorTurn => turn.status === "pending" ? {...turn,status:"failed"} : turn);
     const memory = parsed.memory && successfulTurns(turns).some((turn) => turn.id === parsed.memory!.throughId) ? parsed.memory : null;
-    return { turns, memory };
+    return { turns, memory, learnerState: deriveLearnerState(turns) };
   }
   return {
     getSnapshot: () => state,
@@ -60,13 +62,14 @@ export function createTutorStore(storage: () => Pick<Storage, "getItem" | "setIt
     },
     update(patch: Partial<TutorState>, save = false) {
       state = {...state,...patch};
+      if (patch.turns) state = {...state,learnerState:deriveLearnerState(patch.turns)};
       if (save) persist();
       notify();
     },
     reset(chapterId?: string) {
       const turns = chapterId ? state.turns.filter((turn) => turn.chapterId !== chapterId).map((turn): StoredTutorTurn => turn.status === "pending" ? {...turn,status:"failed"} : turn) : [];
       // A global summary can contain any chapter: invalidate it rather than retaining deleted facts.
-      state = {...state, turns, memory:null, epoch:state.epoch+1, loading:false, draft:"", error:null, contextNotice:null};
+      state = {...state, turns, memory:null, learnerState:deriveLearnerState(turns), epoch:state.epoch+1, loading:false, draft:"", error:null, contextNotice:null};
       persist();
       if (state.storageNotice) state = {...state,storageNotice:"초기화 내용을 저장하지 못했습니다. 새로고침하면 삭제 전 대화가 다시 나타날 수 있습니다. 브라우저의 사이트 저장소 설정을 확인해 주세요."};
       notify();

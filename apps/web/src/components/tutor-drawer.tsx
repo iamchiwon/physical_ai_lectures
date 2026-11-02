@@ -58,7 +58,7 @@ export function TutorDrawer({ lessonId, lessonTitle, chapterId, chapterTitle, co
           {!state.hydrated?<p className="text-sm text-slate-500">저장된 대화를 불러오고 있어요…</p>:null}
           {state.storageNotice?<p role="alert" className="rounded-xl bg-amber-50 p-3 text-xs leading-5 text-amber-900">{state.storageNotice}</p>:null}
           {state.hydrated&&!turns.length?<div className="rounded-2xl bg-blue-50 p-4 text-sm leading-6 text-slate-700">
-            <p className="font-bold text-blue-900">어디에서 막혔나요?</p><p className="mt-1">비유와 질문으로 스스로 이해하도록 도와드릴게요. 챕터를 이동하거나 새로고침해도 대화를 이어갈 수 있습니다.</p>
+            <p className="font-bold text-blue-900">어디에서 막혔나요?</p><p className="mt-1">핵심부터 쉽게 설명하고, 질문과 반응에 맞춰 설명 수준을 조절해 드리겠습니다. 챕터를 이동하거나 새로고침해도 대화를 이어갈 수 있습니다.</p>
             <div className="mt-4 grid gap-2">{suggestedQuestions.map((suggestion)=><button key={suggestion} type="button" onClick={()=>store.update({draft:suggestion})} className="rounded-xl border border-blue-100 bg-white p-3 text-left text-sm text-blue-800 hover:border-blue-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500">{suggestion}</button>)}</div>
           </div>:null}
           {turns.length>visibleCount?<Button type="button" variant="outline" size="sm" onClick={()=>setVisibleCount((count)=>count+40)}>이전 대화 더 보기 ({turns.length-visibleCount})</Button>:null}
@@ -82,10 +82,10 @@ export function TutorDrawer({ lessonId, lessonTitle, chapterId, chapterTitle, co
             <Dialog.Overlay className="fixed inset-0 z-[70] bg-slate-950/40" />
             <Dialog.Content role="alertdialog" onOpenAutoFocus={(event)=>{event.preventDefault();cancelRef.current?.focus();}} className="fixed left-1/2 top-1/2 z-[80] w-[calc(100%-2rem)] max-w-md -translate-x-1/2 -translate-y-1/2 rounded-2xl border border-slate-200 bg-white p-6 shadow-2xl">
               <Dialog.Title className="text-lg font-bold text-slate-950">대화를 초기화할까요?</Dialog.Title>
-              <Dialog.Description className="mt-2 text-sm leading-6 text-slate-600">선택한 범위의 질문·답변과 관련 요약을 이 브라우저에서 삭제합니다. <strong className="text-rose-700">삭제한 대화는 되돌릴 수 없습니다.</strong></Dialog.Description>
+              <Dialog.Description className="mt-2 text-sm leading-6 text-slate-600">선택한 범위의 질문·답변, 관련 요약과 학습자 상태를 이 브라우저에서 삭제합니다. <strong className="text-rose-700">삭제한 대화는 되돌릴 수 없습니다.</strong></Dialog.Description>
               <fieldset className="mt-5 space-y-3"><legend className="sr-only">초기화 범위</legend>
                 <label className="flex cursor-pointer items-start gap-3 rounded-xl border border-slate-200 p-3"><input type="radio" name="tutor-reset-scope" value="chapter" checked={resetScope==="chapter"} onChange={()=>setResetScope("chapter")} className="mt-1" /><span className="text-sm"><span className="block font-semibold">현재 챕터의 대화만 ({chapterCount}회)</span><span className="mt-1 block text-xs leading-5 text-slate-500">{chapterTitle}의 교재·실습 단원에서 나눈 대화를 삭제합니다. 다른 챕터의 대화는 유지합니다.</span></span></label>
-                <label className="flex cursor-pointer items-start gap-3 rounded-xl border border-slate-200 p-3"><input type="radio" name="tutor-reset-scope" value="all" checked={resetScope==="all"} onChange={()=>setResetScope("all")} className="mt-1" /><span className="text-sm"><span className="block font-semibold">전체 대화 ({turns.length}회)</span><span className="mt-1 block text-xs leading-5 text-slate-500">모든 챕터의 질문·답변과 누적 요약을 삭제합니다.</span></span></label>
+                <label className="flex cursor-pointer items-start gap-3 rounded-xl border border-slate-200 p-3"><input type="radio" name="tutor-reset-scope" value="all" checked={resetScope==="all"} onChange={()=>setResetScope("all")} className="mt-1" /><span className="text-sm"><span className="block font-semibold">전체 대화 ({turns.length}회)</span><span className="mt-1 block text-xs leading-5 text-slate-500">모든 챕터의 질문·답변, 누적 요약과 학습자 상태를 삭제합니다.</span></span></label>
               </fieldset>
               <div className="mt-5 flex justify-end gap-2"><Button ref={cancelRef} type="button" variant="outline" onClick={()=>setResetOpen(false)}>취소</Button><Button type="button" disabled={!resetCount} className="bg-rose-600 hover:bg-rose-700" onClick={()=>{resetConversation(resetScope==="chapter"?chapterId:undefined);setResetOpen(false);}}>삭제하기 ({resetCount}회)</Button></div>
             </Dialog.Content>

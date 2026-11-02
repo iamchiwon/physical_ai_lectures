@@ -53,7 +53,7 @@ npm run deploy
 
 실패 분류는 `NON_FREE_MODEL_BLOCKED`, `UPSTREAM_HTTP_ERROR`, `REQUEST_TIMEOUT`, `EMPTY_OR_FAILED_TEXT_RESPONSE`, `INVALID_JSON_RESPONSE`, `NETWORK_OR_RUNTIME_ERROR`입니다. 401은 키, 402는 계정 잔액, 429는 무료 호출 한도, 503은 무료 모델 가용성을 확인하세요. 응답 본문에 오류가 있는 HTTP 200도 실패로 처리합니다.
 
-`GET /v1/health`의 `diagnosticsVersion`이 `2026-11-02.2`이면 이번 변경이 배포된 것입니다.
+`GET /v1/health`의 `diagnosticsVersion`이 `2026-11-02.3`이면 이번 변경이 배포된 것입니다.
 
 
 ## 챕터를 넘나드는 대화와 요약
@@ -73,3 +73,21 @@ npm run deploy
 저장 형식을 검사하며 저장 용량·접근 제한은 UI에 경고합니다. 다른 탭의 저장 변경도 반영하고 진행 중 요청을 취소합니다. 동시 탭에서 정확히 동시에 수정하면 마지막 저장을 따릅니다. 다른 브라우저·기기·도메인 간 동기화는 제공하지 않습니다.
 
 회귀 검증: 저장소 루트에서 `npm run test:tutor`.
+
+
+## 적응형 AI 강사
+
+페르소나와 지침은 `packages/shared/src/tutor-prompts.ts`의 `TUTOR_INSTRUCTIONS`에서 관리합니다. 친절하고 간결한 1타 강사 말투, 항상 존대말, 이모지 금지이며 비유·유도 질문·정리를 매번 강제하지 않습니다. 컴공 졸업은 초기 기준으로만 사용하고 개념별 이해 수준과 현재 질문에 맞춰 설명합니다.
+
+강사 요청은 `response_format: json_schema`와 `require_parameters:true`를 사용해 구조화 출력을 지원하는 무료 공급자만 대상으로 합니다. [구조화 출력](https://openrouter.ai/docs/guides/features/structured-outputs), [무료 라우터 기능 필터](https://openrouter.ai/docs/guides/routing/routers/free-router).
+
+강사 호출은 같은 무료 모델 요청 1회에서 `{answer, learnerUpdates}` JSON을 생성합니다. `answer`만 말풍선에 표시합니다. 모델이 일반 Markdown으로 답하면 답변을 유지하고 상태를 갱신하지 않습니다. JSON의 상태 형식이 잘못되거나 근거가 없으면 해당 갱신안을 버립니다. 잘린/깨진 JSON은 내부 평가를 노출하지 않고 데모 응답으로 처리하며 `tutor_output_format_invalid` 이벤트만 기록합니다. 형식 실패로 유료 모델이나 추가 AI 호출을 사용하지 않습니다.
+
+`learnerUpdates`는 개념별 이해 상태(미확인·처음 접함·도움받아 이해·독립 적용), 확인된 지식, 어려움·오개념, 설명 전략, 확실성, 근거 종류·인용문을 담습니다. 갱신은 최대 3개이고 근거 인용이 **이번 질문에 실제 포함된 경우**만 수용합니다. 질문만으로 추정한 상태는 코드에서 미확인·낮은 확실성으로 제한합니다. AI가 설명했다는 사실은 이해의 증거가 아닙니다. 모델의 의미 판단 자체가 정확함을 보장하는 것은 아니므로 현재 학습자의 정정이 우선합니다.
+
+검증한 상태 갱신안은 근거가 된 로컬 대화에 함께 저장하고 복원 시 상태를 재구성합니다. 요청의 `learnerState`(선택, 최대 12개 개념)를 서버가 검증하고 현재 단원·질문과 관련된 상태를 우선하여 추정 800토큰 이내로 조립합니다. 이 공간도 전체 입력 12,000토큰에 포함됩니다. 서버와 브라우저가 같은 시스템 지침으로 길이를 계산하고 구조화 출력 스키마용으로 1,000 추정 토큰을 추가 예약합니다.
+
+현재 챕터 초기화 시 그 대화에 근거한 상태를 제거하고 남은 대화에서 다시 구성합니다. 전체 초기화는 상태도 지웁니다. 대화 요약과 별도로 근거를 보존하므로 요약 처리 후에도 학습 상태가 유지됩니다. 과거 버전의 저장 데이터는 상태 없이 복원할 수 있습니다. 질문·답변·근거 인용·학습자 상태 원문은 로그에 기록하지 않습니다.
+
+
+실제 무료 모델 호출에서 `finish_reason=length`와 빈 답변이 관찰되어 `reasoning: {effort:"low", exclude:true}`를 적용합니다. 추론 토큰도 출력 예산에 포함될 수 있으므로 최종 답변 공간을 확보하려는 설정입니다. 공급자별 적용 여부는 다를 수 있습니다. 진단에는 숫자로 된 완료·추론 토큰 수만 추가하고 추론 원문은 기록하지 않습니다. [OpenRouter 추론 토큰 문서](https://openrouter.ai/docs/guides/best-practices/reasoning-tokens)

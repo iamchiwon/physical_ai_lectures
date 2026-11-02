@@ -78,6 +78,9 @@ test('API sends assistant history, summarizes without logging content, and rejec
     assert.ok(upstream[0].messages.some(m=>m.role==='assistant'&&m.content==='PRIVATE_ANSWER'));
     assert.ok(upstream[0].messages.some(m=>m.content.includes('PRIVATE_SUMMARY')));
     assert.deepEqual(upstream[0].provider.max_price,{prompt:0,completion:0});
+    assert.equal(upstream[0].response_format.type,"json_schema");
+    assert.equal(upstream[0].provider.require_parameters,true);
+    assert.deepEqual(upstream[0].reasoning,{effort:"low",exclude:true});
     responsePayload={choices:[{message:{content:'이전 질문과 미해결 과제를 요약했습니다.'},finish_reason:'stop'}]};
     response=await request('tutor/summary',{previousSummary:'PRIVATE_SUMMARY',turns:[turn('old')]});
     assert.equal(response.status,200);assert.ok((await response.json()).summary);
@@ -92,5 +95,81 @@ test('API sends assistant history, summarizes without logging content, and rejec
     assert.equal((await request('tutor',{question:'followup',lesson,history:Array(25).fill(turn('a'))})).status,400);
     const serialized=JSON.stringify(logs);
     for(const secret of ['PRIVATE_KEY','PRIVATE_QUESTION','PRIVATE_ANSWER','PRIVATE_SUMMARY','PRIVATE_PROVIDER_MESSAGE'])assert.ok(!serialized.includes(secret));
+  } finally {globalThis.fetch=originalFetch;Object.assign(console,originals);}
+});
+
+const learnerUpdate = (overrides={}) => ({
+  topic:'좌표계 변환',understanding:'new',known:'행렬 곱의 기본 연산',difficulty:'변환 적용 순서',
+  strategy:'좌표계 이름과 적용 순서를 연결해 설명',confidence:'high',evidenceKind:'self_report',
+  evidenceQuote:'행렬 곱은 알지만 변환 순서는 모르겠어요',...overrides,
+});
+test('learner observations must be grounded in the actual question; bare questions cannot prove mastery',()=>{
+  const update=learnerUpdate();
+  assert.equal(shared.groundLearnerUpdates([update],'처음입니다').length,0);
+  assert.equal(shared.groundLearnerUpdates([update],update.evidenceQuote).length,1);
+  const inferred=shared.groundLearnerUpdates([learnerUpdate({evidenceKind:'question',understanding:'independent'})],update.evidenceQuote)[0];
+  assert.equal(inferred.understanding,'unknown');assert.equal(inferred.confidence,'low');assert.equal(inferred.known,'');
+});
+test('learner state restores locally; chapter deletion rebuilds it from remaining evidence',()=>{
+  const update=learnerUpdate();const storage=memoryStorage();const store=storageModule.createTutorStore(()=>storage);store.hydrate();
+  const first={...stored('a'),question:update.evidenceQuote,learnerUpdates:[update]};
+  const corrected=learnerUpdate({understanding:'guided',difficulty:'',evidenceQuote:'이제 변환 순서가 이해돼요'});
+  const second={...stored('b','chapter-2'),question:corrected.evidenceQuote,learnerUpdates:[corrected]};
+  store.update({turns:[first,second]},true);
+  assert.equal(store.getSnapshot().learnerState[0].understanding,'guided');
+  const restored=storageModule.createTutorStore(()=>storage);restored.hydrate();
+  assert.equal(restored.getSnapshot().learnerState[0].difficulty,'');
+  restored.reset('chapter-2');assert.equal(restored.getSnapshot().learnerState[0].understanding,'new');
+  assert.deepEqual(restored.getSnapshot().learnerState[0].evidenceTurnIds,['a']);
+  restored.reset();assert.deepEqual(restored.getSnapshot().learnerState,[]);
+});
+test('AI-only explanations, demo replies and unsupported guesses do not replace established learner facts',()=>{
+  const update=learnerUpdate();
+  const first={...stored('a'),question:update.evidenceQuote,learnerUpdates:[update]};
+  const guess=learnerUpdate({understanding:'independent',evidenceKind:'question',evidenceQuote:'다시 알려주세요'});
+  const later={...stored('b'),question:'다시 알려주세요',learnerUpdates:[guess]};
+  const demo={...stored('demo'),mode:'demo',question:update.evidenceQuote,learnerUpdates:[learnerUpdate({topic:'Python'})]};
+  const unsupported={...stored('unsupported'),question:'다시 알려주세요',learnerUpdates:[learnerUpdate({topic:'ROS'})]};
+  const state=shared.deriveLearnerState([first,later,demo,unsupported]);
+  assert.equal(state.length,1);assert.equal(state[0].understanding,'new');
+});
+test('learner context prioritizes relevant knowledge, stays within 800 tokens and counts toward total budget',()=>{
+  const state=Array.from({length:12},(_,i)=>({...learnerUpdate({topic:i===11?'좌표계 변환':'다른 개념 '+i}),evidenceTurnIds:['evidence-'+i]}));
+  const context=shared.learnerContext(state,'좌표계 변환');
+  assert.match(context,/좌표계 변환/);assert.ok(shared.estimateTokens(context)<=800);
+  const result=shared.buildTutorContext(shared.TUTOR_INSTRUCTIONS,{...lesson,contextSummary:'관측'.repeat(1900)},'좌표계 변환 '.repeat(120),'미해결 개념 '.repeat(100),Array.from({length:24},(_,i)=>turn('t'+i,'chapter-1','긴 답변 '.repeat(2000))),state);
+  assert.ok(shared.messageTokens(result.messages)<=shared.TUTOR_INPUT_TOKENS);
+  assert.ok(result.messages[1].content.startsWith('학습자 상태'));
+});
+test('output envelope separates visible answer from assessment and preserves plain Markdown compatibility',async()=>{
+  const {parseTutorOutput,TUTOR_RESPONSE_FORMAT}=await load('apps/api/src/services/tutor-output.ts');
+  assert.ok(shared.estimateTokens(JSON.stringify(TUTOR_RESPONSE_FORMAT))<=shared.TUTOR_FORMAT_RESERVE_TOKENS);
+  const update=learnerUpdate();
+  let result=parseTutorOutput(JSON.stringify({answer:'행렬 곱을 기준으로 설명드리겠습니다.',learnerUpdates:[update]}),update.evidenceQuote);
+  assert.equal(result.learnerUpdates.length,1);assert.ok(!result.answer.includes('learnerUpdates'));
+  result=parseTutorOutput(JSON.stringify({answer:'간결하게 설명드리겠습니다.',learnerUpdates:[{bad:'invalid'}]}),update.evidenceQuote);
+  assert.deepEqual(result.learnerUpdates,[]);assert.equal(result.answer,'간결하게 설명드리겠습니다.');
+  assert.equal(parseTutorOutput('**관측**부터 살펴보겠습니다.',update.evidenceQuote).learnerUpdates.length,0);
+  assert.throws(()=>parseTutorOutput('{"answer":"unfinished',update.evidenceQuote));
+  assert.throws(()=>parseTutorOutput('설명입니다. {"answer":"partial", "learnerUpdates": [',update.evidenceQuote));
+  assert.equal(parseTutorOutput(JSON.stringify({answer:'설명입니다.',learnerUpdates:[update]}),update.evidenceQuote,true).learnerUpdates.length,0);
+});
+test('API injects persona and learner state, returns grounded updates without logging learner data',async()=>{
+  const originalFetch=globalThis.fetch;const originals={info:console.info,warn:console.warn,error:console.error};const logs=[];
+  for(const level of Object.keys(originals))console[level]=(...args)=>logs.push(args);
+  const update=learnerUpdate({evidenceQuote:'PRIVATE_LEARNER 이제 이해했어요'});
+  const state=[{...learnerUpdate(),evidenceTurnIds:['previous']}];
+  let sent;let calls=0;
+  try {
+    globalThis.fetch=async(url,options)=>{
+      calls++;sent=JSON.parse(options.body);
+      return Response.json({model:'example/free',choices:[{message:{content:JSON.stringify({answer:'익숙한 행렬 곱과 연결해 설명드리겠습니다.',learnerUpdates:[update]})},finish_reason:'stop'}]});
+    };
+    const response=await app.request('/v1/tutor',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({question:update.evidenceQuote,lesson,learnerState:state})},{ALLOWED_ORIGINS:'http://localhost:3000',OPENROUTER_API_KEY:'PRIVATE_KEY'});
+    const result=await response.json();
+    assert.equal(result.mode,'openrouter');assert.equal(result.learnerUpdates.length,1);assert.equal(calls,1);
+    assert.match(sent.messages[0].content,/1타 강사/);assert.match(sent.messages[0].content,/이모지는 사용하지 않는다/);assert.match(sent.messages[0].content,/존대말/);
+    assert.ok(sent.messages.some(message=>message.content.startsWith('학습자 상태')));
+    assert.ok(!JSON.stringify(logs).includes('PRIVATE_LEARNER'));assert.ok(!JSON.stringify(logs).includes('행렬 곱'));
   } finally {globalThis.fetch=originalFetch;Object.assign(console,originals);}
 });
