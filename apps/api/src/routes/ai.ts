@@ -1,7 +1,7 @@
 import { tutorRequestSchema, assessmentRequestSchema } from "@physical-ai/shared";
 import { Hono } from "hono";
 import type { Bindings } from "../env";
-import { answerTutorQuestion, assessAnswer } from "../services/gemini";
+import { answerTutorQuestion, assessAnswer } from "../services/ai";
 
 export const aiRoutes = new Hono<{ Bindings: Bindings }>();
 

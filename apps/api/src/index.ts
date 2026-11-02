@@ -2,7 +2,7 @@ import { Hono } from "hono";
 import { cors } from "hono/cors";
 import type { Bindings } from "./env";
 import { aiRoutes } from "./routes/ai";
-import { DIAGNOSTICS_VERSION } from "./services/gemini-diagnostics";
+import { DIAGNOSTICS_VERSION } from "./services/openrouter";
 
 const app = new Hono<{ Bindings: Bindings }>();
 

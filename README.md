@@ -1,13 +1,13 @@
 # Physical AI 로봇 제어 실무
 
-교과서·자습 콘텐츠, 브라우저 가상실습, Gemini AI 강사를 하나의 서비스로 제공하는 Cloudflare 모노레포입니다.
+교과서·자습 콘텐츠, 브라우저 가상실습, OpenRouter AI 강사를 하나의 서비스로 제공하는 Cloudflare 모노레포입니다.
 
 ## 구조
 
 ```text
 apps/
 ├── web/                 # Next.js static export → Cloudflare Pages
-└── api/                 # Hono Worker + Gemini → Cloudflare Workers
+└── api/                 # Hono Worker + OpenRouter → Cloudflare Workers
 packages/
 └── shared/              # 공유 Zod schema, API type, constant
 ebook/
@@ -19,7 +19,7 @@ ebook/
 └── tmp/                 # 이북 빌드 임시 자료
 ```
 
-프론트엔드는 `out/` 정적 파일만 배포하며 SSR·Next.js Route Handler·Node.js 서버를 사용하지 않습니다. 학습 진도와 퀴즈 점수는 브라우저 `localStorage`에 저장하고, Gemini 텍스트 채팅 요청은 별도 Worker API가 담당합니다.
+프론트엔드는 `out/` 정적 파일만 배포하며 SSR·Next.js Route Handler·Node.js 서버를 사용하지 않습니다. 학습 진도와 퀴즈 점수는 브라우저 `localStorage`에 저장하고, OpenRouter 텍스트 채팅 요청은 별도 Worker API가 담당합니다.
 
 ## 로컬 실행
 
@@ -48,7 +48,7 @@ npm run build
 - Pages output directory: `apps/web/out`
 - Worker deploy: `npm run deploy:api`
 
-최초 배포 전 Pages/Worker origin과 Gemini secret을 설정해야 합니다. 상세 순서는 [Cloudflare 배포 가이드](docs/CLOUDFLARE_DEPLOYMENT.md)를 참고하세요.
+최초 배포 전 Pages/Worker origin과 OpenRouter secret을 설정해야 합니다. 상세 순서는 [Cloudflare 배포 가이드](docs/CLOUDFLARE_DEPLOYMENT.md)를 참고하세요.
 
 ## 이북 빌드
 

@@ -1,1 +1,2 @@
-GEMINI_API_KEY=replace-with-a-local-development-key
+OPENROUTER_API_KEY=replace-with-a-local-development-key
+OPENROUTER_MODEL=openrouter/free

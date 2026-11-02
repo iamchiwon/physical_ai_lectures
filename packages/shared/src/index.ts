@@ -1,6 +1,6 @@
 import { z } from "zod";
 
-export const DEFAULT_GEMINI_MODEL = "gemini-flash-latest";
+export const DEFAULT_OPENROUTER_MODEL = "openrouter/free";
 
 const lessonIdSchema = z.string().trim().min(1).max(120);
 
@@ -13,9 +13,10 @@ export const tutorRequestSchema = z.object({
   }),
 });
 
+// Keep the legacy mode readable while Pages and Worker deployments roll out separately.
 export const tutorResponseSchema = z.object({
   answer: z.string(),
-  mode: z.enum(["gemini", "demo"]),
+  mode: z.enum(["openrouter", "gemini", "demo"]),
   model: z.string(),
 });
 
@@ -32,6 +33,6 @@ export const assessmentRequestSchema = z.object({
 });
 export const assessmentResponseSchema = z.object({
   feedback: z.string(),
-  mode: z.enum(["gemini", "self-review"]),
+  mode: z.enum(["openrouter", "gemini", "self-review"]),
 });
 export type AssessmentRequest = z.infer<typeof assessmentRequestSchema>;

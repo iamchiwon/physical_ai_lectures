@@ -17,7 +17,7 @@ npm run dev:web
 NEXT_PUBLIC_API_BASE_URL=http://localhost:8787
 ```
 
-Gemini API 키와 모델 설정은 프론트에 두지 않습니다. `GEMINI_API_KEY`, `GEMINI_MODEL`은 `apps/api` Worker의 secret/variable입니다.
+OpenRouter API 키와 모델 설정은 프론트에 두지 않습니다. `OPENROUTER_API_KEY`, `OPENROUTER_MODEL`은 `apps/api` Worker의 secret/variable입니다.
 
 ## 정적 빌드와 Cloudflare Pages
 
