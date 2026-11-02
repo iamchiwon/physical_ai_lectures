@@ -1,5 +1,7 @@
 import {
   assessmentResponseSchema,
+  tutorSummaryResponseSchema,
+  type TutorSummaryRequest,
   type AssessmentRequest,
   tutorResponseSchema,
   type TutorRequest,
@@ -38,10 +40,15 @@ async function requestJson(path: string, init?: RequestInit): Promise<unknown> {
   return payload;
 }
 
-export async function askTutor(input: TutorRequest): Promise<TutorResponse> {
+export async function askTutor(input: TutorRequest, signal?: AbortSignal): Promise<TutorResponse> {
   return tutorResponseSchema.parse(await requestJson("/v1/tutor", {
     method: "POST",
     body: JSON.stringify(input),
+    signal: signal ?? null,
   }));
 }
 
+
+export async function summarizeTutor(input: TutorSummaryRequest, signal?: AbortSignal) {
+  return tutorSummaryResponseSchema.parse(await requestJson("/v1/tutor/summary", { method:"POST", body:JSON.stringify(input), signal: signal ?? null }));
+}

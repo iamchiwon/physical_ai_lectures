@@ -54,3 +54,8 @@ npm run build:web
 - `src/components`: 학습 UI, 가상실습, 진도, AI 강사 drawer
 - `src/lib/api-client.ts`: Worker API 접근 경계
 - `src/app`: 빌드 시 정적으로 생성되는 App Router 페이지
+
+
+AI 강사 대화는 루트 `TutorProvider`에서 공유하고 `physical-ai:tutor:v1` localStorage에 저장합니다. 챕터 이동·새로고침 후 대화가 이어지며 질문 당시 강의 정보도 유지합니다. 긴 대화는 Worker의 `/v1/tutor/summary`로 요약하고 최근 대화와 함께 전달합니다. 요약은 AI 맥락만 압축하며 화면의 원본 기록은 유지합니다.
+
+대화 초기화에서 현재 챕터(같은 장의 교재·실습 단원 전체) 또는 전체 대화를 선택합니다. 취소를 기본 포커스로 둔 경고 팝업에서 확인한 뒤 삭제하며, 관련 내용이 남지 않도록 누적 요약도 무효화합니다. 다른 챕터 원본은 보존합니다. 이 초기화는 학습 진도·퀴즈 점수를 지우지 않습니다.

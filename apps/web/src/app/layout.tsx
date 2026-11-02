@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { TutorProvider } from "@/components/tutor-provider";
 import { ProgressProvider } from "@/components/progress-provider";
 import "./globals.css";
 import "katex/dist/katex.min.css";
@@ -15,7 +16,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
   return (
     <html lang="ko" suppressHydrationWarning>
       <body>
-        <ProgressProvider>{children}</ProgressProvider>
+        <ProgressProvider><TutorProvider>{children}</TutorProvider></ProgressProvider>
       </body>
     </html>
   );

@@ -1,12 +1,13 @@
 import { DEFAULT_OPENROUTER_MODEL } from "@physical-ai/shared";
 import type { Bindings } from "../env";
 
-export const DIAGNOSTICS_VERSION = "2026-11-02.1";
-type Operation = "tutor" | "assessment";
+export const DIAGNOSTICS_VERSION = "2026-11-02.2";
+type Operation = "tutor" | "assessment" | "summary";
 type RecordValue = Record<string, unknown>;
 type GenerationInput = {
-  messages: { role: "system" | "user"; content: string }[];
+  messages: { role: "system" | "user" | "assistant"; content: string }[];
   temperature: number;
+  maxTokens?: number;
 };
 function object(value: unknown): RecordValue {
   return value !== null && typeof value === "object" ? value as RecordValue : {};
@@ -38,7 +39,7 @@ function providerDiagnostics(payload: unknown, httpStatus: number) {
 }
 
 export function logMissingKey(operation: Operation) {
-  console.warn({ event: "openrouter_key_missing", diagnosticsVersion: DIAGNOSTICS_VERSION, operation, requestId: crypto.randomUUID(), apiKeyConfigured: false, fallback: operation === "tutor" ? "demo" : "self-review" });
+  console.warn({ event: "openrouter_key_missing", diagnosticsVersion: DIAGNOSTICS_VERSION, operation, requestId: crypto.randomUUID(), apiKeyConfigured: false, fallback: operation === "tutor" ? "demo" : operation === "summary" ? "keep_previous_summary" : "self-review" });
 }
 
 export async function generateOpenRouterText(env: Bindings, operation: Operation, input: GenerationInput, timeoutMs = 60_000) {
@@ -72,7 +73,7 @@ export async function generateOpenRouterText(env: Bindings, operation: Operation
         model,
         messages: input.messages,
         temperature: input.temperature,
-        max_tokens: 4096,
+        max_tokens: input.maxTokens ?? 4096,
         stream: false,
         // A second cost guard: only endpoints with zero token prices are eligible.
         provider: { max_price: { prompt: 0, completion: 0 } },
@@ -107,7 +108,7 @@ export async function generateOpenRouterText(env: Bindings, operation: Operation
     if (finishReason === "length") console.warn(event);
     else console.info(event);
     // Return only final content, never reasoning/reasoning_details.
-    return { text, model: safeModel(root.model) ?? model };
+    return { text, model: safeModel(root.model) ?? model, truncated: finishReason === "length" };
   } catch (cause) {
     if (!diagnosed) fail({ failure: cause instanceof Error && ["TimeoutError", "AbortError"].includes(cause.name) ? "REQUEST_TIMEOUT" : "NETWORK_OR_RUNTIME_ERROR", errorType: cause instanceof TypeError ? "TypeError" : "Error" });
     throw new Error("OpenRouter request failed; see structured diagnostics");

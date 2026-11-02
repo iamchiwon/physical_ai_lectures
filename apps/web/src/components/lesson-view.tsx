@@ -97,7 +97,7 @@ export function LessonView({ lesson, module, modules, previous, next }: LessonVi
         </main>
       </div>
 
-      <TutorDrawer lessonId={lesson.id} lessonTitle={lesson.title} contextSummary={`${lesson.summary}\n핵심어: ${lesson.keywords.join(", ")}`} />
+      <TutorDrawer chapterId={`chapter-${lesson.chapter}`} chapterTitle={`${lesson.chapter}장 · ${module.title}`} lessonId={lesson.id} lessonTitle={lesson.title} contextSummary={`${lesson.summary}\n핵심어: ${lesson.keywords.join(", ")}`} />
     </div>
   );
 }

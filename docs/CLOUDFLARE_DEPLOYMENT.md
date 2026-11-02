@@ -75,3 +75,10 @@ OPENROUTER_MODEL=openrouter/free
 ```dotenv
 NEXT_PUBLIC_API_BASE_URL=http://localhost:8787
 ```
+
+
+## 대화 저장·요약 기능 배포
+
+추가 DB·환경변수는 필요하지 않습니다. 같은 `OPENROUTER_API_KEY`로 답변과 요약을 수행합니다. 이번 기능은 **Worker를 먼저 배포**해 `/v1/tutor/summary`와 이전 대화 필드를 지원한 뒤 Pages를 배포하세요. 기존 Pages의 단일 질문 요청도 Worker가 계속 받습니다. `/v1/health`의 `diagnosticsVersion`은 `2026-11-02.2`입니다.
+
+브라우저 저장은 origin별로 나뉘므로 localhost·Pages 기본 도메인·커스텀 도메인의 대화는 서로 공유되지 않습니다. 요약은 길이 임계치에 도달할 때만 추가 호출하며, 복구 요약은 질문당 최대 2회입니다. AI 강사·평가·요약은 같은 OpenRouter 무료 계정 호출 한도를 공유합니다.

@@ -16,11 +16,13 @@
     "build:api": "npm run build --workspace @physical-ai/api",
     "check": "npm run check --workspaces --if-present",
     "lint": "npm run lint --workspaces --if-present",
+    "test:tutor": "node --test tests/tutor.test.mjs",
     "deploy:web": "wrangler pages deploy apps/web/out --project-name physical-ai-learning-web",
     "deploy:api": "npm run deploy --workspace @physical-ai/api"
   },
   "devDependencies": {
     "concurrently": "^9.2.1",
+    "esbuild": "^0.28.2",
     "typescript": "^5.9.3",
     "wrangler": "^4.49.0"
   },

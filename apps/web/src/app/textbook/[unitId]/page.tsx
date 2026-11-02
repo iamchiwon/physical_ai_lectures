@@ -42,7 +42,7 @@ export default async function TextbookPage({ params }: { params: Promise<{ unitI
         </nav>
         {lessons.length ? <section className="mt-8 rounded-2xl border border-blue-100 bg-blue-50 p-5"><h2 className="font-bold">이 장의 자가 점검·가상실습</h2><ul className="mt-3 space-y-2">{lessons.map((lesson) => <li key={lesson.id}><Link className="text-blue-700 underline" href={`/learn/${lesson.id}/`}>{lesson.title}</Link></li>)}</ul></section> : null}
       </main>
-      <TutorDrawer lessonId={unit.slug} lessonTitle={unit.title} contextSummary={unit.content.slice(0, 3900)} />
+      <TutorDrawer chapterId={`chapter-${unit.chapter}`} chapterTitle={unit.chapter ? `${unit.chapter}장 · ${courseModules.find((item) => item.number === unit.chapter)?.title ?? unit.group}` : unit.group} lessonId={unit.slug} lessonTitle={unit.title} contextSummary={unit.content.slice(0, 3900)} />
     </CourseShell>
   );
 }

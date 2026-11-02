@@ -4,8 +4,26 @@ export const DEFAULT_OPENROUTER_MODEL = "openrouter/free";
 
 const lessonIdSchema = z.string().trim().min(1).max(120);
 
+export const conversationTurnSchema = z.object({
+  id: z.string().min(1).max(120),
+  chapterId: z.string().min(1).max(120),
+  chapterTitle: z.string().min(1).max(200),
+  lessonId: lessonIdSchema,
+  lessonTitle: z.string().min(1).max(200),
+  question: z.string().min(2).max(1200),
+  answer: z.string().min(1).max(32_000),
+});
+export const tutorSummaryRequestSchema = z.object({
+  previousSummary: z.string().max(6000).default(""),
+  turns: z.array(conversationTurnSchema).min(1).max(24),
+});
+export const tutorSummaryResponseSchema = z.object({ summary: z.string().min(1).max(6000) });
+export type TutorSummaryRequest = z.infer<typeof tutorSummaryRequestSchema>;
+
 export const tutorRequestSchema = z.object({
   question: z.string().trim().min(2).max(1200),
+  history: z.array(conversationTurnSchema).max(24).default([]),
+  summary: z.string().max(6000).default(""),
   lesson: z.object({
     id: lessonIdSchema,
     title: z.string().trim().min(1).max(200),
@@ -18,11 +36,12 @@ export const tutorResponseSchema = z.object({
   answer: z.string(),
   mode: z.enum(["openrouter", "gemini", "demo"]),
   model: z.string(),
+  contextLimited: z.boolean().optional(),
 });
 
 export const errorResponseSchema = z.object({ error: z.string() });
 
-export type TutorRequest = z.infer<typeof tutorRequestSchema>;
+export type TutorRequest = z.input<typeof tutorRequestSchema>;
 export type TutorResponse = z.infer<typeof tutorResponseSchema>;
 export type ErrorResponse = z.infer<typeof errorResponseSchema>;
 
@@ -36,3 +55,5 @@ export const assessmentResponseSchema = z.object({
   mode: z.enum(["openrouter", "gemini", "self-review"]),
 });
 export type AssessmentRequest = z.infer<typeof assessmentRequestSchema>;
+
+export * from "./tutor-context";
