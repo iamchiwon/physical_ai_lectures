@@ -1,0 +1,2871 @@
+{
+  "schemaVersion": 1,
+  "capturedOn": "2026-11-02",
+  "baselineCommit": "f874e4a043f5e32b163e2107f4331be82b2bf693",
+  "purpose": "A01 baseline metadata only; not new curriculum mapping or proof of content quality",
+  "summary": {
+    "moduleCount": 6,
+    "lessonCount": 18,
+    "totalMinutes": 320,
+    "questionCount": 36
+  },
+  "lessonModules": [
+    {
+      "id": "physical-ai-foundations",
+      "number": 1,
+      "title": "Physical AI와 시뮬레이션 기반",
+      "lessons": [
+        {
+          "id": "physical-ai-loop",
+          "title": "상태·관측·행동으로 보는 Physical AI",
+          "url": "/learn/physical-ai-loop/",
+          "chapter": 1,
+          "quickChecks": [
+            {
+              "id": "c1l1q1",
+              "type": "multiple-choice"
+            },
+            {
+              "id": "c1l1q2",
+              "type": "short-answer"
+            }
+          ]
+        },
+        {
+          "id": "openusd-scene-model",
+          "title": "OpenUSD 장면을 비파괴적으로 구성하기",
+          "url": "/learn/openusd-scene-model/",
+          "chapter": 1,
+          "quickChecks": [
+            {
+              "id": "c1l2q1",
+              "type": "multiple-choice"
+            },
+            {
+              "id": "c1l2q2",
+              "type": "short-answer"
+            }
+          ]
+        },
+        {
+          "id": "ros2-interface-contracts",
+          "title": "ROS 2 인터페이스와 QoS 계약",
+          "url": "/learn/ros2-interface-contracts/",
+          "chapter": 1,
+          "quickChecks": [
+            {
+              "id": "c1l3q1",
+              "type": "multiple-choice"
+            },
+            {
+              "id": "c1l3q2",
+              "type": "multiple-choice"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "physx-simulation",
+      "number": 2,
+      "title": "PhysX 강체 물리 시뮬레이션",
+      "lessons": [
+        {
+          "id": "frames-and-transforms",
+          "title": "좌표계와 동차 변환 읽기",
+          "url": "/learn/frames-and-transforms/",
+          "chapter": 2,
+          "quickChecks": [
+            {
+              "id": "c2l1q1",
+              "type": "multiple-choice"
+            },
+            {
+              "id": "c2l1q2",
+              "type": "short-answer"
+            }
+          ]
+        },
+        {
+          "id": "physics-time-and-stability",
+          "title": "Physics step과 solver 안정성",
+          "url": "/learn/physics-time-and-stability/",
+          "chapter": 2,
+          "quickChecks": [
+            {
+              "id": "c2l2q1",
+              "type": "multiple-choice"
+            },
+            {
+              "id": "c2l2q2",
+              "type": "short-answer"
+            }
+          ]
+        },
+        {
+          "id": "collision-and-material-tuning",
+          "title": "충돌·마찰 파라미터 튜닝",
+          "url": "/learn/collision-and-material-tuning/",
+          "chapter": 2,
+          "quickChecks": [
+            {
+              "id": "c2l3q1",
+              "type": "multiple-choice"
+            },
+            {
+              "id": "c2l3q2",
+              "type": "short-answer"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "so101-teleoperation",
+      "number": 3,
+      "title": "SO-101 기구학과 텔레오퍼레이션",
+      "lessons": [
+        {
+          "id": "kinematic-model-and-fk",
+          "title": "URDF에서 순기구학까지",
+          "url": "/learn/kinematic-model-and-fk/",
+          "chapter": 3,
+          "quickChecks": [
+            {
+              "id": "c3l1q1",
+              "type": "multiple-choice"
+            },
+            {
+              "id": "c3l1q2",
+              "type": "short-answer"
+            }
+          ]
+        },
+        {
+          "id": "dls-inverse-kinematics",
+          "title": "DLS 역기구학의 직관",
+          "url": "/learn/dls-inverse-kinematics/",
+          "chapter": 3,
+          "quickChecks": [
+            {
+              "id": "c3l2q1",
+              "type": "multiple-choice"
+            },
+            {
+              "id": "c3l2q2",
+              "type": "short-answer"
+            }
+          ]
+        },
+        {
+          "id": "safe-leader-follower",
+          "title": "안전한 Leader-Follower 루프",
+          "url": "/learn/safe-leader-follower/",
+          "chapter": 3,
+          "quickChecks": [
+            {
+              "id": "c3l3q1",
+              "type": "multiple-choice"
+            },
+            {
+              "id": "c3l3q2",
+              "type": "multiple-choice"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sensor-data-pipeline",
+      "number": 4,
+      "title": "멀티모달 센서 정합",
+      "lessons": [
+        {
+          "id": "camera-geometry",
+          "title": "카메라 내부·외부 파라미터",
+          "url": "/learn/camera-geometry/",
+          "chapter": 4,
+          "quickChecks": [
+            {
+              "id": "c4l1q1",
+              "type": "multiple-choice"
+            },
+            {
+              "id": "c4l1q2",
+              "type": "short-answer"
+            }
+          ]
+        },
+        {
+          "id": "tf2-frame-contract",
+          "title": "TF2 프레임 계약과 timestamp",
+          "url": "/learn/tf2-frame-contract/",
+          "chapter": 4,
+          "quickChecks": [
+            {
+              "id": "c4l2q1",
+              "type": "multiple-choice"
+            },
+            {
+              "id": "c4l2q2",
+              "type": "short-answer"
+            }
+          ]
+        },
+        {
+          "id": "multirate-alignment",
+          "title": "멀티레이트 센서 시간 정합",
+          "url": "/learn/multirate-alignment/",
+          "chapter": 4,
+          "quickChecks": [
+            {
+              "id": "c4l3q1",
+              "type": "multiple-choice"
+            },
+            {
+              "id": "c4l3q2",
+              "type": "short-answer"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "lerobot-smolvla",
+      "number": 5,
+      "title": "LeRobot Dataset과 SmolVLA",
+      "lessons": [
+        {
+          "id": "behavior-cloning-data",
+          "title": "행동 복제와 복구 데이터",
+          "url": "/learn/behavior-cloning-data/",
+          "chapter": 5,
+          "quickChecks": [
+            {
+              "id": "c5l1q1",
+              "type": "multiple-choice"
+            },
+            {
+              "id": "c5l1q2",
+              "type": "short-answer"
+            }
+          ]
+        },
+        {
+          "id": "dataset-and-finetuning",
+          "title": "LeRobotDataset과 LoRA 파인튜닝",
+          "url": "/learn/dataset-and-finetuning/",
+          "chapter": 5,
+          "quickChecks": [
+            {
+              "id": "c5l2q1",
+              "type": "multiple-choice"
+            },
+            {
+              "id": "c5l2q2",
+              "type": "multiple-choice"
+            }
+          ]
+        },
+        {
+          "id": "closed-loop-inference",
+          "title": "Action chunk와 20 Hz 폐루프",
+          "url": "/learn/closed-loop-inference/",
+          "chapter": 5,
+          "quickChecks": [
+            {
+              "id": "c5l3q1",
+              "type": "multiple-choice"
+            },
+            {
+              "id": "c5l3q2",
+              "type": "short-answer"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sim2real-deployment",
+      "number": 6,
+      "title": "Sim2Real 배포와 실증",
+      "lessons": [
+        {
+          "id": "reality-gap-diagnostics",
+          "title": "Reality Gap을 원인 지도로 바꾸기",
+          "url": "/learn/reality-gap-diagnostics/",
+          "chapter": 6,
+          "quickChecks": [
+            {
+              "id": "c6l1q1",
+              "type": "multiple-choice"
+            },
+            {
+              "id": "c6l1q2",
+              "type": "short-answer"
+            }
+          ]
+        },
+        {
+          "id": "safety-supervisor",
+          "title": "단계적 승격과 안전 감독기",
+          "url": "/learn/safety-supervisor/",
+          "chapter": 6,
+          "quickChecks": [
+            {
+              "id": "c6l2q1",
+              "type": "multiple-choice"
+            },
+            {
+              "id": "c6l2q2",
+              "type": "multiple-choice"
+            }
+          ]
+        },
+        {
+          "id": "evaluation-and-evidence",
+          "title": "성공률 평가와 실증 패키지",
+          "url": "/learn/evaluation-and-evidence/",
+          "chapter": 6,
+          "quickChecks": [
+            {
+              "id": "c6l3q1",
+              "type": "multiple-choice"
+            },
+            {
+              "id": "c6l3q2",
+              "type": "short-answer"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "textbookUnits": [
+    {
+      "id": "00_frontmatter--environment-1",
+      "title": "기준 실습 환경",
+      "chapter": 0,
+      "source": "00_frontmatter/environment.md",
+      "url": "/textbook/00_frontmatter--environment-1/",
+      "exercises": []
+    },
+    {
+      "id": "00_frontmatter--environment-2",
+      "title": "운영체제와 미들웨어",
+      "chapter": 0,
+      "source": "00_frontmatter/environment.md",
+      "url": "/textbook/00_frontmatter--environment-2/",
+      "exercises": []
+    },
+    {
+      "id": "00_frontmatter--environment-3",
+      "title": "집필 기준 버전과 검증 상태",
+      "chapter": 0,
+      "source": "00_frontmatter/environment.md",
+      "url": "/textbook/00_frontmatter--environment-3/",
+      "exercises": []
+    },
+    {
+      "id": "00_frontmatter--environment-4",
+      "title": "실습 장비",
+      "chapter": 0,
+      "source": "00_frontmatter/environment.md",
+      "url": "/textbook/00_frontmatter--environment-4/",
+      "exercises": []
+    },
+    {
+      "id": "00_frontmatter--safety-1",
+      "title": "안전 수칙",
+      "chapter": 0,
+      "source": "00_frontmatter/safety.md",
+      "url": "/textbook/00_frontmatter--safety-1/",
+      "exercises": []
+    },
+    {
+      "id": "01_physical_ai_isaac_ros2--chapter-1",
+      "title": "제1장 Physical AI와 Isaac Sim·OpenUSD·ROS 2 기반",
+      "chapter": 1,
+      "source": "01_physical_ai_isaac_ros2/chapter.md",
+      "url": "/textbook/01_physical_ai_isaac_ros2--chapter-1/",
+      "exercises": []
+    },
+    {
+      "id": "01_physical_ai_isaac_ros2--chapter-2",
+      "title": "장 개요",
+      "chapter": 1,
+      "source": "01_physical_ai_isaac_ros2/chapter.md",
+      "url": "/textbook/01_physical_ai_isaac_ros2--chapter-2/",
+      "exercises": []
+    },
+    {
+      "id": "01_physical_ai_isaac_ros2--chapter-3",
+      "title": "학습 목표",
+      "chapter": 1,
+      "source": "01_physical_ai_isaac_ros2/chapter.md",
+      "url": "/textbook/01_physical_ai_isaac_ros2--chapter-3/",
+      "exercises": []
+    },
+    {
+      "id": "01_physical_ai_isaac_ros2--chapter-4",
+      "title": "선수 지식과 준비물",
+      "chapter": 1,
+      "source": "01_physical_ai_isaac_ros2/chapter.md",
+      "url": "/textbook/01_physical_ai_isaac_ros2--chapter-4/",
+      "exercises": []
+    },
+    {
+      "id": "01_physical_ai_isaac_ros2--chapter-5",
+      "title": "1.1 Physical AI의 문제 정의",
+      "chapter": 1,
+      "source": "01_physical_ai_isaac_ros2/chapter.md",
+      "url": "/textbook/01_physical_ai_isaac_ros2--chapter-5/",
+      "exercises": []
+    },
+    {
+      "id": "01_physical_ai_isaac_ros2--chapter-6",
+      "title": "1.2 NVIDIA Isaac Sim 런타임 이해",
+      "chapter": 1,
+      "source": "01_physical_ai_isaac_ros2/chapter.md",
+      "url": "/textbook/01_physical_ai_isaac_ros2--chapter-6/",
+      "exercises": []
+    },
+    {
+      "id": "01_physical_ai_isaac_ros2--chapter-7",
+      "title": "1.3 OpenUSD 데이터 모델",
+      "chapter": 1,
+      "source": "01_physical_ai_isaac_ros2/chapter.md",
+      "url": "/textbook/01_physical_ai_isaac_ros2--chapter-7/",
+      "exercises": []
+    },
+    {
+      "id": "01_physical_ai_isaac_ros2--chapter-8",
+      "title": "1.4 ROS 2 Jazzy 통신 모델",
+      "chapter": 1,
+      "source": "01_physical_ai_isaac_ros2/chapter.md",
+      "url": "/textbook/01_physical_ai_isaac_ros2--chapter-8/",
+      "exercises": []
+    },
+    {
+      "id": "01_physical_ai_isaac_ros2--chapter-9",
+      "title": "1.5 Isaac Sim-ROS 2 브리지 설계",
+      "chapter": 1,
+      "source": "01_physical_ai_isaac_ros2/chapter.md",
+      "url": "/textbook/01_physical_ai_isaac_ros2--chapter-9/",
+      "exercises": []
+    },
+    {
+      "id": "01_physical_ai_isaac_ros2--chapter-10",
+      "title": "1.6 구현 예제 안내",
+      "chapter": 1,
+      "source": "01_physical_ai_isaac_ros2/chapter.md",
+      "url": "/textbook/01_physical_ai_isaac_ros2--chapter-10/",
+      "exercises": []
+    },
+    {
+      "id": "01_physical_ai_isaac_ros2--chapter-11",
+      "title": "1.7 단계별 실습",
+      "chapter": 1,
+      "source": "01_physical_ai_isaac_ros2/chapter.md",
+      "url": "/textbook/01_physical_ai_isaac_ros2--chapter-11/",
+      "exercises": []
+    },
+    {
+      "id": "01_physical_ai_isaac_ros2--chapter-12",
+      "title": "1.8 트러블슈팅",
+      "chapter": 1,
+      "source": "01_physical_ai_isaac_ros2/chapter.md",
+      "url": "/textbook/01_physical_ai_isaac_ros2--chapter-12/",
+      "exercises": []
+    },
+    {
+      "id": "01_physical_ai_isaac_ros2--chapter-13",
+      "title": "1.9 요약",
+      "chapter": 1,
+      "source": "01_physical_ai_isaac_ros2/chapter.md",
+      "url": "/textbook/01_physical_ai_isaac_ros2--chapter-13/",
+      "exercises": []
+    },
+    {
+      "id": "01_physical_ai_isaac_ros2--chapter-14",
+      "title": "1.10 확인문제",
+      "chapter": 1,
+      "source": "01_physical_ai_isaac_ros2/chapter.md",
+      "url": "/textbook/01_physical_ai_isaac_ros2--chapter-14/",
+      "exercises": [
+        {
+          "id": "01_physical_ai_isaac_ros2--chapter-14-q1",
+          "kind": "question",
+          "storageKey": "physical-ai-answer-01_physical_ai_isaac_ros2--chapter-14-q1"
+        },
+        {
+          "id": "01_physical_ai_isaac_ros2--chapter-14-q2",
+          "kind": "question",
+          "storageKey": "physical-ai-answer-01_physical_ai_isaac_ros2--chapter-14-q2"
+        },
+        {
+          "id": "01_physical_ai_isaac_ros2--chapter-14-q3",
+          "kind": "question",
+          "storageKey": "physical-ai-answer-01_physical_ai_isaac_ros2--chapter-14-q3"
+        },
+        {
+          "id": "01_physical_ai_isaac_ros2--chapter-14-q4",
+          "kind": "question",
+          "storageKey": "physical-ai-answer-01_physical_ai_isaac_ros2--chapter-14-q4"
+        },
+        {
+          "id": "01_physical_ai_isaac_ros2--chapter-14-q5",
+          "kind": "question",
+          "storageKey": "physical-ai-answer-01_physical_ai_isaac_ros2--chapter-14-q5"
+        },
+        {
+          "id": "01_physical_ai_isaac_ros2--chapter-14-q6",
+          "kind": "question",
+          "storageKey": "physical-ai-answer-01_physical_ai_isaac_ros2--chapter-14-q6"
+        },
+        {
+          "id": "01_physical_ai_isaac_ros2--chapter-14-q7",
+          "kind": "question",
+          "storageKey": "physical-ai-answer-01_physical_ai_isaac_ros2--chapter-14-q7"
+        },
+        {
+          "id": "01_physical_ai_isaac_ros2--chapter-14-q8",
+          "kind": "question",
+          "storageKey": "physical-ai-answer-01_physical_ai_isaac_ros2--chapter-14-q8"
+        },
+        {
+          "id": "01_physical_ai_isaac_ros2--chapter-14-q9",
+          "kind": "question",
+          "storageKey": "physical-ai-answer-01_physical_ai_isaac_ros2--chapter-14-q9"
+        },
+        {
+          "id": "01_physical_ai_isaac_ros2--chapter-14-q10",
+          "kind": "question",
+          "storageKey": "physical-ai-answer-01_physical_ai_isaac_ros2--chapter-14-q10"
+        }
+      ]
+    },
+    {
+      "id": "01_physical_ai_isaac_ros2--chapter-15",
+      "title": "1.11 프로젝트 과제",
+      "chapter": 1,
+      "source": "01_physical_ai_isaac_ros2/chapter.md",
+      "url": "/textbook/01_physical_ai_isaac_ros2--chapter-15/",
+      "exercises": [
+        {
+          "id": "01_physical_ai_isaac_ros2--chapter-15-report",
+          "kind": "report",
+          "storageKey": "physical-ai-answer-01_physical_ai_isaac_ros2--chapter-15-report"
+        }
+      ]
+    },
+    {
+      "id": "01_physical_ai_isaac_ros2--chapter-16",
+      "title": "1.12 실습·평가·참고자료",
+      "chapter": 1,
+      "source": "01_physical_ai_isaac_ros2/chapter.md",
+      "url": "/textbook/01_physical_ai_isaac_ros2--chapter-16/",
+      "exercises": []
+    },
+    {
+      "id": "01_physical_ai_isaac_ros2--labs--lab01_latency_budget-1",
+      "title": "[SIM] 실습 1-1: Physical AI 지연 예산",
+      "chapter": 1,
+      "source": "01_physical_ai_isaac_ros2/labs/lab01_latency_budget.md",
+      "url": "/textbook/01_physical_ai_isaac_ros2--labs--lab01_latency_budget-1/",
+      "exercises": [
+        {
+          "id": "01_physical_ai_isaac_ros2--labs--lab01_latency_budget-1-report",
+          "kind": "report",
+          "storageKey": "physical-ai-answer-01_physical_ai_isaac_ros2--labs--lab01_latency_budget-1-report"
+        }
+      ]
+    },
+    {
+      "id": "01_physical_ai_isaac_ros2--labs--lab02_openusd_scene-1",
+      "title": "[SIM] 실습 1-2: OpenUSD 장면과 비파괴 Override",
+      "chapter": 1,
+      "source": "01_physical_ai_isaac_ros2/labs/lab02_openusd_scene.md",
+      "url": "/textbook/01_physical_ai_isaac_ros2--labs--lab02_openusd_scene-1/",
+      "exercises": [
+        {
+          "id": "01_physical_ai_isaac_ros2--labs--lab02_openusd_scene-1-report",
+          "kind": "report",
+          "storageKey": "physical-ai-answer-01_physical_ai_isaac_ros2--labs--lab02_openusd_scene-1-report"
+        }
+      ]
+    },
+    {
+      "id": "01_physical_ai_isaac_ros2--labs--lab03_ros2_interfaces-1",
+      "title": "[SIM] 실습 1-3: ROS 2 인터페이스와 QoS",
+      "chapter": 1,
+      "source": "01_physical_ai_isaac_ros2/labs/lab03_ros2_interfaces.md",
+      "url": "/textbook/01_physical_ai_isaac_ros2--labs--lab03_ros2_interfaces-1/",
+      "exercises": [
+        {
+          "id": "01_physical_ai_isaac_ros2--labs--lab03_ros2_interfaces-1-report",
+          "kind": "report",
+          "storageKey": "physical-ai-answer-01_physical_ai_isaac_ros2--labs--lab03_ros2_interfaces-1-report"
+        }
+      ]
+    },
+    {
+      "id": "01_physical_ai_isaac_ros2--labs--lab04_bridge_contract-1",
+      "title": "[SIM→HW] [SAFETY] 실습 1-4: 시뮬레이터-ROS 2 브리지 계약",
+      "chapter": 1,
+      "source": "01_physical_ai_isaac_ros2/labs/lab04_bridge_contract.md",
+      "url": "/textbook/01_physical_ai_isaac_ros2--labs--lab04_bridge_contract-1/",
+      "exercises": [
+        {
+          "id": "01_physical_ai_isaac_ros2--labs--lab04_bridge_contract-1-report",
+          "kind": "report",
+          "storageKey": "physical-ai-answer-01_physical_ai_isaac_ros2--labs--lab04_bridge_contract-1-report"
+        }
+      ]
+    },
+    {
+      "id": "02_physx_simulation--chapter-1",
+      "title": "제2장 Isaac Sim 환경 구축과 PhysX 강체 물리 시뮬레이션",
+      "chapter": 2,
+      "source": "02_physx_simulation/chapter.md",
+      "url": "/textbook/02_physx_simulation--chapter-1/",
+      "exercises": []
+    },
+    {
+      "id": "02_physx_simulation--chapter-2",
+      "title": "장 개요",
+      "chapter": 2,
+      "source": "02_physx_simulation/chapter.md",
+      "url": "/textbook/02_physx_simulation--chapter-2/",
+      "exercises": []
+    },
+    {
+      "id": "02_physx_simulation--chapter-3",
+      "title": "학습 목표",
+      "chapter": 2,
+      "source": "02_physx_simulation/chapter.md",
+      "url": "/textbook/02_physx_simulation--chapter-3/",
+      "exercises": []
+    },
+    {
+      "id": "02_physx_simulation--chapter-4",
+      "title": "선수 지식과 준비물",
+      "chapter": 2,
+      "source": "02_physx_simulation/chapter.md",
+      "url": "/textbook/02_physx_simulation--chapter-4/",
+      "exercises": []
+    },
+    {
+      "id": "02_physx_simulation--chapter-5",
+      "title": "2.1 Isaac Sim 작업 환경 이해하기",
+      "chapter": 2,
+      "source": "02_physx_simulation/chapter.md",
+      "url": "/textbook/02_physx_simulation--chapter-5/",
+      "exercises": []
+    },
+    {
+      "id": "02_physx_simulation--chapter-6",
+      "title": "2.2 좌표계와 4×4 동차 변환",
+      "chapter": 2,
+      "source": "02_physx_simulation/chapter.md",
+      "url": "/textbook/02_physx_simulation--chapter-6/",
+      "exercises": []
+    },
+    {
+      "id": "02_physx_simulation--chapter-7",
+      "title": "2.3 강체 역학과 시뮬레이션 시간",
+      "chapter": 2,
+      "source": "02_physx_simulation/chapter.md",
+      "url": "/textbook/02_physx_simulation--chapter-7/",
+      "exercises": []
+    },
+    {
+      "id": "02_physx_simulation--chapter-8",
+      "title": "2.4 충돌 형상 설계",
+      "chapter": 2,
+      "source": "02_physx_simulation/chapter.md",
+      "url": "/textbook/02_physx_simulation--chapter-8/",
+      "exercises": []
+    },
+    {
+      "id": "02_physx_simulation--chapter-9",
+      "title": "2.5 Tunneling과 CCD",
+      "chapter": 2,
+      "source": "02_physx_simulation/chapter.md",
+      "url": "/textbook/02_physx_simulation--chapter-9/",
+      "exercises": []
+    },
+    {
+      "id": "02_physx_simulation--chapter-10",
+      "title": "2.6 물리 재질과 접촉 역학",
+      "chapter": 2,
+      "source": "02_physx_simulation/chapter.md",
+      "url": "/textbook/02_physx_simulation--chapter-10/",
+      "exercises": []
+    },
+    {
+      "id": "02_physx_simulation--chapter-11",
+      "title": "2.7 질량, 무게중심, 관성 텐서",
+      "chapter": 2,
+      "source": "02_physx_simulation/chapter.md",
+      "url": "/textbook/02_physx_simulation--chapter-11/",
+      "exercises": []
+    },
+    {
+      "id": "02_physx_simulation--chapter-12",
+      "title": "2.8 PBR 재질과 조명",
+      "chapter": 2,
+      "source": "02_physx_simulation/chapter.md",
+      "url": "/textbook/02_physx_simulation--chapter-12/",
+      "exercises": []
+    },
+    {
+      "id": "02_physx_simulation--chapter-13",
+      "title": "2.9 물리 파라미터 튜닝 절차",
+      "chapter": 2,
+      "source": "02_physx_simulation/chapter.md",
+      "url": "/textbook/02_physx_simulation--chapter-13/",
+      "exercises": []
+    },
+    {
+      "id": "02_physx_simulation--chapter-14",
+      "title": "2.10 단계별 통합 실습",
+      "chapter": 2,
+      "source": "02_physx_simulation/chapter.md",
+      "url": "/textbook/02_physx_simulation--chapter-14/",
+      "exercises": []
+    },
+    {
+      "id": "02_physx_simulation--chapter-15",
+      "title": "2.11 예상 출력 예시",
+      "chapter": 2,
+      "source": "02_physx_simulation/chapter.md",
+      "url": "/textbook/02_physx_simulation--chapter-15/",
+      "exercises": []
+    },
+    {
+      "id": "02_physx_simulation--chapter-16",
+      "title": "2.12 트러블슈팅",
+      "chapter": 2,
+      "source": "02_physx_simulation/chapter.md",
+      "url": "/textbook/02_physx_simulation--chapter-16/",
+      "exercises": []
+    },
+    {
+      "id": "02_physx_simulation--chapter-17",
+      "title": "2.13 요약",
+      "chapter": 2,
+      "source": "02_physx_simulation/chapter.md",
+      "url": "/textbook/02_physx_simulation--chapter-17/",
+      "exercises": []
+    },
+    {
+      "id": "02_physx_simulation--chapter-18",
+      "title": "2.14 확인문제",
+      "chapter": 2,
+      "source": "02_physx_simulation/chapter.md",
+      "url": "/textbook/02_physx_simulation--chapter-18/",
+      "exercises": [
+        {
+          "id": "02_physx_simulation--chapter-18-q1",
+          "kind": "question",
+          "storageKey": "physical-ai-answer-02_physx_simulation--chapter-18-q1"
+        },
+        {
+          "id": "02_physx_simulation--chapter-18-q2",
+          "kind": "question",
+          "storageKey": "physical-ai-answer-02_physx_simulation--chapter-18-q2"
+        },
+        {
+          "id": "02_physx_simulation--chapter-18-q3",
+          "kind": "question",
+          "storageKey": "physical-ai-answer-02_physx_simulation--chapter-18-q3"
+        },
+        {
+          "id": "02_physx_simulation--chapter-18-q4",
+          "kind": "question",
+          "storageKey": "physical-ai-answer-02_physx_simulation--chapter-18-q4"
+        },
+        {
+          "id": "02_physx_simulation--chapter-18-q5",
+          "kind": "question",
+          "storageKey": "physical-ai-answer-02_physx_simulation--chapter-18-q5"
+        },
+        {
+          "id": "02_physx_simulation--chapter-18-q6",
+          "kind": "question",
+          "storageKey": "physical-ai-answer-02_physx_simulation--chapter-18-q6"
+        },
+        {
+          "id": "02_physx_simulation--chapter-18-q7",
+          "kind": "question",
+          "storageKey": "physical-ai-answer-02_physx_simulation--chapter-18-q7"
+        },
+        {
+          "id": "02_physx_simulation--chapter-18-q8",
+          "kind": "question",
+          "storageKey": "physical-ai-answer-02_physx_simulation--chapter-18-q8"
+        },
+        {
+          "id": "02_physx_simulation--chapter-18-q9",
+          "kind": "question",
+          "storageKey": "physical-ai-answer-02_physx_simulation--chapter-18-q9"
+        },
+        {
+          "id": "02_physx_simulation--chapter-18-q10",
+          "kind": "question",
+          "storageKey": "physical-ai-answer-02_physx_simulation--chapter-18-q10"
+        }
+      ]
+    },
+    {
+      "id": "02_physx_simulation--chapter-19",
+      "title": "2.15 프로젝트 과제",
+      "chapter": 2,
+      "source": "02_physx_simulation/chapter.md",
+      "url": "/textbook/02_physx_simulation--chapter-19/",
+      "exercises": [
+        {
+          "id": "02_physx_simulation--chapter-19-report",
+          "kind": "report",
+          "storageKey": "physical-ai-answer-02_physx_simulation--chapter-19-report"
+        }
+      ]
+    },
+    {
+      "id": "02_physx_simulation--chapter-20",
+      "title": "2.16 실습·평가·참고자료",
+      "chapter": 2,
+      "source": "02_physx_simulation/chapter.md",
+      "url": "/textbook/02_physx_simulation--chapter-20/",
+      "exercises": []
+    },
+    {
+      "id": "02_physx_simulation--labs--lab01_transforms-1",
+      "title": "실습 2-A: 좌표 변환 체인과 쿼터니언",
+      "chapter": 2,
+      "source": "02_physx_simulation/labs/lab01_transforms.md",
+      "url": "/textbook/02_physx_simulation--labs--lab01_transforms-1/",
+      "exercises": [
+        {
+          "id": "02_physx_simulation--labs--lab01_transforms-1-report",
+          "kind": "report",
+          "storageKey": "physical-ai-answer-02_physx_simulation--labs--lab01_transforms-1-report"
+        }
+      ]
+    },
+    {
+      "id": "02_physx_simulation--labs--lab02_collision_ccd-1",
+      "title": "실습 2-B: 충돌 근사와 CCD 비용-효과 분석",
+      "chapter": 2,
+      "source": "02_physx_simulation/labs/lab02_collision_ccd.md",
+      "url": "/textbook/02_physx_simulation--labs--lab02_collision_ccd-1/",
+      "exercises": [
+        {
+          "id": "02_physx_simulation--labs--lab02_collision_ccd-1-report",
+          "kind": "report",
+          "storageKey": "physical-ai-answer-02_physx_simulation--labs--lab02_collision_ccd-1-report"
+        }
+      ]
+    },
+    {
+      "id": "02_physx_simulation--labs--lab03_material_tuning-1",
+      "title": "실습 2-C: 마찰·반발·질량 파라미터 보정",
+      "chapter": 2,
+      "source": "02_physx_simulation/labs/lab03_material_tuning.md",
+      "url": "/textbook/02_physx_simulation--labs--lab03_material_tuning-1/",
+      "exercises": [
+        {
+          "id": "02_physx_simulation--labs--lab03_material_tuning-1-report",
+          "kind": "report",
+          "storageKey": "physical-ai-answer-02_physx_simulation--labs--lab03_material_tuning-1-report"
+        }
+      ]
+    },
+    {
+      "id": "02_physx_simulation--exercises--problem_set-1",
+      "title": "제2장 연습문제 및 해설 지침",
+      "chapter": 2,
+      "source": "02_physx_simulation/exercises/problem_set.md",
+      "url": "/textbook/02_physx_simulation--exercises--problem_set-1/",
+      "exercises": [
+        {
+          "id": "02_physx_simulation--exercises--problem_set-1-q1",
+          "kind": "question",
+          "storageKey": "physical-ai-answer-02_physx_simulation--exercises--problem_set-1-q1"
+        },
+        {
+          "id": "02_physx_simulation--exercises--problem_set-1-q2",
+          "kind": "question",
+          "storageKey": "physical-ai-answer-02_physx_simulation--exercises--problem_set-1-q2"
+        },
+        {
+          "id": "02_physx_simulation--exercises--problem_set-1-q3",
+          "kind": "question",
+          "storageKey": "physical-ai-answer-02_physx_simulation--exercises--problem_set-1-q3"
+        },
+        {
+          "id": "02_physx_simulation--exercises--problem_set-1-q4",
+          "kind": "question",
+          "storageKey": "physical-ai-answer-02_physx_simulation--exercises--problem_set-1-q4"
+        },
+        {
+          "id": "02_physx_simulation--exercises--problem_set-1-q5",
+          "kind": "question",
+          "storageKey": "physical-ai-answer-02_physx_simulation--exercises--problem_set-1-q5"
+        },
+        {
+          "id": "02_physx_simulation--exercises--problem_set-1-q6",
+          "kind": "question",
+          "storageKey": "physical-ai-answer-02_physx_simulation--exercises--problem_set-1-q6"
+        },
+        {
+          "id": "02_physx_simulation--exercises--problem_set-1-q7",
+          "kind": "question",
+          "storageKey": "physical-ai-answer-02_physx_simulation--exercises--problem_set-1-q7"
+        },
+        {
+          "id": "02_physx_simulation--exercises--problem_set-1-q8",
+          "kind": "question",
+          "storageKey": "physical-ai-answer-02_physx_simulation--exercises--problem_set-1-q8"
+        },
+        {
+          "id": "02_physx_simulation--exercises--problem_set-1-q9",
+          "kind": "question",
+          "storageKey": "physical-ai-answer-02_physx_simulation--exercises--problem_set-1-q9"
+        },
+        {
+          "id": "02_physx_simulation--exercises--problem_set-1-q10",
+          "kind": "question",
+          "storageKey": "physical-ai-answer-02_physx_simulation--exercises--problem_set-1-q10"
+        },
+        {
+          "id": "02_physx_simulation--exercises--problem_set-1-q11",
+          "kind": "question",
+          "storageKey": "physical-ai-answer-02_physx_simulation--exercises--problem_set-1-q11"
+        },
+        {
+          "id": "02_physx_simulation--exercises--problem_set-1-q12",
+          "kind": "question",
+          "storageKey": "physical-ai-answer-02_physx_simulation--exercises--problem_set-1-q12"
+        },
+        {
+          "id": "02_physx_simulation--exercises--problem_set-1-q13",
+          "kind": "question",
+          "storageKey": "physical-ai-answer-02_physx_simulation--exercises--problem_set-1-q13"
+        },
+        {
+          "id": "02_physx_simulation--exercises--problem_set-1-q14",
+          "kind": "question",
+          "storageKey": "physical-ai-answer-02_physx_simulation--exercises--problem_set-1-q14"
+        },
+        {
+          "id": "02_physx_simulation--exercises--problem_set-1-q15",
+          "kind": "question",
+          "storageKey": "physical-ai-answer-02_physx_simulation--exercises--problem_set-1-q15"
+        }
+      ]
+    },
+    {
+      "id": "03_so101_kinematics_teleop--chapter-1",
+      "title": "제3장 SO-101 기구학과 ROS 2 기반 하드웨어 텔레오퍼레이션",
+      "chapter": 3,
+      "source": "03_so101_kinematics_teleop/chapter.md",
+      "url": "/textbook/03_so101_kinematics_teleop--chapter-1/",
+      "exercises": []
+    },
+    {
+      "id": "03_so101_kinematics_teleop--chapter-2",
+      "title": "장 개요",
+      "chapter": 3,
+      "source": "03_so101_kinematics_teleop/chapter.md",
+      "url": "/textbook/03_so101_kinematics_teleop--chapter-2/",
+      "exercises": []
+    },
+    {
+      "id": "03_so101_kinematics_teleop--chapter-3",
+      "title": "학습 목표",
+      "chapter": 3,
+      "source": "03_so101_kinematics_teleop/chapter.md",
+      "url": "/textbook/03_so101_kinematics_teleop--chapter-3/",
+      "exercises": []
+    },
+    {
+      "id": "03_so101_kinematics_teleop--chapter-4",
+      "title": "선수 지식과 준비물",
+      "chapter": 3,
+      "source": "03_so101_kinematics_teleop/chapter.md",
+      "url": "/textbook/03_so101_kinematics_teleop--chapter-4/",
+      "exercises": []
+    },
+    {
+      "id": "03_so101_kinematics_teleop--chapter-5",
+      "title": "3.1 SO-101 기구학 모델",
+      "chapter": 3,
+      "source": "03_so101_kinematics_teleop/chapter.md",
+      "url": "/textbook/03_so101_kinematics_teleop--chapter-5/",
+      "exercises": []
+    },
+    {
+      "id": "03_so101_kinematics_teleop--chapter-6",
+      "title": "3.2 순기구학",
+      "chapter": 3,
+      "source": "03_so101_kinematics_teleop/chapter.md",
+      "url": "/textbook/03_so101_kinematics_teleop--chapter-6/",
+      "exercises": []
+    },
+    {
+      "id": "03_so101_kinematics_teleop--chapter-7",
+      "title": "3.3 DLS 역기구학",
+      "chapter": 3,
+      "source": "03_so101_kinematics_teleop/chapter.md",
+      "url": "/textbook/03_so101_kinematics_teleop--chapter-7/",
+      "exercises": []
+    },
+    {
+      "id": "03_so101_kinematics_teleop--chapter-8",
+      "title": "3.4 Leader-Follower 캘리브레이션",
+      "chapter": 3,
+      "source": "03_so101_kinematics_teleop/chapter.md",
+      "url": "/textbook/03_so101_kinematics_teleop--chapter-8/",
+      "exercises": []
+    },
+    {
+      "id": "03_so101_kinematics_teleop--chapter-9",
+      "title": "3.5 안전한 텔레오퍼레이션 루프",
+      "chapter": 3,
+      "source": "03_so101_kinematics_teleop/chapter.md",
+      "url": "/textbook/03_so101_kinematics_teleop--chapter-9/",
+      "exercises": []
+    },
+    {
+      "id": "03_so101_kinematics_teleop--chapter-10",
+      "title": "3.6 ROS 2 JointState 브리지",
+      "chapter": 3,
+      "source": "03_so101_kinematics_teleop/chapter.md",
+      "url": "/textbook/03_so101_kinematics_teleop--chapter-10/",
+      "exercises": []
+    },
+    {
+      "id": "03_so101_kinematics_teleop--chapter-11",
+      "title": "3.7 단계별 실습",
+      "chapter": 3,
+      "source": "03_so101_kinematics_teleop/chapter.md",
+      "url": "/textbook/03_so101_kinematics_teleop--chapter-11/",
+      "exercises": []
+    },
+    {
+      "id": "03_so101_kinematics_teleop--chapter-12",
+      "title": "3.8 트러블슈팅",
+      "chapter": 3,
+      "source": "03_so101_kinematics_teleop/chapter.md",
+      "url": "/textbook/03_so101_kinematics_teleop--chapter-12/",
+      "exercises": []
+    },
+    {
+      "id": "03_so101_kinematics_teleop--chapter-13",
+      "title": "3.9 요약",
+      "chapter": 3,
+      "source": "03_so101_kinematics_teleop/chapter.md",
+      "url": "/textbook/03_so101_kinematics_teleop--chapter-13/",
+      "exercises": []
+    },
+    {
+      "id": "03_so101_kinematics_teleop--chapter-14",
+      "title": "3.10 확인문제",
+      "chapter": 3,
+      "source": "03_so101_kinematics_teleop/chapter.md",
+      "url": "/textbook/03_so101_kinematics_teleop--chapter-14/",
+      "exercises": [
+        {
+          "id": "03_so101_kinematics_teleop--chapter-14-q1",
+          "kind": "question",
+          "storageKey": "physical-ai-answer-03_so101_kinematics_teleop--chapter-14-q1"
+        },
+        {
+          "id": "03_so101_kinematics_teleop--chapter-14-q2",
+          "kind": "question",
+          "storageKey": "physical-ai-answer-03_so101_kinematics_teleop--chapter-14-q2"
+        },
+        {
+          "id": "03_so101_kinematics_teleop--chapter-14-q3",
+          "kind": "question",
+          "storageKey": "physical-ai-answer-03_so101_kinematics_teleop--chapter-14-q3"
+        },
+        {
+          "id": "03_so101_kinematics_teleop--chapter-14-q4",
+          "kind": "question",
+          "storageKey": "physical-ai-answer-03_so101_kinematics_teleop--chapter-14-q4"
+        },
+        {
+          "id": "03_so101_kinematics_teleop--chapter-14-q5",
+          "kind": "question",
+          "storageKey": "physical-ai-answer-03_so101_kinematics_teleop--chapter-14-q5"
+        },
+        {
+          "id": "03_so101_kinematics_teleop--chapter-14-q6",
+          "kind": "question",
+          "storageKey": "physical-ai-answer-03_so101_kinematics_teleop--chapter-14-q6"
+        },
+        {
+          "id": "03_so101_kinematics_teleop--chapter-14-q7",
+          "kind": "question",
+          "storageKey": "physical-ai-answer-03_so101_kinematics_teleop--chapter-14-q7"
+        },
+        {
+          "id": "03_so101_kinematics_teleop--chapter-14-q8",
+          "kind": "question",
+          "storageKey": "physical-ai-answer-03_so101_kinematics_teleop--chapter-14-q8"
+        },
+        {
+          "id": "03_so101_kinematics_teleop--chapter-14-q9",
+          "kind": "question",
+          "storageKey": "physical-ai-answer-03_so101_kinematics_teleop--chapter-14-q9"
+        },
+        {
+          "id": "03_so101_kinematics_teleop--chapter-14-q10",
+          "kind": "question",
+          "storageKey": "physical-ai-answer-03_so101_kinematics_teleop--chapter-14-q10"
+        }
+      ]
+    },
+    {
+      "id": "03_so101_kinematics_teleop--chapter-15",
+      "title": "3.11 프로젝트 과제",
+      "chapter": 3,
+      "source": "03_so101_kinematics_teleop/chapter.md",
+      "url": "/textbook/03_so101_kinematics_teleop--chapter-15/",
+      "exercises": [
+        {
+          "id": "03_so101_kinematics_teleop--chapter-15-report",
+          "kind": "report",
+          "storageKey": "physical-ai-answer-03_so101_kinematics_teleop--chapter-15-report"
+        }
+      ]
+    },
+    {
+      "id": "03_so101_kinematics_teleop--chapter-16",
+      "title": "3.12 실습·평가·참고자료",
+      "chapter": 3,
+      "source": "03_so101_kinematics_teleop/chapter.md",
+      "url": "/textbook/03_so101_kinematics_teleop--chapter-16/",
+      "exercises": []
+    },
+    {
+      "id": "03_so101_kinematics_teleop--labs--lab_3_1_fk_ik-1",
+      "title": "[SIM] 실습 3-1: FK와 DLS IK",
+      "chapter": 3,
+      "source": "03_so101_kinematics_teleop/labs/lab_3_1_fk_ik.md",
+      "url": "/textbook/03_so101_kinematics_teleop--labs--lab_3_1_fk_ik-1/",
+      "exercises": [
+        {
+          "id": "03_so101_kinematics_teleop--labs--lab_3_1_fk_ik-1-report",
+          "kind": "report",
+          "storageKey": "physical-ai-answer-03_so101_kinematics_teleop--labs--lab_3_1_fk_ik-1-report"
+        }
+      ]
+    },
+    {
+      "id": "03_so101_kinematics_teleop--labs--lab_3_2_safe_teleop-1",
+      "title": "[SIM] [SAFETY] 실습 3-2: Leader-Follower 안전 필터",
+      "chapter": 3,
+      "source": "03_so101_kinematics_teleop/labs/lab_3_2_safe_teleop.md",
+      "url": "/textbook/03_so101_kinematics_teleop--labs--lab_3_2_safe_teleop-1/",
+      "exercises": [
+        {
+          "id": "03_so101_kinematics_teleop--labs--lab_3_2_safe_teleop-1-report",
+          "kind": "report",
+          "storageKey": "physical-ai-answer-03_so101_kinematics_teleop--labs--lab_3_2_safe_teleop-1-report"
+        }
+      ]
+    },
+    {
+      "id": "03_so101_kinematics_teleop--labs--lab_3_3_ros2_bridge-1",
+      "title": "[SIM→HW] [SAFETY] 실습 3-3: ROS 2 JointState 안전 브리지",
+      "chapter": 3,
+      "source": "03_so101_kinematics_teleop/labs/lab_3_3_ros2_bridge.md",
+      "url": "/textbook/03_so101_kinematics_teleop--labs--lab_3_3_ros2_bridge-1/",
+      "exercises": [
+        {
+          "id": "03_so101_kinematics_teleop--labs--lab_3_3_ros2_bridge-1-report",
+          "kind": "report",
+          "storageKey": "physical-ai-answer-03_so101_kinematics_teleop--labs--lab_3_3_ros2_bridge-1-report"
+        }
+      ]
+    },
+    {
+      "id": "04_sensor_data_pipeline--chapter-1",
+      "title": "제4장 멀티모달 센서 정합과 데이터 파이프라인",
+      "chapter": 4,
+      "source": "04_sensor_data_pipeline/chapter.md",
+      "url": "/textbook/04_sensor_data_pipeline--chapter-1/",
+      "exercises": []
+    },
+    {
+      "id": "04_sensor_data_pipeline--chapter-2",
+      "title": "장 개요",
+      "chapter": 4,
+      "source": "04_sensor_data_pipeline/chapter.md",
+      "url": "/textbook/04_sensor_data_pipeline--chapter-2/",
+      "exercises": []
+    },
+    {
+      "id": "04_sensor_data_pipeline--chapter-3",
+      "title": "학습 목표",
+      "chapter": 4,
+      "source": "04_sensor_data_pipeline/chapter.md",
+      "url": "/textbook/04_sensor_data_pipeline--chapter-3/",
+      "exercises": []
+    },
+    {
+      "id": "04_sensor_data_pipeline--chapter-4",
+      "title": "선수 지식과 준비물",
+      "chapter": 4,
+      "source": "04_sensor_data_pipeline/chapter.md",
+      "url": "/textbook/04_sensor_data_pipeline--chapter-4/",
+      "exercises": []
+    },
+    {
+      "id": "04_sensor_data_pipeline--chapter-5",
+      "title": "4.1 핀홀 카메라와 좌표 프레임",
+      "chapter": 4,
+      "source": "04_sensor_data_pipeline/chapter.md",
+      "url": "/textbook/04_sensor_data_pipeline--chapter-5/",
+      "exercises": []
+    },
+    {
+      "id": "04_sensor_data_pipeline--chapter-6",
+      "title": "4.2 Isaac Sim/USD, ROS 2, OpenCV 좌표 변환",
+      "chapter": 4,
+      "source": "04_sensor_data_pipeline/chapter.md",
+      "url": "/textbook/04_sensor_data_pipeline--chapter-6/",
+      "exercises": []
+    },
+    {
+      "id": "04_sensor_data_pipeline--chapter-7",
+      "title": "4.3 TF2 트리 설계",
+      "chapter": 4,
+      "source": "04_sensor_data_pipeline/chapter.md",
+      "url": "/textbook/04_sensor_data_pipeline--chapter-7/",
+      "exercises": []
+    },
+    {
+      "id": "04_sensor_data_pipeline--chapter-8",
+      "title": "4.4 멀티레이트 센서 시간 정합",
+      "chapter": 4,
+      "source": "04_sensor_data_pipeline/chapter.md",
+      "url": "/textbook/04_sensor_data_pipeline--chapter-8/",
+      "exercises": []
+    },
+    {
+      "id": "04_sensor_data_pipeline--chapter-9",
+      "title": "4.5 rosbag2와 MCAP 원본 기록",
+      "chapter": 4,
+      "source": "04_sensor_data_pipeline/chapter.md",
+      "url": "/textbook/04_sensor_data_pipeline--chapter-9/",
+      "exercises": []
+    },
+    {
+      "id": "04_sensor_data_pipeline--chapter-10",
+      "title": "4.6 Domain Randomization",
+      "chapter": 4,
+      "source": "04_sensor_data_pipeline/chapter.md",
+      "url": "/textbook/04_sensor_data_pipeline--chapter-10/",
+      "exercises": []
+    },
+    {
+      "id": "04_sensor_data_pipeline--chapter-11",
+      "title": "4.7 Rerun 기반 무결성 검사",
+      "chapter": 4,
+      "source": "04_sensor_data_pipeline/chapter.md",
+      "url": "/textbook/04_sensor_data_pipeline--chapter-11/",
+      "exercises": []
+    },
+    {
+      "id": "04_sensor_data_pipeline--chapter-12",
+      "title": "4.8 구현 예제",
+      "chapter": 4,
+      "source": "04_sensor_data_pipeline/chapter.md",
+      "url": "/textbook/04_sensor_data_pipeline--chapter-12/",
+      "exercises": []
+    },
+    {
+      "id": "04_sensor_data_pipeline--chapter-13",
+      "title": "4.9 트러블슈팅",
+      "chapter": 4,
+      "source": "04_sensor_data_pipeline/chapter.md",
+      "url": "/textbook/04_sensor_data_pipeline--chapter-13/",
+      "exercises": []
+    },
+    {
+      "id": "04_sensor_data_pipeline--chapter-14",
+      "title": "4.10 요약",
+      "chapter": 4,
+      "source": "04_sensor_data_pipeline/chapter.md",
+      "url": "/textbook/04_sensor_data_pipeline--chapter-14/",
+      "exercises": []
+    },
+    {
+      "id": "04_sensor_data_pipeline--chapter-15",
+      "title": "4.11 확인문제",
+      "chapter": 4,
+      "source": "04_sensor_data_pipeline/chapter.md",
+      "url": "/textbook/04_sensor_data_pipeline--chapter-15/",
+      "exercises": [
+        {
+          "id": "04_sensor_data_pipeline--chapter-15-q1",
+          "kind": "question",
+          "storageKey": "physical-ai-answer-04_sensor_data_pipeline--chapter-15-q1"
+        },
+        {
+          "id": "04_sensor_data_pipeline--chapter-15-q2",
+          "kind": "question",
+          "storageKey": "physical-ai-answer-04_sensor_data_pipeline--chapter-15-q2"
+        },
+        {
+          "id": "04_sensor_data_pipeline--chapter-15-q3",
+          "kind": "question",
+          "storageKey": "physical-ai-answer-04_sensor_data_pipeline--chapter-15-q3"
+        },
+        {
+          "id": "04_sensor_data_pipeline--chapter-15-q4",
+          "kind": "question",
+          "storageKey": "physical-ai-answer-04_sensor_data_pipeline--chapter-15-q4"
+        },
+        {
+          "id": "04_sensor_data_pipeline--chapter-15-q5",
+          "kind": "question",
+          "storageKey": "physical-ai-answer-04_sensor_data_pipeline--chapter-15-q5"
+        },
+        {
+          "id": "04_sensor_data_pipeline--chapter-15-q6",
+          "kind": "question",
+          "storageKey": "physical-ai-answer-04_sensor_data_pipeline--chapter-15-q6"
+        },
+        {
+          "id": "04_sensor_data_pipeline--chapter-15-q7",
+          "kind": "question",
+          "storageKey": "physical-ai-answer-04_sensor_data_pipeline--chapter-15-q7"
+        },
+        {
+          "id": "04_sensor_data_pipeline--chapter-15-q8",
+          "kind": "question",
+          "storageKey": "physical-ai-answer-04_sensor_data_pipeline--chapter-15-q8"
+        },
+        {
+          "id": "04_sensor_data_pipeline--chapter-15-q9",
+          "kind": "question",
+          "storageKey": "physical-ai-answer-04_sensor_data_pipeline--chapter-15-q9"
+        },
+        {
+          "id": "04_sensor_data_pipeline--chapter-15-q10",
+          "kind": "question",
+          "storageKey": "physical-ai-answer-04_sensor_data_pipeline--chapter-15-q10"
+        },
+        {
+          "id": "04_sensor_data_pipeline--chapter-15-q11",
+          "kind": "question",
+          "storageKey": "physical-ai-answer-04_sensor_data_pipeline--chapter-15-q11"
+        },
+        {
+          "id": "04_sensor_data_pipeline--chapter-15-q12",
+          "kind": "question",
+          "storageKey": "physical-ai-answer-04_sensor_data_pipeline--chapter-15-q12"
+        }
+      ]
+    },
+    {
+      "id": "04_sensor_data_pipeline--chapter-16",
+      "title": "4.12 프로젝트 과제",
+      "chapter": 4,
+      "source": "04_sensor_data_pipeline/chapter.md",
+      "url": "/textbook/04_sensor_data_pipeline--chapter-16/",
+      "exercises": [
+        {
+          "id": "04_sensor_data_pipeline--chapter-16-report",
+          "kind": "report",
+          "storageKey": "physical-ai-answer-04_sensor_data_pipeline--chapter-16-report"
+        }
+      ]
+    },
+    {
+      "id": "04_sensor_data_pipeline--chapter-17",
+      "title": "4.13 실습·평가·참고자료",
+      "chapter": 4,
+      "source": "04_sensor_data_pipeline/chapter.md",
+      "url": "/textbook/04_sensor_data_pipeline--chapter-17/",
+      "exercises": []
+    },
+    {
+      "id": "04_sensor_data_pipeline--labs--lab01_camera_frames-1",
+      "title": "[SIM] 실습 4-1: 카메라 투영과 프레임 정합",
+      "chapter": 4,
+      "source": "04_sensor_data_pipeline/labs/lab01_camera_frames.md",
+      "url": "/textbook/04_sensor_data_pipeline--labs--lab01_camera_frames-1/",
+      "exercises": [
+        {
+          "id": "04_sensor_data_pipeline--labs--lab01_camera_frames-1-report",
+          "kind": "report",
+          "storageKey": "physical-ai-answer-04_sensor_data_pipeline--labs--lab01_camera_frames-1-report"
+        }
+      ]
+    },
+    {
+      "id": "04_sensor_data_pipeline--labs--lab02_tf_sync-1",
+      "title": "[SIM] 실습 4-2: TF2와 ApproximateTime",
+      "chapter": 4,
+      "source": "04_sensor_data_pipeline/labs/lab02_tf_sync.md",
+      "url": "/textbook/04_sensor_data_pipeline--labs--lab02_tf_sync-1/",
+      "exercises": [
+        {
+          "id": "04_sensor_data_pipeline--labs--lab02_tf_sync-1-report",
+          "kind": "report",
+          "storageKey": "physical-ai-answer-04_sensor_data_pipeline--labs--lab02_tf_sync-1-report"
+        }
+      ]
+    },
+    {
+      "id": "04_sensor_data_pipeline--labs--lab03_rosbag_mcap-1",
+      "title": "[SIM] 실습 4-3: rosbag2/MCAP 에피소드 기록",
+      "chapter": 4,
+      "source": "04_sensor_data_pipeline/labs/lab03_rosbag_mcap.md",
+      "url": "/textbook/04_sensor_data_pipeline--labs--lab03_rosbag_mcap-1/",
+      "exercises": [
+        {
+          "id": "04_sensor_data_pipeline--labs--lab03_rosbag_mcap-1-report",
+          "kind": "report",
+          "storageKey": "physical-ai-answer-04_sensor_data_pipeline--labs--lab03_rosbag_mcap-1-report"
+        }
+      ]
+    },
+    {
+      "id": "04_sensor_data_pipeline--labs--lab04_randomization_rerun-1",
+      "title": "[SIM] 실습 4-4: Domain Randomization과 Rerun 품질 검토",
+      "chapter": 4,
+      "source": "04_sensor_data_pipeline/labs/lab04_randomization_rerun.md",
+      "url": "/textbook/04_sensor_data_pipeline--labs--lab04_randomization_rerun-1/",
+      "exercises": [
+        {
+          "id": "04_sensor_data_pipeline--labs--lab04_randomization_rerun-1-report",
+          "kind": "report",
+          "storageKey": "physical-ai-answer-04_sensor_data_pipeline--labs--lab04_randomization_rerun-1-report"
+        }
+      ]
+    },
+    {
+      "id": "05_lerobot_smolvla--chapter-1",
+      "title": "제5장 LeRobot Dataset과 SmolVLA 파인튜닝",
+      "chapter": 5,
+      "source": "05_lerobot_smolvla/chapter.md",
+      "url": "/textbook/05_lerobot_smolvla--chapter-1/",
+      "exercises": []
+    },
+    {
+      "id": "05_lerobot_smolvla--chapter-2",
+      "title": "장 개요",
+      "chapter": 5,
+      "source": "05_lerobot_smolvla/chapter.md",
+      "url": "/textbook/05_lerobot_smolvla--chapter-2/",
+      "exercises": []
+    },
+    {
+      "id": "05_lerobot_smolvla--chapter-3",
+      "title": "학습 목표",
+      "chapter": 5,
+      "source": "05_lerobot_smolvla/chapter.md",
+      "url": "/textbook/05_lerobot_smolvla--chapter-3/",
+      "exercises": []
+    },
+    {
+      "id": "05_lerobot_smolvla--chapter-4",
+      "title": "선수 지식과 준비물",
+      "chapter": 5,
+      "source": "05_lerobot_smolvla/chapter.md",
+      "url": "/textbook/05_lerobot_smolvla--chapter-4/",
+      "exercises": []
+    },
+    {
+      "id": "05_lerobot_smolvla--chapter-5",
+      "title": "5.1 모방학습과 행동 복제",
+      "chapter": 5,
+      "source": "05_lerobot_smolvla/chapter.md",
+      "url": "/textbook/05_lerobot_smolvla--chapter-5/",
+      "exercises": []
+    },
+    {
+      "id": "05_lerobot_smolvla--chapter-6",
+      "title": "5.2 행동 정책의 계보",
+      "chapter": 5,
+      "source": "05_lerobot_smolvla/chapter.md",
+      "url": "/textbook/05_lerobot_smolvla--chapter-6/",
+      "exercises": []
+    },
+    {
+      "id": "05_lerobot_smolvla--chapter-7",
+      "title": "5.3 LeRobotDataset v3 설계",
+      "chapter": 5,
+      "source": "05_lerobot_smolvla/chapter.md",
+      "url": "/textbook/05_lerobot_smolvla--chapter-7/",
+      "exercises": []
+    },
+    {
+      "id": "05_lerobot_smolvla--chapter-8",
+      "title": "5.4 데이터 수집과 품질 관리",
+      "chapter": 5,
+      "source": "05_lerobot_smolvla/chapter.md",
+      "url": "/textbook/05_lerobot_smolvla--chapter-8/",
+      "exercises": []
+    },
+    {
+      "id": "05_lerobot_smolvla--chapter-9",
+      "title": "5.5 정규화와 통계",
+      "chapter": 5,
+      "source": "05_lerobot_smolvla/chapter.md",
+      "url": "/textbook/05_lerobot_smolvla--chapter-9/",
+      "exercises": []
+    },
+    {
+      "id": "05_lerobot_smolvla--chapter-10",
+      "title": "5.6 SmolVLA 구조",
+      "chapter": 5,
+      "source": "05_lerobot_smolvla/chapter.md",
+      "url": "/textbook/05_lerobot_smolvla--chapter-10/",
+      "exercises": []
+    },
+    {
+      "id": "05_lerobot_smolvla--chapter-11",
+      "title": "5.7 LoRA 기반 파인튜닝",
+      "chapter": 5,
+      "source": "05_lerobot_smolvla/chapter.md",
+      "url": "/textbook/05_lerobot_smolvla--chapter-11/",
+      "exercises": []
+    },
+    {
+      "id": "05_lerobot_smolvla--chapter-12",
+      "title": "5.8 학습 파이프라인",
+      "chapter": 5,
+      "source": "05_lerobot_smolvla/chapter.md",
+      "url": "/textbook/05_lerobot_smolvla--chapter-12/",
+      "exercises": []
+    },
+    {
+      "id": "05_lerobot_smolvla--chapter-13",
+      "title": "5.9 20 Hz 폐루프 추론",
+      "chapter": 5,
+      "source": "05_lerobot_smolvla/chapter.md",
+      "url": "/textbook/05_lerobot_smolvla--chapter-13/",
+      "exercises": []
+    },
+    {
+      "id": "05_lerobot_smolvla--chapter-14",
+      "title": "5.10 평가 설계",
+      "chapter": 5,
+      "source": "05_lerobot_smolvla/chapter.md",
+      "url": "/textbook/05_lerobot_smolvla--chapter-14/",
+      "exercises": []
+    },
+    {
+      "id": "05_lerobot_smolvla--chapter-15",
+      "title": "5.11 데이터 라이선스, 개인정보, 보안",
+      "chapter": 5,
+      "source": "05_lerobot_smolvla/chapter.md",
+      "url": "/textbook/05_lerobot_smolvla--chapter-15/",
+      "exercises": []
+    },
+    {
+      "id": "05_lerobot_smolvla--chapter-16",
+      "title": "5.12 재현성 체크리스트",
+      "chapter": 5,
+      "source": "05_lerobot_smolvla/chapter.md",
+      "url": "/textbook/05_lerobot_smolvla--chapter-16/",
+      "exercises": []
+    },
+    {
+      "id": "05_lerobot_smolvla--chapter-17",
+      "title": "5.13 단계별 실습",
+      "chapter": 5,
+      "source": "05_lerobot_smolvla/chapter.md",
+      "url": "/textbook/05_lerobot_smolvla--chapter-17/",
+      "exercises": []
+    },
+    {
+      "id": "05_lerobot_smolvla--chapter-18",
+      "title": "5.14 예상 출력 예시",
+      "chapter": 5,
+      "source": "05_lerobot_smolvla/chapter.md",
+      "url": "/textbook/05_lerobot_smolvla--chapter-18/",
+      "exercises": []
+    },
+    {
+      "id": "05_lerobot_smolvla--chapter-19",
+      "title": "5.15 트러블슈팅",
+      "chapter": 5,
+      "source": "05_lerobot_smolvla/chapter.md",
+      "url": "/textbook/05_lerobot_smolvla--chapter-19/",
+      "exercises": []
+    },
+    {
+      "id": "05_lerobot_smolvla--chapter-20",
+      "title": "5.16 요약",
+      "chapter": 5,
+      "source": "05_lerobot_smolvla/chapter.md",
+      "url": "/textbook/05_lerobot_smolvla--chapter-20/",
+      "exercises": []
+    },
+    {
+      "id": "05_lerobot_smolvla--chapter-21",
+      "title": "5.17 확인문제",
+      "chapter": 5,
+      "source": "05_lerobot_smolvla/chapter.md",
+      "url": "/textbook/05_lerobot_smolvla--chapter-21/",
+      "exercises": [
+        {
+          "id": "05_lerobot_smolvla--chapter-21-q1",
+          "kind": "question",
+          "storageKey": "physical-ai-answer-05_lerobot_smolvla--chapter-21-q1"
+        },
+        {
+          "id": "05_lerobot_smolvla--chapter-21-q2",
+          "kind": "question",
+          "storageKey": "physical-ai-answer-05_lerobot_smolvla--chapter-21-q2"
+        },
+        {
+          "id": "05_lerobot_smolvla--chapter-21-q3",
+          "kind": "question",
+          "storageKey": "physical-ai-answer-05_lerobot_smolvla--chapter-21-q3"
+        },
+        {
+          "id": "05_lerobot_smolvla--chapter-21-q4",
+          "kind": "question",
+          "storageKey": "physical-ai-answer-05_lerobot_smolvla--chapter-21-q4"
+        },
+        {
+          "id": "05_lerobot_smolvla--chapter-21-q5",
+          "kind": "question",
+          "storageKey": "physical-ai-answer-05_lerobot_smolvla--chapter-21-q5"
+        },
+        {
+          "id": "05_lerobot_smolvla--chapter-21-q6",
+          "kind": "question",
+          "storageKey": "physical-ai-answer-05_lerobot_smolvla--chapter-21-q6"
+        },
+        {
+          "id": "05_lerobot_smolvla--chapter-21-q7",
+          "kind": "question",
+          "storageKey": "physical-ai-answer-05_lerobot_smolvla--chapter-21-q7"
+        },
+        {
+          "id": "05_lerobot_smolvla--chapter-21-q8",
+          "kind": "question",
+          "storageKey": "physical-ai-answer-05_lerobot_smolvla--chapter-21-q8"
+        },
+        {
+          "id": "05_lerobot_smolvla--chapter-21-q9",
+          "kind": "question",
+          "storageKey": "physical-ai-answer-05_lerobot_smolvla--chapter-21-q9"
+        },
+        {
+          "id": "05_lerobot_smolvla--chapter-21-q10",
+          "kind": "question",
+          "storageKey": "physical-ai-answer-05_lerobot_smolvla--chapter-21-q10"
+        },
+        {
+          "id": "05_lerobot_smolvla--chapter-21-q11",
+          "kind": "question",
+          "storageKey": "physical-ai-answer-05_lerobot_smolvla--chapter-21-q11"
+        },
+        {
+          "id": "05_lerobot_smolvla--chapter-21-q12",
+          "kind": "question",
+          "storageKey": "physical-ai-answer-05_lerobot_smolvla--chapter-21-q12"
+        }
+      ]
+    },
+    {
+      "id": "05_lerobot_smolvla--chapter-22",
+      "title": "5.18 프로젝트 과제",
+      "chapter": 5,
+      "source": "05_lerobot_smolvla/chapter.md",
+      "url": "/textbook/05_lerobot_smolvla--chapter-22/",
+      "exercises": [
+        {
+          "id": "05_lerobot_smolvla--chapter-22-report",
+          "kind": "report",
+          "storageKey": "physical-ai-answer-05_lerobot_smolvla--chapter-22-report"
+        }
+      ]
+    },
+    {
+      "id": "05_lerobot_smolvla--chapter-23",
+      "title": "5.19 실습·평가·참고자료",
+      "chapter": 5,
+      "source": "05_lerobot_smolvla/chapter.md",
+      "url": "/textbook/05_lerobot_smolvla--chapter-23/",
+      "exercises": []
+    },
+    {
+      "id": "05_lerobot_smolvla--labs--lab01_dataset_audit-1",
+      "title": "실습 5-A: LeRobotDataset v3 무결성 감사",
+      "chapter": 5,
+      "source": "05_lerobot_smolvla/labs/lab01_dataset_audit.md",
+      "url": "/textbook/05_lerobot_smolvla--labs--lab01_dataset_audit-1/",
+      "exercises": [
+        {
+          "id": "05_lerobot_smolvla--labs--lab01_dataset_audit-1-report",
+          "kind": "report",
+          "storageKey": "physical-ai-answer-05_lerobot_smolvla--labs--lab01_dataset_audit-1-report"
+        }
+      ]
+    },
+    {
+      "id": "05_lerobot_smolvla--labs--lab02_normalization-1",
+      "title": "실습 5-B: Episode split과 정규화 누출",
+      "chapter": 5,
+      "source": "05_lerobot_smolvla/labs/lab02_normalization.md",
+      "url": "/textbook/05_lerobot_smolvla--labs--lab02_normalization-1/",
+      "exercises": [
+        {
+          "id": "05_lerobot_smolvla--labs--lab02_normalization-1-report",
+          "kind": "report",
+          "storageKey": "physical-ai-answer-05_lerobot_smolvla--labs--lab02_normalization-1-report"
+        }
+      ]
+    },
+    {
+      "id": "05_lerobot_smolvla--labs--lab03_smolvla_lora-1",
+      "title": "실습 5-C: SmolVLA LoRA 학습 설계",
+      "chapter": 5,
+      "source": "05_lerobot_smolvla/labs/lab03_smolvla_lora.md",
+      "url": "/textbook/05_lerobot_smolvla--labs--lab03_smolvla_lora-1/",
+      "exercises": [
+        {
+          "id": "05_lerobot_smolvla--labs--lab03_smolvla_lora-1-report",
+          "kind": "report",
+          "storageKey": "physical-ai-answer-05_lerobot_smolvla--labs--lab03_smolvla_lora-1-report"
+        }
+      ]
+    },
+    {
+      "id": "05_lerobot_smolvla--labs--lab04_closed_loop-1",
+      "title": "실습 5-D: 20 Hz Action Chunk 폐루프",
+      "chapter": 5,
+      "source": "05_lerobot_smolvla/labs/lab04_closed_loop.md",
+      "url": "/textbook/05_lerobot_smolvla--labs--lab04_closed_loop-1/",
+      "exercises": [
+        {
+          "id": "05_lerobot_smolvla--labs--lab04_closed_loop-1-report",
+          "kind": "report",
+          "storageKey": "physical-ai-answer-05_lerobot_smolvla--labs--lab04_closed_loop-1-report"
+        }
+      ]
+    },
+    {
+      "id": "05_lerobot_smolvla--exercises--problem_set-1",
+      "title": "제5장 연습문제 및 구현 과제",
+      "chapter": 5,
+      "source": "05_lerobot_smolvla/exercises/problem_set.md",
+      "url": "/textbook/05_lerobot_smolvla--exercises--problem_set-1/",
+      "exercises": [
+        {
+          "id": "05_lerobot_smolvla--exercises--problem_set-1-q1",
+          "kind": "question",
+          "storageKey": "physical-ai-answer-05_lerobot_smolvla--exercises--problem_set-1-q1"
+        },
+        {
+          "id": "05_lerobot_smolvla--exercises--problem_set-1-q2",
+          "kind": "question",
+          "storageKey": "physical-ai-answer-05_lerobot_smolvla--exercises--problem_set-1-q2"
+        },
+        {
+          "id": "05_lerobot_smolvla--exercises--problem_set-1-q3",
+          "kind": "question",
+          "storageKey": "physical-ai-answer-05_lerobot_smolvla--exercises--problem_set-1-q3"
+        },
+        {
+          "id": "05_lerobot_smolvla--exercises--problem_set-1-q4",
+          "kind": "question",
+          "storageKey": "physical-ai-answer-05_lerobot_smolvla--exercises--problem_set-1-q4"
+        },
+        {
+          "id": "05_lerobot_smolvla--exercises--problem_set-1-q5",
+          "kind": "question",
+          "storageKey": "physical-ai-answer-05_lerobot_smolvla--exercises--problem_set-1-q5"
+        },
+        {
+          "id": "05_lerobot_smolvla--exercises--problem_set-1-q6",
+          "kind": "question",
+          "storageKey": "physical-ai-answer-05_lerobot_smolvla--exercises--problem_set-1-q6"
+        },
+        {
+          "id": "05_lerobot_smolvla--exercises--problem_set-1-q7",
+          "kind": "question",
+          "storageKey": "physical-ai-answer-05_lerobot_smolvla--exercises--problem_set-1-q7"
+        },
+        {
+          "id": "05_lerobot_smolvla--exercises--problem_set-1-q8",
+          "kind": "question",
+          "storageKey": "physical-ai-answer-05_lerobot_smolvla--exercises--problem_set-1-q8"
+        },
+        {
+          "id": "05_lerobot_smolvla--exercises--problem_set-1-q9",
+          "kind": "question",
+          "storageKey": "physical-ai-answer-05_lerobot_smolvla--exercises--problem_set-1-q9"
+        },
+        {
+          "id": "05_lerobot_smolvla--exercises--problem_set-1-q10",
+          "kind": "question",
+          "storageKey": "physical-ai-answer-05_lerobot_smolvla--exercises--problem_set-1-q10"
+        },
+        {
+          "id": "05_lerobot_smolvla--exercises--problem_set-1-q11",
+          "kind": "question",
+          "storageKey": "physical-ai-answer-05_lerobot_smolvla--exercises--problem_set-1-q11"
+        },
+        {
+          "id": "05_lerobot_smolvla--exercises--problem_set-1-q12",
+          "kind": "question",
+          "storageKey": "physical-ai-answer-05_lerobot_smolvla--exercises--problem_set-1-q12"
+        },
+        {
+          "id": "05_lerobot_smolvla--exercises--problem_set-1-q13",
+          "kind": "question",
+          "storageKey": "physical-ai-answer-05_lerobot_smolvla--exercises--problem_set-1-q13"
+        },
+        {
+          "id": "05_lerobot_smolvla--exercises--problem_set-1-q14",
+          "kind": "question",
+          "storageKey": "physical-ai-answer-05_lerobot_smolvla--exercises--problem_set-1-q14"
+        },
+        {
+          "id": "05_lerobot_smolvla--exercises--problem_set-1-q15",
+          "kind": "question",
+          "storageKey": "physical-ai-answer-05_lerobot_smolvla--exercises--problem_set-1-q15"
+        },
+        {
+          "id": "05_lerobot_smolvla--exercises--problem_set-1-q16",
+          "kind": "question",
+          "storageKey": "physical-ai-answer-05_lerobot_smolvla--exercises--problem_set-1-q16"
+        },
+        {
+          "id": "05_lerobot_smolvla--exercises--problem_set-1-q17",
+          "kind": "question",
+          "storageKey": "physical-ai-answer-05_lerobot_smolvla--exercises--problem_set-1-q17"
+        },
+        {
+          "id": "05_lerobot_smolvla--exercises--problem_set-1-q18",
+          "kind": "question",
+          "storageKey": "physical-ai-answer-05_lerobot_smolvla--exercises--problem_set-1-q18"
+        },
+        {
+          "id": "05_lerobot_smolvla--exercises--problem_set-1-q19",
+          "kind": "question",
+          "storageKey": "physical-ai-answer-05_lerobot_smolvla--exercises--problem_set-1-q19"
+        },
+        {
+          "id": "05_lerobot_smolvla--exercises--problem_set-1-q20",
+          "kind": "question",
+          "storageKey": "physical-ai-answer-05_lerobot_smolvla--exercises--problem_set-1-q20"
+        }
+      ]
+    },
+    {
+      "id": "06_sim2real_deployment--chapter-1",
+      "title": "제6장 Sim2Real 배포 최적화와 최종 실증",
+      "chapter": 6,
+      "source": "06_sim2real_deployment/chapter.md",
+      "url": "/textbook/06_sim2real_deployment--chapter-1/",
+      "exercises": []
+    },
+    {
+      "id": "06_sim2real_deployment--chapter-2",
+      "title": "장 개요",
+      "chapter": 6,
+      "source": "06_sim2real_deployment/chapter.md",
+      "url": "/textbook/06_sim2real_deployment--chapter-2/",
+      "exercises": []
+    },
+    {
+      "id": "06_sim2real_deployment--chapter-3",
+      "title": "학습 목표",
+      "chapter": 6,
+      "source": "06_sim2real_deployment/chapter.md",
+      "url": "/textbook/06_sim2real_deployment--chapter-3/",
+      "exercises": []
+    },
+    {
+      "id": "06_sim2real_deployment--chapter-4",
+      "title": "선수 지식과 준비물",
+      "chapter": 6,
+      "source": "06_sim2real_deployment/chapter.md",
+      "url": "/textbook/06_sim2real_deployment--chapter-4/",
+      "exercises": []
+    },
+    {
+      "id": "06_sim2real_deployment--chapter-5",
+      "title": "6.1 Reality Gap의 구조",
+      "chapter": 6,
+      "source": "06_sim2real_deployment/chapter.md",
+      "url": "/textbook/06_sim2real_deployment--chapter-5/",
+      "exercises": []
+    },
+    {
+      "id": "06_sim2real_deployment--chapter-6",
+      "title": "6.2 정량 진단",
+      "chapter": 6,
+      "source": "06_sim2real_deployment/chapter.md",
+      "url": "/textbook/06_sim2real_deployment--chapter-6/",
+      "exercises": []
+    },
+    {
+      "id": "06_sim2real_deployment--chapter-7",
+      "title": "6.3 출력 안정화",
+      "chapter": 6,
+      "source": "06_sim2real_deployment/chapter.md",
+      "url": "/textbook/06_sim2real_deployment--chapter-7/",
+      "exercises": []
+    },
+    {
+      "id": "06_sim2real_deployment--chapter-8",
+      "title": "6.4 안전 배포 감독기",
+      "chapter": 6,
+      "source": "06_sim2real_deployment/chapter.md",
+      "url": "/textbook/06_sim2real_deployment--chapter-8/",
+      "exercises": []
+    },
+    {
+      "id": "06_sim2real_deployment--chapter-9",
+      "title": "6.5 End-to-End Pick & Place 배포",
+      "chapter": 6,
+      "source": "06_sim2real_deployment/chapter.md",
+      "url": "/textbook/06_sim2real_deployment--chapter-9/",
+      "exercises": []
+    },
+    {
+      "id": "06_sim2real_deployment--chapter-10",
+      "title": "6.6 평가 설계",
+      "chapter": 6,
+      "source": "06_sim2real_deployment/chapter.md",
+      "url": "/textbook/06_sim2real_deployment--chapter-10/",
+      "exercises": []
+    },
+    {
+      "id": "06_sim2real_deployment--chapter-11",
+      "title": "6.7 트러블슈팅 매트릭스",
+      "chapter": 6,
+      "source": "06_sim2real_deployment/chapter.md",
+      "url": "/textbook/06_sim2real_deployment--chapter-11/",
+      "exercises": []
+    },
+    {
+      "id": "06_sim2real_deployment--chapter-12",
+      "title": "6.8 포트폴리오 패키징",
+      "chapter": 6,
+      "source": "06_sim2real_deployment/chapter.md",
+      "url": "/textbook/06_sim2real_deployment--chapter-12/",
+      "exercises": []
+    },
+    {
+      "id": "06_sim2real_deployment--chapter-13",
+      "title": "6.9 단계별 실습",
+      "chapter": 6,
+      "source": "06_sim2real_deployment/chapter.md",
+      "url": "/textbook/06_sim2real_deployment--chapter-13/",
+      "exercises": []
+    },
+    {
+      "id": "06_sim2real_deployment--chapter-14",
+      "title": "6.10 요약",
+      "chapter": 6,
+      "source": "06_sim2real_deployment/chapter.md",
+      "url": "/textbook/06_sim2real_deployment--chapter-14/",
+      "exercises": []
+    },
+    {
+      "id": "06_sim2real_deployment--chapter-15",
+      "title": "6.11 확인문제",
+      "chapter": 6,
+      "source": "06_sim2real_deployment/chapter.md",
+      "url": "/textbook/06_sim2real_deployment--chapter-15/",
+      "exercises": [
+        {
+          "id": "06_sim2real_deployment--chapter-15-q1",
+          "kind": "question",
+          "storageKey": "physical-ai-answer-06_sim2real_deployment--chapter-15-q1"
+        },
+        {
+          "id": "06_sim2real_deployment--chapter-15-q2",
+          "kind": "question",
+          "storageKey": "physical-ai-answer-06_sim2real_deployment--chapter-15-q2"
+        },
+        {
+          "id": "06_sim2real_deployment--chapter-15-q3",
+          "kind": "question",
+          "storageKey": "physical-ai-answer-06_sim2real_deployment--chapter-15-q3"
+        },
+        {
+          "id": "06_sim2real_deployment--chapter-15-q4",
+          "kind": "question",
+          "storageKey": "physical-ai-answer-06_sim2real_deployment--chapter-15-q4"
+        },
+        {
+          "id": "06_sim2real_deployment--chapter-15-q5",
+          "kind": "question",
+          "storageKey": "physical-ai-answer-06_sim2real_deployment--chapter-15-q5"
+        },
+        {
+          "id": "06_sim2real_deployment--chapter-15-q6",
+          "kind": "question",
+          "storageKey": "physical-ai-answer-06_sim2real_deployment--chapter-15-q6"
+        },
+        {
+          "id": "06_sim2real_deployment--chapter-15-q7",
+          "kind": "question",
+          "storageKey": "physical-ai-answer-06_sim2real_deployment--chapter-15-q7"
+        },
+        {
+          "id": "06_sim2real_deployment--chapter-15-q8",
+          "kind": "question",
+          "storageKey": "physical-ai-answer-06_sim2real_deployment--chapter-15-q8"
+        },
+        {
+          "id": "06_sim2real_deployment--chapter-15-q9",
+          "kind": "question",
+          "storageKey": "physical-ai-answer-06_sim2real_deployment--chapter-15-q9"
+        },
+        {
+          "id": "06_sim2real_deployment--chapter-15-q10",
+          "kind": "question",
+          "storageKey": "physical-ai-answer-06_sim2real_deployment--chapter-15-q10"
+        }
+      ]
+    },
+    {
+      "id": "06_sim2real_deployment--chapter-16",
+      "title": "6.12 최종 프로젝트",
+      "chapter": 6,
+      "source": "06_sim2real_deployment/chapter.md",
+      "url": "/textbook/06_sim2real_deployment--chapter-16/",
+      "exercises": [
+        {
+          "id": "06_sim2real_deployment--chapter-16-report",
+          "kind": "report",
+          "storageKey": "physical-ai-answer-06_sim2real_deployment--chapter-16-report"
+        }
+      ]
+    },
+    {
+      "id": "06_sim2real_deployment--chapter-17",
+      "title": "6.13 실습·평가·참고자료",
+      "chapter": 6,
+      "source": "06_sim2real_deployment/chapter.md",
+      "url": "/textbook/06_sim2real_deployment--chapter-17/",
+      "exercises": []
+    },
+    {
+      "id": "06_sim2real_deployment--labs--lab_6_1_diagnostics-1",
+      "title": "실습 6-1: Sim2Real 로그 진단",
+      "chapter": 6,
+      "source": "06_sim2real_deployment/labs/lab_6_1_diagnostics.md",
+      "url": "/textbook/06_sim2real_deployment--labs--lab_6_1_diagnostics-1/",
+      "exercises": [
+        {
+          "id": "06_sim2real_deployment--labs--lab_6_1_diagnostics-1-report",
+          "kind": "report",
+          "storageKey": "physical-ai-answer-06_sim2real_deployment--labs--lab_6_1_diagnostics-1-report"
+        }
+      ]
+    },
+    {
+      "id": "06_sim2real_deployment--labs--lab_6_2_supervisor-1",
+      "title": "실습 6-2: Temporal Filter와 안전 승격 감독기",
+      "chapter": 6,
+      "source": "06_sim2real_deployment/labs/lab_6_2_supervisor.md",
+      "url": "/textbook/06_sim2real_deployment--labs--lab_6_2_supervisor-1/",
+      "exercises": [
+        {
+          "id": "06_sim2real_deployment--labs--lab_6_2_supervisor-1-report",
+          "kind": "report",
+          "storageKey": "physical-ai-answer-06_sim2real_deployment--labs--lab_6_2_supervisor-1-report"
+        }
+      ]
+    },
+    {
+      "id": "06_sim2real_deployment--labs--lab_6_3_ros2_guard-1",
+      "title": "실습 6-3: ROS 2 Cartesian Workspace Guard",
+      "chapter": 6,
+      "source": "06_sim2real_deployment/labs/lab_6_3_ros2_guard.md",
+      "url": "/textbook/06_sim2real_deployment--labs--lab_6_3_ros2_guard-1/",
+      "exercises": [
+        {
+          "id": "06_sim2real_deployment--labs--lab_6_3_ros2_guard-1-report",
+          "kind": "report",
+          "storageKey": "physical-ai-answer-06_sim2real_deployment--labs--lab_6_3_ros2_guard-1-report"
+        }
+      ]
+    }
+  ],
+  "exampleFiles": [
+    "01_physical_ai_isaac_ros2/code/create_usd_scene.py",
+    "01_physical_ai_isaac_ros2/code/physical_ai_loop.py",
+    "01_physical_ai_isaac_ros2/code/ros2_jazzy/physical_ai_demo/package.xml",
+    "01_physical_ai_isaac_ros2/code/ros2_jazzy/physical_ai_demo/physical_ai_demo/__init__.py",
+    "01_physical_ai_isaac_ros2/code/ros2_jazzy/physical_ai_demo/physical_ai_demo/joint_state_source.py",
+    "01_physical_ai_isaac_ros2/code/ros2_jazzy/physical_ai_demo/physical_ai_demo/proposed_command_source.py",
+    "01_physical_ai_isaac_ros2/code/ros2_jazzy/physical_ai_demo/resource/physical_ai_demo",
+    "01_physical_ai_isaac_ros2/code/ros2_jazzy/physical_ai_demo/setup.cfg",
+    "01_physical_ai_isaac_ros2/code/ros2_jazzy/physical_ai_demo/setup.py",
+    "01_physical_ai_isaac_ros2/code/ros2_jazzy/safety_gate_cpp/CMakeLists.txt",
+    "01_physical_ai_isaac_ros2/code/ros2_jazzy/safety_gate_cpp/package.xml",
+    "01_physical_ai_isaac_ros2/code/ros2_jazzy/safety_gate_cpp/src/safety_gate.cpp",
+    "02_physx_simulation/code/contact_estimator.py",
+    "02_physx_simulation/code/create_physx_scene.py",
+    "02_physx_simulation/code/inertia_properties.py",
+    "02_physx_simulation/code/transforms.py",
+    "03_so101_kinematics_teleop/code/fk_dls_ik.py",
+    "03_so101_kinematics_teleop/code/ros2_ws/src/so101_training_bridge/CMakeLists.txt",
+    "03_so101_kinematics_teleop/code/ros2_ws/src/so101_training_bridge/package.xml",
+    "03_so101_kinematics_teleop/code/ros2_ws/src/so101_training_bridge/scripts/safe_joint_bridge.py",
+    "03_so101_kinematics_teleop/code/ros2_ws/src/so101_training_bridge/src/joint_state_monitor.cpp",
+    "03_so101_kinematics_teleop/code/safe_teleop_core.py",
+    "04_sensor_data_pipeline/code/camera_geometry.py",
+    "04_sensor_data_pipeline/code/interpolate_joint_state.cpp",
+    "04_sensor_data_pipeline/code/replicator_randomization.py",
+    "04_sensor_data_pipeline/code/rerun_integrity_check.py",
+    "04_sensor_data_pipeline/code/ros2_jazzy/sensor_pipeline/package.xml",
+    "04_sensor_data_pipeline/code/ros2_jazzy/sensor_pipeline/resource/sensor_pipeline",
+    "04_sensor_data_pipeline/code/ros2_jazzy/sensor_pipeline/sensor_pipeline/__init__.py",
+    "04_sensor_data_pipeline/code/ros2_jazzy/sensor_pipeline/sensor_pipeline/approx_sync.py",
+    "04_sensor_data_pipeline/code/ros2_jazzy/sensor_pipeline/sensor_pipeline/static_camera_tf.py",
+    "04_sensor_data_pipeline/code/ros2_jazzy/sensor_pipeline/sensor_pipeline/synthetic_sensors.py",
+    "04_sensor_data_pipeline/code/ros2_jazzy/sensor_pipeline/setup.cfg",
+    "04_sensor_data_pipeline/code/ros2_jazzy/sensor_pipeline/setup.py",
+    "05_lerobot_smolvla/code/closed_loop_20hz.py",
+    "05_lerobot_smolvla/code/inspect_lerobot_v3.py",
+    "05_lerobot_smolvla/code/lora_budget.py",
+    "05_lerobot_smolvla/code/normalization.py",
+    "05_lerobot_smolvla/code/temporal_ensemble.py",
+    "06_sim2real_deployment/code/ros2_ws/src/sim2real_safety/package.xml",
+    "06_sim2real_deployment/code/ros2_ws/src/sim2real_safety/resource/sim2real_safety",
+    "06_sim2real_deployment/code/ros2_ws/src/sim2real_safety/setup.cfg",
+    "06_sim2real_deployment/code/ros2_ws/src/sim2real_safety/setup.py",
+    "06_sim2real_deployment/code/ros2_ws/src/sim2real_safety/sim2real_safety/__init__.py",
+    "06_sim2real_deployment/code/ros2_ws/src/sim2real_safety/sim2real_safety/stamped_pose_publisher.py",
+    "06_sim2real_deployment/code/ros2_ws/src/sim2real_safety/sim2real_safety/workspace_guard.py",
+    "06_sim2real_deployment/code/safety_supervisor.py",
+    "06_sim2real_deployment/code/sim2real_diagnostics.py",
+    "06_sim2real_deployment/code/temporal_filters.py"
+  ],
+  "glossaryTerms": 21,
+  "bookFiles": [
+    {
+      "source": "00_frontmatter/README.md",
+      "bytes": 423,
+      "sha256": "871c4e6e2daa373c4b6ca2bd3b6ccd9420bb817b0bc1a6ba665d23d959a862bc"
+    },
+    {
+      "source": "00_frontmatter/environment.md",
+      "bytes": 3229,
+      "sha256": "0668193d160e404d2a76f15adc467940808fb494eaacdade3f574ec0ab11e857"
+    },
+    {
+      "source": "00_frontmatter/how_to_use.md",
+      "bytes": 2367,
+      "sha256": "a3d1e94f176ffd9b1a9070929a0a1d5ed28034e02c8f60d56926d601bdbb841b"
+    },
+    {
+      "source": "00_frontmatter/images/cover.png",
+      "bytes": 1893064,
+      "sha256": "ca8fe31356c819ffb29c09c7207762fdff2596f7da85537ee77f63f9390d2a27"
+    },
+    {
+      "source": "00_frontmatter/images/learning_path.svg",
+      "bytes": 3011,
+      "sha256": "92d5bca89a21fe6feb155171d55929fa2d26180e5f186d9e0d28eff9fcaaf8c5"
+    },
+    {
+      "source": "00_frontmatter/preface.md",
+      "bytes": 1910,
+      "sha256": "bcded684cb6840f7f35bf1ea62f6118b032e6ba5201ac306c420ccd59df2b75b"
+    },
+    {
+      "source": "00_frontmatter/safety.md",
+      "bytes": 1161,
+      "sha256": "d8f3364e8046bcca7b1f62c840206b24e9160419d92eff595cd295dc79fadb52"
+    },
+    {
+      "source": "00_frontmatter/title.md",
+      "bytes": 432,
+      "sha256": "bd53a05ca45ee1c3ce07d10fffbe5443a4df526cc8507db0f8b046539e292bc8"
+    },
+    {
+      "source": "01_physical_ai_isaac_ros2/chapter.md",
+      "bytes": 30362,
+      "sha256": "a080ac9eddac666c3400d843913886913468677e9c2ab4bf60bcaa76b18a7d93"
+    },
+    {
+      "source": "01_physical_ai_isaac_ros2/code/create_usd_scene.py",
+      "bytes": 2226,
+      "sha256": "fa9472f0d5a72e202524a4063ef9999b6c6617d3d265f812298dfe97a006b511"
+    },
+    {
+      "source": "01_physical_ai_isaac_ros2/code/physical_ai_loop.py",
+      "bytes": 2433,
+      "sha256": "f0377c6b6b47a034d1c45d8bc2d337eb1a2263275bfa8a14d4529866c815af90"
+    },
+    {
+      "source": "01_physical_ai_isaac_ros2/code/ros2_jazzy/physical_ai_demo/package.xml",
+      "bytes": 473,
+      "sha256": "a54197487000025b8bae86a36bdfc231fa6496989bb5349ca3150c69f30d6e36"
+    },
+    {
+      "source": "01_physical_ai_isaac_ros2/code/ros2_jazzy/physical_ai_demo/physical_ai_demo/__init__.py",
+      "bytes": 1,
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+    },
+    {
+      "source": "01_physical_ai_isaac_ros2/code/ros2_jazzy/physical_ai_demo/physical_ai_demo/joint_state_source.py",
+      "bytes": 1243,
+      "sha256": "9f4e316df2c739411740adf89707bdacab225313a95ac5b258e19f12f22d53f6"
+    },
+    {
+      "source": "01_physical_ai_isaac_ros2/code/ros2_jazzy/physical_ai_demo/physical_ai_demo/proposed_command_source.py",
+      "bytes": 1079,
+      "sha256": "0b7522495454648856fa5e133e58ddd3ea96e15fa4c8ced10fbc129ef9234146"
+    },
+    {
+      "source": "01_physical_ai_isaac_ros2/code/ros2_jazzy/physical_ai_demo/resource/physical_ai_demo",
+      "bytes": 1,
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+    },
+    {
+      "source": "01_physical_ai_isaac_ros2/code/ros2_jazzy/physical_ai_demo/setup.cfg",
+      "bytes": 102,
+      "sha256": "378a88e75d923926aaded8a095d280cbf6e7308e4c99d12383ef9180fc12b71e"
+    },
+    {
+      "source": "01_physical_ai_isaac_ros2/code/ros2_jazzy/physical_ai_demo/setup.py",
+      "bytes": 788,
+      "sha256": "463a478bec37488e5456929689d6b75b78516392fb40c162760e64886f8ec5dc"
+    },
+    {
+      "source": "01_physical_ai_isaac_ros2/code/ros2_jazzy/safety_gate_cpp/CMakeLists.txt",
+      "bytes": 402,
+      "sha256": "a499016ecc505fe5bfac9759d17bd2fcc0b6ab9ce17e869c2dfae65fdb6afa9a"
+    },
+    {
+      "source": "01_physical_ai_isaac_ros2/code/ros2_jazzy/safety_gate_cpp/package.xml",
+      "bytes": 452,
+      "sha256": "6be1eb410468407b119da6fe44efaa1abb646d5a555dc6290b7abd40f4184b07"
+    },
+    {
+      "source": "01_physical_ai_isaac_ros2/code/ros2_jazzy/safety_gate_cpp/src/safety_gate.cpp",
+      "bytes": 1853,
+      "sha256": "8cafe30f43eab321e1422b1e41255a5c97050e8353314747a58e4976d36a9fe0"
+    },
+    {
+      "source": "01_physical_ai_isaac_ros2/divider.md",
+      "bytes": 416,
+      "sha256": "14318fd3da9662a412b08e400a07e3267ea13f152dbb3b1e7ca120b7ad650176"
+    },
+    {
+      "source": "01_physical_ai_isaac_ros2/exercises/solutions.md",
+      "bytes": 1798,
+      "sha256": "07cf1870f60c08420c4edfa20b731673f1e68b0dab0cedf8aaf77a793b2288fa"
+    },
+    {
+      "source": "01_physical_ai_isaac_ros2/images/chapter-01-divider.png",
+      "bytes": 1752123,
+      "sha256": "ae031e2458c42f46e6d26762bdfa5b7e5db479bc5aa221059e69303da9b7cc9a"
+    },
+    {
+      "source": "01_physical_ai_isaac_ros2/images/chapter-divider.png",
+      "bytes": 1752123,
+      "sha256": "ae031e2458c42f46e6d26762bdfa5b7e5db479bc5aa221059e69303da9b7cc9a"
+    },
+    {
+      "source": "01_physical_ai_isaac_ros2/images/isaac_stack.svg",
+      "bytes": 2243,
+      "sha256": "3dea4f3ef0dc1b5dd0c37b9d16441b7586e418066eb780a025d86832784b50a4"
+    },
+    {
+      "source": "01_physical_ai_isaac_ros2/images/physical_ai_loop.svg",
+      "bytes": 2030,
+      "sha256": "12c2817f2567cdf073480e1cda7ce846ff9ee69ef6a899e255cd4034c9f17068"
+    },
+    {
+      "source": "01_physical_ai_isaac_ros2/images/ros2_bridge.svg",
+      "bytes": 2602,
+      "sha256": "861cd173f63d2f2fc85f46d9723100704580ae14813db4cea6c1bdfdfe333947"
+    },
+    {
+      "source": "01_physical_ai_isaac_ros2/images/usd_composition.svg",
+      "bytes": 1853,
+      "sha256": "13c5202200b1b14d505b1e54099999e621a35b865fc00905254bcc293bc48e60"
+    },
+    {
+      "source": "01_physical_ai_isaac_ros2/labs/lab01_latency_budget.md",
+      "bytes": 942,
+      "sha256": "29c3b4405e67f3cb6dfed6e3f322083cccead16d2b90bd74ff72c33a71924f04"
+    },
+    {
+      "source": "01_physical_ai_isaac_ros2/labs/lab02_openusd_scene.md",
+      "bytes": 987,
+      "sha256": "cee405bc2e4918bbe31922165c663d3068e2f148b552f067849d6d5e014fafd3"
+    },
+    {
+      "source": "01_physical_ai_isaac_ros2/labs/lab03_ros2_interfaces.md",
+      "bytes": 866,
+      "sha256": "aadb8d19526914932a444f8228c87590da53cf78b0f521196594304e2c7c4a1a"
+    },
+    {
+      "source": "01_physical_ai_isaac_ros2/labs/lab04_bridge_contract.md",
+      "bytes": 1013,
+      "sha256": "8e2b52908528ffcdd08a27643df378b3f9a0e1e23ece7cabc752e0bbef75f164"
+    },
+    {
+      "source": "02_physx_simulation/chapter.md",
+      "bytes": 36437,
+      "sha256": "a21459dc9d4dd74be968ed41bcc237d55d1e56f5bf0d3d5b151da99e48011c40"
+    },
+    {
+      "source": "02_physx_simulation/code/contact_estimator.py",
+      "bytes": 2109,
+      "sha256": "f38a5c9b1bca9090587d480538f7b8338a63887c7a85a15517209f9e0a49ec1a"
+    },
+    {
+      "source": "02_physx_simulation/code/create_physx_scene.py",
+      "bytes": 3049,
+      "sha256": "1e4e3db5b042b844aba53d6db2b4924f12b17bcfaa3d65d11eaa4c399dbe9776"
+    },
+    {
+      "source": "02_physx_simulation/code/inertia_properties.py",
+      "bytes": 1855,
+      "sha256": "ac949ed0cf093da278d8590383221d204ab9e5b71638782e7f92d4b34035dc71"
+    },
+    {
+      "source": "02_physx_simulation/code/transforms.py",
+      "bytes": 5034,
+      "sha256": "1e593f38b21fdf7638b7b4869b6569cb904acba1cbd78e1456882b1d52926853"
+    },
+    {
+      "source": "02_physx_simulation/divider.md",
+      "bytes": 443,
+      "sha256": "d009c8f51246d776a03881ee5da158397d86454bac06ff752580e8bffa7e886f"
+    },
+    {
+      "source": "02_physx_simulation/exercises/problem_set.md",
+      "bytes": 1983,
+      "sha256": "bac38bbb577adc746684d3e722668da649f794bf73ea0933538a2269f9566e8f"
+    },
+    {
+      "source": "02_physx_simulation/images/chapter-02-divider.png",
+      "bytes": 1898547,
+      "sha256": "61cb6f1f11874062b7e09e74d3a4c22c11e2d4f39405f73a8e791a0d8bdb0c6d"
+    },
+    {
+      "source": "02_physx_simulation/images/chapter-divider.png",
+      "bytes": 1898547,
+      "sha256": "61cb6f1f11874062b7e09e74d3a4c22c11e2d4f39405f73a8e791a0d8bdb0c6d"
+    },
+    {
+      "source": "02_physx_simulation/images/collision_pipeline.svg",
+      "bytes": 3017,
+      "sha256": "19d2da04250d0d372444a46c917348f1e0fba7f7ba245995b72c946be5c41691"
+    },
+    {
+      "source": "02_physx_simulation/images/material_tuning_loop.svg",
+      "bytes": 2768,
+      "sha256": "597b0dd85af68b63fab74720364bc7ab4fa1f12db5946d8c11b4ab37a6ebba5f"
+    },
+    {
+      "source": "02_physx_simulation/images/transform_composition_reading.svg",
+      "bytes": 2209,
+      "sha256": "15b45c7973ec99132ee00cd85ff22856f5d8a71df5b93d868949f7c7c5a52ea0"
+    },
+    {
+      "source": "02_physx_simulation/images/transform_frames.svg",
+      "bytes": 2852,
+      "sha256": "092f8b9b2830cfac06c1f4cf77293b5e00d1f17e17b05e1c19d8214a529bb55d"
+    },
+    {
+      "source": "02_physx_simulation/labs/lab01_transforms.md",
+      "bytes": 1991,
+      "sha256": "5b6ca0b3650055e4ef35285da2f14180768e7f203dde030bbf328411b84ca30e"
+    },
+    {
+      "source": "02_physx_simulation/labs/lab02_collision_ccd.md",
+      "bytes": 2053,
+      "sha256": "a7875df9c4a79468d689fec103db194f38d5365cb910310e26356ea18afaf091"
+    },
+    {
+      "source": "02_physx_simulation/labs/lab03_material_tuning.md",
+      "bytes": 1953,
+      "sha256": "5eb7f2e173f2930105c18ac0cacac2bbd86cbc221a889af4d70c43a27ef8e1d7"
+    },
+    {
+      "source": "03_so101_kinematics_teleop/README.md",
+      "bytes": 536,
+      "sha256": "e71507af4e35d0fd58047a4a71ee8c3e45bcade3c2230bcb5fc5b94daceee39b"
+    },
+    {
+      "source": "03_so101_kinematics_teleop/chapter.md",
+      "bytes": 30110,
+      "sha256": "8083685d7b190de126d12ce6ec53469e742dd2143eb5fa7ec0fe8274410490aa"
+    },
+    {
+      "source": "03_so101_kinematics_teleop/code/fk_dls_ik.py",
+      "bytes": 4968,
+      "sha256": "96a4e4be2443a783e5281c6e03989e0e3a2ba890633efc2a225a094ec769cfa1"
+    },
+    {
+      "source": "03_so101_kinematics_teleop/code/ros2_ws/src/so101_training_bridge/CMakeLists.txt",
+      "bytes": 661,
+      "sha256": "1fd5cd20adea3cf189988f360e892d04eeac40e92dd668601cc3b7fffb41cfbe"
+    },
+    {
+      "source": "03_so101_kinematics_teleop/code/ros2_ws/src/so101_training_bridge/package.xml",
+      "bytes": 514,
+      "sha256": "3d8a5c254b986a9371c4432f0df7280592f226c78b46693fad1ca595dcd7a685"
+    },
+    {
+      "source": "03_so101_kinematics_teleop/code/ros2_ws/src/so101_training_bridge/scripts/safe_joint_bridge.py",
+      "bytes": 4312,
+      "sha256": "41d7b9463af0c373f6180b8880ac97ab0e9ae450cc2644a31cd0b5800f3d62d2"
+    },
+    {
+      "source": "03_so101_kinematics_teleop/code/ros2_ws/src/so101_training_bridge/src/joint_state_monitor.cpp",
+      "bytes": 2306,
+      "sha256": "831039a5cbbfccd75959bdc40edf0e16bd6a4176789d5bdb15892a7a322e8592"
+    },
+    {
+      "source": "03_so101_kinematics_teleop/code/safe_teleop_core.py",
+      "bytes": 5148,
+      "sha256": "4be799137d99d24ffa727033e970d1018f32aefcfe559c1416d6327629a5649e"
+    },
+    {
+      "source": "03_so101_kinematics_teleop/divider.md",
+      "bytes": 429,
+      "sha256": "ef4b3745cf8d1971e8fa93cfbc34bfff49febf93258858203088350648c8bf94"
+    },
+    {
+      "source": "03_so101_kinematics_teleop/exercises/project_rubric.md",
+      "bytes": 1145,
+      "sha256": "158e631107b0f74de65e4596548e76e4a754e5a6dd3bfd8525c277f89dfd553b"
+    },
+    {
+      "source": "03_so101_kinematics_teleop/exercises/solutions.md",
+      "bytes": 1526,
+      "sha256": "8770174e51d6d32af934d86f82c5958e8bb99cd828056a82697dc1b0fcd530ee"
+    },
+    {
+      "source": "03_so101_kinematics_teleop/images/chapter-03-divider.png",
+      "bytes": 2056030,
+      "sha256": "ead09ba43d3bb75445293193b5f0a38f8f1b20cb22d0fa0ef250d99492d7d7ec"
+    },
+    {
+      "source": "03_so101_kinematics_teleop/images/chapter-divider.png",
+      "bytes": 2056030,
+      "sha256": "ead09ba43d3bb75445293193b5f0a38f8f1b20cb22d0fa0ef250d99492d7d7ec"
+    },
+    {
+      "source": "03_so101_kinematics_teleop/images/ros2_digital_twin.svg",
+      "bytes": 3060,
+      "sha256": "7c369bf66b472a76f853a054e4eac31abdb8d988a70a366ec0eda83378ccc405"
+    },
+    {
+      "source": "03_so101_kinematics_teleop/images/safe_teleop_pipeline.svg",
+      "bytes": 2967,
+      "sha256": "09c1f222246559df3095cf8ad7f446ec7108c8908f852a76717ef09a3b212eb1"
+    },
+    {
+      "source": "03_so101_kinematics_teleop/images/so101_kinematic_chain.svg",
+      "bytes": 2584,
+      "sha256": "12b712a8bb0062374f0d7221d126e30d973bbebd1f4de31652fee46809d2a02b"
+    },
+    {
+      "source": "03_so101_kinematics_teleop/images/urdf_to_usd.svg",
+      "bytes": 2555,
+      "sha256": "d859d6fa347d1b5b82d515324c2d1b5052e06d26a706b4acfa57c604b9457204"
+    },
+    {
+      "source": "03_so101_kinematics_teleop/labs/lab_3_1_fk_ik.md",
+      "bytes": 1582,
+      "sha256": "62da35d95970a421eb1c74ad888f55e3908fa3b6094b20670d1923c5d2ac43de"
+    },
+    {
+      "source": "03_so101_kinematics_teleop/labs/lab_3_2_safe_teleop.md",
+      "bytes": 1457,
+      "sha256": "f2096a879a723a6d112455fae362652eb83d497b39667f5d6f5448d4b47f15ab"
+    },
+    {
+      "source": "03_so101_kinematics_teleop/labs/lab_3_3_ros2_bridge.md",
+      "bytes": 1838,
+      "sha256": "812d8c68f5dbaec92e2e12ce4931688c7f056996032ce76d2ba5db5015083216"
+    },
+    {
+      "source": "04_sensor_data_pipeline/chapter.md",
+      "bytes": 27877,
+      "sha256": "69a8cf6f0e2f6e584bda629d3a17fbbe37f75ec024eab2237847807a2a3796fa"
+    },
+    {
+      "source": "04_sensor_data_pipeline/code/camera_geometry.py",
+      "bytes": 2275,
+      "sha256": "88036c4659ce0de3fe61f846eb455769f7559dde77b5c145f05d56ccc8e482c8"
+    },
+    {
+      "source": "04_sensor_data_pipeline/code/interpolate_joint_state.cpp",
+      "bytes": 1434,
+      "sha256": "3d8b88122723c68e1f1e523720ac67868982b58b4668bcb5a91e52962395f40a"
+    },
+    {
+      "source": "04_sensor_data_pipeline/code/replicator_randomization.py",
+      "bytes": 1230,
+      "sha256": "e079d3a4c22cf3fc32ab4b62a9c22c20beadd2802e298cd95f05673596048c04"
+    },
+    {
+      "source": "04_sensor_data_pipeline/code/rerun_integrity_check.py",
+      "bytes": 2193,
+      "sha256": "9a529d8dfc501110031687a5f95694e6ca455899901b8439497601eaf69ec870"
+    },
+    {
+      "source": "04_sensor_data_pipeline/code/ros2_jazzy/sensor_pipeline/package.xml",
+      "bytes": 657,
+      "sha256": "e1c6aee5830f87e3cea37b2473b5e87909ca802c7e7d9996d5ea37e0999e12c0"
+    },
+    {
+      "source": "04_sensor_data_pipeline/code/ros2_jazzy/sensor_pipeline/resource/sensor_pipeline",
+      "bytes": 1,
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+    },
+    {
+      "source": "04_sensor_data_pipeline/code/ros2_jazzy/sensor_pipeline/sensor_pipeline/__init__.py",
+      "bytes": 1,
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+    },
+    {
+      "source": "04_sensor_data_pipeline/code/ros2_jazzy/sensor_pipeline/sensor_pipeline/approx_sync.py",
+      "bytes": 1834,
+      "sha256": "fc4d603fa76321e236b2745e5b3e3e3a7a7cf20c6e216b68b45675698d782d47"
+    },
+    {
+      "source": "04_sensor_data_pipeline/code/ros2_jazzy/sensor_pipeline/sensor_pipeline/static_camera_tf.py",
+      "bytes": 1529,
+      "sha256": "e8149873ebb3af5f47a1f64ee2ee40d19fa12145823ac4bebdc0eb434ea919f2"
+    },
+    {
+      "source": "04_sensor_data_pipeline/code/ros2_jazzy/sensor_pipeline/sensor_pipeline/synthetic_sensors.py",
+      "bytes": 2616,
+      "sha256": "c772d6611dacd19f7052f14477a88c3059f5dd3fc4596ea63d365cb8e1cb9b5f"
+    },
+    {
+      "source": "04_sensor_data_pipeline/code/ros2_jazzy/sensor_pipeline/setup.cfg",
+      "bytes": 100,
+      "sha256": "4861075a2206b170bca0639735ac196990c3485189b98c4d97c7d953f3ccc50a"
+    },
+    {
+      "source": "04_sensor_data_pipeline/code/ros2_jazzy/sensor_pipeline/setup.py",
+      "bytes": 775,
+      "sha256": "c85ad6550a4247c05cf344617745449243376fa9af3ea1a11e1a643813317664"
+    },
+    {
+      "source": "04_sensor_data_pipeline/divider.md",
+      "bytes": 430,
+      "sha256": "d1af0912fb80a889c12d0959dae4b3150e87d0582e126299f637b9088ecb2e98"
+    },
+    {
+      "source": "04_sensor_data_pipeline/exercises/solutions.md",
+      "bytes": 1366,
+      "sha256": "e8ab5bc40c9bef1d7e6d1f9fd75dedcfa9151b8a0f7cdd18337f9dee2478f75f"
+    },
+    {
+      "source": "04_sensor_data_pipeline/images/alignment_pipeline.svg",
+      "bytes": 2659,
+      "sha256": "e10c312742691398656404e27a639b5bad9a88dbe9d11f375d9544be4e342508"
+    },
+    {
+      "source": "04_sensor_data_pipeline/images/chapter-04-divider.png",
+      "bytes": 1958304,
+      "sha256": "62880a34e921e2ad688ae41e7a6cb2b8b0202a87cf6cab1a8aab6ac303b5027d"
+    },
+    {
+      "source": "04_sensor_data_pipeline/images/chapter-divider.png",
+      "bytes": 1958304,
+      "sha256": "62880a34e921e2ad688ae41e7a6cb2b8b0202a87cf6cab1a8aab6ac303b5027d"
+    },
+    {
+      "source": "04_sensor_data_pipeline/images/coordinate_frames.svg",
+      "bytes": 1940,
+      "sha256": "9d9add126fae75497a6ebc9d4eec9f3aca01b9b8c9ae4b2b646f8d7e734d515e"
+    },
+    {
+      "source": "04_sensor_data_pipeline/images/domain_randomization.svg",
+      "bytes": 1899,
+      "sha256": "ca476591befbdd5bc25603e03baa8cb83c7d01c6b51aa003557a7893536e25b9"
+    },
+    {
+      "source": "04_sensor_data_pipeline/images/time_alignment.svg",
+      "bytes": 1545,
+      "sha256": "4d6b42bbe23d373a08a786c1d5876cd146ba0b70d75f96e993afbfd8634a00d8"
+    },
+    {
+      "source": "04_sensor_data_pipeline/images/timestamp_lifecycle.svg",
+      "bytes": 2317,
+      "sha256": "c324ba416a7dac89665aa4d9dd3bab18450c0f4bd1450da1bfd0ec1afc661d67"
+    },
+    {
+      "source": "04_sensor_data_pipeline/labs/lab01_camera_frames.md",
+      "bytes": 793,
+      "sha256": "90fda25ab8da340b356e42a229629c99c3e3826e03dbef8f1764950bd55b7295"
+    },
+    {
+      "source": "04_sensor_data_pipeline/labs/lab02_tf_sync.md",
+      "bytes": 1372,
+      "sha256": "096114ed3cc0e90f5d3c87046f6dc302be2738fb1e91ea86c29fd63fff299453"
+    },
+    {
+      "source": "04_sensor_data_pipeline/labs/lab03_rosbag_mcap.md",
+      "bytes": 761,
+      "sha256": "3aa08b45ff4c64602c9bef5679dac65874ce3f867cef4b9839e9c9753f50c56c"
+    },
+    {
+      "source": "04_sensor_data_pipeline/labs/lab04_randomization_rerun.md",
+      "bytes": 897,
+      "sha256": "326360e63567c0eb180b2b12e47487ade6d1af285cd5f4527d31494cc160a27b"
+    },
+    {
+      "source": "05_lerobot_smolvla/chapter.md",
+      "bytes": 40117,
+      "sha256": "637909ee6456fa438f421ae0290a3b536cd925567ba1246a1f2e58c0b113a9fa"
+    },
+    {
+      "source": "05_lerobot_smolvla/code/closed_loop_20hz.py",
+      "bytes": 2397,
+      "sha256": "5d9c05153ee52c1a2e0d4cb4a4abe42cc3a2232335f75ff63cf64951a26bd7f5"
+    },
+    {
+      "source": "05_lerobot_smolvla/code/inspect_lerobot_v3.py",
+      "bytes": 1449,
+      "sha256": "d7d1e6255ecc36094e3f9eb54e613faa557da83cdcddb626e18ed478a215c475"
+    },
+    {
+      "source": "05_lerobot_smolvla/code/lora_budget.py",
+      "bytes": 1272,
+      "sha256": "afe54368d90db651bd62de51a840e4041727d68e6bfba78e812a9144d3e690a8"
+    },
+    {
+      "source": "05_lerobot_smolvla/code/normalization.py",
+      "bytes": 3184,
+      "sha256": "f3ccc704126bd614151038d90fd76ae8930d100d76ee2553c5f9b26ae2935659"
+    },
+    {
+      "source": "05_lerobot_smolvla/code/temporal_ensemble.py",
+      "bytes": 2178,
+      "sha256": "853cb71820a3c5a65c3623f0a2a7ebdec5ccec213129793a7ddb91d5cb26d306"
+    },
+    {
+      "source": "05_lerobot_smolvla/divider.md",
+      "bytes": 435,
+      "sha256": "903283dd17a8f925598b8751e240c9c9f13d5d290dfa63481bdca77f14a6dfc9"
+    },
+    {
+      "source": "05_lerobot_smolvla/exercises/problem_set.md",
+      "bytes": 2126,
+      "sha256": "361fbe74698b558c03bba980d94c1cb3dcb8087bdb0a303bf7b1735131d6eac6"
+    },
+    {
+      "source": "05_lerobot_smolvla/images/chapter-05-divider.png",
+      "bytes": 1794783,
+      "sha256": "4a342258b23b305857596752dfc46a95c17d84840f47d87d11a6181ec9c50555"
+    },
+    {
+      "source": "05_lerobot_smolvla/images/chapter-divider.png",
+      "bytes": 1794783,
+      "sha256": "4a342258b23b305857596752dfc46a95c17d84840f47d87d11a6181ec9c50555"
+    },
+    {
+      "source": "05_lerobot_smolvla/images/closed_loop.svg",
+      "bytes": 3055,
+      "sha256": "91ce9b0dc9eff12492b1e5bbe74051e7802460121a00927f38c9c82963b9a3b5"
+    },
+    {
+      "source": "05_lerobot_smolvla/images/dataset_v3.svg",
+      "bytes": 3315,
+      "sha256": "a2161a65d732213f61acb1694c937d0aba8f4d43de092b3fd944f97501d62556"
+    },
+    {
+      "source": "05_lerobot_smolvla/images/smolvla_architecture.svg",
+      "bytes": 3114,
+      "sha256": "8ed52f90a6e83e8807c9a082b727b7a7874fad2a1777644e5c4dee9a9d88d1ba"
+    },
+    {
+      "source": "05_lerobot_smolvla/labs/lab01_dataset_audit.md",
+      "bytes": 1812,
+      "sha256": "654b91ebf8b31d8c636af8e46c26bf10ef6d7c3ca6d5568056b7c99c35b20718"
+    },
+    {
+      "source": "05_lerobot_smolvla/labs/lab02_normalization.md",
+      "bytes": 1471,
+      "sha256": "b2d36e73f08c4c26f53eb1667761092c87f121edfff80fa1c179908bcd4bd9db"
+    },
+    {
+      "source": "05_lerobot_smolvla/labs/lab03_smolvla_lora.md",
+      "bytes": 1480,
+      "sha256": "f146748af36ccc37284d538db5b7604d849525baa7c6df0bd62666f824db9d73"
+    },
+    {
+      "source": "05_lerobot_smolvla/labs/lab04_closed_loop.md",
+      "bytes": 1684,
+      "sha256": "ac2309920dc5f06789d7079e48566a89cdcb40bc4c95ae14719d707f09b2e36c"
+    },
+    {
+      "source": "06_sim2real_deployment/README.md",
+      "bytes": 824,
+      "sha256": "18f7ab10db55637f5e424b76914196372ecf44ab89bc1611c86d0de04de8bb7a"
+    },
+    {
+      "source": "06_sim2real_deployment/chapter.md",
+      "bytes": 29898,
+      "sha256": "63e21fba7a365699ea09d4be5e25675e0f9ac0c8d856e41a00bd9d8d7157d971"
+    },
+    {
+      "source": "06_sim2real_deployment/code/ros2_ws/src/sim2real_safety/package.xml",
+      "bytes": 482,
+      "sha256": "45d53a955f2bf3548dbcca1f6dd8e29c0bf984bed10fbd7e10aaab784920ef77"
+    },
+    {
+      "source": "06_sim2real_deployment/code/ros2_ws/src/sim2real_safety/resource/sim2real_safety",
+      "bytes": 1,
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+    },
+    {
+      "source": "06_sim2real_deployment/code/ros2_ws/src/sim2real_safety/setup.cfg",
+      "bytes": 100,
+      "sha256": "dc557f04617c221ad1ecdb7ab2e370dfa452283c7e12da814850b5f9458fd863"
+    },
+    {
+      "source": "06_sim2real_deployment/code/ros2_ws/src/sim2real_safety/setup.py",
+      "bytes": 766,
+      "sha256": "e9c0f0d4b15dfa4bf33e9dcdc590185cb691246a3d2c24cf968065c84b19680f"
+    },
+    {
+      "source": "06_sim2real_deployment/code/ros2_ws/src/sim2real_safety/sim2real_safety/__init__.py",
+      "bytes": 41,
+      "sha256": "974595f8f203d68c5dd78af8724ba170e708cb79ad488dfc29544132e7dcffff"
+    },
+    {
+      "source": "06_sim2real_deployment/code/ros2_ws/src/sim2real_safety/sim2real_safety/stamped_pose_publisher.py",
+      "bytes": 2103,
+      "sha256": "6576edb050ceece7f1930976e305a2785cb97d3980cd25384516113da93b3860"
+    },
+    {
+      "source": "06_sim2real_deployment/code/ros2_ws/src/sim2real_safety/sim2real_safety/workspace_guard.py",
+      "bytes": 6853,
+      "sha256": "abd22e846dcf138bd4126ed3563b176c139717e4fdbc19721a6260ee35efaf55"
+    },
+    {
+      "source": "06_sim2real_deployment/code/safety_supervisor.py",
+      "bytes": 4070,
+      "sha256": "c06b8f77a713aa7f5cb74d3c8549bf2fe9da3e2793412bedfc31e63c33cb0a8d"
+    },
+    {
+      "source": "06_sim2real_deployment/code/sim2real_diagnostics.py",
+      "bytes": 6403,
+      "sha256": "8ec600090c8354c381fd54a8330e2ab993ae2347182040de4aca582cd98aa926"
+    },
+    {
+      "source": "06_sim2real_deployment/code/temporal_filters.py",
+      "bytes": 3180,
+      "sha256": "db42fea860a8d433e6b8de714eccbfea478c9072c9c571be59fabad15bced923"
+    },
+    {
+      "source": "06_sim2real_deployment/divider.md",
+      "bytes": 454,
+      "sha256": "68b69189715479641d5fac3cfe1f24aef8ff506d0f824faf5e41d8c0b94d78a0"
+    },
+    {
+      "source": "06_sim2real_deployment/exercises/project_rubric.md",
+      "bytes": 1295,
+      "sha256": "71faf03d27a28733dd30e4cc508cde80ce946f3e79a04cd23e39fc4927583d27"
+    },
+    {
+      "source": "06_sim2real_deployment/exercises/solutions.md",
+      "bytes": 1413,
+      "sha256": "288ece8690e141b520cd59c1eb3ea8578f1425ded05993009e291a60d8616928"
+    },
+    {
+      "source": "06_sim2real_deployment/images/chapter-06-divider.png",
+      "bytes": 1947111,
+      "sha256": "8f2c830f919c892083850e9f7ef126f45feabe0f1d70f103d249d78c38c64436"
+    },
+    {
+      "source": "06_sim2real_deployment/images/chapter-divider.png",
+      "bytes": 1947111,
+      "sha256": "8f2c830f919c892083850e9f7ef126f45feabe0f1d70f103d249d78c38c64436"
+    },
+    {
+      "source": "06_sim2real_deployment/images/deployment_promotion_ladder.svg",
+      "bytes": 2810,
+      "sha256": "ca8e2e019b772e2d28d422e2f91a15373e22eec8998166db2996ff64e16bbca9"
+    },
+    {
+      "source": "06_sim2real_deployment/images/evaluation_matrix.svg",
+      "bytes": 3310,
+      "sha256": "8c5e4734fcbd9e4ddc955fb1e1fece94be28356d972269560af2350c0bd60412"
+    },
+    {
+      "source": "06_sim2real_deployment/images/pick_place_deployment.svg",
+      "bytes": 3088,
+      "sha256": "1ceabfc4b3ecd326f97ad5079e86c011f2d29864d413e4029a31b7e43deab5e0"
+    },
+    {
+      "source": "06_sim2real_deployment/images/reality_gap_loop.svg",
+      "bytes": 2360,
+      "sha256": "13ab866d50890d231c440c8417eac40dba5cc40db38b279be80f46a41e770ffc"
+    },
+    {
+      "source": "06_sim2real_deployment/labs/lab_6_1_diagnostics.md",
+      "bytes": 1766,
+      "sha256": "d7f1fb26ca7b1b94e0ba15b215e47d50e509d0cbe186297c0187f5166f176522"
+    },
+    {
+      "source": "06_sim2real_deployment/labs/lab_6_2_supervisor.md",
+      "bytes": 1428,
+      "sha256": "a7a9ce8281329ec7cffaa3808d8c62c9e479f9a9b5c6544d9580dc29beac42ec"
+    },
+    {
+      "source": "06_sim2real_deployment/labs/lab_6_3_ros2_guard.md",
+      "bytes": 2809,
+      "sha256": "334d12fefe10159cf22695d6429965e16fde443c60d97b57d1f3e69253d54d84"
+    },
+    {
+      "source": "README.md",
+      "bytes": 257,
+      "sha256": "722b697371b13e46e7eeaeb6d8650ae724442edb52345a48220dd730f176eac9"
+    },
+    {
+      "source": "appendices/README.md",
+      "bytes": 179,
+      "sha256": "f1169831d2d8981236e2cd9be44dd7e56175044c3d967249f8a184323cb03c18"
+    },
+    {
+      "source": "appendices/glossary.md",
+      "bytes": 2186,
+      "sha256": "e5dbfd82d0cf5be7cb68d5a2aabf3d86eae5c1cc6f1d4fd0b0ebc41ceb1c73a6"
+    },
+    {
+      "source": "appendices/migration_lyrical.md",
+      "bytes": 2505,
+      "sha256": "b46b0f9f9aa023a0ccd55b01e26e920aab359c7b666613afc8e438eb193396d7"
+    },
+    {
+      "source": "metadata.yaml",
+      "bytes": 229,
+      "sha256": "d675deacfddbf17b465c6f6df7fc50eb2baf9f69ab5d4c92edf21db367a911d8"
+    },
+    {
+      "source": "references/README.md",
+      "bytes": 105,
+      "sha256": "77cd8d7627bcf0e7d08d6e7fe4c8b162e1a50bce571ec5e1b623ce437d0d8b37"
+    }
+  ]
+}

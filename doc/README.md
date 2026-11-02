@@ -9,6 +9,7 @@
 - [204개 학습 단위 체크리스트](v2/unit_checklist.md)
 - [작성 전 평가 기준·탈고·검수 절차](v2/quality_gate.md)
 - [작업 기록 템플릿](v2/templates/work_item.md)
+- [A01 현재 구조·보존 대상 분석](v2/current_state_analysis.md)
 
 각 작업은 기준 확정 → 작성 → 탈고 → 검수 → 보완/재검수 → 완료 순서로 진행하고 단계마다 체크리스트를 갱신합니다.
 
