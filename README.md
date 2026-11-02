@@ -39,6 +39,7 @@ npm run dev
 npm run check
 npm run lint
 npm run test:catalog
+npm run test:home
 npm run test:tutor
 npm run build
 ```

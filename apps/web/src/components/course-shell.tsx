@@ -13,6 +13,7 @@ interface CourseShellProps {
 export function CourseShell({ children, eyebrow, title, description, actions }: CourseShellProps) {
   return (
     <div className="min-h-screen bg-slate-50/70 text-slate-950">
+      <a href="#main-content" className="sr-only z-50 rounded-lg bg-blue-700 px-4 py-3 font-semibold text-white focus:not-sr-only focus:fixed focus:left-4 focus:top-2">본문으로 건너뛰기</a>
       <header className="sticky top-0 z-40 border-b border-slate-200/80 bg-white/90 backdrop-blur-xl">
         <div className="mx-auto flex h-16 max-w-7xl items-center justify-between gap-4 px-4 sm:px-6 lg:px-8">
           <Link href="/" className="group flex min-w-0 items-center gap-3" aria-label="Physical AI 학습 홈">
@@ -44,7 +45,7 @@ export function CourseShell({ children, eyebrow, title, description, actions }: 
                 <h1 className="text-balance text-3xl font-bold tracking-tight text-slate-950 sm:text-4xl">{title}</h1>
                 {description ? <p className="mt-4 max-w-2xl text-pretty text-base leading-7 text-slate-600">{description}</p> : null}
               </div>
-              <Link href="/" className="inline-flex items-center gap-1 text-sm font-semibold text-blue-700 hover:text-blue-800">
+              <Link href="/#curriculum" className="inline-flex items-center gap-1 text-sm font-semibold text-blue-700 hover:text-blue-800">
                 전체 커리큘럼 <ChevronRight className="size-4" aria-hidden="true" />
               </Link>
             </div>
@@ -52,7 +53,7 @@ export function CourseShell({ children, eyebrow, title, description, actions }: 
         </section>
       ) : null}
 
-      {children}
+      <div id="main-content" tabIndex={-1}>{children}</div>
 
       <footer className="mt-16 border-t border-slate-200 bg-white">
         <div className="mx-auto flex max-w-7xl flex-col gap-2 px-4 py-8 text-sm text-slate-500 sm:px-6 lg:flex-row lg:items-center lg:justify-between lg:px-8">

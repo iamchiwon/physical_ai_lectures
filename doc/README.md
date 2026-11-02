@@ -15,6 +15,7 @@
 - [A03 204소주제 기존 콘텐츠 매핑](v2/content_mapping.md)
 - [A03 기존 자산 보존·역색인](v2/asset_preservation.md)
 - [B01 공유 카탈로그 사용·검수 안내](v2/runtime_catalog.md)
+- [B02 통합 학습 첫 페이지·브라우저 검수](v2/work_items/B02.md)
 
 각 작업은 기준 확정 → 작성 → 탈고 → 검수 → 보완/재검수 → 완료 순서로 진행하고 단계마다 체크리스트를 갱신합니다.
 
