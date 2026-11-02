@@ -3,6 +3,7 @@ import { groundLearnerUpdates, learnerUpdateSchema } from "@physical-ai/shared";
 
 const generationSchema = z.object({
   answer: z.string().min(1).max(32_000),
+  lookupQuery: z.string().max(160),
   learnerUpdates: z.array(learnerUpdateSchema).max(3),
 });
 export const TUTOR_RESPONSE_FORMAT = {
@@ -30,5 +31,6 @@ export function parseTutorOutput(text: string, question: string, truncated = fal
   return {
     answer: parsed.data.answer,
     learnerUpdates: truncated ? [] : groundLearnerUpdates(updates, question),
+    lookupQuery: !truncated && typeof (payload as Record<string, unknown>).lookupQuery === "string" ? ((payload as Record<string, unknown>).lookupQuery as string).trim().slice(0,160) : "",
   };
 }

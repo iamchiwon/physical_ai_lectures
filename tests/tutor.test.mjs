@@ -173,3 +173,51 @@ test('API injects persona and learner state, returns grounded updates without lo
     assert.ok(!JSON.stringify(logs).includes('PRIVATE_LEARNER'));assert.ok(!JSON.stringify(logs).includes('행렬 곱'));
   } finally {globalThis.fetch=originalFetch;Object.assign(console,originals);}
 });
+
+const retrieval = await load('apps/web/src/lib/tutor-retrieval.ts');
+const lessonDocs = [{id:'current',title:'ROS 2 실습',content:'# ROS 2 실습\n\n'+('앞부분의 일반 설명입니다. '.repeat(600))+'\n\n## 초기화 예제\n\n노드 생성 전에 초기화합니다.\n\n```python\nimport rclpy\nrclpy.init()\nnode = rclpy.create_node("demo")\n```\n\n종료 시에는 shutdown을 호출합니다.\n'}];
+test('retrieves code beyond the former 3900-character prefix and provides exact line numbers',()=>{
+  const result=retrieval.retrieveLessonContext('이 코드의 두 번째 줄은 왜 필요한가요?',lessonDocs);
+  assert.equal(result.state,'found');assert.match(result.text,/2: rclpy.init\(\)/);
+  assert.match(result.text,/노드 생성 전에 초기화/);assert.ok(result.text.length<=4000);assert.ok(shared.estimateTokens(result.text)<=2000);
+  assert.ok(!result.text.includes('앞부분의 일반 설명입니다. '.repeat(30)));
+});
+test('ambiguous code needs clarification; selected or uniquely visible code resolves the target',()=>{
+  const docs=[{id:'two',title:'두 예제',content:'## 초기화\n```python\nimport rclpy\nrclpy.init()\n```\n\n## 종료\n```python\nnode.destroy_node()\nrclpy.shutdown()\n```'}];
+  assert.equal(retrieval.retrieveLessonContext('이 코드의 두 번째 줄은?',docs).state,'ambiguous');
+  const selected=retrieval.retrieveLessonContext('이 코드의 두 번째 줄은?',docs,{selectedText:'rclpy.shutdown()'});
+  assert.match(selected.text,/2: rclpy.shutdown/);assert.ok(!selected.text.includes('2: rclpy.init'));
+  const visible=retrieval.retrieveLessonContext('이 코드의 두 번째 줄은?',docs,{visibleCode:'node.destroy_node()\nrclpy.shutdown()'});
+  assert.match(visible.text,/2: rclpy.shutdown/);
+  const explicit=retrieval.retrieveLessonContext("두 번째 코드의 두 번째 줄은?",docs);
+  assert.match(explicit.text,/2: rclpy.shutdown/);
+});
+test('unrelated questions omit the textbook, even if an earlier paragraph remains selected',()=>{
+  const result=retrieval.retrieveLessonContext('오늘 점심 메뉴를 추천해주세요.',lessonDocs,{selectedText:'노드 생성 전에 초기화합니다.'});
+  assert.equal(result.state,'none');assert.equal(result.text,'');
+  const context=shared.buildTutorContext(shared.TUTOR_INSTRUCTIONS,{id:'a',title:'ROS 2'},'오늘 점심 메뉴는?', '',[]);
+  assert.ok(!context.messages.at(-1).content.includes('노드 생성'));assert.match(context.messages.at(-1).content,/첨부된 본문 자료는 없습니다/);
+});
+test('missing code and invalid line numbers are explicit; retrieved context survives conversation storage',()=>{
+  assert.equal(retrieval.retrieveLessonContext('이 코드의 두 번째 줄은?',[{id:'none',title:'개념',content:'코드 없는 개념 설명'}]).state,'not_found');
+  const result=retrieval.retrieveLessonContext('이 코드의 99번째 줄은?',lessonDocs);assert.match(result.text,/존재하지 않으므로/);
+  const state=storageModule.createTutorStore(()=>memoryStorage());state.hydrate();
+  state.update({turns:[{...stored('code'),referenceContext:'코드 1\n2: rclpy.init()'}]},true);
+  const history=storageModule.successfulTurns(state.getSnapshot().turns);
+  assert.match(shared.turnMessages(history[0])[0].content,/당시 참고 본문/);
+});
+test('API can request one lookup and refuses repeated lookup after completion without leaking intermediate learner state',async()=>{
+  const originalFetch=globalThis.fetch;const originalInfo=console.info;console.info=()=>{};
+  try {
+    globalThis.fetch=async()=>Response.json({choices:[{message:{content:JSON.stringify({answer:'관련 본문을 확인하겠습니다.',lookupQuery:'rclpy.init',learnerUpdates:[]})},finish_reason:'stop'}]});
+    const env={ALLOWED_ORIGINS:'http://localhost:3000',OPENROUTER_API_KEY:'PRIVATE_KEY'};
+    const request=(lookupComplete)=>app.request('/v1/tutor',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({question:'이 코드가 왜 필요한가요?',lesson:{id:'a',title:'실습'},lookupComplete})},env);
+    const first=await (await request(false)).json();assert.equal(first.lookupQuery,'rclpy.init');
+    const second=await (await request(true)).json();assert.equal(second.lookupQuery,undefined);assert.match(second.answer,/코드나 문장을 선택/);
+  }finally{globalThis.fetch=originalFetch;console.info=originalInfo;}
+});
+
+test('a missing named function does not retrieve unrelated lab prose',()=>{
+  const result=retrieval.retrieveLessonContext('missing_function() 함수가 실습 코드에 필요한 이유',lessonDocs);
+  assert.equal(result.state,'not_found');assert.ok(!result.text.includes('rclpy.init'));
+});

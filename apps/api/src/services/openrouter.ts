@@ -1,7 +1,7 @@
 import { DEFAULT_OPENROUTER_MODEL } from "@physical-ai/shared";
 import type { Bindings } from "../env";
 
-export const DIAGNOSTICS_VERSION = "2026-11-02.3";
+export const DIAGNOSTICS_VERSION = "2026-11-02.4";
 type Operation = "tutor" | "assessment" | "summary";
 type RecordValue = Record<string, unknown>;
 type GenerationInput = {

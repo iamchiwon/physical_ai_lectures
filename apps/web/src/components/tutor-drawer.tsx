@@ -7,6 +7,7 @@ import { Bot, LoaderCircle, Send, Sparkles, Trash2, UserRound } from "lucide-rea
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
 import { Sheet, SheetContent, SheetDescription, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
+import { readingFocus } from "@/lib/tutor-reading-focus";
 import { useTutor } from "@/components/tutor-provider";
 
 interface TutorDrawerProps {
@@ -14,14 +15,16 @@ interface TutorDrawerProps {
   lessonTitle: string;
   chapterId: string;
   chapterTitle: string;
-  contextSummary: string;
+  sourceContent: string;
 }
 const suggestedQuestions = ["이 개념을 로봇 사례로 쉽게 비유해 주세요.","제가 꼭 구분해야 할 핵심 개념은 무엇인가요?","이 내용을 이해했는지 확인할 질문을 내 주세요."];
 const TutorMarkdown = dynamic(() => import("@/components/tutor-markdown").then((module) => module.TutorMarkdown));
 
-export function TutorDrawer({ lessonId, lessonTitle, chapterId, chapterTitle, contextSummary }: TutorDrawerProps) {
+export function TutorDrawer({ lessonId, lessonTitle, chapterId, chapterTitle, sourceContent }: TutorDrawerProps) {
   const {state,store,submitQuestion,resetConversation}=useTutor();
   const {turns,loading,drawerOpen,draft:question}=state;
+  const [selection,setSelection]=React.useState({lessonId:"",text:""});
+  const selectedText=selection.lessonId===lessonId?selection.text:"";
   const [resetOpen,setResetOpen]=React.useState(false);
   const [resetScope,setResetScope]=React.useState<"chapter"|"all">("chapter");
   const [visibleCount,setVisibleCount]=React.useState(40);
@@ -34,9 +37,20 @@ export function TutorDrawer({ lessonId, lessonTitle, chapterId, chapterTitle, co
     return ()=>document.body.classList.remove("tutor-drawer-open");
   },[drawerOpen]);
   React.useEffect(()=>{ if(drawerOpen) conversationEndRef.current?.scrollIntoView({behavior:"smooth",block:"nearest"}); },[turns,loading,drawerOpen]);
+  React.useEffect(()=>{
+    const capture=()=>{
+      const value=window.getSelection();
+      const anchor=value?.anchorNode?.parentElement;
+      const focus=value?.focusNode?.parentElement;
+      const text=value?.toString().trim()??"";
+      if(text.length>=2&&anchor?.closest("main")&&focus?.closest("main"))setSelection({lessonId,text:text.slice(0,2000)});
+    };
+    document.addEventListener("selectionchange",capture);
+    return ()=>document.removeEventListener("selectionchange",capture);
+  },[lessonId]);
   const handleTutorSubmit=(event:React.FormEvent<HTMLFormElement>)=>{
     event.preventDefault();
-    void submitQuestion(question,{id:lessonId,title:lessonTitle,chapterId,chapterTitle,contextSummary});
+    void submitQuestion(question,{id:lessonId,title:lessonTitle,chapterId,chapterTitle,sourceContent,focus:readingFocus(selectedText)});
   };
   const handleQuestionKeyDown=(event:React.KeyboardEvent<HTMLTextAreaElement>)=>{
     if(event.key!=="Enter"||(!event.ctrlKey&&!event.metaKey)||event.nativeEvent.isComposing) return;
@@ -67,12 +81,13 @@ export function TutorDrawer({ lessonId, lessonTitle, chapterId, chapterTitle, co
             <div className="ml-8 min-w-0 max-w-full"><div className="mb-1 flex items-center gap-1.5 text-xs font-bold text-slate-500"><UserRound className="size-3.5" /> 나</div><div className="min-w-0 max-w-full whitespace-pre-wrap break-words rounded-2xl bg-blue-600 p-3 text-sm leading-6 text-white [overflow-wrap:anywhere]">{turn.question}</div></div>
             {turn.answer?<div className="mr-8 min-w-0 max-w-full"><div className="mb-1 flex items-center gap-1.5 text-xs font-bold text-slate-500"><Bot className="size-3.5 text-blue-600" /> AI 강사님 {turn.mode==="demo"?<span className="rounded-full bg-amber-100 px-2 py-0.5 text-amber-800">데모</span>:null}</div><div className="min-w-0 max-w-full break-words rounded-2xl border border-slate-200 bg-white p-3 text-sm leading-6 text-slate-700 [overflow-wrap:anywhere]"><TutorMarkdown content={turn.answer} /></div></div>:turn.status==="failed"?<p className="text-xs text-slate-500">답변을 받지 못한 질문입니다. 다시 전송할 수 있습니다.</p>:null}
           </div>)}
-          {loading?<div className="flex items-center gap-2 text-sm text-slate-500" role="status"><LoaderCircle className="size-4 animate-spin" />{state.phase==="summarizing"?"이전 대화의 핵심을 정리하고 있어요…":"이전 대화를 참고해 설명을 준비하고 있어요…"}</div>:null}
+          {loading?<div className="flex items-center gap-2 text-sm text-slate-500" role="status"><LoaderCircle className="size-4 animate-spin" />{state.phase==="summarizing"?"이전 대화의 핵심을 정리하고 있어요…":state.phase==="retrieving"?"질문에 필요한 본문을 찾아보고 있어요…":"이전 대화를 참고해 설명을 준비하고 있어요…"}</div>:null}
           {state.contextNotice?<p role="status" className="rounded-xl bg-amber-50 p-3 text-xs leading-5 text-amber-900">{state.contextNotice}</p>:null}
           {state.error?<div role="alert" className="rounded-xl bg-rose-50 p-3 text-sm text-rose-700">{state.error}</div>:null}
           <div ref={conversationEndRef} />
         </div>
         <form onSubmit={handleTutorSubmit} className="shrink-0 border-t border-slate-100 bg-white p-4">
+          {selectedText?<div className="mb-2 flex items-center justify-between gap-2 text-xs text-blue-700"><span className="truncate">선택한 본문 참고: {selectedText.slice(0,70)}</span><Button type="button" variant="ghost" size="sm" onClick={()=>setSelection({lessonId,text:""})}>해제</Button></div>:null}
           <label htmlFor={`tutor-question-${lessonId}`} className="sr-only">AI 강사님께 질문</label>
           <Textarea id={`tutor-question-${lessonId}`} value={question} onChange={(event)=>store.update({draft:event.target.value})} onKeyDown={handleQuestionKeyDown} placeholder="예: 방금 설명한 개념을 다른 사례로 설명해 주세요." maxLength={1200} disabled={loading||!state.hydrated} className="min-h-20" />
           <div className="mt-2 flex items-center justify-between gap-3"><span className="text-xs text-slate-400">{question.length} / 1200 · Ctrl/Cmd+Enter로 전송</span><Button type="submit" disabled={loading||!state.hydrated||question.trim().length<2}><Send className="size-4" /> 질문하기</Button></div>

@@ -18,3 +18,5 @@ build/
 install/
 log/
 tmp/
+
+apps/web/public/tutor-content/

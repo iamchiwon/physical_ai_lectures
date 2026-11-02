@@ -21,7 +21,7 @@ export interface TutorState {
   learnerState: LearnerTopic[];
   hydrated: boolean;
   loading: boolean;
-  phase: "answering" | "summarizing";
+  phase: "answering" | "summarizing" | "retrieving";
   drawerOpen: boolean;
   draft: string;
   error: string | null;
@@ -31,7 +31,7 @@ export interface TutorState {
 }
 const INITIAL: TutorState = { turns: [], memory: null, learnerState: [], hydrated: false, loading: false, phase: "answering", drawerOpen: false, draft: "", error: null, storageNotice: null, contextNotice: null, epoch: 0 };
 export function successfulTurns(turns: StoredTutorTurn[]): ConversationTurn[] {
-  return turns.filter((turn) => turn.status === "answered" && turn.mode !== "demo" && Boolean(turn.answer)).map((turn) => ({ id:turn.id, chapterId:turn.chapterId, chapterTitle:turn.chapterTitle, lessonId:turn.lessonId, lessonTitle:turn.lessonTitle, question:turn.question, answer:turn.answer! }));
+  return turns.filter((turn) => turn.status === "answered" && turn.mode !== "demo" && Boolean(turn.answer)).map((turn) => ({ id:turn.id, chapterId:turn.chapterId, chapterTitle:turn.chapterTitle, lessonId:turn.lessonId, lessonTitle:turn.lessonTitle, question:turn.question, referenceContext:turn.referenceContext, answer:turn.answer! }));
 }
 export function createTutorStore(storage: () => Pick<Storage, "getItem" | "setItem" | "removeItem">) {
   let state = INITIAL;

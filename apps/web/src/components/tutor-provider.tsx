@@ -2,10 +2,11 @@
 
 import * as React from "react";
 import { afterMemory, buildTutorContext, selectLearnerState, TUTOR_INSTRUCTIONS, selectSummaryChunk, TUTOR_MAX_HISTORY, TUTOR_RECENT_TURNS } from "@physical-ai/shared";
+import { retrieveLessonContext, type LessonDocument, type ReadingFocus } from "@/lib/tutor-retrieval";
 import { askTutor, summarizeTutor } from "@/lib/api-client";
 import { createTutorStore, successfulTurns, TUTOR_STORAGE_KEY, type TutorState, type TutorStore } from "@/lib/tutor-store";
 
-export interface TutorLesson { id:string; title:string; chapterId:string; chapterTitle:string; contextSummary:string }
+export interface TutorLesson { id:string; title:string; chapterId:string; chapterTitle:string; sourceContent:string; focus?:ReadingFocus }
 interface TutorContextValue {
   state: TutorState;
   store: TutorStore;
@@ -40,6 +41,9 @@ export function TutorProvider({ children }: {children:React.ReactNode}) {
     const id = crypto.randomUUID();
     store.update({turns:[...before.turns,{id,chapterId:lesson.chapterId,chapterTitle:lesson.chapterTitle,lessonId:lesson.id,lessonTitle:lesson.title,question,status:"pending"}],draft:"",loading:true,phase:"answering",error:null,contextNotice:null},true);
     try {
+      const documents:LessonDocument[] = [{id:lesson.id,title:lesson.title,content:lesson.sourceContent}];
+      const initialReference=retrieveLessonContext(question,documents,lesson.focus);
+      let requestLesson={id:lesson.id,title:lesson.title,contextSummary:initialReference.text};
       const completed = successfulTurns(before.turns);
       let memory = before.memory;
       let history = afterMemory(completed,memory);
@@ -47,7 +51,7 @@ export function TutorProvider({ children }: {children:React.ReactNode}) {
       let summaryFailed = false;
       // Usually one summary is enough; cap recovery work after repeated failures to two API calls.
       for (let batch=0; batch<2; batch++) {
-        const preview = buildTutorContext(TUTOR_INSTRUCTIONS,lesson,question,memory?.content ?? "",history,learnerState);
+        const preview = buildTutorContext(TUTOR_INSTRUCTIONS,requestLesson,question,memory?.content ?? "",history,learnerState);
         if (!preview.omittedTurns && !preview.truncated) break;
         const older = history.slice(0,Math.max(0,history.length-TUTOR_RECENT_TURNS));
         if (!older.length) break;
@@ -66,14 +70,33 @@ export function TutorProvider({ children }: {children:React.ReactNode}) {
           summaryFailed = true; break;
         }
       }
-      const context = buildTutorContext(TUTOR_INSTRUCTIONS,lesson,question,memory?.content ?? "",history,learnerState);
+      const context = buildTutorContext(TUTOR_INSTRUCTIONS,requestLesson,question,memory?.content ?? "",history,learnerState);
       // Send only the suffix that fits. Keep full raw turns locally for future summary recovery.
       const selected = history.slice(Math.max(context.omittedTurns,history.length-TUTOR_MAX_HISTORY));
       store.update({phase:"answering",contextNotice:summaryFailed ? "이전 대화 요약에 실패해 기존 요약과 최근 대화를 우선 참고합니다. 원본 대화는 보존되며 다음 질문에서 요약을 다시 시도합니다." : context.omittedTurns || context.truncated ? "대화 길이 제한으로 기존 요약과 최근 대화 일부를 참고합니다. 원본 대화는 보존됩니다." : null});
-      const result = await askTutor({question,lesson,history:selected,summary:memory?.content ?? "",learnerState},abort.signal);
+      let result = await askTutor({question,lesson:requestLesson,history:selected,summary:memory?.content ?? "",learnerState},abort.signal);
+      if (!current()) return;
+      if (result.lookupQuery && result.mode !== "demo") {
+        store.update({phase:"retrieving"});
+        let corpus=documents;
+        try {
+          if (/^chapter-[0-6]$/.test(lesson.chapterId)) {
+            const response=await fetch(`/tutor-content/${lesson.chapterId}.json`,{signal:abort.signal});
+            if(!response.ok)throw new Error("Lesson corpus unavailable");
+            const value:unknown=await response.json();
+            if(!Array.isArray(value)||!value.every(item=>item&&typeof item.id==="string"&&typeof item.title==="string"&&typeof item.content==="string"))throw new Error("Invalid lesson corpus");
+            corpus=value;
+          }
+        } catch { if(!current())return; }
+        const additional=retrieveLessonContext(`${question} ${result.lookupQuery}`,corpus,lesson.focus);
+        requestLesson={...requestLesson,contextSummary:`[본문 추가 조회 완료: ${additional.state}]\n${additional.text || "질문에 해당하는 본문을 찾지 못했습니다. 필요한 코드나 문장을 확인해 주세요."}`.slice(0,4000)};
+        if(!current())return;
+        store.update({phase:"answering"});
+        result=await askTutor({question,lesson:requestLesson,history:selected,summary:memory?.content ?? "",learnerState,lookupComplete:true},abort.signal);
+      }
       if (!current()) return;
       const snapshot=store.getSnapshot();
-      store.update({turns:snapshot.turns.map((turn)=>turn.id===id?{...turn,answer:result.answer,status:"answered",mode:result.mode,model:result.model,learnerUpdates:result.learnerUpdates ?? []}:turn),contextNotice:result.contextLimited && !snapshot.contextNotice ? "입력 길이 제한으로 최근 대화 일부만 참고했습니다. 원본 대화는 보존됩니다." : snapshot.contextNotice},true);
+      store.update({turns:snapshot.turns.map((turn)=>turn.id===id?{...turn,answer:result.answer,referenceContext:requestLesson.contextSummary,status:"answered",mode:result.mode,model:result.model,learnerUpdates:result.learnerUpdates ?? []}:turn),contextNotice:result.contextLimited && !snapshot.contextNotice ? "입력 길이 제한으로 최근 대화 일부만 참고했습니다. 원본 대화는 보존됩니다." : snapshot.contextNotice},true);
     } catch (error) {
       if (!current()) return;
       const snapshot=store.getSnapshot();

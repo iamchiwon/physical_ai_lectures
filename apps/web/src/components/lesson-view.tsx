@@ -97,7 +97,7 @@ export function LessonView({ lesson, module, modules, previous, next }: LessonVi
         </main>
       </div>
 
-      <TutorDrawer chapterId={`chapter-${lesson.chapter}`} chapterTitle={`${lesson.chapter}장 · ${module.title}`} lessonId={lesson.id} lessonTitle={lesson.title} contextSummary={`${lesson.summary}\n핵심어: ${lesson.keywords.join(", ")}`} />
+      <TutorDrawer chapterId={`chapter-${lesson.chapter}`} chapterTitle={`${lesson.chapter}장 · ${module.title}`} lessonId={lesson.id} lessonTitle={lesson.title} sourceContent={[`# ${lesson.title}`,lesson.summary,...lesson.objectives,...lesson.sections.map(section => [`## ${section.heading}`,section.body ?? "",...(section.bullets ?? []),section.callout ? `${section.callout.title}\n${section.callout.body}` : "",section.code ? `\n\`\`\`${section.code.language}\n${section.code.content}\n\`\`\`\n` : ""].join("\n")),...lesson.quickCheck.map(check => `## 자가 점검\n${check.question}\n${check.explanation}`)].join("\n\n")} />
     </div>
   );
 }

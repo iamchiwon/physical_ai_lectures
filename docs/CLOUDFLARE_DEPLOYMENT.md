@@ -79,9 +79,12 @@ NEXT_PUBLIC_API_BASE_URL=http://localhost:8787
 
 ## 대화 저장·요약 기능 배포
 
-추가 DB·환경변수는 필요하지 않습니다. 같은 `OPENROUTER_API_KEY`로 답변과 요약을 수행합니다. 이번 기능은 **Worker를 먼저 배포**해 `/v1/tutor/summary`와 이전 대화 필드를 지원한 뒤 Pages를 배포하세요. 기존 Pages의 단일 질문 요청도 Worker가 계속 받습니다. `/v1/health`의 `diagnosticsVersion`은 `2026-11-02.3`입니다.
+추가 DB·환경변수는 필요하지 않습니다. 같은 `OPENROUTER_API_KEY`로 답변과 요약을 수행합니다. 이번 기능은 **Worker를 먼저 배포**해 `/v1/tutor/summary`와 이전 대화 필드를 지원한 뒤 Pages를 배포하세요. 기존 Pages의 단일 질문 요청도 Worker가 계속 받습니다. `/v1/health`의 `diagnosticsVersion`은 `2026-11-02.4`입니다.
 
 브라우저 저장은 origin별로 나뉘므로 localhost·Pages 기본 도메인·커스텀 도메인의 대화는 서로 공유되지 않습니다. 요약은 길이 임계치에 도달할 때만 추가 호출하며, 복구 요약은 질문당 최대 2회입니다. AI 강사·평가·요약은 같은 OpenRouter 무료 계정 호출 한도를 공유합니다.
 
 
 적응형 강사 변경도 Worker → Pages 순서로 배포합니다. 추가 환경변수·DB는 없습니다. 기존 요청은 `learnerState` 없이도 동작하며 이전 클라이언트는 새 응답의 추가 필드를 무시할 수 있습니다. 새 Pages는 이전 응답에 `learnerUpdates`가 없으면 상태를 유지합니다.
+
+
+질문 기반 본문 조회도 Worker → Pages 순서로 배포합니다. Pages prebuild가 `apps/web/public/tutor-content/chapter-N.json`을 생성하므로 기존 빌드 명령을 유지하면 됩니다. 새 환경변수나 DB는 없습니다. 배포 후 해당 정적 JSON이 제공되는지 확인하세요. 학습 주제 범위 제한은 제안 단계이며 아직 적용되지 않았습니다.

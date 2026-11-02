@@ -31,7 +31,7 @@ export async function assessAnswer(env: Bindings, request: AssessmentRequest) {
 
 
 function createDemoAnswer({ lesson }: TutorRequest) {
-  const context = lesson.contextSummary.replace(/\s+/g, " ").slice(0, 300);
+  const context = (lesson.contextSummary ?? "").replace(/\s+/g, " ").slice(0, 300);
   return `현재 AI 연결을 사용할 수 없어 질문에 맞춘 답변을 생성하지 못했습니다. 잠시 후 다시 질문해 주세요.
 
 현재 단원: **${lesson.title}**
@@ -57,6 +57,10 @@ export async function answerTutorQuestion(env: Bindings, request: TutorRequest):
       console.warn({ event: "tutor_output_format_invalid", diagnosticsVersion: DIAGNOSTICS_VERSION, operation: "tutor" });
       throw new Error("Invalid tutor output; keep learner state");
     }
+    if (output.lookupQuery && request.lookupComplete) return {
+      answer: "조회한 본문만으로는 질문 대상을 정확히 확인하기 어렵습니다. 설명이 필요한 코드나 문장을 선택하거나 해당 부분을 질문에 붙여 주세요.",
+      learnerUpdates: [], mode: "openrouter", model: result.model,
+    };
     return { ...output, mode: "openrouter", model: result.model, contextLimited: context.omittedTurns > 0 || context.truncated };
   } catch {
     return { answer: createDemoAnswer(request), mode: "demo", model };
