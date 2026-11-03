@@ -21,7 +21,9 @@
     "deploy:api": "npm run deploy --workspace @physical-ai/api",
     "test:catalog": "node --test tests/catalog.test.mjs",
     "prebuild": "npm run test:catalog",
-    "test:home": "node --test tests/home.test.mjs"
+    "test:home": "node --test tests/home.test.mjs",
+    "test:curriculum": "node --test tests/curriculum.test.mjs",
+    "test:study": "node --test tests/study.test.mjs"
   },
   "devDependencies": {
     "concurrently": "^9.2.1",

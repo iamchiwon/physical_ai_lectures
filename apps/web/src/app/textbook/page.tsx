@@ -10,6 +10,7 @@ export default function TextbookIndex() {
   return (
     <CourseShell title="설명·실습·연습문제" description="개념을 읽고, 가상실습으로 관찰하고, 직접 답안을 작성해 피드백을 받습니다.">
       <main className="mx-auto max-w-5xl space-y-8 px-4 py-8">
+        <Link href="/curriculum/" className="inline-block font-semibold text-blue-700">34모듈·204소주제 통합 목차 →</Link>
         <p className="text-slate-600">{textbookUnits.length}개 학습 단위 · 교재의 개념 설명을 기반으로 실습과 평가를 함께 제공합니다.</p>
         {groups.map((group) => <section key={group} className="rounded-2xl border border-slate-200 bg-white p-6">
           <h2 className="mb-4 text-xl font-bold text-blue-950">{group}</h2>

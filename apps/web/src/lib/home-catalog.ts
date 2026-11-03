@@ -65,7 +65,7 @@ export function buildHomeCatalog(source: Catalog) {
     readings: startingTopics.flatMap((id) => {
       const topic = topics.get(id);
       const reading = topic ? readingFor(topic.unitIds, preferredReadings[id]) : null;
-      return topic && reading ? [{ topicId: topic.id, title: topic.title, reading }] : [];
+      return topic && reading ? [{ unitId: topic.unitIds[0]!, topicId: topic.id, title: topic.title, reading }] : [];
     }),
   };
 }

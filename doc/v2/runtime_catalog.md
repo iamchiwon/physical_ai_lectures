@@ -2,7 +2,7 @@
 
 - 등록 revision: `B01-2026-11-02.1`, `schemaVersion: 1`
 - 근거: [A02 계약](catalog_contract.md), [A03 매핑](inventory/content-mapping.json), [커리큘럼](../integrated_curriculum.md)
-- 작업 기록: [B01](work_items/B01.md). B01은 데이터 등록 단계이며 화면·라우트 연결은 B02~B04에서 진행한다.
+- 작업 기록: [B01](work_items/B01.md). B01은 데이터 등록 단계이며, 이후 [B03](work_items/B03.md)에서 목차/모듈/경로, [B04](work_items/B04.md)에서 전체 단위 정적 페이지와 자료 안내·트랙 문맥 이동을 구현했다. 아래의 후속 범위 설명은 B01 등록 시점을 기준으로 한다.
 
 ## 1. 코드와 사용
 

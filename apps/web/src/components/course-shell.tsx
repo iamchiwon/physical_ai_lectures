@@ -20,13 +20,14 @@ export function CourseShell({ children, eyebrow, title, description, actions }: 
             <span className="grid size-10 shrink-0 place-items-center rounded-xl bg-blue-600 text-white shadow-sm shadow-blue-200">
               <GraduationCap className="size-5" aria-hidden="true" />
             </span>
-            <span className="min-w-0">
+            <span className="hidden min-w-0 sm:block">
               <span className="block truncate text-sm font-bold text-slate-950">Physical AI 클래스룸</span>
               <span className="block truncate text-xs text-slate-500">로봇 제어 실무 자습 과정</span>
             </span>
           </Link>
 
-          <div className="flex items-center gap-2">
+          <div className="flex items-center gap-1 sm:gap-2">
+            <Button asChild variant="ghost" size="sm"><Link href="/curriculum/">전체 목차</Link></Button>
             <Button asChild variant="ghost" size="sm"><Link href="/textbook/"><BookOpen className="size-4" />교재 본문</Link></Button>
             <Button asChild variant="ghost" size="sm" className="hidden sm:inline-flex">
               <Link href="/"><LayoutDashboard className="size-4" aria-hidden="true" />학습 홈</Link>
@@ -45,7 +46,7 @@ export function CourseShell({ children, eyebrow, title, description, actions }: 
                 <h1 className="text-balance text-3xl font-bold tracking-tight text-slate-950 sm:text-4xl">{title}</h1>
                 {description ? <p className="mt-4 max-w-2xl text-pretty text-base leading-7 text-slate-600">{description}</p> : null}
               </div>
-              <Link href="/#curriculum" className="inline-flex items-center gap-1 text-sm font-semibold text-blue-700 hover:text-blue-800">
+              <Link href="/curriculum/" className="inline-flex items-center gap-1 text-sm font-semibold text-blue-700 hover:text-blue-800">
                 전체 커리큘럼 <ChevronRight className="size-4" aria-hidden="true" />
               </Link>
             </div>
