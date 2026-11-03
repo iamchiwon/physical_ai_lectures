@@ -1,3 +1,5 @@
+import { ControlConceptLab } from "@/components/control-concept-lab";
+import { WheelConceptLab } from "@/components/wheel-concept-lab";
 import { AuthoredMarkdown } from "@/components/authored-markdown";
 import { AuthoredResponse, AuthoredCompletion } from "@/components/authored-response";
 import { authoredForTopic } from "@/lib/authored";
@@ -38,7 +40,7 @@ export default async function StudyPage({ params }: { params: Promise<{ unitId: 
         <a href="#study-navigation-title" className="mt-4 inline-block text-sm font-semibold text-blue-700">현재 경로·이전·다음 단위 확인 ↓</a>
       </section>
       <section aria-labelledby="unit-goals-title" className="mt-6 rounded-2xl border bg-white p-6"><h2 id="unit-goals-title" className="text-xl font-bold">학습 목표 {unit.definitionStatus === "pending" ? "초안" : ""}</h2><ul className="mt-4 space-y-2 text-sm leading-7 text-slate-700">{unit.objectives.map((goal) => <li key={goal.id}>{goal.description}</li>)}</ul><p className="mt-3 text-xs leading-6 text-slate-500">{unit.requirements.definitionStatus === "pending" ? "목표별 필수 활동과 평가 기준은 단위 집필 전에 확정합니다." : "아래 설명·실습·문제로 각 학습 목표를 확인하세요."}</p><Prerequisites unit={unit} /></section>
-      <nav aria-label="설명 실습 평가 바로가기" className="my-6 flex flex-wrap gap-2">{catalogSlotNames.map((slot) => <a key={slot} className="rounded-lg border bg-white px-4 py-2 text-sm text-blue-700" href={`#${slot}`}>{slotLabels[slot]}</a>)}</nav>
+      <nav aria-label="설명 실습 평가 바로가기" className="my-6 flex flex-wrap gap-2">{catalogSlotNames.map((slot) => <a key={slot} className="rounded-lg border bg-white px-4 py-2 text-sm text-blue-700" href={`#${slot}`}>{slotLabels[slot]}</a>)}{authored && unit.topicId === "M06.05" ? <a className="rounded-lg border bg-white px-4 py-2 text-sm text-blue-700" href="#wheel-concept-lab">선택: 바퀴 모형</a> : null}{authored && ["M07.03", "M07.06"].includes(unit.topicId) ? <a className="rounded-lg border bg-white px-4 py-2 text-sm text-blue-700" href="#control-concept-lab">선택: 제어 모형</a> : null}</nav>
       <div className="space-y-5">{catalogSlotNames.map((slot) => {
         const resources = unit.slots[slot].filter(binding => !("resourceId" in binding ? binding.resourceId : binding.activityId).startsWith("authored:")).map(studyResource);
         return <section key={slot} id={slot} aria-labelledby={`${slot}-title`} className="rounded-2xl border bg-white p-5 sm:p-7">
@@ -55,6 +57,8 @@ export default async function StudyPage({ params }: { params: Promise<{ unitId: 
           <div className="mt-5 border-t border-slate-100 pt-4"><h3 className="text-sm font-semibold">{authored ? "학습 범위와 한계" : "보완할 범위"}</h3><p className="mt-2 text-sm leading-7 text-slate-600">{unit.gaps[slot]}</p></div>
         </section>;
       })}</div>
+      {authored && ["M07.03", "M07.06"].includes(unit.topicId) ? <ControlConceptLab key={`${unit.id}:${unit.revision}:control-model`} /> : null}
+      {authored && unit.topicId === "M06.05" ? <WheelConceptLab key={`${unit.id}:${unit.revision}:wheel-model`} /> : null}
       {authored ? <><section id="authored-references" className="mt-6 rounded-2xl border bg-white p-5 sm:p-7"><h2 className="mb-4 text-xl font-bold">참고 자료</h2><AuthoredMarkdown content={authored.references} /></section><AuthoredCompletion unitId={unit.id} revision={unit.revision} catalogRevision={catalog.revision} readiness={readiness.state} activityIds={activityIds} /></> : null}
       <Suspense fallback={<StudyNavigationView navigation={{ ...base, context: null, notice: null }} />}><StudyNavigation base={base} contexts={contexts} /></Suspense>
       <p className="mt-6 text-xs leading-6 text-slate-500">신규 활동의 답안은 이 브라우저의 통합 학습 기록에 저장합니다. 기존 화면의 답안·진도는 원래 키를 유지합니다. AI 강사는 현재 단위의 준비 상태·부족한 범위와 연결된 실제 자료를 참고합니다.</p>

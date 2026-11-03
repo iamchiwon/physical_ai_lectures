@@ -41,9 +41,9 @@ export function CourseShell({ children, eyebrow, title, description, actions }: 
         <section className="border-b border-blue-100 bg-gradient-to-br from-white via-blue-50/70 to-sky-50">
           <div className="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8 lg:py-14">
             {eyebrow ? <p className="mb-3 flex items-center gap-2 text-sm font-semibold text-blue-700"><BookOpen className="size-4" aria-hidden="true" />{eyebrow}</p> : null}
-            <div className="flex flex-col justify-between gap-5 lg:flex-row lg:items-end">
-              <div className="max-w-3xl">
-                <h1 className="text-balance text-3xl font-bold tracking-tight text-slate-950 sm:text-4xl">{title}</h1>
+            <div className="flex min-w-0 flex-col justify-between gap-5 lg:flex-row lg:items-end">
+              <div className="min-w-0 max-w-3xl [overflow-wrap:anywhere]">
+                <h1 className="min-w-0 text-balance text-3xl font-bold tracking-tight text-slate-950 [overflow-wrap:anywhere] sm:text-4xl">{title}</h1>
                 {description ? <p className="mt-4 max-w-2xl text-pretty text-base leading-7 text-slate-600">{description}</p> : null}
               </div>
               <Link href="/curriculum/" className="inline-flex items-center gap-1 text-sm font-semibold text-blue-700 hover:text-blue-800">

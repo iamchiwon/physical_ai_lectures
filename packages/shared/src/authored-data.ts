@@ -336,48 +336,384 @@ export const authoredMetadata: AuthoredMetadata[] = [
     "sha256": "9dd9333960e5834821349ed9025effb759170415a26815432d64e000439ec223",
     "reviewed": true,
     "evidenceRef": "doc/v2/work_items/M03.06.md"
+  },
+  {
+    "topicId": "M05.01",
+    "source": "ebook/curriculum/M05/M05.01.md",
+    "title": "워크스페이스·패키지·빌드·노드·Executor",
+    "objectives": [
+      "워크스페이스·패키지·빌드 산출물·터미널 환경의 역할을 구별하고 소스 변경이 실행에 반영되는 경로를 설명한다.",
+      "노드·프로세스·Executor·콜백의 관계를 설명하고 가정한 단일 스레드 실행 기록의 대기 시간을 계산한다.",
+      "패키지 탐색 실패와 콜백 지연을 구별하여 가상 기록에서 다음 확인 증거를 선택한다."
+    ],
+    "prerequisiteNote": "M01의 경로·프로세스·빌드와 M03의 센서/구동기 역할을 사용한다. Ubuntu 24.04·ROS 2 Jazzy 문서 기준이며 기본 활동은 합성 기록 해석이다. 설치·ROS 실행·실물 연결은 요구하지 않는다.",
+    "sha256": "a04f6e300c7f6ca5bb87f9b0fba0e5385be399effc8e82dee54cd2d39ef50017",
+    "reviewed": true,
+    "evidenceRef": "doc/v2/work_items/M05.01.md"
+  },
+  {
+    "topicId": "M05.02",
+    "source": "ebook/curriculum/M05/M05.02.md",
+    "title": "Topic·Service·Action·Parameter와 인터페이스",
+    "objectives": [
+      "연속 관측·짧은 요청/응답·진행 관측과 취소가 필요한 작업·노드 설정을 구분하여 통신 방식을 선택한다.",
+      "메시지 자료형과 단위/시간/좌표의 의미 계약을 구별하고 Action의 goal·feedback·result를 해석한다.",
+      "응답 시간초과·취소 요청·파라미터 변경 기록에서 보장되지 않은 결론과 추가 증거를 설명한다."
+    ],
+    "prerequisiteNote": "M05.01의 노드·Executor·콜백과 M01의 자료형, M02의 단위를 사용한다. ROS 2 Jazzy 문서 기준의 종이 인터페이스 설계이며 실제 서비스 호출·Action 송신·로봇 동작은 수행하지 않는다.",
+    "sha256": "6a00e903e53631fac7bb03317aa5dfada6e4e13709018e031f51f3dc996eb8d1",
+    "reviewed": true,
+    "evidenceRef": "doc/v2/work_items/M05.02.md"
+  },
+  {
+    "topicId": "M05.03",
+    "source": "ebook/curriculum/M05/M05.03.md",
+    "title": "DDS·QoS·통신 발견·네임스페이스",
+    "objectives": [
+      "DDS 기반 통신의 발견 조건과 도메인·네임스페이스·이름의 역할을 구별하여 완전한 Topic 이름을 구한다.",
+      "발행자가 제공하는 QoS와 구독자가 요구하는 QoS의 호환을 판정하고 가정한 대기 자료의 나이를 계산한다.",
+      "메시지 미수신을 발견·이름/타입·QoS·실행 지연의 증거로 나누어 진단하고 정책 변경의 한계를 설명한다."
+    ],
+    "prerequisiteNote": "M05.01의 노드와 실행기, M05.02의 Topic과 자료형이 선수다. ROS 2 Jazzy의 DDS 기반 RMW를 기준으로 합성 설정표를 읽는다. 실제 도메인 변경·방화벽 조작·ROS 실행은 필요 없다.",
+    "sha256": "ce32721c236df2344d6408600559c692db774f548cf82c06a7a062526bb9da71",
+    "reviewed": true,
+    "evidenceRef": "doc/v2/work_items/M05.03.md"
+  },
+  {
+    "topicId": "M05.04",
+    "source": "ebook/curriculum/M05/M05.04.md",
+    "title": "Launch·설정·Lifecycle·로그·진단",
+    "objectives": [
+      "Launch의 프로세스 실행과 노드의 준비 상태를 구별하고 이름이 바뀐 노드의 설정 적용 대상을 판정한다.",
+      "Lifecycle의 주요 상태와 성공/실패 전이를 추적하여 가상 구성·활성화 소요 시간을 계산한다.",
+      "로그 수준·진단 상태·기록 시각을 대조하여 오류 부재를 과장하지 않고 추가 증거와 복구 조건을 제안한다."
+    ],
+    "prerequisiteNote": "M05.01~03의 프로세스·Parameter·네임스페이스를 사용한다. Ubuntu 24.04/ROS 2 Jazzy 문서 기준의 합성 설정·로그 해석이며 실제 Launch 실행이나 하드웨어 활성화는 하지 않는다.",
+    "sha256": "1d41331a549db8f8d3cbb2009c55beebd19510e0e51391258beda13aee7388a5",
+    "reviewed": true,
+    "evidenceRef": "doc/v2/work_items/M05.04.md"
+  },
+  {
+    "topicId": "M05.05",
+    "source": "ebook/curriculum/M05/M05.05.md",
+    "title": "tf2·RViz·rqt와 rosbag2/MCAP 입문",
+    "objectives": [
+      "변환의 source·target·시각을 명시하고 가상 좌표계 연결에서 점을 변환한다.",
+      "RViz·rqt·원시 메시지 관측의 역할을 구별하여 표시 실패에 필요한 증거를 선택한다.",
+      "rosbag2와 MCAP의 역할을 설명하고 기록 범위·재생 배속·시간 조건에서 재현 주장의 한계를 판정한다."
+    ],
+    "prerequisiteNote": "M02.02의 좌표 변환과 M05.01~04의 이름·QoS·시각 기록을 사용한다. 기본 실습은 종이 변환과 합성 메타데이터 해석이다. 실제 bag 재생이나 로봇 명령 송신은 하지 않는다.",
+    "sha256": "be44aeae62f7a5aaa10c641d9992330f28f1fd1e862552e1439f9708b2f7cdf9",
+    "reviewed": true,
+    "evidenceRef": "doc/v2/work_items/M05.05.md"
+  },
+  {
+    "topicId": "M05.06",
+    "source": "ebook/curriculum/M05/M05.06.md",
+    "title": "시뮬레이션 시간·실물 시간·주기·네트워크 장애",
+    "objectives": [
+      "System·ROS·Steady 시간의 용도와 use_sim_time의 영향을 설명하고 비교 가능한 시각을 구별한다.",
+      "동일 시계의 합성 실행 기록에서 주기·jitter·처리 시간·기한 초과를 계산한다.",
+      "관측의 나이와 마지막 수신 뒤 경과 시간을 구별하여 통신 단절·시간 점프·재연결의 판정 조건을 제안한다."
+    ],
+    "prerequisiteNote": "M01.06의 주기와 지연, M05.01의 Executor, M05.03의 QoS, M05.05의 기록 시각을 사용한다. Ubuntu 24.04/ROS 2 Jazzy 문서 기준의 종이 로그 활동이며 실제 장애 주입·ROS 실행·실물 연결은 하지 않는다.",
+    "sha256": "85b1db644460f0040d0caed0fd70e7b87440736f6b1703ceb24336cb68e105aa",
+    "reviewed": true,
+    "evidenceRef": "doc/v2/work_items/M05.06.md"
+  },
+  {
+    "topicId": "M06.01",
+    "source": "ebook/curriculum/M06/M06.01.md",
+    "title": "프레임·오른손 좌표·변환 합성",
+    "objectives": [
+      "프레임의 원점·축·단위와 오른손 규약을 명시하고 좌표 재표현과 물체 운동을 구분한다.",
+      "열벡터 규약에서 연결된 변환의 합성과 역을 계산하여 점과 방향 벡터를 변환한다.",
+      "센서/도구 오프셋과 변환 순서 오류를 수치 반례로 찾아 모델 검증에 필요한 기록을 제안한다."
+    ],
+    "prerequisiteNote": "M02.01~02의 행렬·회전·동차변환, M03의 링크와 센서가 선수다. 기호가 낯설면 M02.02로 돌아간다. 본 단위는 기구학 모델의 프레임 계약과 오류 진단을 보강하며 종이 계산만으로 수행한다.",
+    "sha256": "af500605e805eb751e1ced7bdd8a0f25525f72d6c1c48e464719f3987b73e9c5",
+    "reviewed": true,
+    "evidenceRef": "doc/v2/work_items/M06.01.md"
+  },
+  {
+    "topicId": "M06.02",
+    "source": "ebook/curriculum/M06/M06.02.md",
+    "title": "DH 파라미터·정기구학·작업공간",
+    "objectives": [
+      "표준 DH의 네 파라미터와 회전/직선 관절의 변수를 구분하고 관례를 섞지 않아야 하는 이유를 설명한다.",
+      "가상 평면 2R 팔의 관절각에서 말단 위치와 방향을 단계적으로 계산하고 변형 자세를 비교한다.",
+      "이상적인 위치 작업공간의 안쪽/바깥쪽 경계를 계산하고 실제 관절 제한·도구 자세·모델 검증의 추가 조건을 설명한다."
+    ],
+    "prerequisiteNote": "M06.01의 열벡터·프레임 합성과 M02의 삼각함수, M03의 회전 관절이 선수다. 계산은 종이와 계산기로 충분하며 NumPy나 실제 로봇은 필요 없다. 모든 링크 길이는 교육용 가상 값이다.",
+    "sha256": "323b8d3ecd6e567c78f18ffb931d1f941411ebd3775e93c82e66b24a8a943e73",
+    "reviewed": true,
+    "evidenceRef": "doc/v2/work_items/M06.02.md"
+  },
+  {
+    "topicId": "M06.03",
+    "source": "ebook/curriculum/M06/M06.03.md",
+    "title": "기하학적 IK·Jacobian·감쇠 최소제곱 IK",
+    "objectives": [
+      "평면 2R 팔에서 코사인 법칙과 atan2를 이용해 IK 분기를 계산하고 기하적 도달 조건을 검사한다.",
+      "FK를 미분한 위치 Jacobian을 해석하고 주어진 잔차에 대한 DLS의 한 단계 관절 증분을 계산한다.",
+      "갱신 뒤 FK 잔차와 제약을 다시 확인하여 국소 선형화·감쇠·수치 실패의 한계 및 중단 조건을 설명한다."
+    ],
+    "prerequisiteNote": "M06.02의 길이 0.3/0.2 m 평면 2R와 M02의 미분·행렬·최소제곱이 선수다. 기본 활동은 종이 수치 계산이다. 도구 방향을 제외한 2차원 위치 IK를 다루며 실제 로봇이나 NumPy 실행은 필요 없다.",
+    "sha256": "fd73a8ed99ffc2221c844556b30b9d96ca247c60685e947752a42bdf920e78c8",
+    "reviewed": true,
+    "evidenceRef": "doc/v2/work_items/M06.03.md"
+  },
+  {
+    "topicId": "M06.04",
+    "source": "ebook/curriculum/M06/M06.04.md",
+    "title": "특이점·관절 제한·다중 해·연속성",
+    "objectives": [
+      "작업 차원의 Jacobian에서 특이점의 의미를 설명하고 도달 불가·관절 한계 위반과 구별한다.",
+      "가상 IK의 여러 해를 관절 범위와 FK 잔차로 검사하여 클리핑의 한계를 계산한다.",
+      "연속 목표의 관절 증분·속도·각도 표현을 검토하고 끝점의 유효성과 경로의 유효성을 구분한다."
+    ],
+    "prerequisiteNote": "M06.02~03의 평면 2R, 기하 IK와 위치 Jacobian, M02.01의 2×2 행렬식이 선수다. 종이 계산과 합성 후보표를 사용하며 실제 관절 동작이나 충돌 검사는 수행하지 않는다.",
+    "sha256": "8a6aa1262972a73b1299c42dcc818eeeb1faff33b0e80d678ec7f16ad952cefd",
+    "reviewed": true,
+    "evidenceRef": "doc/v2/work_items/M06.04.md"
+  },
+  {
+    "topicId": "M06.05",
+    "source": "ebook/curriculum/M06/M06.05.md",
+    "title": "차동·옴니·메카넘 순/역운동학",
+    "objectives": [
+      "차동 베이스의 바퀴 속도와 전진/회전 속도를 순·역 계산하고 몸체 속도를 세계 좌표로 옮긴다.",
+      "명시한 3옴니/4메카넘 배치에서 몸체 속도와 바퀴 속도를 순·역 계산한다.",
+      "바퀴 속도 한계와 메카넘의 모델 일관성 잔차를 검사하고 실제 이동·미끄럼에 대한 추론 한계를 설명한다."
+    ],
+    "prerequisiteNote": "M03.05의 바퀴 구조, M06.01의 좌표 변환, M02.01의 행렬이 선수다. 모든 치수와 로그는 가상 모델이다. 계산기와 종이만 사용하며 실제 베이스를 주행하지 않는다.",
+    "sha256": "941f39e397e315ed84f2cc87ac7d4870887b00e86304bcc45251a12e7ce79754",
+    "reviewed": true,
+    "evidenceRef": "doc/v2/work_items/M06.05.md"
+  },
+  {
+    "topicId": "M06.06",
+    "source": "ebook/curriculum/M06/M06.06.md",
+    "title": "델타 구조와 SO-101 비교·엔코더 영점 보정",
+    "objectives": [
+      "델타의 폐루프 제약과 SO-101 직렬 팔의 관절/그리퍼 역할을 비교하고 가상 후보의 연결 조건을 검사한다.",
+      "명시한 센서 축·count 해상도·기어비·부호·영점으로 가상 관절각을 rad로 환산한다.",
+      "별도 기준 기록으로 캘리브레이션 후보를 검증하고 모델 버전·단위·영점·측정 한계를 구분하여 보류 근거를 남긴다."
+    ],
+    "prerequisiteNote": "M03의 기어/엔코더, M06의 프레임·FK·제약과 M05의 시각 기록을 사용한다. 모든 수치는 가상 기록이며 실제 엔코더 보정·모터 명령·로봇 이동은 수행하지 않는다.",
+    "sha256": "6212a3079ba1af49d6c462e0d770e9a2b9ba93951c0934b238075c31fa4b5bf5",
+    "reviewed": true,
+    "evidenceRef": "doc/v2/work_items/M06.06.md"
+  },
+  {
+    "topicId": "M07.01",
+    "source": "ebook/curriculum/M07/M07.01.md",
+    "title": "질량·관성·마찰·토크·중력과 동역학",
+    "objectives": [
+      "질량과 회전 관성, 힘과 토크를 구별하고 관절 동역학의 가속·속도·중력·마찰 항을 설명한다.",
+      "명시한 단일 회전 링크 모델에서 자세·속도·가속도에 따른 가상 구동 토크를 계산한다.",
+      "질량·거리·기어 변화의 영향을 비교하고 파라미터·정격 및 센서 추정의 검증 범위를 판정한다."
+    ],
+    "prerequisiteNote": "M02의 미분·단위, M03의 모터·기어·토크, M06의 관절 자세가 선수다. 기본 활동은 종이 토크 수지 계산이다. 가상 파라미터를 실제 로봇 정격으로 사용하지 않으며 전류나 토크를 인가하지 않는다.",
+    "sha256": "547414d1fbcd8f35cb5726210536b1a48d4114d95accf11f28d79487b0b9bb61",
+    "reviewed": true,
+    "evidenceRef": "doc/v2/work_items/M07.01.md"
+  },
+  {
+    "topicId": "M07.02",
+    "source": "ebook/curriculum/M07/M07.02.md",
+    "title": "전달함수·상태공간·시간응답·안정성",
+    "objectives": [
+      "가상 연속 LTI 모델의 미분방정식을 상태공간과 전달함수로 연결하고 초기조건의 역할을 설명한다.",
+      "1차 계단 응답을 계산하여 정상값·시간상수·정착 시간·오버슈트를 정의에 따라 판정한다.",
+      "내부 상태와 입출력, 연속 모델과 이산 구현의 안정성을 구별하고 유한 로그의 검증 한계를 설명한다."
+    ],
+    "prerequisiteNote": "M02의 미분·행렬·고유값과 M07.01의 동역학이 선수다. u와 y가 정규화된 가상 모델을 사용한다. 계산기와 종이로 수행하며 실제 제어기나 로봇을 실행하지 않는다.",
+    "sha256": "3c0179aaa6755571e95b7dbc0ae854ec68e48b2233229857847533f082428135",
+    "reviewed": true,
+    "evidenceRef": "doc/v2/work_items/M07.02.md"
+  },
+  {
+    "topicId": "M07.03",
+    "source": "ebook/curriculum/M07/M07.03.md",
+    "title": "P/PI/PID·적분 포화·미분 잡음·샘플링",
+    "objectives": [
+      "P·I·D 항의 역할과 한계를 설명하고 가상 정상상태의 P 제어 오차를 계산한다.",
+      "명시한 이산 PID의 갱신 순서에 따라 포화 전/후 출력과 조건부 적분 상태를 계산한다.",
+      "미분 잡음·샘플 간격·포화 기록을 해석하여 튜닝 주장의 검증 조건과 모형의 한계를 설명한다."
+    ],
+    "prerequisiteNote": "M02의 미분/적분, M05.06의 샘플 간격, M07.02의 응답과 안정성이 선수다. 본문의 정규화 로그를 종이로 계산한다. 실제 PID 튜닝·토크 인가·모터 동작은 수행하지 않는다.",
+    "sha256": "15a9fdbf12cfea26935f0bd64c76fde16658535ea90d10fc2653ea9817a22fef",
+    "reviewed": true,
+    "evidenceRef": "doc/v2/work_items/M07.03.md"
+  },
+  {
+    "topicId": "M07.04",
+    "source": "ebook/curriculum/M07/M07.04.md",
+    "title": "주파수 응답·근궤적의 해석",
+    "objectives": [
+      "안정한 가상 LTI의 정현파 정상 응답에서 크기·위상·dB와 각주파수의 의미를 계산한다.",
+      "음의 단위 피드백 모델의 이득 변화에 따른 폐루프 근을 계산하여 근궤적과 응답 특성을 해석한다.",
+      "가상 지연이 위상 여유에 주는 영향을 계산하고 주파수 지표만으로 보장할 수 없는 조건을 설명한다."
+    ],
+    "prerequisiteNote": "M07.02의 전달함수·극·연속 안정성, M02의 복소수와 삼각함수, M07.03의 이득 개념을 사용한다. 시간은 s, 입출력은 정규화값인 가상 모델이다. 실제 로봇 주파수 시험이나 MATLAB 설치는 필요 없다.",
+    "sha256": "ebaae66ae54d807801bf081182e59dcf778ca9c313a9ea9d44e9aaa501be8fc5",
+    "reviewed": true,
+    "evidenceRef": "doc/v2/work_items/M07.04.md"
+  },
+  {
+    "topicId": "M07.05",
+    "source": "ebook/curriculum/M07/M07.05.md",
+    "title": "위치·속도·토크 제어와 궤적 추종",
+    "objectives": [
+      "위치·속도·토크 입력의 의미와 내외부 제어 루프의 가정을 구별한다.",
+      "가상 cubic 관절 궤적의 위치·속도·가속도와 속도 피드백/토크 요구를 계산한다.",
+      "동일 시각의 추종 오차와 입력 포화를 분석하여 궤적 성공 및 실제 안전의 검증 범위를 설명한다."
+    ],
+    "prerequisiteNote": "M07.01의 관성과 M07.02~03의 응답/피드백, M06의 관절 경로가 선수다. 수치는 가상 단일 축의 종이 계산이며 실제 위치·속도·토크 명령은 송신하지 않는다.",
+    "sha256": "0635379d58a9e612fb2123c98bc6fa3c0e44a26fc19fd21b9a7bd680c522e4d2",
+    "reviewed": true,
+    "evidenceRef": "doc/v2/work_items/M07.05.md"
+  },
+  {
+    "topicId": "M07.06",
+    "source": "ebook/curriculum/M07/M07.06.md",
+    "title": "필터·지연·jitter·센서 잡음과 제어 품질",
+    "objectives": [
+      "가상 1차/이동평균 필터를 계산하고 잡음 평균의 분산 감소 조건과 지연을 설명한다.",
+      "동일 시계의 합성 로그에서 경로 지연·처리 시간·실제 주기와 정의한 jitter를 구별하여 계산한다.",
+      "필터·샘플 지연·포화와 추종 지표를 함께 검토하여 제어 품질의 절충 및 실제 검증의 한계를 설명한다."
+    ],
+    "prerequisiteNote": "M02.04의 분산/독립성, M05.06의 시계/주기, M07.03~05의 미분 잡음·위상·추종이 선수다. 종이 계산이 기본이며 실제 센서·네트워크·제어기를 실행하지 않는다.",
+    "sha256": "253c49cea84e4d09a012b66e7753404edbe25a0ec5a84bf021114deb991a8659",
+    "reviewed": true,
+    "evidenceRef": "doc/v2/work_items/M07.06.md"
+  },
+  {
+    "topicId": "M08.01",
+    "source": "ebook/curriculum/M08/M08.01.md",
+    "title": "링크·관절·visual·collision·inertial",
+    "objectives": [
+      "URDF의 링크·관절과 visual·collision·inertial의 서로 다른 역할을 설명한다.",
+      "요소별 origin과 질량중심을 구별하고 가상 상자 링크의 관성 및 좌표를 계산한다.",
+      "시각 표시·충돌·동역학·구동의 검증 단계를 구분하여 누락 요소와 추가 증거를 판정한다."
+    ],
+    "prerequisiteNote": "M06의 프레임·관절과 M07.01의 질량·회전 관성이 선수다. ROS 2 Jazzy 문서 기준의 종이 모델 읽기와 XML 예제다. 실제 ROS·시뮬레이터·로봇 구동은 필요 없다.",
+    "sha256": "0e32011761b24036c6c4fe18c3f6e46da8ba04667839f96175f434e65d07f949",
+    "reviewed": true,
+    "evidenceRef": "doc/v2/work_items/M08.01.md"
+  },
+  {
+    "topicId": "M08.02",
+    "source": "ebook/curriculum/M08/M08.02.md",
+    "title": "Xacro 매크로·자산 경로·패키지 구성",
+    "objectives": [
+      "Xacro 소스·확장된 URDF·설치된 패키지 자산을 구분하고 실행에 사용한 산출물의 출처를 설명한다.",
+      "작은 Xacro 매크로의 인자와 수식을 따라 형상·origin·이름의 확장 결과를 계산한다.",
+      "가상 메시 URI와 패키지/설치 기록에서 자산 탐색 실패를 진단하고 문법·의미·물리 검증의 차이를 설명한다."
+    ],
+    "prerequisiteNote": "M01의 경로와 빌드, M05.01의 패키지/overlay, M08.01의 URDF 요소가 선수다. ROS 2 Jazzy 문서를 기준으로 종이 확장과 가상 경로를 읽는다. 실제 패키지 설치·ROS 빌드·메시 로딩은 필요 없다.",
+    "sha256": "82024f1b63360438b2f58acbde4564f1f96fbce4a0370f6dd57ca8bcc7a3fa99",
+    "reviewed": true,
+    "evidenceRef": "doc/v2/work_items/M08.02.md"
+  },
+  {
+    "topicId": "M08.03",
+    "source": "ebook/curriculum/M08/M08.03.md",
+    "title": "관절 축·제한·mimic·트리 검사",
+    "objectives": [
+      "관절 origin과 로컬 axis 및 관절 종류별 제한 단위를 해석하고 양의 운동 방향을 계산한다.",
+      "mimic의 배율·오프셋과 두 관절 제한을 결합하여 허용 가능한 가상 값을 구한다.",
+      "링크 트리와 mimic 의존 관계에서 중복 부모·순환·누락 참조를 찾아 수정 근거와 검증 범위를 설명한다."
+    ],
+    "prerequisiteNote": "M06.01의 프레임/합성과 M06.04의 관절 제한, M08.01~02의 URDF/확장 모델이 선수다. 종이 그래프·좌표·범위 계산이며 실제 관절을 움직이지 않는다.",
+    "sha256": "22af283dacf34c0033f5bdc30321b40a3fb93084373490206d8e6ce98ab4ef55",
+    "reviewed": true,
+    "evidenceRef": "doc/v2/work_items/M08.03.md"
+  },
+  {
+    "topicId": "M08.04",
+    "source": "ebook/curriculum/M08/M08.04.md",
+    "title": "메시 경량화·관성·충돌 형상 품질",
+    "objectives": [
+      "가상 메시의 단위·축·크기와 collision 근사의 빈 공간/접촉 오차를 계산하여 경량화의 검토 조건을 설명한다.",
+      "질량중심 관성의 방향·기준점·크기 스케일 변화를 계산하고 URDF inertial에 적용할 기준을 구분한다.",
+      "관성 텐서의 대칭·양의 주관성·삼각 조건을 검사하고 근거 없는 자동 보정과 실제 검증의 한계를 설명한다."
+    ],
+    "prerequisiteNote": "M08.01의 균질 상자와 세 모델 요소, M07.01의 관성, M06.01의 회전이 선수다. 기본 활동은 가상 치수와 텐서의 종이 계산이며 메시 처리 도구나 물리 엔진을 실행하지 않는다.",
+    "sha256": "b663f57f41a6090120099bee10e3ca95c4c15a721423ceb728ddf94d8eb4b68a",
+    "reviewed": true,
+    "evidenceRef": "doc/v2/work_items/M08.04.md"
+  },
+  {
+    "topicId": "M08.05",
+    "source": "ebook/curriculum/M08/M08.05.md",
+    "title": "JointState·robot_state_publisher·tf 연결",
+    "objectives": [
+      "JointState의 이름·배열 길이·단위·기록 시각을 검사하여 가상 상태 메시지를 올바르게 해석한다.",
+      "URDF와 관절 상태로 계산하는 고정/가동 상대변환을 구분하고 연결된 프레임의 점 좌표를 계산한다.",
+      "namespace·프레임 접두사·발행자·시간 범위의 증거를 이용하여 tf 연결 실패의 원인과 추가 확인을 제안한다."
+    ],
+    "prerequisiteNote": "M05.05~06의 tf/시간과 M06.01의 열벡터 좌표 합성, M08.01~03의 URDF 트리가 선수다. 기본 활동은 합성 메시지와 종이 좌표 계산이며 ROS 설치나 실제 관절 동작이 필요하지 않다.",
+    "sha256": "3a7712fbbac39b4c69401e29690a4049863b809e0c1ec5708195a90e8afd8d79",
+    "reviewed": true,
+    "evidenceRef": "doc/v2/work_items/M08.05.md"
+  },
+  {
+    "topicId": "M08.06",
+    "source": "ebook/curriculum/M08/M08.06.md",
+    "title": "구동 인터페이스와 시뮬레이터 간 모델 이식",
+    "objectives": [
+      "관절 명령·상태·링크 변환의 역할을 구분하고 가상 구동 인터페이스 표에서 필요한 연결을 설명한다.",
+      "URDF와 대상 장면의 길이·각도·축·영점 계약을 비교하여 가상 단위 변환과 제한 값을 계산한다.",
+      "가상 모델 이식 보고서의 단계별 증거를 판정하고 물리·구동·재현성에 남는 검증 항목을 제안한다."
+    ],
+    "prerequisiteNote": "M08.01~05의 URDF·관성·JointState, M06.06의 방향/영점과 M07의 제어 한계가 선수다. 기본은 가상 계약표와 보고서의 종이 계산이며 실제 importer, ROS, 물리 엔진이나 장치를 실행하지 않는다.",
+    "sha256": "e7a0a0c30910c70719a5e7f7a2f4cce06f922abfeb55f00e5e28bc1e87342600",
+    "reviewed": true,
+    "evidenceRef": "doc/v2/work_items/M08.06.md"
   }
 ];
 export const legacyRevisions: LegacyRevision[] = [
   {
     "source": "ebook/book/00_frontmatter/environment.md",
     "baselineSha256": "0668193d160e404d2a76f15adc467940808fb494eaacdade3f574ec0ab11e857",
-    "sha256": "a87ab751d360720a24c9972dee4fb672235f424c4a151d9e2065245c76a22dd7",
+    "sha256": "b7af0cdd3312ef9088bc01345926e32c47d6d12263d11f084100cd758cf2409f",
     "approved": true,
-    "reason": "확장E1 기본경로와 기존GPU/실물장비요구조건 분리",
-    "evidenceRef": "doc/v2/work_items/E1.md"
+    "reason": "확장E1 기본경로와 기존GPU/실물장비요구조건 분리 / E2: 공통 기초→ROS/기구학/제어/모델 경로와 기본·선택 실행/모형 한계, 사용자 상태 표시 원칙 동기화",
+    "evidenceRef": "doc/v2/work_items/E2.md"
   },
   {
     "source": "ebook/book/00_frontmatter/how_to_use.md",
     "baselineSha256": "a3d1e94f176ffd9b1a9070929a0a1d5ed28034e02c8f60d56926d601bdbb841b",
-    "sha256": "32c9e7b48af8b7ef162a60da369d99527da5a468c5bd713294593660847b43de",
+    "sha256": "61a2ed87fcbaa938f792401d168fca40f368e4179b752be96b921fc1a858cb6c",
     "approved": true,
-    "reason": "여섯장 단일프로젝트에서 통합과정 기초→응용 학습경로로 안내 개정 / SIM표식=장비없는브라우저 실행으로 오인하는 설명 보완",
-    "evidenceRef": "doc/v2/work_items/E1.md"
+    "reason": "여섯장 단일프로젝트에서 통합과정 기초→응용 학습경로로 안내 개정 / SIM표식=장비없는브라우저 실행으로 오인하는 설명 보완 / E2: 공통 기초→ROS/기구학/제어/모델 경로와 기본·선택 실행/모형 한계, 사용자 상태 표시 원칙 동기화",
+    "evidenceRef": "doc/v2/work_items/E2.md"
   },
   {
     "source": "ebook/book/00_frontmatter/safety.md",
     "baselineSha256": "d8f3364e8046bcca7b1f62c840206b24e9160419d92eff595cd295dc79fadb52",
-    "sha256": "af8734aeb8eb312934a8ade0d7106586041655e58fcfab50dcabc05b834d027a",
+    "sha256": "95f5010200f483cf752c5ffcfd8f49b20e463268f106f1be6059453eb2a4dbef",
     "approved": true,
-    "reason": "단순 전원차단=안전 오개념 보완 및 기존안전→E1 기초 연결",
-    "evidenceRef": "doc/v2/work_items/E1.md"
+    "reason": "단순 전원차단=안전 오개념 보완 및 기존안전→E1 기초 연결 / E2: 공통 기초→ROS/기구학/제어/모델 경로와 기본·선택 실행/모형 한계, 사용자 상태 표시 원칙 동기화",
+    "evidenceRef": "doc/v2/work_items/E2.md"
   },
   {
     "source": "ebook/book/01_physical_ai_isaac_ros2/chapter.md",
     "baselineSha256": "a080ac9eddac666c3400d843913886913468677e9c2ab4bf60bcaa76b18a7d93",
-    "sha256": "3846a1d273f634b042af10e49fe6b4f3cbfd350c71f7408d474293d6b10d6aeb",
+    "sha256": "9811455cef71a762fc8e31158bdf90a42ac924735dac6eae1e29959832b2b0dd",
     "approved": true,
-    "reason": "신규 기초와 기존 응용 장 사이 선수/범위/장비 없는 진입 연결 / 결정론을 Software/Physical 구분으로 오해하는 문장 정정 / POMDP 누락기호 gamma와 관측독립/시간축 가정 명시 / 순차 처리 지연과 목표 샘플 주기 구분 / 주기 예산 수치의 가정 및 새 목표설계 단위 연결",
-    "evidenceRef": "doc/v2/work_items/E1.md"
+    "reason": "신규 기초와 기존 응용 장 사이 선수/범위/장비 없는 진입 연결 / 결정론을 Software/Physical 구분으로 오해하는 문장 정정 / POMDP 누락기호 gamma와 관측독립/시간축 가정 명시 / 순차 처리 지연과 목표 샘플 주기 구분 / 주기 예산 수치의 가정 및 새 목표설계 단위 연결 / E2: ROS・기구학・제어・모델 선수/후속 연결 및 관련 개념·실행 전제 보완",
+    "evidenceRef": "doc/v2/work_items/E2.md"
   },
   {
     "source": "ebook/book/02_physx_simulation/chapter.md",
     "baselineSha256": "a21459dc9d4dd74be968ed41bcc237d55d1e56f5bf0d3d5b151da99e48011c40",
-    "sha256": "0b0f787367577c071f6ad24c46303f59ec8161aa5bec96e0432d213ea231133f",
+    "sha256": "84c5449aefd44149e85f6a559190e48a603828d9578dc8ae9952a372baea75b4",
     "approved": true,
-    "reason": "E1에서 기존 02장으로 선수·실습범위·오개념 연결 보강 / latest를 재현 가능한 고정버전 안내로 정정 / 수학브리지독립검수: Euler 고정축적용xyz와행렬곱RzRyRx 용어정정·실행수식/함수명보존 / 짐벌락정확특이점과근처조건악화구분",
-    "evidenceRef": "doc/v2/work_items/E1.md"
+    "reason": "E1에서 기존 02장으로 선수·실습범위·오개념 연결 보강 / latest를 재현 가능한 고정버전 안내로 정정 / 수학브리지독립검수: Euler 고정축적용xyz와행렬곱RzRyRx 용어정정·실행수식/함수명보존 / 짐벌락정확특이점과근처조건악화구분 / E2: ROS・기구학・제어・모델 선수/후속 연결 및 관련 개념·실행 전제 보완",
+    "evidenceRef": "doc/v2/work_items/E2.md"
   },
   {
     "source": "ebook/book/02_physx_simulation/code/transforms.py",
@@ -390,47 +726,55 @@ export const legacyRevisions: LegacyRevision[] = [
   {
     "source": "ebook/book/03_so101_kinematics_teleop/chapter.md",
     "baselineSha256": "8083685d7b190de126d12ce6ec53469e742dd2143eb5fa7ec0fe8274410490aa",
-    "sha256": "1a06c1c7ec3e26312175e9ae7b352d50f8bf446cceb3cf87169a6c9ec7d99947",
+    "sha256": "9ee25d01ef7d3a70be5e31da880d0540974ef82b818aad9fd7cbcfe4cf7dfa60",
     "approved": true,
-    "reason": "E1에서 기존 03장으로 선수·실습범위·오개념 연결 보강 / latest 설치조건과 E1 의존성 고정 원칙의 불일치 보완 / M03검토: 명목전압숫자일치와동작범위/극성/전류/논리핀/절대최대정격구분",
-    "evidenceRef": "doc/v2/work_items/E1.md"
+    "reason": "E1에서 기존 03장으로 선수·실습범위·오개념 연결 보강 / latest 설치조건과 E1 의존성 고정 원칙의 불일치 보완 / M03검토: 명목전압숫자일치와동작범위/극성/전류/논리핀/절대최대정격구분 / E2: ROS・기구학・제어・모델 선수/후속 연결 및 관련 개념·실행 전제 보완 / M08.05: JointState 한 메시지 동일시각 계약·비동기 정렬/추정 출처를 엄밀화하고 공식 명세 링크 연결",
+    "evidenceRef": "doc/v2/work_items/E2.md"
   },
   {
     "source": "ebook/book/04_sensor_data_pipeline/chapter.md",
     "baselineSha256": "69a8cf6f0e2f6e584bda629d3a17fbbe37f75ec024eab2237847807a2a3796fa",
-    "sha256": "dfa3d2cbb5d6b8c22e7c2447869ac5189d76f025b35e8766fb6567af89e156f9",
+    "sha256": "ea80077e6ed81e80af7d30369bb427bac5cdc3ab295deb112e3715fd76433b66",
     "approved": true,
-    "reason": "E1에서 기존 04장으로 선수·실습범위·오개념 연결 보강",
-    "evidenceRef": "doc/v2/work_items/E1.md"
+    "reason": "E1에서 기존 04장으로 선수·실습범위·오개념 연결 보강 / E2: ROS・기구학・제어・모델 선수/후속 연결 및 관련 개념·실행 전제 보완",
+    "evidenceRef": "doc/v2/work_items/E2.md"
   },
   {
     "source": "ebook/book/05_lerobot_smolvla/chapter.md",
     "baselineSha256": "637909ee6456fa438f421ae0290a3b536cd925567ba1246a1f2e58c0b113a9fa",
-    "sha256": "56e97aa7652767d9aeaf72c1cacc8f8125dfc60db010a6c61a5534875f5d2860",
+    "sha256": "459ee2d40847a4226e15d9253a6b6e2e047e65c9374d5ffbe40cdc9fb28a2842",
     "approved": true,
-    "reason": "E1에서 기존 05장으로 선수·실습범위·오개념 연결 보강 / 설치 예시에 실제 커밋/태그 고정 전제와 미지정 중단 추가 / 독립검수: 설치 전체 subshell fail-fast로 미지정/오류 revision 뒤 실행 방지",
-    "evidenceRef": "doc/v2/work_items/E1.md"
+    "reason": "E1에서 기존 05장으로 선수·실습범위·오개념 연결 보강 / 설치 예시에 실제 커밋/태그 고정 전제와 미지정 중단 추가 / 독립검수: 설치 전체 subshell fail-fast로 미지정/오류 revision 뒤 실행 방지 / E2: ROS・기구학・제어・모델 선수/후속 연결 및 관련 개념·실행 전제 보완",
+    "evidenceRef": "doc/v2/work_items/E2.md"
   },
   {
     "source": "ebook/book/06_sim2real_deployment/chapter.md",
     "baselineSha256": "63e21fba7a365699ea09d4be5e25675e0f9ac0c8d856e41a00bd9d8d7157d971",
-    "sha256": "1c60009b872762c97c963b4805a3893b03979c31f493b5cfbcf30536999d33ca",
+    "sha256": "333021241b683ea890bf3fbbe7ba64ee7fa69698606df86720ee0ad5e505f26c",
     "approved": true,
-    "reason": "E1에서 기존 06장으로 선수·실습범위·오개념 연결 보강",
-    "evidenceRef": "doc/v2/work_items/E1.md"
+    "reason": "E1에서 기존 06장으로 선수·실습범위·오개념 연결 보강 / E2: ROS・기구학・제어・모델 선수/후속 연결 및 관련 개념·실행 전제 보완",
+    "evidenceRef": "doc/v2/work_items/E2.md"
+  },
+  {
+    "source": "apps/web/src/components/virtual-lab.tsx",
+    "baselineSha256": "d1ba2b385368ae225e3f3236c0cc2b6162f7d6925852564b05932f7bf22412de",
+    "sha256": "230cfa9927803281c8f7c9d681b52c745ccf55ade2509bebfe11700bae91e688",
+    "approved": true,
+    "reason": "E2 기구학 연결: 2R 안/바깥 반경 도달 판정·불가 목표 거부/추종 정지·수치 roundoff만 보정·주기각 최단 보간·교육용 한계 명시. root 별도 수학/코드 검토 후 승인, 실제 화면은 E2 통합 검수 기록.",
+    "evidenceRef": "doc/v2/work_items/E2-validation.md"
   }
 ];
 export const legacyExerciseReferences: DerivedReference[] = [
   {
     "activityId": "legacy:exercise:01_physical_ai_isaac_ros2--chapter-14-q1",
     "baselineSha256": "0a04ea570fa8febbc51120344837bcabe7f0469635962f22d78cff2bd807c503",
-    "sha256": "bbbfe6c48432003677244d88566214c72645a4f3491d2dc9695cd4f4135b1b63",
+    "sha256": "ef485a0bdb6bc25e0db312dad19cdb8f49d92636c34386cd26bbc8b926b27f80",
     "approved": true
   },
   {
     "activityId": "legacy:exercise:01_physical_ai_isaac_ros2--chapter-14-q2",
     "baselineSha256": "5c9ddefee7db1b95105190f455b762b9e8e7687502e3f152bddcfca8fc00853b",
-    "sha256": "44c4fe67a1661137bfcbda9392fb9127e2de6c6b001b6b0c13b6c6d93b0225af",
+    "sha256": "18decd0dd4b725f58480a099aff567f63f17a79e8401f6ece1aac99f0c51d86d",
     "approved": true
   },
   {
@@ -446,9 +790,21 @@ export const legacyExerciseReferences: DerivedReference[] = [
     "approved": true
   },
   {
+    "activityId": "legacy:exercise:01_physical_ai_isaac_ros2--chapter-14-q7",
+    "baselineSha256": "0b0b631e6529dd2495c6fcff95db8ab8bc90cd3014cf51e919650f150ae4808b",
+    "sha256": "7776cb93d357558c0c868c005e28b0cfae3b78b0680bfc56cb9d03cfa365e27e",
+    "approved": true
+  },
+  {
     "activityId": "legacy:exercise:01_physical_ai_isaac_ros2--chapter-14-q8",
     "baselineSha256": "f448f818716ba4793c4171e9df3c0c37e2f5732835eca46da9c3e0087fc8a714",
-    "sha256": "b6c43ed7ba12d538af04f27e7db95e2e5c57d41e5e32944c68786ffb67abd0a7",
+    "sha256": "a02fb38f654b6a9b06cf22f8c8e3f7e490a5bd457ff0aefbbdd98df943d7fa87",
+    "approved": true
+  },
+  {
+    "activityId": "legacy:exercise:01_physical_ai_isaac_ros2--chapter-14-q9",
+    "baselineSha256": "db8ba5522235dea718707332489cac92d3b514b81d8883e310b3908f7978ac66",
+    "sha256": "3484da65e5a4380fe928e7e3e15aebb576dc178320d1ec0e2b3e1e083f434fd0",
     "approved": true
   },
   {
@@ -494,21 +850,63 @@ export const legacyExerciseReferences: DerivedReference[] = [
     "approved": true
   },
   {
+    "activityId": "legacy:exercise:03_so101_kinematics_teleop--chapter-14-q2",
+    "baselineSha256": "afca63319e918807a8c8bb4b8c502e91958eea44d44f166e12371a4e0f1a64b7",
+    "sha256": "2f0cd39886288ad07c87c68f8b89798dcddae0899e2a1fd2f4cd2391155267d3",
+    "approved": true
+  },
+  {
     "activityId": "legacy:exercise:03_so101_kinematics_teleop--chapter-14-q5",
     "baselineSha256": "7cf40bfb0a32b6a6c9ee24c924d60863e3b0a4dec7779424773ef3518ac61c36",
-    "sha256": "932dfaf5cba7ed94b2eca6f02630ed6e803130963232db2fa5aba6e6d1aea955",
+    "sha256": "ceb9b24edafa2da470c1a6084fa21409b8436798983d02714e132ba50787d0eb",
+    "approved": true
+  },
+  {
+    "activityId": "legacy:exercise:03_so101_kinematics_teleop--chapter-14-q6",
+    "baselineSha256": "bdf41aac0a8f8557e94315e28ba695d253568a91cf90b0396d2ae07f63e4c3cb",
+    "sha256": "b7431deb14c28f4c44bb6ab33403eccd62577da259223bba2a945b206ce2198a",
+    "approved": true
+  },
+  {
+    "activityId": "legacy:exercise:03_so101_kinematics_teleop--chapter-14-q7",
+    "baselineSha256": "ee2a067d4cd172114e0c6882e4c615e3a501f5ce8d1d32d648613644cbe27f0e",
+    "sha256": "5f66ea07f74695d88356e678ad91d7272bf7842b4d91b39ddd573118a6568a95",
     "approved": true
   },
   {
     "activityId": "legacy:exercise:03_so101_kinematics_teleop--chapter-14-q8",
     "baselineSha256": "b349759b13aa83642c86eb1a7d45bf747ee7d557f1df42278ac209c6b1a48a06",
-    "sha256": "6cd353d7dafd02e0349c57eb4d9019135f494bb59042b6ce803c0f8e9367d69b",
+    "sha256": "b5c8a9bf50a72618f81e117700c64b82159c376548585cd1ab4c5dfdbaf23b28",
     "approved": true
   },
   {
     "activityId": "legacy:exercise:03_so101_kinematics_teleop--chapter-14-q9",
     "baselineSha256": "36859842a1c3f9ccae212434235dc1a35cc363552ac6f40b3a9803737b8dbc41",
-    "sha256": "82179bd7601942fae4d052b803d77f1867be28da4d1c4249ab443898e7969bb1",
+    "sha256": "187281daa3797704ffb9d57c63bca9e9e73baf9325e56626a1b86169c1cf1b45",
+    "approved": true
+  },
+  {
+    "activityId": "legacy:exercise:03_so101_kinematics_teleop--chapter-14-q10",
+    "baselineSha256": "82d647e135ca5e724e1c0ad02dacdcc97f205910f7fc0d629715ce318d634a14",
+    "sha256": "3b28132eb92b24e35de3d9abdfe85e3deb46c117dccb728369af0192814f89b7",
+    "approved": true
+  },
+  {
+    "activityId": "legacy:exercise:04_sensor_data_pipeline--chapter-15-q6",
+    "baselineSha256": "d7765eb385917c49d4094c7816e8a6d7b58c2320136f09b27c33223260f6b307",
+    "sha256": "31a882ac577333d54714017574d1517eaa952add9d864f096a1aa5257b46a7f6",
+    "approved": true
+  },
+  {
+    "activityId": "legacy:exercise:06_sim2real_deployment--chapter-15-q4",
+    "baselineSha256": "1d248a19d5f8c87c928950261ceff406151c0c39e3401a966195c443e830957d",
+    "sha256": "a02a9d3d047d2aaad5971de93f7ed5b0c0ebf836c652dca4ca7e2cdf2f99e350",
+    "approved": true
+  },
+  {
+    "activityId": "legacy:exercise:06_sim2real_deployment--chapter-15-q5",
+    "baselineSha256": "256cb8a8ea9b762b5c188978ac7f02265bcacb4e5c45c3093acfa126f8d44868",
+    "sha256": "44339451e3d76d3b4381726aeb615c8367e5ff61127d7a871d75ca03d962f5a9",
     "approved": true
   }
 ];

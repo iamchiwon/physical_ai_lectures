@@ -36,5 +36,8 @@ test('every track target resolves to a real unit; optional steps never count as 
 });
 test('TBD unit with only supplements has no primary reading and retains original resource paths',()=>{
  const unit=c.curriculumIndex.units.get('unit-m21-05-a');assert.equal(c.primaryReading(unit),null);
- assert.match(c.primaryReading(c.curriculumIndex.units.get('unit-m06-02-a')).href,/^\/textbook\//);
+ const authored=c.curriculumIndex.units.get('unit-m06-02-a');
+ assert.equal(c.primaryReading(authored).href,'/study/unit-m06-02-a/#authored-body');
+ const legacy=authored.slots.explanation.filter(binding=>'resourceId' in binding).map(binding=>c.curriculumIndex.resources.get(binding.resourceId)).filter(resource=>resource.locator.type==='textbook');
+ assert.ok(legacy.length>0);for(const resource of legacy)assert.match(c.resourceHref(resource),/^\/textbook\//);
 });

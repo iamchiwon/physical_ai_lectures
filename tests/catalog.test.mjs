@@ -21,7 +21,8 @@ const hash = (path) => {
   assert.equal(current, approval.sha256, `stale approved source: ${path}`);
   assert.ok(approval.reason && fs.existsSync(approval.evidenceRef));
   const historical = baseline.bookFiles.find(file => `ebook/book/${file.source}` === path);
-  assert.equal(approval.baselineSha256, historical?.sha256, `baseline rewrite: ${path}`);
+  const registered = catalog.activities.find(activity => activity.locator.source === path)?.locator.sourceSha256 ?? catalog.resources.find(resource => resource.locator.source === path)?.locator.baselineFileSha256;
+  assert.equal(approval.baselineSha256, historical?.sha256 ?? registered, `baseline rewrite: ${path}`);
   return approval.baselineSha256;
 };
 

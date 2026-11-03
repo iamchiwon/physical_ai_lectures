@@ -25,7 +25,7 @@ function Pandoc(doc)
     if header.level == 1 then
       local number = text:match('^제(%d+)장')
       if number then module_chapter = tonumber(number)
-      elseif text:match('^E1 ') or text:match('^M0[0-3]%.') then module_chapter = nil end
+      elseif text:match('^E%d+ ') or text:match('^M%d%d%.') then module_chapter = nil end
     end
     if module_chapter ~= nil then
       local urls = by_title[title_key(module_chapter, text)]
@@ -44,10 +44,15 @@ function Pandoc(doc)
   base = base:gsub('/+$', '')
   doc = doc:walk({ Link = function(link)
     if not link.target:match('^/') then return nil end
+    -- Interactive controls are web-only; a unit heading cannot replace their target.
+    if link.target:match('^/study/[^#]+#control%-concept%-lab$') or link.target:match('^/study/[^#]+#wheel%-concept%-lab$') then
+      link.target = base .. link.target
+      return link
+    end
     local pathname = link.target:match('^[^?#]+')
-    local module, number = pathname:match('^/study/unit%-(m0[0-3])%-(%d%d)%-a/$')
+    local module, number = pathname:match('^/study/unit%-(m%d%d)%-(%d%d)%-a/$')
     local local_id = module and (module .. '-' .. number) or nil
-    local foundation = pathname:match('^/modules/(M0[0-3])/$')
+    local foundation = pathname:match('^/modules/(M%d%d)/$')
     if foundation then local_id = foundation:lower() end
     local_id = local_id or legacy[pathname]
     link.target = local_id and anchors[local_id] and ('#' .. local_id) or (base .. link.target)

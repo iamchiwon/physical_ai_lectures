@@ -7,6 +7,7 @@ import { authoredMetadata, legacyRevisions, legacyExerciseReferences } from "./a
 export const legacyCatalog = catalogSchema.parse(catalogData);
 export const catalog = catalogSchema.parse(applyAuthoredOverlay(legacyCatalog, authoredMetadata, legacyRevisions, legacyExerciseReferences));
 export { authoredMetadata, legacyRevisions, legacyExerciseReferences } from "./authored-data";
+export type { AuthoredMetadata } from "./authored-overlay";
 export { applyAuthoredOverlay } from "./authored-overlay";
 export * from "./catalog-schema";
 export * from "./catalog-readiness";

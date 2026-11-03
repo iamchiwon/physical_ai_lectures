@@ -3,36 +3,28 @@ import { createHash } from 'node:crypto';
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { readAuthoredReviews, collectAuthoredMetadata, legacySourceBaselines } from './authored-metadata.mjs';
 const root=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'..');
 const loaded=await build({stdin:{contents:'export {catalogData} from "./packages/shared/src/catalog-data.ts"; export {parseAuthoredMarkdown} from "./packages/shared/src/authored-format.ts"; export {textbookUnits,exercisesForUnit} from "./apps/web/src/lib/textbook.ts";',resolveDir:root},bundle:true,platform:'node',format:'esm',write:false});
 const previousCwd=process.cwd();process.chdir(path.join(root,"apps/web"));
 const {catalogData,parseAuthoredMarkdown,textbookUnits,exercisesForUnit}=await import(`data:text/javascript;base64,${Buffer.from(loaded.outputFiles[0].text).toString('base64')}`);
 process.chdir(previousCwd);
 const readJson=(file,fallback)=>fs.existsSync(path.join(root,file))?JSON.parse(fs.readFileSync(path.join(root,file),'utf8')):fallback;
-const reviews=readJson('doc/v2/inventory/e1-reviews.json',{schemaVersion:1,topics:{}});
+const reviews=readAuthoredReviews(root,catalogData.units);
 const registry=readJson('doc/v2/inventory/legacy-revisions.json',{schemaVersion:1,files:[]});
+if(registry.schemaVersion!==1||!Array.isArray(registry.files))throw Error('Unsupported legacy revision registry');
 if(new Set(registry.files.map(row=>row.source)).size!==registry.files.length)throw Error('Duplicate legacy revision approvals');
-if(reviews.schemaVersion!==1||!reviews.topics||registry.schemaVersion!==1||!Array.isArray(registry.files))throw Error('Unsupported review registry');
 const hash=raw=>createHash('sha256').update(raw).digest('hex');
-const authored=[];
-for(const unit of catalogData.units.filter(unit=>/^M0[0-3]\./.test(unit.topicId))){
- const source=`ebook/curriculum/${unit.topicId.split('.')[0]}/${unit.topicId}.md`;
- if(!fs.existsSync(path.join(root,source)))continue;
- const raw=fs.readFileSync(path.join(root,source),'utf8');const parsed=parseAuthoredMarkdown(raw);const sha256=hash(raw);
- if(parsed.title!==unit.title)throw Error(`Authored title mismatch: ${unit.topicId}`);
- const review=reviews.topics[unit.topicId];
- if(review && (!review.evidenceRef || !fs.existsSync(path.join(root,review.evidenceRef))))throw Error(`Missing review evidence: ${unit.topicId}`);
- authored.push({topicId:unit.topicId,source,title:parsed.title,objectives:parsed.objectives,prerequisiteNote:parsed.prerequisiteNote,sha256,reviewed:review?.sourceSha256===sha256,evidenceRef:review?.sourceSha256===sha256?review.evidenceRef:null});
-}
-for(const id of Object.keys(reviews.topics))if(!authored.some(item=>item.topicId===id))throw Error(`Review without authored source: ${id}`);
+const authored=collectAuthoredMetadata(root,catalogData.units,reviews,parseAuthoredMarkdown);
 const baseline=readJson('doc/v2/inventory/legacy-content.json',{});const revisions=[];
-for(const file of baseline.bookFiles){
- const source=`ebook/book/${file.source}`;const raw=fs.readFileSync(path.join(root,source));const sha256=hash(raw);
+const baselineSources=legacySourceBaselines(catalogData,baseline.bookFiles);
+for(const [source,baselineSha256] of baselineSources){
+ const raw=fs.readFileSync(path.join(root,source));const sha256=hash(raw);
  const approval=registry.files.find(entry=>entry.source===source);
- if(approval && (approval.baselineSha256!==file.sha256||!approval.reason||!approval.evidenceRef||!fs.existsSync(path.join(root,approval.evidenceRef))))throw Error(`Invalid legacy revision approval: ${source}`);
- if(sha256!==file.sha256)revisions.push({source,baselineSha256:file.sha256,sha256,approved:approval?.sha256===sha256,reason:approval?.reason??'Unreviewed source modification',evidenceRef:approval?.sha256===sha256?approval.evidenceRef:null});
+ if(approval && (approval.baselineSha256!==baselineSha256||!approval.reason||!approval.evidenceRef||!fs.existsSync(path.join(root,approval.evidenceRef))))throw Error(`Invalid legacy revision approval: ${source}`);
+ if(sha256!==baselineSha256)revisions.push({source,baselineSha256,sha256,approved:approval?.sha256===sha256,reason:approval?.reason??'Unreviewed source modification',evidenceRef:approval?.sha256===sha256?approval.evidenceRef:null});
 }
-for(const row of registry.files)if(!baseline.bookFiles.some(file=>`ebook/book/${file.source}`===row.source))throw Error(`Unknown legacy revision source: ${row.source}`);
+for(const row of registry.files)if(!baselineSources.has(row.source))throw Error(`Unknown legacy revision source: ${row.source}`);
 const mapping=readJson('doc/v2/inventory/content-mapping.json',{});
 const currentExercises=new Map(textbookUnits.flatMap(exercisesForUnit).map(exercise=>[exercise.id,exercise]));
 const derived=[];

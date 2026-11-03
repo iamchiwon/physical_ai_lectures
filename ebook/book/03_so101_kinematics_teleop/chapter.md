@@ -26,6 +26,8 @@ SO-101은 자세를 만드는 5개의 팔 관절과 그리퍼 구동기 1개를 
 
 ## 선수 지식과 준비물
 
+이 장의 5축 예제를 읽기 전 [M06.01 프레임·합성](/study/unit-m06-01-a/)→[M06.02 DH·FK](/study/unit-m06-02-a/)→[M06.03 IK·Jacobian](/study/unit-m06-03-a/)→[M06.04 특이점·해의 연속성](/study/unit-m06-04-a/)을 이어 읽는다. [M06.06 영점 보정](/study/unit-m06-06-a/)은 교육용 기하와 실제 장치 명세를 구별하고, [M08.05 JointState와 TF](/study/unit-m08-05-a/)는 아래 브리지의 상태·변환 역할을 보충한다.
+
 기초 복귀: [M03.01 자유도·관절·기어비](/study/unit-m03-01-a/), [M03.02 구동기·엔코더](/study/unit-m03-02-a/), [M03.06 인터페이스/기계 한계](/study/unit-m03-06-a/)를 먼저 확인한다. 엔코더 수치 하나는 해당 축의 측정이며 말단의 전체 자세를 직접 측정한 값이 아니다. [M02.02](/study/unit-m02-02-a/)의 변환 방향·라디안 규약과 [M01.01](/study/unit-m01-01-a/)의 장치 권한을 확인한 뒤 아래 구현으로 넘어간다. 그리퍼 구동기를 세는 것과 팔이 독립적으로 조절할 수 있는 말단 자유도를 세는 것은 구분한다.
 
 ### 선수 지식
@@ -74,7 +76,7 @@ URDF(Unified Robot Description Format)는 로봇을 링크(link)와 관절(joint
 | 5 | 손목 롤 | `wrist_roll` | 그리퍼 축 주위 회전 |
 | 6 | 그리퍼 | `gripper` | 손가락 개폐, 팔의 pose DoF에는 미포함 |
 
-이름은 LeRobot/URDF 버전에 따라 다를 수 있다. 이름을 정수 인덱스로 암묵적으로 치환하지 말고, 항상 메시지의 `name` 배열을 기준으로 재정렬한다. `JointState`의 `position[i]`, `velocity[i]`, `effort[i]`는 같은 인덱스의 `name[i]`에 대응하며, 각 배열은 비어 있을 수 있다. 타임스탬프는 모든 관절 값이 획득된 시각 또는 가능한 한 가까운 시각을 나타내야 한다.[ROS 2 `JointState` 명세]
+이름은 LeRobot/URDF 버전에 따라 다를 수 있다. 이름을 정수 인덱스로 암묵적으로 치환하지 말고, 항상 메시지의 `name` 배열을 기준으로 재정렬한다. `JointState`의 `position[i]`, `velocity[i]`, `effort[i]`는 같은 인덱스의 `name[i]`에 대응하며, 각 배열은 비어 있을 수 있다. header는 관절 상태가 기록된 시각을 나타내며, 한 메시지에 담는 상태는 같은 시각을 나타내야 한다. 비동기 센서 값을 합칠 때는 먼저 공통 기준 시각으로 정렬·추정하고 원래 측정 시각과 사용한 정책·오차를 별도로 기록한다. 서로 다른 시각의 원시 값을 그대로 묶고 대략적인 시각 하나를 붙이는 것은 이 조건을 충족하지 않는다. [ROS 2 `JointState` 공식 명세](https://github.com/ros2/common_interfaces/blob/jazzy/sensor_msgs/msg/JointState.msg)
 
 ### 3.1.2 URDF에서 읽어야 할 정보
 
@@ -348,12 +350,12 @@ $$
 
 ### 3.6.3 robot_state_publisher와 TF
 
-`robot_state_publisher`는 URDF와 `joint_states`를 사용해 링크 TF를 발행한다. 실물과 시뮬레이터가 같은 TF 트리에 동시에 같은 프레임 이름을 발행하면 충돌하므로 접두사를 둔다.
+`robot_state_publisher`는 URDF와 측정 `joint_states`로 링크 변환을 계산한다. 고정 관절은 시작 시 `/tf_static`에, 움직이는 관절은 상태 갱신에 따라 `/tf`에 발행한다. 이 노드는 위치 목표를 생성하거나 모터를 구동하지 않는다. 실물과 시뮬레이터가 같은 TF 버퍼에 동시에 같은 child 프레임을 발행하면 충돌하므로 명시적인 프레임 접두사를 둔다.
 
 - 실물: `real/base_link`, `real/gripper_frame_link`
 - 시뮬레이터: `sim/base_link`, `sim/gripper_frame_link`
 
-또는 서로 다른 ROS domain/namespace를 사용하고 브리지에서 필요한 토픽만 연결한다. 정적 카메라 외부 파라미터와 동적 관절 TF를 중복 발행하지 않는다.
+서로 다른 ROS domain으로 그래프를 격리할 수도 있다. namespace만 바꾸면 메시지 안의 frame_id 문자열은 자동으로 바뀌지 않는다. `frame_prefix` 또는 모델의 프레임 이름·모든 관련 센서의 header.frame_id를 일관되게 설정하고, TF 토픽을 공유할지 별도 버퍼로 나눌지 정한다. 격리된 그래프를 브리지할 때도 프레임 계약을 다시 확인한다. 정적 카메라 외부 파라미터와 동적 관절 TF를 중복 발행하지 않는다.
 
 ### 3.6.4 Isaac Sim 미러링
 

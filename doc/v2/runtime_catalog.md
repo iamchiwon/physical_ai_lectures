@@ -6,7 +6,9 @@
 
 ## 현행 상세 교재 확장
 
-위·아래 B01 수량과 미작성 안내는 등록 당시 기준선이다. E1부터는 [상세 원고](../../ebook/curriculum/)와 [지문 승인](inventory/e1-reviews.json)을 바탕으로 `authored-data.ts`를 생성해 원본 카탈로그에 겹쳐 적용한다. `legacyCatalog`는 기준선을 보존하고 `catalog`는 승인 개정과 신규 본문·활동을 포함한다. 기존 본문 개정은 [승인 개정 목록](inventory/legacy-revisions.json)에 baseline/현행 지문과 이유를 기록한다. 공개 준비도·현재 수량은 런타임 및 [E1 검수](work_items/E1.md)를 확인한다.
+위·아래 B01 수량과 미작성 안내는 등록 당시 기준선이다. E1부터는 [상세 원고](../../ebook/curriculum/)와 [E1 지문 승인](inventory/e1-reviews.json)·[E2 지문 승인](inventory/e2-reviews.json)을 바탕으로 `authored-data.ts`를 생성해 원본 카탈로그에 겹쳐 적용한다. `legacyCatalog`는 기준선을 보존하고 `catalog`는 승인 개정과 신규 본문·활동을 포함한다. 기존 본문 개정은 [승인 개정 목록](inventory/legacy-revisions.json)에 baseline/현행 지문과 이유를 기록한다. 공개 준비도·현재 수량은 런타임 및 [E1 검수](work_items/E1.md)·[E2 검수](work_items/E2.md)를 확인한다. 화면에서는 집필 완료 항목에 상태 배지를 붙이지 않고 미완료 항목에만 `준비중`을 표시한다. 내부 ready/partial/tbd 계산과 학습자의 완료 기록은 별개로 유지한다. 선택 바퀴/제어 계산기는 본문의 활동을 돕는 보충 UI이며 별도의 자동 채점·완료 Activity를 추가하지 않는다.
+
+E2 완료 시점(2026-11-03)의 내부 집계는 ready48/partial65/tbd91, Resource813/Activity383/alias317이다. E1·E2 상세 원고48개와 기존 본문137개/레슨18개를 함께 제공한다. 바퀴·제어 선택 모형은 이 Activity 수에 별도 자동 완료 활동으로 더하지 않는다.
 
 ## 1. 코드와 사용
 
@@ -69,7 +71,7 @@ Resource 333개는 본문 137·요약 18·책 원본 파일 142·요약 점검 �
 
 Activity 191개는 서술/보고서 126·요약 점검 36·실습 원고 21·브라우저 모형 7·용어 복습 1개이다. 코드 다운로드는 supplement이며 실행 활동으로 세지 않는다. 브라우저 모형과 실습 원고는 서로 다른 수행 범위·한계를 표시한다. 기존 문제 ID·126개 답안 저장 키·평가 참조 hash를 그대로 유지한다. 보고서 입력 화면이나 context-only 해설을 개별 루브릭이 완성된 것으로 취급하지 않는다.
 
-현재 준비도는 **ready 0 / partial 98 / tbd 106**이다. A03의 의미 매핑 통과를 단위 품질 검수로 승격하지 않아 모든 Binding은 unreviewed이다. Mobile ALOHA처럼 배경 참고만 있는 단위는 TBD를 유지한다.
+B01 등록 당시 준비도는 **ready 0 / partial 98 / tbd 106**이었다. A03의 의미 매핑 통과를 단위 품질 검수로 승격하지 않아 모든 Binding은 unreviewed이다. Mobile ALOHA처럼 배경 참고만 있는 단위는 TBD를 유지한다.
 
 - 유효 공개 primary 학습 자산이 없으면 tbd, 있으나 필수 요구/목표/선수 정의·검수에 공백이 있으면 partial.
 - required 슬롯이 모두 full+passed+현재 revision이고, 평가 Activity에 판정/해설 근거가 있어야 ready. 부분 coverage의 단순 합산으로 full을 만들지 않는다.

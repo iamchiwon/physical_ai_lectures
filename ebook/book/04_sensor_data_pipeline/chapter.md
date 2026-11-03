@@ -25,6 +25,8 @@
 
 ## 선수 지식과 준비물
 
+TF·기록 도구의 기본 역할은 [M05.05 tf2·RViz·rosbag2](/study/unit-m05-05-a/)에서, 시간원·역행·메시지 나이의 구분은 [M05.06](/study/unit-m05-06-a/)에서 먼저 확인한다. [M08.05](/study/unit-m08-05-a/)의 관절 상태→TF 흐름과 연결하되, 같은 프레임을 별도 broadcaster가 중복 소유하지 않도록 한다.
+
 기초 복귀: [M03.03 측정 특성](/study/unit-m03-03-a/)에서 센서별로 무엇을 직접 측정하는지, 측정 범위와 관측 실패 조건이 무엇인지 확인한다. [M02.04 확률·공분산](/study/unit-m02-04-a/)과 [M02.06 오차 전파](/study/unit-m02-06-a/)는 아래 정합 결과를 해석하는 준비다. 같은 timestamp라는 표기만으로 좌표계·노출 시점·시계 오프셋까지 일치했다고 간주하지 않는다. 로그를 읽을 때 데이터와 함께 프레임·단위·시간원을 기록한다.
 
 - 3차원 벡터, 행렬 곱, 동차 변환 행렬
@@ -185,13 +187,18 @@ TF2는 시간에 따라 변하는 프레임 관계를 버퍼에 저장한다. �
 “최신 transform”으로 모든 과거 이미지를 변환하면 움직이는 로봇에서 공간 오차가 생긴다. 이미지 header timestamp에 해당하는 transform을 조회한다.
 
 ```python
+from rclpy.duration import Duration
+from rclpy.time import Time
+
 transform = tf_buffer.lookup_transform(
     "base_link",
     image.header.frame_id,
-    image.header.stamp,
+    Time.from_msg(image.header.stamp),
     timeout=Duration(seconds=0.05),
 )
 ```
+
+Jazzy의 Python API는 메시지의 builtin_interfaces Time 자체 대신 `rclpy.time.Time`을 받으므로 위처럼 변환한다. 이 변환은 시계 오프셋을 보정하지 않는다. 이미지와 TF가 같은 ROS 시간원·epoch를 사용한다는 전제가 필요하다. 동기 조회 중에도 TF 수신 콜백이 진행될 수 있게 Executor/콜백 구성을 확인하거나 비동기 조회를 사용한다. 단일 실행 스레드를 대기로 막아 놓고 그 스레드에 들어올 TF만 기다리지 않는다. 이 코드는 이미 생성된 buffer와 이미지가 있다는 전제의 API 발췌이며 실제 ROS 실행 결과를 제시하는 것은 아니다.
 
 필요한 transform이 아직 버퍼에 없으면 기다리거나 해당 표본을 누락 처리한다. 미래 extrapolation 오류를 피하려고 timestamp를 0으로 바꾸면 데이터는 흐르지만 의미가 틀릴 수 있다.
 

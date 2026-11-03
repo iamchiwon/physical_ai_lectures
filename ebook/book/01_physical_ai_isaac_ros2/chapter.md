@@ -24,6 +24,8 @@ Physical AI는 인공지능 모델이 텍스트나 화면 안에서 답을 생�
 
 ## 선수 지식과 준비물
 
+통신 예제를 실행하기 전 [M05.01 작업공간·Executor](/study/unit-m05-01-a/), [M05.02 인터페이스](/study/unit-m05-02-a/), [M05.03 QoS·발견](/study/unit-m05-03-a/), [M05.06 시간과 장애](/study/unit-m05-06-a/)를 이어 읽는다. 이 장은 Isaac Sim 브리지 응용이며, 기본 ROS 실행·진단 개념은 E2에서 가상 로그로 먼저 익힌다.
+
 - Python 3의 클래스, 예외, NumPy 배열
 - C++17의 클래스, 람다, 스마트 포인터
 - 선형대수의 벡터·행렬 기초
@@ -264,24 +266,24 @@ Action은 내부적으로 여러 Topic과 Service를 사용하지만, 사용자�
 
 ROS 2 클라이언트 라이브러리 `rclpy`와 `rclcpp` 아래에는 ROS middleware interface(RMW)가 있다. RMW 구현은 DDS 또는 다른 전송 계층과 ROS 타입·발견·통신을 연결한다. 애플리케이션은 보통 동일한 ROS API를 사용하지만, 발견 방식, 설정, 성능 특성은 구현에 따라 달라질 수 있다.
 
-DDS의 데이터 중심 publish/subscribe는 중앙 브로커 없이 참가자를 발견하고, Topic 단위의 QoS를 협상한다. 이는 네트워크 설정이 필요 없다는 뜻이 아니다. 멀티캐스트가 차단된 네트워크, 컨테이너, VPN에서는 발견이 실패할 수 있다.
+DDS의 데이터 중심 publish/subscribe는 중앙 브로커 없이 참가자를 발견한다. QoS는 발행자가 제공하는 정책과 구독자가 요청하는 정책의 호환성을 검사하며, 비호환 설정을 자동으로 같은 값으로 바꾸는 협상이 아니다. 이는 네트워크 설정이 필요 없다는 뜻이 아니다. 멀티캐스트가 차단된 네트워크, 컨테이너, VPN에서는 발견이 실패할 수 있다.
 
 ### 1.4.4 QoS는 인터페이스 계약이다
 
 중요 QoS 정책은 다음과 같다.
 
-- **Reliability**: `RELIABLE`은 전달 재시도를, `BEST_EFFORT`는 최신성 우선 전달을 뜻한다.
+- **Reliability**: `RELIABLE`은 전달을 위한 재시도를 수행할 수 있고, `BEST_EFFORT`는 손실을 허용한다. 센서용 프로파일의 작은 큐와 함께 최신성을 우선하는 구성이 흔하지만 `BEST_EFFORT` 자체가 지연 상한을 보장하지는 않는다.
 - **Durability**: `TRANSIENT_LOCAL`은 늦게 참여한 구독자에게 보관 표본을 제공할 수 있다.
-- **History/Depth**: 큐에 보관할 표본 수를 제한한다.
-- **Deadline**: 표본이 기대 주기 안에 도착해야 한다는 계약을 표현한다.
+- **History/Depth**: `KEEP_LAST`는 depth만큼 최근 표본을 보관한다. `KEEP_ALL`도 미들웨어 자원 한계를 받으며 depth를 같은 방식으로 적용하지 않는다.
+- **Deadline**: 발행·수신 표본 사이의 기대 최대 간격을 표현하고 위반 이벤트를 감시한다. 콜백 처리 완료나 액추에이터 실행의 실시간 마감 보장은 아니다.
 - **Liveliness**: 발행자가 살아 있음을 판단한다.
 - **Lifespan**: 오래된 표본의 유효 기간을 제한한다.
 
 카메라 미리보기는 손실된 과거 프레임을 재전송하느라 현재 프레임이 늦어지는 것보다 `BEST_EFFORT`, 작은 depth가 나을 수 있다. 반대로 낮은 빈도의 설정 변경은 `RELIABLE`과 `TRANSIENT_LOCAL`이 적절할 수 있다. 발행자와 구독자의 QoS가 호환되지 않으면 그래프에 이름이 보여도 데이터가 흐르지 않는다.
 
-### 1.4.5 시간의 두 종류
+### 1.4.5 시스템·ROS·steady 시간
 
-ROS Node는 시스템 시간과 시뮬레이션 시간을 구분한다. `/clock`을 사용하고 `use_sim_time=true`이면 시뮬레이터가 시간의 권위자(authority)가 된다. 시뮬레이션을 일시정지하거나 reset하면 시간도 멈추거나 되돌아갈 수 있다.
+ROS 시간은 별도 시간원이 비활성일 때 시스템 시간을 따르고, 노드의 `use_sim_time=true`로 ROS 시간원이 활성화되면 `/clock` 표본을 따른다. 시간원은 시뮬레이터 또는 기록 재생기일 수 있다. 첫 clock 표본을 받기 전 0은 미초기화 상태로 처리한다. 시뮬레이션의 일시정지·reset·재생 탐색은 시간을 멈추거나 되돌릴 수 있다. 하드웨어 watchdog의 경과시간에는 단조 증가하는 steady 시간을 사용하며 서로 다른 시간원의 숫자를 직접 빼지 않는다.
 
 - 메시지 헤더는 측정 시각을 기록한다.
 - 처리 완료 시각을 헤더에 넣지 않는다.
@@ -347,16 +349,27 @@ watchdog: stale command rejected
 
 `code/ros2_jazzy/physical_ai_demo/physical_ai_demo/joint_state_source.py`는 가상의 관절 상태를 발행한다. 센서형 QoS와 명시적 timestamp를 사용한다.
 
+ROS 2 Jazzy와 빌드 의존성이 설치되어 있다는 전제의 실행 절차다. 아래 빌드는 기존 overlay가 섞이지 않은 새 터미널에서 장 루트를 기준으로 수행한다. 작업공간·패키지 구분과 환경 적용은 M05.01에서 설명한다. 이 명령을 읽는 활동과 실제 ROS 실행 검증을 구분한다.
+
 ```bash
-cd code/ros2_jazzy/physical_ai_demo
-colcon build --symlink-install
-source install/setup.bash
+source /opt/ros/jazzy/setup.bash
+cd code/ros2_jazzy
+colcon build --symlink-install --packages-select physical_ai_demo
+```
+
+패키지별 빌드 성공을 확인한 경우에만 다음으로 진행한다. 실패하면 여기서 멈추고 로그를 확인한다. 남아 있는 install 디렉터리를 새 빌드 성공으로 간주하지 않는다. 성공한 경우 새 실행 터미널에서 장 루트를 기준으로 다음을 실행한다.
+
+```bash
+source /opt/ros/jazzy/setup.bash
+source code/ros2_jazzy/install/setup.bash
 ros2 run physical_ai_demo joint_state_source
 ```
 
-다른 터미널:
+다른 터미널에서도 장 루트를 기준으로 같은 환경을 적용한다. 조회와 주기 관찰 명령은 필요하면 각각의 터미널에서 실행한다.
 
 ```bash
+source /opt/ros/jazzy/setup.bash
+source code/ros2_jazzy/install/setup.bash
 ros2 topic echo /demo/joint_states
 ros2 topic hz /demo/joint_states
 ```
@@ -379,10 +392,9 @@ position: [0.31]
 cd code/ros2_jazzy
 source /opt/ros/jazzy/setup.bash
 colcon build --symlink-install --packages-select physical_ai_demo safety_gate_cpp
-source install/setup.bash
 ```
 
-터미널 A에서 게이트, 터미널 B에서 현재 timestamp가 있는 교육용 명령 발생기, 터미널 C에서 안전 명령을 실행한다.
+두 패키지가 모두 성공했는지 확인한 경우에만 다음 실행 단계로 진행한다. 실패하면 기존 설치물을 실행하지 말고 빌드 로그부터 확인한다. 터미널 A에서 게이트, 터미널 B에서 현재 timestamp가 있는 교육용 명령 발생기, 터미널 C에서 안전 명령을 관찰한다. 각 새 터미널은 장 루트에서 `/opt/ros/jazzy/setup.bash`와 `code/ros2_jazzy/install/setup.bash`를 차례로 source한 뒤 해당 명령을 실행한다.
 
 ```bash
 # 터미널 A

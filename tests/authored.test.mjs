@@ -4,6 +4,8 @@ import { test } from 'node:test';
 import fs from 'node:fs';
 import path from 'node:path';
 import { createHash } from 'node:crypto';
+import { tmpdir } from 'node:os';
+import { readAuthoredReviews, mergeAuthoredReviews, collectAuthoredMetadata, legacySourceBaselines } from '../scripts/authored-metadata.mjs';
 const repoRoot=process.cwd();
 async function load(entry) {
  const result=await build({entryPoints:[path.join(repoRoot,entry)],tsconfig:path.join(repoRoot,'apps/web/tsconfig.json'),bundle:true,platform:'node',format:'esm',write:false});
@@ -33,7 +35,7 @@ test('unreviewed source never upgrades baseline; current explicit review covers 
  index.resources.get(`authored:resource:${unit.topicId}:body`).revision='changed';assert.equal(c.unitReadiness(unit,index).state,'partial');
 });
 test('runtime authored publication requires exact reviewed source hash and preserved legacy IDs',()=>{
- const registry=JSON.parse(fs.readFileSync('doc/v2/inventory/e1-reviews.json','utf8'));
+ const registry=readAuthoredReviews(repoRoot,c.catalog.units);
  for(const meta of c.authoredMetadata){
   const current=hash(fs.readFileSync(meta.source));assert.equal(meta.sha256,current);
   const approved=registry.topics[meta.topicId]?.sourceSha256===current;
@@ -97,4 +99,66 @@ test('textbook index includes reviewed authored documents and every retained leg
  for(const unit of units){assert.equal(unit.bodies,1);assert.equal(unit.practices,1);assert.equal(unit.questions,3);assert.equal(unit.href,`/study/${unit.id}/`);assert.equal(unit.state,c.unitReadiness(c.catalog.units.find(source=>source.id===unit.id),c.indexCatalog(c.catalog)).state);}
  const original=JSON.parse(fs.readFileSync('doc/v2/inventory/legacy-content.json','utf8'));
  assert.equal(index.legacyCount,137);assert.deepEqual(new Set(index.legacy.flatMap(group=>group.units).map(unit=>unit.href)),new Set(original.textbookUnits.map(unit=>unit.url)));
+});
+
+test('review registries merge E1 and E2 only with distinct known topics, scoped valid hashes and safe evidence',()=>{
+ const known=['M00.01','M05.01','M09.01'];
+ const review={sourceSha256:'a'.repeat(64),evidenceRef:'doc/v2/work_items/fixture.md'};
+ const e1={file:'e1.json',modules:['M00'],data:{schemaVersion:1,topics:{'M00.01':review}}};
+ const e2={file:'e2.json',modules:['M05','M06','M07','M08'],data:{schemaVersion:1,topics:{'M05.01':review}}};
+ assert.deepEqual(Object.keys(mergeAuthoredReviews([e1,e2],known).topics),['M00.01','M05.01']);
+ assert.throws(()=>mergeAuthoredReviews([e1,{...e2,data:{schemaVersion:1,topics:{'M00.01':review}}}],known),/Duplicate/);
+ assert.throws(()=>mergeAuthoredReviews([{...e2,data:{schemaVersion:2,topics:{}}}],known),/Unsupported/);
+ assert.throws(()=>mergeAuthoredReviews([{...e2,data:{schemaVersion:1,topics:{'M05.99':review}}}],known),/Unknown/);
+ assert.throws(()=>mergeAuthoredReviews([{...e2,data:{schemaVersion:1,topics:{'M09.01':review}}}],known),/scope/);
+ for(const invalid of [{...review,sourceSha256:'invalid'},{...review,evidenceRef:'../outside.md'},{...review,extra:true}])assert.throws(()=>mergeAuthoredReviews([{...e2,data:{schemaVersion:1,topics:{'M05.01':invalid}}}],known),/Invalid/);
+});
+test('E2 approval flows through every module metadata, readiness, textbook index and authored AI sections while preserving E1',async()=>{
+ const fixtureRoot=fs.mkdtempSync(path.join(tmpdir(),'physical-ai-e2-approval-'));
+ const topicIds=['M05.01','M06.01','M07.01','M08.01'],evidenceRef='doc/v2/work_items/E2-fixture.md';
+ const units=topicIds.map(topicId=>c.legacyCatalog.units.find(unit=>unit.topicId===topicId));
+ const texts=new Map(units.map(unit=>[unit.topicId,raw.replace('"title":"Test"',`"title":${JSON.stringify(unit.title)}`)]));
+ const source=id=>`ebook/curriculum/${id.split('.')[0]}/${id}.md`;
+ fs.mkdirSync(path.join(fixtureRoot,'doc/v2/inventory'),{recursive:true});fs.mkdirSync(path.dirname(path.join(fixtureRoot,evidenceRef)),{recursive:true});
+ fs.writeFileSync(path.join(fixtureRoot,evidenceRef),'Independent fixture approval evidence');
+ const e1File=path.join(fixtureRoot,'doc/v2/inventory/e1-reviews.json'),e2File=path.join(fixtureRoot,'doc/v2/inventory/e2-reviews.json');
+ fs.writeFileSync(e1File,JSON.stringify({schemaVersion:1,topics:{}}));
+ fs.writeFileSync(e2File,JSON.stringify({schemaVersion:1,topics:{}}));
+ for(const [id,text] of texts){fs.mkdirSync(path.dirname(path.join(fixtureRoot,source(id))),{recursive:true});fs.writeFileSync(path.join(fixtureRoot,source(id)),text);}
+ try {
+  const pending=collectAuthoredMetadata(fixtureRoot,c.legacyCatalog.units,readAuthoredReviews(fixtureRoot,c.legacyCatalog.units),parseAuthoredMarkdown);
+  assert.equal(pending.length,4);assert.ok(pending.every(item=>!item.reviewed));assert.deepEqual(c.applyAuthoredOverlay(c.legacyCatalog,pending),c.legacyCatalog);
+  fs.writeFileSync(e2File,JSON.stringify({schemaVersion:1,topics:Object.fromEntries([...texts].map(([id,text])=>[id,{sourceSha256:hash(text),evidenceRef}]))}));
+  const reviews=readAuthoredReviews(fixtureRoot,c.legacyCatalog.units);
+  const metadata=collectAuthoredMetadata(fixtureRoot,c.legacyCatalog.units,reviews,parseAuthoredMarkdown);assert.ok(metadata.every(item=>item.reviewed));
+  const e1=c.authoredMetadata.filter(item=>/^M0[0-3]\./.test(item.topicId));
+  const before=c.applyAuthoredOverlay(c.legacyCatalog,e1);
+  const overlay=c.catalogSchema.parse(c.applyAuthoredOverlay(c.legacyCatalog,[...e1,...metadata]));
+  for(const topicId of topicIds)assert.equal(c.unitReadiness(overlay.units.find(unit=>unit.topicId===topicId),c.indexCatalog(overlay)).state,'ready');
+  for(const original of before.units.filter(unit=>/^M0[0-3]\./.test(unit.topicId)))assert.deepEqual(overlay.units.find(unit=>unit.id===original.id),original);
+  process.chdir(path.join(repoRoot,'apps/web'));let reader,contents;
+  try {reader=await load('apps/web/src/lib/authored.ts');contents=await load('apps/web/src/lib/textbook-index.ts');}finally{process.chdir(repoRoot);}
+  const read=id=>topicIds.includes(id)?reader.authoredForTopic(id,metadata,fixtureRoot):reader.authoredForTopic(id,c.authoredMetadata,repoRoot);
+  const index=contents.buildTextbookIndex(overlay,read);
+  for(const unit of units){const listed=index.foundations.find(module=>module.id===unit.topicId.split('.')[0]).units.find(row=>row.topicId===unit.topicId);assert.equal(listed.href,`/study/${unit.id}/`);assert.equal(listed.questions,3);assert.equal(reader.authoredSection(unit.topicId,'body',read),parseAuthoredMarkdown(texts.get(unit.topicId)).body);assert.equal(reader.authoredSection(unit.topicId,'answer-q3',read),parseAuthoredMarkdown(texts.get(unit.topicId)).questions[2].answer);}
+  assert.equal(index.authoredCount,e1.filter(item=>item.reviewed).length+4);assert.equal(index.legacyCount,137);
+  const topicId=topicIds[0];fs.writeFileSync(path.join(fixtureRoot,source(topicId)),texts.get(topicId)+'\n');
+  assert.equal(collectAuthoredMetadata(fixtureRoot,c.legacyCatalog.units,reviews,parseAuthoredMarkdown)[0].reviewed,false);
+  assert.throws(()=>reader.authoredForTopic(topicId,metadata,fixtureRoot),/changed after/);
+  const unknown=path.join(fixtureRoot,'ebook/curriculum/M05/M05.99.md');fs.writeFileSync(unknown,texts.get(topicId));
+  assert.throws(()=>collectAuthoredMetadata(fixtureRoot,c.legacyCatalog.units,reviews,parseAuthoredMarkdown),/Unknown authored source/);fs.unlinkSync(unknown);
+  fs.unlinkSync(path.join(fixtureRoot,evidenceRef));assert.throws(()=>collectAuthoredMetadata(fixtureRoot,c.legacyCatalog.units,reviews,parseAuthoredMarkdown),/Missing review evidence/);
+  fs.writeFileSync(path.join(fixtureRoot,evidenceRef),'restored');fs.unlinkSync(path.join(fixtureRoot,source(topicId)));assert.throws(()=>collectAuthoredMetadata(fixtureRoot,c.legacyCatalog.units,reviews,parseAuthoredMarkdown),/Review without authored source/);
+  fs.unlinkSync(e2File);assert.throws(()=>readAuthoredReviews(fixtureRoot,c.legacyCatalog.units),/Missing authored review registry/);
+ } finally {process.chdir(repoRoot);fs.rmSync(fixtureRoot,{recursive:true,force:true});}
+});
+
+test('legacy app source revisions use registered historical hashes and update activity integrity without changing book baselines',()=>{
+ const baseline=JSON.parse(fs.readFileSync('doc/v2/inventory/legacy-content.json','utf8'));const sources=legacySourceBaselines(c.legacyCatalog,baseline.bookFiles);
+ const source='apps/web/src/components/virtual-lab.tsx',historical=c.legacyCatalog.activities.find(activity=>activity.locator.source===source).locator.sourceSha256;
+ assert.equal(sources.get(source),historical);for(const file of baseline.bookFiles)assert.equal(sources.get(`ebook/book/${file.source}`),file.sha256);
+ const revision={source,baselineSha256:historical,sha256:'b'.repeat(64),approved:false,reason:'Fixture app revision',evidenceRef:null};
+ const rejected=c.applyAuthoredOverlay(c.legacyCatalog,[],[revision]);for(const activity of rejected.activities.filter(a=>a.locator.source===source))assert.equal(activity.integrity.status,'mismatch');
+ const accepted=c.applyAuthoredOverlay(c.legacyCatalog,[],[{...revision,approved:true,evidenceRef:'fixture-review'}]);for(const activity of accepted.activities.filter(a=>a.locator.source===source)){assert.equal(activity.integrity.status,'matched');assert.equal(activity.locator.sourceSha256,revision.sha256);assert.equal(activity.revision,`sha256:${revision.sha256}`);}
+ assert.deepEqual(accepted.resources,c.legacyCatalog.resources);
 });

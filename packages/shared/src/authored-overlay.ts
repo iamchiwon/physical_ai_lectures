@@ -6,7 +6,7 @@ export interface AuthoredMetadata {
 }
 export interface LegacyRevision { source: string; baselineSha256: string; sha256: string; approved: boolean; reason: string; evidenceRef: string | null }
 export interface DerivedReference { activityId: string; baselineSha256: string; sha256: string; approved: boolean }
-const sourcePath = (source: string) => source.startsWith("ebook/") ? source : `ebook/book/${source}`;
+const sourcePath = (source: string) => /^(?:ebook|apps|packages)\//.test(source) ? source : `ebook/book/${source}`;
 /** Explicit current-source reviews add material; source files alone never grant readiness. */
 export function applyAuthoredOverlay(base: Catalog, metadata: AuthoredMetadata[], revisions: LegacyRevision[] = [], derived: DerivedReference[] = []): Catalog {
   const result = structuredClone(base);
