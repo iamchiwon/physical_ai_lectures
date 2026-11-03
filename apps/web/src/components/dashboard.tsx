@@ -2,6 +2,8 @@ import Link from "next/link";
 import { ArrowDown, ArrowRight, BookOpen, Check, ChevronDown, Compass, Layers3 } from "lucide-react";
 import { HomeProgress } from "@/components/home-progress";
 import { Button } from "@/components/ui/button";
+import { catalog, curriculumIndex, stateLabels } from "@/lib/curriculum";
+import { unitReadiness } from "@physical-ai/shared/catalog";
 import { homeCatalog } from "@/lib/home-catalog";
 
 interface DashboardProps {
@@ -68,7 +70,7 @@ export function Dashboard({ lessons }: DashboardProps) {
           </ol>
           <p className="mt-4 text-xs leading-5 text-slate-600">학습 진단·기초 브리지는 M00~M04에 계획되어 있습니다. 미작성 부분은 아래 목차에 TBD로 표시합니다.</p>
         </section>
-        <HomeProgress lessons={lessons} />
+        <HomeProgress lessons={lessons} units={catalog.units.map((unit) => ({ id: unit.id, title: unit.title, revision: unit.revision, state: stateLabels[unitReadiness(unit, curriculumIndex).state], trackIds: catalog.tracks.filter((track) => track.steps.some((step) => step.unitId === unit.id)).map((track) => track.id) }))} />
       </div>
 
       <section id="tracks" aria-labelledby="tracks-title" className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">

@@ -51,3 +51,43 @@ test('study query module has no runtime catalog import or schema payload',async(
  const result=await build({entryPoints:['apps/web/src/lib/study-navigation.ts'],bundle:true,platform:'browser',format:'esm',write:false});
  const code=result.outputFiles[0].text;assert.ok(code.length<5000);assert.ok(!code.includes('baselineFileSha256'));
 });
+
+test('all original resources stay canonical and distinguish detailed text, summary and files',()=>{
+ for(const unit of c.catalog.units)for(const binding of Object.values(unit.slots).flat()){
+  if(!('resourceId' in binding))continue;
+  const source=c.curriculumIndex.resources.get(binding.resourceId),item=studyResource(binding);
+  assert.equal(item.links[0]?.href,c.resourceHref(source));
+  assert.ok(!('content' in item));
+  if(source.kind==='legacy-lesson')assert.equal(item.kind,'기존 요약 레슨');
+  if(source.kind==='legacy-textbook')assert.equal(item.kind,'기존 상세 본문');
+ }
+});
+test('written activities reuse exact legacy answer anchors and original authored feedback',()=>{
+ for(const activity of c.catalog.activities.filter(a=>['question','report','quick-check'].includes(a.kind))){
+  const binding={activityId:activity.id,role:'primary',coverage:'partial',review:{verdict:'unreviewed',reviewedRevision:null,evidenceRef:null}};
+  const item=studyResource(binding);assert.equal(item.available,true);assert.ok(item.feedback);
+  for(const url of activity.locator.entryUrls){
+   const anchor=activity.kind==='quick-check'?'quick-check':activity.persistence.legacyId;
+   assert.ok(item.links.some(link=>link.href===`${url.split('#')[0]}#${anchor}`));
+  }
+  const refs=[...activity.explanationRefs,...(activity.rubricRef?[activity.rubricRef]:[])];
+  for(const id of refs){const resource=c.curriculumIndex.resources.get(id);if(resource.locator.type!=='inline')assert.ok(item.links.some(link=>link.href===c.resourceHref(resource)));}
+  assert.equal(new Set(item.links.map(link=>link.href)).size,item.links.length);
+  if(activity.feedbackStatus==='context-only')assert.match(item.feedback,/個別|개별 모범답안은 미작성/);
+ }
+});
+test('browser models point to the control area and state approximation limits',()=>{
+ for(const activity of c.catalog.activities.filter(a=>a.kind==='browser-model')){
+  const item=studyResource({activityId:activity.id,role:'primary',coverage:'partial',review:{verdict:'unreviewed',reviewedRevision:null,evidenceRef:null}});
+  assert.ok(item.links.length>0);assert.ok(item.links.every(link=>link.href.endsWith('#virtual-lab')));assert.match(item.limitation,/브라우저 근사/);
+ }
+});
+
+
+test('report cards summarize the activity without repeating the full original manuscript',()=>{
+ for(const activity of c.catalog.activities.filter(a=>a.kind==='report')){
+  const item=studyResource({activityId:activity.id,role:'primary',coverage:'partial',review:{verdict:'unreviewed',reviewedRevision:null,evidenceRef:null}});
+  assert.equal(item.title,'실습 보고서 · 기존 원고와 평가 안내');
+  assert.ok(!item.title.includes('\n'));assert.ok(item.links.some(link=>link.href.endsWith(`#${activity.persistence.legacyId}`)));
+ }
+});

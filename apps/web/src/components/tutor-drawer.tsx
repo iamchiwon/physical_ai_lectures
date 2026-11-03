@@ -8,6 +8,7 @@ import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
 import { Sheet, SheetContent, SheetDescription, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
 import { readingFocus } from "@/lib/tutor-reading-focus";
+import type { LearningContext } from "@physical-ai/shared";
 import { useTutor } from "@/components/tutor-provider";
 
 interface TutorDrawerProps {
@@ -16,11 +17,14 @@ interface TutorDrawerProps {
   chapterId: string;
   chapterTitle: string;
   sourceContent: string;
+  corpusUrl?: string;
+  allowedTrackIds?: string[];
+  learningContext?: LearningContext;
 }
 const suggestedQuestions = ["이 개념을 로봇 사례로 쉽게 비유해 주세요.","제가 꼭 구분해야 할 핵심 개념은 무엇인가요?","이 내용을 이해했는지 확인할 질문을 내 주세요."];
 const TutorMarkdown = dynamic(() => import("@/components/tutor-markdown").then((module) => module.TutorMarkdown));
 
-export function TutorDrawer({ lessonId, lessonTitle, chapterId, chapterTitle, sourceContent }: TutorDrawerProps) {
+export function TutorDrawer({ lessonId, lessonTitle, chapterId, chapterTitle, sourceContent, corpusUrl, learningContext, allowedTrackIds }: TutorDrawerProps) {
   const {state,store,submitQuestion,resetConversation}=useTutor();
   const {turns,loading,drawerOpen,draft:question}=state;
   const [selection,setSelection]=React.useState({lessonId:"",text:""});
@@ -50,7 +54,9 @@ export function TutorDrawer({ lessonId, lessonTitle, chapterId, chapterTitle, so
   },[lessonId]);
   const handleTutorSubmit=(event:React.FormEvent<HTMLFormElement>)=>{
     event.preventDefault();
-    void submitQuestion(question,{id:lessonId,title:lessonTitle,chapterId,chapterTitle,sourceContent,focus:readingFocus(selectedText)});
+    const values = new URLSearchParams(window.location.search).getAll("track");
+    const currentContext = learningContext ? { ...learningContext, trackId: values.length === 1 && allowedTrackIds?.includes(values[0]!) ? values[0]! : null } : undefined;
+    void submitQuestion(question,{id:lessonId,title:lessonTitle,chapterId,chapterTitle,sourceContent,corpusUrl,learningContext:currentContext,focus:readingFocus(selectedText)});
   };
   const handleQuestionKeyDown=(event:React.KeyboardEvent<HTMLTextAreaElement>)=>{
     if(event.key!=="Enter"||(!event.ctrlKey&&!event.metaKey)||event.nativeEvent.isComposing) return;
@@ -99,7 +105,7 @@ export function TutorDrawer({ lessonId, lessonTitle, chapterId, chapterTitle, so
               <Dialog.Title className="text-lg font-bold text-slate-950">대화를 초기화할까요?</Dialog.Title>
               <Dialog.Description className="mt-2 text-sm leading-6 text-slate-600">선택한 범위의 질문·답변, 관련 요약과 학습자 상태를 이 브라우저에서 삭제합니다. <strong className="text-rose-700">삭제한 대화는 되돌릴 수 없습니다.</strong></Dialog.Description>
               <fieldset className="mt-5 space-y-3"><legend className="sr-only">초기화 범위</legend>
-                <label className="flex cursor-pointer items-start gap-3 rounded-xl border border-slate-200 p-3"><input type="radio" name="tutor-reset-scope" value="chapter" checked={resetScope==="chapter"} onChange={()=>setResetScope("chapter")} className="mt-1" /><span className="text-sm"><span className="block font-semibold">현재 챕터의 대화만 ({chapterCount}회)</span><span className="mt-1 block text-xs leading-5 text-slate-500">{chapterTitle}의 교재·실습 단원에서 나눈 대화를 삭제합니다. 다른 챕터의 대화는 유지합니다.</span></span></label>
+                <label className="flex cursor-pointer items-start gap-3 rounded-xl border border-slate-200 p-3"><input type="radio" name="tutor-reset-scope" value="chapter" checked={resetScope==="chapter"} onChange={()=>setResetScope("chapter")} className="mt-1" /><span className="text-sm"><span className="block font-semibold">현재 학습 범위의 대화만 ({chapterCount}회)</span><span className="mt-1 block text-xs leading-5 text-slate-500">{chapterTitle}에서 나눈 대화를 삭제합니다. 다른 학습 범위의 대화는 유지합니다.</span></span></label>
                 <label className="flex cursor-pointer items-start gap-3 rounded-xl border border-slate-200 p-3"><input type="radio" name="tutor-reset-scope" value="all" checked={resetScope==="all"} onChange={()=>setResetScope("all")} className="mt-1" /><span className="text-sm"><span className="block font-semibold">전체 대화 ({turns.length}회)</span><span className="mt-1 block text-xs leading-5 text-slate-500">모든 챕터의 질문·답변, 누적 요약과 학습자 상태를 삭제합니다.</span></span></label>
               </fieldset>
               <div className="mt-5 flex justify-end gap-2"><Button ref={cancelRef} type="button" variant="outline" onClick={()=>setResetOpen(false)}>취소</Button><Button type="button" disabled={!resetCount} className="bg-rose-600 hover:bg-rose-700" onClick={()=>{resetConversation(resetScope==="chapter"?chapterId:undefined);setResetOpen(false);}}>삭제하기 ({resetCount}회)</Button></div>

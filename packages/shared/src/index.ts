@@ -22,7 +22,15 @@ export const tutorSummaryRequestSchema = z.object({
 export const tutorSummaryResponseSchema = z.object({ summary: z.string().min(1).max(6000) });
 export type TutorSummaryRequest = z.infer<typeof tutorSummaryRequestSchema>;
 
+export const learningContextSchema = z.object({
+  version: z.literal(1), unitId: z.string().max(120), topicId: z.string().max(120), moduleId: z.string().max(120),
+  trackId: z.string().max(120).nullable(), title: z.string().max(200), readiness: z.enum(["ready", "partial", "tbd"]),
+  activeResourceId: z.string().max(200).nullable(), resourceIds: z.array(z.string().max(200)).max(500),
+});
+export type LearningContext = z.infer<typeof learningContextSchema>;
+
 export const tutorRequestSchema = z.object({
+  learningContext: learningContextSchema.optional(),
   question: z.string().trim().min(2).max(1200),
   lookupComplete: z.boolean().default(false),
   learnerState: learnerStateSchema.default([]),

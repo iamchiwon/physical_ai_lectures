@@ -52,3 +52,10 @@ export async function askTutor(input: TutorRequest, signal?: AbortSignal): Promi
 export async function summarizeTutor(input: TutorSummaryRequest, signal?: AbortSignal) {
   return tutorSummaryResponseSchema.parse(await requestJson("/v1/tutor/summary", { method:"POST", body:JSON.stringify(input), signal: signal ?? null }));
 }
+
+export async function supportsLearningContext(signal?: AbortSignal): Promise<boolean> {
+  try {
+    const health = await requestJson("/v1/health", { signal: signal ?? null }) as { supportedContextVersions?: number[] };
+    return Array.isArray(health.supportedContextVersions) && health.supportedContextVersions.includes(1);
+  } catch { return false; }
+}

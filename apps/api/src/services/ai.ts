@@ -49,7 +49,7 @@ export async function answerTutorQuestion(env: Bindings, request: TutorRequest):
   }
 
   try {
-    const context = buildTutorContext(TUTOR_INSTRUCTIONS, request.lesson, request.question, request.summary ?? "", request.history ?? [], request.learnerState ?? []);
+    const context = buildTutorContext(TUTOR_INSTRUCTIONS, { ...request.lesson, contextSummary: `${request.learningContext ? `[learningContext] ${JSON.stringify(request.learningContext)}\n` : ""}${request.lesson.contextSummary ?? ""}` }, request.question, request.summary ?? "", request.history ?? [], request.learnerState ?? []);
     const result = await generateOpenRouterText(env, "tutor", { messages: context.messages, temperature: 0.5, responseFormat: TUTOR_RESPONSE_FORMAT });
     let output;
     try { output = parseTutorOutput(result.text, request.question, result.truncated); }

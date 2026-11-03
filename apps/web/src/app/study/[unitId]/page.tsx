@@ -1,11 +1,14 @@
 import { Suspense } from "react";
-import Link from "next/link";
 import { notFound } from "next/navigation";
 import { CourseShell } from "@/components/course-shell";
 import { Breadcrumbs, Prerequisites, ReadinessBadge } from "@/components/curriculum-parts";
 import { StudyNavigation, StudyNavigationView } from "@/components/study-navigation";
 import { catalog, curriculumIndex, moduleIndex, topicIndex, studyNavigationFor, topicAnchor } from "@/lib/curriculum";
 import { studyResource } from "@/lib/study-resources";
+import { StudyResourceLink } from "@/components/legacy-study-navigation";
+import { TutorDrawer } from "@/components/tutor-drawer";
+import { studyTutorProps } from "@/lib/study-tutor";
+import { LearningLocation } from "@/components/learning-location";
 import { catalogSlotNames, unitReadiness } from "@physical-ai/shared/catalog";
 
 export function generateStaticParams() { return catalog.units.map(({ id }) => ({ unitId: id })); }
@@ -37,14 +40,16 @@ export default async function StudyPage({ params }: { params: Promise<{ unitId: 
           <div className="flex flex-wrap items-center justify-between gap-3"><h2 id={`${slot}-title`} className="text-xl font-bold">{slotLabels[slot]} <span className="text-xs font-normal text-slate-500">{requirementLabels[unit.requirements[slot].mode]}</span></h2><ReadinessBadge state={readiness.slots[slot]} /></div>
           <p className="mt-3 text-sm leading-7 text-slate-600">{unit.requirements[slot].reason}</p>
           {!resources.length ? <p className="mt-4 rounded-xl bg-slate-50 p-4 text-sm leading-7 text-slate-600">{readiness.slots[slot] === "not_applicable" ? "별도 실습이 필요하지 않은 사유와 대체 이해 확인을 적용합니다." : "TBD · 이 슬롯에 연결된 자료는 아직 없습니다."}</p> : <ul className="mt-5 space-y-3">{resources.map((resource) => <li key={resource.id} className="rounded-xl border border-slate-100 p-4">
-            <p className="text-xs font-semibold text-blue-700">{resource.kind} · {resource.role === "supplement" ? "보충 참고" : "학습 자료"}</p><h3 className="mt-2 text-sm font-semibold leading-7">{resource.title}</h3><p className="mt-2 text-xs leading-6 text-slate-500">{coverageLabels[resource.coverage]}</p><p className="mt-2 text-xs leading-6 text-slate-600">{resource.limitation}</p>
-            {!resource.available ? <p role="status" className="mt-3 text-sm text-amber-900">자료 연결을 사용할 수 없습니다: {resource.reason}</p> : resource.links.length ? <ul className="mt-3 space-y-2">{resource.links.map((link, i) => <li key={link.href}><Link href={link.href} className="text-sm font-semibold text-blue-700 underline underline-offset-4">{link.title}{resource.links.length > 1 ? ` ${i + 1}` : ""} ↗</Link></li>)}</ul> : <p className="mt-3 text-xs text-slate-500">독립 진입 화면이 없는 모형입니다. 위 한계를 확인하고 관련 실습 원고를 참고하세요.</p>}
+            <p className="text-xs font-semibold text-blue-700">{resource.kind} · {resource.role === "supplement" ? "보충 참고" : "학습 자료"}</p><h3 className="mt-2 text-sm font-semibold leading-7">{resource.title}</h3><p className="mt-2 text-xs leading-6 text-slate-500">{coverageLabels[resource.coverage]}</p><p className="mt-2 text-xs leading-6 text-slate-600">{resource.limitation}</p>{resource.feedback ? <p className="mt-3 rounded-lg bg-slate-50 p-3 text-xs leading-6 text-slate-600">{resource.feedback}</p> : null}
+            {!resource.available ? <p role="status" className="mt-3 text-sm text-amber-900">자료 연결을 사용할 수 없습니다: {resource.reason}</p> : resource.links.length ? <ul className="mt-3 space-y-2">{resource.links.map((link) => <li key={link.href}><StudyResourceLink href={link.href} unitId={unit.id} trackIds={contexts.map((context) => context.id)} className="text-sm font-semibold text-blue-700 underline underline-offset-4">{link.title} ↗</StudyResourceLink></li>)}</ul> : <p className="mt-3 text-xs text-slate-500">독립 진입 화면이 없는 모형입니다. 위 한계를 확인하고 관련 실습 원고를 참고하세요.</p>}
           </li>)}</ul>}
           <div className="mt-5 border-t border-slate-100 pt-4"><h3 className="text-sm font-semibold">보완할 범위</h3><p className="mt-2 text-sm leading-7 text-slate-600">{unit.gaps[slot]}</p></div>
         </section>;
       })}</div>
       <Suspense fallback={<StudyNavigationView navigation={{ ...base, context: null, notice: null }} />}><StudyNavigation base={base} contexts={contexts} /></Suspense>
-      <p className="mt-6 text-xs leading-6 text-slate-500">실습·문제는 기존 화면에서 수행할 수 있습니다. AI 강사는 기존 자료 화면의 실제 본문을 참고하며, 이 신규 단위 페이지에는 아직 연결되어 있지 않습니다.</p>
+      <p className="mt-6 text-xs leading-6 text-slate-500">실습·문제는 기존 화면의 답안과 진도를 이어서 사용합니다. AI 강사는 현재 단위의 준비 상태·부족한 범위와 연결된 실제 자료를 참고합니다.</p>
     </main>
+    <LearningLocation unitId={unit.id} revision={unit.revision} catalogRevision={catalog.revision} trackIds={contexts.map((context) => context.id)} />
+    <TutorDrawer {...studyTutorProps(unit)} />
   </CourseShell>;
 }

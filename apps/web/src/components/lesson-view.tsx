@@ -1,10 +1,12 @@
 import Link from "next/link";
+import { LegacyStudyNavigation, LegacyContextLink } from "@/components/legacy-study-navigation";
+import { legacyStudyContextsFor } from "@/lib/legacy-study-context-server";
 import { AlertTriangle, ArrowLeft, ArrowRight, BookOpenCheck, CheckCircle2, ChevronRight, Clock3, Code2, Lightbulb, Menu, Sparkles, Target } from "lucide-react";
 import type { CourseModule, Lesson } from "@/data/types";
 import { QuizCard } from "@/components/quiz-card";
 import { TutorDrawer } from "@/components/tutor-drawer";
 import { VirtualLab } from "@/components/virtual-lab";
-import { LessonCompleteButton } from "@/components/progress-provider";
+import { LessonCompleteButton, ProgressStorageNotice } from "@/components/progress-provider";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -41,7 +43,9 @@ export function LessonView({ lesson, module, modules, previous, next }: LessonVi
         </aside>
 
         <main className="min-w-0">
-          <div className="mb-5 rounded-xl border border-blue-200 bg-blue-50 p-4 text-sm leading-6 text-blue-950">이 페이지는 핵심 요약과 자가 점검 레슨입니다. <Link className="font-bold underline" href={`/textbook/${chapterStart(lesson.chapter)!.slug}/`}>제{lesson.chapter}장 교재 전체 설명 읽기 →</Link></div>
+          <ProgressStorageNotice />
+          <LegacyStudyNavigation contexts={legacyStudyContextsFor(`/learn/${lesson.id}/`)} />
+          <div className="mb-5 rounded-xl border border-blue-200 bg-blue-50 p-4 text-sm leading-6 text-blue-950">이 페이지는 핵심 요약과 자가 점검 레슨입니다. <LegacyContextLink className="font-bold underline" href={`/textbook/${chapterStart(lesson.chapter)!.slug}/`}>제{lesson.chapter}장 교재 전체 설명 읽기 →</LegacyContextLink></div>
           <nav aria-label="현재 위치" className="mb-5 flex flex-wrap items-center gap-1 text-sm text-slate-500">
             <Link href="/" className="hover:text-blue-700">학습 홈</Link><ChevronRight className="size-4" />
             <span>모듈 {module.number}</span><ChevronRight className="size-4" />
@@ -77,7 +81,7 @@ export function LessonView({ lesson, module, modules, previous, next }: LessonVi
               })}
             </div>
 
-            <VirtualLab lessonId={lesson.id} />
+            <div id="virtual-lab" className="scroll-mt-24"><VirtualLab lessonId={lesson.id} /></div>
 
             <section className="mt-12 scroll-mt-24" id="quick-check">
               <div className="mb-5"><p className="text-sm font-semibold text-blue-700">바로 확인하기</p><h2 className="mt-1 flex items-center gap-2 text-2xl font-bold"><BookOpenCheck className="size-6 text-blue-600" />자가 점검</h2><p className="mt-2 text-sm leading-6 text-slate-500">틀려도 괜찮습니다. 해설을 읽고 개념을 다시 연결하는 것이 목표입니다.</p></div>
@@ -90,8 +94,8 @@ export function LessonView({ lesson, module, modules, previous, next }: LessonVi
             </div>
 
             <nav className="mt-8 grid gap-3 sm:grid-cols-2" aria-label="레슨 이동">
-              {previous ? <Button asChild variant="outline" size="lg" className="h-auto justify-start py-4"><Link href={`/learn/${previous.id}`}><ArrowLeft className="size-4" /><span className="min-w-0 text-left"><span className="block text-xs font-normal text-slate-400">이전 레슨</span><span className="block truncate">{previous.title}</span></span></Link></Button> : <span />}
-              {next ? <Button asChild variant="outline" size="lg" className="h-auto justify-end py-4"><Link href={`/learn/${next.id}`}><span className="min-w-0 text-right"><span className="block text-xs font-normal text-slate-400">다음 레슨</span><span className="block truncate">{next.title}</span></span><ArrowRight className="size-4" /></Link></Button> : null}
+              {previous ? <Button asChild variant="outline" size="lg" className="h-auto justify-start py-4"><LegacyContextLink href={`/learn/${previous.id}`}><ArrowLeft className="size-4" /><span className="min-w-0 text-left"><span className="block text-xs font-normal text-slate-400">이전 레슨</span><span className="block truncate">{previous.title}</span></span></LegacyContextLink></Button> : <span />}
+              {next ? <Button asChild variant="outline" size="lg" className="h-auto justify-end py-4"><LegacyContextLink href={`/learn/${next.id}`}><span className="min-w-0 text-right"><span className="block text-xs font-normal text-slate-400">다음 레슨</span><span className="block truncate">{next.title}</span></span><ArrowRight className="size-4" /></LegacyContextLink></Button> : null}
             </nav>
           </article>
         </main>
@@ -112,7 +116,7 @@ function CurriculumNav({ modules, currentLessonId, className = "" }: { modules: 
             <ul className="space-y-1">
               {module.lessons.map((item) => {
                 const active = item.id === currentLessonId;
-                return <li key={item.id}><Link aria-current={active ? "page" : undefined} href={`/learn/${item.id}`} className={`block rounded-lg px-3 py-2 text-sm leading-5 transition ${active ? "bg-blue-600 font-semibold text-white" : "text-slate-600 hover:bg-blue-50 hover:text-blue-700"}`}>{item.title}</Link></li>;
+                return <li key={item.id}><LegacyContextLink aria-current={active ? "page" : undefined} href={`/learn/${item.id}`} className={`block rounded-lg px-3 py-2 text-sm leading-5 transition ${active ? "bg-blue-600 font-semibold text-white" : "text-slate-600 hover:bg-blue-50 hover:text-blue-700"}`}>{item.title}</LegacyContextLink></li>;
               })}
             </ul>
           </section>

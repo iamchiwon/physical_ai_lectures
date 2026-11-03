@@ -46,7 +46,7 @@ function codeExcerpt(block: Block, question: string) {
 export function retrieveLessonContext(question:string, documents:LessonDocument[], focus:ReadingFocus={}):RetrievedContext {
   const all=documents.flatMap(blocks), codes=all.filter(block=>block.code), query=terms(question);
   const identifiers=[...question.matchAll(/\b[A-Za-z_]\w*(?:\.[A-Za-z_]\w*)+(?:\(\))?|\b[A-Za-z_]\w*(?=\s*\()/g)].map(match=>match[0].replace(/\(\)$/," ").trim().toLowerCase());
-  if(identifiers.length&&!all.some(block=>identifiers.some(name=>block.content.toLowerCase().includes(name))))return {state:"not_found",text:"[자료 상태: 요청한 함수·식별자를 찾지 못함] 다른 예제의 동작으로 대체하지 말고 추가 조회 또는 코드 확인을 요청하세요."};
+  if(identifiers.length&&!all.some(block=>identifiers.some(name=>`${block.document.id} ${block.document.title} ${block.content}`.toLowerCase().includes(name))))return {state:"not_found",text:"[자료 상태: 요청한 함수·식별자를 찾지 못함] 다른 예제의 동작으로 대체하지 말고 추가 조회 또는 코드 확인을 요청하세요."};
   const score=(block:Block)=>identifiers.filter(name=>block.content.toLowerCase().includes(name)).length*20+query.reduce((sum,term)=>sum+(block.content.toLowerCase().includes(term)?2:0)+(block.title.toLowerCase().includes(term)?3:0),0);
   const deicticCode=/이\s*코드|위\s*코드|아래\s*코드|해당\s*코드|본문.*코드|여기.*코드|this\s+code/i.test(question)||requestedLine(question)!==undefined;
   const codeQuestion=/코드|함수|명령어|스크립트|code|\bline\b/i.test(question)||requestedLine(question)!==undefined;
