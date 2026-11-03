@@ -1,0 +1,101 @@
+{
+  "schemaVersion": 1,
+  "topics": {
+    "M00.01": {
+      "sourceSha256": "f6e244a133a11ea8aab6651dd15d0ce65af56c8c05f322a46e66e37e315059d1",
+      "evidenceRef": "doc/v2/work_items/M00.01.md"
+    },
+    "M00.02": {
+      "sourceSha256": "207fb67443bbd1350f550039630963669ec12cdda3fe5eff3fc7846b7d97228e",
+      "evidenceRef": "doc/v2/work_items/M00.02.md"
+    },
+    "M00.03": {
+      "sourceSha256": "003b4c37875241097191de0ce098aeb6b333b71078d7f9e459d284c5f1215d0a",
+      "evidenceRef": "doc/v2/work_items/M00.03.md"
+    },
+    "M00.04": {
+      "sourceSha256": "af38da789a2abf5dff189d623d992031ffdd7684c40490a263eb46c79d66522d",
+      "evidenceRef": "doc/v2/work_items/M00.04.md"
+    },
+    "M00.05": {
+      "sourceSha256": "5bc75f539ec46e7137ae1f5f332826f44920883b6bd3357d2e4b3a3fc352ada7",
+      "evidenceRef": "doc/v2/work_items/M00.05.md"
+    },
+    "M00.06": {
+      "sourceSha256": "76004cc6c608b5bb1e8508f957fcab2af71bbd9d0c7dcfbd221d87a4a5717256",
+      "evidenceRef": "doc/v2/work_items/M00.06.md"
+    },
+    "M01.01": {
+      "sourceSha256": "ad2b4d8990377e5291f49c3c16f59297403683414d3ab9f6941bfd170b2342f0",
+      "evidenceRef": "doc/v2/work_items/M01.01.md"
+    },
+    "M01.02": {
+      "sourceSha256": "de49db49fa539e62a5aa3cfe44eb39370e5346fa88fc46e8037495c400742ade",
+      "evidenceRef": "doc/v2/work_items/M01.02.md"
+    },
+    "M01.03": {
+      "sourceSha256": "85ebdd2d1d834cd48e0801e2b37d48e4b9fdbf01968643b1660a88c420007d0e",
+      "evidenceRef": "doc/v2/work_items/M01.03.md"
+    },
+    "M01.04": {
+      "sourceSha256": "21ad5add272937c1374e9dbc2e78a1f3671097b156011cf55350bda072a1092b",
+      "evidenceRef": "doc/v2/work_items/M01.04.md"
+    },
+    "M01.05": {
+      "sourceSha256": "1c52855e4c21004771cf0431c3ea24c5495b53490b77016fbef03d7badc637d2",
+      "evidenceRef": "doc/v2/work_items/M01.05.md"
+    },
+    "M01.06": {
+      "sourceSha256": "de388cf3fddc6cdb2d5c57a6721495363341cec0aa6838b50360ae8affff498d",
+      "evidenceRef": "doc/v2/work_items/M01.06.md"
+    },
+    "M02.01": {
+      "sourceSha256": "b075ad01620438a3e11f0849b3f0bc3067afe57decd892a481bb65e2afe23184",
+      "evidenceRef": "doc/v2/work_items/M02.01.md"
+    },
+    "M02.02": {
+      "sourceSha256": "53a9af216faa56668997c8baa42af89ffc6a351f0a0d0c1b024e9e00d146da68",
+      "evidenceRef": "doc/v2/work_items/M02.02.md"
+    },
+    "M02.03": {
+      "sourceSha256": "ffafb2e23c68725c224757ff4450c17ed5aff952cb03832ac467e86b493d491d",
+      "evidenceRef": "doc/v2/work_items/M02.03.md"
+    },
+    "M02.04": {
+      "sourceSha256": "efdd385e1080dbd1bd9bd021e4aeb48f5015c7916ade0bfb67bb3f3f0beb550c",
+      "evidenceRef": "doc/v2/work_items/M02.04.md"
+    },
+    "M02.05": {
+      "sourceSha256": "eb632f5ea31bda016052acf0a2668791c32c57f95e36715b247eb2c5948ee066",
+      "evidenceRef": "doc/v2/work_items/M02.05.md"
+    },
+    "M02.06": {
+      "sourceSha256": "11bc4b670e8d715b3139716056ff7403d8a196e38a91c702dd320de2dc491712",
+      "evidenceRef": "doc/v2/work_items/M02.06.md"
+    },
+    "M03.01": {
+      "sourceSha256": "92e620ae80a6ba1f9a97c4c80b2bf714c22e14eaf1865713b0db481ae9d9661f",
+      "evidenceRef": "doc/v2/work_items/M03.01.md"
+    },
+    "M03.02": {
+      "sourceSha256": "1513e468f650a7ae7952046823326d997e42cdbdd99345ab7d2da075f3856056",
+      "evidenceRef": "doc/v2/work_items/M03.02.md"
+    },
+    "M03.03": {
+      "sourceSha256": "9a2f0c7897b29d88c5b8e4f010d938c963c2ae39a87e89ee1e68b0acda4ad1c4",
+      "evidenceRef": "doc/v2/work_items/M03.03.md"
+    },
+    "M03.04": {
+      "sourceSha256": "fe38b749d0f253cde884882c08b8c5ad1521985463df801321c7122fa7350aaa",
+      "evidenceRef": "doc/v2/work_items/M03.04.md"
+    },
+    "M03.05": {
+      "sourceSha256": "ea5578bfbfa724e61cac63b82fc8e8cbcd7271f25d8cb6013a38a6ebac238f91",
+      "evidenceRef": "doc/v2/work_items/M03.05.md"
+    },
+    "M03.06": {
+      "sourceSha256": "9dd9333960e5834821349ed9025effb759170415a26815432d64e000439ec223",
+      "evidenceRef": "doc/v2/work_items/M03.06.md"
+    }
+  }
+}

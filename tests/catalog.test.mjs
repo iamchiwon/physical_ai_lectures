@@ -8,12 +8,22 @@ const bundle = await build({ entryPoints: ['packages/shared/src/catalog.ts'], bu
 let shared;
 try { shared = await import(`data:text/javascript;base64,${Buffer.from(bundle.outputFiles[0].text).toString('base64')}`); }
 catch (error) { throw new Error(JSON.stringify(error.issues ?? error.message)); }
-const { catalog, catalogSchema, indexCatalog, unitReadiness, bindingRevision, bindingAvailability, summarizeReadiness, catalogReadiness } = shared;
+const { legacyCatalog: catalog, catalogSchema, indexCatalog, unitReadiness, bindingRevision, bindingAvailability, summarizeReadiness, catalogReadiness } = shared;
 const mapping = JSON.parse(fs.readFileSync('doc/v2/inventory/content-mapping.json', 'utf8'));
 const baseline = JSON.parse(fs.readFileSync('doc/v2/inventory/legacy-content.json', 'utf8'));
 const curriculum = fs.readFileSync('doc/integrated_curriculum.md', 'utf8');
 const clone = () => structuredClone(catalog);
-const hash = (path) => createHash('sha256').update(fs.readFileSync(path)).digest('hex');
+const revisions = JSON.parse(fs.readFileSync('doc/v2/inventory/legacy-revisions.json','utf8')).files;
+const hash = (path) => {
+  const current = createHash('sha256').update(fs.readFileSync(path)).digest('hex');
+  const approval = revisions.find(row => row.source === path);
+  if (!approval) return current;
+  assert.equal(current, approval.sha256, `stale approved source: ${path}`);
+  assert.ok(approval.reason && fs.existsSync(approval.evidenceRef));
+  const historical = baseline.bookFiles.find(file => `ebook/book/${file.source}` === path);
+  assert.equal(approval.baselineSha256, historical?.sha256, `baseline rewrite: ${path}`);
+  return approval.baselineSha256;
+};
 
 test('34/204 IDs, titles, order and stable units match curriculum and A03 exactly', () => {
   const modules = [...curriculum.matchAll(/^### (M\d+)\. (.+)$/gm)].map((m) => [m[1], m[2]]);

@@ -20,11 +20,14 @@
     "deploy:web": "wrangler pages deploy apps/web/out --project-name physical-ai-learning-web",
     "deploy:api": "npm run deploy --workspace @physical-ai/api",
     "test:catalog": "node --test tests/catalog.test.mjs",
-    "prebuild": "npm run test:catalog",
+    "prebuild": "npm run prepare:authored && npm run test:catalog",
     "test:home": "node --test tests/home.test.mjs",
     "test:curriculum": "node --test tests/curriculum.test.mjs",
     "test:study": "node --test tests/study.test.mjs",
-    "test": "node --test tests/*.test.mjs"
+    "test": "node --test tests/*.test.mjs",
+    "prepare:authored": "node scripts/prepare-authored.mjs",
+    "pretest": "npm run prepare:authored",
+    "precheck": "npm run prepare:authored"
   },
   "devDependencies": {
     "concurrently": "^9.2.1",

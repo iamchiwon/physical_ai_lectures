@@ -1,3 +1,4 @@
+import { authoredSection } from "@/lib/authored";
 import fs from "node:fs";
 import path from "node:path";
 import { bindingAvailability, unitReadiness, type CatalogUnit } from "@physical-ai/shared/catalog";
@@ -22,6 +23,7 @@ function documentFor(id: string): LessonDocument | null {
   const resource = curriculumIndex.resources.get(id)!;
   const locator = resource.locator;
   let content = "";
+  if (locator.type === "authored") content = authoredSection(curriculumIndex.units.get(locator.unitId)!.topicId, locator.section);
   if (locator.type === "textbook") content = textbookUnits.find(unit => unit.slug === locator.legacyUnitId)?.content ?? "";
   if (locator.type === "lesson" || locator.type === "inline") {
     const lesson = courseModules.flatMap(module => module.lessons).find(item => item.id === locator.lessonId);
@@ -49,6 +51,6 @@ export function studyTutorProps(unit: CatalogUnit) {
   const readiness = unitReadiness(unit, curriculumIndex).state;
   const resourceIds = studyTutorResourceIds(unit);
   const learningContext = { version: 1 as const, unitId: unit.id, topicId: unit.topicId, moduleId, trackId: null, title: unit.title, readiness, activeResourceId: null, resourceIds };
-  const sourceContent = `현재 신규 단위: ${unit.topicId} · ${unit.title}\n준비 상태: ${readiness}\n목표: ${unit.objectives.map(goal => goal.description).join(" / ")}\n미작성 범위: ${Object.entries(unit.gaps).map(([slot,gap]) => `${slot}: ${gap}`).join(" / ")}\n연결 자료는 기존 자료 또는 보충 참고이며 신규 단위 전체의 검수 통과를 뜻하지 않습니다. 현재 실습 파라미터·결과는 전달되지 않았습니다.`;
+  const sourceContent = `현재 신규 단위: ${unit.topicId} · ${unit.title}\n준비 상태: ${readiness}\n목표: ${unit.objectives.map(goal => goal.description).join(" / ")}\n${readiness === "ready" ? "학습 범위와 한계" : "미작성 범위"}: ${Object.entries(unit.gaps).map(([slot,gap]) => `${slot}: ${gap}`).join(" / ")}\n${readiness === "ready" ? "현재 단위의 설명·기본 실습·평가/해설은 검수된 공개 자료입니다. 학습 완료와 숙달 인증은 별개입니다." : "연결 자료는 기존 자료 또는 보충 참고이며 신규 단위 전체의 검수 통과를 뜻하지 않습니다."} 현재 실습 파라미터·결과는 전달되지 않았습니다.`;
   return { lessonId: unit.id, lessonTitle: unit.title, chapterId: `module-${moduleId}`, chapterTitle: `${moduleId} · ${moduleIndex.get(moduleId)!.title}`, sourceContent, allowedTrackIds: studyNavigationFor(unit.id).contexts.map(context => context.id), corpusUrl: `/tutor-study/${unit.id}`, learningContext };
 }

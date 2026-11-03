@@ -30,6 +30,8 @@
 
 ## 선수 지식과 준비물
 
+이 장에 앞서 [M02.01 벡터·행렬](/study/unit-m02-01-a/), [M02.02 회전·변환](/study/unit-m02-02-a/), [M02.03 미분과 시간 변화](/study/unit-m02-03-a/)를 확인한다. 힘·운동·계산 예제의 단위가 낯설면 각 수량을 SI 단위로 적고 식을 따라가며 계산부터 수행한다. 기존 Isaac Sim 실습은 GPU가 있는 선택 실행 경로다. GPU 없는 기본 학습은 본문의 변환·시간간격·마찰 예측과 브라우저 개념 모형/기록 해석으로 구분하며, 이것을 PhysX 실제 실행 결과로 제출하지 않는다.
+
 ### 선수 지식
 
 - Python과 NumPy의 배열 연산
@@ -41,7 +43,7 @@
 
 - Ubuntu 24.04 LTS
 - NVIDIA RTX GPU와 호환 드라이버
-- NVIDIA Isaac Sim 최신 안정 릴리스
+- NVIDIA Isaac Sim: 기준 환경 문서와 호환되는 검증 릴리스를 선택하고 실제 버전·드라이버를 기록한다.
 - Python 3.12(범용 수학 예제), Isaac Sim 내장 Python(시뮬레이터 예제)
 
 Isaac Sim 공식 요구사항은 Ubuntu 22.04와 24.04를 지원 대상으로 명시하고, 복잡한 장면에는 충분한 RAM과 VRAM이 필요하다고 안내한다. 정확한 GPU/드라이버 요구사항은 릴리스마다 달라지므로 설치 직전에 [Isaac Sim Requirements](https://docs.isaacsim.omniverse.nvidia.com/latest/installation/requirements.html)를 확인한다. 이 책의 코드는 특정 GPU 성능을 보장하지 않으며 출력은 예시이다.
@@ -150,7 +152,7 @@ Euler angle은 roll, pitch, yaw 세 값으로 방향을 설명해 사람이 이�
 - right-handed/left-handed 좌표계
 - radian/degree 단위
 
-이 장의 예제는 오른손 좌표계에서 고정 world 축에 대한 extrinsic Z-Y-X 합성, 즉 \(R=R_z(yaw)R_y(pitch)R_x(roll)\)을 사용한다. pitch가 ±90° 근처가 되면 서로 다른 두 회전축이 정렬되어 자유도 하나를 구분할 수 없게 된다. 이것이 짐벌 락(gimbal lock)이다. 실제 물체가 자유도를 잃는 것이 아니라 Euler 파라미터화가 특이해지는 것이다.
+이 장은 오른손 좌표계와 열벡터 \(v'=Rv\)를 사용하고 \(R=R_z(yaw)R_y(pitch)R_x(roll)\)로 행렬을 만든다. **벡터에 실제 적용되는 고정축 회전 순서는 오른쪽부터 X(roll)→Y(pitch)→Z(yaw)**이며, extrinsic xyz라고 부른다. 이는 움직이는 몸체축을 사용하는 intrinsic Z→Y→X(yaw,pitch,roll)와 동치다. 코드의 `euler_zyx_to_matrix` 이름은 행렬을 왼쪽부터 Z·Y·X로 곱하는 관례를 보존한 것이며 고정축 적용 순서를 뜻하지 않는다. 회전 이름만 외우기보다 행렬·열벡터·적용 방향을 함께 적는다. [SciPy의 공식 Euler 규약](https://docs.scipy.org/doc/scipy/reference/generated/scipy.spatial.transform.Rotation.from_euler.html)은 소문자 축을 extrinsic, 대문자 축을 intrinsic으로 구분한다. [M02.02](/study/unit-m02-02-a/)의 변환 방향·회전 순서 계산과 이어 확인한다. pitch가 정확히 ±90°일 때 Euler 표현의 두 회전축이 정렬되어 두 각도를 독립적으로 구분할 수 없게 된다. 이것이 짐벌 락(gimbal lock)이다. 그 근처에서는 조건이 나빠져 작은 회전·측정 오차에도 각도 표현이 크게 변할 수 있다. 실제 물체가 자유도를 잃는 것이 아니라 Euler 파라미터화가 특이해지는 것이다.
 
 ### 2.2.4 quaternion과 순서 문제
 

@@ -2,7 +2,8 @@
 
 의존성: numpy
 쿼터니언 순서: (x, y, z, w)
-Euler convention: 고정된 world 축에 대한 Z-Y-X 합성, R = Rz(yaw) Ry(pitch) Rx(roll)
+Euler convention: 오른손/열벡터, 고정축 적용 X→Y→Z(extrinsic xyz), R = Rz(yaw) Ry(pitch) Rx(roll)
+동치: 몸체축 intrinsic Z→Y→X(yaw, pitch, roll). 함수명 zyx는 행렬 곱의 왼쪽부터 표기한다.
 """
 
 from __future__ import annotations
@@ -24,7 +25,10 @@ def _normalize_quaternion(q_xyzw: Array) -> Array:
 
 
 def euler_zyx_to_matrix(roll: float, pitch: float, yaw: float) -> Array:
-    """roll, pitch, yaw [rad]를 3x3 회전행렬로 변환한다."""
+    """roll/pitch/yaw [rad]; 열벡터에 고정축 X→Y→Z로 적용하는 Rz @ Ry @ Rx.
+
+    기존 함수명 zyx는 행렬 곱 순서를 나타내며 호출부 호환성을 유지한다.
+    """
     cr, sr = math.cos(roll), math.sin(roll)
     cp, sp = math.cos(pitch), math.sin(pitch)
     cy, sy = math.cos(yaw), math.sin(yaw)

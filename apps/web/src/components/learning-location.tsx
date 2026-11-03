@@ -6,26 +6,27 @@ import { useSearchParams } from "next/navigation";
 import { learningStore, LEARNING_STORAGE_KEY } from "@/lib/learning-store";
 import { studyHref } from "@/lib/study-navigation";
 
+let storageUsers = 0;
+const receiveLearningStorage = (event: StorageEvent) => {
+  if (event.storageArea === window.localStorage && (event.key === LEARNING_STORAGE_KEY || event.key === null)) learningStore.receiveStorage(event.newValue);
+};
 export function useLearningState() {
   const state = useSyncExternalStore(learningStore.subscribe, learningStore.getSnapshot, learningStore.getServerSnapshot);
   useEffect(() => {
     learningStore.hydrate();
-    const receive = (event: StorageEvent) => {
-      if (event.storageArea === window.localStorage && (event.key === LEARNING_STORAGE_KEY || event.key === null)) learningStore.receiveStorage(event.newValue);
-    };
-    window.addEventListener("storage", receive);
-    return () => window.removeEventListener("storage", receive);
+    if (storageUsers++ === 0) window.addEventListener("storage", receiveLearningStorage);
+    return () => { if (--storageUsers === 0) window.removeEventListener("storage", receiveLearningStorage); };
   }, []);
   return state;
 }
 export function LearningStorageNotice() {
   const state = useLearningState();
   if (!state.notice) return null;
-  const download = () => {
-    const url = URL.createObjectURL(new Blob([state.raw ?? JSON.stringify(state.data)], { type: "application/json" }));
-    const anchor = document.createElement("a"); anchor.href = url; anchor.download = "physical-ai-learning-record.json"; anchor.click(); URL.revokeObjectURL(url);
+  const download = (current = false) => {
+    const url = URL.createObjectURL(new Blob([current ? JSON.stringify(state.data) : state.raw ?? JSON.stringify(state.data)], { type: "application/json" }));
+    const anchor = document.createElement("a"); anchor.href = url; anchor.download = current ? "physical-ai-learning-unsaved.json" : "physical-ai-learning-record.json"; anchor.click(); URL.revokeObjectURL(url);
   };
-  return <div role="status" className="my-4 rounded-xl bg-amber-50 p-4 text-sm leading-7 text-amber-950"><p>{state.notice}</p><button className="mr-4 underline" onClick={download}>원본 기록 내려받기</button><button className="underline" onClick={() => { if (window.confirm("신규 단위의 읽기·이어 학습 기록만 초기화합니다. 기존 요약 진도·답안·대화는 유지됩니다. 계속할까요?")) learningStore.reset(); }}>신규 학습 기록만 초기화</button></div>;
+  return <div role="status" className="my-4 rounded-xl bg-amber-50 p-4 text-sm leading-7 text-amber-950"><p>{state.notice}</p><button className="mr-4 underline" onClick={() => download()}>원본 기록 내려받기</button>{state.unsavedChanges ? <button className="mr-4 underline" onClick={() => download(true)}>현재 화면 기록 내려받기</button> : null}<button className="underline" onClick={() => { if (window.confirm("통합 단위의 답안·자기검토·완료·이어 학습 기록만 초기화합니다. 기존 요약 진도·답안·대화는 유지됩니다. 계속할까요?")) learningStore.reset(); }}>신규 학습 기록만 초기화</button></div>;
 }
 function LocationTracker({ unitId, revision, catalogRevision, trackIds }: { unitId: string; revision: string; catalogRevision: string; trackIds: string[] }) {
   const state = useLearningState();
@@ -38,7 +39,7 @@ function LocationTracker({ unitId, revision, catalogRevision, trackIds }: { unit
 export function LearningLocation(props: { unitId: string; revision: string; catalogRevision: string; trackIds: string[] }) {
   return <><Suspense fallback={null}><LocationTracker {...props} /></Suspense><LearningStorageNotice /></>;
 }
-export interface ResumeUnit { id: string; title: string; state: string; revision: string; trackIds: string[] }
+export interface ResumeUnit { id: string; title: string; state: string; readiness: string; revision: string; trackIds: string[] }
 export function LearningResume({ units }: { units: ResumeUnit[] }) {
   const state = useLearningState();
   const location = state.data.lastLocation;

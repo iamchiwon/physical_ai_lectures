@@ -5,7 +5,8 @@
   "type": "module",
   "exports": {
     ".": "./src/index.ts",
-    "./catalog": "./src/catalog.ts"
+    "./catalog": "./src/catalog.ts",
+    "./authored": "./src/authored-format.ts"
   },
   "scripts": {
     "build": "tsc --noEmit",

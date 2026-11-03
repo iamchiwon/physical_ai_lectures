@@ -4,6 +4,10 @@
 - 근거: [A02 계약](catalog_contract.md), [A03 매핑](inventory/content-mapping.json), [커리큘럼](../integrated_curriculum.md)
 - 작업 기록: [B01](work_items/B01.md). B01은 데이터 등록 단계이며, 이후 [B03](work_items/B03.md)에서 목차/모듈/경로, [B04](work_items/B04.md)에서 전체 단위 정적 페이지와 자료 안내·트랙 문맥 이동을 구현했다. 아래의 후속 범위 설명은 B01 등록 시점을 기준으로 한다.
 
+## 현행 상세 교재 확장
+
+위·아래 B01 수량과 미작성 안내는 등록 당시 기준선이다. E1부터는 [상세 원고](../../ebook/curriculum/)와 [지문 승인](inventory/e1-reviews.json)을 바탕으로 `authored-data.ts`를 생성해 원본 카탈로그에 겹쳐 적용한다. `legacyCatalog`는 기준선을 보존하고 `catalog`는 승인 개정과 신규 본문·활동을 포함한다. 기존 본문 개정은 [승인 개정 목록](inventory/legacy-revisions.json)에 baseline/현행 지문과 이유를 기록한다. 공개 준비도·현재 수량은 런타임 및 [E1 검수](work_items/E1.md)를 확인한다.
+
 ## 1. 코드와 사용
 
 | 파일 | 역할 |

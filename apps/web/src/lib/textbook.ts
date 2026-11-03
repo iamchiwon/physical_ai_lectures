@@ -119,6 +119,7 @@ export function textbookExamples(unit: TextbookUnit) {
 }
 
 export function textbookLink(url: string, unit: TextbookUnit): string {
+  if (/^\/(?:study|curriculum|modules|tracks|textbook)(?:\/|$)/.test(url)) return url;
   if (/^(https?:|mailto:|tel:)/i.test(url)) return url;
   if (url.startsWith("#")) {
     const anchor = url.slice(1);

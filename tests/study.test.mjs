@@ -25,7 +25,7 @@ test('all 204 units retain a canonical URL independent of six track contexts',()
 test('default order includes TBD and handles first/last boundaries without skipping',()=>{
  const first=c.studyNavigationFor(c.catalog.units[0].id);assert.equal(first.base.previous,null);assert.equal(first.base.next.id,c.catalog.units[1].id);
  const last=c.studyNavigationFor(c.catalog.units.at(-1).id);assert.equal(last.base.next,null);
- const current=c.studyNavigationFor('unit-m00-06-a');assert.equal(current.base.next.id,'unit-m01-01-a');assert.equal(current.base.next.state,'tbd');
+ const current=c.studyNavigationFor('unit-m00-06-a');assert.equal(current.base.next.id,'unit-m01-01-a');assert.equal(current.base.next.state,c.unitLink('unit-m01-01-a').state);
 });
 test('invalid, absent-membership and duplicate track queries fall back to catalog order explicitly',()=>{
  const nav=c.studyNavigationFor('unit-m33-01-a');assert.equal(nav.contexts.length,0);
@@ -63,7 +63,7 @@ test('all original resources stay canonical and distinguish detailed text, summa
  }
 });
 test('written activities reuse exact legacy answer anchors and original authored feedback',()=>{
- for(const activity of c.catalog.activities.filter(a=>['question','report','quick-check'].includes(a.kind))){
+ for(const activity of c.catalog.activities.filter(a=>['question','report','quick-check'].includes(a.kind)&&!a.id.startsWith('authored:'))){
   const binding={activityId:activity.id,role:'primary',coverage:'partial',review:{verdict:'unreviewed',reviewedRevision:null,evidenceRef:null}};
   const item=studyResource(binding);assert.equal(item.available,true);assert.ok(item.feedback);
   for(const url of activity.locator.entryUrls){

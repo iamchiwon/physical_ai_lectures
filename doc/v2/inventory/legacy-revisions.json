@@ -1,0 +1,75 @@
+{
+  "schemaVersion": 1,
+  "files": [
+    {
+      "source": "ebook/book/01_physical_ai_isaac_ros2/chapter.md",
+      "baselineSha256": "a080ac9eddac666c3400d843913886913468677e9c2ab4bf60bcaa76b18a7d93",
+      "sha256": "3846a1d273f634b042af10e49fe6b4f3cbfd350c71f7408d474293d6b10d6aeb",
+      "reason": "신규 기초와 기존 응용 장 사이 선수/범위/장비 없는 진입 연결 / 결정론을 Software/Physical 구분으로 오해하는 문장 정정 / POMDP 누락기호 gamma와 관측독립/시간축 가정 명시 / 순차 처리 지연과 목표 샘플 주기 구분 / 주기 예산 수치의 가정 및 새 목표설계 단위 연결",
+      "evidenceRef": "doc/v2/work_items/E1.md"
+    },
+    {
+      "source": "ebook/book/02_physx_simulation/chapter.md",
+      "baselineSha256": "a21459dc9d4dd74be968ed41bcc237d55d1e56f5bf0d3d5b151da99e48011c40",
+      "sha256": "0b0f787367577c071f6ad24c46303f59ec8161aa5bec96e0432d213ea231133f",
+      "reason": "E1에서 기존 02장으로 선수·실습범위·오개념 연결 보강 / latest를 재현 가능한 고정버전 안내로 정정 / 수학브리지독립검수: Euler 고정축적용xyz와행렬곱RzRyRx 용어정정·실행수식/함수명보존 / 짐벌락정확특이점과근처조건악화구분",
+      "evidenceRef": "doc/v2/work_items/E1.md"
+    },
+    {
+      "source": "ebook/book/03_so101_kinematics_teleop/chapter.md",
+      "baselineSha256": "8083685d7b190de126d12ce6ec53469e742dd2143eb5fa7ec0fe8274410490aa",
+      "sha256": "1a06c1c7ec3e26312175e9ae7b352d50f8bf446cceb3cf87169a6c9ec7d99947",
+      "reason": "E1에서 기존 03장으로 선수·실습범위·오개념 연결 보강 / latest 설치조건과 E1 의존성 고정 원칙의 불일치 보완 / M03검토: 명목전압숫자일치와동작범위/극성/전류/논리핀/절대최대정격구분",
+      "evidenceRef": "doc/v2/work_items/E1.md"
+    },
+    {
+      "source": "ebook/book/04_sensor_data_pipeline/chapter.md",
+      "baselineSha256": "69a8cf6f0e2f6e584bda629d3a17fbbe37f75ec024eab2237847807a2a3796fa",
+      "sha256": "dfa3d2cbb5d6b8c22e7c2447869ac5189d76f025b35e8766fb6567af89e156f9",
+      "reason": "E1에서 기존 04장으로 선수·실습범위·오개념 연결 보강",
+      "evidenceRef": "doc/v2/work_items/E1.md"
+    },
+    {
+      "source": "ebook/book/05_lerobot_smolvla/chapter.md",
+      "baselineSha256": "637909ee6456fa438f421ae0290a3b536cd925567ba1246a1f2e58c0b113a9fa",
+      "sha256": "56e97aa7652767d9aeaf72c1cacc8f8125dfc60db010a6c61a5534875f5d2860",
+      "reason": "E1에서 기존 05장으로 선수·실습범위·오개념 연결 보강 / 설치 예시에 실제 커밋/태그 고정 전제와 미지정 중단 추가 / 독립검수: 설치 전체 subshell fail-fast로 미지정/오류 revision 뒤 실행 방지",
+      "evidenceRef": "doc/v2/work_items/E1.md"
+    },
+    {
+      "source": "ebook/book/06_sim2real_deployment/chapter.md",
+      "baselineSha256": "63e21fba7a365699ea09d4be5e25675e0f9ac0c8d856e41a00bd9d8d7157d971",
+      "sha256": "1c60009b872762c97c963b4805a3893b03979c31f493b5cfbcf30536999d33ca",
+      "reason": "E1에서 기존 06장으로 선수·실습범위·오개념 연결 보강",
+      "evidenceRef": "doc/v2/work_items/E1.md"
+    },
+    {
+      "source": "ebook/book/00_frontmatter/environment.md",
+      "baselineSha256": "0668193d160e404d2a76f15adc467940808fb494eaacdade3f574ec0ab11e857",
+      "sha256": "a87ab751d360720a24c9972dee4fb672235f424c4a151d9e2065245c76a22dd7",
+      "reason": "확장E1 기본경로와 기존GPU/실물장비요구조건 분리",
+      "evidenceRef": "doc/v2/work_items/E1.md"
+    },
+    {
+      "source": "ebook/book/00_frontmatter/safety.md",
+      "baselineSha256": "d8f3364e8046bcca7b1f62c840206b24e9160419d92eff595cd295dc79fadb52",
+      "sha256": "af8734aeb8eb312934a8ade0d7106586041655e58fcfab50dcabc05b834d027a",
+      "reason": "단순 전원차단=안전 오개념 보완 및 기존안전→E1 기초 연결",
+      "evidenceRef": "doc/v2/work_items/E1.md"
+    },
+    {
+      "source": "ebook/book/00_frontmatter/how_to_use.md",
+      "baselineSha256": "a3d1e94f176ffd9b1a9070929a0a1d5ed28034e02c8f60d56926d601bdbb841b",
+      "sha256": "32c9e7b48af8b7ef162a60da369d99527da5a468c5bd713294593660847b43de",
+      "reason": "여섯장 단일프로젝트에서 통합과정 기초→응용 학습경로로 안내 개정 / SIM표식=장비없는브라우저 실행으로 오인하는 설명 보완",
+      "evidenceRef": "doc/v2/work_items/E1.md"
+    },
+    {
+      "source": "ebook/book/02_physx_simulation/code/transforms.py",
+      "baselineSha256": "1e593f38b21fdf7638b7b4869b6569cb904acba1cbd78e1456882b1d52926853",
+      "sha256": "968e542e974fc0609d6b7bcb4ee022c9a8d9d4f10aa6c57d5fb537f0227fccab",
+      "reason": " / 수학브리지독립검수: Euler 고정축적용xyz와행렬곱RzRyRx 용어정정·실행수식/함수명보존",
+      "evidenceRef": "doc/v2/work_items/E1.md"
+    }
+  ]
+}

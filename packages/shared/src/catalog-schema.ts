@@ -22,6 +22,7 @@ const requirement = z.strictObject({
   objectiveIds: ids, activityIds: ids,
 });
 const locator = z.discriminatedUnion("type", [
+  z.strictObject({ type: z.literal("authored"), source: text, unitId: id, section: text, publicUrl: text, sha256: text }),
   z.strictObject({ type: z.literal("textbook"), legacyUnitId: id, source: text, legacyUrl: text,
     baselineCommit: text, baselineFileSha256: text }),
   z.strictObject({ type: z.literal("lesson"), lessonId: id, source: text, legacyUrl: text,
@@ -31,11 +32,11 @@ const locator = z.discriminatedUnion("type", [
     legacyUrl: text, baselineCommit: text, baselineFileSha256: text }),
 ]);
 export const catalogResourceSchema = z.strictObject({
-  id, kind: z.enum(["legacy-textbook", "legacy-lesson", "file", "image", "explanation"]),
+  id, kind: z.enum(["legacy-textbook", "legacy-lesson", "file", "image", "explanation", "authored-textbook"]),
   title: text, locator, publication: z.enum(["published", "draft"]), revision: text,
   integrity: z.strictObject({ status: z.enum(["matched", "unchecked", "mismatch", "missing"]), evidence: text }),
   preservation: z.strictObject({ disposition: text, reason: text }),
-}).refine((r) => ({ "legacy-textbook": "textbook", "legacy-lesson": "lesson", file: "file", image: "file", explanation: "inline" })[r.kind] === r.locator.type, "Resource kind/locator mismatch");
+}).refine((r) => ({ "legacy-textbook": "textbook", "legacy-lesson": "lesson", file: "file", image: "file", explanation: "inline", "authored-textbook": "authored" })[r.kind] === r.locator.type, "Resource kind/locator mismatch");
 export const catalogActivitySchema = z.strictObject({
   id, kind: z.enum(["question", "report", "quick-check", "lab", "browser-model", "glossary"]),
   title: text, resourceRefs: ids, rubricRef: id.nullable(), explanationRefs: ids,

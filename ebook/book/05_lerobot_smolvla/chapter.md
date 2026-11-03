@@ -29,6 +29,8 @@
 
 ## 선수 지식과 준비물
 
+기초 복귀: [M01.02 가상환경·로그](/study/unit-m01-02-a/), [M01.05 재현 환경](/study/unit-m01-05-a/), [M02.04 확률·공분산](/study/unit-m02-04-a/), [M02.05 최적화](/study/unit-m02-05-a/)가 필요하다. E1은 PyTorch·Transformer 전체를 가르치지 않으므로 아래 tensor/attention 용어가 낯설면 후속 M11의 ML 기초를 먼저 학습한다. E1 완료만으로 이 장의 모든 선수가 충족되는 것은 아니다. GPU 없는 학습자는 데이터 분할·정규화 계산·기록 해석을 수행하고 실제 모델 학습·성능 검증과 구분한다.
+
 ### 선수 지식
 
 - PyTorch의 tensor, module, optimizer, dataloader
@@ -47,16 +49,22 @@
 설치 명령은 프로젝트의 현재 문서를 우선한다. SmolVLA 추가 의존성은 공식 문서에서 다음과 같이 안내된다.
 
 ```bash
-git clone https://github.com/huggingface/lerobot.git
-cd lerobot
-python3 -m venv .venv
-source .venv/bin/activate
-pip install -e ".[smolvla,peft]"
-git rev-parse HEAD
-lerobot-train --help
+# 아래 블록 전체를 실행한다. 실패하면 별도 셸이 중단되어 뒤 설치를 실행하지 않는다.
+(
+  set -eu
+  : "${LEROBOT_REVISION:?공식 문서와 검증한 LeRobot 커밋 또는 태그를 지정하세요}"
+  git clone https://github.com/huggingface/lerobot.git
+  cd lerobot
+  git checkout --detach "$LEROBOT_REVISION"
+  python3 -m venv .venv
+  . .venv/bin/activate
+  python -m pip install -e ".[smolvla,peft]"
+  git rev-parse HEAD
+  lerobot-train --help
+)
 ```
 
-마지막 두 명령의 출력을 실험 기록에 저장한다. `latest` 또는 `main`만 기록하면 같은 실험 환경을 다시 만들 수 없다.
+이 블록은 별도 셸에서 실행하므로 끝나면 원래 디렉터리·환경으로 돌아온다. **성공한 경우에만** 이후 작업 셸에서 `cd lerobot`와 `. .venv/bin/activate`로 해당 환경에 들어간다. revision이 없거나 존재하지 않는 태그라면 그 오류부터 해결하고, venv나 패키지 설치가 완료되었다고 간주하지 않는다. 마지막 두 명령의 출력을 실험 기록에 저장한다. `latest` 또는 `main`만 기록하면 같은 실험 환경을 다시 만들 수 없다.
 
 ## 5.1 모방학습과 행동 복제
 

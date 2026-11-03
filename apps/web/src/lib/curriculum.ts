@@ -27,13 +27,13 @@ export function prerequisiteLinks(unit: CatalogUnit) {
   return { allOf: unit.prerequisites.allOf.map(unitLink), anyOf: unit.prerequisites.anyOf.map(unitLink) };
 }
 export function resourceHref(resource: Catalog["resources"][number]) {
-  return resource.locator.type === "file" ? resource.locator.publicUrl : resource.locator.legacyUrl;
+  return resource.locator.type === "file" || resource.locator.type === "authored" ? resource.locator.publicUrl : resource.locator.legacyUrl;
 }
 export function primaryReading(unit: CatalogUnit) {
   for (const binding of unit.slots.explanation) {
     if (!("resourceId" in binding) || binding.role !== "primary" || binding.coverage === "none" || !bindingAvailability(binding, curriculumIndex).available) continue;
     const resource = curriculumIndex.resources.get(binding.resourceId)!;
-    if (resource.locator.type === "textbook" || resource.locator.type === "lesson") return { href: resourceHref(resource), title: resource.title, kind: resource.kind };
+    if (resource.locator.type === "textbook" || resource.locator.type === "lesson" || resource.locator.type === "authored") return { href: resourceHref(resource), title: resource.title, kind: resource.kind };
   }
   return null;
 }

@@ -52,15 +52,13 @@ sources+=(
   book/appendices/glossary.md
 )
 
-epub_sources=("${sources[@]}")
-html_sources=("${sources[@]}")
 
 fail() {
   printf '오류: %s\n' "$1" >&2
   exit 1
 }
 
-for required_tool in pandoc pdfunite find sort sed mktemp head mkdir mv rm; do
+for required_tool in node pandoc pdfunite find sort sed mktemp head mkdir mv rm; do
   command -v "$required_tool" >/dev/null 2>&1 \
     || fail "필수 도구를 찾을 수 없습니다: $required_tool"
 done
@@ -108,7 +106,7 @@ done
 resource_path=""
 while IFS= read -r resource_dir; do
   resource_path+="${resource_path:+:}$resource_dir"
-done < <(find book -type d -print | LC_ALL=C sort)
+done < <(find book curriculum -type d -print | LC_ALL=C sort)
 
 printf 'Pandoc: %s\n' "$(pandoc --version | sed -n '1p')"
 printf 'Browser: %s (%s)\n' "$chrome_bin" "$("$chrome_bin" --version 2>/dev/null | sed -n '1p')"
@@ -118,14 +116,27 @@ staging_dir="$(mktemp -d "$project_root/tmp/book.XXXXXX")"
 cleanup() {
   rm -rf -- "$staging_dir"
 }
-trap cleanup EXIT INT TERM
+trap cleanup EXIT
+trap 'exit 130' INT
+trap 'exit 143' TERM
 
 mkdir -p "$staging_dir/epub" "$staging_dir/html" "$staging_dir/pdf"
+
+# The authored foundation chapters use the same reviewed sources as the web reader.
+# Insert them before the original six application chapters; keep the original inputs intact.
+foundation_source="$staging_dir/e1_foundations.md"
+book_web_base_url="${BOOK_WEB_BASE_URL:-https://physical-ai-learning-web.pages.dev}"
+node "$project_root/../scripts/export-e1-book.mjs" "$foundation_source"
+sources=("${sources[@]:0:4}" "$foundation_source" "${sources[@]:4}")
+epub_sources=("${sources[@]}")
+html_sources=("${sources[@]}")
 
 pandoc "${epub_sources[@]}" \
   --from="$input_format" \
   --metadata-file="$metadata" \
   --lua-filter="$chapter_filter" \
+  --metadata="book-link-map:$foundation_source.links.json" \
+  --metadata="book-web-base-url:$book_web_base_url" \
   --resource-path="$resource_path" \
   --toc \
   --css="$stylesheet" \
@@ -136,6 +147,8 @@ pandoc "${html_sources[@]}" \
   --from="$input_format" \
   --metadata-file="$metadata" \
   --lua-filter="$chapter_filter" \
+  --metadata="book-link-map:$foundation_source.links.json" \
+  --metadata="book-web-base-url:$book_web_base_url" \
   --resource-path="$resource_path" \
   --toc --standalone --embed-resources \
   --css="$stylesheet" \

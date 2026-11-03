@@ -66,11 +66,11 @@ export function Dashboard({ lessons }: DashboardProps) {
           <ol className="mt-4 space-y-3 text-sm leading-6 text-slate-700">
             <li className="flex gap-3"><span className="font-bold text-blue-600">01</span><span>관심 있는 분야의 경로를 고릅니다.</span></li>
             <li className="flex gap-3"><span className="font-bold text-blue-600">02</span><span>기초 지식과 권장 선수를 확인합니다. 코딩·수학·제어를 모두 안다고 가정하지 않습니다.</span></li>
-            <li className="flex gap-3"><span className="font-bold text-blue-600">03</span><span>기존 본문을 읽고 요약·실습·문제로 이해를 확인합니다.</span></li>
+            <li className="flex gap-3"><span className="font-bold text-blue-600">03</span><span>단위 본문을 읽고 실습·문제로 이해를 확인합니다.</span></li>
           </ol>
           <p className="mt-4 text-xs leading-5 text-slate-600">학습 진단·기초 브리지는 M00~M04에 계획되어 있습니다. 미작성 부분은 아래 목차에 TBD로 표시합니다.</p>
         </section>
-        <HomeProgress lessons={lessons} units={catalog.units.map((unit) => ({ id: unit.id, title: unit.title, revision: unit.revision, state: stateLabels[unitReadiness(unit, curriculumIndex).state], trackIds: catalog.tracks.filter((track) => track.steps.some((step) => step.unitId === unit.id)).map((track) => track.id) }))} />
+        <HomeProgress lessons={lessons} units={catalog.units.map((unit) => ({ id: unit.id, title: unit.title, revision: unit.revision, state: stateLabels[unitReadiness(unit, curriculumIndex).state], readiness: unitReadiness(unit, curriculumIndex).state, trackIds: catalog.tracks.filter((track) => track.steps.some((step) => step.unitId === unit.id)).map((track) => track.id) }))} />
       </div>
 
       <section id="tracks" aria-labelledby="tracks-title" className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
@@ -89,7 +89,7 @@ export function Dashboard({ lessons }: DashboardProps) {
               <summary className="flex cursor-pointer list-none items-center justify-between gap-2 text-sm font-semibold text-blue-700"><span>{track.title} 경로 개요</span><ChevronDown aria-hidden="true" className="size-4 shrink-0" /></summary>
               <p className="mt-4 text-xs leading-6 text-slate-500">필수 경로에서 만나는 모듈 순서입니다. 같은 모듈의 일부 기초를 먼저 보충할 수 있습니다.</p>
               <ol className="mt-3 space-y-2 text-xs leading-6 text-slate-600">{track.sequence.map((module) => <li key={module.id}><span className="mr-2 font-mono text-blue-700">{module.id}</span>{module.title}</li>)}</ol>
-              <a className="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-blue-700" href="#available">연결된 기존 자료 보기 <ArrowRight aria-hidden="true" className="size-4" /></a>
+              <a className="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-blue-700" href="#available">공개된 학습 자료 보기 <ArrowRight aria-hidden="true" className="size-4" /></a>
             </details>
           </article>)}
         </div>
@@ -98,13 +98,13 @@ export function Dashboard({ lessons }: DashboardProps) {
 
       <section id="available" aria-labelledby="available-title" className="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8">
         <div className="flex flex-wrap items-end justify-between gap-4">
-          <div><p className="text-xs font-bold tracking-widest text-blue-700">기존 자료부터 읽기</p><h2 id="available-title" className="mt-2 text-3xl font-bold tracking-tight">지금 펼쳐볼 수 있는 내용</h2></div>
+          <div><p className="text-xs font-bold tracking-widest text-blue-700">준비 상태를 확인하며 읽기</p><h2 id="available-title" className="mt-2 text-3xl font-bold tracking-tight">지금 펼쳐볼 수 있는 내용</h2></div>
           <Link href="/textbook/" className="inline-flex items-center gap-2 text-sm font-semibold text-blue-700">기존 6장 교재 전체 <ArrowRight className="size-4" aria-hidden="true" /></Link>
         </div>
-        <p className="mt-4 max-w-3xl text-sm leading-7 text-slate-600">아래는 일부 준비 소주제와 관련된 기존 교재의 상세 본문입니다. 원문은 읽을 수 있지만, 신규 소주제의 설명·실습·평가 전체가 완성된 상태는 아닙니다.</p>
+        <p className="mt-4 max-w-3xl text-sm leading-7 text-slate-600">준비된 단위는 본문·기본 실습·문제·해설을 함께 제공합니다. 일부 준비 단위는 관련 기존 원문과 보완할 범위를 확인하세요.</p>
         <div className="mt-6 grid gap-3 md:grid-cols-2">{readings.map((item) => <article key={item.topicId} className="flex min-w-0 items-start gap-4 rounded-2xl border border-slate-200 bg-white p-5">
           <span className="mt-1 rounded-xl bg-blue-50 p-2.5 text-blue-700"><BookOpen className="size-5" aria-hidden="true" /></span>
-          <div className="min-w-0"><p className="text-xs font-semibold text-blue-700">{item.topicId} · 일부 준비</p><h3 className="mt-2 font-bold leading-7"><Link href={`/study/${item.unitId}/`}>{item.title} →</Link></h3><Link href={item.reading.href} className="mt-2 block text-sm leading-6 text-slate-600 underline decoration-slate-300 underline-offset-4 hover:text-blue-700">관련 본문: {item.reading.title}</Link></div>
+          <div className="min-w-0"><p className="text-xs font-semibold text-blue-700">{item.topicId} · {stateLabels[item.state]}</p><h3 className="mt-2 font-bold leading-7"><Link href={`/study/${item.unitId}/`}>{item.title} →</Link></h3><Link href={item.reading.href} className="mt-2 block text-sm leading-6 text-slate-600 underline decoration-slate-300 underline-offset-4 hover:text-blue-700">관련 본문: {item.reading.title}</Link></div>
         </article>)}</div>
         <p className="mt-4 flex items-start gap-2 text-xs leading-6 text-slate-500"><Check className="mt-1 size-4 shrink-0" aria-hidden="true" />본문의 로컬 코드·GPU·실물 실습과 브라우저 계산 모형은 실행 환경과 검증 범위가 다릅니다.</p>
       </section>

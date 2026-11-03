@@ -9,6 +9,8 @@ import { Button } from "@/components/ui/button";
 
 export function HomeProgress({ lessons, units = [] }: { lessons: { id: string; title: string }[]; units?: ResumeUnit[] }) {
   const learning = useLearningState();
+  const readyUnits = units.filter(unit => unit.readiness === "ready");
+  const completedUnits = readyUnits.filter(unit => { const record = learning.data.unitProgress[unit.id]; return record?.completedAt && record.contentRevision === unit.revision; }).length;
   const hasLocation = learning.hydrated && Boolean(learning.data.lastLocation);
   const { hydrated, completedLessons, quizScores, lastLessonId, storageNotice } = useProgress();
   const { completed, lastLesson, unknownLastLesson } = legacyProgressSummary({ completedLessons, quizScores, lastLessonId }, lessons);
@@ -17,6 +19,8 @@ export function HomeProgress({ lessons, units = [] }: { lessons: { id: string; t
       <p className="text-xs font-bold tracking-widest text-blue-700">나의 학습</p>
       <h2 id="continue-title" className="mt-2 text-xl font-bold">{hasLocation ? "읽던 통합 단위에서 계속하세요" : hydrated && lastLesson ? "읽던 요약에서 계속하세요" : "내 속도로 시작하세요"}</h2>
       <LearningResume units={units} />
+      <p className="mt-4 text-sm leading-7 text-slate-700">통합 단위 학습 완료 <strong>{learning.hydrated ? readyUnits.length ? `${completedUnits} / ${readyUnits.length}` : "준비된 단위 없음" : "기록 확인 중"}</strong></p>
+      <p className="mt-1 text-xs leading-6 text-slate-500">현재 준비된 단위 중 이 버전의 학습 완료를 직접 기록한 수입니다. 자기검토·완료는 숙달 인증과 별개이며 기존 요약 진도와 합산하지 않습니다.</p>
       <div aria-live="polite" className="mt-3">
         {!hydrated ? <p className="text-sm text-slate-600">이 브라우저의 학습 기록을 확인하고 있습니다.</p> : <>
           {storageNotice ? <p role="status" className="mb-3 rounded-lg bg-amber-50 p-3 text-sm leading-6 text-amber-900">{storageNotice}</p> : null}

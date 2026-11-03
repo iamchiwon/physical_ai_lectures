@@ -29,6 +29,7 @@ export function buildHomeCatalog(source: Catalog) {
       for (const binding of unit.slots.explanation) {
         if (!("resourceId" in binding) || binding.role !== "primary" || binding.coverage === "none" || !bindingAvailability(binding, index).available) continue;
         const resource = index.resources.get(binding.resourceId);
+        if (resource?.locator.type === "authored") return { href: resource.locator.publicUrl, title: resource.title };
         if (resource?.locator.type === "textbook") {
           const reading = { href: resource.locator.legacyUrl, title: resource.title };
           if (!preferredLegacyUnitId || resource.locator.legacyUnitId === preferredLegacyUnitId) return reading;
@@ -65,7 +66,7 @@ export function buildHomeCatalog(source: Catalog) {
     readings: startingTopics.flatMap((id) => {
       const topic = topics.get(id);
       const reading = topic ? readingFor(topic.unitIds, preferredReadings[id]) : null;
-      return topic && reading ? [{ unitId: topic.unitIds[0]!, topicId: topic.id, title: topic.title, reading }] : [];
+      return topic && reading ? [{ unitId: topic.unitIds[0]!, topicId: topic.id, title: topic.title, state: readiness.topics[topic.id]!.state, reading }] : [];
     }),
   };
 }

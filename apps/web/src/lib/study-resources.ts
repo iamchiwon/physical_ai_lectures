@@ -11,7 +11,7 @@ export function studyResource(binding: CatalogBinding) {
   const common = { role: binding.role, coverage: binding.coverage, available: availability.available, reason: availability.reason };
   if ("resourceId" in binding) {
     const resource = curriculumIndex.resources.get(binding.resourceId);
-    const kind = resource?.kind === "legacy-textbook" ? "기존 상세 본문" : resource?.kind === "legacy-lesson" ? "기존 요약 레슨" : resource?.kind === "image" ? "그림 자료" : resource?.kind === "explanation" ? "기존 점검 해설" : "코드·원본 파일";
+    const kind = resource?.kind === "authored-textbook" ? "검수된 단위 본문·해설" : resource?.kind === "legacy-textbook" ? "기존 상세 본문" : resource?.kind === "legacy-lesson" ? "기존 요약 레슨" : resource?.kind === "image" ? "그림 자료" : resource?.kind === "explanation" ? "기존 점검 해설" : "코드·원본 파일";
     return { ...common, id: binding.resourceId, title: resource?.title ?? "참조 자산 없음", kind,
       links: resource && availability.available ? [{ href: resourceHref(resource), title: resource.kind === "legacy-textbook" ? "관련 상세 절 읽기" : resource.kind === "legacy-lesson" ? "핵심 요약과 자가 점검 열기" : resource.kind === "image" ? "원본 그림 열기" : resource.kind === "explanation" ? "자가 점검과 해설 열기" : "코드·원본 파일 열기" }] : [],
       feedback: null,
