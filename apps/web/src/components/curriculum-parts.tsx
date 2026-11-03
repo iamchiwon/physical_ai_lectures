@@ -3,10 +3,12 @@ import { stateLabels, prerequisiteLinks } from "@/lib/curriculum";
 import type { CatalogUnit, Readiness } from "@physical-ai/shared/catalog";
 
 export function ReadinessBadge({ state }: { state: Readiness | "not_applicable" }) {
-  return <span className={`inline-flex rounded-full px-2.5 py-1 text-xs font-semibold ${state === "ready" ? "bg-emerald-50 text-emerald-800" : state === "partial" ? "bg-blue-50 text-blue-800" : "bg-slate-100 text-slate-600"}`}>{stateLabels[state]}</span>;
+  if (state === "ready") return null;
+  return <span className={`inline-flex rounded-full px-2.5 py-1 text-xs font-semibold ${state === "not_applicable" ? "bg-slate-100 text-slate-600" : "bg-blue-50 text-blue-800"}`}>{stateLabels[state]}</span>;
 }
 export function ReadinessCounts({ counts }: { counts: { ready: number; partial: number; tbd: number } }) {
-  return <span className="flex flex-wrap gap-x-4 gap-y-1 text-xs leading-6 text-slate-600"><span>준비됨 {counts.ready}</span><span className="text-blue-800">일부 준비 {counts.partial}</span><span>TBD {counts.tbd}</span></span>;
+  const pending = counts.partial + counts.tbd;
+  return pending > 0 ? <span className="text-xs leading-6 text-slate-600">준비중 {pending}</span> : null;
 }
 export function Prerequisites({ unit }: { unit: CatalogUnit }) {
   const { allOf, anyOf } = prerequisiteLinks(unit);

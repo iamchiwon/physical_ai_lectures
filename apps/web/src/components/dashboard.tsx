@@ -11,10 +11,8 @@ interface DashboardProps {
 }
 
 function StatusCounts({ counts }: { counts: { ready: number; partial: number; tbd: number } }) {
-  return <span className="flex flex-wrap gap-x-3 gap-y-1 text-xs leading-5">
-    {counts.ready > 0 ? <span className="text-emerald-800">준비됨 {counts.ready}</span> : null}
-    <span className="text-blue-800">일부 준비 {counts.partial}</span><span className="text-slate-600">TBD {counts.tbd}</span>
-  </span>;
+  const pending = counts.partial + counts.tbd;
+  return pending > 0 ? <span className="text-xs leading-5 text-slate-600">준비중 {pending}</span> : null;
 }
 
 export function Dashboard({ lessons }: DashboardProps) {
@@ -41,13 +39,12 @@ export function Dashboard({ lessons }: DashboardProps) {
               </dl>
             </div>
             <div className="px-6 py-6 sm:px-8">
-              <h2 id="availability-title" className="text-sm font-bold">현재 자료 준비 현황</h2>
+              <h2 id="availability-title" className="text-sm font-bold">교재 현황</h2>
               <dl className="mt-4 space-y-3 text-sm">
-                <div className="flex justify-between"><dt className="text-slate-300">준비됨</dt><dd className="font-bold tabular-nums">{totals.ready}</dd></div>
-                <div className="flex justify-between"><dt className="text-sky-200">일부 준비 · 기존 자료 연결</dt><dd className="font-bold tabular-nums text-sky-200">{totals.partial}</dd></div>
-                <div className="flex justify-between"><dt className="text-slate-300">준비 예정 · TBD</dt><dd className="font-bold tabular-nums">{totals.tbd}</dd></div>
+                <div className="flex justify-between"><dt className="text-slate-300">상세 교재</dt><dd className="font-bold tabular-nums">{totals.ready}</dd></div>
+                <div className="flex justify-between"><dt className="text-sky-200">준비중</dt><dd className="font-bold tabular-nums text-sky-200">{totals.partial + totals.tbd}</dd></div>
               </dl>
-              <p className="mt-5 border-t border-white/10 pt-4 text-xs leading-6 text-slate-300">{totals.ready === 0 ? "전체 목표와 활동을 충족한 준비 완료 단위는 아직 없습니다. 일부 준비 자료부터 읽을 수 있습니다." : "단위별 준비 상태를 확인하고 학습을 시작하세요."} 전체 과정의 예상 시간은 미정입니다.</p>
+              <p className="mt-5 border-t border-white/10 pt-4 text-xs leading-6 text-slate-300">{totals.ready === 0 ? "상세 교재는 준비중입니다. 연결된 기존 자료부터 읽을 수 있습니다." : "교재를 읽고 실습과 문제로 학습을 시작하세요."} 전체 과정의 예상 시간은 미정입니다.</p>
             </div>
           </aside>
         </div>
@@ -68,7 +65,7 @@ export function Dashboard({ lessons }: DashboardProps) {
             <li className="flex gap-3"><span className="font-bold text-blue-600">02</span><span>기초 지식과 권장 선수를 확인합니다. 코딩·수학·제어를 모두 안다고 가정하지 않습니다.</span></li>
             <li className="flex gap-3"><span className="font-bold text-blue-600">03</span><span>단위 본문을 읽고 실습·문제로 이해를 확인합니다.</span></li>
           </ol>
-          <p className="mt-4 text-xs leading-5 text-slate-600">학습 진단·기초 브리지는 M00~M04에 계획되어 있습니다. 미작성 부분은 아래 목차에 TBD로 표시합니다.</p>
+          <p className="mt-4 text-xs leading-5 text-slate-600">학습 진단·기초 브리지는 M00~M04에 계획되어 있습니다. 미작성 부분은 아래 목차에 준비중으로 표시합니다.</p>
         </section>
         <HomeProgress lessons={lessons} units={catalog.units.map((unit) => ({ id: unit.id, title: unit.title, revision: unit.revision, state: stateLabels[unitReadiness(unit, curriculumIndex).state], readiness: unitReadiness(unit, curriculumIndex).state, trackIds: catalog.tracks.filter((track) => track.steps.some((step) => step.unitId === unit.id)).map((track) => track.id) }))} />
       </div>
@@ -98,13 +95,13 @@ export function Dashboard({ lessons }: DashboardProps) {
 
       <section id="available" aria-labelledby="available-title" className="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8">
         <div className="flex flex-wrap items-end justify-between gap-4">
-          <div><p className="text-xs font-bold tracking-widest text-blue-700">준비 상태를 확인하며 읽기</p><h2 id="available-title" className="mt-2 text-3xl font-bold tracking-tight">지금 펼쳐볼 수 있는 내용</h2></div>
+          <div><p className="text-xs font-bold tracking-widest text-blue-700">교재와 함께 학습하기</p><h2 id="available-title" className="mt-2 text-3xl font-bold tracking-tight">지금 펼쳐볼 수 있는 내용</h2></div>
           <Link href="/textbook/" className="inline-flex items-center gap-2 text-sm font-semibold text-blue-700">기존 6장 교재 전체 <ArrowRight className="size-4" aria-hidden="true" /></Link>
         </div>
-        <p className="mt-4 max-w-3xl text-sm leading-7 text-slate-600">준비된 단위는 본문·기본 실습·문제·해설을 함께 제공합니다. 일부 준비 단위는 관련 기존 원문과 보완할 범위를 확인하세요.</p>
+        <p className="mt-4 max-w-3xl text-sm leading-7 text-slate-600">상세 교재는 본문·기본 실습·문제·해설을 함께 제공합니다. 준비중인 단위도 관련 기존 원문을 읽을 수 있습니다.</p>
         <div className="mt-6 grid gap-3 md:grid-cols-2">{readings.map((item) => <article key={item.topicId} className="flex min-w-0 items-start gap-4 rounded-2xl border border-slate-200 bg-white p-5">
           <span className="mt-1 rounded-xl bg-blue-50 p-2.5 text-blue-700"><BookOpen className="size-5" aria-hidden="true" /></span>
-          <div className="min-w-0"><p className="text-xs font-semibold text-blue-700">{item.topicId} · {stateLabels[item.state]}</p><h3 className="mt-2 font-bold leading-7"><Link href={`/study/${item.unitId}/`}>{item.title} →</Link></h3><Link href={item.reading.href} className="mt-2 block text-sm leading-6 text-slate-600 underline decoration-slate-300 underline-offset-4 hover:text-blue-700">관련 본문: {item.reading.title}</Link></div>
+          <div className="min-w-0"><p className="text-xs font-semibold text-blue-700">{item.topicId}{stateLabels[item.state] ? ` · ${stateLabels[item.state]}` : ""}</p><h3 className="mt-2 font-bold leading-7"><Link href={`/study/${item.unitId}/`}>{item.title} →</Link></h3><Link href={item.reading.href} className="mt-2 block text-sm leading-6 text-slate-600 underline decoration-slate-300 underline-offset-4 hover:text-blue-700">관련 본문: {item.reading.title}</Link></div>
         </article>)}</div>
         <p className="mt-4 flex items-start gap-2 text-xs leading-6 text-slate-500"><Check className="mt-1 size-4 shrink-0" aria-hidden="true" />본문의 로컬 코드·GPU·실물 실습과 브라우저 계산 모형은 실행 환경과 검증 범위가 다릅니다.</p>
       </section>
@@ -112,12 +109,12 @@ export function Dashboard({ lessons }: DashboardProps) {
       <section id="curriculum" aria-labelledby="curriculum-title" className="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8">
         <Layers3 className="size-6 text-blue-600" aria-hidden="true" />
         <h2 id="curriculum-title" className="mt-3 text-3xl font-bold tracking-tight">전체 목차 한눈에 보기</h2>
-        <p className="mt-4 max-w-3xl text-sm leading-7 text-slate-600">7개 영역, {totals.modules}개 모듈, {totals.topics}개 소주제의 전체 계획입니다. 영역을 펼쳐 모듈과 준비 현황을 확인하세요. TBD는 자료 준비 예정이며, 일부 준비 모듈에서는 관련 기존 본문을 열 수 있습니다.</p>
+        <p className="mt-4 max-w-3xl text-sm leading-7 text-slate-600">7개 영역, {totals.modules}개 모듈, {totals.topics}개 소주제의 전체 계획입니다. 영역을 펼쳐 모듈과 준비 현황을 확인하세요. 미완료 항목은 준비중으로 표시하며, 연결된 기존 본문은 열 수 있습니다.</p>
         <div className="mt-6 space-y-3">{areas.map((area, i) => <details key={area.id} className="rounded-2xl border border-slate-200 bg-white" open={i === 0}>
           <summary className="flex cursor-pointer list-none items-center justify-between gap-4 p-5 sm:px-6"><span className="flex items-center gap-4"><span className="font-mono text-sm text-blue-700">0{i + 1}</span><span className="font-bold">{area.title} <span className="ml-1 text-xs font-normal text-slate-500">{area.modules.length}모듈</span></span></span><ChevronDown className="size-4 shrink-0 text-slate-500" aria-hidden="true" /></summary>
           <ul className="divide-y divide-slate-100 border-t border-slate-100 px-5 sm:px-6">{area.modules.map((module) => <li key={module.id} className="flex flex-col justify-between gap-3 py-5 sm:flex-row sm:items-center">
             <div className="min-w-0"><h3 className="text-sm font-semibold leading-7"><span className="mr-3 font-mono text-blue-700">{module.id}</span>{module.title}</h3><div className="mt-1 flex flex-wrap items-center gap-x-4 gap-y-1"><span className="text-xs text-slate-500">{module.topics}소주제</span><StatusCounts counts={module.counts} /></div></div>
-            {module.reading ? <Link href={module.reading.href} aria-label={`${module.id} ${module.title} 관련 본문 읽기`} className="shrink-0 text-sm font-semibold text-blue-700">관련 본문 읽기 <span aria-hidden="true">↗</span></Link> : <span className="text-xs text-slate-500">본문 준비 예정</span>}
+            {module.reading ? <Link href={module.reading.href} aria-label={`${module.id} ${module.title} 관련 본문 읽기`} className="shrink-0 text-sm font-semibold text-blue-700">관련 본문 읽기 <span aria-hidden="true">↗</span></Link> : <span className="text-xs text-slate-500">준비중</span>}
           </li>)}</ul>
         </details>)}</div>
         <Link href="/curriculum/" className="mt-5 inline-block font-semibold text-blue-700">204소주제 전체 목차 열기 →</Link>

@@ -8,7 +8,7 @@ export const curriculumReadiness = catalogReadiness(catalog);
 export const moduleIndex = new Map(catalog.modules.map((item) => [item.id, item]));
 export const topicIndex = new Map(catalog.topics.map((item) => [item.id, item]));
 export const trackIndex = new Map(catalog.tracks.map((item) => [item.id, item]));
-export const stateLabels: Record<Readiness | "not_applicable", string> = { ready: "준비됨", partial: "일부 준비", tbd: "TBD · 준비 예정", not_applicable: "별도 실습 해당 없음" };
+export const stateLabels: Record<Readiness | "not_applicable", string> = { ready: "", partial: "준비중", tbd: "준비중", not_applicable: "별도 실습 해당 없음" };
 export function topicAnchor(topicId: string) { return `topic-${topicId.replace('.', '-')}`; }
 export function unitOverviewHref(id: string) {
   const unit = curriculumIndex.units.get(id)!;

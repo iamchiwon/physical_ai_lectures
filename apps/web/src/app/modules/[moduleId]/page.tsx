@@ -26,7 +26,7 @@ export default async function ModulePage({ params }: { params: Promise<{ moduleI
           <Link href={`/study/${unit.id}/`} className="mt-4 inline-block rounded-xl bg-blue-600 px-4 py-2 text-sm font-semibold text-white">학습 단위 열기 →</Link>
           <Prerequisites unit={unit} />
           <p className="mt-4 text-sm leading-7 text-slate-600">보완 예정: {unit.gaps.explanation}</p>
-          {reading ? <Link className="mt-4 inline-block text-sm font-semibold leading-7 text-blue-700 underline underline-offset-4" href={reading.href}>{reading.kind === "legacy-lesson" ? "관련 기존 요약" : "관련 기존 본문"}: {reading.title}</Link> : <p className="mt-4 text-sm text-slate-500">핵심 설명은 TBD입니다. 목표와 선수 안내부터 확인할 수 있습니다.</p>}
+          {reading ? <Link className="mt-4 inline-block text-sm font-semibold leading-7 text-blue-700 underline underline-offset-4" href={reading.href}>{reading.kind === "legacy-lesson" ? "관련 기존 요약" : "관련 기존 본문"}: {reading.title}</Link> : <p className="mt-4 text-sm text-slate-500">핵심 설명은 준비중입니다. 목표와 선수 안내부터 확인할 수 있습니다.</p>}
         </section>;
       })}</div>
       <Link href={`/curriculum/#${area.id}`} className="mt-8 inline-block font-semibold text-blue-700">← 전체 목차의 {area.title} 영역</Link>

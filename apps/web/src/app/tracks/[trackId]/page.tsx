@@ -10,7 +10,7 @@ export async function generateMetadata({ params }: { params: Promise<{ trackId: 
 }
 export default async function TrackPage({ params }: { params: Promise<{ trackId: string }> }) {
   const { trackId } = await params; const track = trackIndex.get(trackId); if (!track) notFound();
-  return <CourseShell title={track.title} description="권장 선수 순서에 따라 기초에서 전문 분야로 이동하는 추천 경로입니다. TBD도 건너뛰지 않고 전체 계획에 표시합니다.">
+  return <CourseShell title={track.title} description="권장 선수 순서에 따라 기초에서 전문 분야로 이동하는 추천 경로입니다. 준비중인 항목도 전체 계획에 표시합니다.">
     <main className="curriculum-content mx-auto max-w-5xl px-4 py-8 sm:px-6">
       <Breadcrumbs items={[{ title: "학습 홈", href: "/" }, { title: "추천 경로", href: "/curriculum/#tracks" }, { title: track.title }]} />
       <section className="mb-6 rounded-2xl border border-blue-100 bg-blue-50 p-5"><ReadinessCounts counts={curriculumReadiness.tracks[trackId]!.counts} /><p className="mt-3 text-sm leading-7 text-slate-600">필수 {track.steps.filter((step) => step.required).length}단위 · 선택 {track.steps.filter((step) => !step.required).length}단위. 집계는 중복을 제거한 필수 단위 기준입니다. 이미 아는 선수는 직접 넘어갈 수 있으며 방문을 완료·숙달로 기록하지 않습니다.</p><p className="mt-2 text-sm leading-7 text-slate-600">{track.description}</p><a href="#optional" className="mt-3 inline-block text-sm font-semibold text-blue-700">선택 심화 확인 ↓</a></section>
