@@ -8,7 +8,7 @@ async function load(entry) {
   catch (error) { throw new Error(JSON.stringify(error.issues ?? error.message)); }
 }
 const { homeCatalog, buildHomeCatalog } = await load('apps/web/src/lib/home-catalog.ts');
-const { catalog, catalogReadiness } = await load('packages/shared/src/catalog.ts');
+const { catalog, legacyCatalog, catalogReadiness } = await load('packages/shared/src/catalog.ts');
 const { parseLegacyProgress, legacyProgressSummary } = await load('apps/web/src/lib/home-progress.ts');
 
 test('home uses current catalog totals and never fabricates duration or a completion percentage', () => {
@@ -31,7 +31,8 @@ test('six distinct track overviews preserve required/optional counts and module 
 test('reading entry points are explicit primary textbook resources and exclude unavailable bindings', () => {
   assert.equal(homeCatalog.readings.length,6);
   assert.match(homeCatalog.readings.find((r) => r.topicId === 'M20.03').reading.title,/LeRobotDataset/);
-  assert.match(homeCatalog.readings.find((r) => r.topicId === 'M10.03').reading.title,/접촉 역학/);
+  assert.equal(homeCatalog.readings.find((r) => r.topicId === 'M10.03').reading.href,'/study/unit-m10-03-a/#authored-body');
+  assert.match(buildHomeCatalog(legacyCatalog).readings.find((r) => r.topicId === 'M10.03').reading.title,/접촉 역학/);
   for (const reading of homeCatalog.readings) assert.match(reading.reading.href,/^\/(?:textbook\/[^/]+\/|study\/[^/]+\/#authored-body)$/);
   const source = structuredClone(catalog);
   for (const r of source.resources) r.integrity.status = 'mismatch';

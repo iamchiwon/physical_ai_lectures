@@ -1,5 +1,7 @@
 import { ControlConceptLab } from "@/components/control-concept-lab";
 import { WheelConceptLab } from "@/components/wheel-concept-lab";
+import { ThresholdConceptLab } from "@/components/threshold-concept-lab";
+import { ProjectionConceptLab } from "@/components/projection-concept-lab";
 import { AuthoredMarkdown } from "@/components/authored-markdown";
 import { AuthoredResponse, AuthoredCompletion } from "@/components/authored-response";
 import { authoredForTopic } from "@/lib/authored";
@@ -28,6 +30,8 @@ export default async function StudyPage({ params }: { params: Promise<{ unitId: 
   const { unitId } = await params; const unit = curriculumIndex.units.get(unitId); if (!unit) notFound();
   const topic = topicIndex.get(unit.topicId)!; const courseModule = moduleIndex.get(topic.moduleId)!;
   const authored = authoredForTopic(unit.topicId);
+  const thresholdLab = Boolean(authored) && unit.topicId === "M11.05";
+  const projectionLab = Boolean(authored) && ["M12.02", "M14.03", "M14.06"].includes(unit.topicId);
   const activityIds = [`authored:${unit.topicId}:practice`, ...[1, 2, 3].map(n => `authored:${unit.topicId}:q${n}`)];
   const readiness = unitReadiness(unit, curriculumIndex); const { base, contexts } = studyNavigationFor(unitId);
   return <CourseShell title={`${unit.topicId} · ${unit.title}`} description="단위별 목표·권장 선수와 자료 준비 상태를 확인하고, 공개된 본문과 활동을 읽고 준비 상태를 확인할 수 있습니다.">
@@ -40,7 +44,7 @@ export default async function StudyPage({ params }: { params: Promise<{ unitId: 
         <a href="#study-navigation-title" className="mt-4 inline-block text-sm font-semibold text-blue-700">현재 경로·이전·다음 단위 확인 ↓</a>
       </section>
       <section aria-labelledby="unit-goals-title" className="mt-6 rounded-2xl border bg-white p-6"><h2 id="unit-goals-title" className="text-xl font-bold">학습 목표 {unit.definitionStatus === "pending" ? "초안" : ""}</h2><ul className="mt-4 space-y-2 text-sm leading-7 text-slate-700">{unit.objectives.map((goal) => <li key={goal.id}>{goal.description}</li>)}</ul><p className="mt-3 text-xs leading-6 text-slate-500">{unit.requirements.definitionStatus === "pending" ? "목표별 필수 활동과 평가 기준은 단위 집필 전에 확정합니다." : "아래 설명·실습·문제로 각 학습 목표를 확인하세요."}</p><Prerequisites unit={unit} /></section>
-      <nav aria-label="설명 실습 평가 바로가기" className="my-6 flex flex-wrap gap-2">{catalogSlotNames.map((slot) => <a key={slot} className="rounded-lg border bg-white px-4 py-2 text-sm text-blue-700" href={`#${slot}`}>{slotLabels[slot]}</a>)}{authored && unit.topicId === "M06.05" ? <a className="rounded-lg border bg-white px-4 py-2 text-sm text-blue-700" href="#wheel-concept-lab">선택: 바퀴 모형</a> : null}{authored && ["M07.03", "M07.06"].includes(unit.topicId) ? <a className="rounded-lg border bg-white px-4 py-2 text-sm text-blue-700" href="#control-concept-lab">선택: 제어 모형</a> : null}</nav>
+      <nav aria-label="설명 실습 평가 바로가기" className="my-6 flex flex-wrap gap-2">{catalogSlotNames.map((slot) => <a key={slot} className="rounded-lg border bg-white px-4 py-2 text-sm text-blue-700" href={`#${slot}`}>{slotLabels[slot]}</a>)}{authored && unit.topicId === "M06.05" ? <a className="rounded-lg border bg-white px-4 py-2 text-sm text-blue-700" href="#wheel-concept-lab">선택: 바퀴 모형</a> : null}{authored && ["M07.03", "M07.06"].includes(unit.topicId) ? <a className="rounded-lg border bg-white px-4 py-2 text-sm text-blue-700" href="#control-concept-lab">선택: 제어 모형</a> : null}{thresholdLab ? <a className="rounded-lg border bg-white px-4 py-2 text-sm text-blue-700" href="#threshold-concept-lab">선택: 임계값 모형</a> : null}{projectionLab ? <a className="rounded-lg border bg-white px-4 py-2 text-sm text-blue-700" href="#projection-concept-lab">선택: 투영·시각 모형</a> : null}</nav>
       <div className="space-y-5">{catalogSlotNames.map((slot) => {
         const resources = unit.slots[slot].filter(binding => !("resourceId" in binding ? binding.resourceId : binding.activityId).startsWith("authored:")).map(studyResource);
         return <section key={slot} id={slot} aria-labelledby={`${slot}-title`} className="rounded-2xl border bg-white p-5 sm:p-7">
@@ -59,6 +63,8 @@ export default async function StudyPage({ params }: { params: Promise<{ unitId: 
       })}</div>
       {authored && ["M07.03", "M07.06"].includes(unit.topicId) ? <ControlConceptLab key={`${unit.id}:${unit.revision}:control-model`} /> : null}
       {authored && unit.topicId === "M06.05" ? <WheelConceptLab key={`${unit.id}:${unit.revision}:wheel-model`} /> : null}
+      {thresholdLab ? <ThresholdConceptLab key={`${unit.id}:${unit.revision}:threshold-model`} /> : null}
+      {projectionLab ? <ProjectionConceptLab key={`${unit.id}:${unit.revision}:projection-model`} /> : null}
       {authored ? <><section id="authored-references" className="mt-6 rounded-2xl border bg-white p-5 sm:p-7"><h2 className="mb-4 text-xl font-bold">참고 자료</h2><AuthoredMarkdown content={authored.references} /></section><AuthoredCompletion unitId={unit.id} revision={unit.revision} catalogRevision={catalog.revision} readiness={readiness.state} activityIds={activityIds} /></> : null}
       <Suspense fallback={<StudyNavigationView navigation={{ ...base, context: null, notice: null }} />}><StudyNavigation base={base} contexts={contexts} /></Suspense>
       <p className="mt-6 text-xs leading-6 text-slate-500">신규 활동의 답안은 이 브라우저의 통합 학습 기록에 저장합니다. 기존 화면의 답안·진도는 원래 키를 유지합니다. AI 강사는 현재 단위의 준비 상태·부족한 범위와 연결된 실제 자료를 참고합니다.</p>

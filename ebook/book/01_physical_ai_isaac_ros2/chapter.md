@@ -24,6 +24,8 @@ Physical AI는 인공지능 모델이 텍스트나 화면 안에서 답을 생�
 
 ## 선수 지식과 준비물
 
+[M10.01 Stage·레이어·참조](/study/unit-m10-01-a/)와 [M10.02 URDF/USD 자산](/study/unit-m10-02-a/)에서 장면 표현·저장·자산 재사용을 먼저 확인하고, [M10.06 ROS 브리지](/study/unit-m10-06-a/)와 아래 연결 예제를 이어 읽는다. 시각 장면이 만들어졌다는 사실과 물리·센서·통신이 실행됐다는 사실을 구분한다.
+
 통신 예제를 실행하기 전 [M05.01 작업공간·Executor](/study/unit-m05-01-a/), [M05.02 인터페이스](/study/unit-m05-02-a/), [M05.03 QoS·발견](/study/unit-m05-03-a/), [M05.06 시간과 장애](/study/unit-m05-06-a/)를 이어 읽는다. 이 장은 Isaac Sim 브리지 응용이며, 기본 ROS 실행·진단 개념은 E2에서 가상 로그로 먼저 익힌다.
 
 - Python 3의 클래스, 예외, NumPy 배열
@@ -117,14 +119,14 @@ Isaac Sim은 하나의 물리 엔진이 아니라 여러 계층이 결합된 애
 
 - **Kit 애플리케이션 런타임**: 확장(extension), UI, 명령, Python 환경의 생명주기를 관리한다.
 - **OpenUSD**: 장면의 구조, 속성, 참조, 변형을 표현한다.
-- **PhysX**: 강체, 관절, 접촉, 충돌을 시간에 따라 적분한다.
+- **물리 백엔드**: PhysX 경로에서는 강체·관절·접촉·충돌의 상태 변화를 PhysX가 계산한다. Isaac Sim 6.2는 Newton 백엔드도 지원하므로 실행 앱·활성 엔진·해당 API를 기록한다.
 - **RTX 렌더러와 센서 모델**: 카메라 관측과 합성 데이터를 생성한다.
 - **OmniGraph/Action Graph**: 데이터 흐름과 실행 노드를 연결한다.
 - **ROS 2 Bridge**: ROS 메시지와 시뮬레이터의 상태·명령을 변환한다.
 
 ![Isaac Sim 계층](images/isaac_stack.svg)
 
-**그림 1-2.** USD는 장면의 정적·구성적 표현을, PhysX는 시간에 따른 상태 변화를, ROS 2 Bridge는 외부 시스템과의 메시지 교환을 담당한다.
+**그림 1-2.** 그림은 PhysX 경로를 예로 든다. USD는 장면 표현, 선택한 물리 백엔드는 시간에 따른 상태 변화, ROS 2 Bridge는 외부 메시지 교환을 담당한다. [6.2 백엔드 안내](https://docs.isaacsim.omniverse.nvidia.com/6.2.0/physics/newton_physics.html)는 PhysX와 Newton 경로를 구분한다.
 
 ### 1.2.2 Stage와 시뮬레이션 상태를 구분하라
 

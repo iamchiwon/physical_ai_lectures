@@ -45,7 +45,9 @@ function Pandoc(doc)
   doc = doc:walk({ Link = function(link)
     if not link.target:match('^/') then return nil end
     -- Interactive controls are web-only; a unit heading cannot replace their target.
-    if link.target:match('^/study/[^#]+#control%-concept%-lab$') or link.target:match('^/study/[^#]+#wheel%-concept%-lab$') then
+    local fragment = link.target:match('^/study/[^#]+#([%w%-]+)$')
+    local web_only = { ['control-concept-lab'] = true, ['wheel-concept-lab'] = true, ['threshold-concept-lab'] = true, ['projection-concept-lab'] = true }
+    if fragment and web_only[fragment] then
       link.target = base .. link.target
       return link
     end
@@ -53,7 +55,18 @@ function Pandoc(doc)
     local module, number = pathname:match('^/study/unit%-(m%d%d)%-(%d%d)%-a/$')
     local local_id = module and (module .. '-' .. number) or nil
     local foundation = pathname:match('^/modules/(M%d%d)/$')
-    if foundation then local_id = foundation:lower() end
+    if foundation then
+      local topic_module, topic_number = link.target:match('#topic%-(M%d%d)%-(%d%d)$')
+      if topic_module == foundation then
+        local_id = topic_module:lower() .. '-' .. topic_number
+      elseif link.target:find('#', 1, true) then
+        -- Preserve an unknown module fragment rather than silently losing its target.
+        link.target = base .. link.target
+        return link
+      else
+        local_id = foundation:lower()
+      end
+    end
     local_id = local_id or legacy[pathname]
     link.target = local_id and anchors[local_id] and ('#' .. local_id) or (base .. link.target)
     return link

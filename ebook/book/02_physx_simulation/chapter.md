@@ -30,6 +30,8 @@
 
 ## 선수 지식과 준비물
 
+[M10.03 접촉·마찰·CCD](/study/unit-m10-03-a/), [M10.04 질량·관성·Articulation](/study/unit-m10-04-a/), [M10.05 물리/렌더 스텝](/study/unit-m10-05-a/)이 아래 물리 실험의 개념 기초다. 이 장의 PhysX 관련 옵션·문서는 PhysX 경로를 설명하며, 다른 백엔드에 같은 속성·결과가 그대로 적용된다고 가정하지 않는다.
+
 물리 파라미터를 입력하기 전 [M07.01 질량·관성·중력](/study/unit-m07-01-a/)에서 힘과 토크를 구분하고 [M08.01 모델 요소](/study/unit-m08-01-a/)와 [M08.04 관성·충돌 형상](/study/unit-m08-04-a/)에서 시각 형상과 물리 모델을 분리한다. 제어 응답 문제는 [M07.06 필터·지연](/study/unit-m07-06-a/)과 함께 해석하며 모든 불안정성을 시간 스텝 하나로 해결한다고 가정하지 않는다.
 
 이 장에 앞서 [M02.01 벡터·행렬](/study/unit-m02-01-a/), [M02.02 회전·변환](/study/unit-m02-02-a/), [M02.03 미분과 시간 변화](/study/unit-m02-03-a/)를 확인한다. 힘·운동·계산 예제의 단위가 낯설면 각 수량을 SI 단위로 적고 식을 따라가며 계산부터 수행한다. 기존 Isaac Sim 실습은 GPU가 있는 선택 실행 경로다. GPU 없는 기본 학습은 본문의 변환·시간간격·마찰 예측과 브라우저 개념 모형/기록 해석으로 구분하며, 이것을 PhysX 실제 실행 결과로 제출하지 않는다.
@@ -61,7 +63,7 @@ Isaac Sim 공식 요구사항은 Ubuntu 22.04와 24.04를 지원 대상으로 �
 Isaac Sim 장면을 구성할 때 세 층을 구분하면 문제를 빠르게 진단할 수 있다.
 
 - **USD Stage**: Prim과 Attribute로 저장되는 장면 명세다. 파일로 저장할 수 있는 선언적 상태이다.
-- **Physics simulation**: Stage의 물리 schema를 읽어 PhysX가 시간에 따른 상태를 계산한다.
+- **Physics simulation**: 선택한 백엔드가 지원하는 Stage의 물리 schema를 읽어 시간에 따른 상태를 계산한다. 아래 PhysX 옵션을 다른 엔진에 그대로 적용하지 않는다.
 - **Rendering**: Stage의 geometry, material, light, camera를 읽어 픽셀을 생성한다.
 
 Stage에 큐브가 보인다고 해서 그 큐브가 중력의 영향을 받는 것은 아니다. USD Prim에는 물리 기능이 기본으로 활성화되지 않으며, rigid body와 collision API를 별도로 적용해야 한다. 반대로 viewport에서 숨긴 충돌 형상도 collision API가 유지되면 물리 계산에 참여할 수 있다. 이 분리는 [Isaac Sim Physics Simulation Fundamentals](https://docs.isaacsim.omniverse.nvidia.com/latest/physics/simulation_fundamentals.html)의 기본 원칙이다.

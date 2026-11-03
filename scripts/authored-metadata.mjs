@@ -6,18 +6,19 @@ import { createHash } from 'node:crypto';
 export const authoredReviewRegistries = [
   { file: 'doc/v2/inventory/e1-reviews.json', modules: ['M00', 'M01', 'M02', 'M03'] },
   { file: 'doc/v2/inventory/e2-reviews.json', modules: ['M05', 'M06', 'M07', 'M08'] },
+  { file: 'doc/v2/inventory/e3-reviews.json', modules: ['M10', 'M11', 'M12'], topicIds: ['M14.01', 'M14.03', 'M14.06'] },
 ];
 const object = value => value !== null && typeof value === 'object' && !Array.isArray(value);
 const exactKeys = (value, keys) => Object.keys(value).every(key => keys.includes(key));
 const relativeFile = value => typeof value === 'string' && value.trim() && !path.isAbsolute(value) && !value.includes('\\') && !value.split('/').some(part => !part || part === '..' || part === '.');
 export function mergeAuthoredReviews(registries, knownTopicIds) {
   const known = new Set(knownTopicIds), topics = Object.create(null);
-  for (const { file, modules, data } of registries) {
+  for (const { file, modules, topicIds, data } of registries) {
     if (!object(data) || data.schemaVersion !== 1 || !object(data.topics) || !exactKeys(data, ['schemaVersion', 'topics'])) throw Error(`Unsupported authored review registry: ${file}`);
     for (const [id, review] of Object.entries(data.topics)) {
       if (Object.hasOwn(topics, id)) throw Error(`Duplicate authored review: ${id}`);
       if (!known.has(id) || !/^M\d{2}\.\d{2}$/.test(id)) throw Error(`Unknown authored review topic: ${id}`);
-      if (modules && !modules.includes(id.split('.')[0])) throw Error(`Authored review outside registry scope: ${file}: ${id}`);
+      if ((modules || topicIds) && !modules?.includes(id.split('.')[0]) && !topicIds?.includes(id)) throw Error(`Authored review outside registry scope: ${file}: ${id}`);
       if (!object(review) || !exactKeys(review, ['sourceSha256', 'evidenceRef']) || !/^[a-f0-9]{64}$/.test(review.sourceSha256 ?? '') || !relativeFile(review.evidenceRef)) throw Error(`Invalid authored review: ${file}: ${id}`);
       topics[id] = { sourceSha256: review.sourceSha256, evidenceRef: review.evidenceRef };
     }

@@ -4,51 +4,51 @@
     {
       "source": "ebook/book/01_physical_ai_isaac_ros2/chapter.md",
       "baselineSha256": "a080ac9eddac666c3400d843913886913468677e9c2ab4bf60bcaa76b18a7d93",
-      "sha256": "9811455cef71a762fc8e31158bdf90a42ac924735dac6eae1e29959832b2b0dd",
-      "reason": "신규 기초와 기존 응용 장 사이 선수/범위/장비 없는 진입 연결 / 결정론을 Software/Physical 구분으로 오해하는 문장 정정 / POMDP 누락기호 gamma와 관측독립/시간축 가정 명시 / 순차 처리 지연과 목표 샘플 주기 구분 / 주기 예산 수치의 가정 및 새 목표설계 단위 연결 / E2: ROS・기구학・제어・모델 선수/후속 연결 및 관련 개념·실행 전제 보완",
-      "evidenceRef": "doc/v2/work_items/E2.md"
+      "sha256": "dc2aff65925d924d276f2e2f97bde1a63efca340f5b9d7fe3856f2a0e43dd0b8",
+      "reason": "신규 기초와 기존 응용 장 사이 선수/범위/장비 없는 진입 연결 / 결정론을 Software/Physical 구분으로 오해하는 문장 정정 / POMDP 누락기호 gamma와 관측독립/시간축 가정 명시 / 순차 처리 지연과 목표 샘플 주기 구분 / 주기 예산 수치의 가정 및 새 목표설계 단위 연결 / E2: ROS・기구학・제어・모델 선수/후속 연결 및 관련 개념·실행 전제 보완 / E3: 시뮬레이션·학습·비전·카메라/시간 기초의 연결 및 독립검토된 개념/그림 조건 정정",
+      "evidenceRef": "doc/v2/work_items/E3-review.md"
     },
     {
       "source": "ebook/book/02_physx_simulation/chapter.md",
       "baselineSha256": "a21459dc9d4dd74be968ed41bcc237d55d1e56f5bf0d3d5b151da99e48011c40",
-      "sha256": "84c5449aefd44149e85f6a559190e48a603828d9578dc8ae9952a372baea75b4",
-      "reason": "E1에서 기존 02장으로 선수·실습범위·오개념 연결 보강 / latest를 재현 가능한 고정버전 안내로 정정 / 수학브리지독립검수: Euler 고정축적용xyz와행렬곱RzRyRx 용어정정·실행수식/함수명보존 / 짐벌락정확특이점과근처조건악화구분 / E2: ROS・기구학・제어・모델 선수/후속 연결 및 관련 개념·실행 전제 보완",
-      "evidenceRef": "doc/v2/work_items/E2.md"
+      "sha256": "5507d0f2ecfe66bfe0b5dafb36a41e1055cc81a1e5fe0fb4badc695f8e9512b6",
+      "reason": "E1에서 기존 02장으로 선수·실습범위·오개념 연결 보강 / latest를 재현 가능한 고정버전 안내로 정정 / 수학브리지독립검수: Euler 고정축적용xyz와행렬곱RzRyRx 용어정정·실행수식/함수명보존 / 짐벌락정확특이점과근처조건악화구분 / E2: ROS・기구학・제어・모델 선수/후속 연결 및 관련 개념·실행 전제 보완 / E3: 시뮬레이션·학습·비전·카메라/시간 기초의 연결 및 독립검토된 개념/그림 조건 정정",
+      "evidenceRef": "doc/v2/work_items/E3-review.md"
     },
     {
       "source": "ebook/book/03_so101_kinematics_teleop/chapter.md",
       "baselineSha256": "8083685d7b190de126d12ce6ec53469e742dd2143eb5fa7ec0fe8274410490aa",
-      "sha256": "9ee25d01ef7d3a70be5e31da880d0540974ef82b818aad9fd7cbcfe4cf7dfa60",
-      "reason": "E1에서 기존 03장으로 선수·실습범위·오개념 연결 보강 / latest 설치조건과 E1 의존성 고정 원칙의 불일치 보완 / M03검토: 명목전압숫자일치와동작범위/극성/전류/논리핀/절대최대정격구분 / E2: ROS・기구학・제어・모델 선수/후속 연결 및 관련 개념·실행 전제 보완 / M08.05: JointState 한 메시지 동일시각 계약·비동기 정렬/추정 출처를 엄밀화하고 공식 명세 링크 연결",
-      "evidenceRef": "doc/v2/work_items/E2.md"
+      "sha256": "5e3c45e256c9fc5ac7230b429c4dba759c24cfcd0f45f7bf62eea5aadd16bc1f",
+      "reason": "E1에서 기존 03장으로 선수·실습범위·오개념 연결 보강 / latest 설치조건과 E1 의존성 고정 원칙의 불일치 보완 / M03검토: 명목전압숫자일치와동작범위/극성/전류/논리핀/절대최대정격구분 / E2: ROS・기구학・제어・모델 선수/후속 연결 및 관련 개념·실행 전제 보완 / M08.05: JointState 한 메시지 동일시각 계약·비동기 정렬/추정 출처를 엄밀화하고 공식 명세 링크 연결 / E3: 시뮬레이션·학습·비전·카메라/시간 기초의 연결 및 독립검토된 개념/그림 조건 정정",
+      "evidenceRef": "doc/v2/work_items/E3-review.md"
     },
     {
       "source": "ebook/book/04_sensor_data_pipeline/chapter.md",
       "baselineSha256": "69a8cf6f0e2f6e584bda629d3a17fbbe37f75ec024eab2237847807a2a3796fa",
-      "sha256": "ea80077e6ed81e80af7d30369bb427bac5cdc3ab295deb112e3715fd76433b66",
-      "reason": "E1에서 기존 04장으로 선수·실습범위·오개념 연결 보강 / E2: ROS・기구학・제어・모델 선수/후속 연결 및 관련 개념·실행 전제 보완",
-      "evidenceRef": "doc/v2/work_items/E2.md"
+      "sha256": "63f8300ad4c9ad559b9d8001471eabb34baae98983bdae1b24e385ec11cb6c71",
+      "reason": "E1에서 기존 04장으로 선수·실습범위·오개념 연결 보강 / E2: ROS・기구학・제어・모델 선수/후속 연결 및 관련 개념·실행 전제 보완 / E3: 시뮬레이션·학습·비전·카메라/시간 기초의 연결 및 독립검토된 개념/그림 조건 정정",
+      "evidenceRef": "doc/v2/work_items/E3-review.md"
     },
     {
       "source": "ebook/book/05_lerobot_smolvla/chapter.md",
       "baselineSha256": "637909ee6456fa438f421ae0290a3b536cd925567ba1246a1f2e58c0b113a9fa",
-      "sha256": "459ee2d40847a4226e15d9253a6b6e2e047e65c9374d5ffbe40cdc9fb28a2842",
-      "reason": "E1에서 기존 05장으로 선수·실습범위·오개념 연결 보강 / 설치 예시에 실제 커밋/태그 고정 전제와 미지정 중단 추가 / 독립검수: 설치 전체 subshell fail-fast로 미지정/오류 revision 뒤 실행 방지 / E2: ROS・기구학・제어・모델 선수/후속 연결 및 관련 개념·실행 전제 보완",
-      "evidenceRef": "doc/v2/work_items/E2.md"
+      "sha256": "e5d4749c0d15b0db1c98bd476e9a2ac12bf90a6225c12edc34621d0a7ae12c74",
+      "reason": "E1에서 기존 05장으로 선수·실습범위·오개념 연결 보강 / 설치 예시에 실제 커밋/태그 고정 전제와 미지정 중단 추가 / 독립검수: 설치 전체 subshell fail-fast로 미지정/오류 revision 뒤 실행 방지 / E2: ROS・기구학・제어・모델 선수/후속 연결 및 관련 개념·실행 전제 보완 / E3: 시뮬레이션·학습·비전·카메라/시간 기초의 연결 및 독립검토된 개념/그림 조건 정정",
+      "evidenceRef": "doc/v2/work_items/E3-review.md"
     },
     {
       "source": "ebook/book/06_sim2real_deployment/chapter.md",
       "baselineSha256": "63e21fba7a365699ea09d4be5e25675e0f9ac0c8d856e41a00bd9d8d7157d971",
-      "sha256": "333021241b683ea890bf3fbbe7ba64ee7fa69698606df86720ee0ad5e505f26c",
-      "reason": "E1에서 기존 06장으로 선수·실습범위·오개념 연결 보강 / E2: ROS・기구학・제어・모델 선수/후속 연결 및 관련 개념·실행 전제 보완",
-      "evidenceRef": "doc/v2/work_items/E2.md"
+      "sha256": "e2b7679ff687527324ac81cc7ff63e5e45072177bca2c3aa726aad35900b57cb",
+      "reason": "E1에서 기존 06장으로 선수·실습범위·오개념 연결 보강 / E2: ROS・기구학・제어・모델 선수/후속 연결 및 관련 개념·실행 전제 보완 / E3: 시뮬레이션·학습·비전·카메라/시간 기초의 연결 및 독립검토된 개념/그림 조건 정정",
+      "evidenceRef": "doc/v2/work_items/E3-review.md"
     },
     {
       "source": "ebook/book/00_frontmatter/environment.md",
       "baselineSha256": "0668193d160e404d2a76f15adc467940808fb494eaacdade3f574ec0ab11e857",
-      "sha256": "b7af0cdd3312ef9088bc01345926e32c47d6d12263d11f084100cd758cf2409f",
-      "reason": "확장E1 기본경로와 기존GPU/실물장비요구조건 분리 / E2: 공통 기초→ROS/기구학/제어/모델 경로와 기본·선택 실행/모형 한계, 사용자 상태 표시 원칙 동기화",
-      "evidenceRef": "doc/v2/work_items/E2.md"
+      "sha256": "c297bdd09c3cab96cda354faafece91473dbef857b3eac8ce32d9c1882886ec6",
+      "reason": "확장E1 기본경로와 기존GPU/실물장비요구조건 분리 / E2: 공통 기초→ROS/기구학/제어/모델 경로와 기본·선택 실행/모형 한계, 사용자 상태 표시 원칙 동기화 / E3: 시뮬레이션·학습·비전·카메라/시간 기초의 연결 및 독립검토된 개념/그림 조건 정정",
+      "evidenceRef": "doc/v2/work_items/E3-review.md"
     },
     {
       "source": "ebook/book/00_frontmatter/safety.md",
@@ -60,9 +60,9 @@
     {
       "source": "ebook/book/00_frontmatter/how_to_use.md",
       "baselineSha256": "a3d1e94f176ffd9b1a9070929a0a1d5ed28034e02c8f60d56926d601bdbb841b",
-      "sha256": "61a2ed87fcbaa938f792401d168fca40f368e4179b752be96b921fc1a858cb6c",
-      "reason": "여섯장 단일프로젝트에서 통합과정 기초→응용 학습경로로 안내 개정 / SIM표식=장비없는브라우저 실행으로 오인하는 설명 보완 / E2: 공통 기초→ROS/기구학/제어/모델 경로와 기본·선택 실행/모형 한계, 사용자 상태 표시 원칙 동기화",
-      "evidenceRef": "doc/v2/work_items/E2.md"
+      "sha256": "d1117a7c0d11069aacb72e150a5d8184bf8ffd7bfed09695a4cf7f4b11074714",
+      "reason": "여섯장 단일프로젝트에서 통합과정 기초→응용 학습경로로 안내 개정 / SIM표식=장비없는브라우저 실행으로 오인하는 설명 보완 / E2: 공통 기초→ROS/기구학/제어/모델 경로와 기본·선택 실행/모형 한계, 사용자 상태 표시 원칙 동기화 / E3: 시뮬레이션·학습·비전·카메라/시간 기초의 연결 및 독립검토된 개념/그림 조건 정정",
+      "evidenceRef": "doc/v2/work_items/E3-review.md"
     },
     {
       "source": "ebook/book/02_physx_simulation/code/transforms.py",
@@ -77,6 +77,20 @@
       "sha256": "230cfa9927803281c8f7c9d681b52c745ccf55ade2509bebfe11700bae91e688",
       "reason": "E2 기구학 연결: 2R 안/바깥 반경 도달 판정·불가 목표 거부/추종 정지·수치 roundoff만 보정·주기각 최단 보간·교육용 한계 명시. root 별도 수학/코드 검토 후 승인, 실제 화면은 E2 통합 검수 기록.",
       "evidenceRef": "doc/v2/work_items/E2-validation.md"
+    },
+    {
+      "source": "ebook/book/04_sensor_data_pipeline/images/time_alignment.svg",
+      "baselineSha256": "4d6b42bbe23d373a08a786c1d5876cd146ba0b70d75f96e993afbfd8634a00d8",
+      "reason": " / E3: 시뮬레이션·학습·비전·카메라/시간 기초의 연결 및 독립검토된 개념/그림 조건 정정",
+      "sha256": "03379450f80c5819698f71acd0fcc8d87314f967ba1814bdfec14f5b6a4b28b6",
+      "evidenceRef": "doc/v2/work_items/E3-review.md"
+    },
+    {
+      "source": "ebook/book/04_sensor_data_pipeline/exercises/solutions.md",
+      "baselineSha256": "e8ab5bc40c9bef1d7e6d1f9fd75dedcfa9151b8a0f7cdd18337f9dee2478f75f",
+      "sha256": "7d61c3d11f67fe4b18713be00736863ff80a6c212a92be757898d7443bc7e7c8",
+      "reason": "E3 시간 정합 본문과 문항 해설의 slop/표본 가용성 조건 동기화",
+      "evidenceRef": "doc/v2/work_items/E3-review.md"
     }
   ]
 }

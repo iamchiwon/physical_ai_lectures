@@ -26,6 +26,8 @@ SO-101은 자세를 만드는 5개의 팔 관절과 그리퍼 구동기 1개를 
 
 ## 선수 지식과 준비물
 
+[M10.02](/study/unit-m10-02-a/)에서 원본 URDF와 변환된 USD의 이름·기본 자세·물리/드라이브 속성 계약을 확인한다. 관절 기록의 시각을 맞추는 방법은 [M14.03 시간 정합](/study/unit-m14-03-a/)에서 보충한다. 변환 보고서나 TF가 맞는 것과 실제 장치의 구동·추종이 맞는 것은 별도다.
+
 이 장의 5축 예제를 읽기 전 [M06.01 프레임·합성](/study/unit-m06-01-a/)→[M06.02 DH·FK](/study/unit-m06-02-a/)→[M06.03 IK·Jacobian](/study/unit-m06-03-a/)→[M06.04 특이점·해의 연속성](/study/unit-m06-04-a/)을 이어 읽는다. [M06.06 영점 보정](/study/unit-m06-06-a/)은 교육용 기하와 실제 장치 명세를 구별하고, [M08.05 JointState와 TF](/study/unit-m08-05-a/)는 아래 브리지의 상태·변환 역할을 보충한다.
 
 기초 복귀: [M03.01 자유도·관절·기어비](/study/unit-m03-01-a/), [M03.02 구동기·엔코더](/study/unit-m03-02-a/), [M03.06 인터페이스/기계 한계](/study/unit-m03-06-a/)를 먼저 확인한다. 엔코더 수치 하나는 해당 축의 측정이며 말단의 전체 자세를 직접 측정한 값이 아니다. [M02.02](/study/unit-m02-02-a/)의 변환 방향·라디안 규약과 [M01.01](/study/unit-m01-01-a/)의 장치 권한을 확인한 뒤 아래 구현으로 넘어간다. 그리퍼 구동기를 세는 것과 팔이 독립적으로 조절할 수 있는 말단 자유도를 세는 것은 구분한다.
@@ -112,6 +114,8 @@ OpenUSD의 `UsdPhysicsArticulationRootAPI`는 여러 강체와 관절을 축약 
 7. **Mimic/그리퍼:** 단일 구동기로 양쪽 손가락을 묶는 관계가 임포트 후 유지되는지 확인한다.
 
 USD Physics 명세는 관절계 루트, 관절, 강체 목록으로 articulation을 구성하며 회전 관절 한계와 드라이브를 명시한다.[OpenUSD, 2026]
+
+변환 결과를 PhysX 전용 속성만으로 가정하지 않는다. [Isaac Sim 6.2 URDF Importer](https://docs.isaacsim.omniverse.nvidia.com/6.2.0/importer_exporter/ext_isaacsim_asset_importer_urdf.html)는 mimic과 articulation의 Newton 스키마도 작성한다. 원본 규약·변환 옵션·작성된 API·선택한 런타임의 소비 여부를 나눠 확인하고, 가져오기에 성공했다는 이유만으로 그리퍼 연동이나 제어 동작을 승인하지 않는다.
 
 ![그림 3-2. URDF에서 USD articulation으로 보존해야 할 정보](images/urdf_to_usd.svg)
 
