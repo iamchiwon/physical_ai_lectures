@@ -171,3 +171,17 @@ test('optional unreviewed activity does not block a ready basic requirement', ()
   extra.role = 'supplement'; u.slots.practice.push(extra);
   assert.equal(unitReadiness(u,i).state,'ready');
 });
+
+// Audit all published activities, including retained activities with no unit binding.
+test('all published activity entries target retained reading routes, including the glossary index', () => {
+  const retainedRoutes = new Set([
+    '/textbook/',
+    ...baseline.textbookUnits.map((unit) => unit.url),
+    ...baseline.lessonModules.flatMap((module) => module.lessons.map((lesson) => lesson.url)),
+  ]);
+  for (const activity of catalog.activities.filter((activity) => activity.publication === 'published')) {
+    for (const entry of activity.locator.entryUrls) {
+      assert.ok(retainedRoutes.has(entry.split(/[?#]/)[0]), `${activity.id}: ${entry}`);
+    }
+  }
+});

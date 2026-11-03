@@ -41849,7 +41849,7 @@ export const catalogData: Catalog = {
       "locator": {
         "source": "appendices/glossary.md",
         "entryUrls": [
-          "/glossary/"
+          "/textbook/#glossary-practice"
         ],
         "sourceSha256": "e5dbfd82d0cf5be7cb68d5a2aabf3d86eae5c1cc6f1d4fd0b0ebc41ceb1c73a6"
       },

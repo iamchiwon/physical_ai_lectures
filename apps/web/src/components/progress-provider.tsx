@@ -30,6 +30,7 @@ export function ProgressProvider({ children }: { children: React.ReactNode }) {
   const [hydrated, setHydrated] = React.useState(false);
   const [storageNotice, setStorageNotice] = React.useState<string | null>(null);
   const shouldSave = React.useRef(false);
+  const unsavedChanges = React.useRef(false);
   const storageWritable = React.useRef(true);
   const persistedRaw = React.useRef<string | null>(null);
 
@@ -51,6 +52,13 @@ export function ProgressProvider({ children }: { children: React.ReactNode }) {
       if (event.storageArea !== window.localStorage || (event.key !== STORAGE_KEY && event.key !== null)) return;
       const stored = parseLegacyProgress(event.newValue);
       persistedRaw.current = event.newValue;
+      if (unsavedChanges.current && event.newValue !== null) {
+        storageWritable.current = false;
+        shouldSave.current = false;
+        setStorageNotice("다른 탭의 학습 기록이 바뀌었습니다. 저장되지 않은 현재 진도는 이 화면에 유지했고 원본도 덮어쓰지 않았습니다. 현재 기록을 확인·보관한 뒤 새로고침하세요.");
+        return;
+      }
+      unsavedChanges.current = false;
       storageWritable.current = stored.notice === null;
       shouldSave.current = false;
       if (!stored.notice) setProgress(stored.progress);
@@ -72,6 +80,7 @@ export function ProgressProvider({ children }: { children: React.ReactNode }) {
       const raw = JSON.stringify(progress);
       window.localStorage.setItem(STORAGE_KEY, raw);
       persistedRaw.current = raw;
+      unsavedChanges.current = false;
     } catch {
       const task = window.setTimeout(() => setStorageNotice("학습 기록을 저장하지 못했습니다. 현재 화면의 기록은 유지되며 다음 학습 동작에서 다시 저장합니다."), 0);
       return () => window.clearTimeout(task);
@@ -80,6 +89,7 @@ export function ProgressProvider({ children }: { children: React.ReactNode }) {
 
   const markLessonComplete = React.useCallback((lessonId: string) => {
     shouldSave.current = true;
+    unsavedChanges.current = true;
     setProgress((current) => ({
       ...current,
       completedLessons: current.completedLessons.includes(lessonId)
@@ -96,6 +106,7 @@ export function ProgressProvider({ children }: { children: React.ReactNode }) {
 
   const saveQuizScore = React.useCallback((lessonId: string, score: number) => {
     shouldSave.current = true;
+    unsavedChanges.current = true;
     const safeScore = Math.min(100, Math.max(0, Math.round(score)));
     setProgress((current) => ({
       ...current,
@@ -107,10 +118,12 @@ export function ProgressProvider({ children }: { children: React.ReactNode }) {
   const getQuizScore = React.useCallback((lessonId: string) => progress.quizScores[lessonId], [progress.quizScores]);
   const setLastLesson = React.useCallback((lessonId: string) => {
     shouldSave.current = true;
+    unsavedChanges.current = true;
     setProgress((current) => ({ ...current, lastLessonId: lessonId }));
   }, []);
   const resetProgress = React.useCallback(() => {
     shouldSave.current = true;
+    unsavedChanges.current = true;
     setProgress(emptyProgress);
   }, []);
   const value = React.useMemo<ProgressContextValue>(

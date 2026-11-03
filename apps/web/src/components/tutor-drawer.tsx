@@ -34,6 +34,7 @@ export function TutorDrawer({ lessonId, lessonTitle, chapterId, chapterTitle, so
   const [visibleCount,setVisibleCount]=React.useState(40);
   const cancelRef=React.useRef<HTMLButtonElement>(null);
   const conversationEndRef=React.useRef<HTMLDivElement>(null);
+  const scopeLabel = chapterId.startsWith("module-") ? "현재 모듈" : "현재 기존 챕터";
   const chapterCount=turns.filter((turn)=>turn.chapterId===chapterId).length;
   const resetCount=resetScope==="chapter"?chapterCount:turns.length;
   React.useEffect(()=>{
@@ -105,7 +106,7 @@ export function TutorDrawer({ lessonId, lessonTitle, chapterId, chapterTitle, so
               <Dialog.Title className="text-lg font-bold text-slate-950">대화를 초기화할까요?</Dialog.Title>
               <Dialog.Description className="mt-2 text-sm leading-6 text-slate-600">선택한 범위의 질문·답변, 관련 요약과 학습자 상태를 이 브라우저에서 삭제합니다. <strong className="text-rose-700">삭제한 대화는 되돌릴 수 없습니다.</strong></Dialog.Description>
               <fieldset className="mt-5 space-y-3"><legend className="sr-only">초기화 범위</legend>
-                <label className="flex cursor-pointer items-start gap-3 rounded-xl border border-slate-200 p-3"><input type="radio" name="tutor-reset-scope" value="chapter" checked={resetScope==="chapter"} onChange={()=>setResetScope("chapter")} className="mt-1" /><span className="text-sm"><span className="block font-semibold">현재 학습 범위의 대화만 ({chapterCount}회)</span><span className="mt-1 block text-xs leading-5 text-slate-500">{chapterTitle}에서 나눈 대화를 삭제합니다. 다른 학습 범위의 대화는 유지합니다.</span></span></label>
+                <label className="flex cursor-pointer items-start gap-3 rounded-xl border border-slate-200 p-3"><input type="radio" name="tutor-reset-scope" value="chapter" checked={resetScope==="chapter"} onChange={()=>setResetScope("chapter")} className="mt-1" /><span className="text-sm"><span className="block font-semibold">{scopeLabel}의 대화만 ({chapterCount}회)</span><span className="mt-1 block text-xs leading-5 text-slate-500">{chapterTitle}에서 나눈 대화를 삭제합니다. 다른 학습 범위의 대화는 유지합니다.{chapterId.startsWith("module-") ? " 연결된 과거 기존 챕터의 대화도 별도 범위로 남습니다." : ""}</span></span></label>
                 <label className="flex cursor-pointer items-start gap-3 rounded-xl border border-slate-200 p-3"><input type="radio" name="tutor-reset-scope" value="all" checked={resetScope==="all"} onChange={()=>setResetScope("all")} className="mt-1" /><span className="text-sm"><span className="block font-semibold">전체 대화 ({turns.length}회)</span><span className="mt-1 block text-xs leading-5 text-slate-500">모든 챕터의 질문·답변, 누적 요약과 학습자 상태를 삭제합니다.</span></span></label>
               </fieldset>
               <div className="mt-5 flex justify-end gap-2"><Button ref={cancelRef} type="button" variant="outline" onClick={()=>setResetOpen(false)}>취소</Button><Button type="button" disabled={!resetCount} className="bg-rose-600 hover:bg-rose-700" onClick={()=>{resetConversation(resetScope==="chapter"?chapterId:undefined);setResetOpen(false);}}>삭제하기 ({resetCount}회)</Button></div>

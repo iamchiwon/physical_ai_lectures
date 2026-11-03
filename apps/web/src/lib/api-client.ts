@@ -9,7 +9,10 @@ import {
 } from "@physical-ai/shared";
 
 export async function evaluateAnswer(input: AssessmentRequest) {
-  return assessmentResponseSchema.parse(await requestJson("/v1/assessment", { method: "POST", body: JSON.stringify(input) }));
+  const payload = await requestJson("/v1/assessment", { method: "POST", body: JSON.stringify(input) });
+  const result = assessmentResponseSchema.safeParse(payload);
+  if (!result.success) throw new Error("평가 응답을 읽을 수 없습니다. 답안은 유지되니 잠시 후 다시 평가해 주세요.");
+  return result.data;
 }
 
 const configuredApiBaseUrl = process.env.NEXT_PUBLIC_API_BASE_URL?.trim().replace(/\/$/, "") ?? "";

@@ -1,0 +1,431 @@
+{
+  "schemaVersion": 1,
+  "auditedOn": "2026-11-03",
+  "method": "Independent source reassembly, reference rehash, registration/forward/reverse mapping and exported URL/anchor/graph audit. Temporary audit commands; no textbook validation script added to repository. Browser and build execution owned by root/D03.",
+  "counts": {
+    "modules": 34,
+    "topics": 204,
+    "units": 204,
+    "resources": 333,
+    "activities": 191,
+    "sourceBookFiles": 142,
+    "sourceReadingFiles": 31,
+    "legacyReadingChunks": 137,
+    "legacyLessons": 18,
+    "exercises": 126,
+    "quickChecks": 36,
+    "originalExampleFiles": 49,
+    "glossaryTerms": 21,
+    "registeredTargets": 541,
+    "projectedLinks": 864,
+    "htmlPages": 404,
+    "requiredReachableRoutes": 399
+  },
+  "readiness": {
+    "ready": 0,
+    "partial": 98,
+    "tbd": 106
+  },
+  "resourcesByKind": {
+    "legacy-textbook": 137,
+    "legacy-lesson": 18,
+    "file": 104,
+    "image": 38,
+    "explanation": 36
+  },
+  "activitiesByKind": {
+    "question": 99,
+    "report": 27,
+    "quick-check": 36,
+    "lab": 21,
+    "browser-model": 7,
+    "glossary": 1
+  },
+  "readingDispositions": {
+    "direct": 93,
+    "context-only": 43,
+    "supplement-only": 1
+  },
+  "fileDispositions": {
+    "not-in-learning-navigation": 31,
+    "served-content": 31,
+    "example-or-build-support": 49,
+    "answer-support": 6,
+    "referenced-image": 24,
+    "glossary": 1
+  },
+  "checks": {
+    "curriculum_modules_exact": true,
+    "curriculum_topics_exact": true,
+    "mapping_units_exact": true,
+    "baseline_textbook_ids_exact": true,
+    "textbook_reassembly_byte_exact": true,
+    "all142_source_hashes_match": true,
+    "all142_exported_files_byte_exact": true,
+    "all126_exercise_ids_retained": true,
+    "all126_recomputed_references_match": true,
+    "all18_lesson_ids_exact": true,
+    "all21_glossary_terms_retained": true,
+    "all36_quick_check_ids_exact": true,
+    "no_resource_activity_duplicates": true,
+    "all_activity_dependencies_valid": true,
+    "all_unmapped_readings_explained": true,
+    "all_non_navigation_files_explained": true,
+    "all204_gaps_declared": true,
+    "all204_readiness_match_mapping": true,
+    "readiness_0ready_98partial_106tbd": true,
+    "all_registered_and_projected_targets_exist": true,
+    "all399_curriculum_and_legacy_routes_reachable_from_home": true,
+    "all126_exact_answer_anchors_exist": true
+  },
+  "failures": [],
+  "missingTargets": [],
+  "nonDirectReadings": [
+    {
+      "id": "01_physical_ai_isaac_ros2--chapter-1",
+      "disposition": "context-only",
+      "reason": "기존 장 개요·목표·선수·요약·참고·전체 절차를 원래 URL의 보충/탐색 자료로 보존. 신규 목표 충족 수에는 합산하지 않음."
+    },
+    {
+      "id": "01_physical_ai_isaac_ros2--chapter-2",
+      "disposition": "context-only",
+      "reason": "기존 장 개요·목표·선수·요약·참고·전체 절차를 원래 URL의 보충/탐색 자료로 보존. 신규 목표 충족 수에는 합산하지 않음."
+    },
+    {
+      "id": "01_physical_ai_isaac_ros2--chapter-3",
+      "disposition": "context-only",
+      "reason": "기존 장 개요·목표·선수·요약·참고·전체 절차를 원래 URL의 보충/탐색 자료로 보존. 신규 목표 충족 수에는 합산하지 않음."
+    },
+    {
+      "id": "01_physical_ai_isaac_ros2--chapter-4",
+      "disposition": "context-only",
+      "reason": "기존 장 개요·목표·선수·요약·참고·전체 절차를 원래 URL의 보충/탐색 자료로 보존. 신규 목표 충족 수에는 합산하지 않음."
+    },
+    {
+      "id": "01_physical_ai_isaac_ros2--chapter-11",
+      "disposition": "context-only",
+      "reason": "기존 장 개요·목표·선수·요약·참고·전체 절차를 원래 URL의 보충/탐색 자료로 보존. 신규 목표 충족 수에는 합산하지 않음."
+    },
+    {
+      "id": "01_physical_ai_isaac_ros2--chapter-13",
+      "disposition": "context-only",
+      "reason": "기존 장 개요·목표·선수·요약·참고·전체 절차를 원래 URL의 보충/탐색 자료로 보존. 신규 목표 충족 수에는 합산하지 않음."
+    },
+    {
+      "id": "01_physical_ai_isaac_ros2--chapter-16",
+      "disposition": "context-only",
+      "reason": "기존 장 개요·목표·선수·요약·참고·전체 절차를 원래 URL의 보충/탐색 자료로 보존. 신규 목표 충족 수에는 합산하지 않음."
+    },
+    {
+      "id": "02_physx_simulation--chapter-1",
+      "disposition": "context-only",
+      "reason": "기존 장 개요·목표·선수·요약·참고·전체 절차를 원래 URL의 보충/탐색 자료로 보존. 신규 목표 충족 수에는 합산하지 않음."
+    },
+    {
+      "id": "02_physx_simulation--chapter-2",
+      "disposition": "context-only",
+      "reason": "기존 장 개요·목표·선수·요약·참고·전체 절차를 원래 URL의 보충/탐색 자료로 보존. 신규 목표 충족 수에는 합산하지 않음."
+    },
+    {
+      "id": "02_physx_simulation--chapter-3",
+      "disposition": "context-only",
+      "reason": "기존 장 개요·목표·선수·요약·참고·전체 절차를 원래 URL의 보충/탐색 자료로 보존. 신규 목표 충족 수에는 합산하지 않음."
+    },
+    {
+      "id": "02_physx_simulation--chapter-4",
+      "disposition": "context-only",
+      "reason": "기존 장 개요·목표·선수·요약·참고·전체 절차를 원래 URL의 보충/탐색 자료로 보존. 신규 목표 충족 수에는 합산하지 않음."
+    },
+    {
+      "id": "02_physx_simulation--chapter-14",
+      "disposition": "context-only",
+      "reason": "기존 장 개요·목표·선수·요약·참고·전체 절차를 원래 URL의 보충/탐색 자료로 보존. 신규 목표 충족 수에는 합산하지 않음."
+    },
+    {
+      "id": "02_physx_simulation--chapter-15",
+      "disposition": "context-only",
+      "reason": "기존 장 개요·목표·선수·요약·참고·전체 절차를 원래 URL의 보충/탐색 자료로 보존. 신규 목표 충족 수에는 합산하지 않음."
+    },
+    {
+      "id": "02_physx_simulation--chapter-17",
+      "disposition": "context-only",
+      "reason": "기존 장 개요·목표·선수·요약·참고·전체 절차를 원래 URL의 보충/탐색 자료로 보존. 신규 목표 충족 수에는 합산하지 않음."
+    },
+    {
+      "id": "02_physx_simulation--chapter-20",
+      "disposition": "context-only",
+      "reason": "기존 장 개요·목표·선수·요약·참고·전체 절차를 원래 URL의 보충/탐색 자료로 보존. 신규 목표 충족 수에는 합산하지 않음."
+    },
+    {
+      "id": "03_so101_kinematics_teleop--chapter-1",
+      "disposition": "context-only",
+      "reason": "기존 장 개요·목표·선수·요약·참고·전체 절차를 원래 URL의 보충/탐색 자료로 보존. 신규 목표 충족 수에는 합산하지 않음."
+    },
+    {
+      "id": "03_so101_kinematics_teleop--chapter-2",
+      "disposition": "context-only",
+      "reason": "기존 장 개요·목표·선수·요약·참고·전체 절차를 원래 URL의 보충/탐색 자료로 보존. 신규 목표 충족 수에는 합산하지 않음."
+    },
+    {
+      "id": "03_so101_kinematics_teleop--chapter-3",
+      "disposition": "context-only",
+      "reason": "기존 장 개요·목표·선수·요약·참고·전체 절차를 원래 URL의 보충/탐색 자료로 보존. 신규 목표 충족 수에는 합산하지 않음."
+    },
+    {
+      "id": "03_so101_kinematics_teleop--chapter-4",
+      "disposition": "context-only",
+      "reason": "기존 장 개요·목표·선수·요약·참고·전체 절차를 원래 URL의 보충/탐색 자료로 보존. 신규 목표 충족 수에는 합산하지 않음."
+    },
+    {
+      "id": "03_so101_kinematics_teleop--chapter-11",
+      "disposition": "context-only",
+      "reason": "기존 장 개요·목표·선수·요약·참고·전체 절차를 원래 URL의 보충/탐색 자료로 보존. 신규 목표 충족 수에는 합산하지 않음."
+    },
+    {
+      "id": "03_so101_kinematics_teleop--chapter-13",
+      "disposition": "context-only",
+      "reason": "기존 장 개요·목표·선수·요약·참고·전체 절차를 원래 URL의 보충/탐색 자료로 보존. 신규 목표 충족 수에는 합산하지 않음."
+    },
+    {
+      "id": "03_so101_kinematics_teleop--chapter-16",
+      "disposition": "context-only",
+      "reason": "기존 장 개요·목표·선수·요약·참고·전체 절차를 원래 URL의 보충/탐색 자료로 보존. 신규 목표 충족 수에는 합산하지 않음."
+    },
+    {
+      "id": "04_sensor_data_pipeline--chapter-1",
+      "disposition": "context-only",
+      "reason": "기존 장 개요·목표·선수·요약·참고·전체 절차를 원래 URL의 보충/탐색 자료로 보존. 신규 목표 충족 수에는 합산하지 않음."
+    },
+    {
+      "id": "04_sensor_data_pipeline--chapter-2",
+      "disposition": "context-only",
+      "reason": "기존 장 개요·목표·선수·요약·참고·전체 절차를 원래 URL의 보충/탐색 자료로 보존. 신규 목표 충족 수에는 합산하지 않음."
+    },
+    {
+      "id": "04_sensor_data_pipeline--chapter-3",
+      "disposition": "context-only",
+      "reason": "기존 장 개요·목표·선수·요약·참고·전체 절차를 원래 URL의 보충/탐색 자료로 보존. 신규 목표 충족 수에는 합산하지 않음."
+    },
+    {
+      "id": "04_sensor_data_pipeline--chapter-4",
+      "disposition": "context-only",
+      "reason": "기존 장 개요·목표·선수·요약·참고·전체 절차를 원래 URL의 보충/탐색 자료로 보존. 신규 목표 충족 수에는 합산하지 않음."
+    },
+    {
+      "id": "04_sensor_data_pipeline--chapter-14",
+      "disposition": "context-only",
+      "reason": "기존 장 개요·목표·선수·요약·참고·전체 절차를 원래 URL의 보충/탐색 자료로 보존. 신규 목표 충족 수에는 합산하지 않음."
+    },
+    {
+      "id": "04_sensor_data_pipeline--chapter-17",
+      "disposition": "context-only",
+      "reason": "기존 장 개요·목표·선수·요약·참고·전체 절차를 원래 URL의 보충/탐색 자료로 보존. 신규 목표 충족 수에는 합산하지 않음."
+    },
+    {
+      "id": "05_lerobot_smolvla--chapter-1",
+      "disposition": "context-only",
+      "reason": "기존 장 개요·목표·선수·요약·참고·전체 절차를 원래 URL의 보충/탐색 자료로 보존. 신규 목표 충족 수에는 합산하지 않음."
+    },
+    {
+      "id": "05_lerobot_smolvla--chapter-2",
+      "disposition": "context-only",
+      "reason": "기존 장 개요·목표·선수·요약·참고·전체 절차를 원래 URL의 보충/탐색 자료로 보존. 신규 목표 충족 수에는 합산하지 않음."
+    },
+    {
+      "id": "05_lerobot_smolvla--chapter-3",
+      "disposition": "context-only",
+      "reason": "기존 장 개요·목표·선수·요약·참고·전체 절차를 원래 URL의 보충/탐색 자료로 보존. 신규 목표 충족 수에는 합산하지 않음."
+    },
+    {
+      "id": "05_lerobot_smolvla--chapter-4",
+      "disposition": "context-only",
+      "reason": "기존 장 개요·목표·선수·요약·참고·전체 절차를 원래 URL의 보충/탐색 자료로 보존. 신규 목표 충족 수에는 합산하지 않음."
+    },
+    {
+      "id": "05_lerobot_smolvla--chapter-15",
+      "disposition": "supplement-only",
+      "reason": "데이터 공개 권리·개인정보·토큰 보관 등 보충 학습으로 명시 연결. 신규 핵심 목표의 충족/준비 수에는 합산하지 않음."
+    },
+    {
+      "id": "05_lerobot_smolvla--chapter-17",
+      "disposition": "context-only",
+      "reason": "기존 장 개요·목표·선수·요약·참고·전체 절차를 원래 URL의 보충/탐색 자료로 보존. 신규 목표 충족 수에는 합산하지 않음."
+    },
+    {
+      "id": "05_lerobot_smolvla--chapter-18",
+      "disposition": "context-only",
+      "reason": "기존 장 개요·목표·선수·요약·참고·전체 절차를 원래 URL의 보충/탐색 자료로 보존. 신규 목표 충족 수에는 합산하지 않음."
+    },
+    {
+      "id": "05_lerobot_smolvla--chapter-20",
+      "disposition": "context-only",
+      "reason": "기존 장 개요·목표·선수·요약·참고·전체 절차를 원래 URL의 보충/탐색 자료로 보존. 신규 목표 충족 수에는 합산하지 않음."
+    },
+    {
+      "id": "05_lerobot_smolvla--chapter-23",
+      "disposition": "context-only",
+      "reason": "기존 장 개요·목표·선수·요약·참고·전체 절차를 원래 URL의 보충/탐색 자료로 보존. 신규 목표 충족 수에는 합산하지 않음."
+    },
+    {
+      "id": "06_sim2real_deployment--chapter-1",
+      "disposition": "context-only",
+      "reason": "기존 장 개요·목표·선수·요약·참고·전체 절차를 원래 URL의 보충/탐색 자료로 보존. 신규 목표 충족 수에는 합산하지 않음."
+    },
+    {
+      "id": "06_sim2real_deployment--chapter-2",
+      "disposition": "context-only",
+      "reason": "기존 장 개요·목표·선수·요약·참고·전체 절차를 원래 URL의 보충/탐색 자료로 보존. 신규 목표 충족 수에는 합산하지 않음."
+    },
+    {
+      "id": "06_sim2real_deployment--chapter-3",
+      "disposition": "context-only",
+      "reason": "기존 장 개요·목표·선수·요약·참고·전체 절차를 원래 URL의 보충/탐색 자료로 보존. 신규 목표 충족 수에는 합산하지 않음."
+    },
+    {
+      "id": "06_sim2real_deployment--chapter-4",
+      "disposition": "context-only",
+      "reason": "기존 장 개요·목표·선수·요약·참고·전체 절차를 원래 URL의 보충/탐색 자료로 보존. 신규 목표 충족 수에는 합산하지 않음."
+    },
+    {
+      "id": "06_sim2real_deployment--chapter-13",
+      "disposition": "context-only",
+      "reason": "기존 장 개요·목표·선수·요약·참고·전체 절차를 원래 URL의 보충/탐색 자료로 보존. 신규 목표 충족 수에는 합산하지 않음."
+    },
+    {
+      "id": "06_sim2real_deployment--chapter-14",
+      "disposition": "context-only",
+      "reason": "기존 장 개요·목표·선수·요약·참고·전체 절차를 원래 URL의 보충/탐색 자료로 보존. 신규 목표 충족 수에는 합산하지 않음."
+    },
+    {
+      "id": "06_sim2real_deployment--chapter-17",
+      "disposition": "context-only",
+      "reason": "기존 장 개요·목표·선수·요약·참고·전체 절차를 원래 URL의 보충/탐색 자료로 보존. 신규 목표 충족 수에는 합산하지 않음."
+    }
+  ],
+  "nonNavigationFiles": [
+    {
+      "source": "00_frontmatter/README.md",
+      "reason": "표지·구분지·운영/출판·참고 문서: 책 원본은 보존하되 본선 학습 준비 수에 넣지 않음"
+    },
+    {
+      "source": "00_frontmatter/how_to_use.md",
+      "reason": "표지·구분지·운영/출판·참고 문서: 책 원본은 보존하되 본선 학습 준비 수에 넣지 않음"
+    },
+    {
+      "source": "00_frontmatter/images/cover.png",
+      "reason": "표지·구분지·운영/출판·참고 문서: 책 원본은 보존하되 본선 학습 준비 수에 넣지 않음"
+    },
+    {
+      "source": "00_frontmatter/images/learning_path.svg",
+      "reason": "표지·구분지·운영/출판·참고 문서: 책 원본은 보존하되 본선 학습 준비 수에 넣지 않음"
+    },
+    {
+      "source": "00_frontmatter/preface.md",
+      "reason": "표지·구분지·운영/출판·참고 문서: 책 원본은 보존하되 본선 학습 준비 수에 넣지 않음"
+    },
+    {
+      "source": "00_frontmatter/title.md",
+      "reason": "표지·구분지·운영/출판·참고 문서: 책 원본은 보존하되 본선 학습 준비 수에 넣지 않음"
+    },
+    {
+      "source": "01_physical_ai_isaac_ros2/divider.md",
+      "reason": "표지·구분지·운영/출판·참고 문서: 책 원본은 보존하되 본선 학습 준비 수에 넣지 않음"
+    },
+    {
+      "source": "01_physical_ai_isaac_ros2/images/chapter-01-divider.png",
+      "reason": "표지·구분지·운영/출판·참고 문서: 책 원본은 보존하되 본선 학습 준비 수에 넣지 않음"
+    },
+    {
+      "source": "01_physical_ai_isaac_ros2/images/chapter-divider.png",
+      "reason": "표지·구분지·운영/출판·참고 문서: 책 원본은 보존하되 본선 학습 준비 수에 넣지 않음"
+    },
+    {
+      "source": "02_physx_simulation/divider.md",
+      "reason": "표지·구분지·운영/출판·참고 문서: 책 원본은 보존하되 본선 학습 준비 수에 넣지 않음"
+    },
+    {
+      "source": "02_physx_simulation/images/chapter-02-divider.png",
+      "reason": "표지·구분지·운영/출판·참고 문서: 책 원본은 보존하되 본선 학습 준비 수에 넣지 않음"
+    },
+    {
+      "source": "02_physx_simulation/images/chapter-divider.png",
+      "reason": "표지·구분지·운영/출판·참고 문서: 책 원본은 보존하되 본선 학습 준비 수에 넣지 않음"
+    },
+    {
+      "source": "03_so101_kinematics_teleop/README.md",
+      "reason": "표지·구분지·운영/출판·참고 문서: 책 원본은 보존하되 본선 학습 준비 수에 넣지 않음"
+    },
+    {
+      "source": "03_so101_kinematics_teleop/divider.md",
+      "reason": "표지·구분지·운영/출판·참고 문서: 책 원본은 보존하되 본선 학습 준비 수에 넣지 않음"
+    },
+    {
+      "source": "03_so101_kinematics_teleop/images/chapter-03-divider.png",
+      "reason": "표지·구분지·운영/출판·참고 문서: 책 원본은 보존하되 본선 학습 준비 수에 넣지 않음"
+    },
+    {
+      "source": "03_so101_kinematics_teleop/images/chapter-divider.png",
+      "reason": "표지·구분지·운영/출판·참고 문서: 책 원본은 보존하되 본선 학습 준비 수에 넣지 않음"
+    },
+    {
+      "source": "04_sensor_data_pipeline/divider.md",
+      "reason": "표지·구분지·운영/출판·참고 문서: 책 원본은 보존하되 본선 학습 준비 수에 넣지 않음"
+    },
+    {
+      "source": "04_sensor_data_pipeline/images/chapter-04-divider.png",
+      "reason": "표지·구분지·운영/출판·참고 문서: 책 원본은 보존하되 본선 학습 준비 수에 넣지 않음"
+    },
+    {
+      "source": "04_sensor_data_pipeline/images/chapter-divider.png",
+      "reason": "표지·구분지·운영/출판·참고 문서: 책 원본은 보존하되 본선 학습 준비 수에 넣지 않음"
+    },
+    {
+      "source": "05_lerobot_smolvla/divider.md",
+      "reason": "표지·구분지·운영/출판·참고 문서: 책 원본은 보존하되 본선 학습 준비 수에 넣지 않음"
+    },
+    {
+      "source": "05_lerobot_smolvla/images/chapter-05-divider.png",
+      "reason": "표지·구분지·운영/출판·참고 문서: 책 원본은 보존하되 본선 학습 준비 수에 넣지 않음"
+    },
+    {
+      "source": "05_lerobot_smolvla/images/chapter-divider.png",
+      "reason": "표지·구분지·운영/출판·참고 문서: 책 원본은 보존하되 본선 학습 준비 수에 넣지 않음"
+    },
+    {
+      "source": "06_sim2real_deployment/README.md",
+      "reason": "표지·구분지·운영/출판·참고 문서: 책 원본은 보존하되 본선 학습 준비 수에 넣지 않음"
+    },
+    {
+      "source": "06_sim2real_deployment/divider.md",
+      "reason": "표지·구분지·운영/출판·참고 문서: 책 원본은 보존하되 본선 학습 준비 수에 넣지 않음"
+    },
+    {
+      "source": "06_sim2real_deployment/images/chapter-06-divider.png",
+      "reason": "표지·구분지·운영/출판·참고 문서: 책 원본은 보존하되 본선 학습 준비 수에 넣지 않음"
+    },
+    {
+      "source": "06_sim2real_deployment/images/chapter-divider.png",
+      "reason": "표지·구분지·운영/출판·참고 문서: 책 원본은 보존하되 본선 학습 준비 수에 넣지 않음"
+    },
+    {
+      "source": "README.md",
+      "reason": "표지·구분지·운영/출판·참고 문서: 책 원본은 보존하되 본선 학습 준비 수에 넣지 않음"
+    },
+    {
+      "source": "appendices/README.md",
+      "reason": "표지·구분지·운영/출판·참고 문서: 책 원본은 보존하되 본선 학습 준비 수에 넣지 않음"
+    },
+    {
+      "source": "appendices/migration_lyrical.md",
+      "reason": "표지·구분지·운영/출판·참고 문서: 책 원본은 보존하되 본선 학습 준비 수에 넣지 않음"
+    },
+    {
+      "source": "metadata.yaml",
+      "reason": "표지·구분지·운영/출판·참고 문서: 책 원본은 보존하되 본선 학습 준비 수에 넣지 않음"
+    },
+    {
+      "source": "references/README.md",
+      "reason": "표지·구분지·운영/출판·참고 문서: 책 원본은 보존하되 본선 학습 준비 수에 넣지 않음"
+    }
+  ]
+}
