@@ -4,7 +4,7 @@
 
 ```text
 book/       기존 여섯 장 응용 교재, 실습, 예제 코드, 이미지
-curriculum/ 통합 과정의 새 상세 교재(E1·E2·E3 및 E4 로봇팔·데이터·정책·배포·캡스톤)
+curriculum/ 통합 과정의 새 상세 교재(E1~E4 및 E5 모바일 로봇 경로)
 output/     PDF, EPUB, HTML 최종 산출물
 reviews/    장별·통합 검수 기록
 shared/     이북용 CSS와 작성 템플릿
@@ -18,7 +18,7 @@ tmp/        빌드·검수 임시 자료
 ./ebook/tools/build_book.sh
 ```
 
-빌드는 `doc/v2/inventory/e1-reviews.json`·`e2-reviews.json`·`e3-reviews.json`·`e4-reviews.json`의 현재 원고 지문과 일치한 상세 본문·실습·문제·해설을 먼저 결합하고, 기존 여섯 장 응용 교재를 이어 붙입니다. JSON 작성 메타데이터는 이북 본문에서 제외하고, 포함된 상세 단위 연결은 실제 책 내부 앵커로 변환합니다. 원고가 승인 후 바뀌면 재검수 없이 출판하지 않습니다. Node.js와 루트 npm 의존성이 필요합니다.
+빌드는 `doc/v2/inventory/e1-reviews.json`·`e2-reviews.json`·`e3-reviews.json`·`e4-reviews.json`·`e5-reviews.json`의 현재 원고 지문과 일치한 상세 본문·실습·문제·해설을 먼저 결합하고, 기존 여섯 장 응용 교재를 이어 붙입니다. 상세 원고는 승인 registry의 단계 순서(E1~E5), 단계 안에서는 모듈·단위 순서로 묶습니다. E5의 M09가 앞선 단계 사이에 끼어 같은 단계 제목이 반복되지 않도록 합니다. JSON 작성 메타데이터는 이북 본문에서 제외하고, 포함된 상세 단위 연결은 실제 책 내부 앵커로 변환합니다. 원고가 승인 후 바뀌면 재검수 없이 출판하지 않습니다. Node.js와 루트 npm 의존성이 필요합니다.
 
 새 상세 본문은 [`curriculum/`](curriculum/)에서, 웹에서는 `교재 본문` 목차의 상세 교재 영역에서 읽을 수 있습니다. 원고·웹 빌드와 PDF/EPUB 산출물 생성은 별도 단계입니다.
 

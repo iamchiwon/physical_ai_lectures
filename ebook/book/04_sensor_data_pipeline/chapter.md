@@ -186,6 +186,8 @@ TF2는 시간에 따라 변하는 프레임 관계를 버퍼에 저장한다. �
 
 `code/ros2_jazzy/sensor_pipeline/sensor_pipeline/static_camera_tf.py`는 `tool0 -> camera_link -> camera_optical_frame`의 고정 변환을 방송한다. 실제 값은 캘리브레이션 결과로 교체한다.
 
+위 프레임 계약 표는 이 장의 고정 작업대 로봇팔 예시다. 모바일 경로에서는 [M09.04](/study/unit-m09-04-a/)와 [M15.01](/study/unit-m15-01-a/)의 `map → odom → base_link`를 구분한다. `odom → base_link`는 연속적인 지역 추정, `map → odom`은 전역 보정 역할이며 전역 보정 시 map 기준 위치가 변할 수 있다. 이 구조를 쓸 때 기존 `world → base_link` broadcaster를 같은 TF 트리에 동시에 추가하지 않는다. 시뮬레이터의 정답 pose와 센서 기반 위치추정도 다른 출처로 기록한다. [M18.05](/study/unit-m18-05-a/)의 다중 로봇에서는 토픽 namespace가 TF frame 문자열을 자동으로 변경하지 않는다는 점을 확인한다. 같은 TF 토픽과 버퍼를 공유한다면 로봇별 odom·base 등의 frame ID 충돌을 방지한다. TF 토픽과 버퍼를 로봇별로 격리하는 설계에서는 각 로컬 frame 이름을 유지할 수 있지만, 외부 결과를 합치는 곳에서 로봇 식별과 좌표 변환을 명시한다. 공통 map을 공유한다면 원점·축·지도 버전의 합의를 별도로 확인한다.
+
 ### 4.3.2 timestamp가 있는 조회
 
 “최신 transform”으로 모든 과거 이미지를 변환하면 움직이는 로봇에서 공간 오차가 생긴다. 이미지 header timestamp에 해당하는 transform을 조회한다.

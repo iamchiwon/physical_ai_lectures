@@ -674,6 +674,90 @@ export const authoredMetadata: AuthoredMetadata[] = [
     "evidenceRef": "doc/v2/work_items/M08.06.md"
   },
   {
+    "topicId": "M09.01",
+    "source": "ebook/curriculum/M09/M09.01.md",
+    "title": "월드·로봇 스폰·리셋·고정 스텝",
+    "objectives": [
+      "월드/모델·server/GUI와 스폰 요청/관측·이름/초기 pose의 계약을 구분한다.",
+      "합성 고정 스텝/주기·simulation time/실제 경과/RTF를 계산하고 포함 가정을 설명한다.",
+      "pause/reset 뒤 시간/상태·외부 큐/세대를 확인해 재현/준비·실패/미상을 판정한다."
+    ],
+    "prerequisiteNote": "M05의 ROS/시간, M07의 이산 제어와 M08의 모델을 사용한다. SDF/world/model·entity 생성과 physics step/RTF를 본문에서 보충한다. 기준은 Ubuntu 24.04/ROS 2 Jazzy/Gazebo Harmonic이며 기본 활동은 합성 로그 계산이다. 실제 설치·Gazebo/ROS/장비 실행은 요구하지 않는다.",
+    "sha256": "b24f3aceae5a5585ef5f4182629d009a1de0b5e3d036fba0d769543846e8cfd1",
+    "reviewed": true,
+    "evidenceRef": "doc/v2/work_items/M09.01.md"
+  },
+  {
+    "topicId": "M09.02",
+    "source": "ebook/curriculum/M09/M09.02.md",
+    "title": "차동 구동·조인트 구동·플러그인·브리지",
+    "objectives": [
+      "차체/관절 명령·구동 mode와 system plugin/ROS-Gazebo bridge·상태의 역할을 구분한다.",
+      "명시한 차동 기구학에서 바퀴/차체 속도와 반지름/간격·부호 변형을 계산한다.",
+      "합성 토픽/형식·방향/상태 로그로 명령 경로를 진단하고 실제 이동/추정의 미상을 판정한다."
+    ],
+    "prerequisiteNote": "M03 구동, M05 ROS, M06 차동 기구학과 M08 모델·M09.01 월드를 사용한다. 차동 공식/양의 방향·위치/속도 구동과 Transport/ROS 형식 변환을 본문에서 보충한다. 기준은 Jazzy/Harmonic이며 기본은 합성 설정/로그·종이 계산이다. 실제 ROS/Gazebo·장비 명령은 보내지 않는다.",
+    "sha256": "711579c59316bf5e92db0998d694d866a0e887f3813a1d2167a81751ecc5475e",
+    "reviewed": true,
+    "evidenceRef": "doc/v2/work_items/M09.02.md"
+  },
+  {
+    "topicId": "M09.03",
+    "source": "ebook/curriculum/M09/M09.03.md",
+    "title": "카메라·깊이·LiDAR·IMU 센서 구성",
+    "objectives": [
+      "센서별 관측량과 system·장착/frame·단위/주기·노이즈/범위의 구성 계약을 설명한다.",
+      "합성 camera/depth의 점/거리와 LiDAR 좌표·원시 영상 데이터량을 계산한다.",
+      "설정과 실제 표본의 시각/유효성·공분산/IMU 해석을 구분해 구간별 검증/실패 진단을 설계한다."
+    ],
+    "prerequisiteNote": "M03의 센서, M05의 ROS와 M08 모델·M09.01/02를 연결한다. optical depth/range·scan 각도와 IMU specific force를 본문에서 보충한다. 기준은 Jazzy/Harmonic이며 기본은 합성 설정/표본의 종이 계산이다. 실제 렌더링/Gazebo·센서/ROS 실행은 하지 않는다.",
+    "sha256": "d337e3df31502b075e331972960802d50159de575a2ec0948e95efd31af65154",
+    "reviewed": true,
+    "evidenceRef": "doc/v2/work_items/M09.03.md"
+  },
+  {
+    "topicId": "M09.04",
+    "source": "ebook/curriculum/M09/M09.04.md",
+    "title": "odom·base_link·map과 시뮬레이션 시간",
+    "objectives": [
+      "map/odom/base_link와 TF의 방향/발행 소유·메시지 frame/clock 계약을 설명한다.",
+      "합성 map/odom 변환·보정 점프와 body 속도/관측 나이를 계산한다.",
+      "TF/clock 혼용·중복 소유/reset 기록에서 미상과 필요한 정합/재검증 근거를 진단한다."
+    ],
+    "prerequisiteNote": "M05의 TF/clock, M02의 변환과 M08·M09.01~03의 모델/구동/센서를 연결한다. REP105의 frame 역할과 map→odom→base_link 체인을 본문에서 보충한다. 기준은 Jazzy/Harmonic이고 기본은 합성 변환/로그다. 실제 localization/SLAM이나 ROS/Gazebo는 실행하지 않는다.",
+    "sha256": "9ee3b2612b810f3bb64b98b825bb7261a2b89a3a4eb5e88cbf422874aab5aa19",
+    "reviewed": true,
+    "evidenceRef": "doc/v2/work_items/M09.04.md"
+  },
+  {
+    "topicId": "M09.05",
+    "source": "ebook/curriculum/M09/M09.05.md",
+    "title": "주행 명령·오도메트리·로그 기록",
+    "objectives": [
+      "주행 제안/적용·바퀴 상태/차체 odom·별도 기준과 기록의 시간/단위·버전 계약을 구분한다.",
+      "합성 누적 바퀴 각도에서 직선/상수 곡률 이동·관측 나이/기준 잔차를 계산한다.",
+      "bag의 자료/시각·누락/reset/재생 범위와 원인 가설을 나누어 검증/기록 계획을 설계한다."
+    ],
+    "prerequisiteNote": "M09.02의 차동 구동, M09.04의 frame/clock과 M02의 삼각함수를 사용한다. 바퀴 각도 차분/적분과 odom/기준·bag 재생의 의미를 본문에서 보충한다. 기본은 합성 로그/표준 Python 계산이며 실제 ROS/Gazebo 기록·재생이나 장비 주행은 하지 않는다.",
+    "sha256": "4468cbdf9c4c785bfec1ebdf0c7336be3f74d7f86d271807aa5941d8695a7ab3",
+    "reviewed": true,
+    "evidenceRef": "doc/v2/work_items/M09.05.md"
+  },
+  {
+    "topicId": "M09.06",
+    "source": "ebook/curriculum/M09/M09.06.md",
+    "title": "모델·월드·Navigation 패키지 구조 분석",
+    "objectives": [
+      "description/simulation/bringup/navigation의 파일·실행 책임과 의존/자료 경로를 설명한다.",
+      "주어진 패키지 manifest의 이름/자산·joint/topic/frame/clock 참조를 대조해 결함/통과/미상을 판정한다.",
+      "준비 관문/실행 증거·버전/초기 상태와 Classic 이식·재현/재검증 계획을 설계한다."
+    ],
+    "prerequisiteNote": "M05 패키지/launch, M08 모델과 M09.01~05의 구성/시간/로그를 연결한다. Navigation의 map·위치 추정·계획·제어 역할은 본문에서 보충하며 후속 M15·M17·M18의 알고리즘을 이미 배웠다고 가정하지 않는다. 기본은 합성 파일표 분석이고 실제 빌드/launch·ROS/Gazebo/Nav2 실행은 하지 않는다.",
+    "sha256": "3204e1dce30b1dd003f04257137841dc6f7438d36cf20436973e212cba3fc0e2",
+    "reviewed": true,
+    "evidenceRef": "doc/v2/work_items/M09.06.md"
+  },
+  {
     "topicId": "M10.01",
     "source": "ebook/curriculum/M10/M10.01.md",
     "title": "Stage·Prim·레이어·참조·인스턴싱",
@@ -968,6 +1052,258 @@ export const authoredMetadata: AuthoredMetadata[] = [
     "evidenceRef": "doc/v2/work_items/M14.06.md"
   },
   {
+    "topicId": "M15.01",
+    "source": "ebook/curriculum/M15/M15.01.md",
+    "title": "오도메트리·로컬라이제이션·매핑·SLAM 구분",
+    "objectives": [
+      "odometry, localization, mapping, SLAM에서 알려진 입력과 추정할 위치·지도 및 출력을 구분한다.",
+      "합성 1D 랜드마크와 이동 관측으로 위치·지도를 계산하고 미지 문제의 전역 모호성을 설명한다.",
+      "과업과 지도 상태에 맞는 문제를 선택하고 평가·실패·미상의 근거를 제시한다."
+    ],
+    "prerequisiteNote": "M09의 구동/센서·odom/map/clock과 M02/M14의 좌표 기초를 연결한다. 랜드마크/상대 관측·전역 기준과 모호성을 본문에서 보충한다. 기본은 합성 표/종이 계산이며 실제 SLAM/localization·ROS/장비를 실행하지 않는다.",
+    "sha256": "a26b8fda99fca0a44b73bff7e69f6a2921447241d3281527824a9a098040cd01",
+    "reviewed": true,
+    "evidenceRef": "doc/v2/work_items/M15.01.md"
+  },
+  {
+    "topicId": "M15.02",
+    "source": "ebook/curriculum/M15/M15.02.md",
+    "title": "점유 격자·지도 좌표·지도 저장과 재사용",
+    "objectives": [
+      "점유 격자의 배열 인덱스와 셀 중심의 지도 좌표를 해상도·원점으로 계산한다.",
+      "지도 이미지와 메타데이터의 역할을 구분하고 저장 변환의 정보 손실을 판정한다.",
+      "저장 지도를 재사용할 때 좌표·위치 추정·환경 유효성과 실행 근거를 점검한다."
+    ],
+    "prerequisiteNote": "M15.01의 지도와 위치 추정을 연결한다. 좌표 회전과 배열 순서는 본문에서 다시 정의한다. 작은 합성 격자와 가상 파일을 종이로 해석하며 실제 Nav2·지도 저장이나 로봇을 실행하지 않는다.",
+    "sha256": "a01eeb7b3f27a896fab2656ac890a095e3bb823de078da09d8f418a3ad58ff45",
+    "reviewed": true,
+    "evidenceRef": "doc/v2/work_items/M15.02.md"
+  },
+  {
+    "topicId": "M15.03",
+    "source": "ebook/curriculum/M15/M15.03.md",
+    "title": "LiDAR SLAM과 Visual SLAM 파이프라인",
+    "objectives": [
+      "LiDAR와 Visual SLAM의 입력부터 대응·이동 추정·지도와 전역 수정까지 흐름을 설명한다.",
+      "합성 점 대응과 투영 계산으로 상대 이동의 방향 및 단안 척도의 모호성을 설명한다.",
+      "센서·환경·시간 조건에 따른 실패 단계를 구분하고 필요한 추가 근거를 제안한다."
+    ],
+    "prerequisiteNote": "M15.01~02의 지도·위치 추정과 좌표를 연결한다. 특징, 시차, 전방 추정과 후방 수정의 뜻을 본문에서 보충한다. 실제 SLAM·특징 추출을 실행하지 않고 합성 점과 보정된 카메라 수치로 계산한다.",
+    "sha256": "47cc3801140824ec9d7b51852e444cb9692af61e5ae5a726f5b537fb6171fb82",
+    "reviewed": true,
+    "evidenceRef": "doc/v2/work_items/M15.03.md"
+  },
+  {
+    "topicId": "M15.04",
+    "source": "ebook/curriculum/M15/M15.04.md",
+    "title": "스캔/특징 매칭·상대 이동·루프 폐쇄의 직관",
+    "objectives": [
+      "주어진 점·특징 대응에서 이동 방향과 잔차를 계산하고 대응의 가정을 설명한다.",
+      "작은 pose graph의 누적 오차와 루프 제약에 따른 궤적 수정을 계산한다.",
+      "작은 잔차와 올바른 장소 대응을 구분하고 초기값·이상치·루프 검증 근거를 제안한다."
+    ],
+    "prerequisiteNote": "M15.01~03의 상대 관측·파이프라인을 연결한다. 잔차와 제곱합, pose graph의 점과 연결선 및 기준 고정을 본문에서 보충한다. 기본 활동은 합성 점과 1D 궤적 계산이며 실제 ICP나 SLAM 최적화 실행이 아니다.",
+    "sha256": "3f5f3fcef3218cad9b4fef6a35b5e98ceef862f8c8128d04ce451498909e62cb",
+    "reviewed": true,
+    "evidenceRef": "doc/v2/work_items/M15.04.md"
+  },
+  {
+    "topicId": "M15.05",
+    "source": "ebook/curriculum/M15/M15.05.md",
+    "title": "IMU 융합·드리프트·재위치추정",
+    "objectives": [
+      "IMU의 직접 관측과 추정 상태를 구분하고 일정 바이어스의 누적 오차를 계산한다.",
+      "독립·무편향 스칼라 관측의 단순 가중 결합을 계산하고 가정이 깨지는 경우를 설명한다.",
+      "대칭 환경의 위치 모호성과 재위치추정에 필요한 지도·관측·검증 근거를 판정한다."
+    ],
+    "prerequisiteNote": "M03/M09의 IMU와 M15의 위치·지도 기초를 연결한다. 바이어스, 분산, 예측과 관측 보정 및 재위치추정의 뜻을 본문에서 보충한다. Kalman/EKF 심화를 요구하지 않으며 단순 스칼라 가중식을 실제 필터 구현과 동일시하지 않는다. 기본은 합성 기록 계산이다.",
+    "sha256": "67acde3701e250e5849af011435e1c93f4215c9bdfcc851c208818511b925eba",
+    "reviewed": true,
+    "evidenceRef": "doc/v2/work_items/M15.05.md"
+  },
+  {
+    "topicId": "M15.06",
+    "source": "ebook/curriculum/M15/M15.06.md",
+    "title": "기록 데이터로 지도 품질·경로 오차 평가",
+    "objectives": [
+      "기록의 좌표·시각·정합과 지도 잔차·관측 범위를 점검한다.",
+      "정합된 합성 궤적에서 위치 오차와 구간 이동 오차의 RMSE를 계산한다.",
+      "유효 표본 지표와 전체 실행의 추적 실패·미상을 구분해 평가 결과를 보고한다."
+    ],
+    "prerequisiteNote": "M15의 지도·위치 추정과 M02의 제곱합 기초를 연결한다. RMSE, 기준 정합, 절대·상대 오차와 실패 분모를 본문에서 보충한다. 기본은 합성 기록의 종이 계산이며 선택 표준 라이브러리 코드도 제공한다. 실제 SLAM·evo·ROS 실행이나 지도 성능 실증은 하지 않는다.",
+    "sha256": "79849afce69bbc38cd95f6d000dc936a822cb78a1f584190989e309d26234d25",
+    "reviewed": true,
+    "evidenceRef": "doc/v2/work_items/M15.06.md"
+  },
+  {
+    "topicId": "M17.01",
+    "source": "ebook/curriculum/M17/M17.01.md",
+    "title": "Configuration Space·충돌 검사·격자·로드맵",
+    "objectives": [
+      "configuration과 작업 공간의 점을 구분하고 로봇 전체 배치에 필요한 좌표를 설명한다.",
+      "합성 원판 모델의 충돌·여유를 계산하고 끝점과 연결 구간의 유효성을 구분한다.",
+      "격자와 로드맵의 점·간선·연결성을 판정하고 모델과 실제 이동의 한계를 설명한다."
+    ],
+    "prerequisiteNote": "M06의 관절·이동 기구학과 M15의 지도 좌표를 연결한다. configuration, 충돌 공간, 그래프의 점·간선과 연속 구간을 본문에서 보충한다. 기본은 정적 합성 도형과 종이 경로 검사이며 실제 플래너·로봇 실행은 필요하지 않다.",
+    "sha256": "985ca68fd0958a6448c9109643fd049c0b49d3bbd63f23300db24449818c55cd",
+    "reviewed": true,
+    "evidenceRef": "doc/v2/work_items/M17.01.md"
+  },
+  {
+    "topicId": "M17.02",
+    "source": "ebook/curriculum/M17/M17.02.md",
+    "title": "그래프 탐색·Dijkstra·A*·경로 비용",
+    "objectives": [
+      "주어진 방향 그래프에서 Dijkstra의 비용 완화와 최소 비용 경로를 계산한다.",
+      "A*의 g·h·f를 계산하고 heuristic의 허용성·일관성과 잘못된 종료를 판정한다.",
+      "비용 정의와 변경에 따른 경로 선택을 설명하고 그래프 최적성의 적용 범위를 보고한다."
+    ],
+    "prerequisiteNote": "M17.01의 node·간선·연결성을 연결한다. 우선순위, 비용 완화, heuristic과 최적성의 조건을 본문에서 정의한다. 작은 완전 입력 그래프를 종이로 탐색하며 실제 플래너나 로봇 실행은 필요하지 않다.",
+    "sha256": "7a51918e2813d3aaa43ca940d0035f0567e121f5c26017f3e3ca0064689a52f2",
+    "reviewed": true,
+    "evidenceRef": "doc/v2/work_items/M17.02.md"
+  },
+  {
+    "topicId": "M17.03",
+    "source": "ebook/curriculum/M17/M17.03.md",
+    "title": "PRM과 변형·연결성·샘플링",
+    "objectives": [
+      "PRM의 자유 configuration 샘플·이웃 연결·충돌 검사와 query 과정을 설명한다.",
+      "주어진 합성 점과 장애물에서 연결 반경에 따른 유효 간선과 경로를 계산한다.",
+      "유한 표본과 확률적 보장·PRM*/Lazy의 조건 및 지도 재사용의 한계를 판정한다."
+    ],
+    "prerequisiteNote": "M17.01~02의 C-space, 간선 검사와 그래프 탐색을 연결한다. sampling, local planner, query와 확률적 완전성의 뜻을 본문에서 보충한다. 기본은 합성 점과 사각 장애물 계산이며 실제 PRM·OMPL이나 로봇을 실행하지 않는다.",
+    "sha256": "e128bacb35909aff52d159b6f9f992cbecd7e8dc8406bb0c88f50ee8baf90fc2",
+    "reviewed": true,
+    "evidenceRef": "doc/v2/work_items/M17.03.md"
+  },
+  {
+    "topicId": "M17.04",
+    "source": "ebook/curriculum/M17/M17.04.md",
+    "title": "RRT와 변형·목표 편향·재배선",
+    "objectives": [
+      "RRT의 샘플·최근접·길이 제한 확장과 연결 구간의 충돌을 계산한다.",
+      "주어진 트리에서 RRT*의 부모 선택과 재배선 비용 개선을 계산한다.",
+      "목표 편향과 RRT-Connect·RRT*의 역할 및 유한 실패·점근 보장의 조건을 판정한다."
+    ],
+    "prerequisiteNote": "M17.01~03의 C-space, 연결 검사와 비용을 연결한다. 트리·확장·목표 편향·재배선을 본문에서 정의한다. 기본은 점 configuration의 합성 평면 계산이며 실제 RRT·OMPL이나 로봇을 실행하지 않는다.",
+    "sha256": "746650390ba7c76104e9f512652b556886c05e219182d32eaab77701abbf6afc",
+    "reviewed": true,
+    "evidenceRef": "doc/v2/work_items/M17.04.md"
+  },
+  {
+    "topicId": "M17.05",
+    "source": "ebook/curriculum/M17/M17.05.md",
+    "title": "CHOMP·STOMP·최적화 기반 경로 개선",
+    "objectives": [
+      "경로 비용과 제약을 구분하고 합성 목적함수의 미분·갱신 한 단계를 계산한다.",
+      "CHOMP의 공변 gradient와 STOMP의 비용 가중 후보 갱신의 역할을 수치 예로 비교한다.",
+      "초기 경로·국소성·유한 벌점의 한계를 설명하고 전체 충돌·시간 제약을 별도로 판정한다."
+    ],
+    "prerequisiteNote": "M02의 미분·최적화와 M17의 경로·충돌을 연결한다. 목적함수, gradient, metric과 비용 가중 후보를 본문에서 정의한다. 종이 계산과 임시 CPU 검산이 기본이며 교육용 스칼라 예는 실제 CHOMP/STOMP 구현이 아니다.",
+    "sha256": "26193b2edacd69f3b889f3493be4985bbe9406f0215c7ef9477b407443b870a2",
+    "reviewed": true,
+    "evidenceRef": "doc/v2/work_items/M17.05.md"
+  },
+  {
+    "topicId": "M17.06",
+    "source": "ebook/curriculum/M17/M17.06.md",
+    "title": "경로 대 시간 궤적·속도/가속도 제한·재계획",
+    "objectives": [
+      "경로 진행 변수와 시간 궤적을 구분하고 cubic 시간 스케일의 위치·속도·가속도를 계산한다.",
+      "주어진 관절별 제한으로 공통 기간의 하한을 계산하고 실행 후보를 판정한다.",
+      "현재 상태·관측 나이·계산 지연·지도 변경을 반영해 재계획과 궤적 전환의 근거를 점검한다."
+    ],
+    "prerequisiteNote": "M07의 궤적과 M17의 기하 경로를 연결한다. 진행 변수, 시간 스케일, 최대 미분값과 재계획의 상태 연속성을 본문에서 보충한다. 기본은 합성 관절 계산과 로그 판정이며 실제 제어기·로봇을 실행하지 않는다.",
+    "sha256": "a739664cb27ea6f8aa70bc8df2138fc53c0131e67f2e8ef160be21413ad99c8c",
+    "reviewed": true,
+    "evidenceRef": "doc/v2/work_items/M17.06.md"
+  },
+  {
+    "topicId": "M18.01",
+    "source": "ebook/curriculum/M18/M18.01.md",
+    "title": "Nav2 구성·Lifecycle·Map/Planner/Controller Server",
+    "objectives": [
+      "지도·위치 추정·planner/controller·BT와 구동 adapter의 역할 및 자료 의존을 설명한다.",
+      "Lifecycle의 configure·activate와 데이터 준비·실제 운용의 차이를 판정한다.",
+      "합성 상태·시각·TF 로그로 준비 실패와 실행·도착 미상을 구분한다."
+    ],
+    "prerequisiteNote": "M05의 통신·Lifecycle, M09의 구동·시간, M15의 위치·지도와 M17의 계획을 연결한다. 서버·plugin·costmap·BT의 역할을 본문에서 보충한다. 기준은 Jazzy/Ubuntu 24.04이며 기본은 합성 로그 분석이다. 실제 Nav2·ROS·로봇 실행은 없다.",
+    "sha256": "1d0b2e4b75d89efd853b8732bb601763606221685a0ca99d16af532f9a9690ce",
+    "reviewed": true,
+    "evidenceRef": "doc/v2/work_items/M18.01.md"
+  },
+  {
+    "topicId": "M18.02",
+    "source": "ebook/curriculum/M18/M18.02.md",
+    "title": "Global/Local Costmap·Inflation·장애물 갱신",
+    "objectives": [
+      "global/local costmap과 정적·장애물·inflation layer의 역할 및 좌표를 구분한다.",
+      "주어진 거리·계수로 inflation 비용을 계산하고 내부 값과 footprint의 한계를 설명한다.",
+      "합성 관측의 marking·clearing과 자료 나이·미상·layer 결합 결과를 판정한다."
+    ],
+    "prerequisiteNote": "M15.02의 점유 격자와 M17의 로봇 형상·충돌을 연결한다. costmap 값, layer, footprint, inflation과 광선 기반 clearing을 본문에서 정의한다. 기준은 Jazzy이며 기본은 합성 비용 표와 광선 기록이다. 실제 costmap·ROS 실행은 없다.",
+    "sha256": "f8e74efe59e511db132281787a562ce1760cb865441e476c37faeafcbd51a126",
+    "reviewed": true,
+    "evidenceRef": "doc/v2/work_items/M18.02.md"
+  },
+  {
+    "topicId": "M18.03",
+    "source": "ebook/curriculum/M18/M18.03.md",
+    "title": "전역 경로·지역 제어·Recovery·도착 판정",
+    "objectives": [
+      "전역 경로·지역 명령·실제 이동과 자료 갱신의 관계를 구분한다.",
+      "주어진 goal·progress 정책의 위치·방향·시간 조건을 계산해 판정한다.",
+      "실패 층위별 복구·재시도와 정지·재개에 필요한 근거를 제안한다."
+    ],
+    "prerequisiteNote": "M15의 위치 추정, M17의 계획과 M18.01~02의 서버·costmap을 연결한다. goal/progress checker와 복구 행동의 의미를 본문에서 보충한다. Jazzy의 합성 로그를 분석하며 실제 Nav2·복구 행동·로봇 실행은 없다.",
+    "sha256": "fd10cf683e05aeb33c7f8b0c257cfe3041fe2b1de0ca1fda66a6bb4212c36bb6",
+    "reviewed": true,
+    "evidenceRef": "doc/v2/work_items/M18.03.md"
+  },
+  {
+    "topicId": "M18.04",
+    "source": "ebook/curriculum/M18/M18.04.md",
+    "title": "Behavior Tree·Action·Waypoint·작업 상태",
+    "objectives": [
+      "BT의 tick·Sequence/Fallback과 Action의 비동기 상태를 구분한다.",
+      "합성 목표·피드백·취소·waypoint 기록에서 과업 상태와 완료 분모를 계산한다.",
+      "전제 재확인·중단·재시도와 waypoint 작업의 실제 성과에 필요한 근거를 설계한다."
+    ],
+    "prerequisiteNote": "M05의 Action과 M18의 서버·복구를 연결한다. BT 실행 상태, leaf, blackboard, waypoint 작업과 목표 ID를 본문에서 보충한다. 기본은 완전한 합성 사건표이며 실제 BT·Action·ROS·장비 실행은 없다.",
+    "sha256": "33ffae8b4acab542a19d9b3c51a5c347eba78faaee43d657aa61093c6b275bee",
+    "reviewed": true,
+    "evidenceRef": "doc/v2/work_items/M18.04.md"
+  },
+  {
+    "topicId": "M18.05",
+    "source": "ebook/curriculum/M18/M18.05.md",
+    "title": "다중 로봇 Namespace·TF·지도·충돌 조정",
+    "objectives": [
+      "다중 로봇의 namespace·토픽·TF frame과 자료 생산자의 책임을 구분한다.",
+      "주어진 지도 정합으로 공통 좌표의 위치·상대 여유와 이동 변형을 계산한다.",
+      "공동 구역의 시간 예약 충돌과 실제 점유·통신·교착에 필요한 조정을 판정한다."
+    ],
+    "prerequisiteNote": "M05의 이름 공간, M15의 지도 정합과 M18의 과업 상태를 연결한다. TF 공유·격리, 공통 좌표와 구역 예약을 본문에서 보충한다. 기본은 합성 이름 목록·평면 변환·시간표이며 실제 fleet·Nav2·로봇 실행은 없다.",
+    "sha256": "11307c3746cfc7183cc37b6bca7442af10bee8abb53e5281d071f8cca4d4f15f",
+    "reviewed": true,
+    "evidenceRef": "doc/v2/work_items/M18.05.md"
+  },
+  {
+    "topicId": "M18.06",
+    "source": "ebook/curriculum/M18/M18.06.md",
+    "title": "이동 매니퓰레이터의 주행-조작 미션",
+    "objectives": [
+      "주행·정렬·조작·작업 검증·수납·재개를 역할과 전제·출력으로 연결한다.",
+      "주어진 map·base·arm 변환과 목표점, 자료 나이·시작 상태를 계산해 판정한다.",
+      "합성 미션 기록의 부분 성공·보류·실패를 구분하고 복구·전체 완료 근거를 제안한다."
+    ],
+    "prerequisiteNote": "M06의 팔 기구학, M15의 좌표와 M17~18의 계획·과업 상태를 연결한다. base와 arm 원점의 차이, TCP 점과 자세, 미션 관문을 본문에서 보충한다. 기본은 합성 변환·시간·상태표이며 실제 주행·팔·물체·ROS 실행은 없다.",
+    "sha256": "ceee7c8bc2060d92ab74bfffee56aa8738361f5edf51205a6d22d8e7c67aadda",
+    "reviewed": true,
+    "evidenceRef": "doc/v2/work_items/M18.06.md"
+  },
+  {
     "topicId": "M19.01",
     "source": "ebook/curriculum/M19/M19.01.md",
     "title": "그리퍼·Tool Frame·작업 좌표·핸드아이 보정",
@@ -976,8 +1312,8 @@ export const authoredMetadata: AuthoredMetadata[] = [
       "열벡터 변환 체인으로 작업 좌표의 TCP 목표를 base의 플랜지 목표로 계산하고 tool offset 변경의 영향을 설명한다.",
       "카메라 장착 방식에 따른 핸드아이 변환 방향과 필요한 관측/검증 조건을 판정한다."
     ],
-    "prerequisiteNote": "M06의 좌표 변환과 M14.01/03/06의 카메라 프레임·시간·잔차가 선수다. 본문에서 목표 자세와 경로의 차이를 보충하므로 아직 미집필인 M17의 내용을 알고 있다고 가정하지 않는다. 기본은 합성 좌표와 보정 기록의 종이 계산이다.",
-    "sha256": "54da8773021d04550aba210a0624900bba6c9118d23a9ebc4d8cee30682a9c0d",
+    "prerequisiteNote": "M06의 좌표 변환과 M14.01/03/06의 카메라 프레임·시간·잔차가 선수다. 목표 자세와 경로의 차이는 본문에서 보충하며 M17.01의 구성 공간·충돌과 이어 읽는다. 기본은 합성 좌표와 보정 기록의 종이 계산이다.",
+    "sha256": "925921abc1e53e526c82b4280d3341007e9789d979609609f60264a118dcf0c9",
     "reviewed": true,
     "evidenceRef": "doc/v2/work_items/M19.01.md"
   },
@@ -990,8 +1326,8 @@ export const authoredMetadata: AuthoredMetadata[] = [
       "유효한 끝점과 경로 전체의 유효성을 구분하고 중간 충돌/허용 충돌 설정의 위험한 해석을 진단한다.",
       "주어진 궤적의 구간 속도·시작 상태를 검사하고 계획/실행/작업 성공을 분리해 판정한다."
     ],
-    "prerequisiteNote": "M06의 IK/관절 범위, M08의 모델/TF, M19.01의 TCP가 선수다. 경로/상태 공간과 샘플 검사 개념은 본문에서 보충하므로 미집필 M17을 필수 자료로 요구하지 않는다. 합성 표만으로 활동을 완료하며 ROS/MoveIt 실행은 하지 않는다.",
-    "sha256": "bff5839860b516723dc6fbb1aa205e1a1f081634e15b84cd6b1cdfe8f8755252",
+    "prerequisiteNote": "M06의 IK/관절 범위, M08의 모델/TF, M19.01의 TCP가 선수다. 경로/상태 공간과 샘플 검사 개념은 본문에서 보충하며 M17.01의 충돌 검사와 M17.06의 시간 궤적으로 연결한다. 합성 표만으로 활동을 완료하며 ROS/MoveIt 실행은 하지 않는다.",
+    "sha256": "f13af43c8d72c7f06cdfaefc74bc42590de613440ab71cbe35ee5ee894fc0a55",
     "reviewed": true,
     "evidenceRef": "doc/v2/work_items/M19.02.md"
   },
@@ -1046,8 +1382,8 @@ export const authoredMetadata: AuthoredMetadata[] = [
       "이동 베이스의 회전/이동으로 대상 좌표를 계산하고 위치 오차가 팔의 도달 여유에 미치는 영향을 판정한다.",
       "협동/이동 조작의 통합 상태·검증 근거를 설계하고 기하 도달/하중 통과와 실제 작업 안전/성공의 차이를 설명한다."
     ],
-    "prerequisiteNote": "M03의 구성·구동, M06의 변환/도달성, M19.01~05의 공구·계획/작업 증거가 선수다. 모바일의 베이스 이동/정지·최신 위치 개념은 본문에서 보충하므로 M17/M18 미집필 내용을 요구하지 않는다. 합성 사양/기록의 종이 계산이 기본이다.",
-    "sha256": "33382a75be4aec0c00bfb23f29d00be7c92a28ab1b9ca24a01044af8ca5c46e8",
+    "prerequisiteNote": "M03의 구성·구동, M06의 변환/도달성, M19.01~05의 공구·계획/작업 증거가 선수다. 모바일의 베이스 이동/정지·최신 위치 개념은 본문에서 보충하며 M17.06의 재계획·제한과 M18.06의 주행-조작 미션으로 연결한다. 합성 사양/기록의 종이 계산이 기본이다.",
+    "sha256": "35f1eb1323d4b52e9b79afb667b14e304c4700bb5ac79ae9a52347015ce927b6",
     "reviewed": true,
     "evidenceRef": "doc/v2/work_items/M19.06.md"
   },
@@ -1228,8 +1564,8 @@ export const authoredMetadata: AuthoredMetadata[] = [
       "언어의 객체/관계·목표를 관측 ID/프레임·시각/전제조건에 연결하고 모호함/오래된 상태를 진단한다.",
       "합성 skill의 유용성/가능성 점수를 계산하고 선택·명령/실제 완료의 검증 근거를 구분한다."
     ],
-    "prerequisiteNote": "M12의 영상 관측, M19의 계획/실행과 M20/M21의 행동 정책을 연결한다. LLM/VLM/VLA와 skill·접지는 본문에서 보충하며 M18 미집필 내용을 요구하지 않는다. 기본은 합성 장면/점수 표 분석이고 모델/API·ROS/로봇 실행은 없다.",
-    "sha256": "98565e55601be81c02b777e1537911198e8d8417b29e0b3bec62bd6e93de6a96",
+    "prerequisiteNote": "M12의 영상 관측, M19의 계획/실행과 M20/M21의 행동 정책을 연결한다. LLM/VLM/VLA와 skill·접지는 본문에서 보충하며 M18.04의 Action·작업 상태와 이어 읽는다. 기본은 합성 장면/점수 표 분석이고 모델/API·ROS/로봇 실행은 없다.",
+    "sha256": "d3c0c410289d1806e7586edf34459f87b9801f4a8f0e85031e90be49f5b4535e",
     "reviewed": true,
     "evidenceRef": "doc/v2/work_items/M22.01.md"
   },
@@ -1284,8 +1620,8 @@ export const authoredMetadata: AuthoredMetadata[] = [
       "합성 그래프에서 폭/문 조건을 적용한 거리 경로와 도킹의 위치/방향 오차를 계산한다.",
       "언어 목표→주행→팔 조작의 전후조건/피드백·새 관측을 설계하고 실제 완료 근거를 판정한다."
     ],
-    "prerequisiteNote": "M14의 프레임/시간, M19의 팔/모바일과 M22.01/02의 접지/Action이 선수다. 그래프/지도 목표를 본문에서 보충하며 M17/M18의 미집필 알고리즘을 요구하지 않는다. 기본은 합성 지도/상태표이며 실제 지도 생성·Nav2/로봇 이동은 하지 않는다.",
-    "sha256": "83300147e4a546c7592154da0eb4c625f388fbfaefce58ac76299804b2777603",
+    "prerequisiteNote": "M14의 프레임/시간, M19의 팔/모바일과 M22.01/02의 접지/Action이 선수다. 그래프/지도 목표는 본문에서 보충하며 M15.02의 지도 좌표, M17.02의 경로 비용, M18.04/.06의 작업 상태·주행-조작 미션으로 이어진다. 기본은 합성 지도/상태표이며 실제 지도 생성·Nav2/로봇 이동은 하지 않는다.",
+    "sha256": "9c3617917fd1a77c0c8c8c32888a6c298006845439c12ba354885d3814b2dbb2",
     "reviewed": true,
     "evidenceRef": "doc/v2/work_items/M22.05.md"
   },
@@ -1480,8 +1816,8 @@ export const authoredMetadata: AuthoredMetadata[] = [
       "합성 그래프의 폭/문 조건·경로 길이와 동적 교차 시각/이상 정지 거리를 계산한다.",
       "재관측/감독·미상/재개와 조건별 성공·실패/원본 근거를 포함한 프로젝트 리포트를 작성한다."
     ],
-    "prerequisiteNote": "M06의 이동 로봇/프레임, M22의 언어 감독과 M30의 평가를 연결한다. 미집필 M17/M18의 경로/궤적·지도/위치와 planner/controller 역할은 본문에서 보충한다. 기본은 가상 지도/사건표이며 실제 Nav2/주행/배달을 하지 않는다.",
-    "sha256": "af00672a45cf237c2229ac754bede89dfd590c5f3b6c5307a9b05fba2d7b063b",
+    "prerequisiteNote": "M06의 이동 로봇/프레임, M22의 언어 감독과 M30의 평가를 연결한다. 경로/궤적·지도/위치와 planner/controller 역할은 본문에서 보충한다. M15.06의 오차 평가, M17.02/.06의 경로·시간 궤적과 M18.03/.04의 도착·작업 상태를 적용해 과제 근거를 확장한다. 기본은 가상 지도/사건표이며 실제 Nav2/주행/배달을 하지 않는다.",
+    "sha256": "a00ac8e7b3cce38d03decc223ccef95df4f097d1879550b4a018136ef951d631",
     "reviewed": true,
     "evidenceRef": "doc/v2/work_items/M32.01.md"
   },
@@ -1508,8 +1844,8 @@ export const authoredMetadata: AuthoredMetadata[] = [
       "합성 평면 변환/이동 보상·파지점 일치/시차·정적 분담을 계산한다.",
       "전체 제약/단계별 미상·감독/실패/비교 평가의 근거를 포함한 프로젝트 리포트를 작성한다."
     ],
-    "prerequisiteNote": "M06 이동/팔 기구학, M19 모바일/파지, M21 양팔과 M30 감독/평가를 연결한다. 미집필 계획 선수의 전체 configuration·결합 제약과 순차/동시 역할을 본문에서 보충한다. 기본은 합성 좌표/상태표이며 장비/정책 실행을 하지 않는다.",
-    "sha256": "7979508435a8225d1e3c329ff3cfff2a3c8e2766b6e4313813a980d90a068d35",
+    "prerequisiteNote": "M06 이동/팔 기구학, M19 모바일/파지, M21 양팔과 M30 감독/평가를 연결한다. 전체 configuration·결합 제약과 순차/동시 역할은 본문에서 보충한다. M17.01의 구성 공간·충돌과 M18.06의 주행-조작 전환 계약을 함께 확인한다. 기본은 합성 좌표/상태표이며 장비/정책 실행을 하지 않는다.",
+    "sha256": "7457cbd818496571ca68623218357d72eff0ee79a4af00989bfda87bd705f87d",
     "reviewed": true,
     "evidenceRef": "doc/v2/work_items/M32.03.md"
   },
@@ -1568,10 +1904,10 @@ export const legacyRevisions: LegacyRevision[] = [
   {
     "source": "ebook/book/00_frontmatter/how_to_use.md",
     "baselineSha256": "a3d1e94f176ffd9b1a9070929a0a1d5ed28034e02c8f60d56926d601bdbb841b",
-    "sha256": "478bd10e127bee98fa37f37e97a20eede9197cda83a09a49be8636875df0e163",
+    "sha256": "882126b6d847bee601fe64a1e06b7c1200057aafd0561c28b07bcf06b060a84f",
     "approved": true,
-    "reason": "여섯장 단일프로젝트에서 통합과정 기초→응용 학습경로로 안내 개정 / SIM표식=장비없는브라우저 실행으로 오인하는 설명 보완 / E2: 공통 기초→ROS/기구학/제어/모델 경로와 기본·선택 실행/모형 한계, 사용자 상태 표시 원칙 동기화 / E3: 시뮬레이션·학습·비전·카메라/시간 기초의 연결 및 독립검토된 개념/그림 조건 정정 / E4: 로봇팔·데이터·정책·배포·캡스톤 선수/후속과 교육용 계산·실행·안전 계약 보완",
-    "evidenceRef": "doc/v2/work_items/E4-review.md"
+    "reason": "여섯장 단일프로젝트에서 통합과정 기초→응용 학습경로로 안내 개정 / SIM표식=장비없는브라우저 실행으로 오인하는 설명 보완 / E2: 공통 기초→ROS/기구학/제어/모델 경로와 기본·선택 실행/모형 한계, 사용자 상태 표시 원칙 동기화 / E3: 시뮬레이션·학습·비전·카메라/시간 기초의 연결 및 독립검토된 개념/그림 조건 정정 / E4: 로봇팔·데이터·정책·배포·캡스톤 선수/후속과 교육용 계산·실행·안전 계약 보완 / E5: 모바일 경로·시뮬레이터 구분·map/odom/base·계획/미션·주행-조작 연결 보완 / E5 후속: 미집필 모바일 안내를 새 경로 연결로 정정",
+    "evidenceRef": "doc/v2/work_items/E5-review.md"
   },
   {
     "source": "ebook/book/00_frontmatter/safety.md",
@@ -1584,18 +1920,18 @@ export const legacyRevisions: LegacyRevision[] = [
   {
     "source": "ebook/book/01_physical_ai_isaac_ros2/chapter.md",
     "baselineSha256": "a080ac9eddac666c3400d843913886913468677e9c2ab4bf60bcaa76b18a7d93",
-    "sha256": "0658d775a58fe696d5d9a2f74b3dda996ef1d399571448a7d46067f03685f76c",
+    "sha256": "46ba5eb99d261de5dc6d3e42355ea045ef6934fa912346b4e80f7bc6afcfb5d8",
     "approved": true,
-    "reason": "신규 기초와 기존 응용 장 사이 선수/범위/장비 없는 진입 연결 / 결정론을 Software/Physical 구분으로 오해하는 문장 정정 / POMDP 누락기호 gamma와 관측독립/시간축 가정 명시 / 순차 처리 지연과 목표 샘플 주기 구분 / 주기 예산 수치의 가정 및 새 목표설계 단위 연결 / E2: ROS・기구학・제어・모델 선수/후속 연결 및 관련 개념·실행 전제 보완 / E3: 시뮬레이션·학습·비전·카메라/시간 기초의 연결 및 독립검토된 개념/그림 조건 정정 / E4: 로봇팔·데이터·정책·배포·캡스톤 선수/후속과 교육용 계산·실행·안전 계약 보완",
-    "evidenceRef": "doc/v2/work_items/E4-review.md"
+    "reason": "신규 기초와 기존 응용 장 사이 선수/범위/장비 없는 진입 연결 / 결정론을 Software/Physical 구분으로 오해하는 문장 정정 / POMDP 누락기호 gamma와 관측독립/시간축 가정 명시 / 순차 처리 지연과 목표 샘플 주기 구분 / 주기 예산 수치의 가정 및 새 목표설계 단위 연결 / E2: ROS・기구학・제어・모델 선수/후속 연결 및 관련 개념·실행 전제 보완 / E3: 시뮬레이션·학습·비전·카메라/시간 기초의 연결 및 독립검토된 개념/그림 조건 정정 / E4: 로봇팔·데이터·정책·배포·캡스톤 선수/후속과 교육용 계산·실행·안전 계약 보완 / E5: 모바일 경로·시뮬레이터 구분·map/odom/base·계획/미션·주행-조작 연결 보완",
+    "evidenceRef": "doc/v2/work_items/E5-review.md"
   },
   {
     "source": "ebook/book/02_physx_simulation/chapter.md",
     "baselineSha256": "a21459dc9d4dd74be968ed41bcc237d55d1e56f5bf0d3d5b151da99e48011c40",
-    "sha256": "046ff676a51a1cf529673af29f76532f742dee148d67289c869e32a3d616dd93",
+    "sha256": "878889231180b70a57506b24735eb846a4655a723693af9ce43adbd96cb79cfd",
     "approved": true,
-    "reason": "E1에서 기존 02장으로 선수·실습범위·오개념 연결 보강 / latest를 재현 가능한 고정버전 안내로 정정 / 수학브리지독립검수: Euler 고정축적용xyz와행렬곱RzRyRx 용어정정·실행수식/함수명보존 / 짐벌락정확특이점과근처조건악화구분 / E2: ROS・기구학・제어・모델 선수/후속 연결 및 관련 개념·실행 전제 보완 / E3: 시뮬레이션·학습·비전·카메라/시간 기초의 연결 및 독립검토된 개념/그림 조건 정정 / E4: 로봇팔·데이터·정책·배포·캡스톤 선수/후속과 교육용 계산·실행·안전 계약 보완",
-    "evidenceRef": "doc/v2/work_items/E4-review.md"
+    "reason": "E1에서 기존 02장으로 선수·실습범위·오개념 연결 보강 / latest를 재현 가능한 고정버전 안내로 정정 / 수학브리지독립검수: Euler 고정축적용xyz와행렬곱RzRyRx 용어정정·실행수식/함수명보존 / 짐벌락정확특이점과근처조건악화구분 / E2: ROS・기구학・제어・모델 선수/후속 연결 및 관련 개념·실행 전제 보완 / E3: 시뮬레이션·학습·비전·카메라/시간 기초의 연결 및 독립검토된 개념/그림 조건 정정 / E4: 로봇팔·데이터·정책·배포·캡스톤 선수/후속과 교육용 계산·실행·안전 계약 보완 / E5: 모바일 경로·시뮬레이터 구분·map/odom/base·계획/미션·주행-조작 연결 보완",
+    "evidenceRef": "doc/v2/work_items/E5-review.md"
   },
   {
     "source": "ebook/book/02_physx_simulation/code/transforms.py",
@@ -1608,10 +1944,10 @@ export const legacyRevisions: LegacyRevision[] = [
   {
     "source": "ebook/book/03_so101_kinematics_teleop/chapter.md",
     "baselineSha256": "8083685d7b190de126d12ce6ec53469e742dd2143eb5fa7ec0fe8274410490aa",
-    "sha256": "2a3930847f4239da32f60dc7554f4fdf5b4197e5694eb6e86499f3bf3d6929e7",
+    "sha256": "f204159145db358d0c76f42cc5a5d8eedd03e626686ea60c81f63835bd38eb19",
     "approved": true,
-    "reason": "E1에서 기존 03장으로 선수·실습범위·오개념 연결 보강 / latest 설치조건과 E1 의존성 고정 원칙의 불일치 보완 / M03검토: 명목전압숫자일치와동작범위/극성/전류/논리핀/절대최대정격구분 / E2: ROS・기구학・제어・모델 선수/후속 연결 및 관련 개념·실행 전제 보완 / M08.05: JointState 한 메시지 동일시각 계약·비동기 정렬/추정 출처를 엄밀화하고 공식 명세 링크 연결 / E3: 시뮬레이션·학습·비전·카메라/시간 기초의 연결 및 독립검토된 개념/그림 조건 정정 / E4: 로봇팔·데이터·정책·배포·캡스톤 선수/후속과 교육용 계산·실행·안전 계약 보완",
-    "evidenceRef": "doc/v2/work_items/E4-review.md"
+    "reason": "E1에서 기존 03장으로 선수·실습범위·오개념 연결 보강 / latest 설치조건과 E1 의존성 고정 원칙의 불일치 보완 / M03검토: 명목전압숫자일치와동작범위/극성/전류/논리핀/절대최대정격구분 / E2: ROS・기구학・제어・모델 선수/후속 연결 및 관련 개념·실행 전제 보완 / M08.05: JointState 한 메시지 동일시각 계약·비동기 정렬/추정 출처를 엄밀화하고 공식 명세 링크 연결 / E3: 시뮬레이션·학습·비전·카메라/시간 기초의 연결 및 독립검토된 개념/그림 조건 정정 / E4: 로봇팔·데이터·정책·배포·캡스톤 선수/후속과 교육용 계산·실행·안전 계약 보완 / E5: 모바일 경로·시뮬레이터 구분·map/odom/base·계획/미션·주행-조작 연결 보완",
+    "evidenceRef": "doc/v2/work_items/E5-review.md"
   },
   {
     "source": "ebook/book/03_so101_kinematics_teleop/code/safe_teleop_core.py",
@@ -1624,10 +1960,10 @@ export const legacyRevisions: LegacyRevision[] = [
   {
     "source": "ebook/book/04_sensor_data_pipeline/chapter.md",
     "baselineSha256": "69a8cf6f0e2f6e584bda629d3a17fbbe37f75ec024eab2237847807a2a3796fa",
-    "sha256": "9440f558163e693c71c6925d3e39f063c6ab9e1c1387a8f58a7f3f218ac4eeb6",
+    "sha256": "6b5bd5a5bab1bb525c425e69171033e9c3c1fa46e2cf832ac00d84ef005dbea6",
     "approved": true,
-    "reason": "E1에서 기존 04장으로 선수·실습범위·오개념 연결 보강 / E2: ROS・기구학・제어・모델 선수/후속 연결 및 관련 개념·실행 전제 보완 / E3: 시뮬레이션·학습·비전·카메라/시간 기초의 연결 및 독립검토된 개념/그림 조건 정정 / E4: 로봇팔·데이터·정책·배포·캡스톤 선수/후속과 교육용 계산·실행·안전 계약 보완",
-    "evidenceRef": "doc/v2/work_items/E4-review.md"
+    "reason": "E1에서 기존 04장으로 선수·실습범위·오개념 연결 보강 / E2: ROS・기구학・제어・모델 선수/후속 연결 및 관련 개념·실행 전제 보완 / E3: 시뮬레이션·학습·비전·카메라/시간 기초의 연결 및 독립검토된 개념/그림 조건 정정 / E4: 로봇팔·데이터·정책·배포·캡스톤 선수/후속과 교육용 계산·실행·안전 계약 보완 / E5: 모바일 경로·시뮬레이터 구분·map/odom/base·계획/미션·주행-조작 연결 보완 / E5 후속: 공유 TF와 로봇별 토픽·버퍼 격리 대안 및 외부 결합 계약 구분",
+    "evidenceRef": "doc/v2/work_items/E5-review.md"
   },
   {
     "source": "ebook/book/04_sensor_data_pipeline/exercises/solutions.md",
@@ -1648,10 +1984,10 @@ export const legacyRevisions: LegacyRevision[] = [
   {
     "source": "ebook/book/05_lerobot_smolvla/chapter.md",
     "baselineSha256": "637909ee6456fa438f421ae0290a3b536cd925567ba1246a1f2e58c0b113a9fa",
-    "sha256": "ef00906df80aa1ff5447cffa1967bdce09e69c97088f6900868f7aaa693e8459",
+    "sha256": "39ab43071d7f486b177607d7ac243538db1f797eb7f47f01efb778c91b48f992",
     "approved": true,
-    "reason": "E1에서 기존 05장으로 선수·실습범위·오개념 연결 보강 / 설치 예시에 실제 커밋/태그 고정 전제와 미지정 중단 추가 / 독립검수: 설치 전체 subshell fail-fast로 미지정/오류 revision 뒤 실행 방지 / E2: ROS・기구학・제어・모델 선수/후속 연결 및 관련 개념·실행 전제 보완 / E3: 시뮬레이션·학습·비전·카메라/시간 기초의 연결 및 독립검토된 개념/그림 조건 정정 / E4: 로봇팔·데이터·정책·배포·캡스톤 선수/후속과 교육용 계산·실행·안전 계약 보완 / E4 M20.03 연계: 저장 모달리티/metadata와 로드 텐서의 CHW·시간·배치 축 구분 / E4 M21.02 연계: relative 고정 기준과 delta 누적 증분·채널/정규화 계약 구분 / E4 M27.04 연계: 명령 의미와 제한 시간에 따른 HOLD/STOP 계약 명료화",
-    "evidenceRef": "doc/v2/work_items/E4-review.md"
+    "reason": "E1에서 기존 05장으로 선수·실습범위·오개념 연결 보강 / 설치 예시에 실제 커밋/태그 고정 전제와 미지정 중단 추가 / 독립검수: 설치 전체 subshell fail-fast로 미지정/오류 revision 뒤 실행 방지 / E2: ROS・기구학・제어・모델 선수/후속 연결 및 관련 개념·실행 전제 보완 / E3: 시뮬레이션·학습·비전·카메라/시간 기초의 연결 및 독립검토된 개념/그림 조건 정정 / E4: 로봇팔·데이터·정책·배포·캡스톤 선수/후속과 교육용 계산·실행·안전 계약 보완 / E4 M20.03 연계: 저장 모달리티/metadata와 로드 텐서의 CHW·시간·배치 축 구분 / E4 M21.02 연계: relative 고정 기준과 delta 누적 증분·채널/정규화 계약 구분 / E4 M27.04 연계: 명령 의미와 제한 시간에 따른 HOLD/STOP 계약 명료화 / E5: 모바일 경로·시뮬레이터 구분·map/odom/base·계획/미션·주행-조작 연결 보완",
+    "evidenceRef": "doc/v2/work_items/E5-review.md"
   },
   {
     "source": "ebook/book/05_lerobot_smolvla/code/closed_loop_20hz.py",
@@ -1664,10 +2000,10 @@ export const legacyRevisions: LegacyRevision[] = [
   {
     "source": "ebook/book/06_sim2real_deployment/chapter.md",
     "baselineSha256": "63e21fba7a365699ea09d4be5e25675e0f9ac0c8d856e41a00bd9d8d7157d971",
-    "sha256": "7f6a9c5db746e01dec7de67d2b1e483052e33d0e27ca0623bf7a959415ed7533",
+    "sha256": "6605c2a8d8cd8519cc195055c720259b1806a322dbd0f3ba83257d00eebcec10",
     "approved": true,
-    "reason": "E1에서 기존 06장으로 선수·실습범위·오개념 연결 보강 / E2: ROS・기구학・제어・모델 선수/후속 연결 및 관련 개념·실행 전제 보완 / E3: 시뮬레이션·학습·비전·카메라/시간 기초의 연결 및 독립검토된 개념/그림 조건 정정 / E4: 로봇팔·데이터·정책·배포·캡스톤 선수/후속과 교육용 계산·실행·안전 계약 보완",
-    "evidenceRef": "doc/v2/work_items/E4-review.md"
+    "reason": "E1에서 기존 06장으로 선수·실습범위·오개념 연결 보강 / E2: ROS・기구학・제어・모델 선수/후속 연결 및 관련 개념·실행 전제 보완 / E3: 시뮬레이션·학습·비전·카메라/시간 기초의 연결 및 독립검토된 개념/그림 조건 정정 / E4: 로봇팔·데이터·정책·배포·캡스톤 선수/후속과 교육용 계산·실행·안전 계약 보완 / E5: 모바일 경로·시뮬레이터 구분·map/odom/base·계획/미션·주행-조작 연결 보완",
+    "evidenceRef": "doc/v2/work_items/E5-review.md"
   },
   {
     "source": "ebook/book/06_sim2real_deployment/code/safety_supervisor.py",
@@ -1708,7 +2044,7 @@ export const legacyExerciseReferences: DerivedReference[] = [
   {
     "activityId": "legacy:exercise:01_physical_ai_isaac_ros2--chapter-14-q5",
     "baselineSha256": "6fdc31c72244a4fad2fed9e14d7ca13a2813a0ec2d4f24c9558557b1a1ea6dc6",
-    "sha256": "078964dd7276c9fbecd2f8667fccb24d8bc6f8b0cdea7ae10e79b911a27cd071",
+    "sha256": "8d9d3d36afcf2faaa57edf25c42795dda42a0b1855642157f6880a2c705985c7",
     "approved": true
   },
   {
@@ -1726,7 +2062,7 @@ export const legacyExerciseReferences: DerivedReference[] = [
   {
     "activityId": "legacy:exercise:01_physical_ai_isaac_ros2--chapter-14-q8",
     "baselineSha256": "f448f818716ba4793c4171e9df3c0c37e2f5732835eca46da9c3e0087fc8a714",
-    "sha256": "6af8fa1c9fd7bc26f5d2ab46fa1cda2ce49b142baad55650ee2bc58ca4ba96e2",
+    "sha256": "ebe6c46e6642b6d53f32f4d4cb7e10db9b592c5f40619774228458bbebf560af",
     "approved": true
   },
   {
@@ -1756,19 +2092,19 @@ export const legacyExerciseReferences: DerivedReference[] = [
   {
     "activityId": "legacy:exercise:02_physx_simulation--chapter-18-q9",
     "baselineSha256": "50bfcac7c1440f01c08887816b64e5d9ca9f7d6d9a4d2b9004496489e97019a9",
-    "sha256": "54125d8e86716cac6ec64804645891c9ab52655b92a3bd7a29731aff03c81276",
+    "sha256": "f2c498f1654893be108eb51a38ba341d30a1c1e75dc8663329adbc8c3a43696c",
     "approved": true
   },
   {
     "activityId": "legacy:exercise:02_physx_simulation--exercises--problem_set-1-q3",
     "baselineSha256": "8b07e9ea8308a5f6a09c54cf44dbcc2dacf2862fd97dbc2faf505ec1fbe5bd81",
-    "sha256": "a05ec231109e40eb5d6e5bec8fa8d81bddda73db0967e2cdfbea00437f9c814b",
+    "sha256": "66bdc849a42449ae85524aae12aec31a49cf9a65c44b535a1798647b4edb3c12",
     "approved": true
   },
   {
     "activityId": "legacy:exercise:02_physx_simulation--exercises--problem_set-1-q4",
     "baselineSha256": "62df5206b8b78715573634f7d98939981f622c72d9128994dc3516195f8678cb",
-    "sha256": "a05ec231109e40eb5d6e5bec8fa8d81bddda73db0967e2cdfbea00437f9c814b",
+    "sha256": "66bdc849a42449ae85524aae12aec31a49cf9a65c44b535a1798647b4edb3c12",
     "approved": true
   },
   {
@@ -1810,7 +2146,7 @@ export const legacyExerciseReferences: DerivedReference[] = [
   {
     "activityId": "legacy:exercise:03_so101_kinematics_teleop--chapter-14-q5",
     "baselineSha256": "7cf40bfb0a32b6a6c9ee24c924d60863e3b0a4dec7779424773ef3518ac61c36",
-    "sha256": "7204e87b2080bb5e2a718356b1d3b6a0ec57a03e64e78c1787fdcec38398109a",
+    "sha256": "fe1963565b410720e7ced1ac8c94dd5cb81903d17e02e3e01bc87ff71136db6e",
     "approved": true
   },
   {
@@ -1828,13 +2164,13 @@ export const legacyExerciseReferences: DerivedReference[] = [
   {
     "activityId": "legacy:exercise:03_so101_kinematics_teleop--chapter-14-q8",
     "baselineSha256": "b349759b13aa83642c86eb1a7d45bf747ee7d557f1df42278ac209c6b1a48a06",
-    "sha256": "45fe8e5540dcc6d3d1d29d845238cde3f29840e840ebb48bd9aceb62fd6bb71d",
+    "sha256": "14eef9514a3228c4c63b55f564aced6c21bf47ed3fd303e993b44b7dbbfcb20b",
     "approved": true
   },
   {
     "activityId": "legacy:exercise:03_so101_kinematics_teleop--chapter-14-q9",
     "baselineSha256": "36859842a1c3f9ccae212434235dc1a35cc363552ac6f40b3a9803737b8dbc41",
-    "sha256": "ddc1f0f4daffd75784e81909a72e88312ed6ae43c505cf523872e491f293d9dc",
+    "sha256": "dae386a8191fa3ffc18983e361258990b3f2c2dfe1de9008e4fb053c17c92f31",
     "approved": true
   },
   {
@@ -1876,7 +2212,7 @@ export const legacyExerciseReferences: DerivedReference[] = [
   {
     "activityId": "legacy:exercise:04_sensor_data_pipeline--chapter-15-q6",
     "baselineSha256": "d7765eb385917c49d4094c7816e8a6d7b58c2320136f09b27c33223260f6b307",
-    "sha256": "31a882ac577333d54714017574d1517eaa952add9d864f096a1aa5257b46a7f6",
+    "sha256": "99f098138b8cfab2bbe8f427ed470bc72797d6607bfefad66ad426726bc09bf6",
     "approved": true
   },
   {
@@ -2074,7 +2410,7 @@ export const legacyExerciseReferences: DerivedReference[] = [
   {
     "activityId": "legacy:exercise:06_sim2real_deployment--chapter-15-q7",
     "baselineSha256": "0cd5dcf962cb75732c1efc3694543bbda9ceabeded4135b7c9b7f476289e912e",
-    "sha256": "b8aa9556baa8d38062dcf22c6da5d817e855e3686a06edb5d13d52a14d189760",
+    "sha256": "fe278df9d40d50acf56b3a8a2289e3d584d404f0fe1ab953dcf223913edcaade",
     "approved": true
   },
   {

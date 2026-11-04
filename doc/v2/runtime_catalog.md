@@ -6,9 +6,9 @@
 
 ## 현행 상세 교재 확장
 
-위·아래 B01 수량과 미작성 안내는 등록 당시 기준선이다. E1부터는 [상세 원고](../../ebook/curriculum/)와 [E1 지문 승인](inventory/e1-reviews.json)·[E2 지문 승인](inventory/e2-reviews.json)을 바탕으로 `authored-data.ts`를 생성해 원본 카탈로그에 겹쳐 적용한다. `legacyCatalog`는 기준선을 보존하고 `catalog`는 승인 개정과 신규 본문·활동을 포함한다. 기존 본문 개정은 [승인 개정 목록](inventory/legacy-revisions.json)에 baseline/현행 지문과 이유를 기록한다. 공개 준비도·현재 수량은 런타임 및 [E1 검수](work_items/E1.md)·[E2 검수](work_items/E2.md)를 확인한다. 화면에서는 집필 완료 항목에 상태 배지를 붙이지 않고 미완료 항목에만 `준비중`을 표시한다. 내부 ready/partial/tbd 계산과 학습자의 완료 기록은 별개로 유지한다. 선택 바퀴/제어 계산기는 본문의 활동을 돕는 보충 UI이며 별도의 자동 채점·완료 Activity를 추가하지 않는다.
+위·아래 B01 수량과 미작성 안내는 등록 당시 기준선이다. E1~E5의 [상세 원고](../../ebook/curriculum/)와 [E1](inventory/e1-reviews.json)·[E2](inventory/e2-reviews.json)·[E3](inventory/e3-reviews.json)·[E4](inventory/e4-reviews.json)·[E5 지문 승인](inventory/e5-reviews.json)을 바탕으로 `authored-data.ts`를 생성해 원본 카탈로그에 겹쳐 적용한다. `legacyCatalog`는 기준선을 보존하고 `catalog`는 승인 개정과 신규 본문·활동을 포함한다. 기존 본문 개정은 [승인 목록](inventory/legacy-revisions.json)에 원래/현행 지문과 이유를 기록한다. 화면은 완료 항목에 상태 배지를 붙이지 않고 미완료에만 준비중을 표시한다. 내부 준비도와 학습자의 완료 기록은 별개다. 선택 개념 모형은 보충 UI이며 별도 자동 완료 활동으로 더하지 않는다.
 
-E2 완료 시점(2026-11-03)의 내부 집계는 ready48/partial65/tbd91, Resource813/Activity383/alias317이다. E1·E2 상세 원고48개와 기존 본문137개/레슨18개를 함께 제공한다. 바퀴·제어 선택 모형은 이 Activity 수에 별도 자동 완료 활동으로 더하지 않는다.
+E5 완료 시점(2026-11-04)의 현재 집계는 ready 135 / partial 14 / tbd 55, Resource 1683 / Activity 731 / alias 317이다. 상세 원고·실습 각 135개 및 문제/해설 405쌍과 기존 읽기 절 137개·요약 18개를 제공한다. 전체 204개 집필 완료는 아니다. [E5 최종 검수](work_items/E5-validation.md)를 확인한다.
 
 ## 1. 코드와 사용
 
@@ -92,3 +92,9 @@ B01 등록 당시 준비도는 **ready 0 / partial 98 / tbd 106**이었다. A03�
 ## 5. E4 상세 교재 반영 — 2026-11-03
 
 현재 집계는 ready 111 / partial 16 / tbd 77, Resource 1443 / Activity 635 / alias 317이다. E4 42개를 추가해 원고·실습 각 111개와 확인 문제 333개·개별 해설을 제공한다. 원고 SHA와 승인 근거, 기존 본문 URL 137개·요약 18개·bookFiles 142개·alias 317개의 보존, 승인 개정 16개(15 book + 1 app), AI JSON 204개·manifest의 실제 corpus 일치를 확인했다. 기존 142개 book 파일 중 127개는 원래 지문 그대로이며 15개는 원래 기준선을 보존한 승인 개정이다. 원고 파일 수나 페이지 열람을 완료/숙달 수로 합산하지 않는다. 완료 항목은 무배지, 미완료만 준비중으로 표시한다. [최종 근거](work_items/E4-validation.md).
+
+## 6. E5 상세 교재 반영 — 2026-11-04
+
+M09·M15·M17·M18 각 6개, 총 24개를 추가해 누적 원고·실습 135개와 문제/해설 405쌍을 제공한다. 내부 상태 135/14/55·Resource 1683 / Activity 731 / alias 317을 실제 결과와 대조했다. 현재 SHA/검수 근거와 AI JSON/manifest 각 204개·authored 문서 1350개의 현재 corpus 일치, 모든 기존 ID/slot binding·137개 읽기 경로·18개 요약·142개 book 자산을 보존했다. legacy 승인 16개(15 book+1app)와 원래 기준선도 유지한다.
+
+기존 교재 7파일·기존 상세 7개의 연결/선수 안내를 재승인했고 9개 모형/컴포넌트 소스는 E4 지문과 같다. 실제 135페이지·320px·답안/해설 각 540개·코드 37개·수식 224개 검수 및 저장/버전·AI 근거 전달을 확인했다. 완료 상태 배지·JavaScript/KaTeX 오류·페이지 넘침은 없었다. 테스트 117개·check/lint·전체 웹/API dry-run 빌드와 정적 링크/자산 감사를 통과했다. 원래 기록 복원·검수 창/임시 서버 종료를 마쳤다. PDF/EPUB·출판 exporter·Pandoc·외부 배포는 수행하지 않았다. [E5 근거](work_items/E5-validation.md).
