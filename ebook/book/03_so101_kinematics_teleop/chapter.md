@@ -26,6 +26,8 @@ SO-101은 자세를 만드는 5개의 팔 관절과 그리퍼 구동기 1개를 
 
 ## 선수 지식과 준비물
 
+E4의 [M19.01 Tool·작업 프레임](/study/unit-m19-01-a/), [M19.03 티칭·접근/후퇴](/study/unit-m19-03-a/), [M20.01 영점·스케일·클러치](/study/unit-m20-01-a/)로 보충한다. 기구학 계산·Leader 매핑·기록된 시연·실제 추종 결과는 서로 다른 근거다. [M32.02 팔 캡스톤](/study/unit-m32-02-a/)은 제공된 기록으로 기본 보고서를 작성한 뒤 실제 장비 확장을 별도로 선택한다.
+
 [M10.02](/study/unit-m10-02-a/)에서 원본 URDF와 변환된 USD의 이름·기본 자세·물리/드라이브 속성 계약을 확인한다. 관절 기록의 시각을 맞추는 방법은 [M14.03 시간 정합](/study/unit-m14-03-a/)에서 보충한다. 변환 보고서나 TF가 맞는 것과 실제 장치의 구동·추종이 맞는 것은 별도다.
 
 이 장의 5축 예제를 읽기 전 [M06.01 프레임·합성](/study/unit-m06-01-a/)→[M06.02 DH·FK](/study/unit-m06-02-a/)→[M06.03 IK·Jacobian](/study/unit-m06-03-a/)→[M06.04 특이점·해의 연속성](/study/unit-m06-04-a/)을 이어 읽는다. [M06.06 영점 보정](/study/unit-m06-06-a/)은 교육용 기하와 실제 장치 명세를 구별하고, [M08.05 JointState와 TF](/study/unit-m08-05-a/)는 아래 브리지의 상태·변환 역할을 보충한다.
@@ -312,7 +314,7 @@ LeRobot의 공식 Isaac Teleop 예제도 기본적으로 Follower를 Leader의 �
 | 데드맨 스위치 | 조작자 지속 입력 | hold |
 | 독립 하드웨어 | 전원 차단/E-stop | 모터 전력 차단 |
 
-`code/safe_teleop_core.py`는 하드웨어와 분리된 순수 Python 예제다. `JointSafetyFilter`가 이름 기반 재정렬, 위치 clamp, 속도 제한, timeout을 적용한다. `--dry-run`과 같은 단계 없이 실물 송신 함수를 연결하지 않는다.
+`code/safe_teleop_core.py`는 하드웨어와 분리된 순수 Python 예제다. `JointSafetyFilter`가 이름 기반 재정렬, 위치 clamp, 속도 제한, timeout을 적용한다. 측정 시작값과 HOLD 자세가 이미 soft limit 안에 있어야 한다. 범위 밖 측정을 clamp해 즉시 복구 명령으로 쓰지 않고 FAULT로 거부한다. dt와 수신 단조 시각의 유한성·양수 기간·시각 역전을 검사하며, 이 예제의 now는 수신 시각이라 원본 센서 stamp 검증을 대신하지 않는다. FAULT의 command는 빈 딕셔너리이며 송신하지 않는다. 이 필터의 오류 표시는 한 번의 입력 거부이고 latched 복귀·승격은 별도 감독기가 담당한다. `--dry-run`과 같은 단계 없이 실물 송신 함수를 연결하지 않는다.
 
 ### 3.5.2 주기와 지연
 
@@ -409,13 +411,15 @@ solution [deg]      : [ 15.3  10.6  63.0 -43.3   0.0]
 python code/safe_teleop_core.py
 ```
 
+초기 그리퍼 측정값은 하한 5이며 속도 제한 후 7, 9, 11, 13으로 움직인다. 다른 관절의 초기값 0도 각각의 범위 안이다.
+
 **예상 출력 예시**
 
 ```text
-frame=0 status=ALIGNING command=[0.01, -0.01, 0.01, -0.01, 0.02, 2.00]
-frame=1 status=ALIGNING command=[0.02, -0.02, 0.02, -0.03, 0.04, 4.00]
-frame=2 status=ALIGNING command=[0.03, -0.03, 0.04, -0.04, 0.06, 6.00]
-frame=3 status=ALIGNING command=[0.04, -0.04, 0.05, -0.06, 0.08, 8.00]
+frame=0 status=ALIGNING command=[0.01, -0.01, 0.01, -0.01, 0.02, 7.00]
+frame=1 status=ALIGNING command=[0.02, -0.02, 0.02, -0.03, 0.04, 9.00]
+frame=2 status=ALIGNING command=[0.03, -0.03, 0.04, -0.04, 0.06, 11.00]
+frame=3 status=ALIGNING command=[0.04, -0.04, 0.05, -0.06, 0.08, 13.00]
 watchdog status=HOLD reason=leader stream stale
 ```
 

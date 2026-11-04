@@ -123,9 +123,20 @@ test('E3 scope allows all 21 designated topics and rejects the three deferred M1
  for(const id of ['M14.02','M14.04','M14.05','M00.01','M05.01'])assert.throws(()=>mergeAuthoredReviews([{...registry,data:{schemaVersion:1,topics:{[id]:review}}}],known),/scope/);
  for(const earlier of authoredReviewRegistries.filter(row=>row!==registry))assert.throws(()=>mergeAuthoredReviews([{...earlier,data:{schemaVersion:1,topics:{'M14.01':review}}}],known),/scope/);
 });
+test('E4 scope accepts exactly its 42 topics and cannot approve deferred M14 or other batches',()=>{
+ const registry=authoredReviewRegistries.find(row=>row.file.endsWith('/e4-reviews.json'));
+ assert.deepEqual(registry.modules,['M19','M20','M21','M22','M27','M30','M32']);
+ const review={sourceSha256:'c'.repeat(64),evidenceRef:'doc/v2/work_items/E4-fixture.md'};
+ const known=c.legacyCatalog.units.map(unit=>unit.topicId),allowed=known.filter(id=>registry.modules.includes(id.split('.')[0]));
+ assert.equal(allowed.length,42);
+ assert.equal(Object.keys(mergeAuthoredReviews([{...registry,data:{schemaVersion:1,topics:Object.fromEntries(allowed.map(id=>[id,review]))}}],known).topics).length,42);
+ for(const id of ['M14.01','M14.02','M14.04','M14.05','M18.01','M23.01','M31.01','M33.01'])assert.throws(()=>mergeAuthoredReviews([{...registry,data:{schemaVersion:1,topics:{[id]:review}}}],known),/scope/);
+ for(const earlier of authoredReviewRegistries.filter(row=>row!==registry))assert.throws(()=>mergeAuthoredReviews([{...earlier,data:{schemaVersion:1,topics:{'M19.01':review}}}],known),/scope/);
+});
 for(const batch of [
  {name:'E2',registry:'e2',topicIds:['M05.01','M06.01','M07.01','M08.01']},
  {name:'E3',registry:'e3',topicIds:['M10.01','M11.01','M12.01','M14.01','M14.03','M14.06']},
+ {name:'E4',registry:'e4',topicIds:['M19.01','M20.01','M21.01','M22.01','M27.01','M30.01','M32.01']},
 ])test(`${batch.name} approval flows through metadata, readiness, textbook index and authored AI sections while preserving earlier batches`,async()=>{
  const fixtureRoot=fs.mkdtempSync(path.join(tmpdir(),`physical-ai-${batch.registry}-approval-`));
  const topicIds=batch.topicIds,evidenceRef=`doc/v2/work_items/${batch.name}-fixture.md`;
@@ -143,7 +154,8 @@ for(const batch of [
   fs.writeFileSync(approvalFile,JSON.stringify({schemaVersion:1,topics:Object.fromEntries([...texts].map(([id,text])=>[id,{sourceSha256:hash(text),evidenceRef}]))}));
   const reviews=readAuthoredReviews(fixtureRoot,c.legacyCatalog.units);
   const metadata=collectAuthoredMetadata(fixtureRoot,c.legacyCatalog.units,reviews,parseAuthoredMarkdown);assert.ok(metadata.every(item=>item.reviewed));
-  const e1=c.authoredMetadata.filter(item=>batch.name==='E2'?/^M0[0-3]\./.test(item.topicId):/^M0[0-8]\./.test(item.topicId));
+  const e1=c.authoredMetadata.filter(item=>batch.name==='E2'?/^M0[0-3]\./.test(item.topicId):batch.name==='E3'?/^M0[0-8]\./.test(item.topicId):/^(?:M0[0-8]|M1[0124])\./.test(item.topicId));
+  if(batch.name==='E4')assert.equal(e1.filter(item=>item.reviewed).length,69);
   const before=c.applyAuthoredOverlay(c.legacyCatalog,e1);
   const overlay=c.catalogSchema.parse(c.applyAuthoredOverlay(c.legacyCatalog,[...e1,...metadata]));
   for(const topicId of topicIds)assert.equal(c.unitReadiness(overlay.units.find(unit=>unit.topicId===topicId),c.indexCatalog(overlay)).state,'ready');

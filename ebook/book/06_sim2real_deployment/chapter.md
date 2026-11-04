@@ -25,6 +25,8 @@
 
 ## 선수 지식과 준비물
 
+E4의 [M27 지연·메모리·품질](/modules/M27/)와 [M30 진단·제한 실행·통계·롤백](/modules/M30/)을 이 장과 이어 읽고, [M32.05 재현 패키지](/study/unit-m32-05-a/)·[M32.06 검토·개선 계획](/study/unit-m32-06-a/)으로 근거를 정리한다. 장비 없는 기본 과제의 통과는 실제 운전 승인이나 안전 인증을 뜻하지 않는다.
+
 [M11.06 분포 이동·지연·실험 추적](/study/unit-m11-06-a/), [M12.06 인지 지표와 작업 성공](/study/unit-m12-06-a/), [M14.06 불확실성 기록](/study/unit-m14-06-a/)을 아래 배포 평가와 연결한다. 검출 점수·재투영 잔차·평균 지연 하나만으로 집기 성공이나 운영 성능을 보장하지 않는다.
 
 출력 안정화 앞에는 [M07.03 포화·샘플링](/study/unit-m07-03-a/), [M07.05 궤적 추종](/study/unit-m07-05-a/), [M07.06 필터·지연·잡음](/study/unit-m07-06-a/)을, 모델 이식 앞에는 [M08.04 관성·충돌](/study/unit-m08-04-a/)와 [M08.06 시뮬레이터 이식 계약](/study/unit-m08-06-a/)을 연결한다. 같은 URDF가 로드되거나 위치 목표가 같아도 동역학·드라이브·제어주기가 같다는 보장은 아니다.
@@ -165,7 +167,7 @@ $$
 \hat a_t=\frac{\sum_{k\in K_t}w_{t,k}a_t^{(k)}}{\sum_{k\in K_t}w_{t,k}}.
 $$
 
-ACT는 action chunking과 temporal ensembling으로 모방학습의 누적 오차와 비정상적 시연 문제를 다룬다.[Zhao et al., 2023] `code/temporal_filters.py`는 EMA와 겹치는 chunk의 지수 가중 평균을 구현한다.
+ACT는 action chunking과 temporal ensembling으로 모방학습의 누적 오차와 비정상적 시연 문제를 다룬다.[Zhao et al., 2023] `code/temporal_filters.py`는 EMA와 겹치는 chunk의 지수 가중 평균을 구현한다. 이 교육용 예제는 새 추론 시작 시점에 큰 가중치를 주며, oldest-first 인덱스와 양의 계수에서 오래된 후보를 우선하는 [LeRobot ACT 구현](https://github.com/huggingface/lerobot/blob/main/src/lerobot/policies/act/modeling_act.py)과 가중 방향이 다르다. 후보가 실행할 같은 시점·같은 단위의 값인지 확인하고 순서·계수 의미를 기록한다.
 
 시간 앙상블은 안전 감독기를 대체하지 않는다. 먼저 proposal마다 schema, unit, finite, timestamp freshness, task/phase, 기본 hard limit을 확인해 stale/invalid proposal을 제거한다. 유효 후보만 합성한 뒤 최종 출력에 joint/workspace/rate/collision limit을 다시 적용한다. grasp/open/retreat처럼 mode가 바뀌거나 E-stop/reset이 발생하면 ensemble history를 비운다. 서로 다른 chunk가 모두 경계 밖 행동을 제안하면 평균도 위험하다.
 
@@ -191,7 +193,7 @@ ACT는 action chunking과 temporal ensembling으로 모방학습의 누적 오�
 - E-stop, 모터 오류, 카메라 입력 손실
 - 정책/캘리브레이션/URDF 해시 변경
 
-FAULT에서 자동 재개하지 않는다. 원인 기록, 작업공간 확인, 자세 재정렬, 사람 승인 후 낮은 단계부터 다시 시작한다.
+FAULT에서 자동 재개하지 않는다. 원인 기록, 작업공간 확인, 자세 재정렬, 사람 승인 후 낮은 단계부터 다시 시작한다. 교육용 감독기도 fault 이전 승인을 무효화하고, fault 이후 새 승인·자세 확인으로 DRY_RUN에 복귀하면 관측 시각을 비운다. 복귀 후 새 유효 관측을 받아야 다시 목표를 평가할 수 있다.
 
 ### 6.4.2 작업공간 Bounding Box
 
@@ -217,6 +219,8 @@ $$p_{min}\le p\le p_{max}$$
 워치독은 “마지막 메시지가 왔는가”뿐 아니라 current/target의 source timestamp, 수신 시각, 추론 완료, 명령 송신, Follower 상태 피드백을 각각 본다. 서로 다른 timeout 원인을 하나의 `stale`로 합치지 않는다. position뿐 아니라 quaternion의 finite와 norm도 검증한다.
 
 ROS 2 노드는 구성되지 않은 상태, inactive, active, error를 구분하는 managed lifecycle을 사용할 수 있다. 그러나 lifecycle state 자체가 안전 기능의 인증을 뜻하지 않는다. 실제 토크 차단은 드라이버와 하드웨어 계약으로 검증해야 한다.
+
+교육용 watchdog의 입력 시각은 같은 단조 시계의 유한한 초 값이다. timeout은 양수·유한값이어야 하며, 관측 나이가 음수(미래 시각)이거나 timeout보다 크면 FAULT다. NaN/Inf 시각도 거부한다. 이 한 시계의 검사만으로 센서 clock 변환·네트워크·제동·드라이버·E-stop을 검증한 것으로 간주하지 않는다.
 
 `code/safety_supervisor.py`는 하드웨어 비종속 상태 머신이고 `code/ros2_ws/.../workspace_guard.py`는 교육용 ROS 2 노드다.
 

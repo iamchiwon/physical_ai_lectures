@@ -58,9 +58,12 @@ LIMITS: dict[str, JointLimit] = {
 
 class JointSafetyFilter:
     def __init__(self, timeout_s: float = 0.25) -> None:
+        if not math.isfinite(timeout_s) or timeout_s <= 0:
+            raise ValueError("timeout_s must be finite and positive")
         self.timeout_s = timeout_s
         self.state = ControlState.ALIGNING
         self._last_input_time: float | None = None
+        self._last_clock_time: float | None = None
         self._last_command: dict[str, float] | None = None
 
     @staticmethod
@@ -72,6 +75,25 @@ class JointSafetyFilter:
         if not all(math.isfinite(frame[name]) for name in JOINTS):
             raise ValueError("joint frame contains NaN or Inf")
 
+    def _fault(self, reason: str) -> FilterOutput:
+        self.state = ControlState.FAULT
+        self._last_input_time = None
+        self._last_command = None
+        return FilterOutput(self.state, {}, reason)
+
+    def _validate_clock(self, now: float) -> None:
+        if not math.isfinite(now) or (
+            self._last_clock_time is not None and now < self._last_clock_time
+        ):
+            raise ValueError("invalid or reversed monotonic clock")
+        self._last_clock_time = now
+
+    @classmethod
+    def _validate_measured(cls, frame: Mapping[str, float]) -> None:
+        cls._validate(frame)
+        if any(not LIMITS[name].minimum <= frame[name] <= LIMITS[name].maximum for name in JOINTS):
+            raise ValueError("measured follower outside soft limits; separate recovery required")
+
     def update(
         self,
         leader: Mapping[str, float],
@@ -82,16 +104,15 @@ class JointSafetyFilter:
         dt: float = 0.02,
     ) -> FilterOutput:
         now = time.monotonic() if now is None else now
-        if dt <= 0.0 or dt > 0.2:
-            self.state = ControlState.FAULT
-            return FilterOutput(self.state, dict(measured_follower), "invalid control period")
+        if not math.isfinite(dt) or not 0.0 < dt <= 0.2:
+            return self._fault("invalid control period")
 
         try:
+            self._validate_clock(now)
             self._validate(leader)
-            self._validate(measured_follower)
+            self._validate_measured(measured_follower)
         except ValueError as exc:
-            self.state = ControlState.FAULT
-            return FilterOutput(self.state, dict(measured_follower), str(exc))
+            return self._fault(str(exc))
 
         self._last_input_time = now
         if not deadman:
@@ -119,6 +140,11 @@ class JointSafetyFilter:
         self, measured_follower: Mapping[str, float], *, now: float | None = None
     ) -> FilterOutput:
         now = time.monotonic() if now is None else now
+        try:
+            self._validate_clock(now)
+            self._validate_measured(measured_follower)
+        except ValueError as exc:
+            return self._fault(str(exc))
         if self._last_input_time is None or now - self._last_input_time > self.timeout_s:
             self.state = ControlState.HOLD
             self._last_command = dict(measured_follower)
@@ -132,6 +158,7 @@ def _vector(frame: Mapping[str, float]) -> str:
 
 def main() -> None:
     follower = dict.fromkeys(JOINTS, 0.0)
+    follower["gripper"] = 5.0  # 측정 시작값도 교육용 soft limit 안이어야 한다.
     leader = {
         "shoulder_pan": 0.4,
         "shoulder_lift": -0.3,

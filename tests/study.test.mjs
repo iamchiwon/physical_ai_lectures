@@ -6,6 +6,7 @@ async function load(entry){
  try{return await import(`data:text/javascript;base64,${Buffer.from(result.outputFiles[0].text).toString('base64')}`);}catch(error){throw new Error(JSON.stringify(error.issues??error.message));}
 }
 const c=await load('apps/web/src/lib/curriculum.ts');
+const {legacyCatalog}=await load('packages/shared/src/catalog.ts');
 const {studyHref,resolveStudyNavigation}=await load('apps/web/src/lib/study-navigation.ts');
 const {studyResource}=await load('apps/web/src/lib/study-resources.ts');
 
@@ -35,7 +36,7 @@ test('invalid, absent-membership and duplicate track queries fall back to catalo
  const clean=resolveStudyNavigation(nav.base,nav.contexts,[]);assert.equal(clean.notice,null);
 });
 test('TBD only-supplement bindings stay clearly supplementary and original resources are not copied',()=>{
- const unit=c.curriculumIndex.units.get('unit-m21-05-a');
+ const unit=legacyCatalog.units.find(unit=>unit.id==='unit-m21-05-a');
  const items=Object.values(unit.slots).flat().map(studyResource);
  assert.ok(items.length>0);assert.ok(items.every(item=>item.role==='supplement'));
  assert.ok(items.every(item=>!('content' in item)));

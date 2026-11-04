@@ -16,6 +16,8 @@ async function load(entry){
 process.chdir(path.join(root,'apps/web'));
 const helper=await load('apps/web/src/lib/study-tutor.ts');
 const c=await load('apps/web/src/lib/curriculum.ts');
+const {legacyCatalog,indexCatalog,unitReadiness}=await load('packages/shared/src/catalog.ts');
+const baselineTbd=legacyCatalog.units.find(unit=>unit.id==='unit-m21-05-a');
 const {retrieveLessonContext}=await load('apps/web/src/lib/tutor-retrieval.ts');
 const {tutorCompatibility}=await load('apps/web/src/lib/tutor-compatibility.ts');
 const manifest=await load('apps/web/src/app/tutor-study/manifest/route.ts');
@@ -32,10 +34,21 @@ test('204 unit corpora contain only published matched mapped resource IDs and mo
  }
 });
 test('TBD carries explicit gaps and existing supplement role while stable IDs remain independent of legacy chapters',()=>{
- const unit=c.curriculumIndex.units.get('unit-m21-05-a');const props=helper.studyTutorProps(unit);
+ const unit=baselineTbd;const props=helper.studyTutorProps(unit);
+ assert.equal(unitReadiness(unit,indexCatalog(legacyCatalog)).state,'tbd');
  assert.equal(props.lessonId,unit.id);assert.equal(props.learningContext.readiness,'tbd');assert.equal(props.learningContext.moduleId,'M21');
  assert.match(props.sourceContent,/미작성 범위/);assert.match(props.sourceContent,/보충 참고/);assert.match(props.sourceContent,/실습 파라미터·결과는 전달되지 않았/);
  const withCode=c.catalog.units.map(helper.studyTutorCorpus).find(corpus=>corpus.documents.some(doc=>doc.content.includes('```')));assert.ok(withCode);
+});
+test('current M21.05 has ready authored content while every former supplement binding is retained',()=>{
+ const unit=c.curriculumIndex.units.get(baselineTbd.id),props=helper.studyTutorProps(unit);
+ assert.equal(props.learningContext.readiness,'ready');assert.match(props.sourceContent,/학습 범위와 한계/);
+ const corpus=helper.studyTutorCorpus(unit);assert.ok(corpus.documents.some(doc=>doc.id==='authored:resource:M21.05:body'&&doc.content.includes('Mobile ALOHA')));
+ for(const slot of Object.keys(baselineTbd.slots))for(const binding of baselineTbd.slots[slot]){
+  const key='resourceId' in binding?'resourceId':'activityId';
+  assert.ok(unit.slots[slot].some(current=>current[key]===binding[key]&&current.role===binding.role));
+  if(key==='resourceId')assert.ok(c.curriculumIndex.resources.has(binding[key]));else assert.ok(c.curriculumIndex.activities.has(binding[key]));
+ }
 });
 test('manifest indexes unit/module/resource IDs and Worker advertises optional context capability',async()=>{
  const index=await manifest.GET().json();assert.equal(index.units.length,204);assert.ok(index.units.every(item=>item.moduleId&&Array.isArray(item.resourceIds)));
@@ -45,7 +58,7 @@ test('new Worker accepts old requests and forwards optional TBD context with sou
  const original=globalThis.fetch;const messages=[];
  globalThis.fetch=async(_url,options)=>{messages.push(JSON.parse(options.body).messages);return Response.json({model:'example/free',choices:[{message:{content:JSON.stringify({answer:'미작성 단위입니다.',learnerUpdates:[],lookupQuery:''})},finish_reason:'stop'}]});};
  try {
-  const props=helper.studyTutorProps(c.curriculumIndex.units.get('unit-m21-05-a'));
+  const props=helper.studyTutorProps(baselineTbd);
   const body={question:'현재 단원의 준비 상태는?',lesson:{id:props.lessonId,title:props.lessonTitle,contextSummary:props.sourceContent},learningContext:props.learningContext};
   const response=await app.request('/v1/tutor',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(body)},{ALLOWED_ORIGINS:'http://localhost:3000',OPENROUTER_API_KEY:'test-key'});
   assert.equal(response.status,200);assert.equal((await response.json()).mode,'openrouter');
@@ -57,7 +70,7 @@ test('new Worker accepts old requests and forwards optional TBD context with sou
  } finally {globalThis.fetch=original;}
 });
 test('old Worker or unavailable health gates TBD references and live-state questions but permits explicit general concepts',()=>{
- const context=helper.studyTutorProps(c.curriculumIndex.units.get('unit-m21-05-a')).learningContext;
+ const context=helper.studyTutorProps(baselineTbd).learningContext;
  assert.equal(tutorCompatibility(false,context,'교재 실습 코드를 설명해주세요').allowed,false);
  assert.equal(tutorCompatibility(false,context,'일반 개념: 정책 학습이란?').allowed,true);
  assert.equal(tutorCompatibility(false,{...context,readiness:'partial'},'실습 결과를 확인해주세요').allowed,false);

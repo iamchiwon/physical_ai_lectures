@@ -4,44 +4,44 @@
     {
       "source": "ebook/book/01_physical_ai_isaac_ros2/chapter.md",
       "baselineSha256": "a080ac9eddac666c3400d843913886913468677e9c2ab4bf60bcaa76b18a7d93",
-      "sha256": "dc2aff65925d924d276f2e2f97bde1a63efca340f5b9d7fe3856f2a0e43dd0b8",
-      "reason": "신규 기초와 기존 응용 장 사이 선수/범위/장비 없는 진입 연결 / 결정론을 Software/Physical 구분으로 오해하는 문장 정정 / POMDP 누락기호 gamma와 관측독립/시간축 가정 명시 / 순차 처리 지연과 목표 샘플 주기 구분 / 주기 예산 수치의 가정 및 새 목표설계 단위 연결 / E2: ROS・기구학・제어・모델 선수/후속 연결 및 관련 개념·실행 전제 보완 / E3: 시뮬레이션·학습·비전·카메라/시간 기초의 연결 및 독립검토된 개념/그림 조건 정정",
-      "evidenceRef": "doc/v2/work_items/E3-review.md"
+      "sha256": "0658d775a58fe696d5d9a2f74b3dda996ef1d399571448a7d46067f03685f76c",
+      "reason": "신규 기초와 기존 응용 장 사이 선수/범위/장비 없는 진입 연결 / 결정론을 Software/Physical 구분으로 오해하는 문장 정정 / POMDP 누락기호 gamma와 관측독립/시간축 가정 명시 / 순차 처리 지연과 목표 샘플 주기 구분 / 주기 예산 수치의 가정 및 새 목표설계 단위 연결 / E2: ROS・기구학・제어・모델 선수/후속 연결 및 관련 개념·실행 전제 보완 / E3: 시뮬레이션·학습·비전·카메라/시간 기초의 연결 및 독립검토된 개념/그림 조건 정정 / E4: 로봇팔·데이터·정책·배포·캡스톤 선수/후속과 교육용 계산·실행·안전 계약 보완",
+      "evidenceRef": "doc/v2/work_items/E4-review.md"
     },
     {
       "source": "ebook/book/02_physx_simulation/chapter.md",
       "baselineSha256": "a21459dc9d4dd74be968ed41bcc237d55d1e56f5bf0d3d5b151da99e48011c40",
-      "sha256": "5507d0f2ecfe66bfe0b5dafb36a41e1055cc81a1e5fe0fb4badc695f8e9512b6",
-      "reason": "E1에서 기존 02장으로 선수·실습범위·오개념 연결 보강 / latest를 재현 가능한 고정버전 안내로 정정 / 수학브리지독립검수: Euler 고정축적용xyz와행렬곱RzRyRx 용어정정·실행수식/함수명보존 / 짐벌락정확특이점과근처조건악화구분 / E2: ROS・기구학・제어・모델 선수/후속 연결 및 관련 개념·실행 전제 보완 / E3: 시뮬레이션·학습·비전·카메라/시간 기초의 연결 및 독립검토된 개념/그림 조건 정정",
-      "evidenceRef": "doc/v2/work_items/E3-review.md"
+      "sha256": "046ff676a51a1cf529673af29f76532f742dee148d67289c869e32a3d616dd93",
+      "reason": "E1에서 기존 02장으로 선수·실습범위·오개념 연결 보강 / latest를 재현 가능한 고정버전 안내로 정정 / 수학브리지독립검수: Euler 고정축적용xyz와행렬곱RzRyRx 용어정정·실행수식/함수명보존 / 짐벌락정확특이점과근처조건악화구분 / E2: ROS・기구학・제어・모델 선수/후속 연결 및 관련 개념·실행 전제 보완 / E3: 시뮬레이션·학습·비전·카메라/시간 기초의 연결 및 독립검토된 개념/그림 조건 정정 / E4: 로봇팔·데이터·정책·배포·캡스톤 선수/후속과 교육용 계산·실행·안전 계약 보완",
+      "evidenceRef": "doc/v2/work_items/E4-review.md"
     },
     {
       "source": "ebook/book/03_so101_kinematics_teleop/chapter.md",
       "baselineSha256": "8083685d7b190de126d12ce6ec53469e742dd2143eb5fa7ec0fe8274410490aa",
-      "sha256": "5e3c45e256c9fc5ac7230b429c4dba759c24cfcd0f45f7bf62eea5aadd16bc1f",
-      "reason": "E1에서 기존 03장으로 선수·실습범위·오개념 연결 보강 / latest 설치조건과 E1 의존성 고정 원칙의 불일치 보완 / M03검토: 명목전압숫자일치와동작범위/극성/전류/논리핀/절대최대정격구분 / E2: ROS・기구학・제어・모델 선수/후속 연결 및 관련 개념·실행 전제 보완 / M08.05: JointState 한 메시지 동일시각 계약·비동기 정렬/추정 출처를 엄밀화하고 공식 명세 링크 연결 / E3: 시뮬레이션·학습·비전·카메라/시간 기초의 연결 및 독립검토된 개념/그림 조건 정정",
-      "evidenceRef": "doc/v2/work_items/E3-review.md"
+      "sha256": "2a3930847f4239da32f60dc7554f4fdf5b4197e5694eb6e86499f3bf3d6929e7",
+      "reason": "E1에서 기존 03장으로 선수·실습범위·오개념 연결 보강 / latest 설치조건과 E1 의존성 고정 원칙의 불일치 보완 / M03검토: 명목전압숫자일치와동작범위/극성/전류/논리핀/절대최대정격구분 / E2: ROS・기구학・제어・모델 선수/후속 연결 및 관련 개념·실행 전제 보완 / M08.05: JointState 한 메시지 동일시각 계약·비동기 정렬/추정 출처를 엄밀화하고 공식 명세 링크 연결 / E3: 시뮬레이션·학습·비전·카메라/시간 기초의 연결 및 독립검토된 개념/그림 조건 정정 / E4: 로봇팔·데이터·정책·배포·캡스톤 선수/후속과 교육용 계산·실행·안전 계약 보완",
+      "evidenceRef": "doc/v2/work_items/E4-review.md"
     },
     {
       "source": "ebook/book/04_sensor_data_pipeline/chapter.md",
       "baselineSha256": "69a8cf6f0e2f6e584bda629d3a17fbbe37f75ec024eab2237847807a2a3796fa",
-      "sha256": "63f8300ad4c9ad559b9d8001471eabb34baae98983bdae1b24e385ec11cb6c71",
-      "reason": "E1에서 기존 04장으로 선수·실습범위·오개념 연결 보강 / E2: ROS・기구학・제어・모델 선수/후속 연결 및 관련 개념·실행 전제 보완 / E3: 시뮬레이션·학습·비전·카메라/시간 기초의 연결 및 독립검토된 개념/그림 조건 정정",
-      "evidenceRef": "doc/v2/work_items/E3-review.md"
+      "sha256": "9440f558163e693c71c6925d3e39f063c6ab9e1c1387a8f58a7f3f218ac4eeb6",
+      "reason": "E1에서 기존 04장으로 선수·실습범위·오개념 연결 보강 / E2: ROS・기구학・제어・모델 선수/후속 연결 및 관련 개념·실행 전제 보완 / E3: 시뮬레이션·학습·비전·카메라/시간 기초의 연결 및 독립검토된 개념/그림 조건 정정 / E4: 로봇팔·데이터·정책·배포·캡스톤 선수/후속과 교육용 계산·실행·안전 계약 보완",
+      "evidenceRef": "doc/v2/work_items/E4-review.md"
     },
     {
       "source": "ebook/book/05_lerobot_smolvla/chapter.md",
       "baselineSha256": "637909ee6456fa438f421ae0290a3b536cd925567ba1246a1f2e58c0b113a9fa",
-      "sha256": "e5d4749c0d15b0db1c98bd476e9a2ac12bf90a6225c12edc34621d0a7ae12c74",
-      "reason": "E1에서 기존 05장으로 선수·실습범위·오개념 연결 보강 / 설치 예시에 실제 커밋/태그 고정 전제와 미지정 중단 추가 / 독립검수: 설치 전체 subshell fail-fast로 미지정/오류 revision 뒤 실행 방지 / E2: ROS・기구학・제어・모델 선수/후속 연결 및 관련 개념·실행 전제 보완 / E3: 시뮬레이션·학습·비전·카메라/시간 기초의 연결 및 독립검토된 개념/그림 조건 정정",
-      "evidenceRef": "doc/v2/work_items/E3-review.md"
+      "sha256": "ef00906df80aa1ff5447cffa1967bdce09e69c97088f6900868f7aaa693e8459",
+      "reason": "E1에서 기존 05장으로 선수·실습범위·오개념 연결 보강 / 설치 예시에 실제 커밋/태그 고정 전제와 미지정 중단 추가 / 독립검수: 설치 전체 subshell fail-fast로 미지정/오류 revision 뒤 실행 방지 / E2: ROS・기구학・제어・모델 선수/후속 연결 및 관련 개념·실행 전제 보완 / E3: 시뮬레이션·학습·비전·카메라/시간 기초의 연결 및 독립검토된 개념/그림 조건 정정 / E4: 로봇팔·데이터·정책·배포·캡스톤 선수/후속과 교육용 계산·실행·안전 계약 보완 / E4 M20.03 연계: 저장 모달리티/metadata와 로드 텐서의 CHW·시간·배치 축 구분 / E4 M21.02 연계: relative 고정 기준과 delta 누적 증분·채널/정규화 계약 구분 / E4 M27.04 연계: 명령 의미와 제한 시간에 따른 HOLD/STOP 계약 명료화",
+      "evidenceRef": "doc/v2/work_items/E4-review.md"
     },
     {
       "source": "ebook/book/06_sim2real_deployment/chapter.md",
       "baselineSha256": "63e21fba7a365699ea09d4be5e25675e0f9ac0c8d856e41a00bd9d8d7157d971",
-      "sha256": "e2b7679ff687527324ac81cc7ff63e5e45072177bca2c3aa726aad35900b57cb",
-      "reason": "E1에서 기존 06장으로 선수·실습범위·오개념 연결 보강 / E2: ROS・기구학・제어・모델 선수/후속 연결 및 관련 개념·실행 전제 보완 / E3: 시뮬레이션·학습·비전·카메라/시간 기초의 연결 및 독립검토된 개념/그림 조건 정정",
-      "evidenceRef": "doc/v2/work_items/E3-review.md"
+      "sha256": "7f6a9c5db746e01dec7de67d2b1e483052e33d0e27ca0623bf7a959415ed7533",
+      "reason": "E1에서 기존 06장으로 선수·실습범위·오개념 연결 보강 / E2: ROS・기구학・제어・모델 선수/후속 연결 및 관련 개념·실행 전제 보완 / E3: 시뮬레이션·학습·비전·카메라/시간 기초의 연결 및 독립검토된 개념/그림 조건 정정 / E4: 로봇팔·데이터·정책·배포·캡스톤 선수/후속과 교육용 계산·실행·안전 계약 보완",
+      "evidenceRef": "doc/v2/work_items/E4-review.md"
     },
     {
       "source": "ebook/book/00_frontmatter/environment.md",
@@ -60,9 +60,9 @@
     {
       "source": "ebook/book/00_frontmatter/how_to_use.md",
       "baselineSha256": "a3d1e94f176ffd9b1a9070929a0a1d5ed28034e02c8f60d56926d601bdbb841b",
-      "sha256": "d1117a7c0d11069aacb72e150a5d8184bf8ffd7bfed09695a4cf7f4b11074714",
-      "reason": "여섯장 단일프로젝트에서 통합과정 기초→응용 학습경로로 안내 개정 / SIM표식=장비없는브라우저 실행으로 오인하는 설명 보완 / E2: 공통 기초→ROS/기구학/제어/모델 경로와 기본·선택 실행/모형 한계, 사용자 상태 표시 원칙 동기화 / E3: 시뮬레이션·학습·비전·카메라/시간 기초의 연결 및 독립검토된 개념/그림 조건 정정",
-      "evidenceRef": "doc/v2/work_items/E3-review.md"
+      "sha256": "478bd10e127bee98fa37f37e97a20eede9197cda83a09a49be8636875df0e163",
+      "reason": "여섯장 단일프로젝트에서 통합과정 기초→응용 학습경로로 안내 개정 / SIM표식=장비없는브라우저 실행으로 오인하는 설명 보완 / E2: 공통 기초→ROS/기구학/제어/모델 경로와 기본·선택 실행/모형 한계, 사용자 상태 표시 원칙 동기화 / E3: 시뮬레이션·학습·비전·카메라/시간 기초의 연결 및 독립검토된 개념/그림 조건 정정 / E4: 로봇팔·데이터·정책·배포·캡스톤 선수/후속과 교육용 계산·실행·안전 계약 보완",
+      "evidenceRef": "doc/v2/work_items/E4-review.md"
     },
     {
       "source": "ebook/book/02_physx_simulation/code/transforms.py",
@@ -91,6 +91,27 @@
       "sha256": "7d61c3d11f67fe4b18713be00736863ff80a6c212a92be757898d7443bc7e7c8",
       "reason": "E3 시간 정합 본문과 문항 해설의 slop/표본 가용성 조건 동기화",
       "evidenceRef": "doc/v2/work_items/E3-review.md"
+    },
+    {
+      "source": "ebook/book/03_so101_kinematics_teleop/code/safe_teleop_core.py",
+      "baselineSha256": "4be799137d99d24ffa727033e970d1018f32aefcfe559c1416d6327629a5649e",
+      "sha256": "e24a9c037415c93e4d37ae493de9187f55a8cf7b811bd0036b528db5913907fc",
+      "reason": "E4: 교육용 제어 예제의 finite·시각·범위·오류 후 복귀 계약 보완",
+      "evidenceRef": "doc/v2/work_items/E4-review.md"
+    },
+    {
+      "source": "ebook/book/05_lerobot_smolvla/code/closed_loop_20hz.py",
+      "baselineSha256": "5d9c05153ee52c1a2e0d4cb4a4abe42cc3a2232335f75ff63cf64951a26bd7f5",
+      "sha256": "e90f12a72fbe41ead9ee9f068499cf50af103bd225f20154292e922bc31d5c0f",
+      "reason": "E4: 교육용 제어 예제의 finite·시각·범위·오류 후 복귀 계약 보완",
+      "evidenceRef": "doc/v2/work_items/E4-review.md"
+    },
+    {
+      "source": "ebook/book/06_sim2real_deployment/code/safety_supervisor.py",
+      "baselineSha256": "c06b8f77a713aa7f5cb74d3c8549bf2fe9da3e2793412bedfc31e63c33cb0a8d",
+      "sha256": "1bcf6aca1fad053dd77c2a4de567bf61796252234d8b854d16e38ad17160672a",
+      "reason": "E4: 교육용 제어 예제의 finite·시각·범위·오류 후 복귀 계약 보완",
+      "evidenceRef": "doc/v2/work_items/E4-review.md"
     }
   ]
 }

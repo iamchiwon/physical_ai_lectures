@@ -21,9 +21,19 @@ class SafetyLimits:
     max_delta: Array
 
     def filter(self, previous: Array, proposed: Array) -> Array:
-        proposed = np.asarray(proposed, dtype=float)
-        bounded = np.clip(proposed, self.lower, self.upper)
-        delta = np.clip(bounded - previous, -self.max_delta, self.max_delta)
+        previous, proposed = np.asarray(previous, dtype=float), np.asarray(proposed, dtype=float)
+        lower, upper, max_delta = (np.asarray(x, dtype=float) for x in (self.lower, self.upper, self.max_delta))
+        values = (previous, proposed, lower, upper, max_delta)
+        if lower.ndim != 1 or lower.size == 0 or any(x.shape != lower.shape for x in values):
+            raise ValueError("action and limit shapes must be the same nonempty vector")
+        if not all(np.all(np.isfinite(x)) for x in values):
+            raise ValueError("NaN/Inf action, previous command, or limit: reject before clipping")
+        if np.any(lower > upper) or np.any(max_delta < 0):
+            raise ValueError("invalid position or per-cycle delta limits")
+        if np.any(previous < lower) or np.any(previous > upper):
+            raise ValueError("previous command outside limits; separate recovery required")
+        bounded = np.clip(proposed, lower, upper)
+        delta = np.clip(bounded - previous, -max_delta, max_delta)
         return previous + delta
 
 

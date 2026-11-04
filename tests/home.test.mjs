@@ -30,7 +30,11 @@ test('six distinct track overviews preserve required/optional counts and module 
 });
 test('reading entry points are explicit primary textbook resources and exclude unavailable bindings', () => {
   assert.equal(homeCatalog.readings.length,6);
-  assert.match(homeCatalog.readings.find((r) => r.topicId === 'M20.03').reading.title,/LeRobotDataset/);
+  assert.equal(homeCatalog.readings.find((r) => r.topicId === 'M20.03').reading.href,'/study/unit-m20-03-a/#authored-body');
+  assert.equal(homeCatalog.readings.find((r) => r.topicId === 'M20.03').reading.title,`${catalog.units.find(unit=>unit.topicId==='M20.03').title} · 본문`);
+  assert.match(buildHomeCatalog(legacyCatalog).readings.find((r) => r.topicId === 'M20.03').reading.title,/LeRobotDataset/);
+  const oldReading=buildHomeCatalog(legacyCatalog).readings.find(r=>r.topicId==='M20.03').reading;
+  assert.ok(catalog.resources.some(resource=>resource.locator.type==='textbook'&&resource.locator.legacyUrl===oldReading.href));
   assert.equal(homeCatalog.readings.find((r) => r.topicId === 'M10.03').reading.href,'/study/unit-m10-03-a/#authored-body');
   assert.match(buildHomeCatalog(legacyCatalog).readings.find((r) => r.topicId === 'M10.03').reading.title,/접촉 역학/);
   for (const reading of homeCatalog.readings) assert.match(reading.reading.href,/^\/(?:textbook\/[^/]+\/|study\/[^/]+\/#authored-body)$/);

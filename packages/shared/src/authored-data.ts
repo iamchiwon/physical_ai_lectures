@@ -966,6 +966,594 @@ export const authoredMetadata: AuthoredMetadata[] = [
     "sha256": "957ff8b7946845f800ef9112a4b3998bb142f24c38666c1f1b35861dc948de70",
     "reviewed": true,
     "evidenceRef": "doc/v2/work_items/M14.06.md"
+  },
+  {
+    "topicId": "M19.01",
+    "source": "ebook/curriculum/M19/M19.01.md",
+    "title": "그리퍼·Tool Frame·작업 좌표·핸드아이 보정",
+    "objectives": [
+      "그리퍼 상태·플랜지·Tool Frame/TCP·작업 좌표의 역할과 필요한 단위/기준을 구분한다.",
+      "열벡터 변환 체인으로 작업 좌표의 TCP 목표를 base의 플랜지 목표로 계산하고 tool offset 변경의 영향을 설명한다.",
+      "카메라 장착 방식에 따른 핸드아이 변환 방향과 필요한 관측/검증 조건을 판정한다."
+    ],
+    "prerequisiteNote": "M06의 좌표 변환과 M14.01/03/06의 카메라 프레임·시간·잔차가 선수다. 본문에서 목표 자세와 경로의 차이를 보충하므로 아직 미집필인 M17의 내용을 알고 있다고 가정하지 않는다. 기본은 합성 좌표와 보정 기록의 종이 계산이다.",
+    "sha256": "54da8773021d04550aba210a0624900bba6c9118d23a9ebc4d8cee30682a9c0d",
+    "reviewed": true,
+    "evidenceRef": "doc/v2/work_items/M19.01.md"
+  },
+  {
+    "topicId": "M19.02",
+    "source": "ebook/curriculum/M19/M19.02.md",
+    "title": "MoveIt 2 Planning Scene·IK·충돌·궤적 실행",
+    "objectives": [
+      "MoveIt 2에서 로봇 상태·Planning Scene·IK 해의 역할을 구분하고 목표 판정에 필요한 자료를 설명한다.",
+      "유효한 끝점과 경로 전체의 유효성을 구분하고 중간 충돌/허용 충돌 설정의 위험한 해석을 진단한다.",
+      "주어진 궤적의 구간 속도·시작 상태를 검사하고 계획/실행/작업 성공을 분리해 판정한다."
+    ],
+    "prerequisiteNote": "M06의 IK/관절 범위, M08의 모델/TF, M19.01의 TCP가 선수다. 경로/상태 공간과 샘플 검사 개념은 본문에서 보충하므로 미집필 M17을 필수 자료로 요구하지 않는다. 합성 표만으로 활동을 완료하며 ROS/MoveIt 실행은 하지 않는다.",
+    "sha256": "bff5839860b516723dc6fbb1aa205e1a1f081634e15b84cd6b1cdfe8f8755252",
+    "reviewed": true,
+    "evidenceRef": "doc/v2/work_items/M19.02.md"
+  },
+  {
+    "topicId": "M19.03",
+    "source": "ebook/curriculum/M19/M19.03.md",
+    "title": "티칭·웨이포인트·속도·접근/후퇴·안전 구역",
+    "objectives": [
+      "티칭 레코드의 공구/작업 좌표·보간/블렌딩 조건을 구분하고 웨이포인트만으로 알 수 없는 것을 설명한다.",
+      "합성 Pick 동작의 접근/후퇴 좌표와 이동 시간 하한을 계산하고 파지 확인 단계를 배치한다.",
+      "주어진 구역 모형에서 공구 크기·불확실성·정지 여유를 계산하고 전체 팔/실제 안전을 보장할 수 없는 범위를 판정한다."
+    ],
+    "prerequisiteNote": "M19.01의 TCP/작업 프레임과 M19.02의 경로/궤적이 선수다. 티칭 패널이나 실물을 사용하지 않고 합성 작업표의 좌표·속도/구역을 검토한다. 제조사 예시는 해당 문서 버전의 의미 설명이며 실제 설정 명령이 아니다.",
+    "sha256": "a51488e42b0bebaebf629241a4583c62004ad9b4deb705739f1c5718b814dba3",
+    "reviewed": true,
+    "evidenceRef": "doc/v2/work_items/M19.03.md"
+  },
+  {
+    "topicId": "M19.04",
+    "source": "ebook/curriculum/M19/M19.04.md",
+    "title": "CoppeliaSim 사례와 시뮬레이터 비교",
+    "objectives": [
+      "CoppeliaSim 사례에서 scene/관절의 기구학·동역학과 제어 명령/관측 계약을 구분한다.",
+      "simulation·dynamics·렌더·외부 제어의 간격으로 스텝 수/주기/실시간 비율을 계산한다.",
+      "합성 비교 기록의 조건 차이를 진단하고 통제 변수·평가 지표와 검증 한계를 설계한다."
+    ],
+    "prerequisiteNote": "M10의 물리/시간과 M19.01/02의 목표·경로 개념을 연결한다. CoppeliaSim 설치나 사용 경험은 필요하지 않다. 기본은 공식 개념을 읽고 합성 로그를 계산/비교하는 활동이며 실제 시뮬레이터 실행 결과가 아니다.",
+    "sha256": "d160d0364f67b9888fcc18d8be2f522820f5ffbd20ed6b715e98518fbc5ebd8c",
+    "reviewed": true,
+    "evidenceRef": "doc/v2/work_items/M19.04.md"
+  },
+  {
+    "topicId": "M19.05",
+    "source": "ebook/curriculum/M19/M19.05.md",
+    "title": "비전 Pick-and-Place·Piece Picking·Depalletizing",
+    "objectives": [
+      "영상 검출·3차원 관측과 파지 후보의 차이를 설명하고 score/깊이/접근 조건으로 합성 후보를 판정한다.",
+      "주어진 깊이/프레임으로 목표·접근 위치를 계산하고 적재 상태 변화 뒤 필요한 재관측을 설명한다.",
+      "계획/그리퍼/유지·배치 증거를 구분하고 단계별 성공률의 분모와 실패 원인을 기록한다."
+    ],
+    "prerequisiteNote": "M12.02의 핀홀, M14 기초의 프레임/시간, M19.01~03의 TCP/경로/접근이 선수다. 물체 자세/파지 후보의 의미를 본문에서 보충하며 M17/M18의 미래 원고를 요구하지 않는다. 합성 영상 수치/작업 로그만으로 활동을 완료한다.",
+    "sha256": "3ff98ea96d39e1385c72e53bfd98e841bf691d71b38095684edadbd00c6f1cd4",
+    "reviewed": true,
+    "evidenceRef": "doc/v2/work_items/M19.05.md"
+  },
+  {
+    "topicId": "M19.06",
+    "source": "ebook/curriculum/M19/M19.06.md",
+    "title": "델타·협동 팔·모바일 매니퓰레이터 응용",
+    "objectives": [
+      "델타·직렬 협동 팔·모바일 매니퓰레이터의 구조/과업 제약을 비교하고 합성 작업영역·하중/모멘트를 검사한다.",
+      "이동 베이스의 회전/이동으로 대상 좌표를 계산하고 위치 오차가 팔의 도달 여유에 미치는 영향을 판정한다.",
+      "협동/이동 조작의 통합 상태·검증 근거를 설계하고 기하 도달/하중 통과와 실제 작업 안전/성공의 차이를 설명한다."
+    ],
+    "prerequisiteNote": "M03의 구성·구동, M06의 변환/도달성, M19.01~05의 공구·계획/작업 증거가 선수다. 모바일의 베이스 이동/정지·최신 위치 개념은 본문에서 보충하므로 M17/M18 미집필 내용을 요구하지 않는다. 합성 사양/기록의 종이 계산이 기본이다.",
+    "sha256": "33382a75be4aec0c00bfb23f29d00be7c92a28ab1b9ca24a01044af8ca5c46e8",
+    "reviewed": true,
+    "evidenceRef": "doc/v2/work_items/M19.06.md"
+  },
+  {
+    "topicId": "M20.01",
+    "source": "ebook/curriculum/M20/M20.01.md",
+    "title": "SO-101·Leader-Follower·영점·스케일·클러치",
+    "objectives": [
+      "SO-101 Leader/Follower의 장치·관절/보정 식별과 raw tick·각도·정규화 값의 단위를 구분한다.",
+      "합성 상대 매핑과 클러치 재기준을 계산하고 영점/방향·스케일 오류와 재연결 점프를 설명한다.",
+      "목표 제한과 실제 관측을 구분해 전송/기록 계약을 설계하고 제한·통신/보정 상태의 실패를 진단한다."
+    ],
+    "prerequisiteNote": "M03의 엔코더/구동, M06.06의 영점/범위와 M19의 상태/공구 계약을 연결한다. 실제 SO-101은 필요하지 않으며 숫자는 합성 보정/로그다. 클러치는 본문의 교육용 상대 매핑 설계이고 LeRobot의 내장 기능으로 가정하지 않는다.",
+    "sha256": "14c0ebedb5f870819af52ee31b77681ed1266ab344429c6a39010145298a735a",
+    "reviewed": true,
+    "evidenceRef": "doc/v2/work_items/M20.01.md"
+  },
+  {
+    "topicId": "M20.02",
+    "source": "ebook/curriculum/M20/M20.02.md",
+    "title": "MuJoCo 설치·모델·환경 및 재생 입문",
+    "objectives": [
+      "MuJoCo 선택 설치/버전과 MJCF의 body·joint·geom·actuator 및 모델/상태 자료의 역할을 구분한다.",
+      "물리 step/제어 간격과 ctrl/관측을 구분하고 합성 로그의 모형 시간·제어 주기/평균 속도를 계산한다.",
+      "상태 재생과 행동 재실행의 차이를 설명하고 필요한 초기 상태·모델/시간/버전과 검증 한계를 기록한다."
+    ],
+    "prerequisiteNote": "M08의 모델/관성, M10/M19.04의 시간·제어 계약을 연결한다. Gym/RL 지식은 필요하지 않다. 기본은 MJCF와 합성 기록의 종이 분석이다. 작성 환경에는 mujoco 패키지가 없어 아래 MuJoCo 코드는 미실행 선택 예시이며 설치는 학습의 필수 조건이 아니다.",
+    "sha256": "31ccea52c11c35d46f6cdddd9b8da6b43a45523b3022a36d0c2f306132d36372",
+    "reviewed": true,
+    "evidenceRef": "doc/v2/work_items/M20.02.md"
+  },
+  {
+    "topicId": "M20.03",
+    "source": "ebook/curriculum/M20/M20.03.md",
+    "title": "관측·행동·지시문·에피소드와 LeRobot Dataset",
+    "objectives": [
+      "관측/행동·지시문 feature의 shape·단위/프레임·시점 의미를 정의하고 잘못된 action 해석을 진단한다.",
+      "에피소드/프레임 시각으로 샘플 경계와 시간 정합을 계산하고 종료/재시작을 구분한다.",
+      "LeRobotDataset v3의 공유 파일/메타데이터 관계와 마감·재로딩 확인 근거를 설명한다."
+    ],
+    "prerequisiteNote": "M20.01의 관측/목표 기록, M14.03의 같은 시계·시각, M11.02의 shape가 선수다. 모델 학습이나 Dataset API 설치 없이 합성 스키마/행 표를 분석한다. 아래 형식은 v3 개념을 설명하는 단순 논리 표이며 그대로 공식 파일 스키마라고 가정하지 않는다.",
+    "sha256": "4abbce3b101a29df27aea4c636e3d1c802daee17886c437c5eb44d4332cf1c56",
+    "reviewed": true,
+    "evidenceRef": "doc/v2/work_items/M20.03.md"
+  },
+  {
+    "topicId": "M20.04",
+    "source": "ebook/curriculum/M20/M20.04.md",
+    "title": "rosbag2/MCAP·변환·압축·스키마·버전",
+    "objectives": [
+      "rosbag2·MCAP·직렬화/스키마의 역할과 취득/발행/기록 시각을 구분한다.",
+      "합성 압축률과 시각 정밀도·단위 변환을 계산하고 저장/변환 단계에서 정보가 손실되는 사례를 진단한다.",
+      "변환 전후의 메시지/의미 보존과 버전·누락/재로딩 검증 근거를 설계한다."
+    ],
+    "prerequisiteNote": "M05의 메시지/QoS, M14.03의 시각과 M20.03의 데이터 계약을 연결한다. 컨테이너/직렬화·압축의 의미는 본문에서 설명한다. 기본은 합성 파일 명세/수치의 분석이며 실제 rosbag2 수집·재생이나 Dataset 변환을 실행하지 않는다.",
+    "sha256": "ca95b8b6a1c805372776e769fe70925655de43d6dffca031a7531acfe2ec858f",
+    "reviewed": true,
+    "evidenceRef": "doc/v2/work_items/M20.04.md"
+  },
+  {
+    "topicId": "M20.05",
+    "source": "ebook/curriculum/M20/M20.05.md",
+    "title": "Rerun·Replayer·누락·단위·범위·정합 검사",
+    "objectives": [
+      "Rerun의 entity/timeline과 오프라인 Replayer의 역할을 구분하고 원시 순서·시각/표시의 계약을 설계한다.",
+      "합성 기록에서 누락/중복·역행과 범위/평균 속도·영상 정합 위반을 계산한다.",
+      "품질 검사 결과를 원인 가설/미상과 구분해 격리·보존/수정·재검증 근거를 기록한다."
+    ],
+    "prerequisiteNote": "M14 기초의 시각/프레임과 M20.03/04의 스키마·저장이 선수다. Rerun과 ROS/장비를 설치하지 않고 합성 표를 분석한다. Replayer는 이 단위에서 저장 자료를 읽어 재생하는 프로그램의 일반 역할을 뜻하며 특정 제품의 설치/실행을 가정하지 않는다.",
+    "sha256": "f251bdd83b61738d722f8aabae0b5ce4913afd5d95702ba60a1865bda1094f59",
+    "reviewed": true,
+    "evidenceRef": "doc/v2/work_items/M20.05.md"
+  },
+  {
+    "topicId": "M20.06",
+    "source": "ebook/curriculum/M20/M20.06.md",
+    "title": "실패 데이터·데이터 분할·Domain Randomization",
+    "objectives": [
+      "실패/중단·사람 개입 자료의 품질과 용도를 구분하고 모방 목표/결과 라벨의 채택 근거를 설명한다.",
+      "같은 시도/물체·증강본의 그룹 누수를 진단하고 train 전용 정규화 통계를 계산한다.",
+      "도메인 랜덤화의 의미 보존·파라미터 범위/평가 조건을 설계하고 분포 밖/라벨 오류를 판정한다."
+    ],
+    "prerequisiteNote": "M11.03의 분할/통계와 M20.03~05의 episode·스키마/검사가 선수다. 관측→행동을 따라 배우는 BC의 의미는 본문에서 보충한다. 기본은 합성 시도/그룹 표와 분포 계산이며 정책 학습·실물 수집·시뮬레이터 실행을 요구하지 않는다.",
+    "sha256": "670928df2226b312ddb9af0db1e9da646b1841af02ed121e173df4ca310fc48c",
+    "reviewed": true,
+    "evidenceRef": "doc/v2/work_items/M20.06.md"
+  },
+  {
+    "topicId": "M21.01",
+    "source": "ebook/curriculum/M21/M21.01.md",
+    "title": "Behavior Cloning·분포 이동·시연 품질",
+    "objectives": [
+      "BC의 관측→행동 지도학습과 절대/증분·손실 단위를 정의하고 합성 예측의 MSE/RMSE를 계산한다.",
+      "오프라인 관측과 정책 실행의 상태 분포 차이를 설명하고 제한된 폐루프 오차 모형을 계산한다.",
+      "다중 시연 행동/평균의 실패와 시연 품질·개입/분할 조건을 진단하고 평가 근거를 설계한다."
+    ],
+    "prerequisiteNote": "M11의 손실/학습, M19의 과업/실행과 M20의 시연/분할이 선수다. 상태 분포와 폐루프를 본문에서 보충한다. 기본은 합성 행동/오차 계산이며 정책 학습이나 실제 로봇 실행은 하지 않는다.",
+    "sha256": "13c1c6022b666e3e061bf77d0b1d24173d52db8d31cbd56e9f050d8923231480",
+    "reviewed": true,
+    "evidenceRef": "doc/v2/work_items/M21.01.md"
+  },
+  {
+    "topicId": "M21.02",
+    "source": "ebook/curriculum/M21/M21.02.md",
+    "title": "관측 구성·행동 공간·정규화·시퀀스",
+    "objectives": [
+      "정책 입력의 관측 이력/카메라·state shape와 시점 가용성을 정의하고 미래 관측 누설을 진단한다.",
+      "행동 공간·절대/고정 기준 상대/누적 증분 계약으로 시퀀스를 복원하고 같은 배열의 다른 의미를 계산한다.",
+      "train 행동 통계의 정규화/역변환과 유효 mask 평균을 계산하고 배포/경계 처리 오류를 설명한다."
+    ],
+    "prerequisiteNote": "M11의 shape/손실, M19의 프레임/IK, M20의 스키마/시각과 M21.01의 BC가 선수다. 기본은 작은 tensor 모양/시간표와 종이 계산이며 선택 코드는 표준 Python 산술만 사용한다. 정책 학습이나 실제 로봇 실행은 요구하지 않는다.",
+    "sha256": "1ef9b17b7f404c8d5e942c6758717c06700b6096e0a9161a87d3e1958385c16a",
+    "reviewed": true,
+    "evidenceRef": "doc/v2/work_items/M21.02.md"
+  },
+  {
+    "topicId": "M21.03",
+    "source": "ebook/curriculum/M21/M21.03.md",
+    "title": "ACT·Action Chunking·Temporal Ensembling",
+    "objectives": [
+      "ACT의 chunk 길이·실행 길이/재계획과 적용 시각을 구분하고 합성 시간 범위를 계산한다.",
+      "조건부 VAE/Transformer의 학습·추론 정보 흐름과 재구성/KL 손실·패딩 평균을 설명하고 계산한다.",
+      "같은 적용 시각 후보의 temporal ensemble을 가중 순서/부호와 함께 계산하고 관측 나이·기하/안전 한계를 판정한다."
+    ],
+    "prerequisiteNote": "M11의 신경망/Transformer 기초와 M21.01/02의 BC·행동 표현/정규화·mask가 선수다. 잠재 변수/조건부 VAE는 본문에서 보충한다. 기본은 합성 chunk/손실·후보 표 계산이며 ACT 모델/실물/GPU 실행은 하지 않는다.",
+    "sha256": "8d43056ad99f54a7d52751e0cb07769adcfa9e383b70de3d929fbf23c51fb202",
+    "reviewed": true,
+    "evidenceRef": "doc/v2/work_items/M21.03.md"
+  },
+  {
+    "topicId": "M21.04",
+    "source": "ebook/curriculum/M21/M21.04.md",
+    "title": "Diffusion Policy와 Motion Manifold 접근",
+    "objectives": [
+      "조건부 action diffusion의 잡음 추가/예측·복원 역할을 설명하고 합성 한 단계의 수치를 계산한다.",
+      "생성 반복/모델 추론과 물리 제어·chunk 실행을 구분하고 주어진 계산 예산/재계획 시간을 판정한다.",
+      "Motion Manifold Primitives의 경로 집합/잠재·대칭 개념을 설명하고 경로 보간·실행 제약의 반례를 계산한다."
+    ],
+    "prerequisiteNote": "M11의 신경망/확률과 M21.01~03의 다중 행동 모드·표현/정규화·chunk가 선수다. 생성 반복·경로 family/다양체 개념은 본문에서 보충한다. 기본은 합성 스칼라/곡선·시간 계산이며 Diffusion/EMMP 모델 학습·추론이나 GPU/로봇을 실행하지 않는다.",
+    "sha256": "1c0f0e9a1172b81bc03744b2ad0c18812dcc2572e391b71ac7328be6480e21a4",
+    "reviewed": true,
+    "evidenceRef": "doc/v2/work_items/M21.04.md"
+  },
+  {
+    "topicId": "M21.05",
+    "source": "ebook/curriculum/M21/M21.05.md",
+    "title": "Mobile ALOHA·양팔·이동 조작의 협응",
+    "objectives": [
+      "Mobile ALOHA의 전신 시연을 설명하고 양팔·그리퍼/베이스의 관측/행동과 공통 물체 제약을 구분한다.",
+      "합성 양팔 접촉점의 베이스 이동/물체 회전과 시각 차이 영향을 계산하고 좌표·시간 계약을 설명한다.",
+      "정적/이동 조작 자료의 통합·가중 지표를 계산하고 정책/통합 실행의 검증 근거를 설계한다."
+    ],
+    "prerequisiteNote": "M19.06의 이동 베이스 좌표, M20의 시연/시각과 M21.02~04의 정책/시퀀스가 선수다. 양팔 상대 제약과 공동학습은 본문에서 보충한다. 기본은 합성 좌표/데이터 표 계산이며 Mobile ALOHA 장비나 학습 코드를 실행하지 않는다.",
+    "sha256": "4b85ce4e46bffde007ee66d86f6f7dfdf67616d66c4edd54dbb1adf49c4e8cb5",
+    "reviewed": true,
+    "evidenceRef": "doc/v2/work_items/M21.05.md"
+  },
+  {
+    "topicId": "M21.06",
+    "source": "ebook/curriculum/M21/M21.06.md",
+    "title": "학습·롤아웃·미관측 상황·데이터 재수집 루프",
+    "objectives": [
+      "학습/모델 선택·checkpoint/시험 계약을 설명하고 소형 상수 BC 예의 맞춤값/손실을 계산한다.",
+      "폐루프 개발 롤아웃의 경로·종료/논리 시간과 성공률 분모·개입을 구분해 계산한다.",
+      "미관측 상황의 실패 가설과 필요한 재수집/라벨·분할 갱신을 설계하고 개발/회귀 검사와 독립 시험을 구분한다."
+    ],
+    "prerequisiteNote": "M11의 학습/분할, M20의 품질/재수집과 M21.01~05의 BC·실행이 선수다. rollout과 개발/회귀·독립 시험의 차이를 본문에서 보충한다. 기본은 합성 1차원 계산이며 선택 표준 Python 예는 실제 CPU에서 실행한 소형 맞춤/개발 진단이다. 신경망·로봇 학습 성과가 아니다.",
+    "sha256": "41c87c6d09bec521ef6856d3154125bdc3b3ca9db0cb29e747d67c028e7f38cd",
+    "reviewed": true,
+    "evidenceRef": "doc/v2/work_items/M21.06.md"
+  },
+  {
+    "topicId": "M22.01",
+    "source": "ebook/curriculum/M22/M22.01.md",
+    "title": "LLM 계획·VLM 인지·VLA 행동 정책 구분",
+    "objectives": [
+      "LLM 계획/VLM 관측 해석/VLA 행동 정책의 입력·출력과 필요한 학습/인터페이스를 구분한다.",
+      "언어의 객체/관계·목표를 관측 ID/프레임·시각/전제조건에 연결하고 모호함/오래된 상태를 진단한다.",
+      "합성 skill의 유용성/가능성 점수를 계산하고 선택·명령/실제 완료의 검증 근거를 구분한다."
+    ],
+    "prerequisiteNote": "M12의 영상 관측, M19의 계획/실행과 M20/M21의 행동 정책을 연결한다. LLM/VLM/VLA와 skill·접지는 본문에서 보충하며 M18 미집필 내용을 요구하지 않는다. 기본은 합성 장면/점수 표 분석이고 모델/API·ROS/로봇 실행은 없다.",
+    "sha256": "98565e55601be81c02b777e1537911198e8d8417b29e0b3bec62bd6e93de6a96",
+    "reviewed": true,
+    "evidenceRef": "doc/v2/work_items/M22.01.md"
+  },
+  {
+    "topicId": "M22.02",
+    "source": "ebook/curriculum/M22/M22.02.md",
+    "title": "Prompt·구조화 출력·Tool/ROS Action 연결",
+    "objectives": [
+      "prompt의 관측/허용 기능·출력 계약을 정의하고 JSON 문법/스키마 검사와 실행 검증을 구분한다.",
+      "모델 제안과 신뢰된 실행 봉투/adapter를 구분하고 합성 TTL·scene/목표 계약을 판정한다.",
+      "ROS Action의 수락/진행/최종 결과·취소/timeout과 중복 요청 상태를 해석하고 완료 근거를 설계한다."
+    ],
+    "prerequisiteNote": "M05.02의 Action, M19.02의 계획/실행과 M22.01의 모델 역할/접지가 선수다. JSON 구조와 현재 상태 검증을 본문에서 보충한다. 기본은 합성 제안/상태 기록이며 선택 Python은 파싱만 수행하고 실제 도구/ROS 메시지는 보내지 않는다.",
+    "sha256": "5c6483b5b6eae40b7ff32d9414f295bd5774accace880fffb3555dc33aef4da9",
+    "reviewed": true,
+    "evidenceRef": "doc/v2/work_items/M22.02.md"
+  },
+  {
+    "topicId": "M22.03",
+    "source": "ebook/curriculum/M22/M22.03.md",
+    "title": "Ollama·로컬 모델·파인튜닝과 엣지 제약",
+    "objectives": [
+      "Ollama의 로컬 추론/모델 가져오기와 prompt 변경·파인튜닝/LoRA의 차이를 설명하고 버전/기본 모델 계약을 구분한다.",
+      "합성 파라미터/정밀도와 KV cache·실행/여유 조건으로 메모리 예산을 계산한다.",
+      "합성 API 시간/토큰 수로 생성 처리량·응답 기한을 계산하고 로봇 제어와 분리한 검증/운영 조건을 설계한다."
+    ],
+    "prerequisiteNote": "M11의 모델 파라미터, M21의 학습/평가와 M22.02의 검증/실행 계약을 연결한다. 양자화/KV·LoRA는 본문에서 보충한다. 기본은 합성 메모리/API 기록 계산이며 모델 다운로드·서버/실제 추론·파인튜닝을 실행하지 않는다.",
+    "sha256": "8140a568eb21ba832031a929b47d1c7e0d24f2402c733f471cea57acf7250ee7",
+    "reviewed": true,
+    "evidenceRef": "doc/v2/work_items/M22.03.md"
+  },
+  {
+    "topicId": "M22.04",
+    "source": "ebook/curriculum/M22/M22.04.md",
+    "title": "OpenVLA·SmolVLA·멀티모달 관측·행동 토큰",
+    "objectives": [
+      "원 OpenVLA와 SmolVLA의 멀티모달 관측/표현과 토큰·연속 행동 생성의 차이를 설명한다.",
+      "교육용 action token의 구간 양자화·역변환/오차를 계산하고 실제 로봇별 행동 계약과 구분한다.",
+      "checkpoint/전후처리·시각/자원/사용 조건을 확인하고 합성 지연 사례에서 출력의 유효성과 평가 근거를 판정한다."
+    ],
+    "prerequisiteNote": "M12의 영상, M21의 행동 표현/생성과 M22.01~03의 접지/실행·자원이 선수다. 행동 토큰/연속 flow는 본문에서 보충한다. 기본은 합성 구간/시간 계산이며 모델 다운로드·추론/파인튜닝이나 실제 로봇 동작은 하지 않는다.",
+    "sha256": "fa1ae59c7f403fd47fa3f8d12263bacef361e24926197a9cf2391e629ea8f78b",
+    "reviewed": true,
+    "evidenceRef": "doc/v2/work_items/M22.04.md"
+  },
+  {
+    "topicId": "M22.05",
+    "source": "ebook/curriculum/M22/M22.05.md",
+    "title": "지도 장소 의미화·언어 지시 주행·로봇팔",
+    "objectives": [
+      "기하/위상·의미 지도의 역할과 장소/객체 ID·언어 관계/프레임을 구분한다.",
+      "합성 그래프에서 폭/문 조건을 적용한 거리 경로와 도킹의 위치/방향 오차를 계산한다.",
+      "언어 목표→주행→팔 조작의 전후조건/피드백·새 관측을 설계하고 실제 완료 근거를 판정한다."
+    ],
+    "prerequisiteNote": "M14의 프레임/시간, M19의 팔/모바일과 M22.01/02의 접지/Action이 선수다. 그래프/지도 목표를 본문에서 보충하며 M17/M18의 미집필 알고리즘을 요구하지 않는다. 기본은 합성 지도/상태표이며 실제 지도 생성·Nav2/로봇 이동은 하지 않는다.",
+    "sha256": "83300147e4a546c7592154da0eb4c625f388fbfaefce58ac76299804b2777603",
+    "reviewed": true,
+    "evidenceRef": "doc/v2/work_items/M22.05.md"
+  },
+  {
+    "topicId": "M22.06",
+    "source": "ebook/curriculum/M22/M22.06.md",
+    "title": "권한·검증·확인·중단을 거치는 실행 감독",
+    "objectives": [
+      "언어 제안·외부 자료와 신뢰된 권한/검증/확인을 분리하고 최소 권한을 설명한다.",
+      "합성 허가표에서 대상/장면/시각·만료 조건을 계산해 명령의 실행 가능 범위를 판정한다.",
+      "실행/중단의 요청·수락·실제 결과를 구분하고 미상/재개 조건과 감사 기록을 설계한다."
+    ],
+    "prerequisiteNote": "M22.02의 명령 계약/Action과 M22.05의 단계별 전제를 사용한다. 신뢰 경계/최소 권한·감독 상태를 본문에서 보충한다. 기본은 종이 허가표/합성 로그이며 실제 명령 전송·안전 인증을 하지 않는다.",
+    "sha256": "a5ca679923f57721bf3642fd24870cbba92d119cbbc108971ba8a2ebe9f27313",
+    "reviewed": true,
+    "evidenceRef": "doc/v2/work_items/M22.06.md"
+  },
+  {
+    "topicId": "M27.01",
+    "source": "ebook/curriculum/M27/M27.01.md",
+    "title": "Raspberry Pi·엣지 컴퓨팅·메모리·전력 제약",
+    "objectives": [
+      "엣지 컴퓨터/마이크로컨트롤러와 추론/제어 계층의 역할·실행 호환 조건을 구분한다.",
+      "가상 구성의 메모리·전력/에너지 예산을 단위와 포함 범위에 맞게 계산한다.",
+      "지속 부하의 열/지연·주변장치/버전 조건을 포함한 측정 계획과 운영 판정을 제안한다."
+    ],
+    "prerequisiteNote": "M03.04의 전원, M11의 모델/추론 자원이 선수다. SBC/MCU·RAM/저장 공간·MiB/W/Wh를 본문에서 보충한다. 기본은 가상 구성표 계산이며 Raspberry Pi 구매·배선·설치나 실제 장치 성능 측정을 요구하지 않는다.",
+    "sha256": "430c26530ca10915f640d729fea0c55600fc901d5eeab5b5b7c527733b3f251b",
+    "reviewed": true,
+    "evidenceRef": "doc/v2/work_items/M27.01.md"
+  },
+  {
+    "topicId": "M27.02",
+    "source": "ebook/curriculum/M27/M27.02.md",
+    "title": "모델 크기·정밀도·양자화·추론 배치의 비교",
+    "objectives": [
+      "파라미터 수/저장 정밀도·실행 메모리와 연산 지원을 구분해 크기를 계산한다.",
+      "합성 affine 양자화의 정수/복원값·오차/포화를 계산하고 보정/검증 자료의 역할을 설명한다.",
+      "batch별 처리량·개별 관측의 대기/응답 지연을 계산하고 정확도/성공률과 함께 비교한다."
+    ],
+    "prerequisiteNote": "M11의 텐서/평가와 M27.01의 자원 예산을 사용한다. scale/zero point·round/clip과 처리량/지연을 본문에서 보충한다. 기본은 합성 숫자/시간표 계산이며 실제 모델 변환·학습·추론 성능을 측정한 자료가 아니다.",
+    "sha256": "66c20f99e32064fb8be54d02f744a73916f358e28ab65fa5e8080baeadf6d792",
+    "reviewed": true,
+    "evidenceRef": "doc/v2/work_items/M27.02.md"
+  },
+  {
+    "topicId": "M27.03",
+    "source": "ebook/curriculum/M27/M27.03.md",
+    "title": "카메라 전처리·모델·통신·제어 지연 분해",
+    "objectives": [
+      "취득/수신·실행 시작/완료·적용의 측정 경계와 시계/ID를 구분한다.",
+      "합성 직렬/병렬 시간표에서 구간 지연·전체 나이와 기한 여유를 계산한다.",
+      "비동기/대기·분포/계측 오버헤드를 고려해 최적화 가설과 재측정 계획을 제안한다."
+    ],
+    "prerequisiteNote": "M05.06의 시계, M11의 추론과 M27.02의 처리량/지연을 사용한다. 측정 경계·동기/비동기와 직렬/병렬을 본문에서 보충한다. 기본은 합성 로그이며 실제 카메라·ROS/GPU 실행을 요구하지 않는다.",
+    "sha256": "da1a7bcfa8da78e0d6cad7a1cd4acd3417725df8c1dc58c0659570b1d38527e7",
+    "reviewed": true,
+    "evidenceRef": "doc/v2/work_items/M27.03.md"
+  },
+  {
+    "topicId": "M27.04",
+    "source": "ebook/curriculum/M27/M27.04.md",
+    "title": "정책 주기·큐·프레임 누락·백프레셔",
+    "objectives": [
+      "도착/서비스·정책 주기와 큐 대기/관측 나이의 차이를 설명한다.",
+      "합성 FIFO/latest-only 시간표에서 처리 ID·대기/완료 나이와 누락을 계산한다.",
+      "관측/기록·절대/증분 명령의 의미에 맞춰 drop/백프레셔·만료/장애 정책을 제안한다."
+    ],
+    "prerequisiteNote": "M27.03의 시간 경계와 M21의 행동 표현을 사용한다. 생산자/소비자·FIFO/유한 큐/백프레셔를 본문에서 보충한다. 기본은 종이 사건표이며 실제 ROS/장치 실행은 없다.",
+    "sha256": "5223a744c6f8ec110ff2f0ab4553521ae2bad3e587fd09d94a47a26a9122a06c",
+    "reviewed": true,
+    "evidenceRef": "doc/v2/work_items/M27.04.md"
+  },
+  {
+    "topicId": "M27.05",
+    "source": "ebook/curriculum/M27/M27.05.md",
+    "title": "원격/로컬 추론·모델 버전·교체·롤백",
+    "objectives": [
+      "로컬/원격 추론의 경로·책임과 왕복/관측 나이를 계산해 장애 범위를 구분한다.",
+      "모델/전처리·정규화/행동 표현·인터페이스를 묶은 버전 계약의 호환을 수치로 판정한다.",
+      "교체 중 늦은 응답/상태·큐/필터와 timeout·롤백의 전후조건/감사 기록을 설계한다."
+    ],
+    "prerequisiteNote": "M21의 행동/정규화, M22의 감독과 M27의 지연/큐를 사용한다. 요청 ID/실행 세대(epoch), 원자적 묶음/롤백을 본문에서 보충한다. 기본은 합성 로그/구성표이며 서버 시작·모델 다운로드/교체·실제 배포는 하지 않는다.",
+    "sha256": "7895c9520b5d54c49b5009ac9fe3bcfcb9530bc98d45d77b2a22f6d722e32207",
+    "reviewed": true,
+    "evidenceRef": "doc/v2/work_items/M27.05.md"
+  },
+  {
+    "topicId": "M27.06",
+    "source": "ebook/curriculum/M27/M27.06.md",
+    "title": "성능 측정과 정확도/성공률의 공동 평가",
+    "objectives": [
+      "측정 구간/시계·준비/지속 부하·스레드/입력/버전과 분할 조건을 정해 비교 가능한 실험표를 만든다.",
+      "합성 지연 표의 평균/명시한 분위수·기한 누락과 peak 메모리·정확도/성공률을 계산한다.",
+      "조건별 실패·독립성/표본 한계와 사전 공동 기준으로 후보를 판정하고 추가 근거를 제안한다."
+    ],
+    "prerequisiteNote": "M11/M12의 평가 지표와 M27.01~05의 자원/지연·교체를 사용한다. 분위수의 nearest-rank 규칙과 분모/조건별 판정을 본문에서 보충한다. 기본은 합성 기록/표준 Python 계산이며 실제 모델·장치 벤치마크 성과가 아니다.",
+    "sha256": "9f0a7470e91d6448238843291af366d8cd356b6ec7af965f7eb0fa3612f6bd14",
+    "reviewed": true,
+    "evidenceRef": "doc/v2/work_items/M27.06.md"
+  },
+  {
+    "topicId": "M30.01",
+    "source": "ebook/curriculum/M30/M30.01.md",
+    "title": "Reality Gap·백래시·마찰·지연·센서 오차 진단",
+    "objectives": [
+      "시뮬레이션/실물 차이를 관측/기하·구동/동역학·시간 경로의 가설로 분해한다.",
+      "합성 방향 반전/토크·시간/센서 기록에서 잔차와 단위·가정의 범위를 계산한다.",
+      "같은 잔차의 대안 원인을 구분할 기준 관측/통제 비교와 수정 후 검증을 설계한다."
+    ],
+    "prerequisiteNote": "M03의 기어/센서, M07의 동역학, M14의 프레임/시간과 M27의 지연을 사용한다. 백래시/마찰과 잔차/인과를 본문에서 보충한다. 기본은 합성 기록 진단이며 실제 장비를 움직이거나 원인을 확정하지 않는다.",
+    "sha256": "84cb5a67e7f24dc8dc4f227e61571f1f067487481be34178c859b9430ca576c7",
+    "reviewed": true,
+    "evidenceRef": "doc/v2/work_items/M30.01.md"
+  },
+  {
+    "topicId": "M30.02",
+    "source": "ebook/curriculum/M30/M30.02.md",
+    "title": "Domain Randomization·System Identification·수집 재설계",
+    "objectives": [
+      "식별/랜덤화·자료 수집 변경의 목적과 가설/계약 오류에 맞는 선택을 구분한다.",
+      "합성 정상 속도 모형의 계수·검증 잔차/가정과 랜덤화 범위를 계산한다.",
+      "조건/그룹·불확실성에 맞춰 수집/선택·독립 시험과 수정 후 평가를 설계한다."
+    ],
+    "prerequisiteNote": "M02의 선형/최소제곱, M20의 그룹 수집과 M30.01의 오차 가설을 사용한다. 최소제곱 두 계수/식별 가능성과 분포 범위를 본문에서 보충한다. 기본은 합성 표/표준 Python 계산이며 실제 수집·모델 학습/장비 실험은 하지 않는다.",
+    "sha256": "d51a71bec866fc416d4f3ce1725d71340128f86843696d1ef3d47bfc52d91ff0",
+    "reviewed": true,
+    "evidenceRef": "doc/v2/work_items/M30.02.md"
+  },
+  {
+    "topicId": "M30.03",
+    "source": "ebook/curriculum/M30/M30.03.md",
+    "title": "EMA·Temporal Ensembling·속도/토크/작업공간 제한",
+    "objectives": [
+      "EMA의 시간 상태와 동일 실행 시각 후보의 ensemble·가중 순서/방향을 구분한다.",
+      "합성 EMA/ensemble과 물리 단위의 속도/위치·토크 제한 결과를 계산한다.",
+      "복합 제약/경로·현재 상태/초기화의 한계를 판정하고 미상/복구·재검증 절차를 설계한다."
+    ],
+    "prerequisiteNote": "M07의 필터, M21.03의 chunk/ensemble과 M27의 시간/버전을 사용한다. 후보의 실행 시점/age·가중 인덱스와 물리 제한의 교집합을 본문에서 보충한다. 기본은 종이 계산이며 실제 정책/장비 명령·안전 인증은 하지 않는다.",
+    "sha256": "8eec671052fb3c63b3f07498e56868a414d80f3f91aa061410f73d6c4c22eaca",
+    "reviewed": true,
+    "evidenceRef": "doc/v2/work_items/M30.03.md"
+  },
+  {
+    "topicId": "M30.04",
+    "source": "ebook/curriculum/M30/M30.04.md",
+    "title": "Watchdog·중단·상태 승격·Shadow/제한 실행",
+    "objectives": [
+      "watchdog/heartbeat·관측/명령 만료와 replay/shadow/제한 실행·감독 상태를 구분한다.",
+      "합성 동일 clock 기록에서 세 종류 나이/임계값과 보류·중단/미상 상태를 판정한다.",
+      "승격/중단·복구의 증거와 독립 감독/물리 상태 확인·감사 기록을 설계한다."
+    ],
+    "prerequisiteNote": "M05의 lifecycle/시간, M22의 실행 감독과 M27의 큐/버전·M30.03의 제한을 사용한다. watchdog/TTL·shadow/상태 승격을 본문에서 보충한다. 기본은 종이 상태표이며 실제 ROS/장비 명령이나 안전 인증은 수행하지 않는다.",
+    "sha256": "4c5c98ca994a1f003d15ac5f88cd577675936aa8eaf4aac6aa23abf2d4c02797",
+    "reviewed": true,
+    "evidenceRef": "doc/v2/work_items/M30.04.md"
+  },
+  {
+    "topicId": "M30.05",
+    "source": "ebook/curriculum/M30/M30.05.md",
+    "title": "성공률·신뢰구간·층화 실험·비교 기준",
+    "objectives": [
+      "trial/성공·개입/미상과 독립성·조건/분모를 정의해 평가 표를 설계한다.",
+      "합성 성공률/Wilson 구간과 층별·공통 비중의 성공률을 계산하고 가정을 설명한다.",
+      "조건 비율/paired 근거·선택/최종 시험을 구분해 비교 결론과 추가 검증을 제안한다."
+    ],
+    "prerequisiteNote": "M02의 확률, M11/M27의 평가와 M30.04의 실행 단계를 사용한다. Bernoulli/신뢰구간의 반복표집 해석과 층별 가중을 본문에서 보충한다. 기본은 합성 표 계산이며 실제 로봇 시험/성능 인증을 하지 않는다.",
+    "sha256": "15a869b7f97870291040319875b4a1fada272f7634e8f40a37e1d73ab7a1d8ff",
+    "reviewed": true,
+    "evidenceRef": "doc/v2/work_items/M30.05.md"
+  },
+  {
+    "topicId": "M30.06",
+    "source": "ebook/curriculum/M30/M30.06.md",
+    "title": "버전·배포 계약·감독·롤백·최종 실증 리포트",
+    "objectives": [
+      "코드/자료·모델/전처리·보정/하드웨어와 실행 계약을 연결한 추적 묶음을 설계한다.",
+      "합성 버전/시간·단계별 근거 표로 admission/성과의 범위와 미확인을 판정한다.",
+      "승격/감독·롤백/재개의 관문과 근거 있는 최종 리포트/재현 절차를 작성한다."
+    ],
+    "prerequisiteNote": "M27.05의 묶음/rollback, M30.04의 감독 상태와 M30.05의 평가를 사용한다. provenance/파일 동일성과 단계별 증거를 본문에서 보충한다. 기본은 가상 manifest/로그 판정이며 실제 모델/장비 배포·PDF/EPUB 생성은 하지 않는다.",
+    "sha256": "3d57a902a6ef9011b934d15872951ad851faf9f122d26c7213797a208d416656",
+    "reviewed": true,
+    "evidenceRef": "doc/v2/work_items/M30.06.md"
+  },
+  {
+    "topicId": "M32.01",
+    "source": "ebook/curriculum/M32/M32.01.md",
+    "title": "모바일 배달·동적 장애물·언어 미션",
+    "objectives": [
+      "언어 미션의 장소/물체·지도/위치·planner/controller와 배달 결과 계약을 설계한다.",
+      "합성 그래프의 폭/문 조건·경로 길이와 동적 교차 시각/이상 정지 거리를 계산한다.",
+      "재관측/감독·미상/재개와 조건별 성공·실패/원본 근거를 포함한 프로젝트 리포트를 작성한다."
+    ],
+    "prerequisiteNote": "M06의 이동 로봇/프레임, M22의 언어 감독과 M30의 평가를 연결한다. 미집필 M17/M18의 경로/궤적·지도/위치와 planner/controller 역할은 본문에서 보충한다. 기본은 가상 지도/사건표이며 실제 Nav2/주행/배달을 하지 않는다.",
+    "sha256": "af00672a45cf237c2229ac754bede89dfd590c5f3b6c5307a9b05fba2d7b063b",
+    "reviewed": true,
+    "evidenceRef": "doc/v2/work_items/M32.01.md"
+  },
+  {
+    "topicId": "M32.02",
+    "source": "ebook/curriculum/M32/M32.02.md",
+    "title": "SO-101/산업용 팔 비전·모방학습 Pick-and-Place",
+    "objectives": [
+      "비전/보정·정책/기구학·제어/파지/배치와 장치별 입출력·감독의 계약을 설계한다.",
+      "합성 영상/좌표·행동 복원/제한·나이 표의 관문과 실패를 계산한다.",
+      "조건별 성공/개입·미상과 원본/버전·실패 가설을 연결해 프로젝트 평가/개선 리포트를 작성한다."
+    ],
+    "prerequisiteNote": "M06 기구학, M12/M14 영상/보정, M19 파지와 M21 정책·M30 평가를 연결한다. 접근 경로/충돌·단계별 계획 용어를 본문에서 보충한다. 기본은 합성 입력의 판단 프로젝트이며 SO-101/산업용 팔·모델 학습/추론 실행을 요구하지 않는다.",
+    "sha256": "357eefa6eeadd0806f80f787b89539e9009bf2c092fa2a26143d624b71ceb6f4",
+    "reviewed": true,
+    "evidenceRef": "doc/v2/work_items/M32.02.md"
+  },
+  {
+    "topicId": "M32.03",
+    "source": "ebook/curriculum/M32/M32.03.md",
+    "title": "이동 매니퓰레이터·양팔 협응",
+    "objectives": [
+      "베이스/팔·양팔/공통 물체의 frame/시간·관측/행동과 순차/동시 역할 계약을 설계한다.",
+      "합성 평면 변환/이동 보상·파지점 일치/시차·정적 분담을 계산한다.",
+      "전체 제약/단계별 미상·감독/실패/비교 평가의 근거를 포함한 프로젝트 리포트를 작성한다."
+    ],
+    "prerequisiteNote": "M06 이동/팔 기구학, M19 모바일/파지, M21 양팔과 M30 감독/평가를 연결한다. 미집필 계획 선수의 전체 configuration·결합 제약과 순차/동시 역할을 본문에서 보충한다. 기본은 합성 좌표/상태표이며 장비/정책 실행을 하지 않는다.",
+    "sha256": "7979508435a8225d1e3c329ff3cfff2a3c8e2766b6e4313813a980d90a068d35",
+    "reviewed": true,
+    "evidenceRef": "doc/v2/work_items/M32.03.md"
+  },
+  {
+    "topicId": "M32.04",
+    "source": "ebook/curriculum/M32/M32.04.md",
+    "title": "휴머노이드 보행 외란 대응 또는 밸런싱 로봇",
+    "objectives": [
+      "기준 평형/상태·구동/접촉과 휴머노이드/작은각 밸런싱 모형의 범위를 구분한다.",
+      "합성 피드백/포화와 명시한 Euler 한 단계·외란 변형을 단위/시점에 맞게 계산한다.",
+      "회복/실패·지연/접촉/추정/입력 한계의 조건별 평가와 감독/원본 근거를 설계한다."
+    ],
+    "prerequisiteNote": "M02의 선형/이산과 M07의 제어·M30의 감독/평가를 사용한다. 미집필 M23/M24/M26을 요구하지 않고 상태/평형·접촉/포화·국소 안정성을 본문에서 보충한다. 기본 선택 과제는 종이/CPU의 한 축 밸런싱 개념 모형이며 실제 휴머노이드/밸런싱 장비는 실행하지 않는다.",
+    "sha256": "43ba40d8286fa57b0e610b52b20503269cfd5f2970b393bdca9e890f82e8b970",
+    "reviewed": true,
+    "evidenceRef": "doc/v2/work_items/M32.04.md"
+  },
+  {
+    "topicId": "M32.05",
+    "source": "ebook/curriculum/M32/M32.05.md",
+    "title": "요구사항·인터페이스·실험표·실패 사례·재현 패키지",
+    "objectives": [
+      "관찰 가능한 요구 ID/판정과 입력/출력·상태/시간·버전 인터페이스를 설계한다.",
+      "합성 시험표의 경계/오류·결과를 계산해 요구↔사례↔원본/실패의 추적 행렬을 작성한다.",
+      "실패/미상·수정/재검증과 단계/환경·자료/버전을 보존한 재현 패키지/리포트를 설계한다."
+    ],
+    "prerequisiteNote": "M27/M30의 시간/버전·감독/평가와 M32.01~04의 프로젝트를 연결한다. 요구 ID/추적 행렬과 검증/목적 적합성의 차이를 본문에서 보충한다. 기본은 주어진 가상 기록의 문서/판정이며 실제 장비 시험·패키지 배포/출판은 하지 않는다.",
+    "sha256": "4a4bfcee6769b414c4df8df3dfa1836a453525b91cb93b00c5ff5825391bca1e",
+    "reviewed": true,
+    "evidenceRef": "doc/v2/work_items/M32.05.md"
+  },
+  {
+    "topicId": "M32.06",
+    "source": "ebook/curriculum/M32/M32.06.md",
+    "title": "데모·설계 근거 설명·동료 검토·개선 계획",
+    "objectives": [
+      "목적/계약·설계 선택/대안과 관측/예상·미확인 범위를 연결해 재현 가능한 데모 설명을 구성한다.",
+      "합성 가중 루브릭의 총점/필수 항목·차단 결함을 계산해 통과/보완을 판정한다.",
+      "근거 있는 동료 검토/결함·수정/재검증과 우선순위·종료 기준을 갖춘 개선 계획을 작성한다."
+    ],
+    "prerequisiteNote": "M30의 단계/평가와 M32.05의 요구/원본·실패/재현 패키지를 사용한다. 루브릭/가중·차단 결함과 자기/동료 읽기·독립 실행의 차이를 본문에서 보충한다. 기본은 가상 발표/검토 기록의 문서 활동이며 실제 메시지 발송·장비/외부 배포·출판은 하지 않는다.",
+    "sha256": "2da915f5956c2d1df4ca760273d711e4b52e8cef7c14b0fd7b6a5ee0c8acab2e",
+    "reviewed": true,
+    "evidenceRef": "doc/v2/work_items/M32.06.md"
   }
 ];
 export const legacyRevisions: LegacyRevision[] = [
@@ -980,10 +1568,10 @@ export const legacyRevisions: LegacyRevision[] = [
   {
     "source": "ebook/book/00_frontmatter/how_to_use.md",
     "baselineSha256": "a3d1e94f176ffd9b1a9070929a0a1d5ed28034e02c8f60d56926d601bdbb841b",
-    "sha256": "d1117a7c0d11069aacb72e150a5d8184bf8ffd7bfed09695a4cf7f4b11074714",
+    "sha256": "478bd10e127bee98fa37f37e97a20eede9197cda83a09a49be8636875df0e163",
     "approved": true,
-    "reason": "여섯장 단일프로젝트에서 통합과정 기초→응용 학습경로로 안내 개정 / SIM표식=장비없는브라우저 실행으로 오인하는 설명 보완 / E2: 공통 기초→ROS/기구학/제어/모델 경로와 기본·선택 실행/모형 한계, 사용자 상태 표시 원칙 동기화 / E3: 시뮬레이션·학습·비전·카메라/시간 기초의 연결 및 독립검토된 개념/그림 조건 정정",
-    "evidenceRef": "doc/v2/work_items/E3-review.md"
+    "reason": "여섯장 단일프로젝트에서 통합과정 기초→응용 학습경로로 안내 개정 / SIM표식=장비없는브라우저 실행으로 오인하는 설명 보완 / E2: 공통 기초→ROS/기구학/제어/모델 경로와 기본·선택 실행/모형 한계, 사용자 상태 표시 원칙 동기화 / E3: 시뮬레이션·학습·비전·카메라/시간 기초의 연결 및 독립검토된 개념/그림 조건 정정 / E4: 로봇팔·데이터·정책·배포·캡스톤 선수/후속과 교육용 계산·실행·안전 계약 보완",
+    "evidenceRef": "doc/v2/work_items/E4-review.md"
   },
   {
     "source": "ebook/book/00_frontmatter/safety.md",
@@ -996,18 +1584,18 @@ export const legacyRevisions: LegacyRevision[] = [
   {
     "source": "ebook/book/01_physical_ai_isaac_ros2/chapter.md",
     "baselineSha256": "a080ac9eddac666c3400d843913886913468677e9c2ab4bf60bcaa76b18a7d93",
-    "sha256": "dc2aff65925d924d276f2e2f97bde1a63efca340f5b9d7fe3856f2a0e43dd0b8",
+    "sha256": "0658d775a58fe696d5d9a2f74b3dda996ef1d399571448a7d46067f03685f76c",
     "approved": true,
-    "reason": "신규 기초와 기존 응용 장 사이 선수/범위/장비 없는 진입 연결 / 결정론을 Software/Physical 구분으로 오해하는 문장 정정 / POMDP 누락기호 gamma와 관측독립/시간축 가정 명시 / 순차 처리 지연과 목표 샘플 주기 구분 / 주기 예산 수치의 가정 및 새 목표설계 단위 연결 / E2: ROS・기구학・제어・모델 선수/후속 연결 및 관련 개념·실행 전제 보완 / E3: 시뮬레이션·학습·비전·카메라/시간 기초의 연결 및 독립검토된 개념/그림 조건 정정",
-    "evidenceRef": "doc/v2/work_items/E3-review.md"
+    "reason": "신규 기초와 기존 응용 장 사이 선수/범위/장비 없는 진입 연결 / 결정론을 Software/Physical 구분으로 오해하는 문장 정정 / POMDP 누락기호 gamma와 관측독립/시간축 가정 명시 / 순차 처리 지연과 목표 샘플 주기 구분 / 주기 예산 수치의 가정 및 새 목표설계 단위 연결 / E2: ROS・기구학・제어・모델 선수/후속 연결 및 관련 개념·실행 전제 보완 / E3: 시뮬레이션·학습·비전·카메라/시간 기초의 연결 및 독립검토된 개념/그림 조건 정정 / E4: 로봇팔·데이터·정책·배포·캡스톤 선수/후속과 교육용 계산·실행·안전 계약 보완",
+    "evidenceRef": "doc/v2/work_items/E4-review.md"
   },
   {
     "source": "ebook/book/02_physx_simulation/chapter.md",
     "baselineSha256": "a21459dc9d4dd74be968ed41bcc237d55d1e56f5bf0d3d5b151da99e48011c40",
-    "sha256": "5507d0f2ecfe66bfe0b5dafb36a41e1055cc81a1e5fe0fb4badc695f8e9512b6",
+    "sha256": "046ff676a51a1cf529673af29f76532f742dee148d67289c869e32a3d616dd93",
     "approved": true,
-    "reason": "E1에서 기존 02장으로 선수·실습범위·오개념 연결 보강 / latest를 재현 가능한 고정버전 안내로 정정 / 수학브리지독립검수: Euler 고정축적용xyz와행렬곱RzRyRx 용어정정·실행수식/함수명보존 / 짐벌락정확특이점과근처조건악화구분 / E2: ROS・기구학・제어・모델 선수/후속 연결 및 관련 개념·실행 전제 보완 / E3: 시뮬레이션·학습·비전·카메라/시간 기초의 연결 및 독립검토된 개념/그림 조건 정정",
-    "evidenceRef": "doc/v2/work_items/E3-review.md"
+    "reason": "E1에서 기존 02장으로 선수·실습범위·오개념 연결 보강 / latest를 재현 가능한 고정버전 안내로 정정 / 수학브리지독립검수: Euler 고정축적용xyz와행렬곱RzRyRx 용어정정·실행수식/함수명보존 / 짐벌락정확특이점과근처조건악화구분 / E2: ROS・기구학・제어・모델 선수/후속 연결 및 관련 개념·실행 전제 보완 / E3: 시뮬레이션·학습·비전·카메라/시간 기초의 연결 및 독립검토된 개념/그림 조건 정정 / E4: 로봇팔·데이터·정책·배포·캡스톤 선수/후속과 교육용 계산·실행·안전 계약 보완",
+    "evidenceRef": "doc/v2/work_items/E4-review.md"
   },
   {
     "source": "ebook/book/02_physx_simulation/code/transforms.py",
@@ -1020,18 +1608,26 @@ export const legacyRevisions: LegacyRevision[] = [
   {
     "source": "ebook/book/03_so101_kinematics_teleop/chapter.md",
     "baselineSha256": "8083685d7b190de126d12ce6ec53469e742dd2143eb5fa7ec0fe8274410490aa",
-    "sha256": "5e3c45e256c9fc5ac7230b429c4dba759c24cfcd0f45f7bf62eea5aadd16bc1f",
+    "sha256": "2a3930847f4239da32f60dc7554f4fdf5b4197e5694eb6e86499f3bf3d6929e7",
     "approved": true,
-    "reason": "E1에서 기존 03장으로 선수·실습범위·오개념 연결 보강 / latest 설치조건과 E1 의존성 고정 원칙의 불일치 보완 / M03검토: 명목전압숫자일치와동작범위/극성/전류/논리핀/절대최대정격구분 / E2: ROS・기구학・제어・모델 선수/후속 연결 및 관련 개념·실행 전제 보완 / M08.05: JointState 한 메시지 동일시각 계약·비동기 정렬/추정 출처를 엄밀화하고 공식 명세 링크 연결 / E3: 시뮬레이션·학습·비전·카메라/시간 기초의 연결 및 독립검토된 개념/그림 조건 정정",
-    "evidenceRef": "doc/v2/work_items/E3-review.md"
+    "reason": "E1에서 기존 03장으로 선수·실습범위·오개념 연결 보강 / latest 설치조건과 E1 의존성 고정 원칙의 불일치 보완 / M03검토: 명목전압숫자일치와동작범위/극성/전류/논리핀/절대최대정격구분 / E2: ROS・기구학・제어・모델 선수/후속 연결 및 관련 개념·실행 전제 보완 / M08.05: JointState 한 메시지 동일시각 계약·비동기 정렬/추정 출처를 엄밀화하고 공식 명세 링크 연결 / E3: 시뮬레이션·학습·비전·카메라/시간 기초의 연결 및 독립검토된 개념/그림 조건 정정 / E4: 로봇팔·데이터·정책·배포·캡스톤 선수/후속과 교육용 계산·실행·안전 계약 보완",
+    "evidenceRef": "doc/v2/work_items/E4-review.md"
+  },
+  {
+    "source": "ebook/book/03_so101_kinematics_teleop/code/safe_teleop_core.py",
+    "baselineSha256": "4be799137d99d24ffa727033e970d1018f32aefcfe559c1416d6327629a5649e",
+    "sha256": "e24a9c037415c93e4d37ae493de9187f55a8cf7b811bd0036b528db5913907fc",
+    "approved": true,
+    "reason": "E4: 교육용 제어 예제의 finite·시각·범위·오류 후 복귀 계약 보완",
+    "evidenceRef": "doc/v2/work_items/E4-review.md"
   },
   {
     "source": "ebook/book/04_sensor_data_pipeline/chapter.md",
     "baselineSha256": "69a8cf6f0e2f6e584bda629d3a17fbbe37f75ec024eab2237847807a2a3796fa",
-    "sha256": "63f8300ad4c9ad559b9d8001471eabb34baae98983bdae1b24e385ec11cb6c71",
+    "sha256": "9440f558163e693c71c6925d3e39f063c6ab9e1c1387a8f58a7f3f218ac4eeb6",
     "approved": true,
-    "reason": "E1에서 기존 04장으로 선수·실습범위·오개념 연결 보강 / E2: ROS・기구학・제어・모델 선수/후속 연결 및 관련 개념·실행 전제 보완 / E3: 시뮬레이션·학습·비전·카메라/시간 기초의 연결 및 독립검토된 개념/그림 조건 정정",
-    "evidenceRef": "doc/v2/work_items/E3-review.md"
+    "reason": "E1에서 기존 04장으로 선수·실습범위·오개념 연결 보강 / E2: ROS・기구학・제어・모델 선수/후속 연결 및 관련 개념·실행 전제 보완 / E3: 시뮬레이션·학습·비전·카메라/시간 기초의 연결 및 독립검토된 개념/그림 조건 정정 / E4: 로봇팔·데이터·정책·배포·캡스톤 선수/후속과 교육용 계산·실행·안전 계약 보완",
+    "evidenceRef": "doc/v2/work_items/E4-review.md"
   },
   {
     "source": "ebook/book/04_sensor_data_pipeline/exercises/solutions.md",
@@ -1052,18 +1648,34 @@ export const legacyRevisions: LegacyRevision[] = [
   {
     "source": "ebook/book/05_lerobot_smolvla/chapter.md",
     "baselineSha256": "637909ee6456fa438f421ae0290a3b536cd925567ba1246a1f2e58c0b113a9fa",
-    "sha256": "e5d4749c0d15b0db1c98bd476e9a2ac12bf90a6225c12edc34621d0a7ae12c74",
+    "sha256": "ef00906df80aa1ff5447cffa1967bdce09e69c97088f6900868f7aaa693e8459",
     "approved": true,
-    "reason": "E1에서 기존 05장으로 선수·실습범위·오개념 연결 보강 / 설치 예시에 실제 커밋/태그 고정 전제와 미지정 중단 추가 / 독립검수: 설치 전체 subshell fail-fast로 미지정/오류 revision 뒤 실행 방지 / E2: ROS・기구학・제어・모델 선수/후속 연결 및 관련 개념·실행 전제 보완 / E3: 시뮬레이션·학습·비전·카메라/시간 기초의 연결 및 독립검토된 개념/그림 조건 정정",
-    "evidenceRef": "doc/v2/work_items/E3-review.md"
+    "reason": "E1에서 기존 05장으로 선수·실습범위·오개념 연결 보강 / 설치 예시에 실제 커밋/태그 고정 전제와 미지정 중단 추가 / 독립검수: 설치 전체 subshell fail-fast로 미지정/오류 revision 뒤 실행 방지 / E2: ROS・기구학・제어・모델 선수/후속 연결 및 관련 개념·실행 전제 보완 / E3: 시뮬레이션·학습·비전·카메라/시간 기초의 연결 및 독립검토된 개념/그림 조건 정정 / E4: 로봇팔·데이터·정책·배포·캡스톤 선수/후속과 교육용 계산·실행·안전 계약 보완 / E4 M20.03 연계: 저장 모달리티/metadata와 로드 텐서의 CHW·시간·배치 축 구분 / E4 M21.02 연계: relative 고정 기준과 delta 누적 증분·채널/정규화 계약 구분 / E4 M27.04 연계: 명령 의미와 제한 시간에 따른 HOLD/STOP 계약 명료화",
+    "evidenceRef": "doc/v2/work_items/E4-review.md"
+  },
+  {
+    "source": "ebook/book/05_lerobot_smolvla/code/closed_loop_20hz.py",
+    "baselineSha256": "5d9c05153ee52c1a2e0d4cb4a4abe42cc3a2232335f75ff63cf64951a26bd7f5",
+    "sha256": "e90f12a72fbe41ead9ee9f068499cf50af103bd225f20154292e922bc31d5c0f",
+    "approved": true,
+    "reason": "E4: 교육용 제어 예제의 finite·시각·범위·오류 후 복귀 계약 보완",
+    "evidenceRef": "doc/v2/work_items/E4-review.md"
   },
   {
     "source": "ebook/book/06_sim2real_deployment/chapter.md",
     "baselineSha256": "63e21fba7a365699ea09d4be5e25675e0f9ac0c8d856e41a00bd9d8d7157d971",
-    "sha256": "e2b7679ff687527324ac81cc7ff63e5e45072177bca2c3aa726aad35900b57cb",
+    "sha256": "7f6a9c5db746e01dec7de67d2b1e483052e33d0e27ca0623bf7a959415ed7533",
     "approved": true,
-    "reason": "E1에서 기존 06장으로 선수·실습범위·오개념 연결 보강 / E2: ROS・기구학・제어・모델 선수/후속 연결 및 관련 개념·실행 전제 보완 / E3: 시뮬레이션·학습·비전·카메라/시간 기초의 연결 및 독립검토된 개념/그림 조건 정정",
-    "evidenceRef": "doc/v2/work_items/E3-review.md"
+    "reason": "E1에서 기존 06장으로 선수·실습범위·오개념 연결 보강 / E2: ROS・기구학・제어・모델 선수/후속 연결 및 관련 개념·실행 전제 보완 / E3: 시뮬레이션·학습·비전·카메라/시간 기초의 연결 및 독립검토된 개념/그림 조건 정정 / E4: 로봇팔·데이터·정책·배포·캡스톤 선수/후속과 교육용 계산·실행·안전 계약 보완",
+    "evidenceRef": "doc/v2/work_items/E4-review.md"
+  },
+  {
+    "source": "ebook/book/06_sim2real_deployment/code/safety_supervisor.py",
+    "baselineSha256": "c06b8f77a713aa7f5cb74d3c8549bf2fe9da3e2793412bedfc31e63c33cb0a8d",
+    "sha256": "1bcf6aca1fad053dd77c2a4de567bf61796252234d8b854d16e38ad17160672a",
+    "approved": true,
+    "reason": "E4: 교육용 제어 예제의 finite·시각·범위·오류 후 복귀 계약 보완",
+    "evidenceRef": "doc/v2/work_items/E4-review.md"
   },
   {
     "source": "apps/web/src/components/virtual-lab.tsx",
@@ -1096,7 +1708,7 @@ export const legacyExerciseReferences: DerivedReference[] = [
   {
     "activityId": "legacy:exercise:01_physical_ai_isaac_ros2--chapter-14-q5",
     "baselineSha256": "6fdc31c72244a4fad2fed9e14d7ca13a2813a0ec2d4f24c9558557b1a1ea6dc6",
-    "sha256": "0ae3f1ad238b343cde6edf67fdc7592afc0525bb953b310b15920a45f333b369",
+    "sha256": "078964dd7276c9fbecd2f8667fccb24d8bc6f8b0cdea7ae10e79b911a27cd071",
     "approved": true
   },
   {
@@ -1114,7 +1726,7 @@ export const legacyExerciseReferences: DerivedReference[] = [
   {
     "activityId": "legacy:exercise:01_physical_ai_isaac_ros2--chapter-14-q8",
     "baselineSha256": "f448f818716ba4793c4171e9df3c0c37e2f5732835eca46da9c3e0087fc8a714",
-    "sha256": "a02fb38f654b6a9b06cf22f8c8e3f7e490a5bd457ff0aefbbdd98df943d7fa87",
+    "sha256": "6af8fa1c9fd7bc26f5d2ab46fa1cda2ce49b142baad55650ee2bc58ca4ba96e2",
     "approved": true
   },
   {
@@ -1144,19 +1756,19 @@ export const legacyExerciseReferences: DerivedReference[] = [
   {
     "activityId": "legacy:exercise:02_physx_simulation--chapter-18-q9",
     "baselineSha256": "50bfcac7c1440f01c08887816b64e5d9ca9f7d6d9a4d2b9004496489e97019a9",
-    "sha256": "d6267bd4872460a38df398791678ccabd2297c15c74ed271ef83ce69f77a3f13",
+    "sha256": "54125d8e86716cac6ec64804645891c9ab52655b92a3bd7a29731aff03c81276",
     "approved": true
   },
   {
     "activityId": "legacy:exercise:02_physx_simulation--exercises--problem_set-1-q3",
     "baselineSha256": "8b07e9ea8308a5f6a09c54cf44dbcc2dacf2862fd97dbc2faf505ec1fbe5bd81",
-    "sha256": "a1cfbc8e279a09ccc007d8f8efaebbe56b723d5b5d304eb29d4d701f158207ed",
+    "sha256": "a05ec231109e40eb5d6e5bec8fa8d81bddda73db0967e2cdfbea00437f9c814b",
     "approved": true
   },
   {
     "activityId": "legacy:exercise:02_physx_simulation--exercises--problem_set-1-q4",
     "baselineSha256": "62df5206b8b78715573634f7d98939981f622c72d9128994dc3516195f8678cb",
-    "sha256": "a1cfbc8e279a09ccc007d8f8efaebbe56b723d5b5d304eb29d4d701f158207ed",
+    "sha256": "a05ec231109e40eb5d6e5bec8fa8d81bddda73db0967e2cdfbea00437f9c814b",
     "approved": true
   },
   {
@@ -1172,45 +1784,87 @@ export const legacyExerciseReferences: DerivedReference[] = [
     "approved": true
   },
   {
+    "activityId": "legacy:exercise:03_so101_kinematics_teleop--chapter-14-q1",
+    "baselineSha256": "1ec78bf587c47138a1a8d9e6faaa1465e63369bc06a4017af2b8368697cd8f99",
+    "sha256": "5baa7b3ce0297ecb49b46e559c4ce34857b5853a7124f04d1201fcd1ed0dc48e",
+    "approved": true
+  },
+  {
     "activityId": "legacy:exercise:03_so101_kinematics_teleop--chapter-14-q2",
     "baselineSha256": "afca63319e918807a8c8bb4b8c502e91958eea44d44f166e12371a4e0f1a64b7",
-    "sha256": "bd4fc45117af89e38413ac54ce136d19c666463b01a327ec1825e81cdbd3cd9c",
+    "sha256": "330cd7dd370080cd3d9bec7b831e6ed3d4b0cd4aee200b512981dcd9264e80d5",
+    "approved": true
+  },
+  {
+    "activityId": "legacy:exercise:03_so101_kinematics_teleop--chapter-14-q3",
+    "baselineSha256": "97592420e143a37dbde5d2937e8b05be1e890b668bf9fe15dc3db07d914d7436",
+    "sha256": "99e6f552e2e20a85a057c8b059c0ccb6d1ecc1e31729ce5fadf412ef34d24c57",
+    "approved": true
+  },
+  {
+    "activityId": "legacy:exercise:03_so101_kinematics_teleop--chapter-14-q4",
+    "baselineSha256": "ff84e80dcd9b182202b95ddd575e8ac1eb97911cb0bb6b26dde98699945ab520",
+    "sha256": "385c4c911380ae00dbaaf4b11162f0449e5394335f6999d8dfe5eb4021265ad9",
     "approved": true
   },
   {
     "activityId": "legacy:exercise:03_so101_kinematics_teleop--chapter-14-q5",
     "baselineSha256": "7cf40bfb0a32b6a6c9ee24c924d60863e3b0a4dec7779424773ef3518ac61c36",
-    "sha256": "fc9bb8100f8a083df7b91176e4a5eb669b001b7de2271301863c0b9026189561",
+    "sha256": "7204e87b2080bb5e2a718356b1d3b6a0ec57a03e64e78c1787fdcec38398109a",
     "approved": true
   },
   {
     "activityId": "legacy:exercise:03_so101_kinematics_teleop--chapter-14-q6",
     "baselineSha256": "bdf41aac0a8f8557e94315e28ba695d253568a91cf90b0396d2ae07f63e4c3cb",
-    "sha256": "6f671db34c898469b0486bd2a23abd06a57bfeeec2d25c02eed3f21d37253aec",
+    "sha256": "c8a728659818e1150cf0cc2f5ec9800c517ec396d2b865a8b4e9da9f847cd040",
     "approved": true
   },
   {
     "activityId": "legacy:exercise:03_so101_kinematics_teleop--chapter-14-q7",
     "baselineSha256": "ee2a067d4cd172114e0c6882e4c615e3a501f5ce8d1d32d648613644cbe27f0e",
-    "sha256": "5f66ea07f74695d88356e678ad91d7272bf7842b4d91b39ddd573118a6568a95",
+    "sha256": "8df1f127d3538bafda1daf4d30702c3d9b04c59a13ebb98720ed36a5c5d5e37f",
     "approved": true
   },
   {
     "activityId": "legacy:exercise:03_so101_kinematics_teleop--chapter-14-q8",
     "baselineSha256": "b349759b13aa83642c86eb1a7d45bf747ee7d557f1df42278ac209c6b1a48a06",
-    "sha256": "e911d1048d4d260cc0f852f387610e86f260e397db1c42bd1e2dea1a84b7fa59",
+    "sha256": "45fe8e5540dcc6d3d1d29d845238cde3f29840e840ebb48bd9aceb62fd6bb71d",
     "approved": true
   },
   {
     "activityId": "legacy:exercise:03_so101_kinematics_teleop--chapter-14-q9",
     "baselineSha256": "36859842a1c3f9ccae212434235dc1a35cc363552ac6f40b3a9803737b8dbc41",
-    "sha256": "b04ed388eef9a4bedd73be2130d6bae2106eab98e44ac7bfc308e6cdb6a43d11",
+    "sha256": "ddc1f0f4daffd75784e81909a72e88312ed6ae43c505cf523872e491f293d9dc",
     "approved": true
   },
   {
     "activityId": "legacy:exercise:03_so101_kinematics_teleop--chapter-14-q10",
     "baselineSha256": "82d647e135ca5e724e1c0ad02dacdcc97f205910f7fc0d629715ce318d634a14",
-    "sha256": "3b28132eb92b24e35de3d9abdfe85e3deb46c117dccb728369af0192814f89b7",
+    "sha256": "ae149bb99a62bd28b0631d90b198f2b9530167741be980cd1b03973a121a8820",
+    "approved": true
+  },
+  {
+    "activityId": "legacy:exercise:03_so101_kinematics_teleop--chapter-15-report",
+    "baselineSha256": "689439135e549401f4ccadbcd4d89cb7ec6963042f3f8157151ffc2fb75b1abe",
+    "sha256": "ef4d7d8c4582b33a79fce2020eb5bfbb1256604ba4733049f645753344c0f845",
+    "approved": true
+  },
+  {
+    "activityId": "legacy:exercise:03_so101_kinematics_teleop--labs--lab_3_1_fk_ik-1-report",
+    "baselineSha256": "689439135e549401f4ccadbcd4d89cb7ec6963042f3f8157151ffc2fb75b1abe",
+    "sha256": "ef4d7d8c4582b33a79fce2020eb5bfbb1256604ba4733049f645753344c0f845",
+    "approved": true
+  },
+  {
+    "activityId": "legacy:exercise:03_so101_kinematics_teleop--labs--lab_3_2_safe_teleop-1-report",
+    "baselineSha256": "689439135e549401f4ccadbcd4d89cb7ec6963042f3f8157151ffc2fb75b1abe",
+    "sha256": "ef4d7d8c4582b33a79fce2020eb5bfbb1256604ba4733049f645753344c0f845",
+    "approved": true
+  },
+  {
+    "activityId": "legacy:exercise:03_so101_kinematics_teleop--labs--lab_3_3_ros2_bridge-1-report",
+    "baselineSha256": "689439135e549401f4ccadbcd4d89cb7ec6963042f3f8157151ffc2fb75b1abe",
+    "sha256": "ef4d7d8c4582b33a79fce2020eb5bfbb1256604ba4733049f645753344c0f845",
     "approved": true
   },
   {
@@ -1250,21 +1904,219 @@ export const legacyExerciseReferences: DerivedReference[] = [
     "approved": true
   },
   {
+    "activityId": "legacy:exercise:05_lerobot_smolvla--chapter-21-q3",
+    "baselineSha256": "c185714f9ad65eef44351d8d916737fe9ffcda26e5f7661cc265384ac78d5d15",
+    "sha256": "22c79e216b4185386769aea4b04107f9f2aece4afebed53834be4b27743565ca",
+    "approved": true
+  },
+  {
+    "activityId": "legacy:exercise:05_lerobot_smolvla--chapter-21-q5",
+    "baselineSha256": "dd1d0dfe07a5706a4fcac211f3b6fe3d55a5fa855ddc55394503d28132ba0ace",
+    "sha256": "324e215e139ea82034d49e46d26eda27eb269748735d57f20f577367a2c8e709",
+    "approved": true
+  },
+  {
+    "activityId": "legacy:exercise:05_lerobot_smolvla--chapter-21-q6",
+    "baselineSha256": "17b6fb934fce88c9b14c018ed3e3c481c5ba3eb7f594d4a940d61908f1951457",
+    "sha256": "8e61cc5da89d4ce0b4fd4876850c36e4871b0306eb399f379732cca9e7c28589",
+    "approved": true
+  },
+  {
+    "activityId": "legacy:exercise:05_lerobot_smolvla--chapter-21-q7",
+    "baselineSha256": "f99ebf02fd9a5c0be80344b6f92700de21b49f24a0effc321da4d51d7d2c6133",
+    "sha256": "ce77582361b6fe6a71464634c0d4143ddf3e1d45a3b388c3e259dadcb3348d59",
+    "approved": true
+  },
+  {
+    "activityId": "legacy:exercise:05_lerobot_smolvla--chapter-21-q9",
+    "baselineSha256": "4e9f070c9f01c666de3a35bbb010fd1387e10ed7a7327159ceaa668b6ac9cadc",
+    "sha256": "29854a83d772a26abf12952d2447a0b884f33a204cf48e76c2a7ff7283920b1a",
+    "approved": true
+  },
+  {
+    "activityId": "legacy:exercise:05_lerobot_smolvla--chapter-21-q11",
+    "baselineSha256": "a8e93ae8e110e8326a973a69650d831479492caca0c4d85cbff3f7c6c9fb6c3c",
+    "sha256": "2f8c8318a944b908f2393296cfdd94751fb85b8d175e7c61a2a09c1082709d91",
+    "approved": true
+  },
+  {
     "activityId": "legacy:exercise:05_lerobot_smolvla--exercises--problem_set-1-q1",
     "baselineSha256": "c442c95e0af2a4b4c99886013315d74d863e6b0d25aefcb23f56b4f90bf4a347",
     "sha256": "c50f8734875aac0402db76be6f97de400fc1fb93ababf3dd10bc64db206cf674",
     "approved": true
   },
   {
+    "activityId": "legacy:exercise:05_lerobot_smolvla--exercises--problem_set-1-q2",
+    "baselineSha256": "852238de9a49013fa1ae1f066bf6a04092f36a2033e031ee222fa453c99bdff2",
+    "sha256": "30cdde7a502c72cc721cfef30bac5dcbc9983aced1f738a35ed44bd84d49a3df",
+    "approved": true
+  },
+  {
+    "activityId": "legacy:exercise:05_lerobot_smolvla--exercises--problem_set-1-q4",
+    "baselineSha256": "4e9f070c9f01c666de3a35bbb010fd1387e10ed7a7327159ceaa668b6ac9cadc",
+    "sha256": "29854a83d772a26abf12952d2447a0b884f33a204cf48e76c2a7ff7283920b1a",
+    "approved": true
+  },
+  {
+    "activityId": "legacy:exercise:05_lerobot_smolvla--exercises--problem_set-1-q5",
+    "baselineSha256": "219737a4e040b75b48b289cf23425f84219e1b3cf67b304e8be910bfd19217b2",
+    "sha256": "537e7eba570fac9a2f5dcc247a966da48c48bcca15d6736107c744a2cdcfd426",
+    "approved": true
+  },
+  {
+    "activityId": "legacy:exercise:05_lerobot_smolvla--exercises--problem_set-1-q6",
+    "baselineSha256": "cb42d6f47b42aeb59c0f25e9c60e73558f8a31e301254728cc4cea5dd881c434",
+    "sha256": "a24fc702fc659cffcaecd2d92380fbabb72142e50e16a8314e71a5b162905da7",
+    "approved": true
+  },
+  {
+    "activityId": "legacy:exercise:05_lerobot_smolvla--exercises--problem_set-1-q7",
+    "baselineSha256": "d944b6c7a6b7fac11a89e23dc1b789963aaf7e0cbc2ee3ae6ef918ddb99bf581",
+    "sha256": "f9b4e3b7e0d0dcc75ff3dc08ea6cbc44729fe98a3e494ea74042a84bed2ffd59",
+    "approved": true
+  },
+  {
+    "activityId": "legacy:exercise:05_lerobot_smolvla--exercises--problem_set-1-q9",
+    "baselineSha256": "d052f217272c6e0ff13e26a4e4e9629ab870032125e8fc075494f533b9cbf1ba",
+    "sha256": "801464cfc602cec4d6a8535a52a2296d59b5b839e7ddc278fd9c635ebec1bb30",
+    "approved": true
+  },
+  {
+    "activityId": "legacy:exercise:05_lerobot_smolvla--exercises--problem_set-1-q11",
+    "baselineSha256": "c185714f9ad65eef44351d8d916737fe9ffcda26e5f7661cc265384ac78d5d15",
+    "sha256": "22c79e216b4185386769aea4b04107f9f2aece4afebed53834be4b27743565ca",
+    "approved": true
+  },
+  {
+    "activityId": "legacy:exercise:05_lerobot_smolvla--exercises--problem_set-1-q13",
+    "baselineSha256": "fc2aa23eedb5cc858dc7bbafae217fcb08a472d16be07b7b234c7e37b7235b0d",
+    "sha256": "3dda7297cdf107a814a2fb2699f09bb780258263903fa82acf9afc60723c8764",
+    "approved": true
+  },
+  {
+    "activityId": "legacy:exercise:05_lerobot_smolvla--exercises--problem_set-1-q14",
+    "baselineSha256": "48b5883113e3c5e7eb20349960a6e030fcad656a062db31b2d82f82d1eac95cc",
+    "sha256": "6920df949b2d694f977e7e59a78f63e5ffe0f284f5f04568eaf65448f77de8c7",
+    "approved": true
+  },
+  {
+    "activityId": "legacy:exercise:05_lerobot_smolvla--exercises--problem_set-1-q15",
+    "baselineSha256": "c185714f9ad65eef44351d8d916737fe9ffcda26e5f7661cc265384ac78d5d15",
+    "sha256": "22c79e216b4185386769aea4b04107f9f2aece4afebed53834be4b27743565ca",
+    "approved": true
+  },
+  {
+    "activityId": "legacy:exercise:05_lerobot_smolvla--exercises--problem_set-1-q16",
+    "baselineSha256": "beb35e59afd6cf9311492f79a941f0b2d87164f0fe28331bc6ab10bcc714fcb1",
+    "sha256": "90e9558f9fcd39a6771cbe3a3cc120acafb5410f922c3eb931416aebd682dcf0",
+    "approved": true
+  },
+  {
+    "activityId": "legacy:exercise:05_lerobot_smolvla--exercises--problem_set-1-q17",
+    "baselineSha256": "a0816543361beb3bf2493bd09863790054f67c0ccab4fa7c49b215d9da5ddac1",
+    "sha256": "336137d0443031696187935741c5decc89463b068eb59566280173c8476c48d4",
+    "approved": true
+  },
+  {
+    "activityId": "legacy:exercise:05_lerobot_smolvla--exercises--problem_set-1-q18",
+    "baselineSha256": "400356f9fc2b9b4899ecbe605c378d356b6e0b33f9ac0c912466001f1dcad968",
+    "sha256": "41d5d45231b4a2d7d911584222a949b7729ecac28475129400d465ec0df8d868",
+    "approved": true
+  },
+  {
+    "activityId": "legacy:exercise:05_lerobot_smolvla--exercises--problem_set-1-q19",
+    "baselineSha256": "96d9c045859fee200abcd7a747d2731c1c9be72392c7891d53ed288c35004383",
+    "sha256": "2659aa8f6e2c923679a4488c53ee001dc456e31c5235d10939b56ecd603a92a6",
+    "approved": true
+  },
+  {
+    "activityId": "legacy:exercise:05_lerobot_smolvla--exercises--problem_set-1-q20",
+    "baselineSha256": "6c38fa3e4d0640dd12b3a53de5b2e568be8898a20656ccfc8d7769dab0cf68fc",
+    "sha256": "c28bcfb7f07a00ed3712c981c0b43cf87bc20a4fb0e6940d43557bf5d8cc6dd3",
+    "approved": true
+  },
+  {
+    "activityId": "legacy:exercise:06_sim2real_deployment--chapter-15-q1",
+    "baselineSha256": "b72348ed31c2da0784960c1e48c70c50b476be12bc59356f46f330c42d2dffb2",
+    "sha256": "130937d654dd44e7b2794a09d9cbdd56e4476a50211a18675d852b60809088cd",
+    "approved": true
+  },
+  {
+    "activityId": "legacy:exercise:06_sim2real_deployment--chapter-15-q2",
+    "baselineSha256": "538bd9b19d59d0a13bcdd06583a5832fa158781f7a81037373dc1ec62b0e6189",
+    "sha256": "e6942e971ac41804385ae08b77147c3dd7aebcd79d388637d145850cd080bdcc",
+    "approved": true
+  },
+  {
+    "activityId": "legacy:exercise:06_sim2real_deployment--chapter-15-q3",
+    "baselineSha256": "ea2f6042cdc4e7ef4a47d4251ced9127113b2254323f5d8e601aadc902a80f00",
+    "sha256": "23a01926b62f09e197674c409a8a0929665bfa639e36fe062bde06670e9c2cac",
+    "approved": true
+  },
+  {
     "activityId": "legacy:exercise:06_sim2real_deployment--chapter-15-q4",
     "baselineSha256": "1d248a19d5f8c87c928950261ceff406151c0c39e3401a966195c443e830957d",
-    "sha256": "a02a9d3d047d2aaad5971de93f7ed5b0c0ebf836c652dca4ca7e2cdf2f99e350",
+    "sha256": "94e438b48f27a512d0fc3d6ba23fa4c89105d557013c4b15ed995804685ba912",
     "approved": true
   },
   {
     "activityId": "legacy:exercise:06_sim2real_deployment--chapter-15-q5",
     "baselineSha256": "256cb8a8ea9b762b5c188978ac7f02265bcacb4e5c45c3093acfa126f8d44868",
-    "sha256": "44339451e3d76d3b4381726aeb615c8367e5ff61127d7a871d75ca03d962f5a9",
+    "sha256": "c0c4c3e55e1a9de674ca61d8ac645a0f6eb250696852fa66ab15dd27be352a60",
+    "approved": true
+  },
+  {
+    "activityId": "legacy:exercise:06_sim2real_deployment--chapter-15-q6",
+    "baselineSha256": "11df136dad6be283c45901cc1e17cbdcd949f16aa898a9773ede517812553505",
+    "sha256": "ca33960891539fe7a67777da83b2e169b04c7cbf4aeaeb421f0aa81ca325cd0f",
+    "approved": true
+  },
+  {
+    "activityId": "legacy:exercise:06_sim2real_deployment--chapter-15-q7",
+    "baselineSha256": "0cd5dcf962cb75732c1efc3694543bbda9ceabeded4135b7c9b7f476289e912e",
+    "sha256": "b8aa9556baa8d38062dcf22c6da5d817e855e3686a06edb5d13d52a14d189760",
+    "approved": true
+  },
+  {
+    "activityId": "legacy:exercise:06_sim2real_deployment--chapter-15-q8",
+    "baselineSha256": "a5cb1330cf26754ea52387f391e6169f247722d784aa4c970b9400b791bbd6f7",
+    "sha256": "5025b6142c01d4d53fd0f9df772dfd8f2767024c2f5cd5f0555e449e73cf4025",
+    "approved": true
+  },
+  {
+    "activityId": "legacy:exercise:06_sim2real_deployment--chapter-15-q9",
+    "baselineSha256": "59b478bbfd30d6a0dcd5403c7dbf6af9087af582cd6fbe710ada483cb852d108",
+    "sha256": "4ce9badc9fd84792cd45e08922edf2013f462199c14c0d25536cfb656f2fef60",
+    "approved": true
+  },
+  {
+    "activityId": "legacy:exercise:06_sim2real_deployment--chapter-15-q10",
+    "baselineSha256": "244c20e0271b2db43e0f2ee670129a19c84e38bf4ad357054ccfb04bbd0a071e",
+    "sha256": "5d2bcb606c11487e20754ba3d27d35dfe47c777a7a1c5702381a03866d041e87",
+    "approved": true
+  },
+  {
+    "activityId": "legacy:exercise:06_sim2real_deployment--chapter-16-report",
+    "baselineSha256": "c627a6b9ff327734578dfe8f67ed846c3e294fcea5c871cf551b08d4b8a4df2d",
+    "sha256": "e2815404afefae7a9410e37003c9080485c64021aa415f8d68eba75e1f347302",
+    "approved": true
+  },
+  {
+    "activityId": "legacy:exercise:06_sim2real_deployment--labs--lab_6_1_diagnostics-1-report",
+    "baselineSha256": "c627a6b9ff327734578dfe8f67ed846c3e294fcea5c871cf551b08d4b8a4df2d",
+    "sha256": "e2815404afefae7a9410e37003c9080485c64021aa415f8d68eba75e1f347302",
+    "approved": true
+  },
+  {
+    "activityId": "legacy:exercise:06_sim2real_deployment--labs--lab_6_2_supervisor-1-report",
+    "baselineSha256": "c627a6b9ff327734578dfe8f67ed846c3e294fcea5c871cf551b08d4b8a4df2d",
+    "sha256": "e2815404afefae7a9410e37003c9080485c64021aa415f8d68eba75e1f347302",
+    "approved": true
+  },
+  {
+    "activityId": "legacy:exercise:06_sim2real_deployment--labs--lab_6_3_ros2_guard-1-report",
+    "baselineSha256": "c627a6b9ff327734578dfe8f67ed846c3e294fcea5c871cf551b08d4b8a4df2d",
+    "sha256": "e2815404afefae7a9410e37003c9080485c64021aa415f8d68eba75e1f347302",
     "approved": true
   }
 ];

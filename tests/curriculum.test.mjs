@@ -1,7 +1,7 @@
 import { build } from 'esbuild';
 import assert from 'node:assert/strict';
 import { test } from 'node:test';
-const result=await build({entryPoints:['apps/web/src/lib/curriculum.ts'],tsconfig:'apps/web/tsconfig.json',bundle:true,platform:'node',format:'esm',write:false});
+const result=await build({stdin:{contents:'export * from "./apps/web/src/lib/curriculum.ts"; export {legacyCatalog,indexCatalog,unitReadiness} from "./packages/shared/src/catalog.ts";',resolveDir:process.cwd()},tsconfig:'apps/web/tsconfig.json',bundle:true,platform:'node',format:'esm',write:false});
 let c;
 try {c=await import(`data:text/javascript;base64,${Buffer.from(result.outputFiles[0].text).toString('base64')}`);}
 catch(error){throw new Error(JSON.stringify(error.issues??error.message));}
@@ -35,7 +35,10 @@ test('every track target resolves to a real unit; optional steps never count as 
  }
 });
 test('TBD unit with only supplements has no primary reading and retains original resource paths',()=>{
- const unit=c.curriculumIndex.units.get('unit-m21-05-a');assert.equal(c.primaryReading(unit),null);
+ const unit=c.legacyCatalog.units.find(unit=>unit.id==='unit-m21-05-a');assert.equal(c.primaryReading(unit),null);
+ assert.equal(c.unitReadiness(unit,c.indexCatalog(c.legacyCatalog)).state,'tbd');
+ assert.ok(Object.values(unit.slots).flat().every(binding=>binding.role==='supplement'));
+ assert.equal(c.primaryReading(c.curriculumIndex.units.get(unit.id)).href,'/study/unit-m21-05-a/#authored-body');
  const authored=c.curriculumIndex.units.get('unit-m06-02-a');
  assert.equal(c.primaryReading(authored).href,'/study/unit-m06-02-a/#authored-body');
  const legacy=authored.slots.explanation.filter(binding=>'resourceId' in binding).map(binding=>c.curriculumIndex.resources.get(binding.resourceId)).filter(resource=>resource.locator.type==='textbook');

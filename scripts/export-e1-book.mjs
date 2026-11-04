@@ -36,10 +36,11 @@ for (const topic of topics) {
   if (sha !== review.sourceSha256 || !fs.existsSync(path.join(root, review.evidenceRef)) || !fs.lstatSync(path.join(root, review.evidenceRef)).isFile()) throw Error(`Stale or missing review: ${topic}`);
   const doc = parseAuthoredMarkdown(raw);
   if (doc.title !== catalogData.units.find(unit => unit.topicId === topic)?.title) throw Error(`Authored title mismatch: ${topic}`);
-  const batch = /^M1[0124]$/.test(module) ? 'E3' : /^M0[5-8]$/.test(module) ? 'E2' : 'E1';
+  const batch = ['M19', 'M20', 'M21', 'M22', 'M27', 'M30', 'M32'].includes(module) ? 'E4' : /^M1[0124]$/.test(module) ? 'E3' : /^M0[5-8]$/.test(module) ? 'E2' : 'E1';
   if (batch !== previousBatch) {
     if (batch === 'E2') chunks.push('# E2 ROS 2·기구학·제어·모델 상세 교재 {#e2-robot-foundations}', 'M05~M08의 검수된 본문·장비 없는 기본 실습·문제·해설입니다. E1 기초와 이어 읽고, 실제 ROS·실물/GPU 실행과 가상 로그·계산을 구분합니다.');
     if (batch === 'E3') chunks.push('# E3 시뮬레이션·학습·비전·센서 기초 상세 교재 {#e3-perception-foundations}', 'M10~M12와 M14의 기초 단위를 이어 읽습니다. M14.02/.04/.05 심화는 E6 범위이며, 실제 도구 실행·학습성과와 문서 대조·합성 입력·CPU 계산을 구분합니다.');
+    if (batch === 'E4') chunks.push('# E4 로봇팔·데이터·정책·배포·캡스톤 상세 교재 {#e4-arm-policy-deployment}', 'M19~M22·M27·M30·M32의 검수된 본문·장비 없는 실습·문제·해설입니다. 합성 기록·계산과 실제 계획·학습·장비 실행을 구분하며, 캡스톤 교안의 완성을 실제 프로젝트 수행·합격으로 해석하지 않습니다.');
     previousBatch = batch;
   }
   if (module !== previousModule) {
