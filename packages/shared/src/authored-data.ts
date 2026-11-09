@@ -1710,6 +1710,20 @@ export const authoredMetadata: AuthoredMetadata[] = [
     "evidenceRef": "doc/v2/work_items/M25.03.md"
   },
   {
+    "topicId": "M25.04",
+    "source": "ebook/curriculum/M25/M25.04.md",
+    "title": "Stiffness·Damping·마찰·질량·접촉 보정",
+    "objectives": [
+      "질량·강성·감쇠·마찰과 힘/가속도 드라이브의 역할·단위를 구분하고 포화/접촉 조건을 먼저 점검한다.",
+      "분리된 합성 관측에서 질량·강성·감쇠와 정지/운동 마찰의 예측을 계산한다.",
+      "보정에 쓰지 않은 조건의 오차를 사전 기준으로 평가하고 형상·필터·시간 설정과 물성 추정의 혼동을 진단한다."
+    ],
+    "prerequisiteNote": "M25.03의 충돌쌍/보고 확인이 선수다. M07.01/.03과 M10.04/.05의 힘·제어·질량/시간을 복습한다. 수평1DOF의 합성 순간 관측과 별도 마찰 표를 계산하며 실제 시뮬레이터·실물 파라미터 추정/실행은 하지 않는다. 일반 코딩 문법과 설치는 제외한다.",
+    "sha256": "6055826a650b78d0f56e1e9048adff907c9591ea7b74daa297375105467bc3ac",
+    "reviewed": true,
+    "evidenceRef": "doc/v2/work_items/M25.04.md"
+  },
+  {
     "topicId": "M27.01",
     "source": "ebook/curriculum/M27/M27.01.md",
     "title": "Raspberry Pi·엣지 컴퓨팅·메모리·전력 제약",
@@ -2110,10 +2124,10 @@ export const legacyRevisions: LegacyRevision[] = [
   {
     "source": "ebook/book/02_physx_simulation/chapter.md",
     "baselineSha256": "a21459dc9d4dd74be968ed41bcc237d55d1e56f5bf0d3d5b151da99e48011c40",
-    "sha256": "2ad0263622ca86254e745ee9105d39f96017074937c49615b41bb9b8afe46191",
+    "sha256": "3552cfcc20a5ee5a6bebcb7e754dd9758dbd4676976bec0a479b2f6cbea206ed",
     "approved": true,
-    "reason": "E1에서 기존 02장으로 선수·실습범위·오개념 연결 보강 / latest를 재현 가능한 고정버전 안내로 정정 / 수학브리지독립검수: Euler 고정축적용xyz와행렬곱RzRyRx 용어정정·실행수식/함수명보존 / 짐벌락정확특이점과근처조건악화구분 / E2: ROS・기구학・제어・모델 선수/후속 연결 및 관련 개념·실행 전제 보완 / E3: 시뮬레이션·학습·비전·카메라/시간 기초의 연결 및 독립검토된 개념/그림 조건 정정 / E4: 로봇팔·데이터·정책·배포·캡스톤 선수/후속과 교육용 계산·실행·안전 계약 보완 / E5: 모바일 경로·시뮬레이터 구분·map/odom/base·계획/미션·주행-조작 연결 보완 / M25.01: 자산 계층·참조 단위 보정과 정적/동적/실물 검수 범위 연결 / M25.03: 충돌후보/접촉/보고·그룹/개별제외·시각 정렬 연결",
-    "evidenceRef": "doc/v2/work_items/M25.03.md"
+    "reason": "E1에서 기존 02장으로 선수·실습범위·오개념 연결 보강 / latest를 재현 가능한 고정버전 안내로 정정 / 수학브리지독립검수: Euler 고정축적용xyz와행렬곱RzRyRx 용어정정·실행수식/함수명보존 / 짐벌락정확특이점과근처조건악화구분 / E2: ROS・기구학・제어・모델 선수/후속 연결 및 관련 개념·실행 전제 보완 / E3: 시뮬레이션·학습·비전·카메라/시간 기초의 연결 및 독립검토된 개념/그림 조건 정정 / E4: 로봇팔·데이터·정책·배포·캡스톤 선수/후속과 교육용 계산·실행·안전 계약 보완 / E5: 모바일 경로·시뮬레이터 구분·map/odom/base·계획/미션·주행-조작 연결 보완 / M25.01: 자산 계층·참조 단위 보정과 정적/동적/실물 검수 범위 연결 / M25.03: 충돌후보/접촉/보고·그룹/개별제외·시각 정렬 연결 / M25.04: force/acceleration·포화/분리보정·미사용평가 연결",
+    "evidenceRef": "doc/v2/work_items/M25.04.md"
   },
   {
     "source": "ebook/book/02_physx_simulation/code/transforms.py",
@@ -2308,6 +2322,12 @@ export const legacyExerciseReferences: DerivedReference[] = [
     "approved": true
   },
   {
+    "activityId": "legacy:exercise:02_physx_simulation--exercises--problem_set-1-q8",
+    "baselineSha256": "1bf26dfe5915bc6ad7b8b054a30dbd9f56f486d276f7c4803c7d4ced7372e1ed",
+    "sha256": "c475fe5ccb79931568217018821e6c0bd88ca5bc86d42a314a981003385268ce",
+    "approved": true
+  },
+  {
     "activityId": "legacy:exercise:02_physx_simulation--exercises--problem_set-1-q11",
     "baselineSha256": "ccc70d3965c2864ca66693486d399fd88d17495ab41a560e8207747e71f9c0cc",
     "sha256": "171c77fa2b1153950c616035f75ce45777d64f47b1cb0bed556bc7c3b137a19a",
@@ -2317,6 +2337,12 @@ export const legacyExerciseReferences: DerivedReference[] = [
     "activityId": "legacy:exercise:02_physx_simulation--exercises--problem_set-1-q12",
     "baselineSha256": "57b1f506125dca116eaaa201aeed44215d9be9e2c60ae037d744bce68c7b0dcd",
     "sha256": "42773fdaa879501c63129a19bc170bb9ce79c05f3dc07f4d3db4d569d90fc5d9",
+    "approved": true
+  },
+  {
+    "activityId": "legacy:exercise:02_physx_simulation--exercises--problem_set-1-q15",
+    "baselineSha256": "44ff1094fa742fafe37a2afd57540a17a6a0d3a73c7a42d7fc2bebeaa6d285be",
+    "sha256": "440b9327604f36b2cdf6f7da1d0cc799b53f15bd2038fed7df8db45f08805be7",
     "approved": true
   },
   {

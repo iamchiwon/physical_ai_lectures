@@ -251,3 +251,13 @@ test('a missing named function does not retrieve unrelated lab prose',()=>{
   const result=retrieval.retrieveLessonContext('missing_function() 함수가 실습 코드에 필요한 이유',lessonDocs);
   assert.equal(result.state,'not_found');assert.ok(!result.text.includes('rclpy.init'));
 });
+
+test('rendered strong text selection retrieves the source paragraph instead of numeric competitors',()=>{
+  const source='사전 통과 조건은 |힘 오차|≤0.10N이고 |가속도 오차|≤0.05m/s²를 **모두** 만족하는 것이다. 이번 힘 오차0.04N·가속도 오차0.02m/s²는 통과한다.';
+  const selected=source.replace('**모두**','모두');
+  const docs=[...Array.from({length:4},(_,i)=>({id:'competitor-'+i,title:'보정 조건과 기준',content:'여기서 힘오차0.04N과가속도오차0.02는 왜 통과인가요? 수치가 같은 다른 사례입니다.'})),{id:'authored:resource:M25.04:body',title:'미사용 평가',content:'# 기준\n\n'+source}];
+  const result=retrieval.retrieveLessonContext('여기서 힘오차0.04N과가속도오차0.02는 왜 통과인가요?',docs,{selectedText:selected});
+  assert.equal(result.state,'found');assert.match(result.text,/자료 ID: authored:resource:M25.04:body/);assert.ok(result.text.includes('0.10N'));assert.ok(result.text.includes('0.05m/s²'));assert.ok(result.text.includes('**모두**'));assert.ok(!result.text.includes('자료 ID: competitor-'));
+  const underscore={id:'underscore',title:'조건',content:'서로 __모두__ 충족해야 합니다.'};assert.match(retrieval.retrieveLessonContext('선택한 이 조건은 왜 필요한가요?',[underscore],{selectedText:'서로 모두 충족해야 합니다.'}).text,/자료 ID: underscore/);
+  const code=[{id:'python',title:'제곱 연산',content:'```python\nvalue = a ** b\n```'}];assert.match(retrieval.retrieveLessonContext('이 코드의 첫 번째 줄을 설명해주세요.',code,{selectedText:'value = a ** b'}).text,/1: value = a \*\* b/);
+});

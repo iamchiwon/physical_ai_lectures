@@ -12,6 +12,10 @@
     "M25.03": {
       "sourceSha256": "de35fca6c79ab3bfe7aa85c4e80f0f90084a62697d688a062df7f0b83511b952",
       "evidenceRef": "doc/v2/work_items/M25.03.md"
+    },
+    "M25.04": {
+      "sourceSha256": "6055826a650b78d0f56e1e9048adff907c9591ea7b74daa297375105467bc3ac",
+      "evidenceRef": "doc/v2/work_items/M25.04.md"
     }
   }
 }
