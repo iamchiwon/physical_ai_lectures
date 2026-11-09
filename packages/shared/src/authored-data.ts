@@ -1738,6 +1738,20 @@ export const authoredMetadata: AuthoredMetadata[] = [
     "evidenceRef": "doc/v2/work_items/M25.05.md"
   },
   {
+    "topicId": "M25.06",
+    "source": "ebook/curriculum/M25/M25.06.md",
+    "title": "키보드 텔레옵·도구 접촉·상태/행동 기록",
+    "objectives": [
+      "키보드 활성 입력·명령 프레임/단위·신선도와 전송/실제 관측을 분리한 텔레옵 계약을 설명한다.",
+      "합성 사건표에서 입력/상태 TTL경계·접촉 문턱·해제/미상 조건에 따른 명령과 중단 이유를 판정한다.",
+      "도구·서랍 상태와 제한 후 명령·시각/에피소드/부분성과를 연결하고 학습 행동 및 실패 분모를 보존한다."
+    ],
+    "prerequisiteNote": "M25.05의 생성/기록·누락 보존이 선수다. M19.05 접촉/물체 확인, M20.03 상태/행동·에피소드와 M14.03 시각 정합을 복습한다. 1D 속도 명령의 합성 기록표를 분석하며 실제 키보드 프로그램·ROS/물리/장비 송신이나 학습 실행은 하지 않는다. 일반 언어/문법은 다루지 않는다.",
+    "sha256": "afb02b20d4a866739f38eacbbc5a8a996f031c88b155f8e0f389a5d43a540569",
+    "reviewed": true,
+    "evidenceRef": "doc/v2/work_items/M25.06.md"
+  },
+  {
     "topicId": "M27.01",
     "source": "ebook/curriculum/M27/M27.01.md",
     "title": "Raspberry Pi·엣지 컴퓨팅·메모리·전력 제약",
@@ -2154,10 +2168,10 @@ export const legacyRevisions: LegacyRevision[] = [
   {
     "source": "ebook/book/03_so101_kinematics_teleop/chapter.md",
     "baselineSha256": "8083685d7b190de126d12ce6ec53469e742dd2143eb5fa7ec0fe8274410490aa",
-    "sha256": "35200f85dc74ab4c10ab559607943b59463a9db0793356e5e65cf57a826f0cda",
+    "sha256": "6e6ce28eb9ec19bf4849a657461c12ad6b0ccc878cb6ba1c859bac6d895640db",
     "approved": true,
-    "reason": "E1에서 기존 03장으로 선수·실습범위·오개념 연결 보강 / latest 설치조건과 E1 의존성 고정 원칙의 불일치 보완 / M03검토: 명목전압숫자일치와동작범위/극성/전류/논리핀/절대최대정격구분 / E2: ROS・기구학・제어・모델 선수/후속 연결 및 관련 개념·실행 전제 보완 / M08.05: JointState 한 메시지 동일시각 계약·비동기 정렬/추정 출처를 엄밀화하고 공식 명세 링크 연결 / E3: 시뮬레이션·학습·비전·카메라/시간 기초의 연결 및 독립검토된 개념/그림 조건 정정 / E4: 로봇팔·데이터·정책·배포·캡스톤 선수/후속과 교육용 계산·실행·안전 계약 보완 / E5: 모바일 경로·시뮬레이터 구분·map/odom/base·계획/미션·주행-조작 연결 보완 / M25.02: 바퀴/서랍·연결 그래프와 고정/부유 루트·관측 검수 연결",
-    "evidenceRef": "doc/v2/work_items/M25.02.md"
+    "reason": "E1에서 기존 03장으로 선수·실습범위·오개념 연결 보강 / latest 설치조건과 E1 의존성 고정 원칙의 불일치 보완 / M03검토: 명목전압숫자일치와동작범위/극성/전류/논리핀/절대최대정격구분 / E2: ROS・기구학・제어・모델 선수/후속 연결 및 관련 개념·실행 전제 보완 / M08.05: JointState 한 메시지 동일시각 계약·비동기 정렬/추정 출처를 엄밀화하고 공식 명세 링크 연결 / E3: 시뮬레이션·학습·비전·카메라/시간 기초의 연결 및 독립검토된 개념/그림 조건 정정 / E4: 로봇팔·데이터·정책·배포·캡스톤 선수/후속과 교육용 계산·실행·안전 계약 보완 / E5: 모바일 경로·시뮬레이터 구분·map/odom/base·계획/미션·주행-조작 연결 보완 / M25.02: 바퀴/서랍·연결 그래프와 고정/부유 루트·관측 검수 연결 / M25.06: 키보드/속도·접촉 관문과 전송/관측·에피소드/실패분모 연결",
+    "evidenceRef": "doc/v2/work_items/M25.06.md"
   },
   {
     "source": "ebook/book/03_so101_kinematics_teleop/code/safe_teleop_core.py",
@@ -2194,10 +2208,10 @@ export const legacyRevisions: LegacyRevision[] = [
   {
     "source": "ebook/book/05_lerobot_smolvla/chapter.md",
     "baselineSha256": "637909ee6456fa438f421ae0290a3b536cd925567ba1246a1f2e58c0b113a9fa",
-    "sha256": "39ab43071d7f486b177607d7ac243538db1f797eb7f47f01efb778c91b48f992",
+    "sha256": "e9e2cf784ea580448917e8cd484e02d279d3eae0c4996cc3681556ed4df64de4",
     "approved": true,
-    "reason": "E1에서 기존 05장으로 선수·실습범위·오개념 연결 보강 / 설치 예시에 실제 커밋/태그 고정 전제와 미지정 중단 추가 / 독립검수: 설치 전체 subshell fail-fast로 미지정/오류 revision 뒤 실행 방지 / E2: ROS・기구학・제어・모델 선수/후속 연결 및 관련 개념·실행 전제 보완 / E3: 시뮬레이션·학습·비전·카메라/시간 기초의 연결 및 독립검토된 개념/그림 조건 정정 / E4: 로봇팔·데이터·정책·배포·캡스톤 선수/후속과 교육용 계산·실행·안전 계약 보완 / E4 M20.03 연계: 저장 모달리티/metadata와 로드 텐서의 CHW·시간·배치 축 구분 / E4 M21.02 연계: relative 고정 기준과 delta 누적 증분·채널/정규화 계약 구분 / E4 M27.04 연계: 명령 의미와 제한 시간에 따른 HOLD/STOP 계약 명료화 / E5: 모바일 경로·시뮬레이터 구분·map/odom/base·계획/미션·주행-조작 연결 보완",
-    "evidenceRef": "doc/v2/work_items/E5-review.md"
+    "reason": "E1에서 기존 05장으로 선수·실습범위·오개념 연결 보강 / 설치 예시에 실제 커밋/태그 고정 전제와 미지정 중단 추가 / 독립검수: 설치 전체 subshell fail-fast로 미지정/오류 revision 뒤 실행 방지 / E2: ROS・기구학・제어・모델 선수/후속 연결 및 관련 개념·실행 전제 보완 / E3: 시뮬레이션·학습·비전·카메라/시간 기초의 연결 및 독립검토된 개념/그림 조건 정정 / E4: 로봇팔·데이터·정책·배포·캡스톤 선수/후속과 교육용 계산·실행·안전 계약 보완 / E4 M20.03 연계: 저장 모달리티/metadata와 로드 텐서의 CHW·시간·배치 축 구분 / E4 M21.02 연계: relative 고정 기준과 delta 누적 증분·채널/정규화 계약 구분 / E4 M27.04 연계: 명령 의미와 제한 시간에 따른 HOLD/STOP 계약 명료화 / E5: 모바일 경로·시뮬레이터 구분·map/odom/base·계획/미션·주행-조작 연결 보완 / M25.06: 키보드/속도·접촉 관문과 전송/관측·에피소드/실패분모 연결",
+    "evidenceRef": "doc/v2/work_items/M25.06.md"
   },
   {
     "source": "ebook/book/05_lerobot_smolvla/code/closed_loop_20hz.py",
@@ -2362,85 +2376,85 @@ export const legacyExerciseReferences: DerivedReference[] = [
   {
     "activityId": "legacy:exercise:03_so101_kinematics_teleop--chapter-14-q1",
     "baselineSha256": "1ec78bf587c47138a1a8d9e6faaa1465e63369bc06a4017af2b8368697cd8f99",
-    "sha256": "5baa7b3ce0297ecb49b46e559c4ce34857b5853a7124f04d1201fcd1ed0dc48e",
+    "sha256": "9beea8970a1d8886050969d4a2880b14c72e7e786a73fb45a863af11a827d340",
     "approved": true
   },
   {
     "activityId": "legacy:exercise:03_so101_kinematics_teleop--chapter-14-q2",
     "baselineSha256": "afca63319e918807a8c8bb4b8c502e91958eea44d44f166e12371a4e0f1a64b7",
-    "sha256": "064b9abbf83cb51d23e43faab7ea85b3911bcfc04e0edce0567457a0a0827943",
+    "sha256": "7b6d82f62564a37ebb45d45b710eea067969e8c308ca0293ddbd7b13617f699e",
     "approved": true
   },
   {
     "activityId": "legacy:exercise:03_so101_kinematics_teleop--chapter-14-q3",
     "baselineSha256": "97592420e143a37dbde5d2937e8b05be1e890b668bf9fe15dc3db07d914d7436",
-    "sha256": "99e6f552e2e20a85a057c8b059c0ccb6d1ecc1e31729ce5fadf412ef34d24c57",
+    "sha256": "dea796e0c089d19057f877a4c3e0afe2c0d06055b40e845acb26239e0f34cde8",
     "approved": true
   },
   {
     "activityId": "legacy:exercise:03_so101_kinematics_teleop--chapter-14-q4",
     "baselineSha256": "ff84e80dcd9b182202b95ddd575e8ac1eb97911cb0bb6b26dde98699945ab520",
-    "sha256": "385c4c911380ae00dbaaf4b11162f0449e5394335f6999d8dfe5eb4021265ad9",
+    "sha256": "48ecafd5c9f577fd9b7af6e2271acc5faa0b4da79daca222eb49f59d016f8ee2",
     "approved": true
   },
   {
     "activityId": "legacy:exercise:03_so101_kinematics_teleop--chapter-14-q5",
     "baselineSha256": "7cf40bfb0a32b6a6c9ee24c924d60863e3b0a4dec7779424773ef3518ac61c36",
-    "sha256": "fe1963565b410720e7ced1ac8c94dd5cb81903d17e02e3e01bc87ff71136db6e",
+    "sha256": "744ecf70588f0d44715f4df4876c28d4995ebd7bd1dc5d02168ec510facf4006",
     "approved": true
   },
   {
     "activityId": "legacy:exercise:03_so101_kinematics_teleop--chapter-14-q6",
     "baselineSha256": "bdf41aac0a8f8557e94315e28ba695d253568a91cf90b0396d2ae07f63e4c3cb",
-    "sha256": "d4cf0fed9161b8c66f21ea04e35690204dabcf1b606b1b249a9a6ef9cab72ba9",
+    "sha256": "0af38bab243183b02bc3f0b68f788fc903e2dfff3eb0687d7d9b478f1647c0b0",
     "approved": true
   },
   {
     "activityId": "legacy:exercise:03_so101_kinematics_teleop--chapter-14-q7",
     "baselineSha256": "ee2a067d4cd172114e0c6882e4c615e3a501f5ce8d1d32d648613644cbe27f0e",
-    "sha256": "8df1f127d3538bafda1daf4d30702c3d9b04c59a13ebb98720ed36a5c5d5e37f",
+    "sha256": "9b2076296e711bec669cf5340d57819f0c07b6ddb4117accf29d6cb3bf907233",
     "approved": true
   },
   {
     "activityId": "legacy:exercise:03_so101_kinematics_teleop--chapter-14-q8",
     "baselineSha256": "b349759b13aa83642c86eb1a7d45bf747ee7d557f1df42278ac209c6b1a48a06",
-    "sha256": "14eef9514a3228c4c63b55f564aced6c21bf47ed3fd303e993b44b7dbbfcb20b",
+    "sha256": "9094f56525ebe46e736d13beb1066a80563a208faaeadd826e1f213b08385e38",
     "approved": true
   },
   {
     "activityId": "legacy:exercise:03_so101_kinematics_teleop--chapter-14-q9",
     "baselineSha256": "36859842a1c3f9ccae212434235dc1a35cc363552ac6f40b3a9803737b8dbc41",
-    "sha256": "dae386a8191fa3ffc18983e361258990b3f2c2dfe1de9008e4fb053c17c92f31",
+    "sha256": "f2657e5c2a1845025bd9b7077245eb68dfed0f4a2a79401b203e1681be14abd0",
     "approved": true
   },
   {
     "activityId": "legacy:exercise:03_so101_kinematics_teleop--chapter-14-q10",
     "baselineSha256": "82d647e135ca5e724e1c0ad02dacdcc97f205910f7fc0d629715ce318d634a14",
-    "sha256": "ae149bb99a62bd28b0631d90b198f2b9530167741be980cd1b03973a121a8820",
+    "sha256": "36808472271f3fe6b957243ce96a204029e009d4a63ccb7f7d2219deced4047c",
     "approved": true
   },
   {
     "activityId": "legacy:exercise:03_so101_kinematics_teleop--chapter-15-report",
     "baselineSha256": "689439135e549401f4ccadbcd4d89cb7ec6963042f3f8157151ffc2fb75b1abe",
-    "sha256": "ef4d7d8c4582b33a79fce2020eb5bfbb1256604ba4733049f645753344c0f845",
+    "sha256": "f9d95b5e08b6fb245d9d580f141f7865a0b65205ea08d1a437387edb006fae2f",
     "approved": true
   },
   {
     "activityId": "legacy:exercise:03_so101_kinematics_teleop--labs--lab_3_1_fk_ik-1-report",
     "baselineSha256": "689439135e549401f4ccadbcd4d89cb7ec6963042f3f8157151ffc2fb75b1abe",
-    "sha256": "ef4d7d8c4582b33a79fce2020eb5bfbb1256604ba4733049f645753344c0f845",
+    "sha256": "f9d95b5e08b6fb245d9d580f141f7865a0b65205ea08d1a437387edb006fae2f",
     "approved": true
   },
   {
     "activityId": "legacy:exercise:03_so101_kinematics_teleop--labs--lab_3_2_safe_teleop-1-report",
     "baselineSha256": "689439135e549401f4ccadbcd4d89cb7ec6963042f3f8157151ffc2fb75b1abe",
-    "sha256": "ef4d7d8c4582b33a79fce2020eb5bfbb1256604ba4733049f645753344c0f845",
+    "sha256": "f9d95b5e08b6fb245d9d580f141f7865a0b65205ea08d1a437387edb006fae2f",
     "approved": true
   },
   {
     "activityId": "legacy:exercise:03_so101_kinematics_teleop--labs--lab_3_3_ros2_bridge-1-report",
     "baselineSha256": "689439135e549401f4ccadbcd4d89cb7ec6963042f3f8157151ffc2fb75b1abe",
-    "sha256": "ef4d7d8c4582b33a79fce2020eb5bfbb1256604ba4733049f645753344c0f845",
+    "sha256": "f9d95b5e08b6fb245d9d580f141f7865a0b65205ea08d1a437387edb006fae2f",
     "approved": true
   },
   {
@@ -2584,7 +2598,7 @@ export const legacyExerciseReferences: DerivedReference[] = [
   {
     "activityId": "legacy:exercise:05_lerobot_smolvla--exercises--problem_set-1-q13",
     "baselineSha256": "fc2aa23eedb5cc858dc7bbafae217fcb08a472d16be07b7b234c7e37b7235b0d",
-    "sha256": "3dda7297cdf107a814a2fb2699f09bb780258263903fa82acf9afc60723c8764",
+    "sha256": "0720b6895bc3daa6382ced7aaae54f3dba3a9f3fd94a7d99110c36b6c73c0f13",
     "approved": true
   },
   {
@@ -2614,7 +2628,7 @@ export const legacyExerciseReferences: DerivedReference[] = [
   {
     "activityId": "legacy:exercise:05_lerobot_smolvla--exercises--problem_set-1-q18",
     "baselineSha256": "400356f9fc2b9b4899ecbe605c378d356b6e0b33f9ac0c912466001f1dcad968",
-    "sha256": "41d5d45231b4a2d7d911584222a949b7729ecac28475129400d465ec0df8d868",
+    "sha256": "890a40b60ee282b005b04b56fa3d29f1fac515134536100d658f1ae5748cb36a",
     "approved": true
   },
   {
