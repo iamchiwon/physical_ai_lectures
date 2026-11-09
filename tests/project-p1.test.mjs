@@ -51,3 +51,13 @@ test('P1 downloadable archive contains exactly the reviewed files and exposes it
  const archive=probe(`import zipfile,pathlib\nz=zipfile.ZipFile(${JSON.stringify(path.join(root,'apps/web/public/project-starters/P1.zip'))})\nassert z.testzip() is None\nprint(json.dumps({'names':z.namelist(),'allMatch':all(z.read(n)==(pathlib.Path(${JSON.stringify(path.join(root,'examples'))})/n).read_bytes() for n in z.namelist())}))\n`);
  assert.deepEqual(archive.names,manifest.files.map(file=>file.path));assert.equal(archive.allMatch,true);
 });
+
+test('P1 packaging requires exact scoped review before overwriting any published bytes',()=>{
+ const fixture=fs.mkdtempSync(path.join(os.tmpdir(),'p1-review-authority-'));try{
+  fs.mkdirSync(path.join(fixture,'scripts'),{recursive:true});fs.mkdirSync(path.join(fixture,'apps/web/src/lib'),{recursive:true});fs.mkdirSync(path.join(fixture,'doc/v2/inventory'),{recursive:true});fs.cpSync(dir,path.join(fixture,'examples/P1'),{recursive:true});fs.copyFileSync('scripts/prepare-projects.mjs',path.join(fixture,'scripts/prepare-projects.mjs'));fs.writeFileSync(path.join(fixture,'evidence.md'),'Reviewed fixture');
+  const registry=JSON.parse(fs.readFileSync('doc/v2/inventory/project-reviews.json'));registry.projects.P1.evidenceRef='evidence.md';const approval=path.join(fixture,'doc/v2/inventory/project-reviews.json');fs.writeFileSync(approval,JSON.stringify(registry));
+  const prepare=()=>spawnSync(process.execPath,[path.join(fixture,'scripts/prepare-projects.mjs')],{encoding:'utf8'});assert.equal(prepare().status,0);const output=path.join(fixture,'apps/web/public/project-starters/P1.zip'),before=fs.readFileSync(output),source=path.join(fixture,'examples/P1/runner.py'),original=fs.readFileSync(source);
+  fs.appendFileSync(source,'\n# unreviewed change\n');const stale=prepare();assert.notEqual(stale.status,0);assert.match(stale.stderr,/Stale or missing/);assert.deepEqual(fs.readFileSync(output),before);fs.writeFileSync(source,original);
+  fs.unlinkSync(path.join(fixture,'evidence.md'));assert.notEqual(prepare().status,0);assert.deepEqual(fs.readFileSync(output),before);fs.writeFileSync(path.join(fixture,'evidence.md'),'Reviewed fixture');registry.projects.P2={...registry.projects.P1};fs.writeFileSync(approval,JSON.stringify(registry));assert.notEqual(prepare().status,0);assert.deepEqual(fs.readFileSync(output),before);
+ }finally{fs.rmSync(fixture,{recursive:true,force:true});}
+});

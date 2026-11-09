@@ -1,0 +1,9 @@
+{
+  "schemaVersion": 1,
+  "projects": {
+    "P1": {
+      "bundleSha256": "7349c4a732c13e00738185b55581e52aefd55b4a386f59a19c4dae329540e5bb",
+      "evidenceRef": "doc/v2/work_items/PKG-P1-05.md"
+    }
+  }
+}
