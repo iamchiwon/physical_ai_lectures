@@ -2130,6 +2130,20 @@ export const authoredMetadata: AuthoredMetadata[] = [
     "evidenceRef": "doc/v2/work_items/M04.05.md"
   },
   {
+    "topicId": "M04.06",
+    "source": "ebook/curriculum/M04/M04.06.md",
+    "title": "단위·범위·오류 코드가 있는 드라이버 계약",
+    "objectives": [
+      "센서의 바이트 표현·단위·축과 측정/명령 범위를 구분하고 변환한다.",
+      "현재 결과와 과거 정상값·오류/시각/버전을 나누어 유효성을 판정한다.",
+      "드라이버의 검증·양자화/거부·상태/관측 경계를 담은 입력·출력 계약을 작성한다."
+    ],
+    "prerequisiteNote": "M04.05의 요청/상태·만료/clock 구분이 선수다. 일반 코딩 가능자를 대상으로 언어/문법 없이 가상 센서와 명령표를 분석한다. 실제 드라이버·ROS/펌웨어·모터 실행이나 보정/물리 안전 실증은 수행하지 않는다.",
+    "sha256": "52f0eefb31c0053cb8e381bbd6c8617513749961ede612d7e10c42c6e418e07d",
+    "reviewed": true,
+    "evidenceRef": "doc/v2/work_items/M04.06.md"
+  },
+  {
     "topicId": "M07.04",
     "source": "ebook/curriculum/M07/M07.04.md",
     "title": "주파수 응답·근궤적의 해석",
@@ -2324,10 +2338,10 @@ export const legacyRevisions: LegacyRevision[] = [
   {
     "source": "ebook/book/04_sensor_data_pipeline/chapter.md",
     "baselineSha256": "69a8cf6f0e2f6e584bda629d3a17fbbe37f75ec024eab2237847807a2a3796fa",
-    "sha256": "06a5dd44d2e7941360c7b2934c8626f335478b0c6dc40366755f2ae232aaaa7d",
+    "sha256": "a71e24d4d91aace1c3377996364c4be6dc954e0e31627848ff3d139ae44a537f",
     "approved": true,
-    "reason": "E1에서 기존 04장으로 선수·실습범위·오개념 연결 보강 / E2: ROS・기구학・제어・모델 선수/후속 연결 및 관련 개념·실행 전제 보완 / E3: 시뮬레이션·학습·비전·카메라/시간 기초의 연결 및 독립검토된 개념/그림 조건 정정 / E4: 로봇팔·데이터·정책·배포·캡스톤 선수/후속과 교육용 계산·실행·안전 계약 보완 / E5: 모바일 경로·시뮬레이터 구분·map/odom/base·계획/미션·주행-조작 연결 보완 / E5 후속: 공유 TF와 로봇별 토픽·버퍼 격리 대안 및 외부 결합 계약 구분 / W02 M14.02: 센서별 측정량·단위·장착점/시각 계약과 신규 기초 원고 연결 / M25.05: 동봉랜덤화코드의 고정camera/실제채널범위와 원본자산분할·라벨완전성 정정/연결 / M04.01: MCU 펌웨어/호스트의 타깃·메모리/공유 접근과 센서 시각 연결 / M04.02: 타이머 사건/ISR·UART 선로와 원본/수신 시각 연결 / M04.03: ADC 획득/완료/결과 쌍·샘플링/alias와 PWM/실제 관측 연결 / M04.04: 버스 주소/바이트 규약·ACK와 센서/EEPROM 유효성·원본 시각 연결 / M04.05: 호스트 대기/장치 만료·clock과 접수/관측 구분 연결",
-    "evidenceRef": "doc/v2/work_items/M04.05.md"
+    "reason": "E1에서 기존 04장으로 선수·실습범위·오개념 연결 보강 / E2: ROS・기구학・제어・모델 선수/후속 연결 및 관련 개념·실행 전제 보완 / E3: 시뮬레이션·학습·비전·카메라/시간 기초의 연결 및 독립검토된 개념/그림 조건 정정 / E4: 로봇팔·데이터·정책·배포·캡스톤 선수/후속과 교육용 계산·실행·안전 계약 보완 / E5: 모바일 경로·시뮬레이터 구분·map/odom/base·계획/미션·주행-조작 연결 보완 / E5 후속: 공유 TF와 로봇별 토픽·버퍼 격리 대안 및 외부 결합 계약 구분 / W02 M14.02: 센서별 측정량·단위·장착점/시각 계약과 신규 기초 원고 연결 / M25.05: 동봉랜덤화코드의 고정camera/실제채널범위와 원본자산분할·라벨완전성 정정/연결 / M04.01: MCU 펌웨어/호스트의 타깃·메모리/공유 접근과 센서 시각 연결 / M04.02: 타이머 사건/ISR·UART 선로와 원본/수신 시각 연결 / M04.03: ADC 획득/완료/결과 쌍·샘플링/alias와 PWM/실제 관측 연결 / M04.04: 버스 주소/바이트 규약·ACK와 센서/EEPROM 유효성·원본 시각 연결 / M04.05: 호스트 대기/장치 만료·clock과 접수/관측 구분 연결 / M04.06: 원시/표준 단위·목적별 범위/오류와 과거 정상 기록의 원본 시각 보존 연결",
+    "evidenceRef": "doc/v2/work_items/M04.06.md"
   },
   {
     "source": "ebook/book/04_sensor_data_pipeline/exercises/solutions.md",
@@ -2614,7 +2628,7 @@ export const legacyExerciseReferences: DerivedReference[] = [
   {
     "activityId": "legacy:exercise:04_sensor_data_pipeline--chapter-15-q5",
     "baselineSha256": "db330ec3d97051768edf778b93af6c746abd056ea3284021b4898fb08b36b58b",
-    "sha256": "a4b06d5a5096bc2e09be70805a9b5c7df8df1724a426e39036c0f92ca1ba558c",
+    "sha256": "3a81ce98a4ce2ea645012631d24df053c766cb1532b683ff8c938abc23067266",
     "approved": true
   },
   {
@@ -2626,13 +2640,13 @@ export const legacyExerciseReferences: DerivedReference[] = [
   {
     "activityId": "legacy:exercise:04_sensor_data_pipeline--chapter-15-q7",
     "baselineSha256": "f73fff6f100deb8b1277825ec56b4f16cf855aa6f939e635c89e1e98558ae86f",
-    "sha256": "d5e2445454662dd30126a06f9b8082f6f047304dbae1e967b409ef6ee8e973c3",
+    "sha256": "eb4d9ab0b60f7db942be8224195a43c09d7dee403b7bacc7710c589f7af964ed",
     "approved": true
   },
   {
     "activityId": "legacy:exercise:04_sensor_data_pipeline--chapter-15-q8",
     "baselineSha256": "655d77b76a1c3a9e28b37b0ab94571c2f6c09e1fef59f7ca65aa3c006443b5b4",
-    "sha256": "293e51b2a8ee08be02d260683f6caa73573b5e69bd3ae51015451966405cc458",
+    "sha256": "85f269635deeab314eef193e1dc8f7118ef1bd47762e56f076783a4ea63f7ab3",
     "approved": true
   },
   {
