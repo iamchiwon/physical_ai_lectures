@@ -1682,6 +1682,20 @@ export const authoredMetadata: AuthoredMetadata[] = [
     "evidenceRef": "doc/v2/work_items/M25.01.md"
   },
   {
+    "topicId": "M25.02",
+    "source": "ebook/curriculum/M25/M25.02.md",
+    "title": "바퀴·서랍·Revolute/Prismatic·Articulation Root",
+    "objectives": [
+      "바퀴와 서랍에 맞는 관절의 자유도·로컬 프레임·축과 목표 단위를 정의한다.",
+      "강체/관절 연결 그래프에서 고정·부유 베이스의 자유도를 계산하고 장면 계층·Articulation Root·제어기를 구분한다.",
+      "합성 관절 명세와 목표/관측표로 한계·부호·단위 오류를 진단하고 기하 예측과 실제 실행 근거를 구분한다."
+    ],
+    "prerequisiteNote": "M25.01의 자산 계층/단위/물리 입력이 선수다. 자유도·회전은 M06.01/.02, 관절 규약은 M08.02와 M10.04로 보충한다. 세 강체의 가상 구성표를 계산하며 실제 USD/물리/모터·GPU 실행은 요구하지 않는다. 일반 코딩 문법은 다루지 않는다.",
+    "sha256": "98b3bb32fd84d7aa9d8e2fa342af587377edf52b66a208b5ccf69354e0911955",
+    "reviewed": true,
+    "evidenceRef": "doc/v2/work_items/M25.02.md"
+  },
+  {
     "topicId": "M27.01",
     "source": "ebook/curriculum/M27/M27.01.md",
     "title": "Raspberry Pi·엣지 컴퓨팅·메모리·전력 제약",
@@ -2098,10 +2112,10 @@ export const legacyRevisions: LegacyRevision[] = [
   {
     "source": "ebook/book/03_so101_kinematics_teleop/chapter.md",
     "baselineSha256": "8083685d7b190de126d12ce6ec53469e742dd2143eb5fa7ec0fe8274410490aa",
-    "sha256": "f204159145db358d0c76f42cc5a5d8eedd03e626686ea60c81f63835bd38eb19",
+    "sha256": "35200f85dc74ab4c10ab559607943b59463a9db0793356e5e65cf57a826f0cda",
     "approved": true,
-    "reason": "E1에서 기존 03장으로 선수·실습범위·오개념 연결 보강 / latest 설치조건과 E1 의존성 고정 원칙의 불일치 보완 / M03검토: 명목전압숫자일치와동작범위/극성/전류/논리핀/절대최대정격구분 / E2: ROS・기구학・제어・모델 선수/후속 연결 및 관련 개념·실행 전제 보완 / M08.05: JointState 한 메시지 동일시각 계약·비동기 정렬/추정 출처를 엄밀화하고 공식 명세 링크 연결 / E3: 시뮬레이션·학습·비전·카메라/시간 기초의 연결 및 독립검토된 개념/그림 조건 정정 / E4: 로봇팔·데이터·정책·배포·캡스톤 선수/후속과 교육용 계산·실행·안전 계약 보완 / E5: 모바일 경로·시뮬레이터 구분·map/odom/base·계획/미션·주행-조작 연결 보완",
-    "evidenceRef": "doc/v2/work_items/E5-review.md"
+    "reason": "E1에서 기존 03장으로 선수·실습범위·오개념 연결 보강 / latest 설치조건과 E1 의존성 고정 원칙의 불일치 보완 / M03검토: 명목전압숫자일치와동작범위/극성/전류/논리핀/절대최대정격구분 / E2: ROS・기구학・제어・모델 선수/후속 연결 및 관련 개념·실행 전제 보완 / M08.05: JointState 한 메시지 동일시각 계약·비동기 정렬/추정 출처를 엄밀화하고 공식 명세 링크 연결 / E3: 시뮬레이션·학습·비전·카메라/시간 기초의 연결 및 독립검토된 개념/그림 조건 정정 / E4: 로봇팔·데이터·정책·배포·캡스톤 선수/후속과 교육용 계산·실행·안전 계약 보완 / E5: 모바일 경로·시뮬레이터 구분·map/odom/base·계획/미션·주행-조작 연결 보완 / M25.02: 바퀴/서랍·연결 그래프와 고정/부유 루트·관측 검수 연결",
+    "evidenceRef": "doc/v2/work_items/M25.02.md"
   },
   {
     "source": "ebook/book/03_so101_kinematics_teleop/code/safe_teleop_core.py",
@@ -2288,7 +2302,7 @@ export const legacyExerciseReferences: DerivedReference[] = [
   {
     "activityId": "legacy:exercise:03_so101_kinematics_teleop--chapter-14-q2",
     "baselineSha256": "afca63319e918807a8c8bb4b8c502e91958eea44d44f166e12371a4e0f1a64b7",
-    "sha256": "330cd7dd370080cd3d9bec7b831e6ed3d4b0cd4aee200b512981dcd9264e80d5",
+    "sha256": "064b9abbf83cb51d23e43faab7ea85b3911bcfc04e0edce0567457a0a0827943",
     "approved": true
   },
   {
@@ -2312,7 +2326,7 @@ export const legacyExerciseReferences: DerivedReference[] = [
   {
     "activityId": "legacy:exercise:03_so101_kinematics_teleop--chapter-14-q6",
     "baselineSha256": "bdf41aac0a8f8557e94315e28ba695d253568a91cf90b0396d2ae07f63e4c3cb",
-    "sha256": "c8a728659818e1150cf0cc2f5ec9800c517ec396d2b865a8b4e9da9f847cd040",
+    "sha256": "d4cf0fed9161b8c66f21ea04e35690204dabcf1b606b1b249a9a6ef9cab72ba9",
     "approved": true
   },
   {
