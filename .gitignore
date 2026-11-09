@@ -20,3 +20,5 @@ log/
 tmp/
 
 apps/web/public/tutor-content/
+
+apps/web/public/project-starters/

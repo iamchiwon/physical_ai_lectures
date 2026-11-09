@@ -43,3 +43,11 @@ test('P1 synthetic feedback responds to commands while disabled gain cannot impr
  assert.equal(r.feedback[0].normalized_error,2/3);assert.equal(r.feedback.at(-1).normalized_error,0);assert.ok(r.feedback.some(row=>row.offset_after_px!==row.offset_before_px));
  assert.ok(r.disabled.every(row=>row.offset_after_px===0&&row.command_px_per_step===0&&row.normalized_error===2/3));assert.equal(r.feedback.at(-1).state,'TRACKING');
 });
+
+test('P1 downloadable archive contains exactly the reviewed files and exposes its real revision',()=>{
+ const manifest=JSON.parse(fs.readFileSync('apps/web/public/project-starters/P1.json')),zip=fs.readFileSync('apps/web/public/project-starters/P1.zip'),metadata=JSON.parse(fs.readFileSync('apps/web/src/lib/project-starter-data.json'));
+ assert.equal(manifest.bundleSha256,hash(zip));assert.equal(metadata.revision,'sha256:'+hash(zip));assert.equal(manifest.files.length,8);
+ for(const entry of manifest.files){assert.ok(entry.path.startsWith('P1/'));const data=fs.readFileSync(path.join(root,'examples',entry.path));assert.equal(entry.sha256,hash(data));assert.equal(entry.bytes,data.length);}
+ const archive=probe(`import zipfile,pathlib\nz=zipfile.ZipFile(${JSON.stringify(path.join(root,'apps/web/public/project-starters/P1.zip'))})\nassert z.testzip() is None\nprint(json.dumps({'names':z.namelist(),'allMatch':all(z.read(n)==(pathlib.Path(${JSON.stringify(path.join(root,'examples'))})/n).read_bytes() for n in z.namelist())}))\n`);
+ assert.deepEqual(archive.names,manifest.files.map(file=>file.path));assert.equal(archive.allMatch,true);
+});

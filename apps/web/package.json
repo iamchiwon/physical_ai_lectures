@@ -3,8 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "predev": "node ../../scripts/prepare-authored.mjs && node scripts/prepare-textbook.mjs",
-    "prebuild": "node ../../scripts/prepare-authored.mjs && node scripts/prepare-textbook.mjs",
+    "predev": "node ../../scripts/prepare-authored.mjs && node scripts/prepare-textbook.mjs && node ../../scripts/prepare-projects.mjs",
+    "prebuild": "node ../../scripts/prepare-authored.mjs && node scripts/prepare-textbook.mjs && node ../../scripts/prepare-projects.mjs",
     "dev": "next dev",
     "build": "next build",
     "preview": "npx serve out",
