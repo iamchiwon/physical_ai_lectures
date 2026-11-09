@@ -64,3 +64,10 @@ test('project guidance never sends learners to later-stage prerequisites',()=>{
   for(const topic of project.topics){const stage=c.learningStages.find(stage=>stage.topicIds.includes(topic));assert.ok(stage,topic);assert.ok(rank.get(stage.id)<=rank.get(project.stageId),`${project.id}: future topic ${topic}`);}
  }
 });
+
+test('M34 module guidance does not retain a planned-content warning after all lessons are authored',()=>{
+ const module=c.catalog.modules.find(m=>m.id==='M34');
+ assert.ok(!module.prerequisiteNote.includes('준비중'));
+ assert.ok(!module.prerequisiteNote.includes('계획 단위'));
+ for(const unit of c.moduleUnits('M34'))assert.equal(c.unitReadiness(unit,c.curriculumIndex).state,'ready');
+});

@@ -72,7 +72,7 @@ export function applyCurrentDefinition(base: Catalog): Catalog {
   if (result.modules.some(module => module.id === "M34")) throw Error("Current definition already applied");
   const operationGoal = "objective-m34-overview";
   result.areas.find(area => area.id === "area-validation")!.moduleIds.push("M34");
-  result.modules.push({ id: "M34", title: "운영·관제 UI와 로봇 상태 계약", areaId: "area-validation", topicIds: plannedOperations.map(row => row[0]), objectives: [{ id: operationGoal, description: "관제 상태·동기화·요청 감독의 계약을 설계한다." }], prerequisiteNote: "S10의 운영·관제 계획 단위이며 원고와 실행 패키지는 준비중입니다." });
+  result.modules.push({ id: "M34", title: "운영·관제 UI와 로봇 상태 계약", areaId: "area-validation", topicIds: plannedOperations.map(row => row[0]), objectives: [{ id: operationGoal, description: "관제 상태·동기화·요청 감독의 계약을 설계한다." }], prerequisiteNote: "S10에서 관측 신선도·좌표/시간/개정 정합·요청 감독을 연결합니다. 자료의 준비 상태는 각 소주제 안내에서 확인합니다." });
   for (const [topicId, title, prerequisites] of plannedOperations) {
     const id = unitId(topicId), objectives = [{ id: `objective-${topicId.toLowerCase().replace(".", "-")}`, description: `${title}의 입력·판정·한계를 설명한다.` }];
     const requirement = { mode: "required" as const, reason: "준비중 · 원고와 활동을 집필하고 독립 검수해야 합니다.", objectiveIds: objectives.map(goal => goal.id), activityIds: [] };
