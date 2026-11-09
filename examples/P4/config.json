@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "initial_x_m": 1.0,
+  "dt_s": 0.5,
+  "steps": 8,
+  "success_radius_m": 0.15,
+  "max_speed_mps": 0.5,
+  "observation_ttl_ms": 200,
+  "command_ttl_ms": 50,
+  "admission_delay_ms": 10,
+  "clock_id": "ClockA",
+  "robot_id": "r1",
+  "boot_id": "bootA",
+  "map_revision": "map-v7",
+  "model_revision": "model-v3",
+  "calibration_revision": "cal-c2",
+  "frame_id": "map",
+  "unit": "m",
+  "action_schema": "velocity-map-x-v1",
+  "bundle_id": "bundle-A"
+}

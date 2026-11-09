@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "scenarios": [
+    {
+      "id": "nominal",
+      "gain": 1,
+      "events": []
+    },
+    {
+      "id": "shifted-dynamics",
+      "gain": 0,
+      "events": []
+    },
+    {
+      "id": "stale",
+      "gain": 1,
+      "events": [
+        {
+          "tick": 2,
+          "kind": "stale"
+        }
+      ]
+    },
+    {
+      "id": "wrong-version",
+      "gain": 1,
+      "events": [
+        {
+          "tick": 2,
+          "kind": "wrong-version"
+        }
+      ]
+    },
+    {
+      "id": "missing-observation",
+      "gain": 1,
+      "events": [
+        {
+          "tick": 2,
+          "kind": "missing-observation"
+        }
+      ]
+    },
+    {
+      "id": "rollback",
+      "gain": 1,
+      "events": [
+        {
+          "tick": 2,
+          "kind": "rollback"
+        }
+      ]
+    }
+  ]
+}

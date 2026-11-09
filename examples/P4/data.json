@@ -1,0 +1,61 @@
+{
+  "schema_version": 1,
+  "rows": [
+    {
+      "id": "d1",
+      "session": "session-t1",
+      "split": "train",
+      "x_m": -1,
+      "u_mps": 0.5
+    },
+    {
+      "id": "d2",
+      "session": "session-t1",
+      "split": "train",
+      "x_m": -0.5,
+      "u_mps": 0.25
+    },
+    {
+      "id": "d3",
+      "session": "session-t2",
+      "split": "train",
+      "x_m": 0.5,
+      "u_mps": -0.25
+    },
+    {
+      "id": "d4",
+      "session": "session-t2",
+      "split": "train",
+      "x_m": 1,
+      "u_mps": -0.5
+    },
+    {
+      "id": "d5",
+      "session": "session-v1",
+      "split": "validation",
+      "x_m": -0.25,
+      "u_mps": 0.125
+    },
+    {
+      "id": "d6",
+      "session": "session-v1",
+      "split": "validation",
+      "x_m": 0.25,
+      "u_mps": -0.125
+    },
+    {
+      "id": "d7",
+      "session": "session-e1",
+      "split": "test",
+      "x_m": -0.8,
+      "u_mps": 0.4
+    },
+    {
+      "id": "d8",
+      "session": "session-e1",
+      "split": "test",
+      "x_m": 0.8,
+      "u_mps": -0.4
+    }
+  ]
+}
