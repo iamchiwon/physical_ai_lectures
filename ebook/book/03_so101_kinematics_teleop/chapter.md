@@ -117,6 +117,8 @@ OpenUSD의 `UsdPhysicsArticulationRootAPI`는 여러 강체와 관절을 축약 
 6. **드라이브:** 너무 큰 stiffness는 수치적으로 불안정하거나 실물보다 과도하게 단단한 응답을 만든다.
 7. **Mimic/그리퍼:** 단일 구동기로 양쪽 손가락을 묶는 관계가 임포트 후 유지되는지 확인한다.
 
+바퀴/서랍의 회전·병진 관절과 고정/부유 베이스를 비교하려면 [M25.02 관절·Articulation Root](/study/unit-m25-02-a/)로 이어간다. 부모 계층과 body0/body1 연결 그래프, root 표식과 world 고정 제약, 목표 입력과 실제 위치/속도 관측을 각각 구분한다.
+
 USD Physics 명세는 관절계 루트, 관절, 강체 목록으로 articulation을 구성하며 회전 관절 한계와 드라이브를 명시한다.[OpenUSD, 2026]
 
 변환 결과를 PhysX 전용 속성만으로 가정하지 않는다. [Isaac Sim 6.2 URDF Importer](https://docs.isaacsim.omniverse.nvidia.com/6.2.0/importer_exporter/ext_isaacsim_asset_importer_urdf.html)는 mimic과 articulation의 Newton 스키마도 작성한다. 원본 규약·변환 옵션·작성된 API·선택한 런타임의 소비 여부를 나눠 확인하고, 가져오기에 성공했다는 이유만으로 그리퍼 연동이나 제어 동작을 승인하지 않는다.
