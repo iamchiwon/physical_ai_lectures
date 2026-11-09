@@ -1,0 +1,118 @@
+{
+  "version": "P3-1",
+  "mode": "event-replay",
+  "scenario": "stale",
+  "python": "3.12.11",
+  "platform": "Darwin",
+  "source_sha256": "aa4b542b6af86bf315a98484e189ec2645ea9771d61f218144701b682660bc60",
+  "config_sha256": "4f3bd7857de7b6d4813e8e93f16a7751d64126c6a265ecb89d8415c28a4f05f9",
+  "input_sha256": "47417d6e3fef4b48d24205949642c82d6306e5e6567314c96234779c4dd172b6",
+  "limitation": "synthetic event supervisor; departure authorization is not physical departure/task or safety validation",
+  "terminal_state": "INVALID_STOP",
+  "all_ready_to_depart": false,
+  "ready_robots": [],
+  "processed_count": 1,
+  "unprocessed_count": 0,
+  "counts": {
+    "INVALID": 1
+  },
+  "decisions": [
+    {
+      "seq": 0,
+      "robot_id": null,
+      "kind": null,
+      "outcome": "INVALID",
+      "reason": "stale_event",
+      "expired_lease": false,
+      "resource": {
+        "holder": null,
+        "lease_until_ms": null,
+        "occupant": null,
+        "unknown": true
+      },
+      "robots": {
+        "r1": {
+          "navigation_succeeded": false,
+          "base_stopped": false,
+          "base_stamp_ms": null,
+          "arm_requested": false,
+          "arm_terminal": false,
+          "task_verified": false,
+          "arm_stowed": true,
+          "stow_stamp_ms": null,
+          "cancel_requested": false,
+          "cancel_accepted": false,
+          "departure_allowed_at_ms": null,
+          "ready_to_depart": false
+        },
+        "r2": {
+          "navigation_succeeded": false,
+          "base_stopped": false,
+          "base_stamp_ms": null,
+          "arm_requested": false,
+          "arm_terminal": false,
+          "task_verified": false,
+          "arm_stowed": true,
+          "stow_stamp_ms": null,
+          "cancel_requested": false,
+          "cancel_accepted": false,
+          "departure_allowed_at_ms": null,
+          "ready_to_depart": false
+        }
+      }
+    }
+  ],
+  "events": [
+    {
+      "seq": 0,
+      "robot_id": "r1",
+      "namespace": "/r1",
+      "base_frame": "r1/base_link",
+      "job_id": "job-r1-v1",
+      "now_ms": 1000,
+      "stamp_ms": 899,
+      "clock_id": "ClockA",
+      "world_revision": "world-shared-1",
+      "map_revision": "map-shared-1",
+      "resource_id": "corridor-1",
+      "kind": "reserve",
+      "payload": {}
+    }
+  ],
+  "resource": {
+    "holder": null,
+    "lease_until_ms": null,
+    "occupant": null,
+    "unknown": true
+  },
+  "robots": {
+    "r1": {
+      "navigation_succeeded": false,
+      "base_stopped": false,
+      "base_stamp_ms": null,
+      "arm_requested": false,
+      "arm_terminal": false,
+      "task_verified": false,
+      "arm_stowed": true,
+      "stow_stamp_ms": null,
+      "cancel_requested": false,
+      "cancel_accepted": false,
+      "departure_allowed_at_ms": null,
+      "ready_to_depart": false
+    },
+    "r2": {
+      "navigation_succeeded": false,
+      "base_stopped": false,
+      "base_stamp_ms": null,
+      "arm_requested": false,
+      "arm_terminal": false,
+      "task_verified": false,
+      "arm_stowed": true,
+      "stow_stamp_ms": null,
+      "cancel_requested": false,
+      "cancel_accepted": false,
+      "departure_allowed_at_ms": null,
+      "ready_to_depart": false
+    }
+  }
+}

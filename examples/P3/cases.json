@@ -1,0 +1,743 @@
+{
+  "schema_version": 1,
+  "scenarios": {
+    "nominal": {
+      "events": [
+        {
+          "seq": 0,
+          "robot_id": "r1",
+          "namespace": "/r1",
+          "base_frame": "r1/base_link",
+          "job_id": "job-r1-v1",
+          "now_ms": 0,
+          "stamp_ms": 0,
+          "clock_id": "ClockA",
+          "world_revision": "world-shared-1",
+          "map_revision": "map-shared-1",
+          "resource_id": "corridor-1",
+          "kind": "reserve",
+          "payload": {}
+        },
+        {
+          "seq": 1,
+          "robot_id": "r1",
+          "namespace": "/r1",
+          "base_frame": "r1/base_link",
+          "job_id": "job-r1-v1",
+          "now_ms": 100,
+          "stamp_ms": 100,
+          "clock_id": "ClockA",
+          "world_revision": "world-shared-1",
+          "map_revision": "map-shared-1",
+          "resource_id": "corridor-1",
+          "kind": "enter",
+          "payload": {}
+        },
+        {
+          "seq": 2,
+          "robot_id": "r1",
+          "namespace": "/r1",
+          "base_frame": "r1/base_link",
+          "job_id": "job-r1-v1",
+          "now_ms": 200,
+          "stamp_ms": 200,
+          "clock_id": "ClockA",
+          "world_revision": "world-shared-1",
+          "map_revision": "map-shared-1",
+          "resource_id": "corridor-1",
+          "kind": "exit",
+          "payload": {}
+        },
+        {
+          "seq": 3,
+          "robot_id": "r2",
+          "namespace": "/r2",
+          "base_frame": "r2/base_link",
+          "job_id": "job-r2-v1",
+          "now_ms": 300,
+          "stamp_ms": 300,
+          "clock_id": "ClockA",
+          "world_revision": "world-shared-1",
+          "map_revision": "map-shared-1",
+          "resource_id": "corridor-1",
+          "kind": "reserve",
+          "payload": {}
+        },
+        {
+          "seq": 4,
+          "robot_id": "r2",
+          "namespace": "/r2",
+          "base_frame": "r2/base_link",
+          "job_id": "job-r2-v1",
+          "now_ms": 400,
+          "stamp_ms": 400,
+          "clock_id": "ClockA",
+          "world_revision": "world-shared-1",
+          "map_revision": "map-shared-1",
+          "resource_id": "corridor-1",
+          "kind": "enter",
+          "payload": {}
+        },
+        {
+          "seq": 5,
+          "robot_id": "r2",
+          "namespace": "/r2",
+          "base_frame": "r2/base_link",
+          "job_id": "job-r2-v1",
+          "now_ms": 500,
+          "stamp_ms": 500,
+          "clock_id": "ClockA",
+          "world_revision": "world-shared-1",
+          "map_revision": "map-shared-1",
+          "resource_id": "corridor-1",
+          "kind": "exit",
+          "payload": {}
+        },
+        {
+          "seq": 6,
+          "robot_id": "r1",
+          "namespace": "/r1",
+          "base_frame": "r1/base_link",
+          "job_id": "job-r1-v1",
+          "now_ms": 600,
+          "stamp_ms": 600,
+          "clock_id": "ClockA",
+          "world_revision": "world-shared-1",
+          "map_revision": "map-shared-1",
+          "resource_id": "corridor-1",
+          "kind": "nav_result",
+          "payload": {
+            "goal_id": "nav-r1-1",
+            "status": "SUCCEEDED"
+          }
+        },
+        {
+          "seq": 7,
+          "robot_id": "r2",
+          "namespace": "/r2",
+          "base_frame": "r2/base_link",
+          "job_id": "job-r2-v1",
+          "now_ms": 700,
+          "stamp_ms": 700,
+          "clock_id": "ClockA",
+          "world_revision": "world-shared-1",
+          "map_revision": "map-shared-1",
+          "resource_id": "corridor-1",
+          "kind": "nav_result",
+          "payload": {
+            "goal_id": "nav-r2-1",
+            "status": "SUCCEEDED"
+          }
+        },
+        {
+          "seq": 8,
+          "robot_id": "r1",
+          "namespace": "/r1",
+          "base_frame": "r1/base_link",
+          "job_id": "job-r1-v1",
+          "now_ms": 800,
+          "stamp_ms": 800,
+          "clock_id": "ClockA",
+          "world_revision": "world-shared-1",
+          "map_revision": "map-shared-1",
+          "resource_id": "corridor-1",
+          "kind": "base_stopped",
+          "payload": {
+            "stationary": true
+          }
+        },
+        {
+          "seq": 9,
+          "robot_id": "r2",
+          "namespace": "/r2",
+          "base_frame": "r2/base_link",
+          "job_id": "job-r2-v1",
+          "now_ms": 900,
+          "stamp_ms": 900,
+          "clock_id": "ClockA",
+          "world_revision": "world-shared-1",
+          "map_revision": "map-shared-1",
+          "resource_id": "corridor-1",
+          "kind": "base_stopped",
+          "payload": {
+            "stationary": true
+          }
+        },
+        {
+          "seq": 10,
+          "robot_id": "r1",
+          "namespace": "/r1",
+          "base_frame": "r1/base_link",
+          "job_id": "job-r1-v1",
+          "now_ms": 1000,
+          "stamp_ms": 1000,
+          "clock_id": "ClockA",
+          "world_revision": "world-shared-1",
+          "map_revision": "map-shared-1",
+          "resource_id": "corridor-1",
+          "kind": "request_arm",
+          "payload": {
+            "goal_id": "arm-r1-1"
+          }
+        },
+        {
+          "seq": 11,
+          "robot_id": "r2",
+          "namespace": "/r2",
+          "base_frame": "r2/base_link",
+          "job_id": "job-r2-v1",
+          "now_ms": 1100,
+          "stamp_ms": 1100,
+          "clock_id": "ClockA",
+          "world_revision": "world-shared-1",
+          "map_revision": "map-shared-1",
+          "resource_id": "corridor-1",
+          "kind": "request_arm",
+          "payload": {
+            "goal_id": "arm-r2-1"
+          }
+        },
+        {
+          "seq": 12,
+          "robot_id": "r1",
+          "namespace": "/r1",
+          "base_frame": "r1/base_link",
+          "job_id": "job-r1-v1",
+          "now_ms": 1200,
+          "stamp_ms": 1200,
+          "clock_id": "ClockA",
+          "world_revision": "world-shared-1",
+          "map_revision": "map-shared-1",
+          "resource_id": "corridor-1",
+          "kind": "arm_result",
+          "payload": {
+            "goal_id": "arm-r1-1",
+            "status": "SUCCEEDED",
+            "object_verified": true
+          }
+        },
+        {
+          "seq": 13,
+          "robot_id": "r2",
+          "namespace": "/r2",
+          "base_frame": "r2/base_link",
+          "job_id": "job-r2-v1",
+          "now_ms": 1300,
+          "stamp_ms": 1300,
+          "clock_id": "ClockA",
+          "world_revision": "world-shared-1",
+          "map_revision": "map-shared-1",
+          "resource_id": "corridor-1",
+          "kind": "arm_result",
+          "payload": {
+            "goal_id": "arm-r2-1",
+            "status": "SUCCEEDED",
+            "object_verified": true
+          }
+        },
+        {
+          "seq": 14,
+          "robot_id": "r1",
+          "namespace": "/r1",
+          "base_frame": "r1/base_link",
+          "job_id": "job-r1-v1",
+          "now_ms": 1400,
+          "stamp_ms": 1400,
+          "clock_id": "ClockA",
+          "world_revision": "world-shared-1",
+          "map_revision": "map-shared-1",
+          "resource_id": "corridor-1",
+          "kind": "stowed",
+          "payload": {
+            "goal_id": "arm-r1-1",
+            "verified": true
+          }
+        },
+        {
+          "seq": 15,
+          "robot_id": "r2",
+          "namespace": "/r2",
+          "base_frame": "r2/base_link",
+          "job_id": "job-r2-v1",
+          "now_ms": 1500,
+          "stamp_ms": 1500,
+          "clock_id": "ClockA",
+          "world_revision": "world-shared-1",
+          "map_revision": "map-shared-1",
+          "resource_id": "corridor-1",
+          "kind": "stowed",
+          "payload": {
+            "goal_id": "arm-r2-1",
+            "verified": true
+          }
+        },
+        {
+          "seq": 16,
+          "robot_id": "r1",
+          "namespace": "/r1",
+          "base_frame": "r1/base_link",
+          "job_id": "job-r1-v1",
+          "now_ms": 1600,
+          "stamp_ms": 1600,
+          "clock_id": "ClockA",
+          "world_revision": "world-shared-1",
+          "map_revision": "map-shared-1",
+          "resource_id": "corridor-1",
+          "kind": "request_depart",
+          "payload": {}
+        },
+        {
+          "seq": 17,
+          "robot_id": "r2",
+          "namespace": "/r2",
+          "base_frame": "r2/base_link",
+          "job_id": "job-r2-v1",
+          "now_ms": 1700,
+          "stamp_ms": 1700,
+          "clock_id": "ClockA",
+          "world_revision": "world-shared-1",
+          "map_revision": "map-shared-1",
+          "resource_id": "corridor-1",
+          "kind": "request_depart",
+          "payload": {}
+        }
+      ]
+    },
+    "lease-expiry": {
+      "events": [
+        {
+          "seq": 0,
+          "robot_id": "r1",
+          "namespace": "/r1",
+          "base_frame": "r1/base_link",
+          "job_id": "job-r1-v1",
+          "now_ms": 0,
+          "stamp_ms": 0,
+          "clock_id": "ClockA",
+          "world_revision": "world-shared-1",
+          "map_revision": "map-shared-1",
+          "resource_id": "corridor-1",
+          "kind": "reserve",
+          "payload": {}
+        },
+        {
+          "seq": 1,
+          "robot_id": "r1",
+          "namespace": "/r1",
+          "base_frame": "r1/base_link",
+          "job_id": "job-r1-v1",
+          "now_ms": 100,
+          "stamp_ms": 100,
+          "clock_id": "ClockA",
+          "world_revision": "world-shared-1",
+          "map_revision": "map-shared-1",
+          "resource_id": "corridor-1",
+          "kind": "enter",
+          "payload": {}
+        },
+        {
+          "seq": 2,
+          "robot_id": "r2",
+          "namespace": "/r2",
+          "base_frame": "r2/base_link",
+          "job_id": "job-r2-v1",
+          "now_ms": 1000,
+          "stamp_ms": 1000,
+          "clock_id": "ClockA",
+          "world_revision": "world-shared-1",
+          "map_revision": "map-shared-1",
+          "resource_id": "corridor-1",
+          "kind": "reserve",
+          "payload": {}
+        },
+        {
+          "seq": 3,
+          "robot_id": "r1",
+          "namespace": "/r1",
+          "base_frame": "r1/base_link",
+          "job_id": "job-r1-v1",
+          "now_ms": 1100,
+          "stamp_ms": 1100,
+          "clock_id": "ClockA",
+          "world_revision": "world-shared-1",
+          "map_revision": "map-shared-1",
+          "resource_id": "corridor-1",
+          "kind": "exit",
+          "payload": {}
+        },
+        {
+          "seq": 4,
+          "robot_id": "r2",
+          "namespace": "/r2",
+          "base_frame": "r2/base_link",
+          "job_id": "job-r2-v1",
+          "now_ms": 1200,
+          "stamp_ms": 1200,
+          "clock_id": "ClockA",
+          "world_revision": "world-shared-1",
+          "map_revision": "map-shared-1",
+          "resource_id": "corridor-1",
+          "kind": "reserve",
+          "payload": {}
+        }
+      ]
+    },
+    "cancel": {
+      "events": [
+        {
+          "seq": 0,
+          "robot_id": "r1",
+          "namespace": "/r1",
+          "base_frame": "r1/base_link",
+          "job_id": "job-r1-v1",
+          "now_ms": 0,
+          "stamp_ms": 0,
+          "clock_id": "ClockA",
+          "world_revision": "world-shared-1",
+          "map_revision": "map-shared-1",
+          "resource_id": "corridor-1",
+          "kind": "reserve",
+          "payload": {}
+        },
+        {
+          "seq": 1,
+          "robot_id": "r1",
+          "namespace": "/r1",
+          "base_frame": "r1/base_link",
+          "job_id": "job-r1-v1",
+          "now_ms": 100,
+          "stamp_ms": 100,
+          "clock_id": "ClockA",
+          "world_revision": "world-shared-1",
+          "map_revision": "map-shared-1",
+          "resource_id": "corridor-1",
+          "kind": "enter",
+          "payload": {}
+        },
+        {
+          "seq": 2,
+          "robot_id": "r1",
+          "namespace": "/r1",
+          "base_frame": "r1/base_link",
+          "job_id": "job-r1-v1",
+          "now_ms": 200,
+          "stamp_ms": 200,
+          "clock_id": "ClockA",
+          "world_revision": "world-shared-1",
+          "map_revision": "map-shared-1",
+          "resource_id": "corridor-1",
+          "kind": "exit",
+          "payload": {}
+        },
+        {
+          "seq": 3,
+          "robot_id": "r1",
+          "namespace": "/r1",
+          "base_frame": "r1/base_link",
+          "job_id": "job-r1-v1",
+          "now_ms": 300,
+          "stamp_ms": 300,
+          "clock_id": "ClockA",
+          "world_revision": "world-shared-1",
+          "map_revision": "map-shared-1",
+          "resource_id": "corridor-1",
+          "kind": "nav_result",
+          "payload": {
+            "goal_id": "nav-r1-1",
+            "status": "SUCCEEDED"
+          }
+        },
+        {
+          "seq": 4,
+          "robot_id": "r1",
+          "namespace": "/r1",
+          "base_frame": "r1/base_link",
+          "job_id": "job-r1-v1",
+          "now_ms": 400,
+          "stamp_ms": 400,
+          "clock_id": "ClockA",
+          "world_revision": "world-shared-1",
+          "map_revision": "map-shared-1",
+          "resource_id": "corridor-1",
+          "kind": "base_stopped",
+          "payload": {
+            "stationary": true
+          }
+        },
+        {
+          "seq": 5,
+          "robot_id": "r1",
+          "namespace": "/r1",
+          "base_frame": "r1/base_link",
+          "job_id": "job-r1-v1",
+          "now_ms": 500,
+          "stamp_ms": 500,
+          "clock_id": "ClockA",
+          "world_revision": "world-shared-1",
+          "map_revision": "map-shared-1",
+          "resource_id": "corridor-1",
+          "kind": "request_arm",
+          "payload": {
+            "goal_id": "arm-r1-1"
+          }
+        },
+        {
+          "seq": 6,
+          "robot_id": "r1",
+          "namespace": "/r1",
+          "base_frame": "r1/base_link",
+          "job_id": "job-r1-v1",
+          "now_ms": 600,
+          "stamp_ms": 600,
+          "clock_id": "ClockA",
+          "world_revision": "world-shared-1",
+          "map_revision": "map-shared-1",
+          "resource_id": "corridor-1",
+          "kind": "cancel_request",
+          "payload": {
+            "goal_id": "arm-r1-1"
+          }
+        },
+        {
+          "seq": 7,
+          "robot_id": "r1",
+          "namespace": "/r1",
+          "base_frame": "r1/base_link",
+          "job_id": "job-r1-v1",
+          "now_ms": 700,
+          "stamp_ms": 700,
+          "clock_id": "ClockA",
+          "world_revision": "world-shared-1",
+          "map_revision": "map-shared-1",
+          "resource_id": "corridor-1",
+          "kind": "cancel_ack",
+          "payload": {
+            "goal_id": "arm-r1-1"
+          }
+        },
+        {
+          "seq": 8,
+          "robot_id": "r1",
+          "namespace": "/r1",
+          "base_frame": "r1/base_link",
+          "job_id": "job-r1-v1",
+          "now_ms": 800,
+          "stamp_ms": 800,
+          "clock_id": "ClockA",
+          "world_revision": "world-shared-1",
+          "map_revision": "map-shared-1",
+          "resource_id": "corridor-1",
+          "kind": "request_depart",
+          "payload": {}
+        }
+      ]
+    },
+    "no-stow": {
+      "events": [
+        {
+          "seq": 0,
+          "robot_id": "r1",
+          "namespace": "/r1",
+          "base_frame": "r1/base_link",
+          "job_id": "job-r1-v1",
+          "now_ms": 0,
+          "stamp_ms": 0,
+          "clock_id": "ClockA",
+          "world_revision": "world-shared-1",
+          "map_revision": "map-shared-1",
+          "resource_id": "corridor-1",
+          "kind": "reserve",
+          "payload": {}
+        },
+        {
+          "seq": 1,
+          "robot_id": "r1",
+          "namespace": "/r1",
+          "base_frame": "r1/base_link",
+          "job_id": "job-r1-v1",
+          "now_ms": 100,
+          "stamp_ms": 100,
+          "clock_id": "ClockA",
+          "world_revision": "world-shared-1",
+          "map_revision": "map-shared-1",
+          "resource_id": "corridor-1",
+          "kind": "enter",
+          "payload": {}
+        },
+        {
+          "seq": 2,
+          "robot_id": "r1",
+          "namespace": "/r1",
+          "base_frame": "r1/base_link",
+          "job_id": "job-r1-v1",
+          "now_ms": 200,
+          "stamp_ms": 200,
+          "clock_id": "ClockA",
+          "world_revision": "world-shared-1",
+          "map_revision": "map-shared-1",
+          "resource_id": "corridor-1",
+          "kind": "exit",
+          "payload": {}
+        },
+        {
+          "seq": 3,
+          "robot_id": "r1",
+          "namespace": "/r1",
+          "base_frame": "r1/base_link",
+          "job_id": "job-r1-v1",
+          "now_ms": 300,
+          "stamp_ms": 300,
+          "clock_id": "ClockA",
+          "world_revision": "world-shared-1",
+          "map_revision": "map-shared-1",
+          "resource_id": "corridor-1",
+          "kind": "nav_result",
+          "payload": {
+            "goal_id": "nav-r1-1",
+            "status": "SUCCEEDED"
+          }
+        },
+        {
+          "seq": 4,
+          "robot_id": "r1",
+          "namespace": "/r1",
+          "base_frame": "r1/base_link",
+          "job_id": "job-r1-v1",
+          "now_ms": 400,
+          "stamp_ms": 400,
+          "clock_id": "ClockA",
+          "world_revision": "world-shared-1",
+          "map_revision": "map-shared-1",
+          "resource_id": "corridor-1",
+          "kind": "base_stopped",
+          "payload": {
+            "stationary": true
+          }
+        },
+        {
+          "seq": 5,
+          "robot_id": "r1",
+          "namespace": "/r1",
+          "base_frame": "r1/base_link",
+          "job_id": "job-r1-v1",
+          "now_ms": 500,
+          "stamp_ms": 500,
+          "clock_id": "ClockA",
+          "world_revision": "world-shared-1",
+          "map_revision": "map-shared-1",
+          "resource_id": "corridor-1",
+          "kind": "request_arm",
+          "payload": {
+            "goal_id": "arm-r1-1"
+          }
+        },
+        {
+          "seq": 6,
+          "robot_id": "r1",
+          "namespace": "/r1",
+          "base_frame": "r1/base_link",
+          "job_id": "job-r1-v1",
+          "now_ms": 600,
+          "stamp_ms": 600,
+          "clock_id": "ClockA",
+          "world_revision": "world-shared-1",
+          "map_revision": "map-shared-1",
+          "resource_id": "corridor-1",
+          "kind": "arm_result",
+          "payload": {
+            "goal_id": "arm-r1-1",
+            "status": "SUCCEEDED",
+            "object_verified": true
+          }
+        },
+        {
+          "seq": 7,
+          "robot_id": "r1",
+          "namespace": "/r1",
+          "base_frame": "r1/base_link",
+          "job_id": "job-r1-v1",
+          "now_ms": 700,
+          "stamp_ms": 700,
+          "clock_id": "ClockA",
+          "world_revision": "world-shared-1",
+          "map_revision": "map-shared-1",
+          "resource_id": "corridor-1",
+          "kind": "request_depart",
+          "payload": {}
+        }
+      ]
+    },
+    "stale": {
+      "events": [
+        {
+          "seq": 0,
+          "robot_id": "r1",
+          "namespace": "/r1",
+          "base_frame": "r1/base_link",
+          "job_id": "job-r1-v1",
+          "now_ms": 1000,
+          "stamp_ms": 899,
+          "clock_id": "ClockA",
+          "world_revision": "world-shared-1",
+          "map_revision": "map-shared-1",
+          "resource_id": "corridor-1",
+          "kind": "reserve",
+          "payload": {}
+        }
+      ]
+    },
+    "wrong-identity": {
+      "events": [
+        {
+          "seq": 0,
+          "robot_id": "r1",
+          "namespace": "/r2",
+          "base_frame": "r2/base_link",
+          "job_id": "job-r1-v1",
+          "now_ms": 0,
+          "stamp_ms": 0,
+          "clock_id": "ClockA",
+          "world_revision": "world-shared-1",
+          "map_revision": "map-shared-1",
+          "resource_id": "corridor-1",
+          "kind": "reserve",
+          "payload": {}
+        }
+      ]
+    },
+    "old-request": {
+      "events": [
+        {
+          "seq": 0,
+          "robot_id": "r1",
+          "namespace": "/r1",
+          "base_frame": "r1/base_link",
+          "job_id": "job-r1-v1",
+          "now_ms": 0,
+          "stamp_ms": 0,
+          "clock_id": "ClockA",
+          "world_revision": "world-shared-1",
+          "map_revision": "map-shared-1",
+          "resource_id": "corridor-1",
+          "kind": "reserve",
+          "payload": {}
+        },
+        {
+          "seq": 1,
+          "robot_id": "r1",
+          "namespace": "/r1",
+          "base_frame": "r1/base_link",
+          "job_id": "job-r1-old",
+          "now_ms": 100,
+          "stamp_ms": 100,
+          "clock_id": "ClockA",
+          "world_revision": "world-shared-1",
+          "map_revision": "map-shared-1",
+          "resource_id": "corridor-1",
+          "kind": "enter",
+          "payload": {}
+        }
+      ]
+    }
+  }
+}

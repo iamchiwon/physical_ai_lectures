@@ -1,0 +1,1160 @@
+{
+  "version": "P3-1",
+  "mode": "event-replay",
+  "scenario": "nominal",
+  "python": "3.12.11",
+  "platform": "Darwin",
+  "source_sha256": "aa4b542b6af86bf315a98484e189ec2645ea9771d61f218144701b682660bc60",
+  "config_sha256": "4f3bd7857de7b6d4813e8e93f16a7751d64126c6a265ecb89d8415c28a4f05f9",
+  "input_sha256": "47417d6e3fef4b48d24205949642c82d6306e5e6567314c96234779c4dd172b6",
+  "limitation": "synthetic event supervisor; departure authorization is not physical departure/task or safety validation",
+  "terminal_state": "READINESS_CONFIRMED",
+  "all_ready_to_depart": true,
+  "ready_robots": [
+    "r1",
+    "r2"
+  ],
+  "processed_count": 18,
+  "unprocessed_count": 0,
+  "counts": {
+    "GRANTED": 2,
+    "ENTER_CONFIRMED": 2,
+    "EXIT_CONFIRMED": 2,
+    "NAVIGATION_RESULT_RECORDED": 2,
+    "BASE_STOP_CONFIRMED": 2,
+    "ARM_ALLOWED": 2,
+    "TASK_CONFIRMED": 2,
+    "STOW_CONFIRMED": 2,
+    "DEPART_ALLOWED": 2
+  },
+  "decisions": [
+    {
+      "seq": 0,
+      "robot_id": "r1",
+      "kind": "reserve",
+      "outcome": "GRANTED",
+      "reason": "granted",
+      "expired_lease": false,
+      "resource": {
+        "holder": "r1",
+        "lease_until_ms": 1000,
+        "occupant": null,
+        "unknown": false
+      },
+      "robots": {
+        "r1": {
+          "navigation_succeeded": false,
+          "base_stopped": false,
+          "base_stamp_ms": null,
+          "arm_requested": false,
+          "arm_terminal": false,
+          "task_verified": false,
+          "arm_stowed": true,
+          "stow_stamp_ms": null,
+          "cancel_requested": false,
+          "cancel_accepted": false,
+          "departure_allowed_at_ms": null,
+          "ready_to_depart": false
+        },
+        "r2": {
+          "navigation_succeeded": false,
+          "base_stopped": false,
+          "base_stamp_ms": null,
+          "arm_requested": false,
+          "arm_terminal": false,
+          "task_verified": false,
+          "arm_stowed": true,
+          "stow_stamp_ms": null,
+          "cancel_requested": false,
+          "cancel_accepted": false,
+          "departure_allowed_at_ms": null,
+          "ready_to_depart": false
+        }
+      }
+    },
+    {
+      "seq": 1,
+      "robot_id": "r1",
+      "kind": "enter",
+      "outcome": "ENTER_CONFIRMED",
+      "reason": "enter_confirmed",
+      "expired_lease": false,
+      "resource": {
+        "holder": "r1",
+        "lease_until_ms": 1000,
+        "occupant": "r1",
+        "unknown": false
+      },
+      "robots": {
+        "r1": {
+          "navigation_succeeded": false,
+          "base_stopped": false,
+          "base_stamp_ms": null,
+          "arm_requested": false,
+          "arm_terminal": false,
+          "task_verified": false,
+          "arm_stowed": true,
+          "stow_stamp_ms": null,
+          "cancel_requested": false,
+          "cancel_accepted": false,
+          "departure_allowed_at_ms": null,
+          "ready_to_depart": false
+        },
+        "r2": {
+          "navigation_succeeded": false,
+          "base_stopped": false,
+          "base_stamp_ms": null,
+          "arm_requested": false,
+          "arm_terminal": false,
+          "task_verified": false,
+          "arm_stowed": true,
+          "stow_stamp_ms": null,
+          "cancel_requested": false,
+          "cancel_accepted": false,
+          "departure_allowed_at_ms": null,
+          "ready_to_depart": false
+        }
+      }
+    },
+    {
+      "seq": 2,
+      "robot_id": "r1",
+      "kind": "exit",
+      "outcome": "EXIT_CONFIRMED",
+      "reason": "exit_confirmed",
+      "expired_lease": false,
+      "resource": {
+        "holder": null,
+        "lease_until_ms": null,
+        "occupant": null,
+        "unknown": false
+      },
+      "robots": {
+        "r1": {
+          "navigation_succeeded": false,
+          "base_stopped": false,
+          "base_stamp_ms": null,
+          "arm_requested": false,
+          "arm_terminal": false,
+          "task_verified": false,
+          "arm_stowed": true,
+          "stow_stamp_ms": null,
+          "cancel_requested": false,
+          "cancel_accepted": false,
+          "departure_allowed_at_ms": null,
+          "ready_to_depart": false
+        },
+        "r2": {
+          "navigation_succeeded": false,
+          "base_stopped": false,
+          "base_stamp_ms": null,
+          "arm_requested": false,
+          "arm_terminal": false,
+          "task_verified": false,
+          "arm_stowed": true,
+          "stow_stamp_ms": null,
+          "cancel_requested": false,
+          "cancel_accepted": false,
+          "departure_allowed_at_ms": null,
+          "ready_to_depart": false
+        }
+      }
+    },
+    {
+      "seq": 3,
+      "robot_id": "r2",
+      "kind": "reserve",
+      "outcome": "GRANTED",
+      "reason": "granted",
+      "expired_lease": false,
+      "resource": {
+        "holder": "r2",
+        "lease_until_ms": 1300,
+        "occupant": null,
+        "unknown": false
+      },
+      "robots": {
+        "r1": {
+          "navigation_succeeded": false,
+          "base_stopped": false,
+          "base_stamp_ms": null,
+          "arm_requested": false,
+          "arm_terminal": false,
+          "task_verified": false,
+          "arm_stowed": true,
+          "stow_stamp_ms": null,
+          "cancel_requested": false,
+          "cancel_accepted": false,
+          "departure_allowed_at_ms": null,
+          "ready_to_depart": false
+        },
+        "r2": {
+          "navigation_succeeded": false,
+          "base_stopped": false,
+          "base_stamp_ms": null,
+          "arm_requested": false,
+          "arm_terminal": false,
+          "task_verified": false,
+          "arm_stowed": true,
+          "stow_stamp_ms": null,
+          "cancel_requested": false,
+          "cancel_accepted": false,
+          "departure_allowed_at_ms": null,
+          "ready_to_depart": false
+        }
+      }
+    },
+    {
+      "seq": 4,
+      "robot_id": "r2",
+      "kind": "enter",
+      "outcome": "ENTER_CONFIRMED",
+      "reason": "enter_confirmed",
+      "expired_lease": false,
+      "resource": {
+        "holder": "r2",
+        "lease_until_ms": 1300,
+        "occupant": "r2",
+        "unknown": false
+      },
+      "robots": {
+        "r1": {
+          "navigation_succeeded": false,
+          "base_stopped": false,
+          "base_stamp_ms": null,
+          "arm_requested": false,
+          "arm_terminal": false,
+          "task_verified": false,
+          "arm_stowed": true,
+          "stow_stamp_ms": null,
+          "cancel_requested": false,
+          "cancel_accepted": false,
+          "departure_allowed_at_ms": null,
+          "ready_to_depart": false
+        },
+        "r2": {
+          "navigation_succeeded": false,
+          "base_stopped": false,
+          "base_stamp_ms": null,
+          "arm_requested": false,
+          "arm_terminal": false,
+          "task_verified": false,
+          "arm_stowed": true,
+          "stow_stamp_ms": null,
+          "cancel_requested": false,
+          "cancel_accepted": false,
+          "departure_allowed_at_ms": null,
+          "ready_to_depart": false
+        }
+      }
+    },
+    {
+      "seq": 5,
+      "robot_id": "r2",
+      "kind": "exit",
+      "outcome": "EXIT_CONFIRMED",
+      "reason": "exit_confirmed",
+      "expired_lease": false,
+      "resource": {
+        "holder": null,
+        "lease_until_ms": null,
+        "occupant": null,
+        "unknown": false
+      },
+      "robots": {
+        "r1": {
+          "navigation_succeeded": false,
+          "base_stopped": false,
+          "base_stamp_ms": null,
+          "arm_requested": false,
+          "arm_terminal": false,
+          "task_verified": false,
+          "arm_stowed": true,
+          "stow_stamp_ms": null,
+          "cancel_requested": false,
+          "cancel_accepted": false,
+          "departure_allowed_at_ms": null,
+          "ready_to_depart": false
+        },
+        "r2": {
+          "navigation_succeeded": false,
+          "base_stopped": false,
+          "base_stamp_ms": null,
+          "arm_requested": false,
+          "arm_terminal": false,
+          "task_verified": false,
+          "arm_stowed": true,
+          "stow_stamp_ms": null,
+          "cancel_requested": false,
+          "cancel_accepted": false,
+          "departure_allowed_at_ms": null,
+          "ready_to_depart": false
+        }
+      }
+    },
+    {
+      "seq": 6,
+      "robot_id": "r1",
+      "kind": "nav_result",
+      "outcome": "NAVIGATION_RESULT_RECORDED",
+      "reason": "navigation_result_recorded",
+      "expired_lease": false,
+      "resource": {
+        "holder": null,
+        "lease_until_ms": null,
+        "occupant": null,
+        "unknown": false
+      },
+      "robots": {
+        "r1": {
+          "navigation_succeeded": true,
+          "base_stopped": false,
+          "base_stamp_ms": null,
+          "arm_requested": false,
+          "arm_terminal": false,
+          "task_verified": false,
+          "arm_stowed": true,
+          "stow_stamp_ms": null,
+          "cancel_requested": false,
+          "cancel_accepted": false,
+          "departure_allowed_at_ms": null,
+          "ready_to_depart": false
+        },
+        "r2": {
+          "navigation_succeeded": false,
+          "base_stopped": false,
+          "base_stamp_ms": null,
+          "arm_requested": false,
+          "arm_terminal": false,
+          "task_verified": false,
+          "arm_stowed": true,
+          "stow_stamp_ms": null,
+          "cancel_requested": false,
+          "cancel_accepted": false,
+          "departure_allowed_at_ms": null,
+          "ready_to_depart": false
+        }
+      }
+    },
+    {
+      "seq": 7,
+      "robot_id": "r2",
+      "kind": "nav_result",
+      "outcome": "NAVIGATION_RESULT_RECORDED",
+      "reason": "navigation_result_recorded",
+      "expired_lease": false,
+      "resource": {
+        "holder": null,
+        "lease_until_ms": null,
+        "occupant": null,
+        "unknown": false
+      },
+      "robots": {
+        "r1": {
+          "navigation_succeeded": true,
+          "base_stopped": false,
+          "base_stamp_ms": null,
+          "arm_requested": false,
+          "arm_terminal": false,
+          "task_verified": false,
+          "arm_stowed": true,
+          "stow_stamp_ms": null,
+          "cancel_requested": false,
+          "cancel_accepted": false,
+          "departure_allowed_at_ms": null,
+          "ready_to_depart": false
+        },
+        "r2": {
+          "navigation_succeeded": true,
+          "base_stopped": false,
+          "base_stamp_ms": null,
+          "arm_requested": false,
+          "arm_terminal": false,
+          "task_verified": false,
+          "arm_stowed": true,
+          "stow_stamp_ms": null,
+          "cancel_requested": false,
+          "cancel_accepted": false,
+          "departure_allowed_at_ms": null,
+          "ready_to_depart": false
+        }
+      }
+    },
+    {
+      "seq": 8,
+      "robot_id": "r1",
+      "kind": "base_stopped",
+      "outcome": "BASE_STOP_CONFIRMED",
+      "reason": "base_stop_confirmed",
+      "expired_lease": false,
+      "resource": {
+        "holder": null,
+        "lease_until_ms": null,
+        "occupant": null,
+        "unknown": false
+      },
+      "robots": {
+        "r1": {
+          "navigation_succeeded": true,
+          "base_stopped": true,
+          "base_stamp_ms": 800,
+          "arm_requested": false,
+          "arm_terminal": false,
+          "task_verified": false,
+          "arm_stowed": true,
+          "stow_stamp_ms": null,
+          "cancel_requested": false,
+          "cancel_accepted": false,
+          "departure_allowed_at_ms": null,
+          "ready_to_depart": false
+        },
+        "r2": {
+          "navigation_succeeded": true,
+          "base_stopped": false,
+          "base_stamp_ms": null,
+          "arm_requested": false,
+          "arm_terminal": false,
+          "task_verified": false,
+          "arm_stowed": true,
+          "stow_stamp_ms": null,
+          "cancel_requested": false,
+          "cancel_accepted": false,
+          "departure_allowed_at_ms": null,
+          "ready_to_depart": false
+        }
+      }
+    },
+    {
+      "seq": 9,
+      "robot_id": "r2",
+      "kind": "base_stopped",
+      "outcome": "BASE_STOP_CONFIRMED",
+      "reason": "base_stop_confirmed",
+      "expired_lease": false,
+      "resource": {
+        "holder": null,
+        "lease_until_ms": null,
+        "occupant": null,
+        "unknown": false
+      },
+      "robots": {
+        "r1": {
+          "navigation_succeeded": true,
+          "base_stopped": true,
+          "base_stamp_ms": 800,
+          "arm_requested": false,
+          "arm_terminal": false,
+          "task_verified": false,
+          "arm_stowed": true,
+          "stow_stamp_ms": null,
+          "cancel_requested": false,
+          "cancel_accepted": false,
+          "departure_allowed_at_ms": null,
+          "ready_to_depart": false
+        },
+        "r2": {
+          "navigation_succeeded": true,
+          "base_stopped": true,
+          "base_stamp_ms": 900,
+          "arm_requested": false,
+          "arm_terminal": false,
+          "task_verified": false,
+          "arm_stowed": true,
+          "stow_stamp_ms": null,
+          "cancel_requested": false,
+          "cancel_accepted": false,
+          "departure_allowed_at_ms": null,
+          "ready_to_depart": false
+        }
+      }
+    },
+    {
+      "seq": 10,
+      "robot_id": "r1",
+      "kind": "request_arm",
+      "outcome": "ARM_ALLOWED",
+      "reason": "arm_allowed",
+      "expired_lease": false,
+      "resource": {
+        "holder": null,
+        "lease_until_ms": null,
+        "occupant": null,
+        "unknown": false
+      },
+      "robots": {
+        "r1": {
+          "navigation_succeeded": true,
+          "base_stopped": true,
+          "base_stamp_ms": 800,
+          "arm_requested": true,
+          "arm_terminal": false,
+          "task_verified": false,
+          "arm_stowed": false,
+          "stow_stamp_ms": null,
+          "cancel_requested": false,
+          "cancel_accepted": false,
+          "departure_allowed_at_ms": null,
+          "ready_to_depart": false
+        },
+        "r2": {
+          "navigation_succeeded": true,
+          "base_stopped": true,
+          "base_stamp_ms": 900,
+          "arm_requested": false,
+          "arm_terminal": false,
+          "task_verified": false,
+          "arm_stowed": true,
+          "stow_stamp_ms": null,
+          "cancel_requested": false,
+          "cancel_accepted": false,
+          "departure_allowed_at_ms": null,
+          "ready_to_depart": false
+        }
+      }
+    },
+    {
+      "seq": 11,
+      "robot_id": "r2",
+      "kind": "request_arm",
+      "outcome": "ARM_ALLOWED",
+      "reason": "arm_allowed",
+      "expired_lease": false,
+      "resource": {
+        "holder": null,
+        "lease_until_ms": null,
+        "occupant": null,
+        "unknown": false
+      },
+      "robots": {
+        "r1": {
+          "navigation_succeeded": true,
+          "base_stopped": true,
+          "base_stamp_ms": 800,
+          "arm_requested": true,
+          "arm_terminal": false,
+          "task_verified": false,
+          "arm_stowed": false,
+          "stow_stamp_ms": null,
+          "cancel_requested": false,
+          "cancel_accepted": false,
+          "departure_allowed_at_ms": null,
+          "ready_to_depart": false
+        },
+        "r2": {
+          "navigation_succeeded": true,
+          "base_stopped": true,
+          "base_stamp_ms": 900,
+          "arm_requested": true,
+          "arm_terminal": false,
+          "task_verified": false,
+          "arm_stowed": false,
+          "stow_stamp_ms": null,
+          "cancel_requested": false,
+          "cancel_accepted": false,
+          "departure_allowed_at_ms": null,
+          "ready_to_depart": false
+        }
+      }
+    },
+    {
+      "seq": 12,
+      "robot_id": "r1",
+      "kind": "arm_result",
+      "outcome": "TASK_CONFIRMED",
+      "reason": "task_confirmed",
+      "expired_lease": false,
+      "resource": {
+        "holder": null,
+        "lease_until_ms": null,
+        "occupant": null,
+        "unknown": false
+      },
+      "robots": {
+        "r1": {
+          "navigation_succeeded": true,
+          "base_stopped": true,
+          "base_stamp_ms": 800,
+          "arm_requested": true,
+          "arm_terminal": true,
+          "task_verified": true,
+          "arm_stowed": false,
+          "stow_stamp_ms": null,
+          "cancel_requested": false,
+          "cancel_accepted": false,
+          "departure_allowed_at_ms": null,
+          "ready_to_depart": false
+        },
+        "r2": {
+          "navigation_succeeded": true,
+          "base_stopped": true,
+          "base_stamp_ms": 900,
+          "arm_requested": true,
+          "arm_terminal": false,
+          "task_verified": false,
+          "arm_stowed": false,
+          "stow_stamp_ms": null,
+          "cancel_requested": false,
+          "cancel_accepted": false,
+          "departure_allowed_at_ms": null,
+          "ready_to_depart": false
+        }
+      }
+    },
+    {
+      "seq": 13,
+      "robot_id": "r2",
+      "kind": "arm_result",
+      "outcome": "TASK_CONFIRMED",
+      "reason": "task_confirmed",
+      "expired_lease": false,
+      "resource": {
+        "holder": null,
+        "lease_until_ms": null,
+        "occupant": null,
+        "unknown": false
+      },
+      "robots": {
+        "r1": {
+          "navigation_succeeded": true,
+          "base_stopped": true,
+          "base_stamp_ms": 800,
+          "arm_requested": true,
+          "arm_terminal": true,
+          "task_verified": true,
+          "arm_stowed": false,
+          "stow_stamp_ms": null,
+          "cancel_requested": false,
+          "cancel_accepted": false,
+          "departure_allowed_at_ms": null,
+          "ready_to_depart": false
+        },
+        "r2": {
+          "navigation_succeeded": true,
+          "base_stopped": true,
+          "base_stamp_ms": 900,
+          "arm_requested": true,
+          "arm_terminal": true,
+          "task_verified": true,
+          "arm_stowed": false,
+          "stow_stamp_ms": null,
+          "cancel_requested": false,
+          "cancel_accepted": false,
+          "departure_allowed_at_ms": null,
+          "ready_to_depart": false
+        }
+      }
+    },
+    {
+      "seq": 14,
+      "robot_id": "r1",
+      "kind": "stowed",
+      "outcome": "STOW_CONFIRMED",
+      "reason": "stow_confirmed",
+      "expired_lease": false,
+      "resource": {
+        "holder": null,
+        "lease_until_ms": null,
+        "occupant": null,
+        "unknown": false
+      },
+      "robots": {
+        "r1": {
+          "navigation_succeeded": true,
+          "base_stopped": true,
+          "base_stamp_ms": 800,
+          "arm_requested": true,
+          "arm_terminal": true,
+          "task_verified": true,
+          "arm_stowed": true,
+          "stow_stamp_ms": 1400,
+          "cancel_requested": false,
+          "cancel_accepted": false,
+          "departure_allowed_at_ms": null,
+          "ready_to_depart": false
+        },
+        "r2": {
+          "navigation_succeeded": true,
+          "base_stopped": true,
+          "base_stamp_ms": 900,
+          "arm_requested": true,
+          "arm_terminal": true,
+          "task_verified": true,
+          "arm_stowed": false,
+          "stow_stamp_ms": null,
+          "cancel_requested": false,
+          "cancel_accepted": false,
+          "departure_allowed_at_ms": null,
+          "ready_to_depart": false
+        }
+      }
+    },
+    {
+      "seq": 15,
+      "robot_id": "r2",
+      "kind": "stowed",
+      "outcome": "STOW_CONFIRMED",
+      "reason": "stow_confirmed",
+      "expired_lease": false,
+      "resource": {
+        "holder": null,
+        "lease_until_ms": null,
+        "occupant": null,
+        "unknown": false
+      },
+      "robots": {
+        "r1": {
+          "navigation_succeeded": true,
+          "base_stopped": true,
+          "base_stamp_ms": 800,
+          "arm_requested": true,
+          "arm_terminal": true,
+          "task_verified": true,
+          "arm_stowed": true,
+          "stow_stamp_ms": 1400,
+          "cancel_requested": false,
+          "cancel_accepted": false,
+          "departure_allowed_at_ms": null,
+          "ready_to_depart": false
+        },
+        "r2": {
+          "navigation_succeeded": true,
+          "base_stopped": true,
+          "base_stamp_ms": 900,
+          "arm_requested": true,
+          "arm_terminal": true,
+          "task_verified": true,
+          "arm_stowed": true,
+          "stow_stamp_ms": 1500,
+          "cancel_requested": false,
+          "cancel_accepted": false,
+          "departure_allowed_at_ms": null,
+          "ready_to_depart": false
+        }
+      }
+    },
+    {
+      "seq": 16,
+      "robot_id": "r1",
+      "kind": "request_depart",
+      "outcome": "DEPART_ALLOWED",
+      "reason": "depart_allowed",
+      "expired_lease": false,
+      "resource": {
+        "holder": null,
+        "lease_until_ms": null,
+        "occupant": null,
+        "unknown": false
+      },
+      "robots": {
+        "r1": {
+          "navigation_succeeded": true,
+          "base_stopped": true,
+          "base_stamp_ms": 800,
+          "arm_requested": true,
+          "arm_terminal": true,
+          "task_verified": true,
+          "arm_stowed": true,
+          "stow_stamp_ms": 1400,
+          "cancel_requested": false,
+          "cancel_accepted": false,
+          "departure_allowed_at_ms": 1600,
+          "ready_to_depart": true
+        },
+        "r2": {
+          "navigation_succeeded": true,
+          "base_stopped": true,
+          "base_stamp_ms": 900,
+          "arm_requested": true,
+          "arm_terminal": true,
+          "task_verified": true,
+          "arm_stowed": true,
+          "stow_stamp_ms": 1500,
+          "cancel_requested": false,
+          "cancel_accepted": false,
+          "departure_allowed_at_ms": null,
+          "ready_to_depart": false
+        }
+      }
+    },
+    {
+      "seq": 17,
+      "robot_id": "r2",
+      "kind": "request_depart",
+      "outcome": "DEPART_ALLOWED",
+      "reason": "depart_allowed",
+      "expired_lease": false,
+      "resource": {
+        "holder": null,
+        "lease_until_ms": null,
+        "occupant": null,
+        "unknown": false
+      },
+      "robots": {
+        "r1": {
+          "navigation_succeeded": true,
+          "base_stopped": true,
+          "base_stamp_ms": 800,
+          "arm_requested": true,
+          "arm_terminal": true,
+          "task_verified": true,
+          "arm_stowed": true,
+          "stow_stamp_ms": 1400,
+          "cancel_requested": false,
+          "cancel_accepted": false,
+          "departure_allowed_at_ms": 1600,
+          "ready_to_depart": true
+        },
+        "r2": {
+          "navigation_succeeded": true,
+          "base_stopped": true,
+          "base_stamp_ms": 900,
+          "arm_requested": true,
+          "arm_terminal": true,
+          "task_verified": true,
+          "arm_stowed": true,
+          "stow_stamp_ms": 1500,
+          "cancel_requested": false,
+          "cancel_accepted": false,
+          "departure_allowed_at_ms": 1700,
+          "ready_to_depart": true
+        }
+      }
+    }
+  ],
+  "events": [
+    {
+      "seq": 0,
+      "robot_id": "r1",
+      "namespace": "/r1",
+      "base_frame": "r1/base_link",
+      "job_id": "job-r1-v1",
+      "now_ms": 0,
+      "stamp_ms": 0,
+      "clock_id": "ClockA",
+      "world_revision": "world-shared-1",
+      "map_revision": "map-shared-1",
+      "resource_id": "corridor-1",
+      "kind": "reserve",
+      "payload": {}
+    },
+    {
+      "seq": 1,
+      "robot_id": "r1",
+      "namespace": "/r1",
+      "base_frame": "r1/base_link",
+      "job_id": "job-r1-v1",
+      "now_ms": 100,
+      "stamp_ms": 100,
+      "clock_id": "ClockA",
+      "world_revision": "world-shared-1",
+      "map_revision": "map-shared-1",
+      "resource_id": "corridor-1",
+      "kind": "enter",
+      "payload": {}
+    },
+    {
+      "seq": 2,
+      "robot_id": "r1",
+      "namespace": "/r1",
+      "base_frame": "r1/base_link",
+      "job_id": "job-r1-v1",
+      "now_ms": 200,
+      "stamp_ms": 200,
+      "clock_id": "ClockA",
+      "world_revision": "world-shared-1",
+      "map_revision": "map-shared-1",
+      "resource_id": "corridor-1",
+      "kind": "exit",
+      "payload": {}
+    },
+    {
+      "seq": 3,
+      "robot_id": "r2",
+      "namespace": "/r2",
+      "base_frame": "r2/base_link",
+      "job_id": "job-r2-v1",
+      "now_ms": 300,
+      "stamp_ms": 300,
+      "clock_id": "ClockA",
+      "world_revision": "world-shared-1",
+      "map_revision": "map-shared-1",
+      "resource_id": "corridor-1",
+      "kind": "reserve",
+      "payload": {}
+    },
+    {
+      "seq": 4,
+      "robot_id": "r2",
+      "namespace": "/r2",
+      "base_frame": "r2/base_link",
+      "job_id": "job-r2-v1",
+      "now_ms": 400,
+      "stamp_ms": 400,
+      "clock_id": "ClockA",
+      "world_revision": "world-shared-1",
+      "map_revision": "map-shared-1",
+      "resource_id": "corridor-1",
+      "kind": "enter",
+      "payload": {}
+    },
+    {
+      "seq": 5,
+      "robot_id": "r2",
+      "namespace": "/r2",
+      "base_frame": "r2/base_link",
+      "job_id": "job-r2-v1",
+      "now_ms": 500,
+      "stamp_ms": 500,
+      "clock_id": "ClockA",
+      "world_revision": "world-shared-1",
+      "map_revision": "map-shared-1",
+      "resource_id": "corridor-1",
+      "kind": "exit",
+      "payload": {}
+    },
+    {
+      "seq": 6,
+      "robot_id": "r1",
+      "namespace": "/r1",
+      "base_frame": "r1/base_link",
+      "job_id": "job-r1-v1",
+      "now_ms": 600,
+      "stamp_ms": 600,
+      "clock_id": "ClockA",
+      "world_revision": "world-shared-1",
+      "map_revision": "map-shared-1",
+      "resource_id": "corridor-1",
+      "kind": "nav_result",
+      "payload": {
+        "goal_id": "nav-r1-1",
+        "status": "SUCCEEDED"
+      }
+    },
+    {
+      "seq": 7,
+      "robot_id": "r2",
+      "namespace": "/r2",
+      "base_frame": "r2/base_link",
+      "job_id": "job-r2-v1",
+      "now_ms": 700,
+      "stamp_ms": 700,
+      "clock_id": "ClockA",
+      "world_revision": "world-shared-1",
+      "map_revision": "map-shared-1",
+      "resource_id": "corridor-1",
+      "kind": "nav_result",
+      "payload": {
+        "goal_id": "nav-r2-1",
+        "status": "SUCCEEDED"
+      }
+    },
+    {
+      "seq": 8,
+      "robot_id": "r1",
+      "namespace": "/r1",
+      "base_frame": "r1/base_link",
+      "job_id": "job-r1-v1",
+      "now_ms": 800,
+      "stamp_ms": 800,
+      "clock_id": "ClockA",
+      "world_revision": "world-shared-1",
+      "map_revision": "map-shared-1",
+      "resource_id": "corridor-1",
+      "kind": "base_stopped",
+      "payload": {
+        "stationary": true
+      }
+    },
+    {
+      "seq": 9,
+      "robot_id": "r2",
+      "namespace": "/r2",
+      "base_frame": "r2/base_link",
+      "job_id": "job-r2-v1",
+      "now_ms": 900,
+      "stamp_ms": 900,
+      "clock_id": "ClockA",
+      "world_revision": "world-shared-1",
+      "map_revision": "map-shared-1",
+      "resource_id": "corridor-1",
+      "kind": "base_stopped",
+      "payload": {
+        "stationary": true
+      }
+    },
+    {
+      "seq": 10,
+      "robot_id": "r1",
+      "namespace": "/r1",
+      "base_frame": "r1/base_link",
+      "job_id": "job-r1-v1",
+      "now_ms": 1000,
+      "stamp_ms": 1000,
+      "clock_id": "ClockA",
+      "world_revision": "world-shared-1",
+      "map_revision": "map-shared-1",
+      "resource_id": "corridor-1",
+      "kind": "request_arm",
+      "payload": {
+        "goal_id": "arm-r1-1"
+      }
+    },
+    {
+      "seq": 11,
+      "robot_id": "r2",
+      "namespace": "/r2",
+      "base_frame": "r2/base_link",
+      "job_id": "job-r2-v1",
+      "now_ms": 1100,
+      "stamp_ms": 1100,
+      "clock_id": "ClockA",
+      "world_revision": "world-shared-1",
+      "map_revision": "map-shared-1",
+      "resource_id": "corridor-1",
+      "kind": "request_arm",
+      "payload": {
+        "goal_id": "arm-r2-1"
+      }
+    },
+    {
+      "seq": 12,
+      "robot_id": "r1",
+      "namespace": "/r1",
+      "base_frame": "r1/base_link",
+      "job_id": "job-r1-v1",
+      "now_ms": 1200,
+      "stamp_ms": 1200,
+      "clock_id": "ClockA",
+      "world_revision": "world-shared-1",
+      "map_revision": "map-shared-1",
+      "resource_id": "corridor-1",
+      "kind": "arm_result",
+      "payload": {
+        "goal_id": "arm-r1-1",
+        "status": "SUCCEEDED",
+        "object_verified": true
+      }
+    },
+    {
+      "seq": 13,
+      "robot_id": "r2",
+      "namespace": "/r2",
+      "base_frame": "r2/base_link",
+      "job_id": "job-r2-v1",
+      "now_ms": 1300,
+      "stamp_ms": 1300,
+      "clock_id": "ClockA",
+      "world_revision": "world-shared-1",
+      "map_revision": "map-shared-1",
+      "resource_id": "corridor-1",
+      "kind": "arm_result",
+      "payload": {
+        "goal_id": "arm-r2-1",
+        "status": "SUCCEEDED",
+        "object_verified": true
+      }
+    },
+    {
+      "seq": 14,
+      "robot_id": "r1",
+      "namespace": "/r1",
+      "base_frame": "r1/base_link",
+      "job_id": "job-r1-v1",
+      "now_ms": 1400,
+      "stamp_ms": 1400,
+      "clock_id": "ClockA",
+      "world_revision": "world-shared-1",
+      "map_revision": "map-shared-1",
+      "resource_id": "corridor-1",
+      "kind": "stowed",
+      "payload": {
+        "goal_id": "arm-r1-1",
+        "verified": true
+      }
+    },
+    {
+      "seq": 15,
+      "robot_id": "r2",
+      "namespace": "/r2",
+      "base_frame": "r2/base_link",
+      "job_id": "job-r2-v1",
+      "now_ms": 1500,
+      "stamp_ms": 1500,
+      "clock_id": "ClockA",
+      "world_revision": "world-shared-1",
+      "map_revision": "map-shared-1",
+      "resource_id": "corridor-1",
+      "kind": "stowed",
+      "payload": {
+        "goal_id": "arm-r2-1",
+        "verified": true
+      }
+    },
+    {
+      "seq": 16,
+      "robot_id": "r1",
+      "namespace": "/r1",
+      "base_frame": "r1/base_link",
+      "job_id": "job-r1-v1",
+      "now_ms": 1600,
+      "stamp_ms": 1600,
+      "clock_id": "ClockA",
+      "world_revision": "world-shared-1",
+      "map_revision": "map-shared-1",
+      "resource_id": "corridor-1",
+      "kind": "request_depart",
+      "payload": {}
+    },
+    {
+      "seq": 17,
+      "robot_id": "r2",
+      "namespace": "/r2",
+      "base_frame": "r2/base_link",
+      "job_id": "job-r2-v1",
+      "now_ms": 1700,
+      "stamp_ms": 1700,
+      "clock_id": "ClockA",
+      "world_revision": "world-shared-1",
+      "map_revision": "map-shared-1",
+      "resource_id": "corridor-1",
+      "kind": "request_depart",
+      "payload": {}
+    }
+  ],
+  "resource": {
+    "holder": null,
+    "lease_until_ms": null,
+    "occupant": null,
+    "unknown": false
+  },
+  "robots": {
+    "r1": {
+      "navigation_succeeded": true,
+      "base_stopped": true,
+      "base_stamp_ms": 800,
+      "arm_requested": true,
+      "arm_terminal": true,
+      "task_verified": true,
+      "arm_stowed": true,
+      "stow_stamp_ms": 1400,
+      "cancel_requested": false,
+      "cancel_accepted": false,
+      "departure_allowed_at_ms": 1600,
+      "ready_to_depart": true
+    },
+    "r2": {
+      "navigation_succeeded": true,
+      "base_stopped": true,
+      "base_stamp_ms": 900,
+      "arm_requested": true,
+      "arm_terminal": true,
+      "task_verified": true,
+      "arm_stowed": true,
+      "stow_stamp_ms": 1500,
+      "cancel_requested": false,
+      "cancel_accepted": false,
+      "departure_allowed_at_ms": 1700,
+      "ready_to_depart": true
+    }
+  }
+}
