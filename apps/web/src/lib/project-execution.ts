@@ -24,4 +24,15 @@ export const projectExecutionGuides: Record<string, ExecutionGuide> = {
   ],
   aiLinks: [{href:"/study/unit-m09-04-a/?track=track-main",title:"프레임·시계 단위의 AI 강사"},{href:"/study/unit-m18-04-a/?track=track-main",title:"waypoint·작업 상태 단위의 AI 강사"}],
  },
+ P3: {
+  description: "두 로봇의 합성 사건을 재생해 예약·실제 점유와 주행·정지·작업·수납·출발 준비를 구분합니다. 실제 ROS/fleet·물리·실물 출발이나 안전 실증은 포함하지 않습니다.",
+  commands: "python --version\npython runner.py --scenario nominal --output nominal.json\npython runner.py --scenario lease-expiry --output lease.json\npython runner.py --scenario cancel --output cancel.json\npython runner.py --scenario no-stow --output no-stow.json\npython runner.py --scenario stale --output stale.json\npython runner.py --scenario wrong-identity --output wrong-identity.json\npython runner.py --scenario old-request --output old-request.json",
+  evidence: [
+   {id:"inputs",title:"환경·식별자와 원사건",prompt:"실행 명령·환경·source/config/input SHA와 robot/namespace/frame/job/goal 및 처리/미처리 사건 수를 적으세요.",reference:"고정 사건 재생이며 원사건 전체와 실제 처리한 접두열을 구분합니다. INVALID 뒤 미처리 사건을 실행한 것으로 쓰지 않고 reference를 자신의 실행으로 제출하지 않습니다."},
+   {id:"occupancy",title:"예약 만료와 실제 점유",prompt:"lease-expiry의 1000·1100·1200ms에서 예약자·점유자·r2 판정을 비교하세요.",reference:"1000ms에 예약만 만료되어 r1 점유가 남고 WAIT_OCCUPIED입니다. 1100ms 일치하는 r1 퇴장 관측 뒤 1200ms에 r2가 GRANTED입니다. 만료는 실제 퇴장 증거가 아닙니다."},
+   {id:"failures",title:"취소·작업·수납과 신선도",prompt:"cancel/no-stow와 무효 사례 하나의 마지막 판정·부분성과·부족한 관측을 적고 사건 TTL과 상태 TTL을 구분하세요.",reference:"취소 ack는 정지/최종 종료/수납이 아니며 DENIED_CANCEL_PENDING입니다. 작업 확인만 있고 수납이 없으면 DENIED_NOT_STOWED입니다. 사건 나이 100ms, 저장 정지/수납 나이 1000ms까지 유효하며 그 다음 ms에는 새 관측이 필요합니다."},
+   {id:"scope",title:"현재 준비·과거 허가·실물 미확인",prompt:"nominal의 두 로봇 준비와 실제 출발을 구분하고, 과거 허가 뒤 정지 관측이 만료되는 반례와 다음 확인을 적으세요.",reference:"18사건과 DEPART_ALLOWED 2회는 출발 준비 판정입니다. 과거 departure_allowed_at_ms가 있어도 현재 관측이 오래되면 ready_to_depart=false입니다. 실제 출발·도착·물체·충돌 안전은 확인하지 않았습니다."},
+  ],
+  aiLinks: [{href:"/study/unit-m18-05-a/?track=track-main",title:"예약·점유 단위의 AI 강사"},{href:"/study/unit-m19-06-a/?track=track-main",title:"주행·팔 전환 단위의 AI 강사"}],
+ },
 };
