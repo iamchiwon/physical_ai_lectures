@@ -264,6 +264,8 @@ V-HACD 계열 분해는 오목한 메시를 여러 convex hull로 바꾼다. hul
 1. **Broad phase**: AABB 등 싼 표현으로 충돌 가능성이 있는 pair를 찾는다.
 2. **Narrow phase**: 실제 geometry를 사용해 접촉점, 법선, penetration을 계산한다.
 
+충돌 후보쌍과 제외 규칙은 [M25.03 Collision Group·개별 제외·디버그](/study/unit-m25-03-a/)에서 구체적으로 비교한다. 그룹 차단과 개별 제외를 각각 확인하고, 필터 통과를 실제 접촉이나 보고 수집 완료로 읽지 않는다. 렌더와 물리 디버그 자료는 tick·시각·프레임을 맞추어 비교한다.
+
 scene에 collider가 많으면 broad phase pair 수가 증가한다. 로봇 링크끼리 절대 접촉할 필요가 없는 조합은 collision filtering으로 제외한다. 하지만 실제 self-collision 가능성이 있는 pair까지 제거하면 안전성이 과대평가된다.
 
 ## 2.5 Tunneling과 CCD
