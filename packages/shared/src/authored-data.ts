@@ -1999,9 +1999,9 @@ export const authoredMetadata: AuthoredMetadata[] = [
       "재관측/감독·미상/재개와 조건별 성공·실패/원본 근거를 포함한 프로젝트 리포트를 작성한다."
     ],
     "prerequisiteNote": "M06의 이동 로봇/프레임, M22의 언어 감독과 M30의 평가를 연결한다. 경로/궤적·지도/위치와 planner/controller 역할은 본문에서 보충한다. M15.06의 오차 평가, M17.02/.06의 경로·시간 궤적과 M18.03/.04의 도착·작업 상태를 적용해 과제 근거를 확장한다. 기본은 가상 지도/사건표이며 실제 Nav2/주행/배달을 하지 않는다.",
-    "sha256": "a00ac8e7b3cce38d03decc223ccef95df4f097d1879550b4a018136ef951d631",
+    "sha256": "438a20dd51c36c3ee3a272f042cc2080a7f8dcc9626c2548cdf49a9259e123f3",
     "reviewed": true,
-    "evidenceRef": "doc/v2/work_items/M32.01.md"
+    "evidenceRef": "doc/v2/work_items/K01-01.md"
   },
   {
     "topicId": "M32.02",
@@ -2013,9 +2013,9 @@ export const authoredMetadata: AuthoredMetadata[] = [
       "조건별 성공/개입·미상과 원본/버전·실패 가설을 연결해 프로젝트 평가/개선 리포트를 작성한다."
     ],
     "prerequisiteNote": "M06 기구학, M12/M14 영상/보정, M19 파지와 M21 정책·M30 평가를 연결한다. 접근 경로/충돌·단계별 계획 용어를 본문에서 보충한다. 기본은 합성 입력의 판단 프로젝트이며 SO-101/산업용 팔·모델 학습/추론 실행을 요구하지 않는다.",
-    "sha256": "357eefa6eeadd0806f80f787b89539e9009bf2c092fa2a26143d624b71ceb6f4",
+    "sha256": "b41816883d9ec666428aca1a5311d4ea90491d6a8ac0aba4264003d581aa88fb",
     "reviewed": true,
-    "evidenceRef": "doc/v2/work_items/M32.02.md"
+    "evidenceRef": "doc/v2/work_items/K01-01.md"
   },
   {
     "topicId": "M32.03",
@@ -2027,9 +2027,9 @@ export const authoredMetadata: AuthoredMetadata[] = [
       "전체 제약/단계별 미상·감독/실패/비교 평가의 근거를 포함한 프로젝트 리포트를 작성한다."
     ],
     "prerequisiteNote": "M06의 이동/팔 기구학, M19.06의 이동 조작과 M30의 감독/평가를 연결한다. 전체 configuration·결합 제약과 순차/동시 역할은 본문에서 보충한다. 제공한 양팔 수치 활동은 본문 입력으로 수행하며 양팔 정책·실행 확장을 선택하면 M21.05를 추가로 확인한다. M17.01의 충돌과 M18.06의 주행-조작 전환 계약을 함께 읽는다. 기본은 합성 좌표/상태표이며 장비/정책 실행을 하지 않는다.",
-    "sha256": "f2aa2cf386517dffd0ad3d33962d74990c60cb7ce9367d4f1c3ecab5e06cdd46",
+    "sha256": "75009cc6767c20e13f2d2de9766358a5cf8a68306bdbd42c0285d9b09b5ea69c",
     "reviewed": true,
-    "evidenceRef": "doc/v2/work_items/M32.03.md"
+    "evidenceRef": "doc/v2/work_items/K01-01.md"
   },
   {
     "topicId": "M32.05",
@@ -2041,9 +2041,9 @@ export const authoredMetadata: AuthoredMetadata[] = [
       "실패/미상·수정/재검증과 단계/환경·자료/버전을 보존한 재현 패키지/리포트를 설계한다."
     ],
     "prerequisiteNote": "M27/M30의 시간/버전·감독/평가와 M32.01~04의 프로젝트를 연결한다. 요구 ID/추적 행렬과 검증/목적 적합성의 차이를 본문에서 보충한다. 기본은 주어진 가상 기록의 문서/판정이며 실제 장비 시험·패키지 배포/출판은 하지 않는다.",
-    "sha256": "4a4bfcee6769b414c4df8df3dfa1836a453525b91cb93b00c5ff5825391bca1e",
+    "sha256": "973616239668da74dbb44c61747f7af5a521093c3a584721dd92d82e6a2da87e",
     "reviewed": true,
-    "evidenceRef": "doc/v2/work_items/M32.05.md"
+    "evidenceRef": "doc/v2/work_items/K01-01.md"
   },
   {
     "topicId": "M32.06",
@@ -2055,9 +2055,9 @@ export const authoredMetadata: AuthoredMetadata[] = [
       "근거 있는 동료 검토/결함·수정/재검증과 우선순위·종료 기준을 갖춘 개선 계획을 작성한다."
     ],
     "prerequisiteNote": "M30의 단계/평가와 M32.05의 요구/원본·실패/재현 패키지를 사용한다. 루브릭/가중·차단 결함과 자기/동료 읽기·독립 실행의 차이를 본문에서 보충한다. 기본은 가상 발표/검토 기록의 문서 활동이며 실제 메시지 발송·장비/외부 배포·출판은 하지 않는다.",
-    "sha256": "2da915f5956c2d1df4ca760273d711e4b52e8cef7c14b0fd7b6a5ee0c8acab2e",
+    "sha256": "77ffe2d34499ee04a6974934857c1d627c854d3d15cf613614aa6c8b89c12508",
     "reviewed": true,
-    "evidenceRef": "doc/v2/work_items/M32.06.md"
+    "evidenceRef": "doc/v2/work_items/K01-01.md"
   },
   {
     "topicId": "M07.04",
@@ -2306,6 +2306,14 @@ export const legacyRevisions: LegacyRevision[] = [
     "approved": true,
     "reason": "E4: 교육용 제어 예제의 finite·시각·범위·오류 후 복귀 계약 보완",
     "evidenceRef": "doc/v2/work_items/E4-review.md"
+  },
+  {
+    "source": "ebook/book/06_sim2real_deployment/exercises/project_rubric.md",
+    "baselineSha256": "71faf03d27a28733dd30e4cc508cde80ce946f3e79a04cd23e39fc4927583d27",
+    "sha256": "17f06d4212daf177006618462a95f0c833a6c0de73ebc88e974961b68c78d6ff",
+    "approved": true,
+    "reason": "K01-01: 기본 선택 캡스톤/공통 산출물·문서 평가와 기존 선택 실물 루브릭의 적용 범위 구분",
+    "evidenceRef": "doc/v2/work_items/K01-01.md"
   },
   {
     "source": "apps/web/src/components/virtual-lab.tsx",
@@ -2776,25 +2784,25 @@ export const legacyExerciseReferences: DerivedReference[] = [
   {
     "activityId": "legacy:exercise:06_sim2real_deployment--chapter-16-report",
     "baselineSha256": "c627a6b9ff327734578dfe8f67ed846c3e294fcea5c871cf551b08d4b8a4df2d",
-    "sha256": "831bf3e144404c43cc5b0ed2196fc5f6e08436921850b7e7e31c1295a60040db",
+    "sha256": "48d46147143ba9fe365a2ea762a135b2785568eedaa66e3ebd7a9e6c4f6a4de4",
     "approved": true
   },
   {
     "activityId": "legacy:exercise:06_sim2real_deployment--labs--lab_6_1_diagnostics-1-report",
     "baselineSha256": "c627a6b9ff327734578dfe8f67ed846c3e294fcea5c871cf551b08d4b8a4df2d",
-    "sha256": "831bf3e144404c43cc5b0ed2196fc5f6e08436921850b7e7e31c1295a60040db",
+    "sha256": "48d46147143ba9fe365a2ea762a135b2785568eedaa66e3ebd7a9e6c4f6a4de4",
     "approved": true
   },
   {
     "activityId": "legacy:exercise:06_sim2real_deployment--labs--lab_6_2_supervisor-1-report",
     "baselineSha256": "c627a6b9ff327734578dfe8f67ed846c3e294fcea5c871cf551b08d4b8a4df2d",
-    "sha256": "831bf3e144404c43cc5b0ed2196fc5f6e08436921850b7e7e31c1295a60040db",
+    "sha256": "48d46147143ba9fe365a2ea762a135b2785568eedaa66e3ebd7a9e6c4f6a4de4",
     "approved": true
   },
   {
     "activityId": "legacy:exercise:06_sim2real_deployment--labs--lab_6_3_ros2_guard-1-report",
     "baselineSha256": "c627a6b9ff327734578dfe8f67ed846c3e294fcea5c871cf551b08d4b8a4df2d",
-    "sha256": "831bf3e144404c43cc5b0ed2196fc5f6e08436921850b7e7e31c1295a60040db",
+    "sha256": "48d46147143ba9fe365a2ea762a135b2785568eedaa66e3ebd7a9e6c4f6a4de4",
     "approved": true
   }
 ];

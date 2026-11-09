@@ -112,6 +112,13 @@
       "sha256": "1bcf6aca1fad053dd77c2a4de567bf61796252234d8b854d16e38ad17160672a",
       "reason": "E4: 교육용 제어 예제의 finite·시각·범위·오류 후 복귀 계약 보완",
       "evidenceRef": "doc/v2/work_items/E4-review.md"
+    },
+    {
+      "source": "ebook/book/06_sim2real_deployment/exercises/project_rubric.md",
+      "baselineSha256": "71faf03d27a28733dd30e4cc508cde80ce946f3e79a04cd23e39fc4927583d27",
+      "sha256": "17f06d4212daf177006618462a95f0c833a6c0de73ebc88e974961b68c78d6ff",
+      "reason": "K01-01: 기본 선택 캡스톤/공통 산출물·문서 평가와 기존 선택 실물 루브릭의 적용 범위 구분",
+      "evidenceRef": "doc/v2/work_items/K01-01.md"
     }
   ]
 }
