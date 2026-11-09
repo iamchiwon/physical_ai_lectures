@@ -2310,10 +2310,10 @@ export const legacyRevisions: LegacyRevision[] = [
   {
     "source": "ebook/book/06_sim2real_deployment/exercises/project_rubric.md",
     "baselineSha256": "71faf03d27a28733dd30e4cc508cde80ce946f3e79a04cd23e39fc4927583d27",
-    "sha256": "17f06d4212daf177006618462a95f0c833a6c0de73ebc88e974961b68c78d6ff",
+    "sha256": "782901eddf2a6cbdfdce5830e484f9e16619376aa28fb3a2e324d212633d89f2",
     "approved": true,
-    "reason": "K01-01: 기본 선택 캡스톤/공통 산출물·문서 평가와 기존 선택 실물 루브릭의 적용 범위 구분",
-    "evidenceRef": "doc/v2/work_items/K01-01.md"
+    "reason": "K01-01: 기본 선택 캡스톤/공통 산출물·문서 평가와 기존 선택 실물 루브릭의 적용 범위 구분 / K01-02: 패키지별 재사용 경계·재현/제출 양식 보충",
+    "evidenceRef": "doc/v2/work_items/K01-02.md"
   },
   {
     "source": "apps/web/src/components/virtual-lab.tsx",
@@ -2784,25 +2784,25 @@ export const legacyExerciseReferences: DerivedReference[] = [
   {
     "activityId": "legacy:exercise:06_sim2real_deployment--chapter-16-report",
     "baselineSha256": "c627a6b9ff327734578dfe8f67ed846c3e294fcea5c871cf551b08d4b8a4df2d",
-    "sha256": "48d46147143ba9fe365a2ea762a135b2785568eedaa66e3ebd7a9e6c4f6a4de4",
+    "sha256": "e8deca85661cbe084fc3e3fa9d4fa512981f9279b4e552b4f0cf7327e9d06c41",
     "approved": true
   },
   {
     "activityId": "legacy:exercise:06_sim2real_deployment--labs--lab_6_1_diagnostics-1-report",
     "baselineSha256": "c627a6b9ff327734578dfe8f67ed846c3e294fcea5c871cf551b08d4b8a4df2d",
-    "sha256": "48d46147143ba9fe365a2ea762a135b2785568eedaa66e3ebd7a9e6c4f6a4de4",
+    "sha256": "e8deca85661cbe084fc3e3fa9d4fa512981f9279b4e552b4f0cf7327e9d06c41",
     "approved": true
   },
   {
     "activityId": "legacy:exercise:06_sim2real_deployment--labs--lab_6_2_supervisor-1-report",
     "baselineSha256": "c627a6b9ff327734578dfe8f67ed846c3e294fcea5c871cf551b08d4b8a4df2d",
-    "sha256": "48d46147143ba9fe365a2ea762a135b2785568eedaa66e3ebd7a9e6c4f6a4de4",
+    "sha256": "e8deca85661cbe084fc3e3fa9d4fa512981f9279b4e552b4f0cf7327e9d06c41",
     "approved": true
   },
   {
     "activityId": "legacy:exercise:06_sim2real_deployment--labs--lab_6_3_ros2_guard-1-report",
     "baselineSha256": "c627a6b9ff327734578dfe8f67ed846c3e294fcea5c871cf551b08d4b8a4df2d",
-    "sha256": "48d46147143ba9fe365a2ea762a135b2785568eedaa66e3ebd7a9e6c4f6a4de4",
+    "sha256": "e8deca85661cbe084fc3e3fa9d4fa512981f9279b4e552b4f0cf7327e9d06c41",
     "approved": true
   }
 ];
