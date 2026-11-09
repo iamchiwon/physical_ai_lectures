@@ -302,6 +302,8 @@ LeRobot의 공식 Isaac Teleop 예제도 기본적으로 Follower를 Leader의 �
 
 ## 3.5 안전한 텔레오퍼레이션 루프
 
+[M25.06 키보드·도구 접촉·상태/행동 기록](/study/unit-m25-06-a/)에서 활성 입력/신선도와 제한 후 속도 전송·접촉 관측을 구분한다. 아래 관절 위치 HOLD와 속도0은 서로 다른 인터페이스이며 어느 쪽도 실제 정지/힘0의 관측을 자동 생성하지 않는다.
+
 ![그림 3-3. 안전 계층을 포함한 Leader-Follower 제어 루프](images/safe_teleop_pipeline.svg)
 
 ### 3.5.1 안전 계층
