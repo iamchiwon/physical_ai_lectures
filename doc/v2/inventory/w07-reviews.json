@@ -8,6 +8,10 @@
     "M04.02": {
       "sourceSha256": "bb14b6ecf0e66633db7d55d9a93bf3b5917f47900eefaa3ee9dff522c1a5c5a3",
       "evidenceRef": "doc/v2/work_items/M04.02.md"
+    },
+    "M04.03": {
+      "sourceSha256": "56d42cea008edf51342e37ace52f10417c6c316a571efd1bee4b4afd83b7cd05",
+      "evidenceRef": "doc/v2/work_items/M04.03.md"
     }
   }
 }
