@@ -16,6 +16,10 @@
     "M04.04": {
       "sourceSha256": "7db1146f36901e1a0015a3152725423df27424331fec7b1bd9eefd552b2d152d",
       "evidenceRef": "doc/v2/work_items/M04.04.md"
+    },
+    "M04.05": {
+      "sourceSha256": "02cd1cc5f8b0efeca734583e4e546aaa5626240e0dbd1bb56629ddbc6a785b2e",
+      "evidenceRef": "doc/v2/work_items/M04.05.md"
     }
   }
 }
