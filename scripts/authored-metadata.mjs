@@ -10,6 +10,7 @@ export const authoredReviewRegistries = [
   { file: 'doc/v2/inventory/e4-reviews.json', modules: ['M19', 'M20', 'M21', 'M22', 'M27', 'M30', 'M32'] },
   { file: 'doc/v2/inventory/e5-reviews.json', modules: ['M09', 'M15', 'M17', 'M18'] },
   { file: 'doc/v2/inventory/w01-reviews.json', topicIds: ['M31.01', 'M31.02'] },
+  { file: 'doc/v2/inventory/w02-reviews.json', topicIds: ['M13.01', 'M13.02', 'M13.05', 'M13.06', 'M14.02', 'M14.04'] },
 ];
 const object = value => value !== null && typeof value === 'object' && !Array.isArray(value);
 const exactKeys = (value, keys) => Object.keys(value).every(key => keys.includes(key));

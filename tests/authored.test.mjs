@@ -222,3 +222,10 @@ test('W01 authority is limited to the two early M31 topics and cannot approve la
  const data={schemaVersion:1,topics:Object.fromEntries(registry.topicIds.map(id=>[id,review]))};assert.equal(Object.keys(mergeAuthoredReviews([{...registry,data}],known).topics).length,2);
  for(const id of ['M31.03','M31.04','M31.05','M31.06','M34.01','M13.01'])assert.throws(()=>mergeAuthoredReviews([{...registry,data:{schemaVersion:1,topics:{[id]:review}}}],known),/scope/);
 });
+
+test('W02 authority covers only six classical perception and fusion gaps',()=>{
+ const registry=authoredReviewRegistries.find(row=>row.file.endsWith('/w02-reviews.json'));assert.deepEqual(registry.topicIds,['M13.01','M13.02','M13.05','M13.06','M14.02','M14.04']);assert.equal(registry.modules,undefined);
+ const known=c.catalog.units.map(unit=>unit.topicId),review={sourceSha256:'a'.repeat(64),evidenceRef:'review.md'};
+ const data={schemaVersion:1,topics:Object.fromEntries(registry.topicIds.map(id=>[id,review]))};assert.equal(Object.keys(mergeAuthoredReviews([{...registry,data}],known).topics).length,6);
+ for(const id of ['M13.03','M13.04','M14.01','M14.03','M14.05','M14.06','M16.01','M31.01'])assert.throws(()=>mergeAuthoredReviews([{...registry,data:{schemaVersion:1,topics:{[id]:review}}}],known),/scope/);
+});

@@ -702,6 +702,20 @@ export const authoredMetadata: AuthoredMetadata[] = [
     "evidenceRef": "doc/v2/work_items/M12.06.md"
   },
   {
+    "topicId": "M13.01",
+    "source": "ebook/curriculum/M13/M13.01.md",
+    "title": "점군 좌표·필터·다운샘플링·군집화",
+    "objectives": [
+      "점군의 프레임·단위·유효값과 관심영역 필터의 계약을 읽고 서로 다른 제외 이유를 구분한다.",
+      "voxel 키·대표점과 반경 이웃 필터의 단계별 결과를 계산하고 정보 손실을 설명한다.",
+      "거리 연결 군집을 계산하고 임계값에 따른 합침/분할과 실제 물체·장애물 판정의 한계를 설명한다."
+    ],
+    "prerequisiteNote": "M02.01의 좌표/거리, M02.05의 수치 계산, M12.02의 카메라 기하를 사용한다. 일반 코딩은 할 수 있다고 전제하며 언어 문법·ML 학습·PCL 설치는 요구하지 않는다. 제공된 작은 합성 점군으로 계산하고 실제 LiDAR·PCL·ROS·장비 실행 결과와 구분한다.",
+    "sha256": "3201d9d5575ae78afec5dd86e50deb1102abd2dc3497416c4a2b0681d016927b",
+    "reviewed": true,
+    "evidenceRef": "doc/v2/work_items/M13.01.md"
+  },
+  {
     "topicId": "M06.05",
     "source": "ebook/curriculum/M06/M06.05.md",
     "title": "차동·옴니·메카넘 순/역운동학",
