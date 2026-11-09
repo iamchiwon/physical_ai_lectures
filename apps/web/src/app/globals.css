@@ -223,6 +223,7 @@ a {
 
 .tutor-markdown th,
 .tutor-markdown td {
+  min-width: 4rem;
   border: 1px solid #cbd5e1;
   padding: 0.4rem 0.55rem;
   text-align: left;
