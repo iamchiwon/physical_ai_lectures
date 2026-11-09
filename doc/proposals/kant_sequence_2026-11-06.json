@@ -13,7 +13,7 @@
     "main": 147,
     "mainRequired": 144,
     "specialization": 60,
-    "authored": 135
+    "authored": 137
   },
   "stages": [
     {
@@ -584,10 +584,12 @@
       "M34.03"
     ],
     "projectExecutionPackages": [
-      "P1",
       "P2",
       "P3",
       "P4"
     ]
-  }
+  },
+  "availableProjectExecutionPackages": [
+    "P1"
+  ]
 }
