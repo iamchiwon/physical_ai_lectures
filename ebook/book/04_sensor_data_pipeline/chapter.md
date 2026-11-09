@@ -368,11 +368,13 @@ object_hue_shift_deg: [-15, 15]
 static_friction: [0.6, 1.1]
 ```
 
-분포는 train/validation에서 겹치되 validation seed는 분리한다. 실제 측정값이 들어오면 범위를 업데이트하고 버전을 올린다.
+동일 분포 평가와 분포 밖 조건 평가는 목적을 구분해 분포와 분할 단위를 정한다. seed를 분리해도 같은 원본 자산/장면·에피소드의 변형이 양쪽에 섞이면 새 자산/장면 평가의 누수가 될 수 있다. 실제 측정값으로 범위를 갱신하면 버전을 올리고 보정/최종 평가 자료를 구분한다.
 
 ### 4.6.3 Replicator 실행 구조
 
-`code/replicator_randomization.py`는 Replicator의 trigger 안에서 camera, light, object pose를 표본화하고 writer를 연결하는 예시다. Isaac Sim 릴리스에 따라 import와 API가 달라질 수 있으므로 설치된 버전의 공식 Replicator 문서와 함께 사용한다.
+`code/replicator_randomization.py`는 고정 camera에 render product를 만들고 trigger에서 target pose/색과 light intensity를 표본화하는 구조 예시다. 위 분포 명세의 카메라 jitter·마찰 등 모든 범주를 구현한 코드는 아니다. writer는 RGB와 distance-to-camera만 연결하며 semantic/instance·검출 라벨을 생성했다고 해석하지 않는다. Isaac Sim 릴리스에 따라 import와 API가 달라질 수 있으므로 설치된 버전의 공식 Replicator 문서와 함께 사용한다.
+
+[M25.05 합성 생성·라벨 품질](/study/unit-m25-05-a/)에서 같은 capture의 카메라/시각·클래스 사전·깊이 mode·누락/실패·자산 단위 분할을 점검한다. 그래프 구성이나 생성 요청만으로 writer 완료/학습 가능한 라벨·실제 일반화가 확인된 것은 아니다.
 
 ![도메인 랜덤화 설계](images/domain_randomization.svg)
 
