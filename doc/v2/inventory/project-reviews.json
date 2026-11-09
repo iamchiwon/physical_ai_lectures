@@ -12,6 +12,10 @@
     "P3": {
       "bundleSha256": "cd4057518da35d0f1f92b27ff4a5bc4a478cfd7240ba8e9f0a2ba6bf1cde9d5b",
       "evidenceRef": "doc/v2/work_items/PKG-P3-05.md"
+    },
+    "P4": {
+      "bundleSha256": "e7555fed9f81080dc9649c2e2890f9fd13710f3a75d4668966d2129ffaecd42d",
+      "evidenceRef": "doc/v2/work_items/PKG-P4-04.md"
     }
   }
 }

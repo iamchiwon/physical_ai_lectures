@@ -35,4 +35,15 @@ export const projectExecutionGuides: Record<string, ExecutionGuide> = {
   ],
   aiLinks: [{href:"/study/unit-m18-05-a/?track=track-main",title:"예약·점유 단위의 AI 강사"},{href:"/study/unit-m19-06-a/?track=track-main",title:"주행·팔 전환 단위의 AI 강사"}],
  },
+ P4: {
+  description: "시연의 세션을 나눠 작은 affine BC 정책을 실제 적합·선택·시험하고, 한 축의 합성 폐루프와 6개 조건을 평가합니다. 실제 3D엔진·ROS·GPU·실물 전이나 운영 권한/안전 실증은 포함하지 않습니다.",
+  commands: "python --version\npython runner.py --output my-evaluation.json\npython runner.py --policy zero --output my-zero.json",
+  evidence: [
+   {id:"inputs",title:"환경·분할과 실제 실행",prompt:"실행 명령·Python/platform·source/config/data/cases SHA와 train/validation/test의 세션·행 수를 적으세요.",reference:"기본4/2/2행은 다른 세션입니다. 같은 session의 분할 누수는 중단합니다. 자신이 만든 새 결과를 연결하고 reference를 본인의 수행으로 제출하지 않습니다."},
+   {id:"policy",title:"학습·선택·잠근 시험과 폐루프",prompt:"학습계수·validation 선택·잠근 test MSE, nominal/zero/조건 변화의 최종 오차와 성공 분모를 비교하세요.",reference:"a=-0.5,b=0·validation/test MSE0이며 zero는0.015625/약0.16입니다. nominal은7명령 뒤 약0.133484m, zero/조건 변화는1m입니다. 기본 가상성공1/6·zero0/6이며 무효/보류를 분모에서 빼지 않습니다."},
+   {id:"gates",title:"신선도·버전·누락과 관제",prompt:"stale/wrong-version/missing-observation의 실패 tick·원인·현재/마지막 값과 처리·미처리 tick을 적으세요.",reference:"tick2에서 관측 나이211ms/지도개정 불일치/관측 없음으로 각각 INVALID_STOP입니다. 새 명령 없이2명령·3처리/5미처리이며 현재는미상, 마지막합성x0.5625는별도입니다. 관측200ms/명령50ms 경계 포함과 초과를 구분합니다."},
+   {id:"rollback",title:"롤백·재개 보류와 미확인",prompt:"rollback의 bundle/epoch·남은 chunk·상태와 재개 여부, 실제 물리세계에서 미확인인 항목과 다음 검증을 적으세요.",reference:"tick2 새 bundle/schema를 거부하고 bundle-A/epoch2·청크폐기·재개보류입니다. 합성x0.5625를 초기1m로 복원하지 않습니다. 코드/정책 롤백은 물리 복구·정지/안전 검증이 아니며 실제 관측/권한/장비 검증은 후속입니다."},
+  ],
+  aiLinks: [{href:"/study/unit-m20-06-a/?track=track-main",title:"학습·평가 단위의 AI 강사"},{href:"/study/unit-m34-03-a/?track=track-main",title:"요청·관측·감사 단위의 AI 강사"}],
+ },
 };

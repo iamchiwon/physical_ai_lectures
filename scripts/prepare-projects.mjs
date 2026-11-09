@@ -4,6 +4,7 @@ import { createHash } from 'node:crypto';
 import { fileURLToPath } from 'node:url';
 const root=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'..');
 const definitions={
+ P4:{names:['README.md','SPEC.md','SOLUTION.md','runner.py','config.json','data.json','cases.json','reference/evaluation.json','reference/zero.json'],metadata:'p4-starter-data.json'},
  P1:{names:['README.md','SPEC.md','SOLUTION.md','runner.py','config.json','frames.json','reference/replay.json','reference/closed-loop.json'],metadata:'project-starter-data.json'},
  P2:{names:['README.md','SPEC.md','SOLUTION.md','runner.py','config.json','cases.json','reference/nominal.json','reference/temporary-block.json','reference/permanent-block.json','reference/missing-tf.json','reference/stale.json','reference/wrong-map.json','reference/replay.json'],metadata:'p2-starter-data.json'},
  P3:{names:['README.md','SPEC.md','SOLUTION.md','runner.py','config.json','cases.json','reference/nominal.json','reference/lease-expiry.json','reference/cancel.json','reference/no-stow.json','reference/stale.json','reference/wrong-identity.json','reference/old-request.json'],metadata:'p3-starter-data.json'},
@@ -25,7 +26,7 @@ return {zip,sha,files};
 }
 const args=process.argv.slice(2);
 if(args.length){
- if(args.length!==2||args[0]!=='--inspect'||!Object.hasOwn(definitions,args[1]))throw Error('Use --inspect P1, P2 or P3 for read-only bundle review');
+ if(args.length!==2||args[0]!=='--inspect'||!Object.hasOwn(definitions,args[1]))throw Error('Use --inspect P1, P2, P3 or P4 for read-only bundle review');
  const {sha,files}=bundle(args[1]);console.log(JSON.stringify({projectId:args[1],bundleSha256:sha,files},null,2));process.exit(0);
 }
 const registry=JSON.parse(fs.readFileSync(path.join(root,'doc/v2/inventory/project-reviews.json'),'utf8'));
