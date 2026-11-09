@@ -2251,7 +2251,7 @@ export const authoredMetadata: AuthoredMetadata[] = [
       "프레임의 전송 비용을 계산하고 ACK·ID·수신 시각으로 보장할 수 없는 것을 설명한다."
     ],
     "prerequisiteNote": "M01.03의 시간/시스템 계약, M03.04의 전기 인터페이스, M04.04의 버스/프레임·ACK를 연결한다. 일반 언어 문법 없이 자체 가상 그림·비트열·수치표를 분석한다. 실제 차량/장비 연결·송수신·수리나 규격 적합성 시험은 수행하지 않는다.",
-    "sha256": "9a1df1ffeff987a7b9304be486539fdcb1674cbdf95bce89ede6a2c5875abb8a",
+    "sha256": "bb7687bdb8f7a544267dcdb92dafcd59134959f11e2846b10bc8a7ddf5869f5b",
     "reviewed": true,
     "evidenceRef": "doc/v2/work_items/M28.01.md"
   },
@@ -2265,9 +2265,23 @@ export const authoredMetadata: AuthoredMetadata[] = [
       "신호 정의로 payload를 물리 값에 대응시키고 버전·무효값·표본 시각을 함께 판정한다."
     ],
     "prerequisiteNote": "M28.01의 제어기/트랜시버·중재·프레임/ACK와 전송 비용을 사용한다. 언어 문법 없이 자체 가상 설정·오류 상태·신호 정의/바이트 표를 종이로 분석한다. 실제 차량/인터페이스 설정·송수신·bus-off 복구/규격 시험은 수행하지 않는다.",
-    "sha256": "4cdcd02df74c8acfdacc04e8718922001efd8ca53ce2df89515cf36f26362ffa",
+    "sha256": "afdf2dde4650902da9ab2a9ccb497c113f058ccccca17997d0ab0fdba3f1242b",
     "reviewed": true,
     "evidenceRef": "doc/v2/work_items/M28.02.md"
+  },
+  {
+    "topicId": "M28.03",
+    "source": "ebook/curriculum/M28/M28.03.md",
+    "title": "ISO-TP·UDS 주소·타이밍·세션·응답",
+    "objectives": [
+      "CAN·ISO-TP·UDS 계층과 주소/프레임의 역할을 구별한다.",
+      "가상 분할 기록의 길이·흐름 제어·순서를 따라 완전한 진단 메시지와 전송 오류를 판정한다.",
+      "진단 응답·세션/권한·시간 대기와 실제 작업 결과의 근거를 분리한다."
+    ],
+    "prerequisiteNote": "M28.02까지의 Classical/FD·타이밍/오류·신호 해석을 연결한다. 자체 가상 Classical11bit/8B·normal addressing·단일요청 기록을 분석하며 실제 차량/장비 진단·송수신·세션 변경은 수행하지 않는다. 일반 언어 문법이나 실제 인터페이스 설정을 추가하지 않는다.",
+    "sha256": "8426f6c2abb9dad4ab9fef2a1bf080548f04e40c97afa8ba63550cf9e994768c",
+    "reviewed": true,
+    "evidenceRef": "doc/v2/work_items/M28.03.md"
   },
   {
     "topicId": "M02.06",
@@ -2450,10 +2464,10 @@ export const legacyRevisions: LegacyRevision[] = [
   {
     "source": "ebook/book/04_sensor_data_pipeline/chapter.md",
     "baselineSha256": "69a8cf6f0e2f6e584bda629d3a17fbbe37f75ec024eab2237847807a2a3796fa",
-    "sha256": "8d859527d3fcde8affdbc916b441820c356aca888e2a60bb418f606abd85998e",
+    "sha256": "5cdda44c02e02dbc32447f1aacb4ded49ee295ab4de84bb4471bc0c2d6956f2c",
     "approved": true,
-    "reason": "E1에서 기존 04장으로 선수·실습범위·오개념 연결 보강 / E2: ROS・기구학・제어・모델 선수/후속 연결 및 관련 개념·실행 전제 보완 / E3: 시뮬레이션·학습·비전·카메라/시간 기초의 연결 및 독립검토된 개념/그림 조건 정정 / E4: 로봇팔·데이터·정책·배포·캡스톤 선수/후속과 교육용 계산·실행·안전 계약 보완 / E5: 모바일 경로·시뮬레이터 구분·map/odom/base·계획/미션·주행-조작 연결 보완 / E5 후속: 공유 TF와 로봇별 토픽·버퍼 격리 대안 및 외부 결합 계약 구분 / W02 M14.02: 센서별 측정량·단위·장착점/시각 계약과 신규 기초 원고 연결 / M25.05: 동봉랜덤화코드의 고정camera/실제채널범위와 원본자산분할·라벨완전성 정정/연결 / M04.01: MCU 펌웨어/호스트의 타깃·메모리/공유 접근과 센서 시각 연결 / M04.02: 타이머 사건/ISR·UART 선로와 원본/수신 시각 연결 / M04.03: ADC 획득/완료/결과 쌍·샘플링/alias와 PWM/실제 관측 연결 / M04.04: 버스 주소/바이트 규약·ACK와 센서/EEPROM 유효성·원본 시각 연결 / M04.05: 호스트 대기/장치 만료·clock과 접수/관측 구분 연결 / M04.06: 원시/표준 단위·목적별 범위/오류와 과거 정상 기록의 원본 시각 보존 연결 / M28.01: CAN ACK/계층·ID와 원본 표본 시각/응용 결과 구분 연결 / M28.02: DBC변환과버전/무효·원본clock/나이·고장해결 근거 연결",
-    "evidenceRef": "doc/v2/work_items/M28.02.md"
+    "reason": "E1에서 기존 04장으로 선수·실습범위·오개념 연결 보강 / E2: ROS・기구학・제어・모델 선수/후속 연결 및 관련 개념·실행 전제 보완 / E3: 시뮬레이션·학습·비전·카메라/시간 기초의 연결 및 독립검토된 개념/그림 조건 정정 / E4: 로봇팔·데이터·정책·배포·캡스톤 선수/후속과 교육용 계산·실행·안전 계약 보완 / E5: 모바일 경로·시뮬레이터 구분·map/odom/base·계획/미션·주행-조작 연결 보완 / E5 후속: 공유 TF와 로봇별 토픽·버퍼 격리 대안 및 외부 결합 계약 구분 / W02 M14.02: 센서별 측정량·단위·장착점/시각 계약과 신규 기초 원고 연결 / M25.05: 동봉랜덤화코드의 고정camera/실제채널범위와 원본자산분할·라벨완전성 정정/연결 / M04.01: MCU 펌웨어/호스트의 타깃·메모리/공유 접근과 센서 시각 연결 / M04.02: 타이머 사건/ISR·UART 선로와 원본/수신 시각 연결 / M04.03: ADC 획득/완료/결과 쌍·샘플링/alias와 PWM/실제 관측 연결 / M04.04: 버스 주소/바이트 규약·ACK와 센서/EEPROM 유효성·원본 시각 연결 / M04.05: 호스트 대기/장치 만료·clock과 접수/관측 구분 연결 / M04.06: 원시/표준 단위·목적별 범위/오류와 과거 정상 기록의 원본 시각 보존 연결 / M28.01: CAN ACK/계층·ID와 원본 표본 시각/응용 결과 구분 연결 / M28.02: DBC변환과버전/무효·원본clock/나이·고장해결 근거 연결 / M28.03: ISO-TP재조립/UDS응답·전송/진단timer·원본시각/결과 연결",
+    "evidenceRef": "doc/v2/work_items/M28.03.md"
   },
   {
     "source": "ebook/book/04_sensor_data_pipeline/exercises/solutions.md",
@@ -2746,7 +2760,7 @@ export const legacyExerciseReferences: DerivedReference[] = [
   {
     "activityId": "legacy:exercise:04_sensor_data_pipeline--chapter-15-q5",
     "baselineSha256": "db330ec3d97051768edf778b93af6c746abd056ea3284021b4898fb08b36b58b",
-    "sha256": "3ebaa40bd490f1c065664d2a1e7f44b52bfc5de41fb478d9c351c20e73e63f72",
+    "sha256": "b90a492989df1491a146c0160164001fc02d3611ae6dd9ffc858f8e002e78d14",
     "approved": true
   },
   {
@@ -2758,13 +2772,13 @@ export const legacyExerciseReferences: DerivedReference[] = [
   {
     "activityId": "legacy:exercise:04_sensor_data_pipeline--chapter-15-q7",
     "baselineSha256": "f73fff6f100deb8b1277825ec56b4f16cf855aa6f939e635c89e1e98558ae86f",
-    "sha256": "2f38c2619010845a84149236b2400d0fcb25d4ac88221215e8db73c1df61b1fa",
+    "sha256": "9c77b90d5d09c3a6e3d253a3f203c1a8fe93278cd0c132ee8c098da7dd7b55b9",
     "approved": true
   },
   {
     "activityId": "legacy:exercise:04_sensor_data_pipeline--chapter-15-q8",
     "baselineSha256": "655d77b76a1c3a9e28b37b0ab94571c2f6c09e1fef59f7ca65aa3c006443b5b4",
-    "sha256": "15bc4efd45e3eb40b37fa146ab6bf8d7dc6a0896722c6a82f5123d16bd4e5e15",
+    "sha256": "81fa7cae240ae33f92c8bd83399701c799206a4f8d709f5688879c9fb48beb23",
     "approved": true
   },
   {
