@@ -184,6 +184,20 @@ export const authoredMetadata: AuthoredMetadata[] = [
     "evidenceRef": "doc/v2/work_items/M31.01.md"
   },
   {
+    "topicId": "M31.02",
+    "source": "ebook/curriculum/M31/M31.02.md",
+    "title": "Claude Code/Codex 등 도구의 역할과 사람 검토",
+    "objectives": [
+      "모델의 제안·도구의 실행·사람의 판단을 작업 기록에서 구분한다.",
+      "작업 명세에 따라 읽기·수정·실행·외부 공유의 허용 범위를 판정한다.",
+      "변경 차이·검증 근거·미확인 범위를 연결해 사람 검토 결론과 후속 확인을 작성한다."
+    ],
+    "prerequisiteNote": "M31.01의 작업 명세와 작은 변경 루프를 사용한다. 일반 코딩 가능자를 대상으로 하며 언어 문법·제품 설치·구독·ROS/GPU/실물 실행은 요구하지 않는다. 제공된 합성 작업 기록으로 역할·권한·검토를 판정한다.",
+    "sha256": "e4c28a15e5df5a8376ee18bb0767bf0a2b47b349c14d24c5d24a1ecece1ac965",
+    "reviewed": true,
+    "evidenceRef": "doc/v2/work_items/M31.02.md"
+  },
+  {
     "topicId": "M05.01",
     "source": "ebook/curriculum/M05/M05.01.md",
     "title": "워크스페이스·패키지·빌드·노드·Executor",
