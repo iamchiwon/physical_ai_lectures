@@ -2298,6 +2298,20 @@ export const authoredMetadata: AuthoredMetadata[] = [
     "evidenceRef": "doc/v2/work_items/M28.04.md"
   },
   {
+    "topicId": "M28.05",
+    "source": "ebook/curriculum/M28/M28.05.md",
+    "title": "다운로드·보안 접근·검증·리셋 흐름",
+    "objectives": [
+      "대상/형상·사전 조건·세션과 보안 권한을 구별해 다운로드 절차의 근거를 판정한다.",
+      "가상 블록 길이·순서/응답과 전송/중복·미확인 상태를 분석한다.",
+      "전송 종료·내용/신뢰 검증·활성화와 리셋 후 실제 상태 확인을 분리한다."
+    ],
+    "prerequisiteNote": "M28.04까지의 진단 응답·기록/원본·시간/세션을 사용한다. 자체 가상 서버와 실행 가능한 펌웨어가 아닌20B 전송 예시를 분석한다. 실제 차량/장비 접속·보안 접근/키 계산·메모리 쓰기/erase/flash/리셋·언어 문법이나 실행 파일 생성은 수행하지 않는다.",
+    "sha256": "9fc74813eb41ba5ed80534d60f908c3f98f3ea3077d98ddca9daf76115b706e7",
+    "reviewed": true,
+    "evidenceRef": "doc/v2/work_items/M28.05.md"
+  },
+  {
     "topicId": "M02.06",
     "source": "ebook/curriculum/M02/M02.06.md",
     "title": "고윳값·안정성·오차 전파의 직관",
@@ -2518,10 +2532,10 @@ export const legacyRevisions: LegacyRevision[] = [
   {
     "source": "ebook/book/06_sim2real_deployment/chapter.md",
     "baselineSha256": "63e21fba7a365699ea09d4be5e25675e0f9ac0c8d856e41a00bd9d8d7157d971",
-    "sha256": "82cce87a8b5258eff9c1126ef1bb9e7b7f16fe6adb2eddbb4310305f5266b180",
+    "sha256": "87400d8791b81be2ff2f05268f314618eb48b89627a1a5f47d7c2e866e9ed78d",
     "approved": true,
-    "reason": "E1에서 기존 06장으로 선수·실습범위·오개념 연결 보강 / E2: ROS・기구학・제어・모델 선수/후속 연결 및 관련 개념·실행 전제 보완 / E3: 시뮬레이션·학습·비전·카메라/시간 기초의 연결 및 독립검토된 개념/그림 조건 정정 / E4: 로봇팔·데이터·정책·배포·캡스톤 선수/후속과 교육용 계산·실행·안전 계약 보완 / E5: 모바일 경로·시뮬레이터 구분·map/odom/base·계획/미션·주행-조작 연결 보완 / M31.06: host/target·native환경과정확변경/대상권한·현재관측/롤백구분 연결 / M34.01: 수신/원본시각·현재/마지막값·이벤트순서와관제근거 연결 / M34.02: 장면의 좌표·시각·버전 정합과 현재 미확인 연결 / M34.03: 요청·취소·소프트웨어 결과와 물리 관측/감사 연결 / M26.01: 임베디드 요구/HSI·형상 조합과 제공/실물 검증 범위 연결 / M26.02: IMU 추정/필터 주기·국소 제어 부호/포화와 실제 전력·균형 검증 범위 연결 / M26.03: 보드 전원/논리/버스·라이브러리/핀과 ERC/DRC·실물 검증 범위 연결 / M26.05: UI요청/표시와 접수/원본clock·지연분모/물리성과 연결 / M26.06: 임베디드제공사례/성능·실패/물리분모·재현/미해결범위와영상선택편향정정",
-    "evidenceRef": "doc/v2/work_items/M26.06.md"
+    "reason": "E1에서 기존 06장으로 선수·실습범위·오개념 연결 보강 / E2: ROS・기구학・제어・모델 선수/후속 연결 및 관련 개념·실행 전제 보완 / E3: 시뮬레이션·학습·비전·카메라/시간 기초의 연결 및 독립검토된 개념/그림 조건 정정 / E4: 로봇팔·데이터·정책·배포·캡스톤 선수/후속과 교육용 계산·실행·안전 계약 보완 / E5: 모바일 경로·시뮬레이터 구분·map/odom/base·계획/미션·주행-조작 연결 보완 / M31.06: host/target·native환경과정확변경/대상권한·현재관측/롤백구분 연결 / M34.01: 수신/원본시각·현재/마지막값·이벤트순서와관제근거 연결 / M34.02: 장면의 좌표·시각·버전 정합과 현재 미확인 연결 / M34.03: 요청·취소·소프트웨어 결과와 물리 관측/감사 연결 / M26.01: 임베디드 요구/HSI·형상 조합과 제공/실물 검증 범위 연결 / M26.02: IMU 추정/필터 주기·국소 제어 부호/포화와 실제 전력·균형 검증 범위 연결 / M26.03: 보드 전원/논리/버스·라이브러리/핀과 ERC/DRC·실물 검증 범위 연결 / M26.05: UI요청/표시와 접수/원본clock·지연분모/물리성과 연결 / M26.06: 임베디드제공사례/성능·실패/물리분모·재현/미해결범위와영상선택편향정정 / M28.05: 진단전송/권한/hash와활성화·reset/새epoch/실물근거 연결",
+    "evidenceRef": "doc/v2/work_items/M28.05.md"
   },
   {
     "source": "ebook/book/06_sim2real_deployment/code/safety_supervisor.py",
@@ -2954,85 +2968,85 @@ export const legacyExerciseReferences: DerivedReference[] = [
   {
     "activityId": "legacy:exercise:06_sim2real_deployment--chapter-15-q1",
     "baselineSha256": "b72348ed31c2da0784960c1e48c70c50b476be12bc59356f46f330c42d2dffb2",
-    "sha256": "7f492c4ec7e5f5cac1d39d69f3c844576f99ccd467648beccb88a6d6783f736c",
+    "sha256": "dbc090b8c7138cde8d7a18d850c4cfc2856d71a8971beda2ab6fba667a430744",
     "approved": true
   },
   {
     "activityId": "legacy:exercise:06_sim2real_deployment--chapter-15-q2",
     "baselineSha256": "538bd9b19d59d0a13bcdd06583a5832fa158781f7a81037373dc1ec62b0e6189",
-    "sha256": "3e7cc7c3042455fd9d7cedfb0c60ce9b394fb31deaa754e8f17e1d42bfba97cc",
+    "sha256": "cf3ae69259dc3fdaae945455d1956bb9cb092bba4909ea783bdbb874a70ae7b4",
     "approved": true
   },
   {
     "activityId": "legacy:exercise:06_sim2real_deployment--chapter-15-q3",
     "baselineSha256": "ea2f6042cdc4e7ef4a47d4251ced9127113b2254323f5d8e601aadc902a80f00",
-    "sha256": "a6d1dc11cbdc3b07a9a72ec5de3dfc5de0ce79012f6da706a5d816108df66de1",
+    "sha256": "8806f056b914f9f73af418a2e49cca9f6e7b256e38a9a459faf4eb87b446e1f2",
     "approved": true
   },
   {
     "activityId": "legacy:exercise:06_sim2real_deployment--chapter-15-q4",
     "baselineSha256": "1d248a19d5f8c87c928950261ceff406151c0c39e3401a966195c443e830957d",
-    "sha256": "923e658528919471249439657c5f155c6c4300cb57460a3943d5449cf4b4a2ea",
+    "sha256": "0703178be3e7842834cd5e368a4551eedc94bda28cbe21a7d40c4a94b4e22416",
     "approved": true
   },
   {
     "activityId": "legacy:exercise:06_sim2real_deployment--chapter-15-q5",
     "baselineSha256": "256cb8a8ea9b762b5c188978ac7f02265bcacb4e5c45c3093acfa126f8d44868",
-    "sha256": "f74c0942134bc98df70602152294e65b77690d5198a883f69aefc3a0dc486d05",
+    "sha256": "7e929cb72b8e8c9a65a2b043080862b639125dc7f3817cd176b9ef321d5b42ba",
     "approved": true
   },
   {
     "activityId": "legacy:exercise:06_sim2real_deployment--chapter-15-q6",
     "baselineSha256": "11df136dad6be283c45901cc1e17cbdcd949f16aa898a9773ede517812553505",
-    "sha256": "6dc56e8466c60eb9afbd715b2854f745cd3bc8f023337cb9f1497972e331a79c",
+    "sha256": "8661710e067888c84c1dc91c475c19a61416f6e68055e7f2d67ecaaf707fbc41",
     "approved": true
   },
   {
     "activityId": "legacy:exercise:06_sim2real_deployment--chapter-15-q7",
     "baselineSha256": "0cd5dcf962cb75732c1efc3694543bbda9ceabeded4135b7c9b7f476289e912e",
-    "sha256": "b462e2bc1d8225f6f76a7437227e50d16c5e1b5ffd87eff82a54545518c07697",
+    "sha256": "d7a2df6d6bc36472b424e5dd66bc61cfdab7c1598943fbcc0bf4abb05167a855",
     "approved": true
   },
   {
     "activityId": "legacy:exercise:06_sim2real_deployment--chapter-15-q8",
     "baselineSha256": "a5cb1330cf26754ea52387f391e6169f247722d784aa4c970b9400b791bbd6f7",
-    "sha256": "e78d350b1536e6e1e1fc88d713a08ca78a35daa9e868eb246169d1252e94194b",
+    "sha256": "0ea0a09ed540ea4f4ca7787359f4c0443b17a281c2dd7d04e5b9d427f293e90a",
     "approved": true
   },
   {
     "activityId": "legacy:exercise:06_sim2real_deployment--chapter-15-q9",
     "baselineSha256": "59b478bbfd30d6a0dcd5403c7dbf6af9087af582cd6fbe710ada483cb852d108",
-    "sha256": "bbbfdfed04c394fb5f76eab703acbf53f32da46e2767731e4dfb42e6fefd2f60",
+    "sha256": "62e88074a9ca4966bac338e0671bb3546f87726e558ab85032fa3f6b1a1a8d43",
     "approved": true
   },
   {
     "activityId": "legacy:exercise:06_sim2real_deployment--chapter-15-q10",
     "baselineSha256": "244c20e0271b2db43e0f2ee670129a19c84e38bf4ad357054ccfb04bbd0a071e",
-    "sha256": "438e9ddd76fd7aeac04725642acd1cc27adf7f0d3702f90554db07f6d0579a11",
+    "sha256": "12dd1f46feeb1c96af7455a909dbc2c3ac79bd8cf862070e977175c10aea1bdb",
     "approved": true
   },
   {
     "activityId": "legacy:exercise:06_sim2real_deployment--chapter-16-report",
     "baselineSha256": "c627a6b9ff327734578dfe8f67ed846c3e294fcea5c871cf551b08d4b8a4df2d",
-    "sha256": "92e55e4adcd732bf9fbf63b414554b49beb50c81591877633e7e0141cbde465e",
+    "sha256": "2aa9b4a4d84de5143a0c9c23f6a2a377e24d4d704dda800f32a699b9acfc0bac",
     "approved": true
   },
   {
     "activityId": "legacy:exercise:06_sim2real_deployment--labs--lab_6_1_diagnostics-1-report",
     "baselineSha256": "c627a6b9ff327734578dfe8f67ed846c3e294fcea5c871cf551b08d4b8a4df2d",
-    "sha256": "92e55e4adcd732bf9fbf63b414554b49beb50c81591877633e7e0141cbde465e",
+    "sha256": "2aa9b4a4d84de5143a0c9c23f6a2a377e24d4d704dda800f32a699b9acfc0bac",
     "approved": true
   },
   {
     "activityId": "legacy:exercise:06_sim2real_deployment--labs--lab_6_2_supervisor-1-report",
     "baselineSha256": "c627a6b9ff327734578dfe8f67ed846c3e294fcea5c871cf551b08d4b8a4df2d",
-    "sha256": "92e55e4adcd732bf9fbf63b414554b49beb50c81591877633e7e0141cbde465e",
+    "sha256": "2aa9b4a4d84de5143a0c9c23f6a2a377e24d4d704dda800f32a699b9acfc0bac",
     "approved": true
   },
   {
     "activityId": "legacy:exercise:06_sim2real_deployment--labs--lab_6_3_ros2_guard-1-report",
     "baselineSha256": "c627a6b9ff327734578dfe8f67ed846c3e294fcea5c871cf551b08d4b8a4df2d",
-    "sha256": "92e55e4adcd732bf9fbf63b414554b49beb50c81591877633e7e0141cbde465e",
+    "sha256": "2aa9b4a4d84de5143a0c9c23f6a2a377e24d4d704dda800f32a699b9acfc0bac",
     "approved": true
   }
 ];

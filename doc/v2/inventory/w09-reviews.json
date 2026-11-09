@@ -16,6 +16,10 @@
     "M28.04": {
       "sourceSha256": "0dfc903f7d63aea21e9c1476386e359a2d19012f88d0e4388e7584d8a25e0b68",
       "evidenceRef": "doc/v2/work_items/M28.04.md"
+    },
+    "M28.05": {
+      "sourceSha256": "9fc74813eb41ba5ed80534d60f908c3f98f3ea3077d98ddca9daf76115b706e7",
+      "evidenceRef": "doc/v2/work_items/M28.05.md"
     }
   }
 }
