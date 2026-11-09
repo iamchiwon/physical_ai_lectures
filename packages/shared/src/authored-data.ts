@@ -1080,6 +1080,20 @@ export const authoredMetadata: AuthoredMetadata[] = [
     "evidenceRef": "doc/v2/work_items/M31.03.md"
   },
   {
+    "topicId": "M31.04",
+    "source": "ebook/curriculum/M31/M31.04.md",
+    "title": "시뮬레이션 반복·CI·실험 결과 비교",
+    "objectives": [
+      "시뮬레이션의 고정/변경 조건과 초기화·seed·실행 식별자를 정의하고 단계별 CI관문과 산출물을 연결한다.",
+      "같은 조건의 기준/후보 결과에서 성공률·조건별 회귀·공통 성공의 시간을 계산하고 서로 다른 분모를 해석한다.",
+      "행동 실패·실행 불능·누락/재시도를 구분하여 선택 편향과 잘못된 자동 통과를 진단하고 확인 범위를 기록한다."
+    ],
+    "prerequisiteNote": "M31.03의 재현/가설/고정 회귀를 여러 조건의 반복으로 확장한다. CI·seed·쌍비교 용어와 성공/실패 기준은 본문에서 풀이한다. 일반 코딩·문법·YAML입문이나 실제 Gazebo/클라우드CI 설치·실행은 요구하지 않는다. 제공된 합성 결과를 분석한다.",
+    "sha256": "0d8ff69e07867faba525aa8e94a14988bb4e5791cc55de662e170a2cce60322e",
+    "reviewed": true,
+    "evidenceRef": "doc/v2/work_items/M31.04.md"
+  },
+  {
     "topicId": "M06.02",
     "source": "ebook/curriculum/M06/M06.02.md",
     "title": "DH 파라미터·정기구학·작업공간",
