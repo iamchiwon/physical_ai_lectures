@@ -744,6 +744,20 @@ export const authoredMetadata: AuthoredMetadata[] = [
     "evidenceRef": "doc/v2/work_items/M13.05.md"
   },
   {
+    "topicId": "M13.06",
+    "source": "ebook/curriculum/M13/M13.06.md",
+    "title": "3D 객체 추적과 가림·희소성·거리별 품질",
+    "objectives": [
+      "3D관측과 예측 상태를 구분하고 공통 프레임·실제 시각 간격·로봇 자체 운동을 반영해 위치를 해석한다.",
+      "작은 교차/가림 사례에서 일대일 연결·모호성 보류·미관측 수명과 재관측을 판단한다.",
+      "거리별 누락·오검출·위치 오차와 ID품질을 나누어 추적 결과의 한계와 평가 근거를 설명한다."
+    ],
+    "prerequisiteNote": "M13.05의 깊이/품질과 앞선 프레임·점군을 연결한다. M12.05의2D추적을 보충으로 읽을 수 있다. 일반 코딩·문법·학습 기반3D검출·Kalman/EKF·설치는 요구하지 않는다. 관측과 속도가 주어진 합성 기록으로 계산하며 실제 추적기/장비 성능과 구분한다.",
+    "sha256": "6538430f4dcd9a1ac714055794ea1ada5412b7788889c710f00ed63f85b8a3ce",
+    "reviewed": true,
+    "evidenceRef": "doc/v2/work_items/M13.06.md"
+  },
+  {
     "topicId": "M06.05",
     "source": "ebook/curriculum/M06/M06.05.md",
     "title": "차동·옴니·메카넘 순/역운동학",
