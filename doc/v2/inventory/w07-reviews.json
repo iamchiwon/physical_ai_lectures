@@ -1,0 +1,9 @@
+{
+  "schemaVersion": 1,
+  "topics": {
+    "M04.01": {
+      "sourceSha256": "271de043fd492403cb4148d8ab6b535602d46e696468930cf637e0b34c28c5f7",
+      "evidenceRef": "doc/v2/work_items/M04.01.md"
+    }
+  }
+}

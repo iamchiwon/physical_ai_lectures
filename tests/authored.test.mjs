@@ -256,3 +256,10 @@ test('W06 authority is limited to telemetry synchronization and supervised opera
  const data={schemaVersion:1,topics:Object.fromEntries(registry.topicIds.map(id=>[id,review]))};assert.equal(Object.keys(mergeAuthoredReviews([{...registry,data}],known).topics).length,3);
  for(const id of ['M31.05','M31.06','M25.01','M30.04','M22.06','M05.01'])assert.throws(()=>mergeAuthoredReviews([{...registry,data:{schemaVersion:1,topics:{[id]:review}}}],known),/scope/);
 });
+
+test('W07 authority covers only the six MCU peripheral and driver topics',()=>{
+ const registry=authoredReviewRegistries.find(r=>r.file==='doc/v2/inventory/w07-reviews.json');assert.deepEqual(registry.topicIds,['M04.01','M04.02','M04.03','M04.04','M04.05','M04.06']);assert.equal(registry.modules,undefined);
+ const known=c.catalog.units.map(u=>u.topicId),review={sourceSha256:'a'.repeat(64),evidenceRef:'review.md'};
+ const data={schemaVersion:1,topics:Object.fromEntries(registry.topicIds.map(id=>[id,review]))};assert.equal(Object.keys(mergeAuthoredReviews([{...registry,data}],known).topics).length,6);
+ for(const id of ['M01.03','M03.04','M26.01','M28.01','M29.01','M34.01'])assert.throws(()=>mergeAuthoredReviews([{...registry,data:{schemaVersion:1,topics:{[id]:review}}}],known),/scope/);
+});

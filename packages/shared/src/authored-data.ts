@@ -2060,6 +2060,20 @@ export const authoredMetadata: AuthoredMetadata[] = [
     "evidenceRef": "doc/v2/work_items/K01-01.md"
   },
   {
+    "topicId": "M04.01",
+    "source": "ebook/curriculum/M04/M04.01.md",
+    "title": "MCU 레지스터·메모리·Atmega328p 사례",
+    "objectives": [
+      "호스트와 MCU의 빌드 대상·메모리 공간을 구분하고 장치 레지스터의 주소/접근 의미를 확인한다.",
+      "합성 메모리 예산에서 정적 영역·heap/stack과 여유/초과를 계산하고 확인 범위를 설명한다.",
+      "공유 RAM 사건표의 갱신 유실과 특수 레지스터 접근 오류를 진단하고 필요한 재현/검증 근거를 기록한다."
+    ],
+    "prerequisiteNote": "M01.03의 native/ABI·버퍼 계약과 M03.04의 전기적 명세가 선수다. 일반 코딩 경험을 전제로 C/C++ 문법·포인터/비트 연산 입문은 반복하지 않는다. ATmega328P의 명시한 자료와 가상 메모리/사건표를 읽는 종이 활동이며 컴파일·펌웨어/퓨즈/레지스터 쓰기나 실제 장비 연결은 하지 않는다.",
+    "sha256": "271de043fd492403cb4148d8ab6b535602d46e696468930cf637e0b34c28c5f7",
+    "reviewed": true,
+    "evidenceRef": "doc/v2/work_items/M04.01.md"
+  },
+  {
     "topicId": "M07.04",
     "source": "ebook/curriculum/M07/M07.04.md",
     "title": "주파수 응답·근궤적의 해석",
@@ -2254,10 +2268,10 @@ export const legacyRevisions: LegacyRevision[] = [
   {
     "source": "ebook/book/04_sensor_data_pipeline/chapter.md",
     "baselineSha256": "69a8cf6f0e2f6e584bda629d3a17fbbe37f75ec024eab2237847807a2a3796fa",
-    "sha256": "7882b1242d5f0972bd575651ffaf0b403de55da54301ad8c8c0d15128654848c",
+    "sha256": "4f9932a84de6cddaf30dedbf0701d12d9a109ebaca45a2c43c70e9e0de454f18",
     "approved": true,
-    "reason": "E1에서 기존 04장으로 선수·실습범위·오개념 연결 보강 / E2: ROS・기구학・제어・모델 선수/후속 연결 및 관련 개념·실행 전제 보완 / E3: 시뮬레이션·학습·비전·카메라/시간 기초의 연결 및 독립검토된 개념/그림 조건 정정 / E4: 로봇팔·데이터·정책·배포·캡스톤 선수/후속과 교육용 계산·실행·안전 계약 보완 / E5: 모바일 경로·시뮬레이터 구분·map/odom/base·계획/미션·주행-조작 연결 보완 / E5 후속: 공유 TF와 로봇별 토픽·버퍼 격리 대안 및 외부 결합 계약 구분 / W02 M14.02: 센서별 측정량·단위·장착점/시각 계약과 신규 기초 원고 연결 / M25.05: 동봉랜덤화코드의 고정camera/실제채널범위와 원본자산분할·라벨완전성 정정/연결",
-    "evidenceRef": "doc/v2/work_items/M25.05.md"
+    "reason": "E1에서 기존 04장으로 선수·실습범위·오개념 연결 보강 / E2: ROS・기구학・제어・모델 선수/후속 연결 및 관련 개념·실행 전제 보완 / E3: 시뮬레이션·학습·비전·카메라/시간 기초의 연결 및 독립검토된 개념/그림 조건 정정 / E4: 로봇팔·데이터·정책·배포·캡스톤 선수/후속과 교육용 계산·실행·안전 계약 보완 / E5: 모바일 경로·시뮬레이터 구분·map/odom/base·계획/미션·주행-조작 연결 보완 / E5 후속: 공유 TF와 로봇별 토픽·버퍼 격리 대안 및 외부 결합 계약 구분 / W02 M14.02: 센서별 측정량·단위·장착점/시각 계약과 신규 기초 원고 연결 / M25.05: 동봉랜덤화코드의 고정camera/실제채널범위와 원본자산분할·라벨완전성 정정/연결 / M04.01: MCU 펌웨어/호스트의 타깃·메모리/공유 접근과 센서 시각 연결",
+    "evidenceRef": "doc/v2/work_items/M04.01.md"
   },
   {
     "source": "ebook/book/04_sensor_data_pipeline/exercises/solutions.md",
@@ -2544,7 +2558,7 @@ export const legacyExerciseReferences: DerivedReference[] = [
   {
     "activityId": "legacy:exercise:04_sensor_data_pipeline--chapter-15-q5",
     "baselineSha256": "db330ec3d97051768edf778b93af6c746abd056ea3284021b4898fb08b36b58b",
-    "sha256": "478f3c0502cea23156528aef9c40626140f70e06d34d67fe3db60d254f2cd822",
+    "sha256": "66d2528b55341727c49ba6dfce643d9b30c893d414bd63829fca3c96c1af051e",
     "approved": true
   },
   {
@@ -2556,13 +2570,13 @@ export const legacyExerciseReferences: DerivedReference[] = [
   {
     "activityId": "legacy:exercise:04_sensor_data_pipeline--chapter-15-q7",
     "baselineSha256": "f73fff6f100deb8b1277825ec56b4f16cf855aa6f939e635c89e1e98558ae86f",
-    "sha256": "751ca1d90a08d6e11f1c596397ce29ab34a4b83ce48c93ee717ca85a19af4bd6",
+    "sha256": "b69765980850a254751bedf8ef288c4411e7fa25f4de378b0a288f54d861712a",
     "approved": true
   },
   {
     "activityId": "legacy:exercise:04_sensor_data_pipeline--chapter-15-q8",
     "baselineSha256": "655d77b76a1c3a9e28b37b0ab94571c2f6c09e1fef59f7ca65aa3c006443b5b4",
-    "sha256": "55c54e7cec3b5c36516fbd3522c6f097b2845c01133d7de94ef7b5c94867548c",
+    "sha256": "370d75e75c2afcfbb6024eaf39a84e0f15bb615de4b90c6317b5e52a8494be45",
     "approved": true
   },
   {
