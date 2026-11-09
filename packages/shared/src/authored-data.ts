@@ -2256,6 +2256,20 @@ export const authoredMetadata: AuthoredMetadata[] = [
     "evidenceRef": "doc/v2/work_items/M28.01.md"
   },
   {
+    "topicId": "M28.02",
+    "source": "ebook/curriculum/M28/M28.02.md",
+    "title": "비트 타이밍·에러 관리·CAN FD·DBC 해석",
+    "objectives": [
+      "명목 비트율/샘플 지점을 계산하고 CAN 오류 상태와 원인 가설·복구를 구별한다.",
+      "CAN FD의 길이 코드·속도 구간과 Classical CAN과의 호환 조건을 설명한다.",
+      "신호 정의로 payload를 물리 값에 대응시키고 버전·무효값·표본 시각을 함께 판정한다."
+    ],
+    "prerequisiteNote": "M28.01의 제어기/트랜시버·중재·프레임/ACK와 전송 비용을 사용한다. 언어 문법 없이 자체 가상 설정·오류 상태·신호 정의/바이트 표를 종이로 분석한다. 실제 차량/인터페이스 설정·송수신·bus-off 복구/규격 시험은 수행하지 않는다.",
+    "sha256": "4cdcd02df74c8acfdacc04e8718922001efd8ca53ce2df89515cf36f26362ffa",
+    "reviewed": true,
+    "evidenceRef": "doc/v2/work_items/M28.02.md"
+  },
+  {
     "topicId": "M02.06",
     "source": "ebook/curriculum/M02/M02.06.md",
     "title": "고윳값·안정성·오차 전파의 직관",
@@ -2436,10 +2450,10 @@ export const legacyRevisions: LegacyRevision[] = [
   {
     "source": "ebook/book/04_sensor_data_pipeline/chapter.md",
     "baselineSha256": "69a8cf6f0e2f6e584bda629d3a17fbbe37f75ec024eab2237847807a2a3796fa",
-    "sha256": "05742e0db08e13c234e226d89e34c849bef805768eaf8fa25a62a9233042fc11",
+    "sha256": "8d859527d3fcde8affdbc916b441820c356aca888e2a60bb418f606abd85998e",
     "approved": true,
-    "reason": "E1에서 기존 04장으로 선수·실습범위·오개념 연결 보강 / E2: ROS・기구학・제어・모델 선수/후속 연결 및 관련 개념·실행 전제 보완 / E3: 시뮬레이션·학습·비전·카메라/시간 기초의 연결 및 독립검토된 개념/그림 조건 정정 / E4: 로봇팔·데이터·정책·배포·캡스톤 선수/후속과 교육용 계산·실행·안전 계약 보완 / E5: 모바일 경로·시뮬레이터 구분·map/odom/base·계획/미션·주행-조작 연결 보완 / E5 후속: 공유 TF와 로봇별 토픽·버퍼 격리 대안 및 외부 결합 계약 구분 / W02 M14.02: 센서별 측정량·단위·장착점/시각 계약과 신규 기초 원고 연결 / M25.05: 동봉랜덤화코드의 고정camera/실제채널범위와 원본자산분할·라벨완전성 정정/연결 / M04.01: MCU 펌웨어/호스트의 타깃·메모리/공유 접근과 센서 시각 연결 / M04.02: 타이머 사건/ISR·UART 선로와 원본/수신 시각 연결 / M04.03: ADC 획득/완료/결과 쌍·샘플링/alias와 PWM/실제 관측 연결 / M04.04: 버스 주소/바이트 규약·ACK와 센서/EEPROM 유효성·원본 시각 연결 / M04.05: 호스트 대기/장치 만료·clock과 접수/관측 구분 연결 / M04.06: 원시/표준 단위·목적별 범위/오류와 과거 정상 기록의 원본 시각 보존 연결 / M28.01: CAN ACK/계층·ID와 원본 표본 시각/응용 결과 구분 연결",
-    "evidenceRef": "doc/v2/work_items/M28.01.md"
+    "reason": "E1에서 기존 04장으로 선수·실습범위·오개념 연결 보강 / E2: ROS・기구학・제어・모델 선수/후속 연결 및 관련 개념·실행 전제 보완 / E3: 시뮬레이션·학습·비전·카메라/시간 기초의 연결 및 독립검토된 개념/그림 조건 정정 / E4: 로봇팔·데이터·정책·배포·캡스톤 선수/후속과 교육용 계산·실행·안전 계약 보완 / E5: 모바일 경로·시뮬레이터 구분·map/odom/base·계획/미션·주행-조작 연결 보완 / E5 후속: 공유 TF와 로봇별 토픽·버퍼 격리 대안 및 외부 결합 계약 구분 / W02 M14.02: 센서별 측정량·단위·장착점/시각 계약과 신규 기초 원고 연결 / M25.05: 동봉랜덤화코드의 고정camera/실제채널범위와 원본자산분할·라벨완전성 정정/연결 / M04.01: MCU 펌웨어/호스트의 타깃·메모리/공유 접근과 센서 시각 연결 / M04.02: 타이머 사건/ISR·UART 선로와 원본/수신 시각 연결 / M04.03: ADC 획득/완료/결과 쌍·샘플링/alias와 PWM/실제 관측 연결 / M04.04: 버스 주소/바이트 규약·ACK와 센서/EEPROM 유효성·원본 시각 연결 / M04.05: 호스트 대기/장치 만료·clock과 접수/관측 구분 연결 / M04.06: 원시/표준 단위·목적별 범위/오류와 과거 정상 기록의 원본 시각 보존 연결 / M28.01: CAN ACK/계층·ID와 원본 표본 시각/응용 결과 구분 연결 / M28.02: DBC변환과버전/무효·원본clock/나이·고장해결 근거 연결",
+    "evidenceRef": "doc/v2/work_items/M28.02.md"
   },
   {
     "source": "ebook/book/04_sensor_data_pipeline/exercises/solutions.md",
@@ -2732,7 +2746,7 @@ export const legacyExerciseReferences: DerivedReference[] = [
   {
     "activityId": "legacy:exercise:04_sensor_data_pipeline--chapter-15-q5",
     "baselineSha256": "db330ec3d97051768edf778b93af6c746abd056ea3284021b4898fb08b36b58b",
-    "sha256": "8ab774c0bc9d500eb022baeed05d81ca28cd23fcaf01f2deb20964aef6864a79",
+    "sha256": "3ebaa40bd490f1c065664d2a1e7f44b52bfc5de41fb478d9c351c20e73e63f72",
     "approved": true
   },
   {
@@ -2744,13 +2758,13 @@ export const legacyExerciseReferences: DerivedReference[] = [
   {
     "activityId": "legacy:exercise:04_sensor_data_pipeline--chapter-15-q7",
     "baselineSha256": "f73fff6f100deb8b1277825ec56b4f16cf855aa6f939e635c89e1e98558ae86f",
-    "sha256": "6bea04a186f39cdafd98345ba4b9bac780e6338adcdc8ec9afb103480237cac6",
+    "sha256": "2f38c2619010845a84149236b2400d0fcb25d4ac88221215e8db73c1df61b1fa",
     "approved": true
   },
   {
     "activityId": "legacy:exercise:04_sensor_data_pipeline--chapter-15-q8",
     "baselineSha256": "655d77b76a1c3a9e28b37b0ab94571c2f6c09e1fef59f7ca65aa3c006443b5b4",
-    "sha256": "137f53bd739e3fa0e73f32992dfca18d3954776c045609975d971e6677d09780",
+    "sha256": "15bc4efd45e3eb40b37fa146ab6bf8d7dc6a0896722c6a82f5123d16bd4e5e15",
     "approved": true
   },
   {
