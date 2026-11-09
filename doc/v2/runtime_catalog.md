@@ -163,3 +163,7 @@ P2의7×5격자/제공pose·TF/clock·지도개정·두waypoint와일시/영구�
 ## M25.05 현행 집필 · 2026-11-09
 
 상세/실습 150·문제/해설 450쌍, 상태 {'ready': 150, 'partial': 5, 'tbd': 52}, Resource 1833/Activity 791/alias 317다. 미집필 57개(공통 6·전문화51). [근거](work_items/M25.05.md).
+
+## M25.06 현행 집필 · 2026-11-09
+
+상세/실습 151·문제/해설 453쌍, 상태 {'ready': 151, 'tbd': 52, 'partial': 4}, Resource 1843/Activity 795/alias 317다. 미집필 56개(공통 5·전문화51). [근거](work_items/M25.06.md).
