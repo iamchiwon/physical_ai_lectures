@@ -4,7 +4,7 @@
 - 현행 기준: [35모듈·207소주제](../integrated_curriculum.md), 17단계·공통/전문 7경로.
 - 실행 큐: [전체 체크리스트](checklist.md), [단위별 5단계 체크](unit_checklist.md).
 - 현재: 상세 교재 160개, 준비중 47개. 순서 적용/원고 개정은 [2026-11-06 검증](work_items/sequence-adoption-validation.md) 완료.
-- 다음 한 작업: **M04.05 분석·목표·평가 기준 확정**.
+- 다음 한 작업: **M04.05 작성**.
 - E1~E5는 완료 이력이다. 미실행 E6~E9는 아래 현행 W/PKG/G 작업으로 이관했으며 다음 작업으로 사용하지 않는다.
 - 품질: [사전 기준·탈고·검수](quality_gate.md), [기록 양식](templates/work_item.md). PDF/EPUB는 별도 요청 전까지 생성하지 않는다.
 
