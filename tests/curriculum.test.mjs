@@ -53,7 +53,8 @@ test('learning stages cover all current topics once and expose real branch prere
  const dual=c.prerequisiteLinks(c.curriculumIndex.units.get('unit-m32-03-a')).conditional;
  assert.equal(dual.length,1);assert.equal(dual[0].links[0].topicId,'M21.05');
  const authoredOps=c.catalog.units.find(u=>u.topicId==='M34.01');assert.equal(c.primaryReading(authoredOps).href,'/study/unit-m34-01-a/#authored-body');
- for(const id of ['M34.02','M34.03']){const unit=c.catalog.units.find(u=>u.topicId===id);assert.equal(c.primaryReading(unit),null);}
+ assert.equal(c.primaryReading(c.catalog.units.find(u=>u.topicId==='M34.02')).href,'/study/unit-m34-02-a/#authored-body');
+ for(const id of ['M34.03']){const unit=c.catalog.units.find(u=>u.topicId===id);assert.equal(c.primaryReading(unit),null);}
 });
 
 test('project guidance never sends learners to later-stage prerequisites',()=>{

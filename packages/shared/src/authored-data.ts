@@ -1962,6 +1962,20 @@ export const authoredMetadata: AuthoredMetadata[] = [
     "evidenceRef": "doc/v2/work_items/M34.01.md"
   },
   {
+    "topicId": "M34.02",
+    "source": "ebook/curriculum/M34/M34.02.md",
+    "title": "3D 장면과 로봇 상태의 좌표·시간·버전 동기화",
+    "objectives": [
+      "프레임·단위·변환 방향을 고정하고 동일한 점의 장면 좌표를 계산한다.",
+      "관측과 변환의 시각·시계·대상/세대·버전이 맞는지 판정하고 최신 화면과 동일시각 장면을 구분한다.",
+      "버전 변경·지연·누락 때 마지막 정합 장면과 현재 미확인을 분리하고 재동기화 근거를 기록한다."
+    ],
+    "prerequisiteNote": "M34.01의 관측/신선도, M06.01의 열벡터·프레임 변환, M14.03의 시계/시간 정합이 선수다. 종이 계산과 합성 기록표로 수행하며 실제 ROS/tf2·3D엔진·로봇을 실행하지 않는다. 코드·문법 입문은 제외한다.",
+    "sha256": "f7f06814e91902bf46e7b5a53056af5560a86f58d984c806f083c2edf3e61294",
+    "reviewed": true,
+    "evidenceRef": "doc/v2/work_items/M34.02.md"
+  },
+  {
     "topicId": "M32.01",
     "source": "ebook/curriculum/M32/M32.01.md",
     "title": "모바일 배달·동적 장애물·언어 미션",
@@ -2266,10 +2280,10 @@ export const legacyRevisions: LegacyRevision[] = [
   {
     "source": "ebook/book/06_sim2real_deployment/chapter.md",
     "baselineSha256": "63e21fba7a365699ea09d4be5e25675e0f9ac0c8d856e41a00bd9d8d7157d971",
-    "sha256": "c60e291e225578891aba39684c56f94f94a6c44555b329e01c34e57a1655e904",
+    "sha256": "e10ee9343ce89f54dde8c4dd3bdfb97d21ef971100ff1f7d492333454d39f25b",
     "approved": true,
-    "reason": "E1에서 기존 06장으로 선수·실습범위·오개념 연결 보강 / E2: ROS・기구학・제어・모델 선수/후속 연결 및 관련 개념·실행 전제 보완 / E3: 시뮬레이션·학습·비전·카메라/시간 기초의 연결 및 독립검토된 개념/그림 조건 정정 / E4: 로봇팔·데이터·정책·배포·캡스톤 선수/후속과 교육용 계산·실행·안전 계약 보완 / E5: 모바일 경로·시뮬레이터 구분·map/odom/base·계획/미션·주행-조작 연결 보완 / M31.06: host/target·native환경과정확변경/대상권한·현재관측/롤백구분 연결 / M34.01: 수신/원본시각·현재/마지막값·이벤트순서와관제근거 연결",
-    "evidenceRef": "doc/v2/work_items/M34.01.md"
+    "reason": "E1에서 기존 06장으로 선수·실습범위·오개념 연결 보강 / E2: ROS・기구학・제어・모델 선수/후속 연결 및 관련 개념·실행 전제 보완 / E3: 시뮬레이션·학습·비전·카메라/시간 기초의 연결 및 독립검토된 개념/그림 조건 정정 / E4: 로봇팔·데이터·정책·배포·캡스톤 선수/후속과 교육용 계산·실행·안전 계약 보완 / E5: 모바일 경로·시뮬레이터 구분·map/odom/base·계획/미션·주행-조작 연결 보완 / M31.06: host/target·native환경과정확변경/대상권한·현재관측/롤백구분 연결 / M34.01: 수신/원본시각·현재/마지막값·이벤트순서와관제근거 연결 / M34.02: 장면의 좌표·시각·버전 정합과 현재 미확인 연결",
+    "evidenceRef": "doc/v2/work_items/M34.02.md"
   },
   {
     "source": "ebook/book/06_sim2real_deployment/code/safety_supervisor.py",
