@@ -38,7 +38,7 @@ export function TutorMarkdown({ content, copyable = true }: TutorMarkdownProps) 
     <>
       <div className="tutor-markdown">
         <ReactMarkdown
-          remarkPlugins={[remarkCjkFriendly, remarkGfm, remarkMath]}
+          remarkPlugins={[remarkCjkFriendly, [remarkGfm, { singleTilde: false }], remarkMath]}
           rehypePlugins={[[rehypeKatex, { strict: false, throwOnError: false, trust: false }]]}
           components={{
             a: ({ children, ...props }) => <a {...props} target="_blank" rel="noreferrer">{children}</a>,
