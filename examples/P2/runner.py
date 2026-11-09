@@ -43,7 +43,8 @@ def validate_setup(book, config):
                           ("max_steps", 1, 1000), ("step_ms", 1, 1000)):
         if not integer(config[name]) or not lo <= config[name] <= hi:
             raise ValueError(f"invalid configuration: {name}")
-    if not isinstance(book, dict) or book.get("schema_version") != 1:
+    if (not isinstance(book, dict) or not integer(book.get("schema_version"))
+            or book["schema_version"] != 1):
         raise ValueError("unsupported casebook schema")
     grid = book["map"]
     if (not isinstance(grid, dict) or grid.get("frame_id") != "map"

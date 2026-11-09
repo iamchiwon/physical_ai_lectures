@@ -4,10 +4,10 @@
   "scenario": "nominal",
   "python": "3.12.11",
   "platform": "Darwin",
-  "source_sha256": "70d44ae2627a6fa5f914c110aac2066e766829ac98f540637bd9f3702c6dafea",
+  "source_sha256": "f3a20fb57d758bb16ecd76666e90638c36bc31d1200c1bea376992f7bccd278e",
   "casebook_sha256": "639abf1e514e6db187e1ad111c63e1307187f43d5d39e1d7eefe4e851f753fe7",
   "config_sha256": "e1c7294cc81b18dbbbb0e65ae9fc38eba61e136ed4aacef2c1bc7349876394da",
-  "input_sha256": "4df940d1a1f9c4a294d839d18e368b41aca6867de1d8e02017ece469c4fb262f",
+  "input_sha256": "83a06d12ece3e2b44e8166207b6de055c8b4974d2f6b1080808fa79b3cee14a3",
   "units": "one-metre grid; abstract cell transitions, not physical velocity commands",
   "limitation": "provided model pose and occupancy; no ROS/Nav2/SLAM, dynamics or physical safety validation",
   "counts": {

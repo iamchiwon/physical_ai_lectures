@@ -4,7 +4,7 @@
   "scenario": "wrong-map",
   "python": "3.12.11",
   "platform": "Darwin",
-  "source_sha256": "70d44ae2627a6fa5f914c110aac2066e766829ac98f540637bd9f3702c6dafea",
+  "source_sha256": "f3a20fb57d758bb16ecd76666e90638c36bc31d1200c1bea376992f7bccd278e",
   "casebook_sha256": "639abf1e514e6db187e1ad111c63e1307187f43d5d39e1d7eefe4e851f753fe7",
   "config_sha256": "e1c7294cc81b18dbbbb0e65ae9fc38eba61e136ed4aacef2c1bc7349876394da",
   "input_sha256": null,

@@ -4,7 +4,7 @@
 
 ## 실행
 
-Python3.12.11을선택하고이디렉터리에서실행한다. reference는검수자실행예이며자신의수행보고로제출하지않는다. 보고서의Python/platform·소스/설정/입력SHA를자신의환경과비교한다.
+제공 reference는 Python3.12.11·Darwin에서 직접 실행한 결과다. Python3.12.11을선택하고이디렉터리에서실행한다. reference는검수자실행예이며자신의수행보고로제출하지않는다. 보고서의Python/platform·소스/설정/입력SHA를자신의환경과비교한다.
 
 ```sh
 python --version
