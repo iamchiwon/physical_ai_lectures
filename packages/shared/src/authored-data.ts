@@ -170,6 +170,20 @@ export const authoredMetadata: AuthoredMetadata[] = [
     "evidenceRef": "doc/v2/work_items/M01.06.md"
   },
   {
+    "topicId": "M31.01",
+    "source": "ebook/curriculum/M31/M31.01.md",
+    "title": "작업 명세·환경·완료 기준·작은 변경 루프",
+    "objectives": [
+      "모호한 요청을 입력·환경·변경 범위·산출물·비목표가 있는 작업 명세로 고친다.",
+      "결과를 보기 전에 정상·경계·실패 입력과 완료 기준을 정하고 실제 검증 범위를 판정한다.",
+      "작은 변경의 차이·실행 기록·결과를 같은 소스와 입력에 연결해 완료 또는 추가 확인을 결정한다."
+    ],
+    "prerequisiteNote": "일반 코딩 경험과 M01.02의 자료 계약, M01.05의 소스/환경 재현 명세를 사용한다. 언어 문법·ROS·GPU·특정 에이전트 설치는 필요 없다. 아래의 완전한 합성 명세와 기록을 분석하며 기존 장비 실험의 재현을 완료했다고 주장하지 않는다.",
+    "sha256": "c9fd65b1a03488ad1b485fcd9bf8b77d2e191e9a9a25b4925e82690f1aa8e1c2",
+    "reviewed": true,
+    "evidenceRef": "doc/v2/work_items/M31.01.md"
+  },
+  {
     "topicId": "M05.01",
     "source": "ebook/curriculum/M05/M05.01.md",
     "title": "워크스페이스·패키지·빌드·노드·Executor",

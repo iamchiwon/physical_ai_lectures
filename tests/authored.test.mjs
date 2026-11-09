@@ -215,3 +215,10 @@ test('legacy app source revisions use registered historical hashes and update ac
  const accepted=c.applyAuthoredOverlay(c.legacyCatalog,[],[{...revision,approved:true,evidenceRef:'fixture-review'}]);for(const activity of accepted.activities.filter(a=>a.locator.source===source)){assert.equal(activity.integrity.status,'matched');assert.equal(activity.locator.sourceSha256,revision.sha256);assert.equal(activity.revision,`sha256:${revision.sha256}`);}
  assert.deepEqual(accepted.resources,c.legacyCatalog.resources);
 });
+
+test('W01 authority is limited to the two early M31 topics and cannot approve later automation',()=>{
+ const registry=authoredReviewRegistries.find(row=>row.file.endsWith('/w01-reviews.json'));assert.deepEqual(registry.topicIds,['M31.01','M31.02']);assert.equal(registry.modules,undefined);
+ const known=c.catalog.units.map(unit=>unit.topicId),review={sourceSha256:'a'.repeat(64),evidenceRef:'review.md'};
+ const data={schemaVersion:1,topics:Object.fromEntries(registry.topicIds.map(id=>[id,review]))};assert.equal(Object.keys(mergeAuthoredReviews([{...registry,data}],known).topics).length,2);
+ for(const id of ['M31.03','M31.04','M31.05','M31.06','M34.01','M13.01'])assert.throws(()=>mergeAuthoredReviews([{...registry,data:{schemaVersion:1,topics:{[id]:review}}}],known),/scope/);
+});
