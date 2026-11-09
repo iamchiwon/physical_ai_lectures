@@ -716,6 +716,20 @@ export const authoredMetadata: AuthoredMetadata[] = [
     "evidenceRef": "doc/v2/work_items/M13.01.md"
   },
   {
+    "topicId": "M13.02",
+    "source": "ebook/curriculum/M13/M13.02.md",
+    "title": "정합·ICP·대응점·잔차",
+    "objectives": [
+      "source에서 target으로의 변환 방향과 대응 가정을 구분하고 변환점·잔차를 계산한다.",
+      "작은 이동 정합에서 대응 선택과 변환 갱신을 계산하고 거리 문턱·제외점의 영향을 설명한다.",
+      "수렴·작은 잔차와 올바른 정합을 구분하고 반복 무늬·기하 제약·중첩을 함께 평가한다."
+    ],
+    "prerequisiteNote": "M13.01의 프레임·단위·전처리와 그 선수 좌표/최소제곱을 사용한다. 회전 기호와 역변환은 본문에서 보충한다. 일반 코딩·문법, PCL/Open3D 설치나 실제 SLAM 실행은 요구하지 않으며 작은 합성 좌표를 계산한다.",
+    "sha256": "9030007651d4ad13e01186a18c336cb5b84a264909e9b606bf268c3d76effa8b",
+    "reviewed": true,
+    "evidenceRef": "doc/v2/work_items/M13.02.md"
+  },
+  {
     "topicId": "M06.05",
     "source": "ebook/curriculum/M06/M06.05.md",
     "title": "차동·옴니·메카넘 순/역운동학",
