@@ -1668,6 +1668,20 @@ export const authoredMetadata: AuthoredMetadata[] = [
     "evidenceRef": "doc/v2/work_items/M18.06.md"
   },
   {
+    "topicId": "M25.01",
+    "source": "ebook/curriculum/M25/M25.01.md",
+    "title": "SimReady 자산·계층·단위·재질·물리 속성",
+    "objectives": [
+      "자산 계층·참조와 시각/충돌/질량·렌더/물리 재질의 역할을 분리해 검사 항목을 만든다.",
+      "참조 자산과 소비 장면의 단위를 대조하여 크기·부피·밀도 기반 질량을 계산하고 잘못된 보정을 진단한다.",
+      "합성 자산 명세의 결함·정적 검수·동적 관찰·실물 미확인을 구분하고 재현 가능한 검수 근거를 작성한다."
+    ],
+    "prerequisiteNote": "M10.05의 물리/렌더 시간, M12.02의 카메라 기하, M20.03의 데이터 메타데이터가 선수다. 변환/질량은 M10.02/.04에서 보충한다. 제공 명세의 종이 계산과 기록 검사가 기본이며 실제 USD validator·Isaac Sim·GPU나 실물 실행은 요구하지 않는다. 일반 언어/문법은 다루지 않는다.",
+    "sha256": "2f22ca11584d27c09aef39b370292e9efd9be7fac0212ce4990dedf056aa6f44",
+    "reviewed": true,
+    "evidenceRef": "doc/v2/work_items/M25.01.md"
+  },
+  {
     "topicId": "M27.01",
     "source": "ebook/curriculum/M27/M27.01.md",
     "title": "Raspberry Pi·엣지 컴퓨팅·메모리·전력 제약",
@@ -2068,10 +2082,10 @@ export const legacyRevisions: LegacyRevision[] = [
   {
     "source": "ebook/book/02_physx_simulation/chapter.md",
     "baselineSha256": "a21459dc9d4dd74be968ed41bcc237d55d1e56f5bf0d3d5b151da99e48011c40",
-    "sha256": "878889231180b70a57506b24735eb846a4655a723693af9ce43adbd96cb79cfd",
+    "sha256": "a97ca4c6da2bf0f3ffa086bcdd9451913756ebe6562efe075171d39a68637e7b",
     "approved": true,
-    "reason": "E1에서 기존 02장으로 선수·실습범위·오개념 연결 보강 / latest를 재현 가능한 고정버전 안내로 정정 / 수학브리지독립검수: Euler 고정축적용xyz와행렬곱RzRyRx 용어정정·실행수식/함수명보존 / 짐벌락정확특이점과근처조건악화구분 / E2: ROS・기구학・제어・모델 선수/후속 연결 및 관련 개념·실행 전제 보완 / E3: 시뮬레이션·학습·비전·카메라/시간 기초의 연결 및 독립검토된 개념/그림 조건 정정 / E4: 로봇팔·데이터·정책·배포·캡스톤 선수/후속과 교육용 계산·실행·안전 계약 보완 / E5: 모바일 경로·시뮬레이터 구분·map/odom/base·계획/미션·주행-조작 연결 보완",
-    "evidenceRef": "doc/v2/work_items/E5-review.md"
+    "reason": "E1에서 기존 02장으로 선수·실습범위·오개념 연결 보강 / latest를 재현 가능한 고정버전 안내로 정정 / 수학브리지독립검수: Euler 고정축적용xyz와행렬곱RzRyRx 용어정정·실행수식/함수명보존 / 짐벌락정확특이점과근처조건악화구분 / E2: ROS・기구학・제어・모델 선수/후속 연결 및 관련 개념·실행 전제 보완 / E3: 시뮬레이션·학습·비전·카메라/시간 기초의 연결 및 독립검토된 개념/그림 조건 정정 / E4: 로봇팔·데이터·정책·배포·캡스톤 선수/후속과 교육용 계산·실행·안전 계약 보완 / E5: 모바일 경로·시뮬레이터 구분·map/odom/base·계획/미션·주행-조작 연결 보완 / M25.01: 자산 계층·참조 단위 보정과 정적/동적/실물 검수 범위 연결",
+    "evidenceRef": "doc/v2/work_items/M25.01.md"
   },
   {
     "source": "ebook/book/02_physx_simulation/code/transforms.py",
@@ -2212,6 +2226,12 @@ export const legacyExerciseReferences: DerivedReference[] = [
     "approved": true
   },
   {
+    "activityId": "legacy:exercise:02_physx_simulation--chapter-18-q1",
+    "baselineSha256": "1b9eff2d969be08df43208bb3bdedf2e4123f09b04800e816764fd22ba3bc6f3",
+    "sha256": "d33560a59ad1441a890bf2d2f43d1b660ce2853e07efa78a0fa1d6769c0bd49e",
+    "approved": true
+  },
+  {
     "activityId": "legacy:exercise:02_physx_simulation--chapter-18-q2",
     "baselineSha256": "1f079e0bf0beecf40c0bc0640d90b593dbbc865661a90c539998e52ac7e3abc1",
     "sha256": "62fecc396a500b80b7d8c884b0781835f1d49eb172d3f9313b5be2242f6d9885",
@@ -2232,19 +2252,19 @@ export const legacyExerciseReferences: DerivedReference[] = [
   {
     "activityId": "legacy:exercise:02_physx_simulation--chapter-18-q9",
     "baselineSha256": "50bfcac7c1440f01c08887816b64e5d9ca9f7d6d9a4d2b9004496489e97019a9",
-    "sha256": "f2c498f1654893be108eb51a38ba341d30a1c1e75dc8663329adbc8c3a43696c",
+    "sha256": "a3fe470d3dcdfb418f03aaa227243a716b698ba055f973659e8971aa3de78720",
     "approved": true
   },
   {
     "activityId": "legacy:exercise:02_physx_simulation--exercises--problem_set-1-q3",
     "baselineSha256": "8b07e9ea8308a5f6a09c54cf44dbcc2dacf2862fd97dbc2faf505ec1fbe5bd81",
-    "sha256": "66bdc849a42449ae85524aae12aec31a49cf9a65c44b535a1798647b4edb3c12",
+    "sha256": "e5f2c8bddef3bf996331ef6aabe0a4b0207355fc2bf47463191d28bfdd94c230",
     "approved": true
   },
   {
     "activityId": "legacy:exercise:02_physx_simulation--exercises--problem_set-1-q4",
     "baselineSha256": "62df5206b8b78715573634f7d98939981f622c72d9128994dc3516195f8678cb",
-    "sha256": "66bdc849a42449ae85524aae12aec31a49cf9a65c44b535a1798647b4edb3c12",
+    "sha256": "e5f2c8bddef3bf996331ef6aabe0a4b0207355fc2bf47463191d28bfdd94c230",
     "approved": true
   },
   {

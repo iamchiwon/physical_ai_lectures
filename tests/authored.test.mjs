@@ -235,3 +235,10 @@ test('W03 approval authority is limited to mobile reproduction and CI units',()=
  assert.deepEqual(registry.topicIds,['M31.03','M31.04']);
  for(const topicId of ['M31.01','M31.02','M31.05','M31.06','M14.04','M34.01'])assert.ok(!registry.topicIds.includes(topicId));
 });
+
+test('W04 review authority covers only six digital twin asset topics',()=>{
+ const registry=authoredReviewRegistries.find(r=>r.file==='doc/v2/inventory/w04-reviews.json');assert.deepEqual(registry.topicIds,['M25.01','M25.02','M25.03','M25.04','M25.05','M25.06']);assert.equal(registry.modules,undefined);
+ const known=c.catalog.units.map(u=>u.topicId),review={sourceSha256:'a'.repeat(64),evidenceRef:'review.md'};
+ const data={schemaVersion:1,topics:Object.fromEntries(registry.topicIds.map(id=>[id,review]))};assert.equal(Object.keys(mergeAuthoredReviews([{...registry,data}],known).topics).length,6);
+ for(const id of ['M10.01','M23.01','M24.01','M27.01','M31.05','M34.01'])assert.throws(()=>mergeAuthoredReviews([{...registry,data:{schemaVersion:1,topics:{[id]:review}}}],known),/scope/);
+});
