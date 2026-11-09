@@ -1,0 +1,6 @@
+{
+  "ttl_ms": 100,
+  "max_no_path": 3,
+  "max_steps": 30,
+  "step_ms": 100
+}

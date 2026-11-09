@@ -1,0 +1,797 @@
+{
+  "version": "P2-1",
+  "mode": "simulate",
+  "scenario": "temporary-block",
+  "python": "3.12.11",
+  "platform": "Darwin",
+  "source_sha256": "70d44ae2627a6fa5f914c110aac2066e766829ac98f540637bd9f3702c6dafea",
+  "casebook_sha256": "639abf1e514e6db187e1ad111c63e1307187f43d5d39e1d7eefe4e851f753fe7",
+  "config_sha256": "e1c7294cc81b18dbbbb0e65ae9fc38eba61e136ed4aacef2c1bc7349876394da",
+  "input_sha256": null,
+  "units": "one-metre grid; abstract cell transitions, not physical velocity commands",
+  "limitation": "provided model pose and occupancy; no ROS/Nav2/SLAM, dynamics or physical safety validation",
+  "counts": {
+    "MOVING": 8,
+    "WAITING": 2,
+    "GOAL_REACHED": 1,
+    "SUCCEEDED": 1
+  },
+  "terminal_state": "SUCCEEDED",
+  "success": true,
+  "reached_waypoints": 2,
+  "moves": 8,
+  "observations": [
+    {
+      "id": 0,
+      "clock_id": "ClockA",
+      "now_ms": 1000,
+      "stamp_ms": 1000,
+      "map_loaded": true,
+      "localization_valid": true,
+      "map_revision": "map-demo-1",
+      "world_revision": "world-demo-1",
+      "pose": {
+        "frame_id": "odom",
+        "xy_m": [
+          -1,
+          2
+        ]
+      },
+      "transform": {
+        "revision": "tf-demo-1",
+        "source_frame": "odom",
+        "target_frame": "map",
+        "clock_id": "ClockA",
+        "stamp_ms": 1000,
+        "translation_m": [
+          1,
+          0
+        ],
+        "yaw_rad": 0
+      },
+      "dynamic_occupied": []
+    },
+    {
+      "id": 1,
+      "clock_id": "ClockA",
+      "now_ms": 1100,
+      "stamp_ms": 1100,
+      "map_loaded": true,
+      "localization_valid": true,
+      "map_revision": "map-demo-1",
+      "world_revision": "world-demo-1",
+      "pose": {
+        "frame_id": "odom",
+        "xy_m": [
+          0,
+          2
+        ]
+      },
+      "transform": {
+        "revision": "tf-demo-1",
+        "source_frame": "odom",
+        "target_frame": "map",
+        "clock_id": "ClockA",
+        "stamp_ms": 1100,
+        "translation_m": [
+          1,
+          0
+        ],
+        "yaw_rad": 0
+      },
+      "dynamic_occupied": []
+    },
+    {
+      "id": 2,
+      "clock_id": "ClockA",
+      "now_ms": 1200,
+      "stamp_ms": 1200,
+      "map_loaded": true,
+      "localization_valid": true,
+      "map_revision": "map-demo-1",
+      "world_revision": "world-demo-1",
+      "pose": {
+        "frame_id": "odom",
+        "xy_m": [
+          1,
+          2
+        ]
+      },
+      "transform": {
+        "revision": "tf-demo-1",
+        "source_frame": "odom",
+        "target_frame": "map",
+        "clock_id": "ClockA",
+        "stamp_ms": 1200,
+        "translation_m": [
+          1,
+          0
+        ],
+        "yaw_rad": 0
+      },
+      "dynamic_occupied": [
+        [
+          3,
+          2
+        ]
+      ]
+    },
+    {
+      "id": 3,
+      "clock_id": "ClockA",
+      "now_ms": 1300,
+      "stamp_ms": 1300,
+      "map_loaded": true,
+      "localization_valid": true,
+      "map_revision": "map-demo-1",
+      "world_revision": "world-demo-1",
+      "pose": {
+        "frame_id": "odom",
+        "xy_m": [
+          1,
+          2
+        ]
+      },
+      "transform": {
+        "revision": "tf-demo-1",
+        "source_frame": "odom",
+        "target_frame": "map",
+        "clock_id": "ClockA",
+        "stamp_ms": 1300,
+        "translation_m": [
+          1,
+          0
+        ],
+        "yaw_rad": 0
+      },
+      "dynamic_occupied": [
+        [
+          3,
+          2
+        ]
+      ]
+    },
+    {
+      "id": 4,
+      "clock_id": "ClockA",
+      "now_ms": 1400,
+      "stamp_ms": 1400,
+      "map_loaded": true,
+      "localization_valid": true,
+      "map_revision": "map-demo-1",
+      "world_revision": "world-demo-1",
+      "pose": {
+        "frame_id": "odom",
+        "xy_m": [
+          1,
+          2
+        ]
+      },
+      "transform": {
+        "revision": "tf-demo-1",
+        "source_frame": "odom",
+        "target_frame": "map",
+        "clock_id": "ClockA",
+        "stamp_ms": 1400,
+        "translation_m": [
+          1,
+          0
+        ],
+        "yaw_rad": 0
+      },
+      "dynamic_occupied": []
+    },
+    {
+      "id": 5,
+      "clock_id": "ClockA",
+      "now_ms": 1500,
+      "stamp_ms": 1500,
+      "map_loaded": true,
+      "localization_valid": true,
+      "map_revision": "map-demo-1",
+      "world_revision": "world-demo-1",
+      "pose": {
+        "frame_id": "odom",
+        "xy_m": [
+          2,
+          2
+        ]
+      },
+      "transform": {
+        "revision": "tf-demo-1",
+        "source_frame": "odom",
+        "target_frame": "map",
+        "clock_id": "ClockA",
+        "stamp_ms": 1500,
+        "translation_m": [
+          1,
+          0
+        ],
+        "yaw_rad": 0
+      },
+      "dynamic_occupied": []
+    },
+    {
+      "id": 6,
+      "clock_id": "ClockA",
+      "now_ms": 1600,
+      "stamp_ms": 1600,
+      "map_loaded": true,
+      "localization_valid": true,
+      "map_revision": "map-demo-1",
+      "world_revision": "world-demo-1",
+      "pose": {
+        "frame_id": "odom",
+        "xy_m": [
+          3,
+          2
+        ]
+      },
+      "transform": {
+        "revision": "tf-demo-1",
+        "source_frame": "odom",
+        "target_frame": "map",
+        "clock_id": "ClockA",
+        "stamp_ms": 1600,
+        "translation_m": [
+          1,
+          0
+        ],
+        "yaw_rad": 0
+      },
+      "dynamic_occupied": []
+    },
+    {
+      "id": 7,
+      "clock_id": "ClockA",
+      "now_ms": 1700,
+      "stamp_ms": 1700,
+      "map_loaded": true,
+      "localization_valid": true,
+      "map_revision": "map-demo-1",
+      "world_revision": "world-demo-1",
+      "pose": {
+        "frame_id": "odom",
+        "xy_m": [
+          4,
+          2
+        ]
+      },
+      "transform": {
+        "revision": "tf-demo-1",
+        "source_frame": "odom",
+        "target_frame": "map",
+        "clock_id": "ClockA",
+        "stamp_ms": 1700,
+        "translation_m": [
+          1,
+          0
+        ],
+        "yaw_rad": 0
+      },
+      "dynamic_occupied": []
+    },
+    {
+      "id": 8,
+      "clock_id": "ClockA",
+      "now_ms": 1800,
+      "stamp_ms": 1800,
+      "map_loaded": true,
+      "localization_valid": true,
+      "map_revision": "map-demo-1",
+      "world_revision": "world-demo-1",
+      "pose": {
+        "frame_id": "odom",
+        "xy_m": [
+          5,
+          2
+        ]
+      },
+      "transform": {
+        "revision": "tf-demo-1",
+        "source_frame": "odom",
+        "target_frame": "map",
+        "clock_id": "ClockA",
+        "stamp_ms": 1800,
+        "translation_m": [
+          1,
+          0
+        ],
+        "yaw_rad": 0
+      },
+      "dynamic_occupied": []
+    },
+    {
+      "id": 9,
+      "clock_id": "ClockA",
+      "now_ms": 1900,
+      "stamp_ms": 1900,
+      "map_loaded": true,
+      "localization_valid": true,
+      "map_revision": "map-demo-1",
+      "world_revision": "world-demo-1",
+      "pose": {
+        "frame_id": "odom",
+        "xy_m": [
+          5,
+          2
+        ]
+      },
+      "transform": {
+        "revision": "tf-demo-1",
+        "source_frame": "odom",
+        "target_frame": "map",
+        "clock_id": "ClockA",
+        "stamp_ms": 1900,
+        "translation_m": [
+          1,
+          0
+        ],
+        "yaw_rad": 0
+      },
+      "dynamic_occupied": []
+    },
+    {
+      "id": 10,
+      "clock_id": "ClockA",
+      "now_ms": 2000,
+      "stamp_ms": 2000,
+      "map_loaded": true,
+      "localization_valid": true,
+      "map_revision": "map-demo-1",
+      "world_revision": "world-demo-1",
+      "pose": {
+        "frame_id": "odom",
+        "xy_m": [
+          5,
+          3
+        ]
+      },
+      "transform": {
+        "revision": "tf-demo-1",
+        "source_frame": "odom",
+        "target_frame": "map",
+        "clock_id": "ClockA",
+        "stamp_ms": 2000,
+        "translation_m": [
+          1,
+          0
+        ],
+        "yaw_rad": 0
+      },
+      "dynamic_occupied": []
+    },
+    {
+      "id": 11,
+      "clock_id": "ClockA",
+      "now_ms": 2100,
+      "stamp_ms": 2100,
+      "map_loaded": true,
+      "localization_valid": true,
+      "map_revision": "map-demo-1",
+      "world_revision": "world-demo-1",
+      "pose": {
+        "frame_id": "odom",
+        "xy_m": [
+          5,
+          4
+        ]
+      },
+      "transform": {
+        "revision": "tf-demo-1",
+        "source_frame": "odom",
+        "target_frame": "map",
+        "clock_id": "ClockA",
+        "stamp_ms": 2100,
+        "translation_m": [
+          1,
+          0
+        ],
+        "yaw_rad": 0
+      },
+      "dynamic_occupied": []
+    }
+  ],
+  "decisions": [
+    {
+      "input_id": 0,
+      "state": "MOVING",
+      "reason": "next_free_cell",
+      "map_cell": [
+        0,
+        2
+      ],
+      "age_ms": 0,
+      "waypoint_index": 0,
+      "goal_cell": [
+        6,
+        2
+      ],
+      "reached_waypoints": 0,
+      "path": [
+        [
+          0,
+          2
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          2
+        ],
+        [
+          3,
+          2
+        ],
+        [
+          4,
+          2
+        ],
+        [
+          5,
+          2
+        ],
+        [
+          6,
+          2
+        ]
+      ],
+      "delta_cell": [
+        1,
+        0
+      ],
+      "no_path_streak": 0
+    },
+    {
+      "input_id": 1,
+      "state": "MOVING",
+      "reason": "next_free_cell",
+      "map_cell": [
+        1,
+        2
+      ],
+      "age_ms": 0,
+      "waypoint_index": 0,
+      "goal_cell": [
+        6,
+        2
+      ],
+      "reached_waypoints": 0,
+      "path": [
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          2
+        ],
+        [
+          3,
+          2
+        ],
+        [
+          4,
+          2
+        ],
+        [
+          5,
+          2
+        ],
+        [
+          6,
+          2
+        ]
+      ],
+      "delta_cell": [
+        1,
+        0
+      ],
+      "no_path_streak": 0
+    },
+    {
+      "input_id": 2,
+      "state": "WAITING",
+      "reason": "no_path",
+      "map_cell": [
+        2,
+        2
+      ],
+      "age_ms": 0,
+      "waypoint_index": 0,
+      "goal_cell": [
+        6,
+        2
+      ],
+      "reached_waypoints": 0,
+      "path": [],
+      "delta_cell": [
+        0,
+        0
+      ],
+      "no_path_streak": 1
+    },
+    {
+      "input_id": 3,
+      "state": "WAITING",
+      "reason": "no_path",
+      "map_cell": [
+        2,
+        2
+      ],
+      "age_ms": 0,
+      "waypoint_index": 0,
+      "goal_cell": [
+        6,
+        2
+      ],
+      "reached_waypoints": 0,
+      "path": [],
+      "delta_cell": [
+        0,
+        0
+      ],
+      "no_path_streak": 2
+    },
+    {
+      "input_id": 4,
+      "state": "MOVING",
+      "reason": "next_free_cell",
+      "map_cell": [
+        2,
+        2
+      ],
+      "age_ms": 0,
+      "waypoint_index": 0,
+      "goal_cell": [
+        6,
+        2
+      ],
+      "reached_waypoints": 0,
+      "path": [
+        [
+          2,
+          2
+        ],
+        [
+          3,
+          2
+        ],
+        [
+          4,
+          2
+        ],
+        [
+          5,
+          2
+        ],
+        [
+          6,
+          2
+        ]
+      ],
+      "delta_cell": [
+        1,
+        0
+      ],
+      "no_path_streak": 0
+    },
+    {
+      "input_id": 5,
+      "state": "MOVING",
+      "reason": "next_free_cell",
+      "map_cell": [
+        3,
+        2
+      ],
+      "age_ms": 0,
+      "waypoint_index": 0,
+      "goal_cell": [
+        6,
+        2
+      ],
+      "reached_waypoints": 0,
+      "path": [
+        [
+          3,
+          2
+        ],
+        [
+          4,
+          2
+        ],
+        [
+          5,
+          2
+        ],
+        [
+          6,
+          2
+        ]
+      ],
+      "delta_cell": [
+        1,
+        0
+      ],
+      "no_path_streak": 0
+    },
+    {
+      "input_id": 6,
+      "state": "MOVING",
+      "reason": "next_free_cell",
+      "map_cell": [
+        4,
+        2
+      ],
+      "age_ms": 0,
+      "waypoint_index": 0,
+      "goal_cell": [
+        6,
+        2
+      ],
+      "reached_waypoints": 0,
+      "path": [
+        [
+          4,
+          2
+        ],
+        [
+          5,
+          2
+        ],
+        [
+          6,
+          2
+        ]
+      ],
+      "delta_cell": [
+        1,
+        0
+      ],
+      "no_path_streak": 0
+    },
+    {
+      "input_id": 7,
+      "state": "MOVING",
+      "reason": "next_free_cell",
+      "map_cell": [
+        5,
+        2
+      ],
+      "age_ms": 0,
+      "waypoint_index": 0,
+      "goal_cell": [
+        6,
+        2
+      ],
+      "reached_waypoints": 0,
+      "path": [
+        [
+          5,
+          2
+        ],
+        [
+          6,
+          2
+        ]
+      ],
+      "delta_cell": [
+        1,
+        0
+      ],
+      "no_path_streak": 0
+    },
+    {
+      "input_id": 8,
+      "state": "GOAL_REACHED",
+      "reason": "observed_waypoint",
+      "map_cell": [
+        6,
+        2
+      ],
+      "age_ms": 0,
+      "waypoint_index": 0,
+      "goal_cell": [
+        6,
+        2
+      ],
+      "reached_waypoints": 1,
+      "path": [],
+      "delta_cell": [
+        0,
+        0
+      ],
+      "no_path_streak": 0
+    },
+    {
+      "input_id": 9,
+      "state": "MOVING",
+      "reason": "next_free_cell",
+      "map_cell": [
+        6,
+        2
+      ],
+      "age_ms": 0,
+      "waypoint_index": 1,
+      "goal_cell": [
+        6,
+        4
+      ],
+      "reached_waypoints": 1,
+      "path": [
+        [
+          6,
+          2
+        ],
+        [
+          6,
+          3
+        ],
+        [
+          6,
+          4
+        ]
+      ],
+      "delta_cell": [
+        0,
+        1
+      ],
+      "no_path_streak": 0
+    },
+    {
+      "input_id": 10,
+      "state": "MOVING",
+      "reason": "next_free_cell",
+      "map_cell": [
+        6,
+        3
+      ],
+      "age_ms": 0,
+      "waypoint_index": 1,
+      "goal_cell": [
+        6,
+        4
+      ],
+      "reached_waypoints": 1,
+      "path": [
+        [
+          6,
+          3
+        ],
+        [
+          6,
+          4
+        ]
+      ],
+      "delta_cell": [
+        0,
+        1
+      ],
+      "no_path_streak": 0
+    },
+    {
+      "input_id": 11,
+      "state": "SUCCEEDED",
+      "reason": "observed_waypoint",
+      "map_cell": [
+        6,
+        4
+      ],
+      "age_ms": 0,
+      "waypoint_index": 1,
+      "goal_cell": [
+        6,
+        4
+      ],
+      "reached_waypoints": 2,
+      "path": [],
+      "delta_cell": [
+        0,
+        0
+      ],
+      "no_path_streak": 0
+    }
+  ]
+}

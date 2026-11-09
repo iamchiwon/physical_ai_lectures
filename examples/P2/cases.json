@@ -1,0 +1,25 @@
+{
+  "schema_version": 1,
+  "map": {
+    "revision": "map-demo-1",
+    "world_revision": "world-demo-1",
+    "frame_id": "map",
+    "width": 7,
+    "height": 5,
+    "cell_size_m": 1,
+    "occupied": [[3, 0], [3, 1], [3, 3], [3, 4]]
+  },
+  "start_cell": [0, 2],
+  "waypoints": [[6, 2], [6, 4]],
+  "clock_id": "ClockA",
+  "transform_revision": "tf-demo-1",
+  "translation_m": [1, 0],
+  "scenarios": {
+    "nominal": {"events": [], "fault": null},
+    "temporary-block": {"events": [{"tick": 2, "occupied": [[3, 2]]}, {"tick": 4, "occupied": []}], "fault": null},
+    "permanent-block": {"events": [{"tick": 2, "occupied": [[3, 2]]}], "fault": null},
+    "missing-tf": {"events": [], "fault": {"tick": 1, "kind": "missing-tf"}},
+    "stale": {"events": [], "fault": {"tick": 1, "kind": "stale"}},
+    "wrong-map": {"events": [], "fault": {"tick": 1, "kind": "wrong-map"}}
+  }
+}
