@@ -1,0 +1,44 @@
+# P3 · 물류 작업과 다중 로봇 통합 · 기본 실행 계약
+
+## 범위·선수·환경
+
+S09의 M18.05·M19.06·M18.06과 G-S08의 제안/실행/관측 구분을 연결한다. Python3.12.11 표준라이브러리로 **두 로봇의 합성 사건표를 처리하는 감독기**를 실행한다. 네트워크·ROS/fleet·Nav2/MoveIt·로봇/물체·물리/충돌 안전 실증은 포함하지 않는다. 일반코딩가능을전제로언어/문법은설명하지않는다. 미래M32.03/양팔정책/트윈을선수로요구하지않는다.
+
+기본활동은제공사건의재생/상태판정이다. 새명령이새물리관측을만드는폐루프모형이아니다. 출력의DEPART_ALLOWED는다음주행의허가판정이며실제출발/도착/전체물류성과가아니다. 두로봇의작업확인·수납과출발준비를각각기록한다. 모든실행의원사건/결정·환경·소스/설정/입력SHA를남기고새출력파일만만든다.
+
+## 식별자·시각·입력 계약
+
+- 로봇r1/r2는namespace /r1,/r2와base frame r1/base_link,r2/base_link를쓴다. 공통자원은corridor-1,world/map개정은world-shared-1/map-shared-1,시계는ClockA다. 좌표/기하/물리공간계산은하지않고제공된자원점유사건을읽는다.
+- 로봇마다현재job_id·nav_goal_id·arm_goal_id가고정되어있다. namespace만나눴다는이유로다른robot/frame/job/goal결과를수용하지않는다. 과거job세대와현재요청을구분한다.
+- 사건seq는실행전체에서엄격히증가하고now_ms도증가한다. stamp_ms는같은ClockA의취득시각으로유한한0이상정수다. 0≤now−stamp≤100ms일때만쓴다. 음수/101ms초과·누락/형식·다른clock/scene/identity는INVALID로추가판정을중단하며자원상태를unknown으로보수적으로기록한다. 해당행의추가허가는없다.
+- 신뢰된검수용사건을제공한가정이며인증된센서/정책시스템을구현한것이아니다. 관측/검증필드가거짓이거나권한밖인실제시스템을이입력검사만으로보호했다고주장하지않는다.
+
+## 예약과 실제 점유
+
+예약은허가보유자와만료시각,점유는관측된로봇으로별도저장한다. 예약유효구간은[허가시각,허가시각+1000ms)다. 새사건의now가만료시각이상이면예약만만료된다. 만료가실제퇴장/정지/자원해제를증명하지않는다.
+
+reserve요청은unknown이아니고실제점유가없으며다른유효예약이없을때GRANTED다. 점유가있으면WAIT_OCCUPIED,다른유효예약이있으면WAIT_RESERVED다. 실제enter는현재예약자/유효job과맞아야ENTER_CONFIRMED로점유를기록한다. 유효예약없는진입/다른로봇의모순된진입은자원을unknown으로잠그고추가허가하지않는다. 현재점유자의일치하는exit관측만퇴장을확인한다. unknown모순해제의운영자재조정은기본실습범위밖이다.
+
+## 주행·작업·수납·출발준비
+
+각로봇의초기상태는nav미완료/실제base정지미확인·작업미확인·초기제공수납상태다. 새job으로바뀌면이전결과를재사용하지않는다.
+
+1. 같은nav_goal_id의nav_result SUCCEEDED는주행결과를기록하지만실제정지를자동확정하지않는다.
+2. base_stopped의stationary=true 관측이필요하다. request_arm은주행성공·base정지·자원밖·취소없음/전제확인뒤ARM_ALLOWED다. 첫허가에서arm_stowed를false로두고결과/관측을기다린다. 같은arm요청의반복은새작업으로발행하지않는다.
+3. arm_result의SUCCEEDED와object_verified=true가함께제공될때TASK_CONFIRMED다. Action결과만성공이고물체검증이없으면TASK_UNVERIFIED다. 이는제공된검증값을읽는것이며실제물체검출기를구현한것이아니다.
+4. stowed의verified=true 관측으로현재작업뒤의안전한수납/팔정지를확인한다. 작업결과가성공했다고수납을자동으로만들지않는다.
+5. request_depart는주행성공/base정지·작업확인/수납·미해결취소없음·unknown없음을모두확인해DEPART_ALLOWED다. 기본출발허가는공동통로밖에서다음주행을준비하는판정이다. 다시공동통로로들어가려면별도예약/점유조건을검사해야한다.
+
+cancel_request/ack는현재arm_goal_id와맞는요청/수락을기록한다. ack만으로팔정지/최종취소/작업완료·수납을만들지않는다. 기본모형은미해결취소가있으면출발을계속차단한다. 최종취소/정지관측과복구는추가계약이필요하며새ID로자동재시도하지않는다.
+
+## 기본7사례·사전 기대
+
+1. nominal: r1과r2각각reserve→enter→exit→nav성공→base정지→arm허가→작업/물체확인→수납관측→출발요청이다. 두로봇만READY_TO_DEPART이고공동자원은관측된빈상태다. 실제출발/물류도착을완료했다고쓰지않는다.
+2. lease-expiry: r1예약0ms/진입100ms뒤1000ms에r2가요청한다. 예약은경계에서만료되지만r1점유가남아WAIT_OCCUPIED다. 1100ms r1퇴장뒤1200ms r2요청만GRANTED다. 전체작업준비는미완료다.
+3. cancel: r1작업허가뒤취소요청/수락만주고출발을요청한다. CANCEL_ACCEPTED_NOT_STOP_CONFIRMED와DENIED_CANCEL_PENDING이며수납/실제정지를확정하지않는다.
+4. no-stow: r1작업/물체확인은성공이나수납관측없이출발요청한다. DENIED_NOT_STOWED다. 부분성공은보존하고전체준비는false다.
+5. stale: 첫예약사건의나이101ms,INVALID·허가0·자원unknown으로종료한다. 별도100ms경계는수용한다.
+6. wrong-identity: r1행에/r2 namespace/frame을넣는다. INVALID·허가0,다른로봇의상태를수정하지않는다.
+7. old-request: r1의정상예약뒤과거job_id의enter가온다. INVALID·추가진입허가0·unknown으로종료하며현재세대의점유로오인하지않는다.
+
+정상/실패·lease1000ms경계/TTL100~101ms·형식/clock/frame/job/goal·중복seq·예상치못한진입/퇴장·미확인물체/정지·입출력보존을검수한다. 출력은원사건/결정과로봇별부분성과·취소/수납/준비상태,예약/점유/unknown을구분한다. CLI종료0은보고서생성성공이며all_ready_to_depart를실제전체물류성공으로읽지않는다. malformed실행은종료2로구분한다. 입력/판정/개정과거기록을삭제해통과시키지않는다.
