@@ -1976,6 +1976,20 @@ export const authoredMetadata: AuthoredMetadata[] = [
     "evidenceRef": "doc/v2/work_items/M34.02.md"
   },
   {
+    "topicId": "M34.03",
+    "source": "ebook/curriculum/M34/M34.03.md",
+    "title": "운영 UI의 요청·권한·확인·취소·감사 기록",
+    "objectives": [
+      "관측 화면·명령 초안·사용자 확인·서버 권한 판정을 구분하고 정확한 대상/동작/기한에 확인을 묶는다.",
+      "중복 재전송·응답 단절·기한 만료·취소 수락을 합성 기록에서 판정하고 실제 종료/정지와 구분한다.",
+      "요청에서 판정·진행·취소·결과·실제 관측까지 연결하는 감사 기록과 미확인 표시를 설계한다."
+    ],
+    "prerequisiteNote": "M34.01의 신선도, M22.06의 권한/실행 감독, M30.04의 중단·미상 상태가 선수다. M34.02의 장면 계약과 함께 읽는다. 종이 요청표·합성 로그로 수행하며 실제 인증/서버/로봇 명령·안전 정지를 구현하거나 실증하지 않는다. 언어/문법 설명은 제외한다.",
+    "sha256": "66705f31d835d1d1521f99d0a863c663379621989aabd3c38c18d850ad6fb431",
+    "reviewed": true,
+    "evidenceRef": "doc/v2/work_items/M34.03.md"
+  },
+  {
     "topicId": "M32.01",
     "source": "ebook/curriculum/M32/M32.01.md",
     "title": "모바일 배달·동적 장애물·언어 미션",
@@ -2280,10 +2294,10 @@ export const legacyRevisions: LegacyRevision[] = [
   {
     "source": "ebook/book/06_sim2real_deployment/chapter.md",
     "baselineSha256": "63e21fba7a365699ea09d4be5e25675e0f9ac0c8d856e41a00bd9d8d7157d971",
-    "sha256": "e10ee9343ce89f54dde8c4dd3bdfb97d21ef971100ff1f7d492333454d39f25b",
+    "sha256": "57f3a26082016f1b610468f4ceaaaec92428ef98ba54fff2e8f14e74934ce256",
     "approved": true,
-    "reason": "E1에서 기존 06장으로 선수·실습범위·오개념 연결 보강 / E2: ROS・기구학・제어・모델 선수/후속 연결 및 관련 개념·실행 전제 보완 / E3: 시뮬레이션·학습·비전·카메라/시간 기초의 연결 및 독립검토된 개념/그림 조건 정정 / E4: 로봇팔·데이터·정책·배포·캡스톤 선수/후속과 교육용 계산·실행·안전 계약 보완 / E5: 모바일 경로·시뮬레이터 구분·map/odom/base·계획/미션·주행-조작 연결 보완 / M31.06: host/target·native환경과정확변경/대상권한·현재관측/롤백구분 연결 / M34.01: 수신/원본시각·현재/마지막값·이벤트순서와관제근거 연결 / M34.02: 장면의 좌표·시각·버전 정합과 현재 미확인 연결",
-    "evidenceRef": "doc/v2/work_items/M34.02.md"
+    "reason": "E1에서 기존 06장으로 선수·실습범위·오개념 연결 보강 / E2: ROS・기구학・제어・모델 선수/후속 연결 및 관련 개념·실행 전제 보완 / E3: 시뮬레이션·학습·비전·카메라/시간 기초의 연결 및 독립검토된 개념/그림 조건 정정 / E4: 로봇팔·데이터·정책·배포·캡스톤 선수/후속과 교육용 계산·실행·안전 계약 보완 / E5: 모바일 경로·시뮬레이터 구분·map/odom/base·계획/미션·주행-조작 연결 보완 / M31.06: host/target·native환경과정확변경/대상권한·현재관측/롤백구분 연결 / M34.01: 수신/원본시각·현재/마지막값·이벤트순서와관제근거 연결 / M34.02: 장면의 좌표·시각·버전 정합과 현재 미확인 연결 / M34.03: 요청·취소·소프트웨어 결과와 물리 관측/감사 연결",
+    "evidenceRef": "doc/v2/work_items/M34.03.md"
   },
   {
     "source": "ebook/book/06_sim2real_deployment/code/safety_supervisor.py",
