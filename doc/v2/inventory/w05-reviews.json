@@ -1,0 +1,9 @@
+{
+  "schemaVersion": 1,
+  "topics": {
+    "M31.05": {
+      "sourceSha256": "f7376c2fc3d6d0c15f038d74b6c1323fd3e2dbba76543696629dd8b173ae164f",
+      "evidenceRef": "doc/v2/work_items/M31.05.md"
+    }
+  }
+}

@@ -1089,9 +1089,9 @@ export const authoredMetadata: AuthoredMetadata[] = [
       "행동 실패·실행 불능·누락/재시도를 구분하여 선택 편향과 잘못된 자동 통과를 진단하고 확인 범위를 기록한다."
     ],
     "prerequisiteNote": "M31.03의 재현/가설/고정 회귀를 여러 조건의 반복으로 확장한다. CI·seed·쌍비교 용어와 성공/실패 기준은 본문에서 풀이한다. 일반 코딩·문법·YAML입문이나 실제 Gazebo/클라우드CI 설치·실행은 요구하지 않는다. 제공된 합성 결과를 분석한다.",
-    "sha256": "0d8ff69e07867faba525aa8e94a14988bb4e5791cc55de662e170a2cce60322e",
+    "sha256": "c357acc7e145e5950ea9489552d9f37d4b10ec397974d7a3c0be9b6eda679dca",
     "reviewed": true,
-    "evidenceRef": "doc/v2/work_items/M31.04.md"
+    "evidenceRef": "doc/v2/work_items/M31.05.md"
   },
   {
     "topicId": "M06.02",
@@ -1918,6 +1918,20 @@ export const authoredMetadata: AuthoredMetadata[] = [
     "sha256": "3d57a902a6ef9011b934d15872951ad851faf9f122d26c7213797a208d416656",
     "reviewed": true,
     "evidenceRef": "doc/v2/work_items/M30.06.md"
+  },
+  {
+    "topicId": "M31.05",
+    "source": "ebook/curriculum/M31/M31.05.md",
+    "title": "장시간 작업·다중 Agent·권한·산출물 관리",
+    "objectives": [
+      "의존성·파일 소유·자원 예산에 맞는 다중 Agent 작업 그래프를 설계하고 병렬 시간의 가정을 계산한다.",
+      "장시간 작업의 체크포인트·실행 상태·재시도/외부효과를 분리하여 중단 후 복구 절차를 작성한다.",
+      "작업 권한과 현재 개정의 산출물·실제 검사 근거를 대조해 통합/완료·미확인을 판정한다."
+    ],
+    "prerequisiteNote": "M31.04의 조건/CI·회귀/산출물이 선수다. M31.01/.02의 명세·도구 검토를 재사용한다. 벤더 독립 합성 작업표와 인수 기록을 분석하며 실제 Agent/CI/클라우드·배포/실물 실행은 요구하지 않는다. 특정 도구 설치/문법은 다루지 않는다.",
+    "sha256": "f7376c2fc3d6d0c15f038d74b6c1323fd3e2dbba76543696629dd8b173ae164f",
+    "reviewed": true,
+    "evidenceRef": "doc/v2/work_items/M31.05.md"
   },
   {
     "topicId": "M32.01",
