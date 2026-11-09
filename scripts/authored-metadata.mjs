@@ -16,6 +16,7 @@ export const authoredReviewRegistries = [
   { file: 'doc/v2/inventory/w05-reviews.json', topicIds: ['M31.05', 'M31.06'] },
   { file: 'doc/v2/inventory/w06-reviews.json', topicIds: ['M34.01', 'M34.02', 'M34.03'] },
   { file: 'doc/v2/inventory/w07-reviews.json', topicIds: ['M04.01', 'M04.02', 'M04.03', 'M04.04', 'M04.05', 'M04.06'] },
+  { file: 'doc/v2/inventory/w08-reviews.json', topicIds: ['M26.01', 'M26.02', 'M26.03', 'M26.04', 'M26.05', 'M26.06'] },
 ];
 const object = value => value !== null && typeof value === 'object' && !Array.isArray(value);
 const exactKeys = (value, keys) => Object.keys(value).every(key => keys.includes(key));
