@@ -2279,9 +2279,9 @@ export const authoredMetadata: AuthoredMetadata[] = [
       "진단 응답·세션/권한·시간 대기와 실제 작업 결과의 근거를 분리한다."
     ],
     "prerequisiteNote": "M28.02까지의 Classical/FD·타이밍/오류·신호 해석을 연결한다. 자체 가상 Classical11bit/8B·normal addressing·단일요청 기록을 분석하며 실제 차량/장비 진단·송수신·세션 변경은 수행하지 않는다. 일반 언어 문법이나 실제 인터페이스 설정을 추가하지 않는다.",
-    "sha256": "8426f6c2abb9dad4ab9fef2a1bf080548f04e40c97afa8ba63550cf9e994768c",
+    "sha256": "2a381fdf943b078fe11f82fdcde743f50a3c71cfb7b781849ed76a8b094957e1",
     "reviewed": true,
-    "evidenceRef": "doc/v2/work_items/M28.03.md"
+    "evidenceRef": "doc/v2/work_items/W09.md"
   },
   {
     "topicId": "M28.04",
@@ -2506,10 +2506,10 @@ export const legacyRevisions: LegacyRevision[] = [
   {
     "source": "ebook/book/04_sensor_data_pipeline/chapter.md",
     "baselineSha256": "69a8cf6f0e2f6e584bda629d3a17fbbe37f75ec024eab2237847807a2a3796fa",
-    "sha256": "302cec5c1348756dc44d571cde0e973b1cb8098231f4a906e4ee683d4a9655ee",
+    "sha256": "1d02ad8e310b2938086d4a93bd77c59f46991afe1eeedd0861b299b609fe8cb4",
     "approved": true,
-    "reason": "E1에서 기존 04장으로 선수·실습범위·오개념 연결 보강 / E2: ROS・기구학・제어・모델 선수/후속 연결 및 관련 개념·실행 전제 보완 / E3: 시뮬레이션·학습·비전·카메라/시간 기초의 연결 및 독립검토된 개념/그림 조건 정정 / E4: 로봇팔·데이터·정책·배포·캡스톤 선수/후속과 교육용 계산·실행·안전 계약 보완 / E5: 모바일 경로·시뮬레이터 구분·map/odom/base·계획/미션·주행-조작 연결 보완 / E5 후속: 공유 TF와 로봇별 토픽·버퍼 격리 대안 및 외부 결합 계약 구분 / W02 M14.02: 센서별 측정량·단위·장착점/시각 계약과 신규 기초 원고 연결 / M25.05: 동봉랜덤화코드의 고정camera/실제채널범위와 원본자산분할·라벨완전성 정정/연결 / M04.01: MCU 펌웨어/호스트의 타깃·메모리/공유 접근과 센서 시각 연결 / M04.02: 타이머 사건/ISR·UART 선로와 원본/수신 시각 연결 / M04.03: ADC 획득/완료/결과 쌍·샘플링/alias와 PWM/실제 관측 연결 / M04.04: 버스 주소/바이트 규약·ACK와 센서/EEPROM 유효성·원본 시각 연결 / M04.05: 호스트 대기/장치 만료·clock과 접수/관측 구분 연결 / M04.06: 원시/표준 단위·목적별 범위/오류와 과거 정상 기록의 원본 시각 보존 연결 / M28.01: CAN ACK/계층·ID와 원본 표본 시각/응용 결과 구분 연결 / M28.02: DBC변환과버전/무효·원본clock/나이·고장해결 근거 연결 / M28.03: ISO-TP재조립/UDS응답·전송/진단timer·원본시각/결과 연결 / M28.04: DTC기록/검사미완료·현재원본/삭제/설정과수리·관찰공백 연결 / M28.06: XCP계측/DAQ·원본/event/수신clock·A2L형상/페이지/적용근거 연결",
-    "evidenceRef": "doc/v2/work_items/M28.06.md"
+    "reason": "E1에서 기존 04장으로 선수·실습범위·오개념 연결 보강 / E2: ROS・기구학・제어・모델 선수/후속 연결 및 관련 개념·실행 전제 보완 / E3: 시뮬레이션·학습·비전·카메라/시간 기초의 연결 및 독립검토된 개념/그림 조건 정정 / E4: 로봇팔·데이터·정책·배포·캡스톤 선수/후속과 교육용 계산·실행·안전 계약 보완 / E5: 모바일 경로·시뮬레이터 구분·map/odom/base·계획/미션·주행-조작 연결 보완 / E5 후속: 공유 TF와 로봇별 토픽·버퍼 격리 대안 및 외부 결합 계약 구분 / W02 M14.02: 센서별 측정량·단위·장착점/시각 계약과 신규 기초 원고 연결 / M25.05: 동봉랜덤화코드의 고정camera/실제채널범위와 원본자산분할·라벨완전성 정정/연결 / M04.01: MCU 펌웨어/호스트의 타깃·메모리/공유 접근과 센서 시각 연결 / M04.02: 타이머 사건/ISR·UART 선로와 원본/수신 시각 연결 / M04.03: ADC 획득/완료/결과 쌍·샘플링/alias와 PWM/실제 관측 연결 / M04.04: 버스 주소/바이트 규약·ACK와 센서/EEPROM 유효성·원본 시각 연결 / M04.05: 호스트 대기/장치 만료·clock과 접수/관측 구분 연결 / M04.06: 원시/표준 단위·목적별 범위/오류와 과거 정상 기록의 원본 시각 보존 연결 / M28.01: CAN ACK/계층·ID와 원본 표본 시각/응용 결과 구분 연결 / M28.02: DBC변환과버전/무효·원본clock/나이·고장해결 근거 연결 / M28.03: ISO-TP재조립/UDS응답·전송/진단timer·원본시각/결과 연결 / M28.04: DTC기록/검사미완료·현재원본/삭제/설정과수리·관찰공백 연결 / M28.06: XCP계측/DAQ·원본/event/수신clock·A2L형상/페이지/적용근거 연결 / W09: M28시간계약교량5문단을기본설명뒤4.4.5로재배치·사실/링크/코드/수식보존",
+    "evidenceRef": "doc/v2/work_items/W09.md"
   },
   {
     "source": "ebook/book/04_sensor_data_pipeline/exercises/solutions.md",
@@ -2800,9 +2800,15 @@ export const legacyExerciseReferences: DerivedReference[] = [
     "approved": true
   },
   {
+    "activityId": "legacy:exercise:04_sensor_data_pipeline--chapter-15-q2",
+    "baselineSha256": "cfcef049a9d3bb9afde68ae5e48e6a36cab2efd027b3005e2b0118156bfe6913",
+    "sha256": "11a70a00c4aecee853a89abb00b9f63e907e53e26add83d82687dd66dd5bc6f0",
+    "approved": true
+  },
+  {
     "activityId": "legacy:exercise:04_sensor_data_pipeline--chapter-15-q5",
     "baselineSha256": "db330ec3d97051768edf778b93af6c746abd056ea3284021b4898fb08b36b58b",
-    "sha256": "2f4fe135a6f690e055729597ad92b2a7c45d6e5fed31c8fdfcd13bd52614853c",
+    "sha256": "bd8413304f002553c8542239f2803cee2701aa540b0027afb16f48219a37272b",
     "approved": true
   },
   {
@@ -2814,13 +2820,13 @@ export const legacyExerciseReferences: DerivedReference[] = [
   {
     "activityId": "legacy:exercise:04_sensor_data_pipeline--chapter-15-q7",
     "baselineSha256": "f73fff6f100deb8b1277825ec56b4f16cf855aa6f939e635c89e1e98558ae86f",
-    "sha256": "8c49b3d24485bf1fb61fe79da673f42354cd6d5ef00cca82102c276d853db1e8",
+    "sha256": "fc8aafdcb4421b933ac169472e24be47ae999b51f7c75e9045bac16255c5effd",
     "approved": true
   },
   {
     "activityId": "legacy:exercise:04_sensor_data_pipeline--chapter-15-q8",
     "baselineSha256": "655d77b76a1c3a9e28b37b0ab94571c2f6c09e1fef59f7ca65aa3c006443b5b4",
-    "sha256": "d33ffcf05b1b01eea3a82e53680ee123d93cef090548876f8016712130150c2c",
+    "sha256": "52685efa20c5a0baf37f6b66c385dfbb799207485826ac0caeb464237b18d779",
     "approved": true
   },
   {
@@ -2832,7 +2838,7 @@ export const legacyExerciseReferences: DerivedReference[] = [
   {
     "activityId": "legacy:exercise:04_sensor_data_pipeline--chapter-15-q12",
     "baselineSha256": "9036ebecc429d97e2f703a69191caabcf5148207782d6e1e6180687f4e5a4fe7",
-    "sha256": "edf8a4c344a8ce2ed2cb4755c5d1015dd281fe946a469e388900856911ffbb42",
+    "sha256": "c6907278f9e7f3af21938b1d895618e2549c657e5797e427b548e7766f51ee55",
     "approved": true
   },
   {
