@@ -758,6 +758,20 @@ export const authoredMetadata: AuthoredMetadata[] = [
     "evidenceRef": "doc/v2/work_items/M13.06.md"
   },
   {
+    "topicId": "M14.02",
+    "source": "ebook/curriculum/M14/M14.02.md",
+    "title": "카메라-LiDAR·IMU·엔코더·GNSS 정합",
+    "objectives": [
+      "여러 센서의 측정량·단위·축·시각·유효성 계약을 구분하고 비교 가능한 형태를 정의한다.",
+      "카메라-LiDAR 투영과 장착점 보정·차륜 이동·시각 불일치를 작은 합성 값으로 계산한다.",
+      "정합 검수와 통계적 융합을 구분하고 중복 정보·누락 변환·장착/시간 오류의 진단 근거를 제안한다."
+    ],
+    "prerequisiteNote": "M14.01의 내부/외부 보정과 M13.01의 점군을 사용한다. M14.03의 상세 동기화와 M14.04의 확률 필터에 앞서 센서 입력을 읽는 계약을 익힌다. 일반 코딩·문법·설치나 실제 센서 보정은 요구하지 않으며 제공된 좌표/기록을 계산한다.",
+    "sha256": "feae76883481e77a1c943f02eb74dbcba6e43aaf62c966d64bfb11be99dd77d4",
+    "reviewed": true,
+    "evidenceRef": "doc/v2/work_items/M14.02.md"
+  },
+  {
     "topicId": "M06.05",
     "source": "ebook/curriculum/M06/M06.05.md",
     "title": "차동·옴니·메카넘 순/역운동학",
@@ -2044,10 +2058,10 @@ export const legacyRevisions: LegacyRevision[] = [
   {
     "source": "ebook/book/04_sensor_data_pipeline/chapter.md",
     "baselineSha256": "69a8cf6f0e2f6e584bda629d3a17fbbe37f75ec024eab2237847807a2a3796fa",
-    "sha256": "6b5bd5a5bab1bb525c425e69171033e9c3c1fa46e2cf832ac00d84ef005dbea6",
+    "sha256": "c2c2b572effac063e07f1d52df2d724c25a91c8bf832fa597fbbdca900171c8b",
     "approved": true,
-    "reason": "E1에서 기존 04장으로 선수·실습범위·오개념 연결 보강 / E2: ROS・기구학・제어・모델 선수/후속 연결 및 관련 개념·실행 전제 보완 / E3: 시뮬레이션·학습·비전·카메라/시간 기초의 연결 및 독립검토된 개념/그림 조건 정정 / E4: 로봇팔·데이터·정책·배포·캡스톤 선수/후속과 교육용 계산·실행·안전 계약 보완 / E5: 모바일 경로·시뮬레이터 구분·map/odom/base·계획/미션·주행-조작 연결 보완 / E5 후속: 공유 TF와 로봇별 토픽·버퍼 격리 대안 및 외부 결합 계약 구분",
-    "evidenceRef": "doc/v2/work_items/E5-review.md"
+    "reason": "E1에서 기존 04장으로 선수·실습범위·오개념 연결 보강 / E2: ROS・기구학・제어・모델 선수/후속 연결 및 관련 개념·실행 전제 보완 / E3: 시뮬레이션·학습·비전·카메라/시간 기초의 연결 및 독립검토된 개념/그림 조건 정정 / E4: 로봇팔·데이터·정책·배포·캡스톤 선수/후속과 교육용 계산·실행·안전 계약 보완 / E5: 모바일 경로·시뮬레이터 구분·map/odom/base·계획/미션·주행-조작 연결 보완 / E5 후속: 공유 TF와 로봇별 토픽·버퍼 격리 대안 및 외부 결합 계약 구분 / W02 M14.02: 센서별 측정량·단위·장착점/시각 계약과 신규 기초 원고 연결",
+    "evidenceRef": "doc/v2/work_items/M14.02.md"
   },
   {
     "source": "ebook/book/04_sensor_data_pipeline/exercises/solutions.md",
@@ -2288,6 +2302,12 @@ export const legacyExerciseReferences: DerivedReference[] = [
     "approved": true
   },
   {
+    "activityId": "legacy:exercise:04_sensor_data_pipeline--chapter-15-q1",
+    "baselineSha256": "26f279fa8fa6cbb0eda819b2978e78600bd69b6a4552f80af551457f4970d5be",
+    "sha256": "fbed7cb4b871afb07a2e3dcb1439fb77936c881b216100db0c964da51fdd3703",
+    "approved": true
+  },
+  {
     "activityId": "legacy:exercise:04_sensor_data_pipeline--chapter-15-q5",
     "baselineSha256": "db330ec3d97051768edf778b93af6c746abd056ea3284021b4898fb08b36b58b",
     "sha256": "478f3c0502cea23156528aef9c40626140f70e06d34d67fe3db60d254f2cd822",
@@ -2302,13 +2322,25 @@ export const legacyExerciseReferences: DerivedReference[] = [
   {
     "activityId": "legacy:exercise:04_sensor_data_pipeline--chapter-15-q7",
     "baselineSha256": "f73fff6f100deb8b1277825ec56b4f16cf855aa6f939e635c89e1e98558ae86f",
-    "sha256": "7876492cbbed60ea691258ffbb678a00552775fe0c56a5003ccff177843e9017",
+    "sha256": "751ca1d90a08d6e11f1c596397ce29ab34a4b83ce48c93ee717ca85a19af4bd6",
     "approved": true
   },
   {
     "activityId": "legacy:exercise:04_sensor_data_pipeline--chapter-15-q8",
     "baselineSha256": "655d77b76a1c3a9e28b37b0ab94571c2f6c09e1fef59f7ca65aa3c006443b5b4",
     "sha256": "55c54e7cec3b5c36516fbd3522c6f097b2845c01133d7de94ef7b5c94867548c",
+    "approved": true
+  },
+  {
+    "activityId": "legacy:exercise:04_sensor_data_pipeline--chapter-15-q10",
+    "baselineSha256": "63c1eb1e5561244715ea76536cb3123f90b3c81c9bd56c3449feea4f20be1cb5",
+    "sha256": "ced371ba6ab204ad5a42c7b95dd70ec550ee2f9ec3eea6e8dc4fb1a5dc937452",
+    "approved": true
+  },
+  {
+    "activityId": "legacy:exercise:04_sensor_data_pipeline--chapter-15-q12",
+    "baselineSha256": "9036ebecc429d97e2f703a69191caabcf5148207782d6e1e6180687f4e5a4fe7",
+    "sha256": "7ebfb2d0fe6feb71784d1e06381f884d50ba5818c894dd09c1fa7dd4a34bd5f5",
     "approved": true
   },
   {
