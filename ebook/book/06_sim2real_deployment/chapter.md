@@ -285,6 +285,8 @@ speech/text → normalization → allowlisted intent → parameter validation
 
 ## 6.6 평가 설계
 
+[M34.01 읽기 전용 관제](/study/unit-m34-01-a/)에서 heartbeat·필드별 원본 시각/유효성·미상/마지막값과 이벤트 순서/중복을 구분한다. 관제 수신/화면 갱신만으로 현재 로봇 관측이나 실제 실행·안전 성과를 확인했다고 하지 않는다.
+
 ### 6.6.1 성공 정의
 
 Pick & Place의 성공을 “그럴듯한 영상”으로 평가하지 않는다. 에피소드 시작 전에 판정 규칙을 고정한다.

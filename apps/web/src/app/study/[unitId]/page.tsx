@@ -1,3 +1,4 @@
+import { TelemetryConceptLab } from "@/components/telemetry-concept-lab";
 import { ControlConceptLab } from "@/components/control-concept-lab";
 import { WheelConceptLab } from "@/components/wheel-concept-lab";
 import { ThresholdConceptLab } from "@/components/threshold-concept-lab";
@@ -63,6 +64,7 @@ export default async function StudyPage({ params }: { params: Promise<{ unitId: 
       })}</div>
       {authored && ["M07.03", "M07.06"].includes(unit.topicId) ? <ControlConceptLab key={`${unit.id}:${unit.revision}:control-model`} /> : null}
       {authored && unit.topicId === "M06.05" ? <WheelConceptLab key={`${unit.id}:${unit.revision}:wheel-model`} /> : null}
+      {authored && unit.topicId === "M34.01" ? <TelemetryConceptLab key={`${unit.id}:${unit.revision}:telemetry-model`} /> : null}
       {thresholdLab ? <ThresholdConceptLab key={`${unit.id}:${unit.revision}:threshold-model`} /> : null}
       {projectionLab ? <ProjectionConceptLab key={`${unit.id}:${unit.revision}:projection-model`} /> : null}
       {authored ? <><section id="authored-references" className="mt-6 rounded-2xl border bg-white p-5 sm:p-7"><h2 className="mb-4 text-xl font-bold">참고 자료</h2><AuthoredMarkdown content={authored.references} /></section><AuthoredCompletion unitId={unit.id} revision={unit.revision} catalogRevision={catalog.revision} readiness={readiness.state} activityIds={activityIds} /></> : null}
