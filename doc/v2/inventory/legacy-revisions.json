@@ -116,9 +116,9 @@
     {
       "source": "ebook/book/06_sim2real_deployment/exercises/project_rubric.md",
       "baselineSha256": "71faf03d27a28733dd30e4cc508cde80ce946f3e79a04cd23e39fc4927583d27",
-      "sha256": "b977351d63de025005f7050b05b6b2e87db6de2b5c0d98c9711c58cb6a79f1f8",
-      "reason": "K01-01: 기본 선택 캡스톤/공통 산출물·문서 평가와 기존 선택 실물 루브릭의 적용 범위 구분 / K01-02: 패키지별 재사용 경계·재현/제출 양식 보충 / K01-03: 제공 입력의 작성/판정 예·실패 분모·평가/발표 연결",
-      "evidenceRef": "doc/v2/work_items/K01-03.md"
+      "sha256": "fadfdc9a3198238c374c7311e209586536baa922220cd5ca0e6e58cfa1d16c64",
+      "reason": "K01-01: 기본 선택 캡스톤/공통 산출물·문서 평가와 기존 선택 실물 루브릭의 적용 범위 구분 / K01-02: 패키지별 재사용 경계·재현/제출 양식 보충 / K01-03: 제공 입력의 작성/판정 예·실패 분모·평가/발표 연결 / K01-04: 기본 C와 실제 양팔 정책/실행·RL+VLA 선택 심화의 범위 구분",
+      "evidenceRef": "doc/v2/work_items/K01-04.md"
     }
   ]
 }

@@ -2040,10 +2040,10 @@ export const authoredMetadata: AuthoredMetadata[] = [
       "합성 시험표의 경계/오류·결과를 계산해 요구↔사례↔원본/실패의 추적 행렬을 작성한다.",
       "실패/미상·수정/재검증과 단계/환경·자료/버전을 보존한 재현 패키지/리포트를 설계한다."
     ],
-    "prerequisiteNote": "M27/M30의 시간/버전·감독/평가와 M32.01~04의 프로젝트를 연결한다. 요구 ID/추적 행렬과 검증/목적 적합성의 차이를 본문에서 보충한다. 기본은 주어진 가상 기록의 문서/판정이며 실제 장비 시험·패키지 배포/출판은 하지 않는다.",
-    "sha256": "973616239668da74dbb44c61747f7af5a521093c3a584721dd92d82e6a2da87e",
+    "prerequisiteNote": "M30.06의 시간/버전·감독/평가가 공통 선수다. M32.01/.02/.03 중 선택한 과제와 연결하며 M32.04 RL+VLA는 선택 심화다. 기본 과제에서 세 선택안을 모두 수행할 필요는 없다. 요구 ID/추적 행렬과 검증/목적 적합성의 차이를 본문에서 보충한다. 기본은 주어진 가상 기록의 문서/판정이며 실제 장비 시험·패키지 배포/출판은 하지 않는다.",
+    "sha256": "6e9dd42c200311191fb3c6c51840d84c4be1d5d9afcaab31e03a14235fa86b63",
     "reviewed": true,
-    "evidenceRef": "doc/v2/work_items/K01-01.md"
+    "evidenceRef": "doc/v2/work_items/K01-04.md"
   },
   {
     "topicId": "M32.06",
@@ -2310,10 +2310,10 @@ export const legacyRevisions: LegacyRevision[] = [
   {
     "source": "ebook/book/06_sim2real_deployment/exercises/project_rubric.md",
     "baselineSha256": "71faf03d27a28733dd30e4cc508cde80ce946f3e79a04cd23e39fc4927583d27",
-    "sha256": "b977351d63de025005f7050b05b6b2e87db6de2b5c0d98c9711c58cb6a79f1f8",
+    "sha256": "fadfdc9a3198238c374c7311e209586536baa922220cd5ca0e6e58cfa1d16c64",
     "approved": true,
-    "reason": "K01-01: 기본 선택 캡스톤/공통 산출물·문서 평가와 기존 선택 실물 루브릭의 적용 범위 구분 / K01-02: 패키지별 재사용 경계·재현/제출 양식 보충 / K01-03: 제공 입력의 작성/판정 예·실패 분모·평가/발표 연결",
-    "evidenceRef": "doc/v2/work_items/K01-03.md"
+    "reason": "K01-01: 기본 선택 캡스톤/공통 산출물·문서 평가와 기존 선택 실물 루브릭의 적용 범위 구분 / K01-02: 패키지별 재사용 경계·재현/제출 양식 보충 / K01-03: 제공 입력의 작성/판정 예·실패 분모·평가/발표 연결 / K01-04: 기본 C와 실제 양팔 정책/실행·RL+VLA 선택 심화의 범위 구분",
+    "evidenceRef": "doc/v2/work_items/K01-04.md"
   },
   {
     "source": "apps/web/src/components/virtual-lab.tsx",
@@ -2784,25 +2784,25 @@ export const legacyExerciseReferences: DerivedReference[] = [
   {
     "activityId": "legacy:exercise:06_sim2real_deployment--chapter-16-report",
     "baselineSha256": "c627a6b9ff327734578dfe8f67ed846c3e294fcea5c871cf551b08d4b8a4df2d",
-    "sha256": "facf7987a06e232446ec7049a5d5c916cb030b4914ec34fa0bfd4ae98214af96",
+    "sha256": "92e55e4adcd732bf9fbf63b414554b49beb50c81591877633e7e0141cbde465e",
     "approved": true
   },
   {
     "activityId": "legacy:exercise:06_sim2real_deployment--labs--lab_6_1_diagnostics-1-report",
     "baselineSha256": "c627a6b9ff327734578dfe8f67ed846c3e294fcea5c871cf551b08d4b8a4df2d",
-    "sha256": "facf7987a06e232446ec7049a5d5c916cb030b4914ec34fa0bfd4ae98214af96",
+    "sha256": "92e55e4adcd732bf9fbf63b414554b49beb50c81591877633e7e0141cbde465e",
     "approved": true
   },
   {
     "activityId": "legacy:exercise:06_sim2real_deployment--labs--lab_6_2_supervisor-1-report",
     "baselineSha256": "c627a6b9ff327734578dfe8f67ed846c3e294fcea5c871cf551b08d4b8a4df2d",
-    "sha256": "facf7987a06e232446ec7049a5d5c916cb030b4914ec34fa0bfd4ae98214af96",
+    "sha256": "92e55e4adcd732bf9fbf63b414554b49beb50c81591877633e7e0141cbde465e",
     "approved": true
   },
   {
     "activityId": "legacy:exercise:06_sim2real_deployment--labs--lab_6_3_ros2_guard-1-report",
     "baselineSha256": "c627a6b9ff327734578dfe8f67ed846c3e294fcea5c871cf551b08d4b8a4df2d",
-    "sha256": "facf7987a06e232446ec7049a5d5c916cb030b4914ec34fa0bfd4ae98214af96",
+    "sha256": "92e55e4adcd732bf9fbf63b414554b49beb50c81591877633e7e0141cbde465e",
     "approved": true
   }
 ];
