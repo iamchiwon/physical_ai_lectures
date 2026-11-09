@@ -1,0 +1,9 @@
+{
+  "schemaVersion": 1,
+  "topics": {
+    "M34.01": {
+      "sourceSha256": "5889842420a321e2d06816ccb3c3dc68c1e85f8b3bcfde9a536a77e7b5240fd1",
+      "evidenceRef": "doc/v2/work_items/M34.01.md"
+    }
+  }
+}

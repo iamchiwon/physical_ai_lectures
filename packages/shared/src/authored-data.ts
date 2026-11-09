@@ -1948,6 +1948,20 @@ export const authoredMetadata: AuthoredMetadata[] = [
     "evidenceRef": "doc/v2/work_items/M31.06.md"
   },
   {
+    "topicId": "M34.01",
+    "source": "ebook/curriculum/M34/M34.01.md",
+    "title": "관제 텔레메트리·상태/이벤트·읽기 전용 대시보드",
+    "objectives": [
+      "연결 신호·관측 상태·이벤트와 원발생/수집시각을 구분해 필드별 신선도와 미확인을 표시한다.",
+      "동일 로봇/재시작 세대의 이벤트 순서 역전·중복을 진단하고 현재 미션과 원로그를 분리한다.",
+      "합성 읽기 전용 대시보드의 네 상황을 비교하고 현재/마지막값·수집/실행 근거의 범위를 기록한다."
+    ],
+    "prerequisiteNote": "M05.01/.02의 노드·메시지가 선수다. 시계는 M14.03, 명령/관측은 M25.06과 M31.06으로 보충한다. 합성 기록표 또는 이 페이지의 읽기 전용 모형을 사용한다. 실제 ROS/서버·로봇 수집이나 명령 전송을 구현/실행하지 않으며 UI언어·문법 입문은 다루지 않는다.",
+    "sha256": "5889842420a321e2d06816ccb3c3dc68c1e85f8b3bcfde9a536a77e7b5240fd1",
+    "reviewed": true,
+    "evidenceRef": "doc/v2/work_items/M34.01.md"
+  },
+  {
     "topicId": "M32.01",
     "source": "ebook/curriculum/M32/M32.01.md",
     "title": "모바일 배달·동적 장애물·언어 미션",
@@ -2252,10 +2266,10 @@ export const legacyRevisions: LegacyRevision[] = [
   {
     "source": "ebook/book/06_sim2real_deployment/chapter.md",
     "baselineSha256": "63e21fba7a365699ea09d4be5e25675e0f9ac0c8d856e41a00bd9d8d7157d971",
-    "sha256": "655609abfd752718fab43d86c73108cb19bf6997eff78a80da8b29dbd677a63e",
+    "sha256": "c60e291e225578891aba39684c56f94f94a6c44555b329e01c34e57a1655e904",
     "approved": true,
-    "reason": "E1에서 기존 06장으로 선수·실습범위·오개념 연결 보강 / E2: ROS・기구학・제어・모델 선수/후속 연결 및 관련 개념·실행 전제 보완 / E3: 시뮬레이션·학습·비전·카메라/시간 기초의 연결 및 독립검토된 개념/그림 조건 정정 / E4: 로봇팔·데이터·정책·배포·캡스톤 선수/후속과 교육용 계산·실행·안전 계약 보완 / E5: 모바일 경로·시뮬레이터 구분·map/odom/base·계획/미션·주행-조작 연결 보완 / M31.06: host/target·native환경과정확변경/대상권한·현재관측/롤백구분 연결",
-    "evidenceRef": "doc/v2/work_items/M31.06.md"
+    "reason": "E1에서 기존 06장으로 선수·실습범위·오개념 연결 보강 / E2: ROS・기구학・제어・모델 선수/후속 연결 및 관련 개념·실행 전제 보완 / E3: 시뮬레이션·학습·비전·카메라/시간 기초의 연결 및 독립검토된 개념/그림 조건 정정 / E4: 로봇팔·데이터·정책·배포·캡스톤 선수/후속과 교육용 계산·실행·안전 계약 보완 / E5: 모바일 경로·시뮬레이터 구분·map/odom/base·계획/미션·주행-조작 연결 보완 / M31.06: host/target·native환경과정확변경/대상권한·현재관측/롤백구분 연결 / M34.01: 수신/원본시각·현재/마지막값·이벤트순서와관제근거 연결",
+    "evidenceRef": "doc/v2/work_items/M34.01.md"
   },
   {
     "source": "ebook/book/06_sim2real_deployment/code/safety_supervisor.py",

@@ -249,3 +249,10 @@ test('W05 authority covers only later automation and physical change boundaries'
  const data={schemaVersion:1,topics:Object.fromEntries(registry.topicIds.map(id=>[id,review]))};assert.equal(Object.keys(mergeAuthoredReviews([{...registry,data}],known).topics).length,2);
  for(const id of ['M31.01','M31.02','M31.03','M31.04','M25.01','M34.01'])assert.throws(()=>mergeAuthoredReviews([{...registry,data:{schemaVersion:1,topics:{[id]:review}}}],known),/scope/);
 });
+
+test('W06 authority is limited to telemetry synchronization and supervised operations UI',()=>{
+ const registry=authoredReviewRegistries.find(r=>r.file==='doc/v2/inventory/w06-reviews.json');assert.deepEqual(registry.topicIds,['M34.01','M34.02','M34.03']);assert.equal(registry.modules,undefined);
+ const known=c.catalog.units.map(u=>u.topicId),review={sourceSha256:'a'.repeat(64),evidenceRef:'review.md'};
+ const data={schemaVersion:1,topics:Object.fromEntries(registry.topicIds.map(id=>[id,review]))};assert.equal(Object.keys(mergeAuthoredReviews([{...registry,data}],known).topics).length,3);
+ for(const id of ['M31.05','M31.06','M25.01','M30.04','M22.06','M05.01'])assert.throws(()=>mergeAuthoredReviews([{...registry,data:{schemaVersion:1,topics:{[id]:review}}}],known),/scope/);
+});
