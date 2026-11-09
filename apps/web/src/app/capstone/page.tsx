@@ -16,7 +16,8 @@ export default function CapstonePage() {
       <Breadcrumbs items={[{ title: "학습 순서", href: "/curriculum/#stage-S11" }, { title: "선택 캡스톤" }]} />
       <p className="text-sm leading-7 text-slate-700">장비 없는 기본 과제와 선택 실물 확장의 범위를 구분합니다. 작성할 양식은 원본을 내려받아 복사해 사용할 수 있습니다.</p>
       <a href="/textbook-assets/06_sim2real_deployment/exercises/project_rubric.md" download="capstone-guide.md" className="inline-block font-semibold text-blue-700 underline underline-offset-4">원본 안내·양식(.md) 내려받기</a>
-      <section aria-label="캡스톤 제공 자료" className="rounded-2xl border bg-white p-5 sm:p-8"><AuthoredMarkdown content={content} /></section>
+      <p className="text-xs leading-6 text-slate-600">표는 가로로 스크롤해 모든 열을 읽을 수 있습니다. 키보드는 표 영역에 초점을 둔 뒤 방향키를 사용하세요.</p>
+      <section aria-label="캡스톤 제공 자료" className="rounded-2xl border bg-white p-5 sm:p-8"><AuthoredMarkdown content={content} scrollTables /></section>
       <Link href="/curriculum/#stage-S11" className="inline-block font-semibold text-blue-700">← 캡스톤 학습 단계로 돌아가기</Link>
     </main>
   </CourseShell>;
