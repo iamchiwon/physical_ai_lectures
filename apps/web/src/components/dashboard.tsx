@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { ArrowDown, ArrowRight, BookOpen, Check, ChevronDown, Compass, Layers3 } from "lucide-react";
+import { LearningStages } from "@/components/learning-stages";
 import { HomeProgress } from "@/components/home-progress";
 import { Button } from "@/components/ui/button";
 import { catalog, curriculumIndex, stateLabels } from "@/lib/curriculum";
@@ -23,11 +24,11 @@ export function Dashboard({ lessons }: DashboardProps) {
         <div className="mx-auto grid max-w-7xl items-center gap-10 px-4 py-12 sm:px-6 lg:grid-cols-[1.2fr_.8fr] lg:px-8 lg:py-18">
           <div>
             <p className="text-xs font-bold tracking-[.16em] text-blue-700">PHYSICAL AI · 한국어 자습 과정</p>
-            <h1 className="mt-5 max-w-3xl text-balance text-4xl font-bold leading-tight tracking-tight sm:text-5xl lg:text-6xl">로봇을 이해하고,<br /><span className="text-blue-600">나의 경로로</span> 배웁니다.</h1>
-            <p className="mt-6 max-w-xl text-base leading-8 text-slate-600 sm:text-lg">기초 공학에서 인지·제어·학습·실증까지.<br className="hidden sm:block" /> 로봇팔, 모바일, 휴머노이드 등 관심 분야를 고르고 필요한 기초부터 연결하세요.</p>
+            <h1 className="mt-5 max-w-3xl text-balance text-4xl font-bold leading-tight tracking-tight sm:text-5xl lg:text-6xl">코딩 경험에서,<br /><span className="text-blue-600">로봇 시스템 구현으로</span> 이어갑니다.</h1>
+            <p className="mt-6 max-w-xl text-base leading-8 text-slate-600 sm:text-lg">실행 환경과 도구에서 인지·제어·학습·통합까지.<br className="hidden sm:block" /> 공통 학습 순서로 시작하고 목표에 맞는 전문 분야로 확장하세요.</p>
             <div className="mt-7 flex flex-wrap gap-3">
-              <Button asChild size="lg"><a href="#tracks">추천 경로 고르기 <ArrowDown className="size-4" aria-hidden="true" /></a></Button>
-              <Button asChild size="lg" variant="outline"><a href="/curriculum/">전체 목차 살펴보기</a></Button>
+              <Button asChild size="lg"><Link href="/tracks/track-main/">공통 과정 시작하기 <ArrowDown className="size-4" aria-hidden="true" /></Link></Button>
+              <Button asChild size="lg" variant="outline"><a href="/curriculum/#learning-sequence">학습 순서 살펴보기</a></Button>
             </div>
             <p className="mt-5 text-sm leading-6 text-slate-500">모든 모듈을 순서대로 이수할 필요는 없습니다.<br />장비 없는 개념·로그 분석이 기본이며 GPU·실물 실습은 별도 환경이 필요합니다.</p>
           </div>
@@ -61,19 +62,20 @@ export function Dashboard({ lessons }: DashboardProps) {
           <Compass className="size-6 text-blue-600" aria-hidden="true" />
           <h2 id="start-title" className="mt-4 text-xl font-bold">처음 오셨나요?</h2>
           <ol className="mt-4 space-y-3 text-sm leading-6 text-slate-700">
-            <li className="flex gap-3"><span className="font-bold text-blue-600">01</span><span>관심 있는 분야의 경로를 고릅니다.</span></li>
-            <li className="flex gap-3"><span className="font-bold text-blue-600">02</span><span>기초 지식과 권장 선수를 확인합니다. 코딩·수학·제어를 모두 안다고 가정하지 않습니다.</span></li>
-            <li className="flex gap-3"><span className="font-bold text-blue-600">03</span><span>단위 본문을 읽고 실습·문제로 이해를 확인합니다.</span></li>
+            <li className="flex gap-3"><span className="font-bold text-blue-600">01</span><span>공통 과정 또는 목표 분야의 경로를 고릅니다.</span></li>
+            <li className="flex gap-3"><span className="font-bold text-blue-600">02</span><span>일반 코딩 경험을 바탕으로 개발 환경·빌드 도구와 필요한 로봇·수학 선수를 확인합니다.</span></li>
+            <li className="flex gap-3"><span className="font-bold text-blue-600">03</span><span>단위별 실습·문제로 확인하고 단계별 프로젝트로 기술을 연결합니다.</span></li>
           </ol>
-          <p className="mt-4 text-xs leading-5 text-slate-600">학습 진단·기초 브리지는 M00~M04에 계획되어 있습니다. 미작성 부분은 아래 목차에 준비중으로 표시합니다.</p>
+          <p className="mt-4 text-xs leading-5 text-slate-600">Python·C/C++의 일반 문법은 선수 지식으로 봅니다. 환경·패키지·CMake 등 AI·로봇 도구 사용에 필요한 내용부터 연결하며 미집필 항목은 준비중으로 표시합니다.</p>
         </section>
         <HomeProgress lessons={lessons} units={catalog.units.map((unit) => ({ id: unit.id, title: unit.title, revision: unit.revision, state: stateLabels[unitReadiness(unit, curriculumIndex).state], readiness: unitReadiness(unit, curriculumIndex).state, trackIds: catalog.tracks.filter((track) => track.steps.some((step) => step.unitId === unit.id)).map((track) => track.id) }))} />
       </div>
 
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8"><LearningStages compact /></div>
       <section id="tracks" aria-labelledby="tracks-title" className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
         <p className="text-xs font-bold tracking-widest text-blue-700">관심 분야에서 시작하기</p>
-        <h2 id="tracks-title" className="mt-2 text-3xl font-bold tracking-tight">목표에 맞는 여섯 가지 경로</h2>
-        <p className="mt-4 max-w-3xl text-sm leading-7 text-slate-600">공통 기초를 공유하고 전문 분야로 나뉩니다. 필요한 선수 지식은 경로 앞에 보충해 두었습니다. 선수는 권장 안내이며, 단위별 목표·선수 조건은 집필 과정에서 확정합니다.</p>
+        <h2 id="tracks-title" className="mt-2 text-3xl font-bold tracking-tight">공통 과정과 분야별 경로</h2>
+        <p className="mt-4 max-w-3xl text-sm leading-7 text-slate-600">통합 시스템을 순서대로 배우려면 공통 과정을, 특정 분야가 목표라면 전문 경로를 선택하세요. 선수는 권장 안내이며 일부 심화·프로젝트 실행 패키지는 준비중입니다.</p>
         <div className="mt-7 grid items-start gap-4 md:grid-cols-2 xl:grid-cols-3">
           {tracks.map((track, i) => <article key={track.id} className="min-w-0 rounded-2xl border border-slate-200 bg-white p-6">
             <p className="text-xs font-bold tracking-widest text-blue-600">PATH {String(i + 1).padStart(2, '0')}</p>
@@ -109,7 +111,7 @@ export function Dashboard({ lessons }: DashboardProps) {
       <section id="curriculum" aria-labelledby="curriculum-title" className="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8">
         <Layers3 className="size-6 text-blue-600" aria-hidden="true" />
         <h2 id="curriculum-title" className="mt-3 text-3xl font-bold tracking-tight">전체 목차 한눈에 보기</h2>
-        <p className="mt-4 max-w-3xl text-sm leading-7 text-slate-600">7개 영역, {totals.modules}개 모듈, {totals.topics}개 소주제의 전체 계획입니다. 영역을 펼쳐 모듈과 준비 현황을 확인하세요. 미완료 항목은 준비중으로 표시하며, 연결된 기존 본문은 열 수 있습니다.</p>
+        <p className="mt-4 max-w-3xl text-sm leading-7 text-slate-600">{areas.length}개 영역, {totals.modules}개 모듈, {totals.topics}개 소주제의 전체 계획입니다. 영역을 펼쳐 모듈과 준비 현황을 확인하세요. 미완료 항목은 준비중으로 표시하며, 연결된 기존 본문은 열 수 있습니다.</p>
         <div className="mt-6 space-y-3">{areas.map((area, i) => <details key={area.id} className="rounded-2xl border border-slate-200 bg-white" open={i === 0}>
           <summary className="flex cursor-pointer list-none items-center justify-between gap-4 p-5 sm:px-6"><span className="flex items-center gap-4"><span className="font-mono text-sm text-blue-700">0{i + 1}</span><span className="font-bold">{area.title} <span className="ml-1 text-xs font-normal text-slate-500">{area.modules.length}모듈</span></span></span><ChevronDown className="size-4 shrink-0 text-slate-500" aria-hidden="true" /></summary>
           <ul className="divide-y divide-slate-100 border-t border-slate-100 px-5 sm:px-6">{area.modules.map((module) => <li key={module.id} className="flex flex-col justify-between gap-3 py-5 sm:flex-row sm:items-center">
@@ -117,7 +119,7 @@ export function Dashboard({ lessons }: DashboardProps) {
             {module.reading ? <Link href={module.reading.href} aria-label={`${module.id} ${module.title} 관련 본문 읽기`} className="shrink-0 text-sm font-semibold text-blue-700">관련 본문 읽기 <span aria-hidden="true">↗</span></Link> : <span className="text-xs text-slate-500">준비중</span>}
           </li>)}</ul>
         </details>)}</div>
-        <Link href="/curriculum/" className="mt-5 inline-block font-semibold text-blue-700">204소주제 전체 목차 열기 →</Link>
+        <Link href="/curriculum/" className="mt-5 inline-block font-semibold text-blue-700">{totals.topics}소주제 전체 목차 열기 →</Link>
         <p className="mt-4 text-xs leading-6 text-slate-500">M33 선택 체험은 본선의 필수 선수가 아닙니다. 기존 요약 레슨과 상세 본문은 원래 위치에서 계속 이용할 수 있습니다.</p>
       </section>
     </main>

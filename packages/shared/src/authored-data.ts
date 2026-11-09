@@ -60,14 +60,14 @@ export const authoredMetadata: AuthoredMetadata[] = [
   {
     "topicId": "M00.05",
     "source": "ebook/curriculum/M00/M00.05.md",
-    "title": "코딩·수학·제어·ML 자기진단과 선행학습 분기",
+    "title": "개발환경·수학·제어·ML 자기진단과 선행학습 분기",
     "objectives": [
-      "코딩·수학·제어·ML의 짧은 진단 과제를 결과와 이유를 포함해 시도한다.",
+      "개발환경·수학·제어·ML의 짧은 진단을 결과와 이유를 포함해 시도한다.",
       "독립 수행·힌트 의존·미해결을 분야별 근거로 기록하고 총점의 한계를 설명한다.",
       "필요한 보충 단위와 다른 입력의 재확인 과제를 골라 자신의 다음 학습 계획을 만든다."
     ],
-    "prerequisiteNote": "전공이나 경험을 가정하지 않는다. M00.01~04의 목표·관측·단위 구분을 떠올리면 도움이 되지만, 진단을 못 풀어도 아래 해설부터 학습할 수 있다.",
-    "sha256": "5bc75f539ec46e7137ae1f5f332826f44920883b6bd3357d2e4b3a3fc352ada7",
+    "prerequisiteNote": "일반 코딩 경험을 전제로 하며 언어 문법을 진단하거나 다시 가르치지 않는다. 로봇 개발환경·단위·제어·ML의 필요한 개념은 아래에서 보충한다. M00.01~04의 목표/관측 구분을 떠올리면 도움이 되며 진단을 못 풀어도 해설부터 학습할 수 있다.",
+    "sha256": "facca52cb15d76128834925d24e38f4cef9036014750c95cc3ab117fb03163d2",
     "reviewed": true,
     "evidenceRef": "doc/v2/work_items/M00.05.md"
   },
@@ -90,12 +90,12 @@ export const authoredMetadata: AuthoredMetadata[] = [
     "source": "ebook/curriculum/M01/M01.01.md",
     "title": "Ubuntu 24.04 셸·프로세스·권한·USB·네트워크",
     "objectives": [
-      "현재 디렉터리·파일 경로·프로세스·종료 상태를 구분해 합성 셸 기록의 실패 지점을 설명한다.",
-      "USB 장치 노드와 사용자·그룹 권한 기록을 읽고 확인된 사실과 추가 확인을 분리한다.",
-      "주소·포트·실행 위치를 대조해 연결 실패를 진단하고 필요한 최소 확인 순서를 제안한다."
+      "실행 파일·작업 경로·상속 환경과 ROS underlay/overlay 기록을 대조해 환경 불일치를 진단한다.",
+      "실행 사용자·그룹과 장치 식별·접근 기록에서 확인된 조건과 추가 검증을 구분한다.",
+      "프로세스·대기 socket과 호스트/컨테이너 경계를 대조해 연결 실패의 최소 확인 순서를 제안한다."
     ],
-    "prerequisiteNote": "M00.05의 분야별 진단 방식을 사용한다. Ubuntu 설치나 USB 장비 없이 아래 합성 출력으로 학습할 수 있다. 실제 명령은 필요한 환경을 갖춘 경우의 선택 확인이다.",
-    "sha256": "ad2b4d8990377e5291f49c3c16f59297403683414d3ab9f6941bfd170b2342f0",
+    "prerequisiteNote": "일반 프로그래밍과 명령 실행 경험을 전제로 하며 언어·셸 문법을 다시 가르치지 않는다. Ubuntu 24.04/Jazzy의 환경·장치·통신 계약은 본문에서 설명한다. 장비와 설치 없이 합성 실행 기록을 진단하며 실제 ROS·권한·네트워크 변경은 필요하지 않다.",
+    "sha256": "d3b41de8d1846e982077fdf742840fa52254db4a0ad854faab553d8bb752134a",
     "reviewed": true,
     "evidenceRef": "doc/v2/work_items/M01.01.md"
   },
@@ -104,40 +104,40 @@ export const authoredMetadata: AuthoredMetadata[] = [
     "source": "ebook/curriculum/M01/M01.02.md",
     "title": "Python 패키지·가상환경·NumPy·파일과 로그",
     "objectives": [
-      "실행 인터프리터·패키지 설치 대상·가상환경의 역할을 구분해 환경 불일치 원인을 설명한다.",
-      "표준 라이브러리 로그 예제를 추적해 문자열·시간·길이 단위를 변환하고 잘못된 행을 별도로 기록한다.",
-      "Python list와 NumPy 배열의 연산 및 shape 의미를 비교하고 장비 없는 대체 계산을 수행한다."
+      "실행 인터프리터·패키지 설치 대상·실제 import 경로를 대조해 환경 불일치를 진단한다.",
+      "로그의 시간·단위·유효성 계약에 따라 변환 결과와 거부 이유를 판정한다.",
+      "AI 입력의 shape·축·dtype·device와 메모리 배치를 대조해 실행 가능성과 의미 일치를 구분한다."
     ],
-    "prerequisiteNote": "M01.01의 경로·프로그램 실행과 M00의 단위 개념을 사용한다. Python·NumPy 설치 없이 예제와 출력표를 읽는 경로가 기본이며, 표준 라이브러리 실행은 선택이다.",
-    "sha256": "de49db49fa539e62a5aa3cfe44eb39370e5346fa88fc46e8037495c400742ade",
+    "prerequisiteNote": "일반 Python 코딩 경험과 M01.01의 실행 경로 개념을 전제로 한다. 언어 문법을 다시 가르치지 않는다. NumPy·PyTorch 설치와 GPU 없이 합성 기록으로 모든 활동을 수행하며, 표준 라이브러리 예제 실행은 선택이다.",
+    "sha256": "b5e97a77ffdf720de85cd8a6cf68e94952e2504d44fa21fa50a7f6978f22c7a7",
     "reviewed": true,
     "evidenceRef": "doc/v2/work_items/M01.02.md"
   },
   {
     "topicId": "M01.03",
     "source": "ebook/curriculum/M01/M01.03.md",
-    "title": "C/C++ 메모리·포인터·수명·구조체·컴파일",
+    "title": "C/C++ 확장·ABI·버퍼 소유권과 수명",
     "objectives": [
-      "C와 C++의 구분을 전제로 구조체 필드·값 복사·포인터를 통한 읽기를 예제에서 추적한다.",
-      "객체의 수명과 비소유 포인터의 유효 범위를 구분해 수명 종료 뒤 접근 위험을 정적으로 설명한다.",
-      "컴파일·링크·실행 단계의 오류를 나누고 안전한 C++17 예제의 결과와 검증 한계를 기록한다."
+      "native 확장의 API·ABI 및 인터프리터·플랫폼·의존성 기록을 대조해 호환성 확인 범위를 설명한다.",
+      "버퍼의 dtype·shape·stride·범위를 소비 계약과 비교해 잘못된 메모리 해석을 진단한다.",
+      "생산·소비·재사용·해제 사건표에서 소유권과 데이터 유효 기간을 판정하고 보존 방법을 제안한다."
     ],
-    "prerequisiteNote": "M01.02의 값·자료형·단위 기록을 사용한다. C++를 처음 보는 학습자는 본문의 기호 설명부터 읽고 종이로 추적한다. 컴파일러 설치나 위험한 코드 실행은 필수가 아니다.",
-    "sha256": "85ebdd2d1d834cd48e0801e2b37d48e4b9fdbf01968643b1660a88c420007d0e",
+    "prerequisiteNote": "일반 코딩 경험과 M01.02의 dtype·shape·device를 전제로 한다. C/C++ 언어 문법과 포인터 기호를 입문 과정으로 가르치지 않는다. native 확장과 버퍼 계약은 본문에서 보충하며 위험 코드·컴파일러·장비 실행 없이 사건표로 수행한다.",
+    "sha256": "f47d0dab4d59333bb69e47af2ddb3f3272d5253328f02ffb0fe1fe7fd49f0bc8",
     "reviewed": true,
     "evidenceRef": "doc/v2/work_items/M01.03.md"
   },
   {
     "topicId": "M01.04",
     "source": "ebook/curriculum/M01/M01.04.md",
-    "title": "CMake·디버거·단위와 직렬화 계약",
+    "title": "CMake·colcon·컴파일·링크·빌드 오류 진단",
     "objectives": [
-      "CMake의 타깃·소스·언어 요구와 configure·build·실행 단계를 구분해 재빌드 확인 계획을 만든다.",
-      "디버거의 함수·변수·시점 기록으로 단위 변환 전후의 사실과 오류 가설을 분리한다.",
-      "버전·단위·자료 표현 계약에 따라 입력 수락/거부와 변환을 판정하고 구조체 메모리 복사의 한계를 설명한다."
+      "CMake·colcon·컴파일러와 타깃·패키지의 역할을 나누고 configure·build·install·실행의 근거를 연결한다.",
+      "최초 실패 로그를 설정·컴파일·링크·로더·자료 계약 층위로 분류하고 다음 확인을 제안한다.",
+      "소스·구성·의존성·산출물·실행 경로를 대조해 재빌드 반영과 검증 한계를 기록한다."
     ],
-    "prerequisiteNote": "M01.03의 C++17 함수·값·빌드 단계와 M01.02의 단위 변환을 사용한다. CMake·디버거를 설치하지 않아도 제공된 코드와 합성 스냅샷으로 수행한다.",
-    "sha256": "21ad5add272937c1374e9dbc2e78a1f3671097b156011cf55350bda072a1092b",
+    "prerequisiteNote": "일반 코딩 경험과 M01.01~03의 실행 환경·native ABI 개념을 사용한다. C/C++ 문법 수업은 포함하지 않는다. CMake·colcon·ROS 설치 없이 완전한 합성 빌드 기록을 진단하며 실제 ROS 빌드·장비 실행은 요구하지 않는다.",
+    "sha256": "f9333fee16418bcbb49b18ad46fc8e2c56b1a7de59157fd595e5822aebe2d5ed",
     "reviewed": true,
     "evidenceRef": "doc/v2/work_items/M01.04.md"
   },
@@ -150,24 +150,66 @@ export const authoredMetadata: AuthoredMetadata[] = [
       "소스·패키지·입력 데이터·컨테이너·호스트 환경의 재현 범위를 구분하고 버전 표기의 한계를 분석한다.",
       "합성 실험 기록의 차이를 찾아 재현 명세와 비교 절차·미확인 범위를 작성한다."
     ],
-    "prerequisiteNote": "M01.01~04의 실행 환경·파일·빌드 개념을 사용한다. Git 저장소 변경이나 패키지·Docker 설치 없이 합성 기록으로 실습한다.",
-    "sha256": "1c52855e4c21004771cf0431c3ea24c5495b53490b77016fbef03d7badc637d2",
+    "prerequisiteNote": "일반 코딩 경험과 M01.01~04의 실행 환경·자료/ABI·빌드 개념을 사용한다. Git 명령 입문이나 언어 문법을 다시 가르치지 않는다. 저장소 변경·패키지/Docker 설치·모델 실행 없이 합성 기록으로 실습한다.",
+    "sha256": "9e4aa7f315820121e070d5cb5a71e0ea104044200a42d9ce6e2ec76ce11aa9bd",
     "reviewed": true,
     "evidenceRef": "doc/v2/work_items/M01.05.md"
   },
   {
     "topicId": "M01.06",
     "source": "ebook/curriculum/M01/M01.06.md",
-    "title": "Python 실험 코드와 C++ 주기성 코드의 역할 분리",
+    "title": "Python 실험과 C++ 실행 경계·시간·데이터 계약",
     "objectives": [
-      "실험·계획·주기적 소비·독립 안전의 책임을 나누고 언어 선택만으로 시간 보장을 할 수 없는 이유를 설명한다.",
-      "합성 실행 기록에서 시작 간격·실행 소요·마감 시각 위반을 계산해 평균 성능과 구분한다.",
-      "절대 목표와 증분 명령의 차이를 반영해 단위·좌표·최신성·순서 계약과 실패 대응 명세를 작성한다."
+      "실험·계획·주기적 소비의 책임과 비동기 제출/완료를 구분하고 언어만으로 시간 보장이 생기지 않는 이유를 설명한다.",
+      "합성 기록에서 시작 간격·실행 소요·마감 위반과 자료 나이를 계산해 평균 성능과 구분한다.",
+      "입력 배열·소유권 및 절대/증분 명령의 의미를 반영해 데이터·최신성·순서·실패 대응 계약을 작성한다."
     ],
-    "prerequisiteNote": "M00.04의 주기·지연과 M01.02~05의 자료·수명·단위·환경 기록을 사용한다. 실제 제어기·스레드·로봇을 실행하지 않고 합성 시간표와 메시지로 설계한다.",
-    "sha256": "de388cf3fddc6cdb2d5c57a6721495363341cec0aa6838b50360ae8affff498d",
+    "prerequisiteNote": "일반 코딩 경험과 M00.04의 주기/지연, M01.02~05의 배열·수명·환경 기록을 사용한다. 언어 문법 수업은 없다. 실제 GPU·제어기·스레드·ROS·로봇을 실행하지 않고 합성 시간표와 데이터 계약으로 설계한다.",
+    "sha256": "801319e43d807a72232686869572f8d1159714c4ada9bae5632195af1649aab2",
     "reviewed": true,
     "evidenceRef": "doc/v2/work_items/M01.06.md"
+  },
+  {
+    "topicId": "M05.01",
+    "source": "ebook/curriculum/M05/M05.01.md",
+    "title": "워크스페이스·패키지·빌드·노드·Executor",
+    "objectives": [
+      "워크스페이스·패키지·빌드 산출물·터미널 환경의 역할을 구별하고 소스 변경이 실행에 반영되는 경로를 설명한다.",
+      "노드·프로세스·Executor·콜백의 관계를 설명하고 가정한 단일 스레드 실행 기록의 대기 시간을 계산한다.",
+      "패키지 탐색 실패와 콜백 지연을 구별하여 가상 기록에서 다음 확인 증거를 선택한다."
+    ],
+    "prerequisiteNote": "M01의 경로·프로세스·재현 환경과 일반 Python 코딩을 사용한다. 기본 활동의 센서/명령 역할은 제공된 가상 노드와 입력으로 설명한다. 실제 장치를 연결할 때는 M03.06의 BOM·배선·인터페이스 계약을 추가로 확인한다. ROS 설치 없이 표와 로그로 기본 활동을 수행하며 실제 ROS 실행 여부와 구분한다.",
+    "sha256": "14a85a10b01524c5e7081f6f40993235b278dbec37902f2c89f88e4c92a83df8",
+    "reviewed": true,
+    "evidenceRef": "doc/v2/work_items/M05.01.md"
+  },
+  {
+    "topicId": "M05.02",
+    "source": "ebook/curriculum/M05/M05.02.md",
+    "title": "Topic·Service·Action·Parameter와 인터페이스",
+    "objectives": [
+      "연속 관측·짧은 요청/응답·진행 관측과 취소가 필요한 작업·노드 설정을 구분하여 통신 방식을 선택한다.",
+      "메시지 자료형과 단위/시간/좌표의 의미 계약을 구별하고 Action의 goal·feedback·result를 해석한다.",
+      "응답 시간초과·취소 요청·파라미터 변경 기록에서 보장되지 않은 결론과 추가 증거를 설명한다."
+    ],
+    "prerequisiteNote": "M05.01의 노드·Executor·콜백과 M01의 자료형, M02의 단위를 사용한다. ROS 2 Jazzy 문서 기준의 종이 인터페이스 설계이며 실제 서비스 호출·Action 송신·로봇 동작은 수행하지 않는다.",
+    "sha256": "6a00e903e53631fac7bb03317aa5dfada6e4e13709018e031f51f3dc996eb8d1",
+    "reviewed": true,
+    "evidenceRef": "doc/v2/work_items/M05.02.md"
+  },
+  {
+    "topicId": "M12.01",
+    "source": "ebook/curriculum/M12/M12.01.md",
+    "title": "OpenCV 영상·색공간·필터·특징",
+    "objectives": [
+      "영상의 행/열/채널·색 순서·값 범위와 dtype을 해석하여 입력 변환 오류를 진단한다.",
+      "명시한 경계 규약의 평균/중앙값 필터와 차분을 계산하고 잡음 제거와 특징 손실의 차이를 설명한다.",
+      "영상 특징과 실제 물체/기하 위치를 구분하고 반복 무늬·저대비·가림에서 필요한 추가 검사를 제안한다."
+    ],
+    "prerequisiteNote": "일반 Python 코딩과 M01.02의 배열·shape·dtype 계약을 사용한다. 픽셀 축·경계·이웃 연산과 출력 의미는 본문에서 보충한다. 고전적 영상 처리 입문에 신경망 학습·평가나 3D 회전 단원 전체를 선수로 요구하지 않는다. 기본은 합성 픽셀 계산이며 선택 NumPy 코드는 개념 연산만 실행한다. OpenCV/카메라 실제 실행과 구분한다.",
+    "sha256": "f1736a0726531ad09216f112d1edcd702bcaccb17db51c4b5a94fadea57167ff",
+    "reviewed": true,
+    "evidenceRef": "doc/v2/work_items/M12.01.md"
   },
   {
     "topicId": "M02.01",
@@ -224,34 +266,6 @@ export const authoredMetadata: AuthoredMetadata[] = [
     "sha256": "efdd385e1080dbd1bd9bd021e4aeb48f5015c7916ade0bfb67bb3f3f0beb550c",
     "reviewed": true,
     "evidenceRef": "doc/v2/work_items/M02.04.md"
-  },
-  {
-    "topicId": "M02.05",
-    "source": "ebook/curriculum/M02/M02.05.md",
-    "title": "최소제곱·경사하강·비선형 최적화",
-    "objectives": [
-      "잔차와 최소제곱 목적함수를 정의해 작은 측정 문제의 해·잔차를 계산하고 정확한 일치와 구분한다.",
-      "목적함수의 기울기와 경사하강 한 단계를 계산해 보폭에 따른 감소·증가를 비교한다.",
-      "비선형 문제의 초기값·정지점·잔차 스케일을 검토하고 국소 결과를 전역 정답이나 안전 보장으로 과장하지 않는다."
-    ],
-    "prerequisiteNote": "M02.01의 선형계, M02.03의 미분·Jacobian과 M02.04의 오차/단위를 사용한다. 모든 계산은 종이로 가능하며 NumPy·SciPy 설치나 장비 실행은 필요 없다.",
-    "sha256": "eb632f5ea31bda016052acf0a2668791c32c57f95e36715b247eb2c5948ee066",
-    "reviewed": true,
-    "evidenceRef": "doc/v2/work_items/M02.05.md"
-  },
-  {
-    "topicId": "M02.06",
-    "source": "ebook/curriculum/M02/M02.06.md",
-    "title": "고윳값·안정성·오차 전파의 직관",
-    "objectives": [
-      "고윳값·고유벡터의 관계를 작은 행렬과 반복 오차 변화로 설명한다.",
-      "무입력 선형 모형의 연속·이산 점근 안정 조건을 구분하고 경계·이산화·국소성의 한계를 판정한다.",
-      "선형 및 일차 근사에서 분산·공분산 전파를 계산하고 상관·단위·모형 오차의 조건을 설명한다."
-    ],
-    "prerequisiteNote": "M02.01의 행렬, M02.03의 미분·Jacobian, M02.04의 분산/공분산을 사용한다. 합성 수치의 종이 계산이 기본이며 실제 로봇의 안정성·안전 인증을 수행하지 않는다.",
-    "sha256": "11bc4b670e8d715b3139716056ff7403d8a196e38a91c702dd320de2dc491712",
-    "reviewed": true,
-    "evidenceRef": "doc/v2/work_items/M02.06.md"
   },
   {
     "topicId": "M03.01",
@@ -338,32 +352,18 @@ export const authoredMetadata: AuthoredMetadata[] = [
     "evidenceRef": "doc/v2/work_items/M03.06.md"
   },
   {
-    "topicId": "M05.01",
-    "source": "ebook/curriculum/M05/M05.01.md",
-    "title": "워크스페이스·패키지·빌드·노드·Executor",
+    "topicId": "M06.01",
+    "source": "ebook/curriculum/M06/M06.01.md",
+    "title": "프레임·오른손 좌표·변환 합성",
     "objectives": [
-      "워크스페이스·패키지·빌드 산출물·터미널 환경의 역할을 구별하고 소스 변경이 실행에 반영되는 경로를 설명한다.",
-      "노드·프로세스·Executor·콜백의 관계를 설명하고 가정한 단일 스레드 실행 기록의 대기 시간을 계산한다.",
-      "패키지 탐색 실패와 콜백 지연을 구별하여 가상 기록에서 다음 확인 증거를 선택한다."
+      "프레임의 원점·축·단위와 오른손 규약을 명시하고 좌표 재표현과 물체 운동을 구분한다.",
+      "열벡터 규약에서 연결된 변환의 합성과 역을 계산하여 점과 방향 벡터를 변환한다.",
+      "센서/도구 오프셋과 변환 순서 오류를 수치 반례로 찾아 모델 검증에 필요한 기록을 제안한다."
     ],
-    "prerequisiteNote": "M01의 경로·프로세스·빌드와 M03의 센서/구동기 역할을 사용한다. Ubuntu 24.04·ROS 2 Jazzy 문서 기준이며 기본 활동은 합성 기록 해석이다. 설치·ROS 실행·실물 연결은 요구하지 않는다.",
-    "sha256": "a04f6e300c7f6ca5bb87f9b0fba0e5385be399effc8e82dee54cd2d39ef50017",
+    "prerequisiteNote": "M02.01~02의 행렬·회전·동차변환, M03의 링크와 센서가 선수다. 기호가 낯설면 M02.02로 돌아간다. 본 단위는 기구학 모델의 프레임 계약과 오류 진단을 보강하며 종이 계산만으로 수행한다.",
+    "sha256": "af500605e805eb751e1ced7bdd8a0f25525f72d6c1c48e464719f3987b73e9c5",
     "reviewed": true,
-    "evidenceRef": "doc/v2/work_items/M05.01.md"
-  },
-  {
-    "topicId": "M05.02",
-    "source": "ebook/curriculum/M05/M05.02.md",
-    "title": "Topic·Service·Action·Parameter와 인터페이스",
-    "objectives": [
-      "연속 관측·짧은 요청/응답·진행 관측과 취소가 필요한 작업·노드 설정을 구분하여 통신 방식을 선택한다.",
-      "메시지 자료형과 단위/시간/좌표의 의미 계약을 구별하고 Action의 goal·feedback·result를 해석한다.",
-      "응답 시간초과·취소 요청·파라미터 변경 기록에서 보장되지 않은 결론과 추가 증거를 설명한다."
-    ],
-    "prerequisiteNote": "M05.01의 노드·Executor·콜백과 M01의 자료형, M02의 단위를 사용한다. ROS 2 Jazzy 문서 기준의 종이 인터페이스 설계이며 실제 서비스 호출·Action 송신·로봇 동작은 수행하지 않는다.",
-    "sha256": "6a00e903e53631fac7bb03317aa5dfada6e4e13709018e031f51f3dc996eb8d1",
-    "reviewed": true,
-    "evidenceRef": "doc/v2/work_items/M05.02.md"
+    "evidenceRef": "doc/v2/work_items/M06.01.md"
   },
   {
     "topicId": "M05.03",
@@ -422,90 +422,6 @@ export const authoredMetadata: AuthoredMetadata[] = [
     "evidenceRef": "doc/v2/work_items/M05.06.md"
   },
   {
-    "topicId": "M06.01",
-    "source": "ebook/curriculum/M06/M06.01.md",
-    "title": "프레임·오른손 좌표·변환 합성",
-    "objectives": [
-      "프레임의 원점·축·단위와 오른손 규약을 명시하고 좌표 재표현과 물체 운동을 구분한다.",
-      "열벡터 규약에서 연결된 변환의 합성과 역을 계산하여 점과 방향 벡터를 변환한다.",
-      "센서/도구 오프셋과 변환 순서 오류를 수치 반례로 찾아 모델 검증에 필요한 기록을 제안한다."
-    ],
-    "prerequisiteNote": "M02.01~02의 행렬·회전·동차변환, M03의 링크와 센서가 선수다. 기호가 낯설면 M02.02로 돌아간다. 본 단위는 기구학 모델의 프레임 계약과 오류 진단을 보강하며 종이 계산만으로 수행한다.",
-    "sha256": "af500605e805eb751e1ced7bdd8a0f25525f72d6c1c48e464719f3987b73e9c5",
-    "reviewed": true,
-    "evidenceRef": "doc/v2/work_items/M06.01.md"
-  },
-  {
-    "topicId": "M06.02",
-    "source": "ebook/curriculum/M06/M06.02.md",
-    "title": "DH 파라미터·정기구학·작업공간",
-    "objectives": [
-      "표준 DH의 네 파라미터와 회전/직선 관절의 변수를 구분하고 관례를 섞지 않아야 하는 이유를 설명한다.",
-      "가상 평면 2R 팔의 관절각에서 말단 위치와 방향을 단계적으로 계산하고 변형 자세를 비교한다.",
-      "이상적인 위치 작업공간의 안쪽/바깥쪽 경계를 계산하고 실제 관절 제한·도구 자세·모델 검증의 추가 조건을 설명한다."
-    ],
-    "prerequisiteNote": "M06.01의 열벡터·프레임 합성과 M02의 삼각함수, M03의 회전 관절이 선수다. 계산은 종이와 계산기로 충분하며 NumPy나 실제 로봇은 필요 없다. 모든 링크 길이는 교육용 가상 값이다.",
-    "sha256": "323b8d3ecd6e567c78f18ffb931d1f941411ebd3775e93c82e66b24a8a943e73",
-    "reviewed": true,
-    "evidenceRef": "doc/v2/work_items/M06.02.md"
-  },
-  {
-    "topicId": "M06.03",
-    "source": "ebook/curriculum/M06/M06.03.md",
-    "title": "기하학적 IK·Jacobian·감쇠 최소제곱 IK",
-    "objectives": [
-      "평면 2R 팔에서 코사인 법칙과 atan2를 이용해 IK 분기를 계산하고 기하적 도달 조건을 검사한다.",
-      "FK를 미분한 위치 Jacobian을 해석하고 주어진 잔차에 대한 DLS의 한 단계 관절 증분을 계산한다.",
-      "갱신 뒤 FK 잔차와 제약을 다시 확인하여 국소 선형화·감쇠·수치 실패의 한계 및 중단 조건을 설명한다."
-    ],
-    "prerequisiteNote": "M06.02의 길이 0.3/0.2 m 평면 2R와 M02의 미분·행렬·최소제곱이 선수다. 기본 활동은 종이 수치 계산이다. 도구 방향을 제외한 2차원 위치 IK를 다루며 실제 로봇이나 NumPy 실행은 필요 없다.",
-    "sha256": "fd73a8ed99ffc2221c844556b30b9d96ca247c60685e947752a42bdf920e78c8",
-    "reviewed": true,
-    "evidenceRef": "doc/v2/work_items/M06.03.md"
-  },
-  {
-    "topicId": "M06.04",
-    "source": "ebook/curriculum/M06/M06.04.md",
-    "title": "특이점·관절 제한·다중 해·연속성",
-    "objectives": [
-      "작업 차원의 Jacobian에서 특이점의 의미를 설명하고 도달 불가·관절 한계 위반과 구별한다.",
-      "가상 IK의 여러 해를 관절 범위와 FK 잔차로 검사하여 클리핑의 한계를 계산한다.",
-      "연속 목표의 관절 증분·속도·각도 표현을 검토하고 끝점의 유효성과 경로의 유효성을 구분한다."
-    ],
-    "prerequisiteNote": "M06.02~03의 평면 2R, 기하 IK와 위치 Jacobian, M02.01의 2×2 행렬식이 선수다. 종이 계산과 합성 후보표를 사용하며 실제 관절 동작이나 충돌 검사는 수행하지 않는다.",
-    "sha256": "8a6aa1262972a73b1299c42dcc818eeeb1faff33b0e80d678ec7f16ad952cefd",
-    "reviewed": true,
-    "evidenceRef": "doc/v2/work_items/M06.04.md"
-  },
-  {
-    "topicId": "M06.05",
-    "source": "ebook/curriculum/M06/M06.05.md",
-    "title": "차동·옴니·메카넘 순/역운동학",
-    "objectives": [
-      "차동 베이스의 바퀴 속도와 전진/회전 속도를 순·역 계산하고 몸체 속도를 세계 좌표로 옮긴다.",
-      "명시한 3옴니/4메카넘 배치에서 몸체 속도와 바퀴 속도를 순·역 계산한다.",
-      "바퀴 속도 한계와 메카넘의 모델 일관성 잔차를 검사하고 실제 이동·미끄럼에 대한 추론 한계를 설명한다."
-    ],
-    "prerequisiteNote": "M03.05의 바퀴 구조, M06.01의 좌표 변환, M02.01의 행렬이 선수다. 모든 치수와 로그는 가상 모델이다. 계산기와 종이만 사용하며 실제 베이스를 주행하지 않는다.",
-    "sha256": "941f39e397e315ed84f2cc87ac7d4870887b00e86304bcc45251a12e7ce79754",
-    "reviewed": true,
-    "evidenceRef": "doc/v2/work_items/M06.05.md"
-  },
-  {
-    "topicId": "M06.06",
-    "source": "ebook/curriculum/M06/M06.06.md",
-    "title": "델타 구조와 SO-101 비교·엔코더 영점 보정",
-    "objectives": [
-      "델타의 폐루프 제약과 SO-101 직렬 팔의 관절/그리퍼 역할을 비교하고 가상 후보의 연결 조건을 검사한다.",
-      "명시한 센서 축·count 해상도·기어비·부호·영점으로 가상 관절각을 rad로 환산한다.",
-      "별도 기준 기록으로 캘리브레이션 후보를 검증하고 모델 버전·단위·영점·측정 한계를 구분하여 보류 근거를 남긴다."
-    ],
-    "prerequisiteNote": "M03의 기어/엔코더, M06의 프레임·FK·제약과 M05의 시각 기록을 사용한다. 모든 수치는 가상 기록이며 실제 엔코더 보정·모터 명령·로봇 이동은 수행하지 않는다.",
-    "sha256": "6212a3079ba1af49d6c462e0d770e9a2b9ba93951c0934b238075c31fa4b5bf5",
-    "reviewed": true,
-    "evidenceRef": "doc/v2/work_items/M06.06.md"
-  },
-  {
     "topicId": "M07.01",
     "source": "ebook/curriculum/M07/M07.01.md",
     "title": "질량·관성·마찰·토크·중력과 동역학",
@@ -518,76 +434,6 @@ export const authoredMetadata: AuthoredMetadata[] = [
     "sha256": "547414d1fbcd8f35cb5726210536b1a48d4114d95accf11f28d79487b0b9bb61",
     "reviewed": true,
     "evidenceRef": "doc/v2/work_items/M07.01.md"
-  },
-  {
-    "topicId": "M07.02",
-    "source": "ebook/curriculum/M07/M07.02.md",
-    "title": "전달함수·상태공간·시간응답·안정성",
-    "objectives": [
-      "가상 연속 LTI 모델의 미분방정식을 상태공간과 전달함수로 연결하고 초기조건의 역할을 설명한다.",
-      "1차 계단 응답을 계산하여 정상값·시간상수·정착 시간·오버슈트를 정의에 따라 판정한다.",
-      "내부 상태와 입출력, 연속 모델과 이산 구현의 안정성을 구별하고 유한 로그의 검증 한계를 설명한다."
-    ],
-    "prerequisiteNote": "M02의 미분·행렬·고유값과 M07.01의 동역학이 선수다. u와 y가 정규화된 가상 모델을 사용한다. 계산기와 종이로 수행하며 실제 제어기나 로봇을 실행하지 않는다.",
-    "sha256": "3c0179aaa6755571e95b7dbc0ae854ec68e48b2233229857847533f082428135",
-    "reviewed": true,
-    "evidenceRef": "doc/v2/work_items/M07.02.md"
-  },
-  {
-    "topicId": "M07.03",
-    "source": "ebook/curriculum/M07/M07.03.md",
-    "title": "P/PI/PID·적분 포화·미분 잡음·샘플링",
-    "objectives": [
-      "P·I·D 항의 역할과 한계를 설명하고 가상 정상상태의 P 제어 오차를 계산한다.",
-      "명시한 이산 PID의 갱신 순서에 따라 포화 전/후 출력과 조건부 적분 상태를 계산한다.",
-      "미분 잡음·샘플 간격·포화 기록을 해석하여 튜닝 주장의 검증 조건과 모형의 한계를 설명한다."
-    ],
-    "prerequisiteNote": "M02의 미분/적분, M05.06의 샘플 간격, M07.02의 응답과 안정성이 선수다. 본문의 정규화 로그를 종이로 계산한다. 실제 PID 튜닝·토크 인가·모터 동작은 수행하지 않는다.",
-    "sha256": "15a9fdbf12cfea26935f0bd64c76fde16658535ea90d10fc2653ea9817a22fef",
-    "reviewed": true,
-    "evidenceRef": "doc/v2/work_items/M07.03.md"
-  },
-  {
-    "topicId": "M07.04",
-    "source": "ebook/curriculum/M07/M07.04.md",
-    "title": "주파수 응답·근궤적의 해석",
-    "objectives": [
-      "안정한 가상 LTI의 정현파 정상 응답에서 크기·위상·dB와 각주파수의 의미를 계산한다.",
-      "음의 단위 피드백 모델의 이득 변화에 따른 폐루프 근을 계산하여 근궤적과 응답 특성을 해석한다.",
-      "가상 지연이 위상 여유에 주는 영향을 계산하고 주파수 지표만으로 보장할 수 없는 조건을 설명한다."
-    ],
-    "prerequisiteNote": "M07.02의 전달함수·극·연속 안정성, M02의 복소수와 삼각함수, M07.03의 이득 개념을 사용한다. 시간은 s, 입출력은 정규화값인 가상 모델이다. 실제 로봇 주파수 시험이나 MATLAB 설치는 필요 없다.",
-    "sha256": "ebaae66ae54d807801bf081182e59dcf778ca9c313a9ea9d44e9aaa501be8fc5",
-    "reviewed": true,
-    "evidenceRef": "doc/v2/work_items/M07.04.md"
-  },
-  {
-    "topicId": "M07.05",
-    "source": "ebook/curriculum/M07/M07.05.md",
-    "title": "위치·속도·토크 제어와 궤적 추종",
-    "objectives": [
-      "위치·속도·토크 입력의 의미와 내외부 제어 루프의 가정을 구별한다.",
-      "가상 cubic 관절 궤적의 위치·속도·가속도와 속도 피드백/토크 요구를 계산한다.",
-      "동일 시각의 추종 오차와 입력 포화를 분석하여 궤적 성공 및 실제 안전의 검증 범위를 설명한다."
-    ],
-    "prerequisiteNote": "M07.01의 관성과 M07.02~03의 응답/피드백, M06의 관절 경로가 선수다. 수치는 가상 단일 축의 종이 계산이며 실제 위치·속도·토크 명령은 송신하지 않는다.",
-    "sha256": "0635379d58a9e612fb2123c98bc6fa3c0e44a26fc19fd21b9a7bd680c522e4d2",
-    "reviewed": true,
-    "evidenceRef": "doc/v2/work_items/M07.05.md"
-  },
-  {
-    "topicId": "M07.06",
-    "source": "ebook/curriculum/M07/M07.06.md",
-    "title": "필터·지연·jitter·센서 잡음과 제어 품질",
-    "objectives": [
-      "가상 1차/이동평균 필터를 계산하고 잡음 평균의 분산 감소 조건과 지연을 설명한다.",
-      "동일 시계의 합성 로그에서 경로 지연·처리 시간·실제 주기와 정의한 jitter를 구별하여 계산한다.",
-      "필터·샘플 지연·포화와 추종 지표를 함께 검토하여 제어 품질의 절충 및 실제 검증의 한계를 설명한다."
-    ],
-    "prerequisiteNote": "M02.04의 분산/독립성, M05.06의 시계/주기, M07.03~05의 미분 잡음·위상·추종이 선수다. 종이 계산이 기본이며 실제 센서·네트워크·제어기를 실행하지 않는다.",
-    "sha256": "253c49cea84e4d09a012b66e7753404edbe25a0ec5a84bf021114deb991a8659",
-    "reviewed": true,
-    "evidenceRef": "doc/v2/work_items/M07.06.md"
   },
   {
     "topicId": "M08.01",
@@ -674,6 +520,174 @@ export const authoredMetadata: AuthoredMetadata[] = [
     "evidenceRef": "doc/v2/work_items/M08.06.md"
   },
   {
+    "topicId": "M12.02",
+    "source": "ebook/curriculum/M12/M12.02.md",
+    "title": "핀홀·왜곡·내부 파라미터와 투영",
+    "objectives": [
+      "카메라 optical 프레임의 점과 내부 파라미터로 픽셀 투영을 계산하고 단위/유효 조건을 설명한다.",
+      "단순 왜곡과 명시된 resize/crop 좌표 변환을 계산하여 영상과 보정 파라미터의 계약을 검사한다.",
+      "알려진 깊이의 역투영을 계산하고 깊이Z/거리range 및 한 픽셀의 깊이 모호성을 구분한다."
+    ],
+    "prerequisiteNote": "M02의 벡터/좌표, M12.01의 영상 축과 M08.05의 optical frame이 선수다. 기본은 주어진 보정값의 종이 투영이다. 실제 보정 추정/OpenCV·센서 실행이나 GPU가 필요하지 않다.",
+    "sha256": "8f605d0865dd2f215fda96a48be34deb638a4d423f9606dae81e4294e8e44824",
+    "reviewed": true,
+    "evidenceRef": "doc/v2/work_items/M12.02.md"
+  },
+  {
+    "topicId": "M14.01",
+    "source": "ebook/curriculum/M14/M14.01.md",
+    "title": "카메라 내부·외부 보정·프레임 계약",
+    "objectives": [
+      "내부/외부 보정과 optical/몸체 프레임의 역할을 구분하고 영상·단위·변환 방향의 계약을 작성한다.",
+      "주어진 회전/이동으로 카메라 점을 기준 프레임에 옮기고 역변환 및 알려진 회전의 이동을 계산한다.",
+      "보정 자료/재투영 잔차와 변경 기록을 해석하여 독립 검사·재보정 조건 및 검증 한계를 제안한다."
+    ],
+    "prerequisiteNote": "M06.01의 열벡터 프레임, M12.02의 핀홀/왜곡과 M08.05의 TF가 선수다. M13 점군이나 Kalman/EKF는 필요하지 않다. 기본은 합성 좌표·보정 기록의 종이 계산이며 실제 카메라 보정을 수행하지 않는다.",
+    "sha256": "4921462a74f0e2f5a62fb585f93c229a2b4d877b943d7596466101203c96c674",
+    "reviewed": true,
+    "evidenceRef": "doc/v2/work_items/M14.01.md"
+  },
+  {
+    "topicId": "M14.03",
+    "source": "ebook/curriculum/M14/M14.03.md",
+    "title": "여러 시간원·멀티레이트·보간·ApproximateTime",
+    "objectives": [
+      "취득/수신 시각과 시계의 offset·속도 차이를 구분하고 주어진 동시 사건으로 간단한 시계 변환을 계산한다.",
+      "서로 다른 주기의 상태에서 선형 보간을 계산하고 온라인 미래 표본/대기와 각도 경계의 한계를 설명한다.",
+      "Jazzy ApproximateTime의 큐/허용 시차와 도착 순서 사례를 해석하고 제한된 운동 모형으로 시간 오차 예산을 계산한다."
+    ],
+    "prerequisiteNote": "M05.06의 시간원, M12.02의 핀홀과 M14.01의 프레임이 선수다. M13/Kalman/EKF는 필요하지 않다. 기본은 합성 시각/도착 순서의 종이 계산이며 실제 ROS나 센서 동기화를 실행하지 않는다.",
+    "sha256": "d348f166c58e8d0c7705177c3b5f4ec9a688a8fb0b62dcb98edd40dd86f10940",
+    "reviewed": true,
+    "evidenceRef": "doc/v2/work_items/M14.03.md"
+  },
+  {
+    "topicId": "M14.06",
+    "source": "ebook/curriculum/M14/M14.06.md",
+    "title": "TF·재투영 오차·시간 오차·불확실성 기록",
+    "objectives": [
+      "변환 방향/취득 시각과 재투영 잔차를 정의하고 점당 RMS와 성분 RMSE의 집계 차이를 계산한다.",
+      "제한된 운동 모형에서 시간 차이의 부호와 위치/픽셀 편향을 계산하고 알려진 편향과 무작위 불확실성을 구분한다.",
+      "핀홀 역투영의 부분 분산을 단위/상관 가정과 함께 계산하고 결과의 유효 범위·제외 항목을 기록한다."
+    ],
+    "prerequisiteNote": "M02.03/04의 미분·분산, M12.02의 핀홀, M14.01/03의 프레임·시간이 선수다. 미분계수는 본문에서 다시 계산한다. M13·Kalman/EKF는 필요하지 않으며 기본 활동은 합성 기록의 종이 계산이다.",
+    "sha256": "957ff8b7946845f800ef9112a4b3998bb142f24c38666c1f1b35861dc948de70",
+    "reviewed": true,
+    "evidenceRef": "doc/v2/work_items/M14.06.md"
+  },
+  {
+    "topicId": "M02.05",
+    "source": "ebook/curriculum/M02/M02.05.md",
+    "title": "최소제곱·경사하강·비선형 최적화",
+    "objectives": [
+      "잔차와 최소제곱 목적함수를 정의해 작은 측정 문제의 해·잔차를 계산하고 정확한 일치와 구분한다.",
+      "목적함수의 기울기와 경사하강 한 단계를 계산해 보폭에 따른 감소·증가를 비교한다.",
+      "비선형 문제의 초기값·정지점·잔차 스케일을 검토하고 국소 결과를 전역 정답이나 안전 보장으로 과장하지 않는다."
+    ],
+    "prerequisiteNote": "M02.01의 선형계, M02.03의 미분·Jacobian과 M02.04의 오차/단위를 사용한다. 모든 계산은 종이로 가능하며 NumPy·SciPy 설치나 장비 실행은 필요 없다.",
+    "sha256": "eb632f5ea31bda016052acf0a2668791c32c57f95e36715b247eb2c5948ee066",
+    "reviewed": true,
+    "evidenceRef": "doc/v2/work_items/M02.05.md"
+  },
+  {
+    "topicId": "M07.02",
+    "source": "ebook/curriculum/M07/M07.02.md",
+    "title": "전달함수·상태공간·시간응답·안정성",
+    "objectives": [
+      "가상 연속 LTI 모델의 미분방정식을 상태공간과 전달함수로 연결하고 초기조건의 역할을 설명한다.",
+      "1차 계단 응답을 계산하여 정상값·시간상수·정착 시간·오버슈트를 정의에 따라 판정한다.",
+      "내부 상태와 입출력, 연속 모델과 이산 구현의 안정성을 구별하고 유한 로그의 검증 한계를 설명한다."
+    ],
+    "prerequisiteNote": "M02의 미분·행렬·고유값과 M07.01의 동역학이 선수다. u와 y가 정규화된 가상 모델을 사용한다. 계산기와 종이로 수행하며 실제 제어기나 로봇을 실행하지 않는다.",
+    "sha256": "3c0179aaa6755571e95b7dbc0ae854ec68e48b2233229857847533f082428135",
+    "reviewed": true,
+    "evidenceRef": "doc/v2/work_items/M07.02.md"
+  },
+  {
+    "topicId": "M07.03",
+    "source": "ebook/curriculum/M07/M07.03.md",
+    "title": "P/PI/PID·적분 포화·미분 잡음·샘플링",
+    "objectives": [
+      "P·I·D 항의 역할과 한계를 설명하고 가상 정상상태의 P 제어 오차를 계산한다.",
+      "명시한 이산 PID의 갱신 순서에 따라 포화 전/후 출력과 조건부 적분 상태를 계산한다.",
+      "미분 잡음·샘플 간격·포화 기록을 해석하여 튜닝 주장의 검증 조건과 모형의 한계를 설명한다."
+    ],
+    "prerequisiteNote": "M02의 미분/적분, M05.06의 샘플 간격, M07.02의 응답과 안정성이 선수다. 본문의 정규화 로그를 종이로 계산한다. 실제 PID 튜닝·토크 인가·모터 동작은 수행하지 않는다.",
+    "sha256": "15a9fdbf12cfea26935f0bd64c76fde16658535ea90d10fc2653ea9817a22fef",
+    "reviewed": true,
+    "evidenceRef": "doc/v2/work_items/M07.03.md"
+  },
+  {
+    "topicId": "M07.05",
+    "source": "ebook/curriculum/M07/M07.05.md",
+    "title": "위치·속도·토크 제어와 궤적 추종",
+    "objectives": [
+      "위치·속도·토크 입력의 의미와 내외부 제어 루프의 가정을 구별한다.",
+      "가상 cubic 관절 궤적의 위치·속도·가속도와 속도 피드백/토크 요구를 계산한다.",
+      "동일 시각의 추종 오차와 입력 포화를 분석하여 궤적 성공 및 실제 안전의 검증 범위를 설명한다."
+    ],
+    "prerequisiteNote": "M07.01/02/03의 구동·응답·피드백 및 M02.03의 미분을 사용한다. 기본 1축 관절 경로와 단위는 본문에서 제공하므로 팔의 FK/IK나 주파수 설계 전체를 먼저 이수하지 않아도 계산할 수 있다. 실제 팔 기구학은 M06.02~04, 주파수 안정성 설계는 M07.04로 확장한다. 합성 추종/로그 해석이며 실제 모터·로봇을 실행하지 않는다.",
+    "sha256": "3d96644f6ce3675e411392c50cb88be599b315a3a203cb0de5ff8c354c7ad43b",
+    "reviewed": true,
+    "evidenceRef": "doc/v2/work_items/M07.05.md"
+  },
+  {
+    "topicId": "M07.06",
+    "source": "ebook/curriculum/M07/M07.06.md",
+    "title": "필터·지연·jitter·센서 잡음과 제어 품질",
+    "objectives": [
+      "가상 1차/이동평균 필터를 계산하고 잡음 평균의 분산 감소 조건과 지연을 설명한다.",
+      "동일 시계의 합성 로그에서 경로 지연·처리 시간·실제 주기와 정의한 jitter를 구별하여 계산한다.",
+      "필터·샘플 지연·포화와 추종 지표를 함께 검토하여 제어 품질의 절충 및 실제 검증의 한계를 설명한다."
+    ],
+    "prerequisiteNote": "M02.04의 분산/독립성, M05.06의 시계/주기, M07.03~05의 미분 잡음·위상·추종이 선수다. 종이 계산이 기본이며 실제 센서·네트워크·제어기를 실행하지 않는다.",
+    "sha256": "253c49cea84e4d09a012b66e7753404edbe25a0ec5a84bf021114deb991a8659",
+    "reviewed": true,
+    "evidenceRef": "doc/v2/work_items/M07.06.md"
+  },
+  {
+    "topicId": "M12.05",
+    "source": "ebook/curriculum/M12/M12.05.md",
+    "title": "시간 추적·가림·ID·오검출과 인지 프로젝트",
+    "objectives": [
+      "검출·instance와 시간 tracking ID를 구분하고 같은 시계의 시간 간격으로 작은 위치 예측을 계산한다.",
+      "가상 연관 비용/게이트로 교차 물체의 연결을 계산하고 모호한 대응과 모형 가정의 한계를 설명한다.",
+      "가림·미검출·오검출·track 수명 정책을 해석하고 장비 없는 인지 프로젝트의 평가/실패 기록을 설계한다."
+    ],
+    "prerequisiteNote": "M12.01의 픽셀/영역과 M02.04의 불확실성 기초를 연결한다. 제공된 검출 좌표·ID 기록으로 연관·상실·재등장과 시간/자료 분리 기준을 본문에서 보충한다. 검출·분할 신경망 학습을 먼저 수행하지 않아도 기본 활동을 완료할 수 있다. 학습 모델을 바꾸는 확장은 M11.03/06·M12.03/04와 연결한다. 실제 영상 추적이나 Kalman/EKF 구현은 하지 않는다.",
+    "sha256": "a36cc1722b0d3ca3a44b5bc8cca832ca828a2508e3e78c521b0759f54b80f21e",
+    "reviewed": true,
+    "evidenceRef": "doc/v2/work_items/M12.05.md"
+  },
+  {
+    "topicId": "M12.06",
+    "source": "ebook/curriculum/M12/M12.06.md",
+    "title": "정밀도·재현율·IoU·작업 성공 기준; 얼굴 인식은 선택 비교",
+    "objectives": [
+      "명시된 검출 매칭 규칙으로 중복/미매칭을 판정하고 TP·FP·FN과 정밀도/재현율을 계산한다.",
+      "score와 IoU threshold를 바꾼 결과를 비교하고 AP/집계·시험 선택 조건의 차이를 설명한다.",
+      "검출 지표와 실제 작업 성공의 조건을 분리하여 가상 판정표의 성공률과 필요한 추가 증거를 설명한다."
+    ],
+    "prerequisiteNote": "M11.03/05의 분할/지표와 M12.02~05의 공간·검출·추적 한계가 선수다. 기본은 합성 상자/score와 작업 판정표의 종이 계산이다. 얼굴 부분은 선택 개념 비교이며 실제 검출/식별이나 로봇 작업을 실행하지 않는다.",
+    "sha256": "60098e75cc6900f1814b1dada1b45fccd295404330bc91691c358421a333e125",
+    "reviewed": true,
+    "evidenceRef": "doc/v2/work_items/M12.06.md"
+  },
+  {
+    "topicId": "M06.05",
+    "source": "ebook/curriculum/M06/M06.05.md",
+    "title": "차동·옴니·메카넘 순/역운동학",
+    "objectives": [
+      "차동 베이스의 바퀴 속도와 전진/회전 속도를 순·역 계산하고 몸체 속도를 세계 좌표로 옮긴다.",
+      "명시한 3옴니/4메카넘 배치에서 몸체 속도와 바퀴 속도를 순·역 계산한다.",
+      "바퀴 속도 한계와 메카넘의 모델 일관성 잔차를 검사하고 실제 이동·미끄럼에 대한 추론 한계를 설명한다."
+    ],
+    "prerequisiteNote": "M03.05의 바퀴 구조, M06.01의 좌표 변환, M02.01의 행렬이 선수다. 모든 치수와 로그는 가상 모델이다. 계산기와 종이만 사용하며 실제 베이스를 주행하지 않는다.",
+    "sha256": "941f39e397e315ed84f2cc87ac7d4870887b00e86304bcc45251a12e7ce79754",
+    "reviewed": true,
+    "evidenceRef": "doc/v2/work_items/M06.05.md"
+  },
+  {
     "topicId": "M09.01",
     "source": "ebook/curriculum/M09/M09.01.md",
     "title": "월드·로봇 스폰·리셋·고정 스텝",
@@ -756,300 +770,6 @@ export const authoredMetadata: AuthoredMetadata[] = [
     "sha256": "3204e1dce30b1dd003f04257137841dc6f7438d36cf20436973e212cba3fc0e2",
     "reviewed": true,
     "evidenceRef": "doc/v2/work_items/M09.06.md"
-  },
-  {
-    "topicId": "M10.01",
-    "source": "ebook/curriculum/M10/M10.01.md",
-    "title": "Stage·Prim·레이어·참조·인스턴싱",
-    "objectives": [
-      "장면 경로에서 Stage·Prim·속성·관계를 구분하고 가상 객체의 참조 대상을 찾는다.",
-      "단순한 직접 값의 레이어 강도를 적용하여 최종 값과 편집·저장 대상을 설명한다.",
-      "reference와 scenegraph instancing의 재사용/편집 범위를 비교하고 가상 비용 및 개별 변경 요구로 구성을 선택한다."
-    ],
-    "prerequisiteNote": "M08의 모델/자산 경로와 시각·물리 구분이 선수다. 기본은 경로·의견 표의 종이 분석이며 OpenUSD나 Isaac Sim 설치가 필요하지 않다. 실제 USD 합성 결과를 실행해 얻었다고 주장하지 않는다.",
-    "sha256": "47303f5c58c587c3fb67899decdf7fa673119f2ebbac9cbbd94a70a004a7396b",
-    "reviewed": true,
-    "evidenceRef": "doc/v2/work_items/M10.01.md"
-  },
-  {
-    "topicId": "M10.02",
-    "source": "ebook/curriculum/M10/M10.02.md",
-    "title": "URDF 자산과 USD 자산의 관계",
-    "objectives": [
-      "원본/확장 URDF·생성 USD·장면 배치·실험 레이어의 역할과 표현 차이를 설명한다.",
-      "가상 변환 보고서에서 단위·이름·관절 관계·베이스 조건의 보존 여부를 계산하고 판정한다.",
-      "재가져오기와 자산 의존성 변경에 대비한 출처 기록 및 단계별 재검사 계획을 작성한다."
-    ],
-    "prerequisiteNote": "M08.01~06의 URDF/모델 이식과 M10.01의 reference/레이어가 선수다. 기본 활동은 합성 변환 보고서의 종이 검사다. Isaac Sim 6.2 문서를 기준으로 설명하되 실제 importer나 GPU를 실행하지 않는다.",
-    "sha256": "f8ff08536d3c61d68dd2a1176c9972871fadf35164e420b9e3fa183c18e474d3",
-    "reviewed": true,
-    "evidenceRef": "doc/v2/work_items/M10.02.md"
-  },
-  {
-    "topicId": "M10.03",
-    "source": "ebook/curriculum/M10/M10.03.md",
-    "title": "RigidBody·Collider·CCD·접촉·마찰",
-    "objectives": [
-      "표시 메시·동적 강체·정적 충돌체·kinematic 물체의 역할을 구분하여 가상 구성 오류를 진단한다.",
-      "스텝당 이동거리와 접촉 거리의 합을 계산하고 이산 검출·CCD·offset 설정의 효과와 한계를 설명한다.",
-      "단순 정/동마찰 모델의 힘을 계산하고 접촉/마찰 문제에서 먼저 확인할 증거를 제안한다."
-    ],
-    "prerequisiteNote": "M07.01의 힘/질량과 M08의 visual/collision/물리 속성이 선수다. PhysX 경로의 개념을 Isaac Sim 6.2 자료와 연결하며, 기본 실습은 합성 기록과 종이 계산이다. 실제 엔진·GPU·물체를 실행하지 않는다.",
-    "sha256": "6ae2b4125bb54f4a522de1ccbbc34338de2ac33c1dcf43d50067c2d55c5ff50b",
-    "reviewed": true,
-    "evidenceRef": "doc/v2/work_items/M10.03.md"
-  },
-  {
-    "topicId": "M10.04",
-    "source": "ebook/curriculum/M10/M10.04.md",
-    "title": "질량·질량중심·관성·Articulation",
-    "objectives": [
-      "가상 부품의 질량·밀도·질량중심 출처를 구분하고 결합 질량중심과 중력 토크를 계산한다.",
-      "같은 기준점/축에 맞춘 관성 합을 계산하고 관성 입력의 단위·기준·물리 조건을 점검한다.",
-      "단일 강체와 articulation을 구분하고 베이스·관절 제약에 따른 자유도와 모델 검증 범위를 설명한다."
-    ],
-    "prerequisiteNote": "M07.01의 힘/토크와 M08.04의 관성/평행축, M10.02의 변환 기록이 선수다. 종이 수치와 가상 구성표를 사용하며 Isaac Sim·GPU·실물 실행이 필요하지 않다.",
-    "sha256": "3752704ee4ef1d0935b56cdf4948c5e0d5459b3c15e734ffde9fdb6134d03eda",
-    "reviewed": true,
-    "evidenceRef": "doc/v2/work_items/M10.04.md"
-  },
-  {
-    "topicId": "M10.05",
-    "source": "ebook/curriculum/M10/M10.05.md",
-    "title": "물리 스텝·렌더 스텝·솔버와 반복 가능성",
-    "objectives": [
-      "물리·렌더·제어 주기와 벽시계를 구분하고 스텝 수·간격·실시간 비율을 계산한다.",
-      "명시된 단순 적분의 한 단계와 간격 변경 효과를 계산하고 solver 반복/비용의 다른 역할을 설명한다.",
-      "반복 실험의 입력·설정·허용 오차를 기록하고 결정성/재현성 주장의 범위를 판정한다."
-    ],
-    "prerequisiteNote": "M05.06의 시계와 M07의 이산 모델, M10.03의 접촉이 선수다. 기본 활동은 합성 시간표와 종이 적분이며 실제 Isaac Sim·GPU 성능 측정이나 엔진 실행을 하지 않는다.",
-    "sha256": "0218809e3f6f860bd7426cc42e2c0dd9c0b4d34a71ccfdd17647a92a575f30d5",
-    "reviewed": true,
-    "evidenceRef": "doc/v2/work_items/M10.05.md"
-  },
-  {
-    "topicId": "M10.06",
-    "source": "ebook/curriculum/M10/M10.06.md",
-    "title": "ROS 2 브리지·관절 명령·카메라 연결",
-    "objectives": [
-      "ROS 2와 시뮬레이터 사이의 발행/구독·시간·제어 책임을 구분하고 연결 성공의 증거 범위를 설명한다.",
-      "가상 관절 명령의 이름·단위·시각 계약을 적용해 목표를 재정렬하고 입력 유효성과 상태 비교 한계를 판정한다.",
-      "영상의 encoding·행 간격·크기·프레임/시각과 CameraInfo를 검사하고 원시 payload 비용을 계산한다."
-    ],
-    "prerequisiteNote": "M05의 ROS 통신/시계, M08.05의 JointState/TF, M10.05의 물리·렌더 주기가 선수다. Isaac Sim 6.2/ROS 2 Jazzy 문서에 근거한 가상 기록 분석이며 실제 ROS·Isaac·GPU를 실행하지 않는다.",
-    "sha256": "1b975c6d4181ae73db0a2840c42eb1030b1b6788e87ee73d7c22f562d8a9eede",
-    "reviewed": true,
-    "evidenceRef": "doc/v2/work_items/M10.06.md"
-  },
-  {
-    "topicId": "M11.01",
-    "source": "ebook/curriculum/M11/M11.01.md",
-    "title": "지도학습·손실·경사·역전파·최적화",
-    "objectives": [
-      "지도학습의 입력·목표·모형·손실을 구분하고 손실 선택과 작업 성공의 차이를 설명한다.",
-      "작은 회귀 모형의 MSE와 연쇄법칙에 따른 경사를 계산하여 경사하강 한 단계를 수행한다.",
-      "PyTorch의 기울기 초기화·역전파·파라미터 갱신 역할을 구분하고 학습률/누적 오류와 검증 범위를 진단한다."
-    ],
-    "prerequisiteNote": "M02.03의 미분과 M02.05의 최적화, M01.02의 Python이 선수다. 기본은 두 합성 표본의 종이 계산이다. 선택 CPU 코드는 이미 PyTorch가 있는 환경용 완전 예제이며 GPU/실제 로봇 학습이 필요하지 않다.",
-    "sha256": "19ccfe618ebc721691b08c4e1e7dc99812b4468c575804c95b1b086a4a815770",
-    "reviewed": true,
-    "evidenceRef": "doc/v2/work_items/M11.01.md"
-  },
-  {
-    "topicId": "M11.02",
-    "source": "ebook/curriculum/M11/M11.02.md",
-    "title": "텐서·Dataset·DataLoader·모델 저장",
-    "objectives": [
-      "텐서의 shape·dtype·device와 축 의미를 해석하고 reshape와 축 교환의 차이를 설명한다.",
-      "입력/목표가 짝인 Dataset과 DataLoader의 마지막 배치를 계산하고 표본 수에 맞는 손실 평균을 구한다.",
-      "state_dict 저장/로드 결과를 확인하고 구조·전처리·학습 재개에 필요한 별도 기록을 제안한다."
-    ],
-    "prerequisiteNote": "M01의 Python/배열과 M11.01의 모형/손실이 선수다. 기본은 작은 합성 배열·배치의 종이 계산이며, 이미 PyTorch가 있는 경우 완전한 CPU 코드를 선택 실행할 수 있다. GPU나 외부 데이터 다운로드는 필요하지 않다.",
-    "sha256": "2c150cdec8842f6078f28e82795efc6a4c54ab07a049a06134edfda1d17b36f2",
-    "reviewed": true,
-    "evidenceRef": "doc/v2/work_items/M11.02.md"
-  },
-  {
-    "topicId": "M11.03",
-    "source": "ebook/curriculum/M11/M11.03.md",
-    "title": "학습/검증/시험 분리·과적합·데이터 누수",
-    "objectives": [
-      "평가하려는 일반화 주장에 맞춰 학습/검증/시험과 episode·물체·시간의 분리 단위를 설계한다.",
-      "학습 자료만의 정규화 통계를 계산하고 전처리·파생 자료·미래 입력의 데이터 누수를 진단한다.",
-      "가상 학습곡선에서 모델 선택과 과적합 신호를 해석하고 시험 잠금 및 결과 기록 범위를 설명한다."
-    ],
-    "prerequisiteNote": "M11.01의 손실/학습과 M11.02의 전처리·Dataset, M02.04의 평균/분산이 선수다. 기본은 합성 분할표/곡선과 종이 계산이다. 실제 학습을 돌리거나 일반화 성능을 실증한 자료가 아니다.",
-    "sha256": "d75a56d58171756f2440bb331781acdbe7edd1d8b3d240a0dcae0fda0af7feea",
-    "reviewed": true,
-    "evidenceRef": "doc/v2/work_items/M11.03.md"
-  },
-  {
-    "topicId": "M11.04",
-    "source": "ebook/curriculum/M11/M11.04.md",
-    "title": "CNN·Transformer·표현학습의 역할",
-    "objectives": [
-      "작은 CNN식 국소 연산과 ReLU를 계산하여 가중치 공유/공간 정보의 역할과 한계를 설명한다.",
-      "query/key/value의 scaled dot attention을 계산하고 위치/마스크·가중합의 의미를 구분한다.",
-      "표현·task head·사전학습/전이의 역할을 구분하고 로봇 과제에 필요한 별도 검증을 제안한다."
-    ],
-    "prerequisiteNote": "M11.01~03의 학습·텐서·분리와 M02.01의 내적이 선수다. 기본 활동은 합성 벡터의 종이 계산이다. 선택 CPU 코드의 가중치는 손으로 정하며 실제 영상 학습이나 대형 모델 성능을 실증하지 않는다.",
-    "sha256": "feff450ee3a3d0593139399939500f0114db2e69dcf456820dfae71afcd92068",
-    "reviewed": true,
-    "evidenceRef": "doc/v2/work_items/M11.04.md"
-  },
-  {
-    "topicId": "M11.05",
-    "source": "ebook/curriculum/M11/M11.05.md",
-    "title": "분류·검출·분할·회귀의 출력과 지표",
-    "objectives": [
-      "분류·검출·semantic/instance 분할·회귀의 출력 단위와 의미를 구분하고 과제에 맞는 계약을 선택한다.",
-      "합성 예측에서 confusion 지표·IoU·회귀 오차를 계산하고 분모/집계/단위의 한계를 설명한다.",
-      "점수 threshold와 오류 비용을 비교하여 검증 자료의 선택 기준 및 실제 작업 성공의 별도 조건을 제안한다."
-    ],
-    "prerequisiteNote": "M11.01~04의 손실/출력·검증 분리와 평균 계산이 선수다. 기본은 합성 점수·영역·오차의 종이 계산이며 모델 학습/검출이나 실제 작업 성과를 실행하지 않는다.",
-    "sha256": "8566ee1c1cd478f2fafa25554339d5e673ffebd023aec2fe3e1144f6dff2271e",
-    "reviewed": true,
-    "evidenceRef": "doc/v2/work_items/M11.05.md"
-  },
-  {
-    "topicId": "M11.06",
-    "source": "ebook/curriculum/M11/M11.06.md",
-    "title": "추론 지연·메모리·분포 이동과 실험 추적",
-    "objectives": [
-      "같은 시계의 합성 시간표와 표본 통계로 전체 지연·기한 초과를 계산하고 측정 범위/throughput과 구분한다.",
-      "가상 모형의 파라미터·경사·optimizer 상태 저장량을 계산하고 실제 추론/훈련 peak 메모리의 추가 항목을 설명한다.",
-      "조건별 성능과 배포 혼합 변화를 계산하여 분포 이동을 해석하고 재현에 필요한 실험/실행 기록을 제안한다."
-    ],
-    "prerequisiteNote": "M05.06의 시간원, M11.02의 저장, M11.03~05의 분할/평가가 선수다. 기본은 합성 로그·메모리 명세·조건별 성공표의 종이 계산이며 실제 CPU/GPU 성능 측정이나 로봇 배포가 아니다.",
-    "sha256": "0b17dfd0391a62a6bb4e4755dd129b2f9bec937313e245b0d8464506a3cf723a",
-    "reviewed": true,
-    "evidenceRef": "doc/v2/work_items/M11.06.md"
-  },
-  {
-    "topicId": "M12.01",
-    "source": "ebook/curriculum/M12/M12.01.md",
-    "title": "OpenCV 영상·색공간·필터·특징",
-    "objectives": [
-      "영상의 행/열/채널·색 순서·값 범위와 dtype을 해석하여 입력 변환 오류를 진단한다.",
-      "명시한 경계 규약의 평균/중앙값 필터와 차분을 계산하고 잡음 제거와 특징 손실의 차이를 설명한다.",
-      "영상 특징과 실제 물체/기하 위치를 구분하고 반복 무늬·저대비·가림에서 필요한 추가 검사를 제안한다."
-    ],
-    "prerequisiteNote": "M11.02의 배열/축, M11.04의 국소 연산과 M11.05의 출력 계약이 선수다. 기본은 작은 합성 픽셀의 종이 계산이다. 선택 NumPy 코드는 개념 연산만 실행하며 OpenCV/카메라 설치나 실제 영상 추적이 필요하지 않다.",
-    "sha256": "6fac537cbebabb1818ea707b8b49729377d0fcb7dfb32710ea121b89c5df99d6",
-    "reviewed": true,
-    "evidenceRef": "doc/v2/work_items/M12.01.md"
-  },
-  {
-    "topicId": "M12.02",
-    "source": "ebook/curriculum/M12/M12.02.md",
-    "title": "핀홀·왜곡·내부 파라미터와 투영",
-    "objectives": [
-      "카메라 optical 프레임의 점과 내부 파라미터로 픽셀 투영을 계산하고 단위/유효 조건을 설명한다.",
-      "단순 왜곡과 명시된 resize/crop 좌표 변환을 계산하여 영상과 보정 파라미터의 계약을 검사한다.",
-      "알려진 깊이의 역투영을 계산하고 깊이Z/거리range 및 한 픽셀의 깊이 모호성을 구분한다."
-    ],
-    "prerequisiteNote": "M02의 벡터/좌표, M12.01의 영상 축과 M08.05의 optical frame이 선수다. 기본은 주어진 보정값의 종이 투영이다. 실제 보정 추정/OpenCV·센서 실행이나 GPU가 필요하지 않다.",
-    "sha256": "8f605d0865dd2f215fda96a48be34deb638a4d423f9606dae81e4294e8e44824",
-    "reviewed": true,
-    "evidenceRef": "doc/v2/work_items/M12.02.md"
-  },
-  {
-    "topicId": "M12.03",
-    "source": "ebook/curriculum/M12/M12.03.md",
-    "title": "라벨링·데이터 품질·YOLO 계열 검출 학습",
-    "objectives": [
-      "검출의 클래스/가림 정책과 정규화 상자 포맷을 설명하고 가상 픽셀 상자를 라벨로 변환한다.",
-      "입력 resize/pad와 라벨 변환을 계산하고 누락·불일치·그룹 중복의 데이터 품질 결함을 진단한다.",
-      "YOLO 계열의 가상 학습 계획에 모델/API·자료·권리·평가 조건을 기록하고 실제 검증 전의 주장 범위를 판정한다."
-    ],
-    "prerequisiteNote": "M11의 학습/분할/지표와 M12.01~02의 영상/좌표 변환이 선수다. 기본은 가상 라벨과 학습 명세의 종이 검사다. ultralytics는 로컬에 없으며 설치/가중치 다운로드·실제 학습/탐지를 수행하지 않는다.",
-    "sha256": "ad5e3160942598067d6a2fd7c44a02e45ca743d43ad7e9e01a3e88c94acac10b",
-    "reviewed": true,
-    "evidenceRef": "doc/v2/work_items/M12.03.md"
-  },
-  {
-    "topicId": "M12.04",
-    "source": "ebook/curriculum/M12/M12.04.md",
-    "title": "Semantic/Instance Segmentation과 차선/도로 장면",
-    "objectives": [
-      "semantic/instance 분할과 도로·차선 출력의 차이를 설명하고 class/instance ID와 표시 색을 구분한다.",
-      "합성 mask의 ignore 규칙·좌표 변환을 검사하고 유효 픽셀 정확도와 클래스별/평균 IoU를 계산한다.",
-      "분할된 도로를 실제 주행 가능 영역과 구분하여 가림·경계·조건 변화의 실패 근거 및 추가 확인을 제안한다."
-    ],
-    "prerequisiteNote": "M11.05의 IoU와 M12.01~03의 영상/투영/라벨이 선수다. 기본은 여섯 픽셀의 합성 mask와 도로 장면 설명의 종이 분석이다. 실제 segmentation 모델이나 차량/로봇을 실행하지 않는다.",
-    "sha256": "5dc99984d34fa871f9a340f9949966536627fb9da7094bf4b2f93ee95e39fd5f",
-    "reviewed": true,
-    "evidenceRef": "doc/v2/work_items/M12.04.md"
-  },
-  {
-    "topicId": "M12.05",
-    "source": "ebook/curriculum/M12/M12.05.md",
-    "title": "시간 추적·가림·ID·오검출과 인지 프로젝트",
-    "objectives": [
-      "검출·instance와 시간 tracking ID를 구분하고 같은 시계의 시간 간격으로 작은 위치 예측을 계산한다.",
-      "가상 연관 비용/게이트로 교차 물체의 연결을 계산하고 모호한 대응과 모형 가정의 한계를 설명한다.",
-      "가림·미검출·오검출·track 수명 정책을 해석하고 장비 없는 인지 프로젝트의 평가/실패 기록을 설계한다."
-    ],
-    "prerequisiteNote": "M11.03/06의 자료 분리/시간 평가와 M12.03~04의 검출/instance가 선수다. 기본은 합성 좌표/ID 기록의 종이 연관이다. Kalman/EKF 구현이나 실제 영상 추적을 선수로 요구하지 않는다.",
-    "sha256": "d551257307594161bcbc5d20669c4e87779ef1d936a3820a3db70d65ae4ed5c5",
-    "reviewed": true,
-    "evidenceRef": "doc/v2/work_items/M12.05.md"
-  },
-  {
-    "topicId": "M12.06",
-    "source": "ebook/curriculum/M12/M12.06.md",
-    "title": "정밀도·재현율·IoU·작업 성공 기준; 얼굴 인식은 선택 비교",
-    "objectives": [
-      "명시된 검출 매칭 규칙으로 중복/미매칭을 판정하고 TP·FP·FN과 정밀도/재현율을 계산한다.",
-      "score와 IoU threshold를 바꾼 결과를 비교하고 AP/집계·시험 선택 조건의 차이를 설명한다.",
-      "검출 지표와 실제 작업 성공의 조건을 분리하여 가상 판정표의 성공률과 필요한 추가 증거를 설명한다."
-    ],
-    "prerequisiteNote": "M11.03/05의 분할/지표와 M12.02~05의 공간·검출·추적 한계가 선수다. 기본은 합성 상자/score와 작업 판정표의 종이 계산이다. 얼굴 부분은 선택 개념 비교이며 실제 검출/식별이나 로봇 작업을 실행하지 않는다.",
-    "sha256": "60098e75cc6900f1814b1dada1b45fccd295404330bc91691c358421a333e125",
-    "reviewed": true,
-    "evidenceRef": "doc/v2/work_items/M12.06.md"
-  },
-  {
-    "topicId": "M14.01",
-    "source": "ebook/curriculum/M14/M14.01.md",
-    "title": "카메라 내부·외부 보정·프레임 계약",
-    "objectives": [
-      "내부/외부 보정과 optical/몸체 프레임의 역할을 구분하고 영상·단위·변환 방향의 계약을 작성한다.",
-      "주어진 회전/이동으로 카메라 점을 기준 프레임에 옮기고 역변환 및 알려진 회전의 이동을 계산한다.",
-      "보정 자료/재투영 잔차와 변경 기록을 해석하여 독립 검사·재보정 조건 및 검증 한계를 제안한다."
-    ],
-    "prerequisiteNote": "M06.01의 열벡터 프레임, M12.02의 핀홀/왜곡과 M08.05의 TF가 선수다. M13 점군이나 Kalman/EKF는 필요하지 않다. 기본은 합성 좌표·보정 기록의 종이 계산이며 실제 카메라 보정을 수행하지 않는다.",
-    "sha256": "4921462a74f0e2f5a62fb585f93c229a2b4d877b943d7596466101203c96c674",
-    "reviewed": true,
-    "evidenceRef": "doc/v2/work_items/M14.01.md"
-  },
-  {
-    "topicId": "M14.03",
-    "source": "ebook/curriculum/M14/M14.03.md",
-    "title": "여러 시간원·멀티레이트·보간·ApproximateTime",
-    "objectives": [
-      "취득/수신 시각과 시계의 offset·속도 차이를 구분하고 주어진 동시 사건으로 간단한 시계 변환을 계산한다.",
-      "서로 다른 주기의 상태에서 선형 보간을 계산하고 온라인 미래 표본/대기와 각도 경계의 한계를 설명한다.",
-      "Jazzy ApproximateTime의 큐/허용 시차와 도착 순서 사례를 해석하고 제한된 운동 모형으로 시간 오차 예산을 계산한다."
-    ],
-    "prerequisiteNote": "M05.06의 시간원, M12.02의 핀홀과 M14.01의 프레임이 선수다. M13/Kalman/EKF는 필요하지 않다. 기본은 합성 시각/도착 순서의 종이 계산이며 실제 ROS나 센서 동기화를 실행하지 않는다.",
-    "sha256": "d348f166c58e8d0c7705177c3b5f4ec9a688a8fb0b62dcb98edd40dd86f10940",
-    "reviewed": true,
-    "evidenceRef": "doc/v2/work_items/M14.03.md"
-  },
-  {
-    "topicId": "M14.06",
-    "source": "ebook/curriculum/M14/M14.06.md",
-    "title": "TF·재투영 오차·시간 오차·불확실성 기록",
-    "objectives": [
-      "변환 방향/취득 시각과 재투영 잔차를 정의하고 점당 RMS와 성분 RMSE의 집계 차이를 계산한다.",
-      "제한된 운동 모형에서 시간 차이의 부호와 위치/픽셀 편향을 계산하고 알려진 편향과 무작위 불확실성을 구분한다.",
-      "핀홀 역투영의 부분 분산을 단위/상관 가정과 함께 계산하고 결과의 유효 범위·제외 항목을 기록한다."
-    ],
-    "prerequisiteNote": "M02.03/04의 미분·분산, M12.02의 핀홀, M14.01/03의 프레임·시간이 선수다. 미분계수는 본문에서 다시 계산한다. M13·Kalman/EKF는 필요하지 않으며 기본 활동은 합성 기록의 종이 계산이다.",
-    "sha256": "957ff8b7946845f800ef9112a4b3998bb142f24c38666c1f1b35861dc948de70",
-    "reviewed": true,
-    "evidenceRef": "doc/v2/work_items/M14.06.md"
   },
   {
     "topicId": "M15.01",
@@ -1144,8 +864,8 @@ export const authoredMetadata: AuthoredMetadata[] = [
       "합성 원판 모델의 충돌·여유를 계산하고 끝점과 연결 구간의 유효성을 구분한다.",
       "격자와 로드맵의 점·간선·연결성을 판정하고 모델과 실제 이동의 한계를 설명한다."
     ],
-    "prerequisiteNote": "M06의 관절·이동 기구학과 M15의 지도 좌표를 연결한다. configuration, 충돌 공간, 그래프의 점·간선과 연속 구간을 본문에서 보충한다. 기본은 정적 합성 도형과 종이 경로 검사이며 실제 플래너·로봇 실행은 필요하지 않다.",
-    "sha256": "985ca68fd0958a6448c9109643fd049c0b49d3bbd63f23300db24449818c55cd",
+    "prerequisiteNote": "M02의 거리/비용, M06.01의 프레임, M07.05의 추종과 M15의 지도 좌표를 연결한다. 기본 모바일 도형 검사는 제공한 footprint와 정적 도형으로 수행하며 팔의 DH/FK 전체 이수를 요구하지 않는다. configuration·충돌 공간·점/간선과 연속 구간은 본문에서 보충한다. 팔 링크의 실제 배치를 확장할 때는 M06.02와 연결한다. 실제 플래너·로봇 실행은 하지 않는다.",
+    "sha256": "e83f7aa8c4d8a2950bd3ed12ccc631d8840fffc0353a0d1c334285e6bb2e3c7f",
     "reviewed": true,
     "evidenceRef": "doc/v2/work_items/M17.01.md"
   },
@@ -1164,48 +884,6 @@ export const authoredMetadata: AuthoredMetadata[] = [
     "evidenceRef": "doc/v2/work_items/M17.02.md"
   },
   {
-    "topicId": "M17.03",
-    "source": "ebook/curriculum/M17/M17.03.md",
-    "title": "PRM과 변형·연결성·샘플링",
-    "objectives": [
-      "PRM의 자유 configuration 샘플·이웃 연결·충돌 검사와 query 과정을 설명한다.",
-      "주어진 합성 점과 장애물에서 연결 반경에 따른 유효 간선과 경로를 계산한다.",
-      "유한 표본과 확률적 보장·PRM*/Lazy의 조건 및 지도 재사용의 한계를 판정한다."
-    ],
-    "prerequisiteNote": "M17.01~02의 C-space, 간선 검사와 그래프 탐색을 연결한다. sampling, local planner, query와 확률적 완전성의 뜻을 본문에서 보충한다. 기본은 합성 점과 사각 장애물 계산이며 실제 PRM·OMPL이나 로봇을 실행하지 않는다.",
-    "sha256": "e128bacb35909aff52d159b6f9f992cbecd7e8dc8406bb0c88f50ee8baf90fc2",
-    "reviewed": true,
-    "evidenceRef": "doc/v2/work_items/M17.03.md"
-  },
-  {
-    "topicId": "M17.04",
-    "source": "ebook/curriculum/M17/M17.04.md",
-    "title": "RRT와 변형·목표 편향·재배선",
-    "objectives": [
-      "RRT의 샘플·최근접·길이 제한 확장과 연결 구간의 충돌을 계산한다.",
-      "주어진 트리에서 RRT*의 부모 선택과 재배선 비용 개선을 계산한다.",
-      "목표 편향과 RRT-Connect·RRT*의 역할 및 유한 실패·점근 보장의 조건을 판정한다."
-    ],
-    "prerequisiteNote": "M17.01~03의 C-space, 연결 검사와 비용을 연결한다. 트리·확장·목표 편향·재배선을 본문에서 정의한다. 기본은 점 configuration의 합성 평면 계산이며 실제 RRT·OMPL이나 로봇을 실행하지 않는다.",
-    "sha256": "746650390ba7c76104e9f512652b556886c05e219182d32eaab77701abbf6afc",
-    "reviewed": true,
-    "evidenceRef": "doc/v2/work_items/M17.04.md"
-  },
-  {
-    "topicId": "M17.05",
-    "source": "ebook/curriculum/M17/M17.05.md",
-    "title": "CHOMP·STOMP·최적화 기반 경로 개선",
-    "objectives": [
-      "경로 비용과 제약을 구분하고 합성 목적함수의 미분·갱신 한 단계를 계산한다.",
-      "CHOMP의 공변 gradient와 STOMP의 비용 가중 후보 갱신의 역할을 수치 예로 비교한다.",
-      "초기 경로·국소성·유한 벌점의 한계를 설명하고 전체 충돌·시간 제약을 별도로 판정한다."
-    ],
-    "prerequisiteNote": "M02의 미분·최적화와 M17의 경로·충돌을 연결한다. 목적함수, gradient, metric과 비용 가중 후보를 본문에서 정의한다. 종이 계산과 임시 CPU 검산이 기본이며 교육용 스칼라 예는 실제 CHOMP/STOMP 구현이 아니다.",
-    "sha256": "26193b2edacd69f3b889f3493be4985bbe9406f0215c7ef9477b407443b870a2",
-    "reviewed": true,
-    "evidenceRef": "doc/v2/work_items/M17.05.md"
-  },
-  {
     "topicId": "M17.06",
     "source": "ebook/curriculum/M17/M17.06.md",
     "title": "경로 대 시간 궤적·속도/가속도 제한·재계획",
@@ -1214,8 +892,8 @@ export const authoredMetadata: AuthoredMetadata[] = [
       "주어진 관절별 제한으로 공통 기간의 하한을 계산하고 실행 후보를 판정한다.",
       "현재 상태·관측 나이·계산 지연·지도 변경을 반영해 재계획과 궤적 전환의 근거를 점검한다."
     ],
-    "prerequisiteNote": "M07의 궤적과 M17의 기하 경로를 연결한다. 진행 변수, 시간 스케일, 최대 미분값과 재계획의 상태 연속성을 본문에서 보충한다. 기본은 합성 관절 계산과 로그 판정이며 실제 제어기·로봇을 실행하지 않는다.",
-    "sha256": "a739664cb27ea6f8aa70bc8df2138fc53c0131e67f2e8ef160be21413ad99c8c",
+    "prerequisiteNote": "M17.01/02의 기하 경로, M02.03의 미분과 M07.05의 추종을 연결한다. CHOMP/STOMP 등 최적화 경로 개선 전체를 시간 배정의 필수 선수로 요구하지 않는다. 진행 변수·시간 스케일·최대 미분값과 재계획의 상태 연속성을 본문에서 보충한다. 기본은 합성 관절 계산과 로그 판정이며 실제 제어기·로봇을 실행하지 않는다.",
+    "sha256": "b4c32bda9cb504e3d2be08f2b9de9a7a38d2e69342e7d940df9d7ab6ffd6a5e5",
     "reviewed": true,
     "evidenceRef": "doc/v2/work_items/M17.06.md"
   },
@@ -1276,32 +954,144 @@ export const authoredMetadata: AuthoredMetadata[] = [
     "evidenceRef": "doc/v2/work_items/M18.04.md"
   },
   {
-    "topicId": "M18.05",
-    "source": "ebook/curriculum/M18/M18.05.md",
-    "title": "다중 로봇 Namespace·TF·지도·충돌 조정",
+    "topicId": "M06.02",
+    "source": "ebook/curriculum/M06/M06.02.md",
+    "title": "DH 파라미터·정기구학·작업공간",
     "objectives": [
-      "다중 로봇의 namespace·토픽·TF frame과 자료 생산자의 책임을 구분한다.",
-      "주어진 지도 정합으로 공통 좌표의 위치·상대 여유와 이동 변형을 계산한다.",
-      "공동 구역의 시간 예약 충돌과 실제 점유·통신·교착에 필요한 조정을 판정한다."
+      "표준 DH의 네 파라미터와 회전/직선 관절의 변수를 구분하고 관례를 섞지 않아야 하는 이유를 설명한다.",
+      "가상 평면 2R 팔의 관절각에서 말단 위치와 방향을 단계적으로 계산하고 변형 자세를 비교한다.",
+      "이상적인 위치 작업공간의 안쪽/바깥쪽 경계를 계산하고 실제 관절 제한·도구 자세·모델 검증의 추가 조건을 설명한다."
     ],
-    "prerequisiteNote": "M05의 이름 공간, M15의 지도 정합과 M18의 과업 상태를 연결한다. TF 공유·격리, 공통 좌표와 구역 예약을 본문에서 보충한다. 기본은 합성 이름 목록·평면 변환·시간표이며 실제 fleet·Nav2·로봇 실행은 없다.",
-    "sha256": "11307c3746cfc7183cc37b6bca7442af10bee8abb53e5281d071f8cca4d4f15f",
+    "prerequisiteNote": "M06.01의 열벡터·프레임 합성과 M02의 삼각함수, M03의 회전 관절이 선수다. 계산은 종이와 계산기로 충분하며 NumPy나 실제 로봇은 필요 없다. 모든 링크 길이는 교육용 가상 값이다.",
+    "sha256": "323b8d3ecd6e567c78f18ffb931d1f941411ebd3775e93c82e66b24a8a943e73",
     "reviewed": true,
-    "evidenceRef": "doc/v2/work_items/M18.05.md"
+    "evidenceRef": "doc/v2/work_items/M06.02.md"
   },
   {
-    "topicId": "M18.06",
-    "source": "ebook/curriculum/M18/M18.06.md",
-    "title": "이동 매니퓰레이터의 주행-조작 미션",
+    "topicId": "M06.03",
+    "source": "ebook/curriculum/M06/M06.03.md",
+    "title": "기하학적 IK·Jacobian·감쇠 최소제곱 IK",
     "objectives": [
-      "주행·정렬·조작·작업 검증·수납·재개를 역할과 전제·출력으로 연결한다.",
-      "주어진 map·base·arm 변환과 목표점, 자료 나이·시작 상태를 계산해 판정한다.",
-      "합성 미션 기록의 부분 성공·보류·실패를 구분하고 복구·전체 완료 근거를 제안한다."
+      "평면 2R 팔에서 코사인 법칙과 atan2를 이용해 IK 분기를 계산하고 기하적 도달 조건을 검사한다.",
+      "FK를 미분한 위치 Jacobian을 해석하고 주어진 잔차에 대한 DLS의 한 단계 관절 증분을 계산한다.",
+      "갱신 뒤 FK 잔차와 제약을 다시 확인하여 국소 선형화·감쇠·수치 실패의 한계 및 중단 조건을 설명한다."
     ],
-    "prerequisiteNote": "M06의 팔 기구학, M15의 좌표와 M17~18의 계획·과업 상태를 연결한다. base와 arm 원점의 차이, TCP 점과 자세, 미션 관문을 본문에서 보충한다. 기본은 합성 변환·시간·상태표이며 실제 주행·팔·물체·ROS 실행은 없다.",
-    "sha256": "ceee7c8bc2060d92ab74bfffee56aa8738361f5edf51205a6d22d8e7c67aadda",
+    "prerequisiteNote": "M06.02의 길이 0.3/0.2 m 평면 2R와 M02의 미분·행렬·최소제곱이 선수다. 기본 활동은 종이 수치 계산이다. 도구 방향을 제외한 2차원 위치 IK를 다루며 실제 로봇이나 NumPy 실행은 필요 없다.",
+    "sha256": "fd73a8ed99ffc2221c844556b30b9d96ca247c60685e947752a42bdf920e78c8",
     "reviewed": true,
-    "evidenceRef": "doc/v2/work_items/M18.06.md"
+    "evidenceRef": "doc/v2/work_items/M06.03.md"
+  },
+  {
+    "topicId": "M06.04",
+    "source": "ebook/curriculum/M06/M06.04.md",
+    "title": "특이점·관절 제한·다중 해·연속성",
+    "objectives": [
+      "작업 차원의 Jacobian에서 특이점의 의미를 설명하고 도달 불가·관절 한계 위반과 구별한다.",
+      "가상 IK의 여러 해를 관절 범위와 FK 잔차로 검사하여 클리핑의 한계를 계산한다.",
+      "연속 목표의 관절 증분·속도·각도 표현을 검토하고 끝점의 유효성과 경로의 유효성을 구분한다."
+    ],
+    "prerequisiteNote": "M06.02~03의 평면 2R, 기하 IK와 위치 Jacobian, M02.01의 2×2 행렬식이 선수다. 종이 계산과 합성 후보표를 사용하며 실제 관절 동작이나 충돌 검사는 수행하지 않는다.",
+    "sha256": "8a6aa1262972a73b1299c42dcc818eeeb1faff33b0e80d678ec7f16ad952cefd",
+    "reviewed": true,
+    "evidenceRef": "doc/v2/work_items/M06.04.md"
+  },
+  {
+    "topicId": "M06.06",
+    "source": "ebook/curriculum/M06/M06.06.md",
+    "title": "델타 구조와 SO-101 비교·엔코더 영점 보정",
+    "objectives": [
+      "델타의 폐루프 제약과 SO-101 직렬 팔의 관절/그리퍼 역할을 비교하고 가상 후보의 연결 조건을 검사한다.",
+      "명시한 센서 축·count 해상도·기어비·부호·영점으로 가상 관절각을 rad로 환산한다.",
+      "별도 기준 기록으로 캘리브레이션 후보를 검증하고 모델 버전·단위·영점·측정 한계를 구분하여 보류 근거를 남긴다."
+    ],
+    "prerequisiteNote": "M03의 기어/엔코더, M06의 프레임·FK·제약과 M05의 시각 기록을 사용한다. 모든 수치는 가상 기록이며 실제 엔코더 보정·모터 명령·로봇 이동은 수행하지 않는다.",
+    "sha256": "6212a3079ba1af49d6c462e0d770e9a2b9ba93951c0934b238075c31fa4b5bf5",
+    "reviewed": true,
+    "evidenceRef": "doc/v2/work_items/M06.06.md"
+  },
+  {
+    "topicId": "M10.01",
+    "source": "ebook/curriculum/M10/M10.01.md",
+    "title": "Stage·Prim·레이어·참조·인스턴싱",
+    "objectives": [
+      "장면 경로에서 Stage·Prim·속성·관계를 구분하고 가상 객체의 참조 대상을 찾는다.",
+      "단순한 직접 값의 레이어 강도를 적용하여 최종 값과 편집·저장 대상을 설명한다.",
+      "reference와 scenegraph instancing의 재사용/편집 범위를 비교하고 가상 비용 및 개별 변경 요구로 구성을 선택한다."
+    ],
+    "prerequisiteNote": "M08의 모델/자산 경로와 시각·물리 구분이 선수다. 기본은 경로·의견 표의 종이 분석이며 OpenUSD나 Isaac Sim 설치가 필요하지 않다. 실제 USD 합성 결과를 실행해 얻었다고 주장하지 않는다.",
+    "sha256": "47303f5c58c587c3fb67899decdf7fa673119f2ebbac9cbbd94a70a004a7396b",
+    "reviewed": true,
+    "evidenceRef": "doc/v2/work_items/M10.01.md"
+  },
+  {
+    "topicId": "M10.02",
+    "source": "ebook/curriculum/M10/M10.02.md",
+    "title": "URDF 자산과 USD 자산의 관계",
+    "objectives": [
+      "원본/확장 URDF·생성 USD·장면 배치·실험 레이어의 역할과 표현 차이를 설명한다.",
+      "가상 변환 보고서에서 단위·이름·관절 관계·베이스 조건의 보존 여부를 계산하고 판정한다.",
+      "재가져오기와 자산 의존성 변경에 대비한 출처 기록 및 단계별 재검사 계획을 작성한다."
+    ],
+    "prerequisiteNote": "M08.01~06의 URDF/모델 이식과 M10.01의 reference/레이어가 선수다. 기본 활동은 합성 변환 보고서의 종이 검사다. Isaac Sim 6.2 문서를 기준으로 설명하되 실제 importer나 GPU를 실행하지 않는다.",
+    "sha256": "f8ff08536d3c61d68dd2a1176c9972871fadf35164e420b9e3fa183c18e474d3",
+    "reviewed": true,
+    "evidenceRef": "doc/v2/work_items/M10.02.md"
+  },
+  {
+    "topicId": "M10.03",
+    "source": "ebook/curriculum/M10/M10.03.md",
+    "title": "RigidBody·Collider·CCD·접촉·마찰",
+    "objectives": [
+      "표시 메시·동적 강체·정적 충돌체·kinematic 물체의 역할을 구분하여 가상 구성 오류를 진단한다.",
+      "스텝당 이동거리와 접촉 거리의 합을 계산하고 이산 검출·CCD·offset 설정의 효과와 한계를 설명한다.",
+      "단순 정/동마찰 모델의 힘을 계산하고 접촉/마찰 문제에서 먼저 확인할 증거를 제안한다."
+    ],
+    "prerequisiteNote": "M07.01의 힘/질량과 M08의 visual/collision/물리 속성이 선수다. PhysX 경로의 개념을 Isaac Sim 6.2 자료와 연결하며, 기본 실습은 합성 기록과 종이 계산이다. 실제 엔진·GPU·물체를 실행하지 않는다.",
+    "sha256": "6ae2b4125bb54f4a522de1ccbbc34338de2ac33c1dcf43d50067c2d55c5ff50b",
+    "reviewed": true,
+    "evidenceRef": "doc/v2/work_items/M10.03.md"
+  },
+  {
+    "topicId": "M10.04",
+    "source": "ebook/curriculum/M10/M10.04.md",
+    "title": "질량·질량중심·관성·Articulation",
+    "objectives": [
+      "가상 부품의 질량·밀도·질량중심 출처를 구분하고 결합 질량중심과 중력 토크를 계산한다.",
+      "같은 기준점/축에 맞춘 관성 합을 계산하고 관성 입력의 단위·기준·물리 조건을 점검한다.",
+      "단일 강체와 articulation을 구분하고 베이스·관절 제약에 따른 자유도와 모델 검증 범위를 설명한다."
+    ],
+    "prerequisiteNote": "M07.01의 힘/토크와 M08.04의 관성/평행축, M10.02의 변환 기록이 선수다. 종이 수치와 가상 구성표를 사용하며 Isaac Sim·GPU·실물 실행이 필요하지 않다.",
+    "sha256": "3752704ee4ef1d0935b56cdf4948c5e0d5459b3c15e734ffde9fdb6134d03eda",
+    "reviewed": true,
+    "evidenceRef": "doc/v2/work_items/M10.04.md"
+  },
+  {
+    "topicId": "M10.05",
+    "source": "ebook/curriculum/M10/M10.05.md",
+    "title": "물리 스텝·렌더 스텝·솔버와 반복 가능성",
+    "objectives": [
+      "물리·렌더·제어 주기와 벽시계를 구분하고 스텝 수·간격·실시간 비율을 계산한다.",
+      "명시된 단순 적분의 한 단계와 간격 변경 효과를 계산하고 solver 반복/비용의 다른 역할을 설명한다.",
+      "반복 실험의 입력·설정·허용 오차를 기록하고 결정성/재현성 주장의 범위를 판정한다."
+    ],
+    "prerequisiteNote": "M05.06의 시계와 M07의 이산 모델, M10.03의 접촉이 선수다. 기본 활동은 합성 시간표와 종이 적분이며 실제 Isaac Sim·GPU 성능 측정이나 엔진 실행을 하지 않는다.",
+    "sha256": "0218809e3f6f860bd7426cc42e2c0dd9c0b4d34a71ccfdd17647a92a575f30d5",
+    "reviewed": true,
+    "evidenceRef": "doc/v2/work_items/M10.05.md"
+  },
+  {
+    "topicId": "M10.06",
+    "source": "ebook/curriculum/M10/M10.06.md",
+    "title": "ROS 2 브리지·관절 명령·카메라 연결",
+    "objectives": [
+      "ROS 2와 시뮬레이터 사이의 발행/구독·시간·제어 책임을 구분하고 연결 성공의 증거 범위를 설명한다.",
+      "가상 관절 명령의 이름·단위·시각 계약을 적용해 목표를 재정렬하고 입력 유효성과 상태 비교 한계를 판정한다.",
+      "영상의 encoding·행 간격·크기·프레임/시각과 CameraInfo를 검사하고 원시 payload 비용을 계산한다."
+    ],
+    "prerequisiteNote": "M05의 ROS 통신/시계, M08.05의 JointState/TF, M10.05의 물리·렌더 주기가 선수다. Isaac Sim 6.2/ROS 2 Jazzy 문서에 근거한 가상 기록 분석이며 실제 ROS·Isaac·GPU를 실행하지 않는다.",
+    "sha256": "1b975c6d4181ae73db0a2840c42eb1030b1b6788e87ee73d7c22f562d8a9eede",
+    "reviewed": true,
+    "evidenceRef": "doc/v2/work_items/M10.06.md"
   },
   {
     "topicId": "M19.01",
@@ -1374,18 +1164,116 @@ export const authoredMetadata: AuthoredMetadata[] = [
     "evidenceRef": "doc/v2/work_items/M19.05.md"
   },
   {
-    "topicId": "M19.06",
-    "source": "ebook/curriculum/M19/M19.06.md",
-    "title": "델타·협동 팔·모바일 매니퓰레이터 응용",
+    "topicId": "M11.01",
+    "source": "ebook/curriculum/M11/M11.01.md",
+    "title": "지도학습·손실·경사·역전파·최적화",
     "objectives": [
-      "델타·직렬 협동 팔·모바일 매니퓰레이터의 구조/과업 제약을 비교하고 합성 작업영역·하중/모멘트를 검사한다.",
-      "이동 베이스의 회전/이동으로 대상 좌표를 계산하고 위치 오차가 팔의 도달 여유에 미치는 영향을 판정한다.",
-      "협동/이동 조작의 통합 상태·검증 근거를 설계하고 기하 도달/하중 통과와 실제 작업 안전/성공의 차이를 설명한다."
+      "지도학습의 입력·목표·모형·손실을 구분하고 손실 선택과 작업 성공의 차이를 설명한다.",
+      "작은 회귀 모형의 MSE와 연쇄법칙에 따른 경사를 계산하여 경사하강 한 단계를 수행한다.",
+      "PyTorch의 기울기 초기화·역전파·파라미터 갱신 역할을 구분하고 학습률/누적 오류와 검증 범위를 진단한다."
     ],
-    "prerequisiteNote": "M03의 구성·구동, M06의 변환/도달성, M19.01~05의 공구·계획/작업 증거가 선수다. 모바일의 베이스 이동/정지·최신 위치 개념은 본문에서 보충하며 M17.06의 재계획·제한과 M18.06의 주행-조작 미션으로 연결한다. 합성 사양/기록의 종이 계산이 기본이다.",
-    "sha256": "35f1eb1323d4b52e9b79afb667b14e304c4700bb5ac79ae9a52347015ce927b6",
+    "prerequisiteNote": "M02.03의 미분과 M02.05의 최적화, M01.02의 Python이 선수다. 기본은 두 합성 표본의 종이 계산이다. 선택 CPU 코드는 이미 PyTorch가 있는 환경용 완전 예제이며 GPU/실제 로봇 학습이 필요하지 않다.",
+    "sha256": "19ccfe618ebc721691b08c4e1e7dc99812b4468c575804c95b1b086a4a815770",
     "reviewed": true,
-    "evidenceRef": "doc/v2/work_items/M19.06.md"
+    "evidenceRef": "doc/v2/work_items/M11.01.md"
+  },
+  {
+    "topicId": "M11.02",
+    "source": "ebook/curriculum/M11/M11.02.md",
+    "title": "텐서·Dataset·DataLoader·모델 저장",
+    "objectives": [
+      "텐서의 shape·dtype·device와 축 의미를 해석하고 reshape와 축 교환의 차이를 설명한다.",
+      "입력/목표가 짝인 Dataset과 DataLoader의 마지막 배치를 계산하고 표본 수에 맞는 손실 평균을 구한다.",
+      "state_dict 저장/로드 결과를 확인하고 구조·전처리·학습 재개에 필요한 별도 기록을 제안한다."
+    ],
+    "prerequisiteNote": "M01의 Python/배열과 M11.01의 모형/손실이 선수다. 기본은 작은 합성 배열·배치의 종이 계산이며, 이미 PyTorch가 있는 경우 완전한 CPU 코드를 선택 실행할 수 있다. GPU나 외부 데이터 다운로드는 필요하지 않다.",
+    "sha256": "2c150cdec8842f6078f28e82795efc6a4c54ab07a049a06134edfda1d17b36f2",
+    "reviewed": true,
+    "evidenceRef": "doc/v2/work_items/M11.02.md"
+  },
+  {
+    "topicId": "M11.03",
+    "source": "ebook/curriculum/M11/M11.03.md",
+    "title": "학습/검증/시험 분리·과적합·데이터 누수",
+    "objectives": [
+      "평가하려는 일반화 주장에 맞춰 학습/검증/시험과 episode·물체·시간의 분리 단위를 설계한다.",
+      "학습 자료만의 정규화 통계를 계산하고 전처리·파생 자료·미래 입력의 데이터 누수를 진단한다.",
+      "가상 학습곡선에서 모델 선택과 과적합 신호를 해석하고 시험 잠금 및 결과 기록 범위를 설명한다."
+    ],
+    "prerequisiteNote": "M11.01의 손실/학습과 M11.02의 전처리·Dataset, M02.04의 평균/분산이 선수다. 기본은 합성 분할표/곡선과 종이 계산이다. 실제 학습을 돌리거나 일반화 성능을 실증한 자료가 아니다.",
+    "sha256": "d75a56d58171756f2440bb331781acdbe7edd1d8b3d240a0dcae0fda0af7feea",
+    "reviewed": true,
+    "evidenceRef": "doc/v2/work_items/M11.03.md"
+  },
+  {
+    "topicId": "M11.04",
+    "source": "ebook/curriculum/M11/M11.04.md",
+    "title": "CNN·Transformer·표현학습의 역할",
+    "objectives": [
+      "작은 CNN식 국소 연산과 ReLU를 계산하여 가중치 공유/공간 정보의 역할과 한계를 설명한다.",
+      "query/key/value의 scaled dot attention을 계산하고 위치/마스크·가중합의 의미를 구분한다.",
+      "표현·task head·사전학습/전이의 역할을 구분하고 로봇 과제에 필요한 별도 검증을 제안한다."
+    ],
+    "prerequisiteNote": "M11.01~03의 학습·텐서·분리와 M02.01의 내적이 선수다. 기본 활동은 합성 벡터의 종이 계산이다. 선택 CPU 코드의 가중치는 손으로 정하며 실제 영상 학습이나 대형 모델 성능을 실증하지 않는다.",
+    "sha256": "feff450ee3a3d0593139399939500f0114db2e69dcf456820dfae71afcd92068",
+    "reviewed": true,
+    "evidenceRef": "doc/v2/work_items/M11.04.md"
+  },
+  {
+    "topicId": "M11.05",
+    "source": "ebook/curriculum/M11/M11.05.md",
+    "title": "분류·검출·분할·회귀의 출력과 지표",
+    "objectives": [
+      "분류·검출·semantic/instance 분할·회귀의 출력 단위와 의미를 구분하고 과제에 맞는 계약을 선택한다.",
+      "합성 예측에서 confusion 지표·IoU·회귀 오차를 계산하고 분모/집계/단위의 한계를 설명한다.",
+      "점수 threshold와 오류 비용을 비교하여 검증 자료의 선택 기준 및 실제 작업 성공의 별도 조건을 제안한다."
+    ],
+    "prerequisiteNote": "M11.01~04의 손실/출력·검증 분리와 평균 계산이 선수다. 기본은 합성 점수·영역·오차의 종이 계산이며 모델 학습/검출이나 실제 작업 성과를 실행하지 않는다.",
+    "sha256": "8566ee1c1cd478f2fafa25554339d5e673ffebd023aec2fe3e1144f6dff2271e",
+    "reviewed": true,
+    "evidenceRef": "doc/v2/work_items/M11.05.md"
+  },
+  {
+    "topicId": "M11.06",
+    "source": "ebook/curriculum/M11/M11.06.md",
+    "title": "추론 지연·메모리·분포 이동과 실험 추적",
+    "objectives": [
+      "같은 시계의 합성 시간표와 표본 통계로 전체 지연·기한 초과를 계산하고 측정 범위/throughput과 구분한다.",
+      "가상 모형의 파라미터·경사·optimizer 상태 저장량을 계산하고 실제 추론/훈련 peak 메모리의 추가 항목을 설명한다.",
+      "조건별 성능과 배포 혼합 변화를 계산하여 분포 이동을 해석하고 재현에 필요한 실험/실행 기록을 제안한다."
+    ],
+    "prerequisiteNote": "M05.06의 시간원, M11.02의 저장, M11.03~05의 분할/평가가 선수다. 기본은 합성 로그·메모리 명세·조건별 성공표의 종이 계산이며 실제 CPU/GPU 성능 측정이나 로봇 배포가 아니다.",
+    "sha256": "0b17dfd0391a62a6bb4e4755dd129b2f9bec937313e245b0d8464506a3cf723a",
+    "reviewed": true,
+    "evidenceRef": "doc/v2/work_items/M11.06.md"
+  },
+  {
+    "topicId": "M12.03",
+    "source": "ebook/curriculum/M12/M12.03.md",
+    "title": "라벨링·데이터 품질·YOLO 계열 검출 학습",
+    "objectives": [
+      "검출의 클래스/가림 정책과 정규화 상자 포맷을 설명하고 가상 픽셀 상자를 라벨로 변환한다.",
+      "입력 resize/pad와 라벨 변환을 계산하고 누락·불일치·그룹 중복의 데이터 품질 결함을 진단한다.",
+      "YOLO 계열의 가상 학습 계획에 모델/API·자료·권리·평가 조건을 기록하고 실제 검증 전의 주장 범위를 판정한다."
+    ],
+    "prerequisiteNote": "M11의 학습/분할/지표와 M12.01~02의 영상/좌표 변환이 선수다. 기본은 가상 라벨과 학습 명세의 종이 검사다. ultralytics는 로컬에 없으며 설치/가중치 다운로드·실제 학습/탐지를 수행하지 않는다.",
+    "sha256": "ad5e3160942598067d6a2fd7c44a02e45ca743d43ad7e9e01a3e88c94acac10b",
+    "reviewed": true,
+    "evidenceRef": "doc/v2/work_items/M12.03.md"
+  },
+  {
+    "topicId": "M12.04",
+    "source": "ebook/curriculum/M12/M12.04.md",
+    "title": "Semantic/Instance Segmentation과 차선/도로 장면",
+    "objectives": [
+      "semantic/instance 분할과 도로·차선 출력의 차이를 설명하고 class/instance ID와 표시 색을 구분한다.",
+      "합성 mask의 ignore 규칙·좌표 변환을 검사하고 유효 픽셀 정확도와 클래스별/평균 IoU를 계산한다.",
+      "분할된 도로를 실제 주행 가능 영역과 구분하여 가림·경계·조건 변화의 실패 근거 및 추가 확인을 제안한다."
+    ],
+    "prerequisiteNote": "M11.05의 IoU와 M12.01~03의 영상/투영/라벨이 선수다. 기본은 여섯 픽셀의 합성 mask와 도로 장면 설명의 종이 분석이다. 실제 segmentation 모델이나 차량/로봇을 실행하지 않는다.",
+    "sha256": "5dc99984d34fa871f9a340f9949966536627fb9da7094bf4b2f93ee95e39fd5f",
+    "reviewed": true,
+    "evidenceRef": "doc/v2/work_items/M12.04.md"
   },
   {
     "topicId": "M20.01",
@@ -1500,48 +1388,6 @@ export const authoredMetadata: AuthoredMetadata[] = [
     "evidenceRef": "doc/v2/work_items/M21.02.md"
   },
   {
-    "topicId": "M21.03",
-    "source": "ebook/curriculum/M21/M21.03.md",
-    "title": "ACT·Action Chunking·Temporal Ensembling",
-    "objectives": [
-      "ACT의 chunk 길이·실행 길이/재계획과 적용 시각을 구분하고 합성 시간 범위를 계산한다.",
-      "조건부 VAE/Transformer의 학습·추론 정보 흐름과 재구성/KL 손실·패딩 평균을 설명하고 계산한다.",
-      "같은 적용 시각 후보의 temporal ensemble을 가중 순서/부호와 함께 계산하고 관측 나이·기하/안전 한계를 판정한다."
-    ],
-    "prerequisiteNote": "M11의 신경망/Transformer 기초와 M21.01/02의 BC·행동 표현/정규화·mask가 선수다. 잠재 변수/조건부 VAE는 본문에서 보충한다. 기본은 합성 chunk/손실·후보 표 계산이며 ACT 모델/실물/GPU 실행은 하지 않는다.",
-    "sha256": "8d43056ad99f54a7d52751e0cb07769adcfa9e383b70de3d929fbf23c51fb202",
-    "reviewed": true,
-    "evidenceRef": "doc/v2/work_items/M21.03.md"
-  },
-  {
-    "topicId": "M21.04",
-    "source": "ebook/curriculum/M21/M21.04.md",
-    "title": "Diffusion Policy와 Motion Manifold 접근",
-    "objectives": [
-      "조건부 action diffusion의 잡음 추가/예측·복원 역할을 설명하고 합성 한 단계의 수치를 계산한다.",
-      "생성 반복/모델 추론과 물리 제어·chunk 실행을 구분하고 주어진 계산 예산/재계획 시간을 판정한다.",
-      "Motion Manifold Primitives의 경로 집합/잠재·대칭 개념을 설명하고 경로 보간·실행 제약의 반례를 계산한다."
-    ],
-    "prerequisiteNote": "M11의 신경망/확률과 M21.01~03의 다중 행동 모드·표현/정규화·chunk가 선수다. 생성 반복·경로 family/다양체 개념은 본문에서 보충한다. 기본은 합성 스칼라/곡선·시간 계산이며 Diffusion/EMMP 모델 학습·추론이나 GPU/로봇을 실행하지 않는다.",
-    "sha256": "1c0f0e9a1172b81bc03744b2ad0c18812dcc2572e391b71ac7328be6480e21a4",
-    "reviewed": true,
-    "evidenceRef": "doc/v2/work_items/M21.04.md"
-  },
-  {
-    "topicId": "M21.05",
-    "source": "ebook/curriculum/M21/M21.05.md",
-    "title": "Mobile ALOHA·양팔·이동 조작의 협응",
-    "objectives": [
-      "Mobile ALOHA의 전신 시연을 설명하고 양팔·그리퍼/베이스의 관측/행동과 공통 물체 제약을 구분한다.",
-      "합성 양팔 접촉점의 베이스 이동/물체 회전과 시각 차이 영향을 계산하고 좌표·시간 계약을 설명한다.",
-      "정적/이동 조작 자료의 통합·가중 지표를 계산하고 정책/통합 실행의 검증 근거를 설계한다."
-    ],
-    "prerequisiteNote": "M19.06의 이동 베이스 좌표, M20의 시연/시각과 M21.02~04의 정책/시퀀스가 선수다. 양팔 상대 제약과 공동학습은 본문에서 보충한다. 기본은 합성 좌표/데이터 표 계산이며 Mobile ALOHA 장비나 학습 코드를 실행하지 않는다.",
-    "sha256": "4b85ce4e46bffde007ee66d86f6f7dfdf67616d66c4edd54dbb1adf49c4e8cb5",
-    "reviewed": true,
-    "evidenceRef": "doc/v2/work_items/M21.05.md"
-  },
-  {
     "topicId": "M21.06",
     "source": "ebook/curriculum/M21/M21.06.md",
     "title": "학습·롤아웃·미관측 상황·데이터 재수집 루프",
@@ -1550,8 +1396,8 @@ export const authoredMetadata: AuthoredMetadata[] = [
       "폐루프 개발 롤아웃의 경로·종료/논리 시간과 성공률 분모·개입을 구분해 계산한다.",
       "미관측 상황의 실패 가설과 필요한 재수집/라벨·분할 갱신을 설계하고 개발/회귀 검사와 독립 시험을 구분한다."
     ],
-    "prerequisiteNote": "M11의 학습/분할, M20의 품질/재수집과 M21.01~05의 BC·실행이 선수다. rollout과 개발/회귀·독립 시험의 차이를 본문에서 보충한다. 기본은 합성 1차원 계산이며 선택 표준 Python 예는 실제 CPU에서 실행한 소형 맞춤/개발 진단이다. 신경망·로봇 학습 성과가 아니다.",
-    "sha256": "41c87c6d09bec521ef6856d3154125bdc3b3ca9db0cb29e747d67c028e7f38cd",
+    "prerequisiteNote": "M11의 학습/분할, M20의 데이터 품질/재수집과 M21.01/02의 BC·행동 계약을 연결한다. 기본 BC 롤아웃은 ACT·Diffusion·양팔 정책 전체 이수를 요구하지 않는다. 선택 정책의 확장 롤아웃은 해당 M21.03~05를 함께 확인한다. 기본은 합성 1차원 계산과 선택 표준 Python 소형 맞춤/개발 진단이며 신경망·로봇 학습 성과가 아니다.",
+    "sha256": "ad57405e09515f0bf9fb83a1665867b10f893e068f0a0b0314456b323e836a5e",
     "reviewed": true,
     "evidenceRef": "doc/v2/work_items/M21.06.md"
   },
@@ -1564,8 +1410,8 @@ export const authoredMetadata: AuthoredMetadata[] = [
       "언어의 객체/관계·목표를 관측 ID/프레임·시각/전제조건에 연결하고 모호함/오래된 상태를 진단한다.",
       "합성 skill의 유용성/가능성 점수를 계산하고 선택·명령/실제 완료의 검증 근거를 구분한다."
     ],
-    "prerequisiteNote": "M12의 영상 관측, M19의 계획/실행과 M20/M21의 행동 정책을 연결한다. LLM/VLM/VLA와 skill·접지는 본문에서 보충하며 M18.04의 Action·작업 상태와 이어 읽는다. 기본은 합성 장면/점수 표 분석이고 모델/API·ROS/로봇 실행은 없다.",
-    "sha256": "d3c0c410289d1806e7586edf34459f87b9801f4a8f0e85031e90be49f5b4535e",
+    "prerequisiteNote": "M12의 영상 관측, M19의 계획/실행과 M20·M21.01의 데이터/BC 기초를 연결한다. ACT 등 특정 정책 전체를 모델 역할 구분의 필수 선수로 요구하지 않는다. LLM/VLM/VLA와 skill·접지는 본문에서 보충하며 M18.04의 Action·작업 상태와 이어 읽는다. 기본은 합성 장면/점수 표 분석이고 모델/API·ROS/로봇 실행은 없다.",
+    "sha256": "bec2f9645a3b7d67395fa04b377fe95cba27c7167d9dedb3a8719b4cee4a4c3e",
     "reviewed": true,
     "evidenceRef": "doc/v2/work_items/M22.01.md"
   },
@@ -1638,6 +1484,48 @@ export const authoredMetadata: AuthoredMetadata[] = [
     "sha256": "a5ca679923f57721bf3642fd24870cbba92d119cbbc108971ba8a2ebe9f27313",
     "reviewed": true,
     "evidenceRef": "doc/v2/work_items/M22.06.md"
+  },
+  {
+    "topicId": "M18.05",
+    "source": "ebook/curriculum/M18/M18.05.md",
+    "title": "다중 로봇 Namespace·TF·지도·충돌 조정",
+    "objectives": [
+      "다중 로봇의 namespace·토픽·TF frame과 자료 생산자의 책임을 구분한다.",
+      "주어진 지도 정합으로 공통 좌표의 위치·상대 여유와 이동 변형을 계산한다.",
+      "공동 구역의 시간 예약 충돌과 실제 점유·통신·교착에 필요한 조정을 판정한다."
+    ],
+    "prerequisiteNote": "M05의 이름 공간, M15의 지도 정합과 M18의 과업 상태를 연결한다. TF 공유·격리, 공통 좌표와 구역 예약을 본문에서 보충한다. 기본은 합성 이름 목록·평면 변환·시간표이며 실제 fleet·Nav2·로봇 실행은 없다.",
+    "sha256": "11307c3746cfc7183cc37b6bca7442af10bee8abb53e5281d071f8cca4d4f15f",
+    "reviewed": true,
+    "evidenceRef": "doc/v2/work_items/M18.05.md"
+  },
+  {
+    "topicId": "M19.06",
+    "source": "ebook/curriculum/M19/M19.06.md",
+    "title": "델타·협동 팔·모바일 매니퓰레이터 응용",
+    "objectives": [
+      "델타·직렬 협동 팔·모바일 매니퓰레이터의 구조/과업 제약을 비교하고 합성 작업영역·하중/모멘트를 검사한다.",
+      "이동 베이스의 회전/이동으로 대상 좌표를 계산하고 위치 오차가 팔의 도달 여유에 미치는 영향을 판정한다.",
+      "협동/이동 조작의 통합 상태·검증 근거를 설계하고 기하 도달/하중 통과와 실제 작업 안전/성공의 차이를 설명한다."
+    ],
+    "prerequisiteNote": "M03의 구성·구동, M06의 변환/도달성, M19.01~05의 공구·계획/작업 증거가 선수다. 모바일의 베이스 이동/정지·최신 위치 개념은 본문에서 보충하며 M17.06의 재계획·제한과 M18.06의 주행-조작 미션으로 연결한다. 합성 사양/기록의 종이 계산이 기본이다.",
+    "sha256": "35f1eb1323d4b52e9b79afb667b14e304c4700bb5ac79ae9a52347015ce927b6",
+    "reviewed": true,
+    "evidenceRef": "doc/v2/work_items/M19.06.md"
+  },
+  {
+    "topicId": "M18.06",
+    "source": "ebook/curriculum/M18/M18.06.md",
+    "title": "이동 매니퓰레이터의 주행-조작 미션",
+    "objectives": [
+      "주행·정렬·조작·작업 검증·수납·재개를 역할과 전제·출력으로 연결한다.",
+      "주어진 map·base·arm 변환과 목표점, 자료 나이·시작 상태를 계산해 판정한다.",
+      "합성 미션 기록의 부분 성공·보류·실패를 구분하고 복구·전체 완료 근거를 제안한다."
+    ],
+    "prerequisiteNote": "M06의 팔 기구학, M15의 좌표와 M17~18의 계획·과업 상태를 연결한다. base와 arm 원점의 차이, TCP 점과 자세, 미션 관문을 본문에서 보충한다. 기본은 합성 변환·시간·상태표이며 실제 주행·팔·물체·ROS 실행은 없다.",
+    "sha256": "ceee7c8bc2060d92ab74bfffee56aa8738361f5edf51205a6d22d8e7c67aadda",
+    "reviewed": true,
+    "evidenceRef": "doc/v2/work_items/M18.06.md"
   },
   {
     "topicId": "M27.01",
@@ -1844,24 +1732,10 @@ export const authoredMetadata: AuthoredMetadata[] = [
       "합성 평면 변환/이동 보상·파지점 일치/시차·정적 분담을 계산한다.",
       "전체 제약/단계별 미상·감독/실패/비교 평가의 근거를 포함한 프로젝트 리포트를 작성한다."
     ],
-    "prerequisiteNote": "M06 이동/팔 기구학, M19 모바일/파지, M21 양팔과 M30 감독/평가를 연결한다. 전체 configuration·결합 제약과 순차/동시 역할은 본문에서 보충한다. M17.01의 구성 공간·충돌과 M18.06의 주행-조작 전환 계약을 함께 확인한다. 기본은 합성 좌표/상태표이며 장비/정책 실행을 하지 않는다.",
-    "sha256": "7457cbd818496571ca68623218357d72eff0ee79a4af00989bfda87bd705f87d",
+    "prerequisiteNote": "M06의 이동/팔 기구학, M19.06의 이동 조작과 M30의 감독/평가를 연결한다. 전체 configuration·결합 제약과 순차/동시 역할은 본문에서 보충한다. 제공한 양팔 수치 활동은 본문 입력으로 수행하며 양팔 정책·실행 확장을 선택하면 M21.05를 추가로 확인한다. M17.01의 충돌과 M18.06의 주행-조작 전환 계약을 함께 읽는다. 기본은 합성 좌표/상태표이며 장비/정책 실행을 하지 않는다.",
+    "sha256": "f2aa2cf386517dffd0ad3d33962d74990c60cb7ce9367d4f1c3ecab5e06cdd46",
     "reviewed": true,
     "evidenceRef": "doc/v2/work_items/M32.03.md"
-  },
-  {
-    "topicId": "M32.04",
-    "source": "ebook/curriculum/M32/M32.04.md",
-    "title": "휴머노이드 보행 외란 대응 또는 밸런싱 로봇",
-    "objectives": [
-      "기준 평형/상태·구동/접촉과 휴머노이드/작은각 밸런싱 모형의 범위를 구분한다.",
-      "합성 피드백/포화와 명시한 Euler 한 단계·외란 변형을 단위/시점에 맞게 계산한다.",
-      "회복/실패·지연/접촉/추정/입력 한계의 조건별 평가와 감독/원본 근거를 설계한다."
-    ],
-    "prerequisiteNote": "M02의 선형/이산과 M07의 제어·M30의 감독/평가를 사용한다. 미집필 M23/M24/M26을 요구하지 않고 상태/평형·접촉/포화·국소 안정성을 본문에서 보충한다. 기본 선택 과제는 종이/CPU의 한 축 밸런싱 개념 모형이며 실제 휴머노이드/밸런싱 장비는 실행하지 않는다.",
-    "sha256": "43ba40d8286fa57b0e610b52b20503269cfd5f2970b393bdca9e890f82e8b970",
-    "reviewed": true,
-    "evidenceRef": "doc/v2/work_items/M32.04.md"
   },
   {
     "topicId": "M32.05",
@@ -1890,6 +1764,132 @@ export const authoredMetadata: AuthoredMetadata[] = [
     "sha256": "2da915f5956c2d1df4ca760273d711e4b52e8cef7c14b0fd7b6a5ee0c8acab2e",
     "reviewed": true,
     "evidenceRef": "doc/v2/work_items/M32.06.md"
+  },
+  {
+    "topicId": "M07.04",
+    "source": "ebook/curriculum/M07/M07.04.md",
+    "title": "주파수 응답·근궤적의 해석",
+    "objectives": [
+      "안정한 가상 LTI의 정현파 정상 응답에서 크기·위상·dB와 각주파수의 의미를 계산한다.",
+      "음의 단위 피드백 모델의 이득 변화에 따른 폐루프 근을 계산하여 근궤적과 응답 특성을 해석한다.",
+      "가상 지연이 위상 여유에 주는 영향을 계산하고 주파수 지표만으로 보장할 수 없는 조건을 설명한다."
+    ],
+    "prerequisiteNote": "M07.02의 전달함수·극·연속 안정성, M02의 복소수와 삼각함수, M07.03의 이득 개념을 사용한다. 시간은 s, 입출력은 정규화값인 가상 모델이다. 실제 로봇 주파수 시험이나 MATLAB 설치는 필요 없다.",
+    "sha256": "ebaae66ae54d807801bf081182e59dcf778ca9c313a9ea9d44e9aaa501be8fc5",
+    "reviewed": true,
+    "evidenceRef": "doc/v2/work_items/M07.04.md"
+  },
+  {
+    "topicId": "M02.06",
+    "source": "ebook/curriculum/M02/M02.06.md",
+    "title": "고윳값·안정성·오차 전파의 직관",
+    "objectives": [
+      "고윳값·고유벡터의 관계를 작은 행렬과 반복 오차 변화로 설명한다.",
+      "무입력 선형 모형의 연속·이산 점근 안정 조건을 구분하고 경계·이산화·국소성의 한계를 판정한다.",
+      "선형 및 일차 근사에서 분산·공분산 전파를 계산하고 상관·단위·모형 오차의 조건을 설명한다."
+    ],
+    "prerequisiteNote": "M02.01의 행렬, M02.03의 미분·Jacobian, M02.04의 분산/공분산을 사용한다. 합성 수치의 종이 계산이 기본이며 실제 로봇의 안정성·안전 인증을 수행하지 않는다.",
+    "sha256": "11bc4b670e8d715b3139716056ff7403d8a196e38a91c702dd320de2dc491712",
+    "reviewed": true,
+    "evidenceRef": "doc/v2/work_items/M02.06.md"
+  },
+  {
+    "topicId": "M17.03",
+    "source": "ebook/curriculum/M17/M17.03.md",
+    "title": "PRM과 변형·연결성·샘플링",
+    "objectives": [
+      "PRM의 자유 configuration 샘플·이웃 연결·충돌 검사와 query 과정을 설명한다.",
+      "주어진 합성 점과 장애물에서 연결 반경에 따른 유효 간선과 경로를 계산한다.",
+      "유한 표본과 확률적 보장·PRM*/Lazy의 조건 및 지도 재사용의 한계를 판정한다."
+    ],
+    "prerequisiteNote": "M17.01~02의 C-space, 간선 검사와 그래프 탐색을 연결한다. sampling, local planner, query와 확률적 완전성의 뜻을 본문에서 보충한다. 기본은 합성 점과 사각 장애물 계산이며 실제 PRM·OMPL이나 로봇을 실행하지 않는다.",
+    "sha256": "e128bacb35909aff52d159b6f9f992cbecd7e8dc8406bb0c88f50ee8baf90fc2",
+    "reviewed": true,
+    "evidenceRef": "doc/v2/work_items/M17.03.md"
+  },
+  {
+    "topicId": "M17.04",
+    "source": "ebook/curriculum/M17/M17.04.md",
+    "title": "RRT와 변형·목표 편향·재배선",
+    "objectives": [
+      "RRT의 샘플·최근접·길이 제한 확장과 연결 구간의 충돌을 계산한다.",
+      "주어진 트리에서 RRT*의 부모 선택과 재배선 비용 개선을 계산한다.",
+      "목표 편향과 RRT-Connect·RRT*의 역할 및 유한 실패·점근 보장의 조건을 판정한다."
+    ],
+    "prerequisiteNote": "M17.01~03의 C-space, 연결 검사와 비용을 연결한다. 트리·확장·목표 편향·재배선을 본문에서 정의한다. 기본은 점 configuration의 합성 평면 계산이며 실제 RRT·OMPL이나 로봇을 실행하지 않는다.",
+    "sha256": "746650390ba7c76104e9f512652b556886c05e219182d32eaab77701abbf6afc",
+    "reviewed": true,
+    "evidenceRef": "doc/v2/work_items/M17.04.md"
+  },
+  {
+    "topicId": "M17.05",
+    "source": "ebook/curriculum/M17/M17.05.md",
+    "title": "CHOMP·STOMP·최적화 기반 경로 개선",
+    "objectives": [
+      "경로 비용과 제약을 구분하고 합성 목적함수의 미분·갱신 한 단계를 계산한다.",
+      "CHOMP의 공변 gradient와 STOMP의 비용 가중 후보 갱신의 역할을 수치 예로 비교한다.",
+      "초기 경로·국소성·유한 벌점의 한계를 설명하고 전체 충돌·시간 제약을 별도로 판정한다."
+    ],
+    "prerequisiteNote": "M02의 미분·최적화와 M17의 경로·충돌을 연결한다. 목적함수, gradient, metric과 비용 가중 후보를 본문에서 정의한다. 종이 계산과 임시 CPU 검산이 기본이며 교육용 스칼라 예는 실제 CHOMP/STOMP 구현이 아니다.",
+    "sha256": "26193b2edacd69f3b889f3493be4985bbe9406f0215c7ef9477b407443b870a2",
+    "reviewed": true,
+    "evidenceRef": "doc/v2/work_items/M17.05.md"
+  },
+  {
+    "topicId": "M21.03",
+    "source": "ebook/curriculum/M21/M21.03.md",
+    "title": "ACT·Action Chunking·Temporal Ensembling",
+    "objectives": [
+      "ACT의 chunk 길이·실행 길이/재계획과 적용 시각을 구분하고 합성 시간 범위를 계산한다.",
+      "조건부 VAE/Transformer의 학습·추론 정보 흐름과 재구성/KL 손실·패딩 평균을 설명하고 계산한다.",
+      "같은 적용 시각 후보의 temporal ensemble을 가중 순서/부호와 함께 계산하고 관측 나이·기하/안전 한계를 판정한다."
+    ],
+    "prerequisiteNote": "M11의 신경망/Transformer 기초와 M21.01/02의 BC·행동 표현/정규화·mask가 선수다. 잠재 변수/조건부 VAE는 본문에서 보충한다. 기본은 합성 chunk/손실·후보 표 계산이며 ACT 모델/실물/GPU 실행은 하지 않는다.",
+    "sha256": "8d43056ad99f54a7d52751e0cb07769adcfa9e383b70de3d929fbf23c51fb202",
+    "reviewed": true,
+    "evidenceRef": "doc/v2/work_items/M21.03.md"
+  },
+  {
+    "topicId": "M21.04",
+    "source": "ebook/curriculum/M21/M21.04.md",
+    "title": "Diffusion Policy와 Motion Manifold 접근",
+    "objectives": [
+      "조건부 action diffusion의 잡음 추가/예측·복원 역할을 설명하고 합성 한 단계의 수치를 계산한다.",
+      "생성 반복/모델 추론과 물리 제어·chunk 실행을 구분하고 주어진 계산 예산/재계획 시간을 판정한다.",
+      "Motion Manifold Primitives의 경로 집합/잠재·대칭 개념을 설명하고 경로 보간·실행 제약의 반례를 계산한다."
+    ],
+    "prerequisiteNote": "M11의 신경망/확률과 M21.01~03의 다중 행동 모드·표현/정규화·chunk가 선수다. 생성 반복·경로 family/다양체 개념은 본문에서 보충한다. 기본은 합성 스칼라/곡선·시간 계산이며 Diffusion/EMMP 모델 학습·추론이나 GPU/로봇을 실행하지 않는다.",
+    "sha256": "1c0f0e9a1172b81bc03744b2ad0c18812dcc2572e391b71ac7328be6480e21a4",
+    "reviewed": true,
+    "evidenceRef": "doc/v2/work_items/M21.04.md"
+  },
+  {
+    "topicId": "M21.05",
+    "source": "ebook/curriculum/M21/M21.05.md",
+    "title": "Mobile ALOHA·양팔·이동 조작의 협응",
+    "objectives": [
+      "Mobile ALOHA의 전신 시연을 설명하고 양팔·그리퍼/베이스의 관측/행동과 공통 물체 제약을 구분한다.",
+      "합성 양팔 접촉점의 베이스 이동/물체 회전과 시각 차이 영향을 계산하고 좌표·시간 계약을 설명한다.",
+      "정적/이동 조작 자료의 통합·가중 지표를 계산하고 정책/통합 실행의 검증 근거를 설계한다."
+    ],
+    "prerequisiteNote": "M19.06의 이동 베이스 좌표, M20의 시연/시각과 M21.02~04의 정책/시퀀스가 선수다. 양팔 상대 제약과 공동학습은 본문에서 보충한다. 기본은 합성 좌표/데이터 표 계산이며 Mobile ALOHA 장비나 학습 코드를 실행하지 않는다.",
+    "sha256": "4b85ce4e46bffde007ee66d86f6f7dfdf67616d66c4edd54dbb1adf49c4e8cb5",
+    "reviewed": true,
+    "evidenceRef": "doc/v2/work_items/M21.05.md"
+  },
+  {
+    "topicId": "M32.04",
+    "source": "ebook/curriculum/M32/M32.04.md",
+    "title": "휴머노이드 보행 외란 대응 또는 밸런싱 로봇",
+    "objectives": [
+      "기준 평형/상태·구동/접촉과 휴머노이드/작은각 밸런싱 모형의 범위를 구분한다.",
+      "합성 피드백/포화와 명시한 Euler 한 단계·외란 변형을 단위/시점에 맞게 계산한다.",
+      "회복/실패·지연/접촉/추정/입력 한계의 조건별 평가와 감독/원본 근거를 설계한다."
+    ],
+    "prerequisiteNote": "M02의 선형/이산과 M07의 제어·M30의 감독/평가를 사용한다. 미집필 M23/M24/M26을 요구하지 않고 상태/평형·접촉/포화·국소 안정성을 본문에서 보충한다. 기본 선택 과제는 종이/CPU의 한 축 밸런싱 개념 모형이며 실제 휴머노이드/밸런싱 장비는 실행하지 않는다.",
+    "sha256": "43ba40d8286fa57b0e610b52b20503269cfd5f2970b393bdca9e890f82e8b970",
+    "reviewed": true,
+    "evidenceRef": "doc/v2/work_items/M32.04.md"
   }
 ];
 export const legacyRevisions: LegacyRevision[] = [
@@ -1904,10 +1904,10 @@ export const legacyRevisions: LegacyRevision[] = [
   {
     "source": "ebook/book/00_frontmatter/how_to_use.md",
     "baselineSha256": "a3d1e94f176ffd9b1a9070929a0a1d5ed28034e02c8f60d56926d601bdbb841b",
-    "sha256": "882126b6d847bee601fe64a1e06b7c1200057aafd0561c28b07bcf06b060a84f",
+    "sha256": "46b85a50ace4501ff3b561df6fe685ee2cb227fc2bf72bbf5e0dbc75b3827e84",
     "approved": true,
-    "reason": "여섯장 단일프로젝트에서 통합과정 기초→응용 학습경로로 안내 개정 / SIM표식=장비없는브라우저 실행으로 오인하는 설명 보완 / E2: 공통 기초→ROS/기구학/제어/모델 경로와 기본·선택 실행/모형 한계, 사용자 상태 표시 원칙 동기화 / E3: 시뮬레이션·학습·비전·카메라/시간 기초의 연결 및 독립검토된 개념/그림 조건 정정 / E4: 로봇팔·데이터·정책·배포·캡스톤 선수/후속과 교육용 계산·실행·안전 계약 보완 / E5: 모바일 경로·시뮬레이터 구분·map/odom/base·계획/미션·주행-조작 연결 보완 / E5 후속: 미집필 모바일 안내를 새 경로 연결로 정정",
-    "evidenceRef": "doc/v2/work_items/E5-review.md"
+    "reason": "여섯장 단일프로젝트에서 통합과정 기초→응용 학습경로로 안내 개정 / SIM표식=장비없는브라우저 실행으로 오인하는 설명 보완 / E2: 공통 기초→ROS/기구학/제어/모델 경로와 기본·선택 실행/모형 한계, 사용자 상태 표시 원칙 동기화 / E3: 시뮬레이션·학습·비전·카메라/시간 기초의 연결 및 독립검토된 개념/그림 조건 정정 / E4: 로봇팔·데이터·정책·배포·캡스톤 선수/후속과 교육용 계산·실행·안전 계약 보완 / E5: 모바일 경로·시뮬레이터 구분·map/odom/base·계획/미션·주행-조작 연결 보완 / E5 후속: 미집필 모바일 안내를 새 경로 연결로 정정 / 2026-11-06: 코딩 가능자 전제·현행 S단계·집필 묶음 구분 및 준비중 범위 정합",
+    "evidenceRef": "doc/v2/work_items/sequence-adoption-review.md"
   },
   {
     "source": "ebook/book/00_frontmatter/safety.md",

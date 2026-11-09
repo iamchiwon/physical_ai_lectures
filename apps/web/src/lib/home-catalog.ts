@@ -2,6 +2,7 @@ import { bindingAvailability, catalog, catalogReadiness, indexCatalog } from "@p
 import type { Catalog } from "@physical-ai/shared/catalog";
 
 const introductions: Record<string, string> = {
+  "track-main": "개발 환경·도구부터 비전·주행·조작·학습·통합·현장 전이까지 단계별로 연결합니다.",
   "track-mobile": "센서와 좌표계에서 시작해 지도·경로 계획·Nav2 미션으로 이어집니다.",
   "track-manipulation": "기구학과 로봇팔 제어를 익히고 시연 데이터·모방학습·VLA로 확장합니다.",
   "track-humanoid": "제어와 시뮬레이션을 바탕으로 강화학습·보행·전신 제어를 배웁니다.",
@@ -13,7 +14,7 @@ const preferredReadings: Record<string, string> = {
   "M10.03": "02_physx_simulation--chapter-10",
   "M20.03": "05_lerobot_smolvla--chapter-7",
 };
-const startingTopics = ["M00.01", "M06.02", "M10.03", "M14.03", "M20.03", "M30.04"];
+const startingTopics = ["M00.01", "M01.01", "M01.04", "M05.01", "M12.01", "M09.01"];
 
 /** Build-time projection. Never pass the full catalog or its validation schema to client components. */
 export function buildHomeCatalog(source: Catalog) {

@@ -1,5 +1,12 @@
 # B01 공유 카탈로그 사용·검수 안내
 
+## 2026-11-06 현행 학습 순서 적용
+
+일반 코딩이 가능한 개발자를 대상으로 [현행 커리큘럼](../integrated_curriculum.md)의 순서를 적용했다. 현재 35모듈·207소주제·7경로(공통 1+전문 6)다. S00~S11은 필수 144개와 캡스톤 선택안 3개, A01~A05는 전문화 60개다. Python/C/C++ 문법 입문은 제외하고 환경·패키지·ABI·CMake/colcon·시간/데이터 계약을 다룬다. M34 3개와 P1~P4 실행 패키지는 준비중이다. 아래 과거 단계 수량은 해당 시점의 이력이며 E1~E9 집필 묶음은 현행 학습 순서와 다르다. [적용 기록](work_items/sequence-adoption.md) · [검증](work_items/sequence-adoption-validation.md).
+
+적용 검증 통과: 테스트127·타입·린트·전체빌드, HTML414의 링크13,406/자산6,989 오류0, 실제 상세135페이지 모바일·저장/AI 참조를 확인했다. 원래 기록을 복원하고 검수 창·임시 서버를 종료했다. 상세 원고135개이며 미완료72개는 준비중으로 유지한다.
+
+
 - 등록 revision: `B01-2026-11-02.1`, `schemaVersion: 1`
 - 근거: [A02 계약](catalog_contract.md), [A03 매핑](inventory/content-mapping.json), [커리큘럼](../integrated_curriculum.md)
 - 작업 기록: [B01](work_items/B01.md). B01은 데이터 등록 단계이며, 이후 [B03](work_items/B03.md)에서 목차/모듈/경로, [B04](work_items/B04.md)에서 전체 단위 정적 페이지와 자료 안내·트랙 문맥 이동을 구현했다. 아래의 후속 범위 설명은 B01 등록 시점을 기준으로 한다.

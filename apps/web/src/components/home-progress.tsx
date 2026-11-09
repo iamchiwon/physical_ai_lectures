@@ -35,7 +35,7 @@ export function HomeProgress({ lessons, units = [] }: { lessons: { id: string; t
           <p className="mt-4 text-sm text-slate-600">기존 요약 완료 <strong className="text-slate-950">{completed} / {lessons.length}</strong></p>
         </>}
       </div>
-      <p className="mt-3 text-xs leading-5 text-slate-500">이 브라우저의 요약 레슨 기록입니다. 전체 204소주제의 완료·숙달로 환산하지 않습니다.</p>
+      <p className="mt-3 text-xs leading-5 text-slate-500">이 브라우저의 요약 레슨 기록입니다. 전체 과정의 완료·숙달로 환산하지 않습니다.</p>
     </section>
   );
 }

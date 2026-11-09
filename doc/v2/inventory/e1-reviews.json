@@ -18,7 +18,7 @@
       "evidenceRef": "doc/v2/work_items/M00.04.md"
     },
     "M00.05": {
-      "sourceSha256": "5bc75f539ec46e7137ae1f5f332826f44920883b6bd3357d2e4b3a3fc352ada7",
+      "sourceSha256": "facca52cb15d76128834925d24e38f4cef9036014750c95cc3ab117fb03163d2",
       "evidenceRef": "doc/v2/work_items/M00.05.md"
     },
     "M00.06": {
@@ -26,27 +26,27 @@
       "evidenceRef": "doc/v2/work_items/M00.06.md"
     },
     "M01.01": {
-      "sourceSha256": "ad2b4d8990377e5291f49c3c16f59297403683414d3ab9f6941bfd170b2342f0",
+      "sourceSha256": "d3b41de8d1846e982077fdf742840fa52254db4a0ad854faab553d8bb752134a",
       "evidenceRef": "doc/v2/work_items/M01.01.md"
     },
     "M01.02": {
-      "sourceSha256": "de49db49fa539e62a5aa3cfe44eb39370e5346fa88fc46e8037495c400742ade",
+      "sourceSha256": "b5e97a77ffdf720de85cd8a6cf68e94952e2504d44fa21fa50a7f6978f22c7a7",
       "evidenceRef": "doc/v2/work_items/M01.02.md"
     },
     "M01.03": {
-      "sourceSha256": "85ebdd2d1d834cd48e0801e2b37d48e4b9fdbf01968643b1660a88c420007d0e",
+      "sourceSha256": "f47d0dab4d59333bb69e47af2ddb3f3272d5253328f02ffb0fe1fe7fd49f0bc8",
       "evidenceRef": "doc/v2/work_items/M01.03.md"
     },
     "M01.04": {
-      "sourceSha256": "21ad5add272937c1374e9dbc2e78a1f3671097b156011cf55350bda072a1092b",
+      "sourceSha256": "f9333fee16418bcbb49b18ad46fc8e2c56b1a7de59157fd595e5822aebe2d5ed",
       "evidenceRef": "doc/v2/work_items/M01.04.md"
     },
     "M01.05": {
-      "sourceSha256": "1c52855e4c21004771cf0431c3ea24c5495b53490b77016fbef03d7badc637d2",
+      "sourceSha256": "9e4aa7f315820121e070d5cb5a71e0ea104044200a42d9ce6e2ec76ce11aa9bd",
       "evidenceRef": "doc/v2/work_items/M01.05.md"
     },
     "M01.06": {
-      "sourceSha256": "de388cf3fddc6cdb2d5c57a6721495363341cec0aa6838b50360ae8affff498d",
+      "sourceSha256": "801319e43d807a72232686869572f8d1159714c4ada9bae5632195af1649aab2",
       "evidenceRef": "doc/v2/work_items/M01.06.md"
     },
     "M02.01": {

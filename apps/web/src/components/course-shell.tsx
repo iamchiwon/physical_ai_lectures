@@ -27,7 +27,7 @@ export function CourseShell({ children, eyebrow, title, description, actions }: 
           </Link>
 
           <div className="flex items-center gap-1 sm:gap-2">
-            <Button asChild variant="ghost" size="sm"><Link href="/curriculum/">전체 목차</Link></Button>
+            <Button asChild variant="ghost" size="sm"><Link href="/curriculum/">학습 순서</Link></Button>
             <Button asChild variant="ghost" size="sm"><Link href="/textbook/"><BookOpen className="size-4" />교재 본문</Link></Button>
             <Button asChild variant="ghost" size="sm" className="hidden sm:inline-flex">
               <Link href="/"><LayoutDashboard className="size-4" aria-hidden="true" />학습 홈</Link>

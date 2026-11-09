@@ -23,7 +23,7 @@ const {tutorCompatibility}=await load('apps/web/src/lib/tutor-compatibility.ts')
 const manifest=await load('apps/web/src/app/tutor-study/manifest/route.ts');
 const { default: app }=await load('apps/api/src/index.ts');
 process.chdir(path.join(root,'apps/web'));
-test('204 unit corpora contain only published matched mapped resource IDs and module expansion stays in-module',()=>{
+test('207 unit corpora contain only published matched mapped resource IDs and module expansion stays in-module',()=>{
  for(const unit of c.catalog.units){
   const corpus=helper.studyTutorCorpus(unit);
   const ids=new Set(helper.studyTutorResourceIds(unit));
@@ -51,7 +51,7 @@ test('current M21.05 has ready authored content while every former supplement bi
  }
 });
 test('manifest indexes unit/module/resource IDs and Worker advertises optional context capability',async()=>{
- const index=await manifest.GET().json();assert.equal(index.units.length,204);assert.ok(index.units.every(item=>item.moduleId&&Array.isArray(item.resourceIds)));
+ const index=await manifest.GET().json();assert.equal(index.units.length,207);assert.ok(index.units.every(item=>item.moduleId&&Array.isArray(item.resourceIds)));
  const health=await app.request('/v1/health',{}, {ALLOWED_ORIGINS:'http://localhost:3000'});assert.deepEqual((await health.json()).supportedContextVersions,[1]);
 });
 test('new Worker accepts old requests and forwards optional TBD context with source boundaries',async()=>{

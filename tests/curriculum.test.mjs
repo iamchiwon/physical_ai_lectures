@@ -1,13 +1,13 @@
 import { build } from 'esbuild';
 import assert from 'node:assert/strict';
 import { test } from 'node:test';
-const result=await build({stdin:{contents:'export * from "./apps/web/src/lib/curriculum.ts"; export {legacyCatalog,indexCatalog,unitReadiness} from "./packages/shared/src/catalog.ts";',resolveDir:process.cwd()},tsconfig:'apps/web/tsconfig.json',bundle:true,platform:'node',format:'esm',write:false});
+const result=await build({stdin:{contents:'export * from "./apps/web/src/lib/curriculum.ts"; export {learningProjects} from "./apps/web/src/lib/learning-projects.ts"; export {legacyCatalog,indexCatalog,unitReadiness} from "./packages/shared/src/catalog.ts";',resolveDir:process.cwd()},tsconfig:'apps/web/tsconfig.json',bundle:true,platform:'node',format:'esm',write:false});
 let c;
 try {c=await import(`data:text/javascript;base64,${Buffer.from(result.outputFiles[0].text).toString('base64')}`);}
 catch(error){throw new Error(JSON.stringify(error.issues??error.message));}
 
-test('every one of 204 units has a stable module/topic anchor and accurate readiness',()=>{
- assert.equal(c.catalog.modules.length,34);assert.equal(c.catalog.units.length,204);
+test('every one of 207 current units has a stable module/topic anchor and accurate readiness',()=>{
+ assert.equal(c.catalog.modules.length,35);assert.equal(c.catalog.units.length,207);
  const seen=new Set();
  for(const unit of c.catalog.units){
   const link=c.unitLink(unit.id),topic=c.topicIndex.get(unit.topicId);
@@ -15,7 +15,7 @@ test('every one of 204 units has a stable module/topic anchor and accurate readi
   assert.equal(link.href,`/study/${unit.id}/`);
   assert.ok(!seen.has(link.href));seen.add(link.href);
  }
- assert.equal(Object.values(c.curriculumReadiness.overall.counts).reduce((a,b)=>a+b,0),204);
+ assert.equal(Object.values(c.curriculumReadiness.overall.counts).reduce((a,b)=>a+b,0),207);
 });
 test('module pages preserve all topics in catalog order, and all prerequisite links resolve',()=>{
  for(const m of c.catalog.modules){assert.deepEqual(c.moduleUnits(m.id).map(u=>u.topicId),m.topicIds);}
@@ -43,4 +43,22 @@ test('TBD unit with only supplements has no primary reading and retains original
  assert.equal(c.primaryReading(authored).href,'/study/unit-m06-02-a/#authored-body');
  const legacy=authored.slots.explanation.filter(binding=>'resourceId' in binding).map(binding=>c.curriculumIndex.resources.get(binding.resourceId)).filter(resource=>resource.locator.type==='textbook');
  assert.ok(legacy.length>0);for(const resource of legacy)assert.match(c.resourceHref(resource),/^\/textbook\//);
+});
+
+test('learning stages cover all current topics once and expose real branch prerequisites',()=>{
+ assert.equal(c.learningSequence.length,207);assert.equal(new Set(c.learningSequence).size,207);
+ assert.deepEqual(c.learningStages.flatMap(stage=>stage.topicIds),c.learningSequence);
+ const tooling=c.learningStages.find(stage=>stage.id==='S01');for(const id of ['M01.03','M01.04','M01.06'])assert.ok(tooling.topicIds.includes(id));
+ assert.ok(!tooling.title.includes('첫걸음'));
+ const dual=c.prerequisiteLinks(c.curriculumIndex.units.get('unit-m32-03-a')).conditional;
+ assert.equal(dual.length,1);assert.equal(dual[0].links[0].topicId,'M21.05');
+ for(const id of ['M34.01','M34.02','M34.03']){const unit=c.catalog.units.find(u=>u.topicId===id);assert.equal(c.primaryReading(unit),null);}
+});
+
+test('project guidance never sends learners to later-stage prerequisites',()=>{
+ const rank=new Map(c.learningStages.map((stage,i)=>[stage.id,i]));
+ for(const project of c.learningProjects){
+  assert.ok(c.learningStages.find(stage=>stage.id===project.stageId).milestoneIds.includes(project.id));
+  for(const topic of project.topics){const stage=c.learningStages.find(stage=>stage.topicIds.includes(topic));assert.ok(stage,topic);assert.ok(rank.get(stage.id)<=rank.get(project.stageId),`${project.id}: future topic ${topic}`);}
+ }
 });

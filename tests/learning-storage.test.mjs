@@ -34,8 +34,8 @@ test('cross-tab race and quota failure preserve existing persisted records',()=>
  store.receiveStorage(latest);assert.equal(store.getSnapshot().data.lastLocation.unitId,'unit-b');
  const denied={getItem:()=>null,setItem:()=>{throw Error('quota')},removeItem:()=>{}};const q=createLearningStore(()=>denied);q.hydrate();q.view('unit-a','r1','catalog');assert.ok(q.getSnapshot().notice);assert.equal(q.getSnapshot().data.lastLocation.unitId,'unit-a');
 });
-test('204 read-only records fit the measured 512 KiB budget',()=>{
- const s=storage();const store=createLearningStore(()=>s);store.hydrate();for(let i=0;i<204;i++)store.view('unit-m'+i+'-01-a','2026-11-02-v1','2026-11-02-v1');
+test('207 read-only records fit the measured 512 KiB budget',()=>{
+ const s=storage();const store=createLearningStore(()=>s);store.hydrate();for(let i=0;i<207;i++)store.view('unit-m'+i+'-01-a','2026-11-02-v1','2026-11-02-v1');
  const bytes=new TextEncoder().encode(s.getItem(LEARNING_STORAGE_KEY)).length;assert.ok(bytes<LEARNING_STORAGE_BUDGET);assert.ok(bytes<40000);
 });
 test('old completion, highest quiz score and unknown legacy IDs survive parsing',()=>{

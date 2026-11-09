@@ -1,14 +1,17 @@
 import Link from "next/link";
 import { CourseShell } from "@/components/course-shell";
 import { Breadcrumbs, ReadinessCounts } from "@/components/curriculum-parts";
+import { LearningStages } from "@/components/learning-stages";
 import { catalog, curriculumReadiness, moduleIndex, topicIndex } from "@/lib/curriculum";
 
-export const metadata = { title: "전체 목차 · 34모듈 204소주제" };
+export const metadata = { title: `학습 순서·전체 목차 · ${catalog.modules.length}모듈 ${catalog.topics.length}소주제` };
 export default function CurriculumPage() {
-  return <CourseShell title="전체 목차" description="34개 모듈·204개 소주제를 살펴보고, 필요한 기초와 관심 분야를 선택하세요. 준비중인 항목도 전체 학습 계획에 포함됩니다.">
+  return <CourseShell title="학습 순서·전체 목차" description={`일반 코딩이 가능한 학습자를 위한 공통 과정과 전문화 경로입니다. ${catalog.modules.length}개 모듈·${catalog.topics.length}개 소주제를 학습 단계에 맞춰 연결합니다.`}>
     <main className="curriculum-content mx-auto max-w-6xl px-4 py-8 sm:px-6">
       <Breadcrumbs items={[{ title: "학습 홈", href: "/" }, { title: "전체 목차" }]} />
       <div className="mb-8 rounded-2xl border border-blue-100 bg-blue-50 p-5"><ReadinessCounts counts={curriculumReadiness.overall.counts} /><p className="mt-2 text-sm leading-7 text-slate-600">상세 집필이 끝나지 않은 항목은 준비중으로 표시합니다. 준비중인 항목도 연결된 기존 자료를 읽을 수 있습니다. 선수는 접근 잠금이 아닌 권장 안내입니다.</p><Link className="mt-3 inline-block font-semibold text-blue-700" href="#tracks">분야별 추천 경로 선택 ↓</Link></div>
+      <LearningStages />
+      <section id="module-reference" aria-labelledby="module-reference-title" className="mb-6 border-t pt-8"><h2 id="module-reference-title" className="text-2xl font-bold">모듈별 참고 목차</h2><p className="mt-3 text-sm leading-7 text-slate-600">분야별로 찾아볼 때 사용하는 원래 모듈 구분입니다. 학습 순서는 위 단계와 추천 경로를 따릅니다.</p></section>
       <nav aria-label="영역 바로가기" className="mb-6 flex flex-wrap gap-2">{catalog.areas.map((area) => <a key={area.id} href={`#${area.id}`} className="rounded-lg border bg-white px-3 py-2 text-sm text-slate-700">{area.title}</a>)}</nav>
       {catalog.areas.map((area) => <section key={area.id} id={area.id} aria-labelledby={`${area.id}-title`} className="mb-10">
         <h2 id={`${area.id}-title`} className="mb-4 text-2xl font-bold">{area.title}</h2>

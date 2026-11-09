@@ -1,8 +1,8 @@
-import { bindingAvailability, catalog, catalogReadiness, indexCatalog, unitReadiness } from "@physical-ai/shared/catalog";
+import { bindingAvailability, catalog, catalogReadiness, indexCatalog, unitReadiness, learningStages, learningSequence, conditionalPrerequisites } from "@physical-ai/shared/catalog";
 import { studyHref } from "./study-navigation";
 import type { Catalog, CatalogUnit, Readiness } from "@physical-ai/shared/catalog";
 
-export { catalog };
+export { catalog, learningStages, learningSequence };
 export const curriculumIndex = indexCatalog(catalog);
 export const curriculumReadiness = catalogReadiness(catalog);
 export const moduleIndex = new Map(catalog.modules.map((item) => [item.id, item]));
@@ -24,7 +24,7 @@ export function moduleUnits(id: string) {
   return moduleIndex.get(id)!.topicIds.flatMap((topicId) => topicIndex.get(topicId)!.unitIds.map((id) => curriculumIndex.units.get(id)!));
 }
 export function prerequisiteLinks(unit: CatalogUnit) {
-  return { allOf: unit.prerequisites.allOf.map(unitLink), anyOf: unit.prerequisites.anyOf.map(unitLink) };
+  return { allOf: unit.prerequisites.allOf.map(unitLink), anyOf: unit.prerequisites.anyOf.map(unitLink), conditional: (conditionalPrerequisites[unit.topicId] ?? []).map(item => ({ ...item, links: item.allOf.map(unitLink) })) };
 }
 export function resourceHref(resource: Catalog["resources"][number]) {
   return resource.locator.type === "file" || resource.locator.type === "authored" ? resource.locator.publicUrl : resource.locator.legacyUrl;
@@ -44,7 +44,7 @@ export function studyNavigationFor(unitId: string) {
     const { id: stableId, title, topicId, state } = unitLink(id);
     return { id: stableId, title, topicId, state };
   };
-  const sequence = catalog.modules.flatMap((item) => moduleUnits(item.id).map((unit) => unit.id));
+  const sequence = learningSequence.flatMap(id => topicIndex.get(id)!.unitIds);
   const position = sequence.indexOf(unitId);
   const base = { previous: neighbor(sequence[position - 1]), next: neighbor(sequence[position + 1]) };
   const contexts = catalog.tracks.flatMap((track) => {

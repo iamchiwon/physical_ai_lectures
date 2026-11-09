@@ -12,14 +12,14 @@ const { catalog, legacyCatalog, catalogReadiness } = await load('packages/shared
 const { parseLegacyProgress, legacyProgressSummary } = await load('apps/web/src/lib/home-progress.ts');
 
 test('home uses current catalog totals and never fabricates duration or a completion percentage', () => {
-  assert.deepEqual(homeCatalog.totals,{modules:34,topics:204,tracks:6,...catalogReadiness(catalog).overall.counts});
+  assert.deepEqual(homeCatalog.totals,{modules:35,topics:207,tracks:7,...catalogReadiness(catalog).overall.counts});
   assert.equal(homeCatalog.areas.length,7);
-  assert.equal(homeCatalog.areas.flatMap((a) => a.modules).length,34);
+  assert.equal(homeCatalog.areas.flatMap((a) => a.modules).length,35);
   assert.ok(!('estimatedMinutes' in homeCatalog));
   assert.ok(!JSON.stringify(homeCatalog).includes('baselineFileSha256'));
 });
-test('six distinct track overviews preserve required/optional counts and module order', () => {
-  assert.equal(homeCatalog.tracks.length,6);
+test('main and six specialist track overviews preserve required/optional counts and module order', () => {
+  assert.equal(homeCatalog.tracks.length,7);
   for (const track of homeCatalog.tracks) {
     const source = catalog.tracks.find((t) => t.id === track.id);
     assert.equal(track.required,source.steps.filter((s) => s.required).length);
@@ -30,13 +30,9 @@ test('six distinct track overviews preserve required/optional counts and module 
 });
 test('reading entry points are explicit primary textbook resources and exclude unavailable bindings', () => {
   assert.equal(homeCatalog.readings.length,6);
-  assert.equal(homeCatalog.readings.find((r) => r.topicId === 'M20.03').reading.href,'/study/unit-m20-03-a/#authored-body');
-  assert.equal(homeCatalog.readings.find((r) => r.topicId === 'M20.03').reading.title,`${catalog.units.find(unit=>unit.topicId==='M20.03').title} · 본문`);
-  assert.match(buildHomeCatalog(legacyCatalog).readings.find((r) => r.topicId === 'M20.03').reading.title,/LeRobotDataset/);
-  const oldReading=buildHomeCatalog(legacyCatalog).readings.find(r=>r.topicId==='M20.03').reading;
-  assert.ok(catalog.resources.some(resource=>resource.locator.type==='textbook'&&resource.locator.legacyUrl===oldReading.href));
-  assert.equal(homeCatalog.readings.find((r) => r.topicId === 'M10.03').reading.href,'/study/unit-m10-03-a/#authored-body');
-  assert.match(buildHomeCatalog(legacyCatalog).readings.find((r) => r.topicId === 'M10.03').reading.title,/접촉 역학/);
+  assert.deepEqual(homeCatalog.readings.map(r=>r.topicId),['M00.01','M01.01','M01.04','M05.01','M12.01','M09.01']);
+  for(const reading of homeCatalog.readings){assert.equal(reading.reading.href,`/study/${reading.unitId}/#authored-body`);assert.equal(reading.reading.title,`${reading.title} · 본문`);}
+  const preserved=legacyCatalog.resources.find(resource=>resource.locator.type==='textbook'&&resource.title.includes('LeRobotDataset'));assert.ok(preserved);assert.ok(catalog.resources.some(resource=>resource.id===preserved.id&&resource.title===preserved.title));
   for (const reading of homeCatalog.readings) assert.match(reading.reading.href,/^\/(?:textbook\/[^/]+\/|study\/[^/]+\/#authored-body)$/);
   const source = structuredClone(catalog);
   for (const r of source.resources) r.integrity.status = 'mismatch';

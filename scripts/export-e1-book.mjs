@@ -3,22 +3,19 @@ import path from 'node:path';
 import { createHash } from 'node:crypto';
 import { fileURLToPath } from 'node:url';
 import { build } from 'esbuild';
-import { readAuthoredReviews, authoredReviewRegistries } from './authored-metadata.mjs';
+import { readAuthoredReviews } from './authored-metadata.mjs';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const destination = process.argv[2];
 if (!destination) throw Error('Provide an output Markdown path');
-const bundle = await build({ stdin: { contents: 'export {parseAuthoredMarkdown} from "./packages/shared/src/authored-format.ts"; export {catalogData} from "./packages/shared/src/catalog-data.ts";', resolveDir: root }, bundle: true, platform: 'node', format: 'esm', write: false });
-const { parseAuthoredMarkdown, catalogData } = await import(`data:text/javascript;base64,${Buffer.from(bundle.outputFiles[0].text).toString('base64')}`);
+const bundle = await build({ stdin: { contents: 'export {parseAuthoredMarkdown} from "./packages/shared/src/authored-format.ts"; export {currentDefinitionCatalog as catalogData, learningStages, learningSequence} from "./packages/shared/src/current-definition.ts";', resolveDir: root }, bundle: true, platform: 'node', format: 'esm', write: false });
+const { parseAuthoredMarkdown, catalogData, learningStages, learningSequence } = await import(`data:text/javascript;base64,${Buffer.from(bundle.outputFiles[0].text).toString('base64')}`);
 const registry = readAuthoredReviews(root, catalogData.units);
 const titles = Object.fromEntries(catalogData.modules.map(module => [module.id, module.title]));
-// Review-registry order is the book's phase order; module order alone interleaves E5.
-const phaseOf = topic => {
-  const index = authoredReviewRegistries.findIndex(review => review.modules?.includes(topic.split('.')[0]) || review.topicIds?.includes(topic));
-  if (index < 0) throw Error(`Unsupported authored review phase: ${topic}`);
-  return index;
-};
-const topics = Object.keys(registry.topics).sort((a, b) => phaseOf(a) - phaseOf(b) || a.localeCompare(b));
+// Publication follows the same adopted teaching order as the web. Review scopes remain independent.
+const topics = learningSequence.filter(topic => Object.hasOwn(registry.topics, topic));
+if (topics.length !== Object.keys(registry.topics).length) throw Error('Reviewed topic missing from current learning sequence');
+const stageOf = new Map(learningStages.flatMap(stage => stage.topicIds.map(topic => [topic, stage])));
 if (!topics.length) throw Error('No reviewed authored content to export');
 // Shift only Markdown headings, leaving example code fences and their comments untouched.
 function nested(text) {
@@ -29,8 +26,9 @@ function nested(text) {
     return !fence ? line.replace(/^(#{1,5}) /, '#$1 ') : line;
   }).join('\n');
 }
-const chunks = ['# E1 공통 기초 상세 교재 {#e1-foundations}', 'M00~M03의 검수된 새 본문·장비 없는 실습·문제·해설입니다. 아래 단위는 원본 Markdown에서 생성하며, 기존 여섯 장의 응용 교재와 이어 읽습니다. 실습·문항 답안의 자동 채점이나 실물·GPU 실행을 뜻하지 않습니다.'];
-let previousModule = '', previousBatch = 'E1';
+const chunks = ['# Physical AI 통합 상세 교재 {#physical-ai-course}', '일반 코딩 경험을 전제로 개발 환경·빌드 도구에서 로봇 시스템 통합까지 이어 읽습니다. 검수된 현재 원고만 포함하며, 준비중인 주제·프로젝트의 실행 완료를 뜻하지 않습니다. 원고·단위 식별자는 웹과 같습니다.'];
+let previousModule = '', previousStage = '';
+const seenModules = new Set();
 for (const topic of topics) {
   const module = topic.split('.')[0];
   if (!(module in titles)) throw Error(`Unsupported authored topic: ${topic}`);
@@ -42,19 +40,22 @@ for (const topic of topics) {
   if (sha !== review.sourceSha256 || !fs.existsSync(path.join(root, review.evidenceRef)) || !fs.lstatSync(path.join(root, review.evidenceRef)).isFile()) throw Error(`Stale or missing review: ${topic}`);
   const doc = parseAuthoredMarkdown(raw);
   if (doc.title !== catalogData.units.find(unit => unit.topicId === topic)?.title) throw Error(`Authored title mismatch: ${topic}`);
-  const batch = `E${phaseOf(topic) + 1}`;
-  if (batch !== previousBatch) {
-    if (batch === 'E2') chunks.push('# E2 ROS 2·기구학·제어·모델 상세 교재 {#e2-robot-foundations}', 'M05~M08의 검수된 본문·장비 없는 기본 실습·문제·해설입니다. E1 기초와 이어 읽고, 실제 ROS·실물/GPU 실행과 가상 로그·계산을 구분합니다.');
-    if (batch === 'E3') chunks.push('# E3 시뮬레이션·학습·비전·센서 기초 상세 교재 {#e3-perception-foundations}', 'M10~M12와 M14의 기초 단위를 이어 읽습니다. M14.02/.04/.05 심화는 E6 범위이며, 실제 도구 실행·학습성과와 문서 대조·합성 입력·CPU 계산을 구분합니다.');
-    if (batch === 'E4') chunks.push('# E4 로봇팔·데이터·정책·배포·캡스톤 상세 교재 {#e4-arm-policy-deployment}', 'M19~M22·M27·M30·M32의 검수된 본문·장비 없는 실습·문제·해설입니다. 합성 기록·계산과 실제 계획·학습·장비 실행을 구분하며, 캡스톤 교안의 완성을 실제 프로젝트 수행·합격으로 해석하지 않습니다.');
-    if (batch === 'E5') chunks.push('# E5 모바일 로봇 최소 완결 경로 상세 교재 {#e5-mobile-robot-foundations}', 'M09·M15·M17·M18의 검수된 본문·장비 없는 실습·문제·해설입니다. 월드·센서·시간에서 지도·위치추정·경로·궤적·미션으로 이어지며, 합성 로그·계산과 실제 Gazebo·Nav2·장비 실행을 구분합니다.');
-    previousBatch = batch;
+  const stage = stageOf.get(topic);
+  if (!stage) throw Error(`Missing learning stage: ${topic}`);
+  if (stage.id !== previousStage) {
+    const count = stage.topicIds.filter(id => Object.hasOwn(registry.topics, id)).length;
+    chunks.push(`# ${stage.id}. ${stage.title} {#stage-${stage.id.toLowerCase()}}`, stage.description,
+      `이 단계의 계획 ${stage.topicIds.length}개 중 현재 지문으로 검수된 ${count}개 원고를 포함합니다. 단계의 모든 콘텐츠·프로젝트 실행이 완료됐다는 뜻은 아닙니다.`);
+    previousStage = stage.id; previousModule = '';
   }
   if (module !== previousModule) {
-    chunks.push(`# ${module}. ${titles[module]} {#${module.toLowerCase()}}`);
-    const included = topics.filter(id => id.startsWith(`${module}.`)).length;
+    const anchor = seenModules.has(module) ? `${module.toLowerCase()}-${topic.toLowerCase().replace(".", "-")}` : module.toLowerCase();
+    chunks.push(`# ${module}. ${titles[module]} {#${anchor}}`);
+    seenModules.add(module);
+    const included = stage.topicIds.filter(id => id.startsWith(`${module}.`) && Object.hasOwn(registry.topics, id)).length;
+    const placed = stage.topicIds.filter(id => id.startsWith(`${module}.`)).length;
     const planned = catalogData.units.filter(unit => unit.topicId.startsWith(`${module}.`)).length;
-    if (included < planned) chunks.push(`이 모듈에서는 검수된 ${included}개 단위만 포함합니다. 전체 ${planned}개 단위의 완료를 뜻하지 않습니다.`);
+    if (included < placed || placed < planned) chunks.push(`전체 모듈 ${planned}개 중 이번 단계의 배치는 ${placed}개이며, 현재 검수 원고 ${included}개를 포함합니다. 다른 단계에 배치된 단위와 준비중인 단위는 구분합니다.`);
     previousModule = module;
   }
   chunks.push(`## ${topic}. ${doc.title} {#${topic.toLowerCase().replace('.', '-')} .chapter-section}`,

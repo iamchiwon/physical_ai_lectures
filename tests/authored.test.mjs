@@ -23,6 +23,21 @@ test('authored parser preserves fenced code and requires three paired prompts an
  assert.throws(()=>parseAuthoredMarkdown(raw.replace('## 실습\n수치 예시','## 실습\n첫 활동\n## 실습\n수치 예시')));
  assert.throws(()=>parseAuthoredMarkdown(raw.replace('"계산",','')));
 });
+test('authored preparation validates the current canonical definition while preserving source and activity identities',()=>{
+ const root=fs.mkdtempSync(path.join(tmpdir(),'physical-ai-current-definition-'));
+ const topicId='M01.04',unit=c.currentDefinitionCatalog.units.find(unit=>unit.topicId===topicId),source=`ebook/curriculum/M01/${topicId}.md`,evidenceRef='review.md';
+ const text=raw.replace('"title":"Test"',`"title":${JSON.stringify(unit.title)}`);
+ fs.mkdirSync(path.dirname(path.join(root,source)),{recursive:true});fs.writeFileSync(path.join(root,source),text);fs.writeFileSync(path.join(root,evidenceRef),'Independent current-definition fixture review');
+ const reviews={schemaVersion:1,topics:{[topicId]:{sourceSha256:hash(text),evidenceRef}}};
+ try{
+  const metadata=collectAuthoredMetadata(root,c.currentDefinitionCatalog.units,reviews,parseAuthoredMarkdown);assert.equal(metadata[0].reviewed,true);
+  assert.throws(()=>collectAuthoredMetadata(root,c.legacyCatalog.units,reviews,parseAuthoredMarkdown),/title mismatch/);
+  const current=c.catalogSchema.parse(c.applyAuthoredOverlay(c.currentDefinitionCatalog,metadata)),index=c.indexCatalog(current);
+  const ready=index.units.get(unit.id);assert.equal(ready.title,unit.title);assert.equal(c.unitReadiness(ready,index).state,'ready');
+  assert.ok(current.activities.some(activity=>activity.id==='authored:M01.04:practice'));assert.ok(current.resources.some(resource=>resource.locator.publicUrl===`/study/${unit.id}/#authored-body`));
+  fs.writeFileSync(path.join(root,source),text+'\n');assert.equal(collectAuthoredMetadata(root,c.currentDefinitionCatalog.units,reviews,parseAuthoredMarkdown)[0].reviewed,false);
+ }finally{fs.rmSync(root,{recursive:true,force:true});}
+});
 test('unreviewed source never upgrades baseline; current explicit review covers all goals with independent activities',()=>{
  const original=c.legacyCatalog.units.find(unit=>unit.topicId==='M00.01');
  const candidate={topicId:original.topicId,source:'ebook/curriculum/M00/M00.01.md',title:original.title,objectives:['폐루프를 설명한다','오차를 계산한다','관측 실패를 진단한다'],prerequisiteNote:'선수 없음',sha256:'a'.repeat(64),reviewed:false,evidenceRef:null};
@@ -44,8 +59,9 @@ test('runtime authored publication requires exact reviewed source hash and prese
   if(approved){assert.equal(c.unitReadiness(unit,c.indexCatalog(c.catalog)).state,'ready');assert.ok(fs.existsSync(meta.evidenceRef));}
   else assert.ok(!c.catalog.resources.some(r=>r.id===`authored:resource:${meta.topicId}:body`));
  }
- assert.deepEqual(c.catalog.units.map(unit=>unit.id),c.legacyCatalog.units.map(unit=>unit.id));
- assert.deepEqual(c.catalog.tracks,c.legacyCatalog.tracks);
+ assert.deepEqual(c.catalog.units.map(unit=>unit.id),c.currentDefinitionCatalog.units.map(unit=>unit.id));
+ for(const old of c.legacyCatalog.units)assert.ok(c.catalog.units.some(unit=>unit.id===old.id&&unit.topicId===old.topicId));
+ for(const old of c.legacyCatalog.tracks){const current=c.catalog.tracks.find(track=>track.id===old.id);assert.deepEqual({...current,steps:[]},{...old,steps:[]});assert.deepEqual([...current.steps].sort((a,b)=>a.id.localeCompare(b.id)),[...old.steps].sort((a,b)=>a.id.localeCompare(b.id)));}
  for(const resource of c.legacyCatalog.resources)assert.ok(c.catalog.resources.some(r=>r.id===resource.id));
  assert.ok(c.catalog.revision.length<160);
 });

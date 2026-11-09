@@ -10,7 +10,7 @@ const {legacyCatalog}=await load('packages/shared/src/catalog.ts');
 const {studyHref,resolveStudyNavigation}=await load('apps/web/src/lib/study-navigation.ts');
 const {studyResource}=await load('apps/web/src/lib/study-resources.ts');
 
-test('all 204 units retain a canonical URL independent of six track contexts',()=>{
+test('all 207 current units retain canonical URLs across reordered track contexts',()=>{
  for(const unit of c.catalog.units){
   assert.equal(studyHref(unit.id),`/study/${unit.id}/`);
   const nav=c.studyNavigationFor(unit.id);
@@ -25,7 +25,7 @@ test('all 204 units retain a canonical URL independent of six track contexts',()
 });
 test('default order includes TBD and handles first/last boundaries without skipping',()=>{
  const first=c.studyNavigationFor(c.catalog.units[0].id);assert.equal(first.base.previous,null);assert.equal(first.base.next.id,c.catalog.units[1].id);
- const last=c.studyNavigationFor(c.catalog.units.at(-1).id);assert.equal(last.base.next,null);
+ const last=c.studyNavigationFor('unit-m29-06-a');assert.equal(last.base.next,null);
  const current=c.studyNavigationFor('unit-m00-06-a');assert.equal(current.base.next.id,'unit-m01-01-a');assert.equal(current.base.next.state,c.unitLink('unit-m01-01-a').state);
 });
 test('invalid, absent-membership and duplicate track queries fall back to catalog order explicitly',()=>{
@@ -91,4 +91,10 @@ test('report cards summarize the activity without repeating the full original ma
   assert.equal(item.title,'실습 보고서 · 기존 원고와 평가 안내');
   assert.ok(!item.title.includes('\n'));assert.ok(item.links.some(link=>link.href.endsWith(`#${activity.persistence.legacyId}`)));
  }
+});
+
+test('default navigation crosses teaching stages rather than old module-number boundaries',()=>{
+ for(const [before,after] of [['unit-m01-02-a','unit-m01-03-a'],['unit-m12-01-a','unit-m02-01-a'],['unit-m17-02-a','unit-m17-06-a'],['unit-m22-06-a','unit-m18-05-a'],['unit-m19-06-a','unit-m18-06-a']])assert.equal(c.studyNavigationFor(before).base.next.id,after);
+ const old=legacyCatalog.tracks.find(t=>t.id==='track-mobile');for(const step of old.steps){const now=c.catalog.tracks.find(t=>t.id===old.id).steps.find(s=>s.id===step.id);assert.ok(now);assert.equal(now.unitId,step.unitId);assert.equal(now.required,step.required);}
+ const main=c.studyNavigationFor('unit-m12-01-a').contexts.find(t=>t.id==='track-main');assert.ok(main);assert.equal(resolveStudyNavigation(c.studyNavigationFor('unit-m12-01-a').base,[main],['track-main']).context.id,'track-main');
 });

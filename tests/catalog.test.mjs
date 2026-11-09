@@ -26,15 +26,58 @@ const hash = (path) => {
   return approval.baselineSha256;
 };
 
-test('34/204 IDs, titles, order and stable units match curriculum and A03 exactly', () => {
-  const modules = [...curriculum.matchAll(/^### (M\d+)\. (.+)$/gm)].map((m) => [m[1], m[2]]);
-  const topics = [...curriculum.matchAll(/^\d+\. `(M\d+\.\d+)` (.+)$/gm)].map((m) => [m[1], m[2]]);
+test('historical 34/204 registration retains A03 IDs, titles, order and pending unit definitions', () => {
   assert.equal(catalog.areas.length, 7);
-  assert.equal(modules.length, 34); assert.equal(topics.length, 204);
-  assert.deepEqual(catalog.modules.map((m) => [m.id, m.title]), modules);
-  assert.deepEqual(catalog.topics.map((t) => [t.id, t.title]), topics);
+  assert.equal(catalog.modules.length,34);assert.equal(catalog.topics.length,204);
+  assert.deepEqual(catalog.modules.map(module=>module.id),[...new Set(mapping.topics.map(topic=>topic.moduleId))]);
+  assert.deepEqual(catalog.topics.map(topic=>[topic.id,topic.title]),mapping.topics.map(topic=>[topic.topicId,topic.title]));
   assert.deepEqual(catalog.units.map((u) => [u.id, u.topicId, u.title]), mapping.topics.map((t) => [t.unitId, t.topicId, t.title]));
   assert.ok(catalog.units.every((u) => u.estimatedMinutes === null && u.definitionStatus === 'pending'));
+});
+test('current 35/207 reference document matches current canonical titles separately from historical registration',()=>{
+ const modules=[...curriculum.matchAll(/^### (M\d+)\. (.+)$/gm)].map(match=>[match[1],match[2]]);
+ const topics=[...curriculum.matchAll(/^\d+\. `(M\d+\.\d+)` (.+)$/gm)].map(match=>[match[1],match[2]]);
+ assert.equal(modules.length,35);assert.equal(topics.length,207);
+ assert.deepEqual(shared.currentDefinitionCatalog.modules.map(module=>[module.id,module.title]),modules);
+ const titles=new Map(shared.currentDefinitionCatalog.topics.map(topic=>[topic.id,topic.title]));
+ assert.deepEqual(topics.map(([id])=>[id,titles.get(id)]),topics);
+});
+test('current definition adds only planned operations and keeps historical registration immutable',()=>{
+ const before=clone(),current=shared.applyCurrentDefinition(catalog);
+ assert.deepEqual(catalog,before);assert.equal(current.modules.length,35);assert.equal(current.topics.length,207);assert.equal(current.units.length,207);assert.equal(current.tracks.length,7);
+ assert.deepEqual(current.resources,catalog.resources);assert.deepEqual(current.activities,catalog.activities);assert.deepEqual(current.aliases,catalog.aliases);
+ for(const unit of catalog.units)assert.ok(current.units.some(row=>row.id===unit.id&&row.topicId===unit.topicId));
+ assert.equal(current.units.find(unit=>unit.topicId==='M01.04').title,'CMake·colcon·컴파일·링크·빌드 오류 진단');
+ assert.equal(current.units.find(unit=>unit.topicId==='M00.05').title,'개발환경·수학·제어·ML 자기진단과 선행학습 분기');
+});
+test('adopted stages cover every current topic once, put native builds in the basic path and expose project milestones',()=>{
+ const stages=shared.learningStages,sequence=shared.learningSequence;
+ assert.equal(stages.length,17);assert.deepEqual(stages.map(stage=>stage.id),Array.from({length:12},(_,i)=>`S${String(i).padStart(2,'0')}`).concat(Array.from({length:5},(_,i)=>`A${String(i+1).padStart(2,'0')}`)));
+ assert.deepEqual(stages.flatMap(stage=>stage.topicIds),sequence);assert.equal(new Set(sequence).size,207);assert.ok(sequence.every(id=>/^M\d{2}\.\d{2}$/.test(id)));
+ const tools=stages.find(stage=>stage.id==='S01');for(let i=1;i<=6;i++)assert.ok(tools.topicIds.includes(`M01.${String(i).padStart(2,'0')}`));assert.match(tools.description,/文法|문법/);
+ assert.deepEqual(stages.filter(stage=>stage.milestoneIds.length).map(stage=>[stage.id,stage.milestoneIds]),[['S02',['P1']],['S05',['P2']],['S09',['P3']],['S10',['P4']]]);
+});
+test('current prerequisites retain real entry requirements and precede each topic in the global route',()=>{
+ const current=shared.currentDefinitionCatalog,position=new Map(current.units.map((unit,index)=>[unit.id,index]));
+ for(const unit of current.units){for(const prerequisite of unit.prerequisites.allOf)assert.ok(position.get(prerequisite)<position.get(unit.id),`${unit.topicId} -> ${prerequisite}`);if(unit.prerequisites.anyOf.length)assert.ok(unit.prerequisites.anyOf.some(id=>position.get(id)<position.get(unit.id)));}
+ const required=id=>current.units.find(unit=>unit.topicId===id).prerequisites.allOf;
+ assert.deepEqual(required('M06.05'),['unit-m02-01-a','unit-m03-05-a','unit-m06-01-a']);
+ assert.ok(required('M12.01').includes('unit-m01-02-a'));assert.ok(required('M21.06').includes('unit-m21-01-a'));assert.ok(!required('M21.06').includes('unit-m21-05-a'));
+ assert.ok(required('M17.06').includes('unit-m17-02-a'));assert.ok(required('M22.01').includes('unit-m21-01-a'));
+ assert.deepEqual(shared.conditionalPrerequisites['M32.03'],[{id:'dual-arm',title:'양팔 정책·실행 확장 선택',allOf:['unit-m21-05-a']}]);
+ assert.ok(!required('M32.03').includes('unit-m21-05-a'));assert.ok(required('M32.03').includes('unit-m19-06-a'));
+});
+test('six specialist tracks preserve step identity and obligations while the main track exposes three optional capstone variants',()=>{
+ const current=shared.currentDefinitionCatalog;assert.ok(catalogSchema.safeParse(current).success);
+ for(const old of catalog.tracks){const track=current.tracks.find(track=>track.id===old.id);assert.deepEqual({...track,steps:[]},{...old,steps:[]});assert.deepEqual([...track.steps].sort((a,b)=>a.id.localeCompare(b.id)),[...old.steps].sort((a,b)=>a.id.localeCompare(b.id)));}
+ const main=current.tracks.find(track=>track.id==='track-main');assert.equal(main.steps.length,147);
+ assert.deepEqual(main.steps.filter(step=>!step.required).map(step=>step.unitId),['unit-m32-01-a','unit-m32-02-a','unit-m32-03-a']);
+ for(const id of ['unit-m32-05-a','unit-m32-06-a','unit-m34-01-a','unit-m34-02-a','unit-m34-03-a'])assert.equal(main.steps.find(step=>step.unitId===id).required,true);
+});
+test('M34 operations are plans with empty content and no automatic readiness or completion',()=>{
+ const current=shared.currentDefinitionCatalog,index=indexCatalog(current);
+ for(const unit of current.units.filter(unit=>unit.topicId.startsWith('M34.'))){assert.equal(unit.definitionStatus,'pending');assert.equal(unitReadiness(unit,index).state,'tbd');assert.ok(Object.values(unit.slots).every(bindings=>bindings.length===0));assert.equal(unit.estimatedMinutes,null);assert.match(unit.gaps.practice,/준비중/);}
+ assert.equal(current.units.filter(unit=>unit.topicId.startsWith('M34.')).length,3);
 });
 
 test('every legacy body, lesson, original file, question and answer key is preserved once', () => {

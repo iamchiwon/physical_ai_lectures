@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "topics": {
     "M05.01": {
-      "sourceSha256": "a04f6e300c7f6ca5bb87f9b0fba0e5385be399effc8e82dee54cd2d39ef50017",
+      "sourceSha256": "14a85a10b01524c5e7081f6f40993235b278dbec37902f2c89f88e4c92a83df8",
       "evidenceRef": "doc/v2/work_items/M05.01.md"
     },
     "M05.02": {
@@ -66,7 +66,7 @@
       "evidenceRef": "doc/v2/work_items/M07.04.md"
     },
     "M07.05": {
-      "sourceSha256": "0635379d58a9e612fb2123c98bc6fa3c0e44a26fc19fd21b9a7bd680c522e4d2",
+      "sourceSha256": "3d96644f6ce3675e411392c50cb88be599b315a3a203cb0de5ff8c354c7ad43b",
       "evidenceRef": "doc/v2/work_items/M07.05.md"
     },
     "M07.06": {
