@@ -167,3 +167,7 @@ P2의7×5격자/제공pose·TF/clock·지도개정·두waypoint와일시/영구�
 ## M25.06 현행 집필 · 2026-11-09
 
 상세/실습 151·문제/해설 453쌍, 상태 {'ready': 151, 'tbd': 52, 'partial': 4}, Resource 1843/Activity 795/alias 317다. 미집필 56개(공통 5·전문화51). [근거](work_items/M25.06.md).
+
+## W04 묶음 검수 · 2026-11-09
+
+M25 여섯 단위와 현재 선수·전후 이동/실제320px·기존2~5장 연결을 확인했다. 현재 상세151/미집필56(공통5·전문화51), ready151/partial4/tbd52, Resource1843/Activity795/alias317이다. W05/W06·P4/G-S10은 남아 있다. [근거](work_items/W04.md).
