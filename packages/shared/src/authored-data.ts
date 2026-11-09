@@ -2069,9 +2069,23 @@ export const authoredMetadata: AuthoredMetadata[] = [
       "공유 RAM 사건표의 갱신 유실과 특수 레지스터 접근 오류를 진단하고 필요한 재현/검증 근거를 기록한다."
     ],
     "prerequisiteNote": "M01.03의 native/ABI·버퍼 계약과 M03.04의 전기적 명세가 선수다. 일반 코딩 경험을 전제로 C/C++ 문법·포인터/비트 연산 입문은 반복하지 않는다. ATmega328P의 명시한 자료와 가상 메모리/사건표를 읽는 종이 활동이며 컴파일·펌웨어/퓨즈/레지스터 쓰기나 실제 장비 연결은 하지 않는다.",
-    "sha256": "271de043fd492403cb4148d8ab6b535602d46e696468930cf637e0b34c28c5f7",
+    "sha256": "adf4fe853b582db6e483106f733951d85b0789b05ddf91c4465bfad834c67e1a",
     "reviewed": true,
-    "evidenceRef": "doc/v2/work_items/M04.01.md"
+    "evidenceRef": "doc/v2/work_items/M04.02.md"
+  },
+  {
+    "topicId": "M04.02",
+    "source": "ebook/curriculum/M04/M04.02.md",
+    "title": "GPIO·UART·인터럽트·타이머",
+    "objectives": [
+      "GPIO의 방향/래치·입력 읽기와 스위치 논리/전기적 조건을 구분한다.",
+      "실제 주변장치 clock과 모드로 UART baud·직렬 전송량·타이머 주기/범위를 계산한다.",
+      "이벤트 발생·pending 표시·ISR 서비스·호스트 메시지의 시각과 누락/과부하를 합성 사건에서 판정한다."
+    ],
+    "prerequisiteNote": "M04.01의 타깃/레지스터·메모리/공유 접근이 선수다. 일반 코딩을 전제로 C/C++ 문법이나 레지스터 쓰기 코드를 가르치지 않는다. ATmega328P의 명시한 모드/clock과 합성 표를 분석하며 실제 배선/컴파일·펌웨어/퓨즈/핀 쓰기·장비 실증은 하지 않는다.",
+    "sha256": "bb14b6ecf0e66633db7d55d9a93bf3b5917f47900eefaa3ee9dff522c1a5c5a3",
+    "reviewed": true,
+    "evidenceRef": "doc/v2/work_items/M04.02.md"
   },
   {
     "topicId": "M07.04",
@@ -2268,10 +2282,10 @@ export const legacyRevisions: LegacyRevision[] = [
   {
     "source": "ebook/book/04_sensor_data_pipeline/chapter.md",
     "baselineSha256": "69a8cf6f0e2f6e584bda629d3a17fbbe37f75ec024eab2237847807a2a3796fa",
-    "sha256": "4f9932a84de6cddaf30dedbf0701d12d9a109ebaca45a2c43c70e9e0de454f18",
+    "sha256": "3f60235276834d1a701c07d397553d7d7aed13734cec1265ca853b0dcde0ba17",
     "approved": true,
-    "reason": "E1에서 기존 04장으로 선수·실습범위·오개념 연결 보강 / E2: ROS・기구학・제어・모델 선수/후속 연결 및 관련 개념·실행 전제 보완 / E3: 시뮬레이션·학습·비전·카메라/시간 기초의 연결 및 독립검토된 개념/그림 조건 정정 / E4: 로봇팔·데이터·정책·배포·캡스톤 선수/후속과 교육용 계산·실행·안전 계약 보완 / E5: 모바일 경로·시뮬레이터 구분·map/odom/base·계획/미션·주행-조작 연결 보완 / E5 후속: 공유 TF와 로봇별 토픽·버퍼 격리 대안 및 외부 결합 계약 구분 / W02 M14.02: 센서별 측정량·단위·장착점/시각 계약과 신규 기초 원고 연결 / M25.05: 동봉랜덤화코드의 고정camera/실제채널범위와 원본자산분할·라벨완전성 정정/연결 / M04.01: MCU 펌웨어/호스트의 타깃·메모리/공유 접근과 센서 시각 연결",
-    "evidenceRef": "doc/v2/work_items/M04.01.md"
+    "reason": "E1에서 기존 04장으로 선수·실습범위·오개념 연결 보강 / E2: ROS・기구학・제어・모델 선수/후속 연결 및 관련 개념·실행 전제 보완 / E3: 시뮬레이션·학습·비전·카메라/시간 기초의 연결 및 독립검토된 개념/그림 조건 정정 / E4: 로봇팔·데이터·정책·배포·캡스톤 선수/후속과 교육용 계산·실행·안전 계약 보완 / E5: 모바일 경로·시뮬레이터 구분·map/odom/base·계획/미션·주행-조작 연결 보완 / E5 후속: 공유 TF와 로봇별 토픽·버퍼 격리 대안 및 외부 결합 계약 구분 / W02 M14.02: 센서별 측정량·단위·장착점/시각 계약과 신규 기초 원고 연결 / M25.05: 동봉랜덤화코드의 고정camera/실제채널범위와 원본자산분할·라벨완전성 정정/연결 / M04.01: MCU 펌웨어/호스트의 타깃·메모리/공유 접근과 센서 시각 연결 / M04.02: 타이머 사건/ISR·UART 선로와 원본/수신 시각 연결",
+    "evidenceRef": "doc/v2/work_items/M04.02.md"
   },
   {
     "source": "ebook/book/04_sensor_data_pipeline/exercises/solutions.md",
@@ -2558,7 +2572,7 @@ export const legacyExerciseReferences: DerivedReference[] = [
   {
     "activityId": "legacy:exercise:04_sensor_data_pipeline--chapter-15-q5",
     "baselineSha256": "db330ec3d97051768edf778b93af6c746abd056ea3284021b4898fb08b36b58b",
-    "sha256": "66d2528b55341727c49ba6dfce643d9b30c893d414bd63829fca3c96c1af051e",
+    "sha256": "a832e89256424c8a4b0f90866e925b11596157dbd9ec251ba5f9cb471d583219",
     "approved": true
   },
   {
@@ -2570,13 +2584,13 @@ export const legacyExerciseReferences: DerivedReference[] = [
   {
     "activityId": "legacy:exercise:04_sensor_data_pipeline--chapter-15-q7",
     "baselineSha256": "f73fff6f100deb8b1277825ec56b4f16cf855aa6f939e635c89e1e98558ae86f",
-    "sha256": "b69765980850a254751bedf8ef288c4411e7fa25f4de378b0a288f54d861712a",
+    "sha256": "5f6aed75da088b433369f5c230e60641bb7743b13d5783e94d2cf3661dfc80a4",
     "approved": true
   },
   {
     "activityId": "legacy:exercise:04_sensor_data_pipeline--chapter-15-q8",
     "baselineSha256": "655d77b76a1c3a9e28b37b0ab94571c2f6c09e1fef59f7ca65aa3c006443b5b4",
-    "sha256": "370d75e75c2afcfbb6024eaf39a84e0f15bb615de4b90c6317b5e52a8494be45",
+    "sha256": "770618a25020acc39c6740f4ca9518055052b4bf96caec2ae39f376990a2ae11",
     "approved": true
   },
   {
