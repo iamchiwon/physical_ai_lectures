@@ -574,7 +574,7 @@ M31의 명세·재현·검토 습관은 초기에, 자동화·다중 에이전�
 
 ### M31. AI 개발 에이전트·검증 자동화
 
-- 선수 조건: M01, M05 및 한 트랙 실습 경험
+- 선수 조건: M31.01/.02는 M01의 실행 환경·자료 계약을 바탕으로 S01에서 시작한다. M31.03/.04는 모바일·시뮬레이션 적용, M31.05/.06는 후반 자동화·실물 변경의 해당 선수 후에 이수한다. ROS·한 트랙 전체 경험을 초반 두 단위의 공통 필수로 요구하지 않는다.
 - 주제 참고: [FC25](fastcampus/FC25_data_online_clauderobot.md) · [FC18](fastcampus/FC18_data_online_autovehicle.md) · [FC23](fastcampus/FC23_data_online_embedded.md)
 
 소주제:

@@ -67,6 +67,7 @@ export function applyCurrentDefinition(base: Catalog): Catalog {
   tools.title = "AI·로봇 실행 환경·패키지·네이티브 빌드";
   tools.prerequisiteNote = "일반적인 코딩이 가능한 학습자의 도구·실행 환경 경로입니다. 언어 문법 입문은 포함하지 않습니다.";
   tools.objectives = [{ id: tools.objectives[0]!.id, description: "패키지·배열·네이티브 ABI·CMake/colcon 빌드와 AI·로봇 실행 경계의 계약을 진단한다." }];
+  result.modules.find(module => module.id === "M31")!.prerequisiteNote = "M31.01/.02는 M01의 환경·자료·재현 계약으로 S01에서 시작합니다. ROS나 한 트랙 전체 이수는 초기 공통 필수가 아니며 모바일·시뮬레이션·장시간/실물 적용은 해당 후반 단위의 선수를 따릅니다.";
   if (result.modules.some(module => module.id === "M34")) throw Error("Current definition already applied");
   const operationGoal = "objective-m34-overview";
   result.areas.find(area => area.id === "area-validation")!.moduleIds.push("M34");
