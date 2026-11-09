@@ -270,3 +270,11 @@ test('W08 authority is limited to embedded integration and HSI topics',()=>{
  const data={schemaVersion:1,topics:Object.fromEntries(registry.topicIds.map(id=>[id,review]))};assert.equal(Object.keys(mergeAuthoredReviews([{...registry,data}],known).topics).length,6);
  for(const id of ['M04.06','M07.04','M28.01','M29.01','M31.06','M34.01'])assert.throws(()=>mergeAuthoredReviews([{...registry,data:{schemaVersion:1,topics:{[id]:review}}}],known),/scope/);
 });
+
+test('W09 authority is limited to the six vehicle communication and diagnostic topics',()=>{
+ const registry=authoredReviewRegistries.find(r=>r.file==='doc/v2/inventory/w09-reviews.json');assert.deepEqual(registry.topicIds,['M28.01','M28.02','M28.03','M28.04','M28.05','M28.06']);assert.equal(registry.modules,undefined);
+ const known=c.catalog.units.map(u=>u.topicId),review={sourceSha256:'a'.repeat(64),evidenceRef:'review.md'};
+ const data={schemaVersion:1,topics:Object.fromEntries(registry.topicIds.map(id=>[id,review]))};assert.equal(Object.keys(mergeAuthoredReviews([{...registry,data}],known).topics).length,6);
+ for(const id of ['M04.04','M26.06','M29.01','M31.06','M34.01'])assert.throws(()=>mergeAuthoredReviews([{...registry,data:{schemaVersion:1,topics:{[id]:review}}}],known),/scope/);
+ for(const other of authoredReviewRegistries.filter(r=>r!==registry))assert.throws(()=>mergeAuthoredReviews([{...other,data:{schemaVersion:1,topics:{'M28.01':review}}}],known),/scope/);
+});
