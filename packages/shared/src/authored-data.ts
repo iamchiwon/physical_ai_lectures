@@ -2228,6 +2228,20 @@ export const authoredMetadata: AuthoredMetadata[] = [
     "evidenceRef": "doc/v2/work_items/M26.05.md"
   },
   {
+    "topicId": "M26.06",
+    "source": "ebook/curriculum/M26/M26.06.md",
+    "title": "기본 성능·통합 TEST·결함 분석·포트폴리오",
+    "objectives": [
+      "임베디드 요구/형상·계층과 제공 시험 사례의 기대/보고 결과를 대응해 판정한다.",
+      "기본 시간 성능·실패/미확인·분모와 결함 가설/수정/재검증을 구분한다.",
+      "제공 자료 분석과 실제 실행/물리 성과를 구별한 재현·포트폴리오 보고서를 작성한다."
+    ],
+    "prerequisiteNote": "M26.05까지의 요구/HSI·센서/제어·보드/기구·UI 계약을 연결한다. 기존6.6 평가/6.8 포트폴리오를 재사용하되 임베디드 사례를 보충한다. 일반 언어 문법 없이 자체 가상 출력표를 분석하며 실제 후보 코드/모델·MCU/보드/폐루프/장비·물리 성공/인증은 검증하지 않는다.",
+    "sha256": "ede2c3ea746e72ec8a9abd564f660ecac77e47cb6222bc43c9d6203a5a93b4b6",
+    "reviewed": true,
+    "evidenceRef": "doc/v2/work_items/M26.06.md"
+  },
+  {
     "topicId": "M02.06",
     "source": "ebook/curriculum/M02/M02.06.md",
     "title": "고윳값·안정성·오차 전파의 직관",
@@ -2448,10 +2462,10 @@ export const legacyRevisions: LegacyRevision[] = [
   {
     "source": "ebook/book/06_sim2real_deployment/chapter.md",
     "baselineSha256": "63e21fba7a365699ea09d4be5e25675e0f9ac0c8d856e41a00bd9d8d7157d971",
-    "sha256": "ab676c5dc8141a051623cb8b5b9edd2331605d4751e0b3645ca5dc625300a3c7",
+    "sha256": "82cce87a8b5258eff9c1126ef1bb9e7b7f16fe6adb2eddbb4310305f5266b180",
     "approved": true,
-    "reason": "E1에서 기존 06장으로 선수·실습범위·오개념 연결 보강 / E2: ROS・기구학・제어・모델 선수/후속 연결 및 관련 개념·실행 전제 보완 / E3: 시뮬레이션·학습·비전·카메라/시간 기초의 연결 및 독립검토된 개념/그림 조건 정정 / E4: 로봇팔·데이터·정책·배포·캡스톤 선수/후속과 교육용 계산·실행·안전 계약 보완 / E5: 모바일 경로·시뮬레이터 구분·map/odom/base·계획/미션·주행-조작 연결 보완 / M31.06: host/target·native환경과정확변경/대상권한·현재관측/롤백구분 연결 / M34.01: 수신/원본시각·현재/마지막값·이벤트순서와관제근거 연결 / M34.02: 장면의 좌표·시각·버전 정합과 현재 미확인 연결 / M34.03: 요청·취소·소프트웨어 결과와 물리 관측/감사 연결 / M26.01: 임베디드 요구/HSI·형상 조합과 제공/실물 검증 범위 연결 / M26.02: IMU 추정/필터 주기·국소 제어 부호/포화와 실제 전력·균형 검증 범위 연결 / M26.03: 보드 전원/논리/버스·라이브러리/핀과 ERC/DRC·실물 검증 범위 연결 / M26.05: UI요청/표시와 접수/원본clock·지연분모/물리성과 연결",
-    "evidenceRef": "doc/v2/work_items/M26.05.md"
+    "reason": "E1에서 기존 06장으로 선수·실습범위·오개념 연결 보강 / E2: ROS・기구학・제어・모델 선수/후속 연결 및 관련 개념·실행 전제 보완 / E3: 시뮬레이션·학습·비전·카메라/시간 기초의 연결 및 독립검토된 개념/그림 조건 정정 / E4: 로봇팔·데이터·정책·배포·캡스톤 선수/후속과 교육용 계산·실행·안전 계약 보완 / E5: 모바일 경로·시뮬레이터 구분·map/odom/base·계획/미션·주행-조작 연결 보완 / M31.06: host/target·native환경과정확변경/대상권한·현재관측/롤백구분 연결 / M34.01: 수신/원본시각·현재/마지막값·이벤트순서와관제근거 연결 / M34.02: 장면의 좌표·시각·버전 정합과 현재 미확인 연결 / M34.03: 요청·취소·소프트웨어 결과와 물리 관측/감사 연결 / M26.01: 임베디드 요구/HSI·형상 조합과 제공/실물 검증 범위 연결 / M26.02: IMU 추정/필터 주기·국소 제어 부호/포화와 실제 전력·균형 검증 범위 연결 / M26.03: 보드 전원/논리/버스·라이브러리/핀과 ERC/DRC·실물 검증 범위 연결 / M26.05: UI요청/표시와 접수/원본clock·지연분모/물리성과 연결 / M26.06: 임베디드제공사례/성능·실패/물리분모·재현/미해결범위와영상선택편향정정",
+    "evidenceRef": "doc/v2/work_items/M26.06.md"
   },
   {
     "source": "ebook/book/06_sim2real_deployment/code/safety_supervisor.py",
@@ -2914,7 +2928,7 @@ export const legacyExerciseReferences: DerivedReference[] = [
   {
     "activityId": "legacy:exercise:06_sim2real_deployment--chapter-15-q6",
     "baselineSha256": "11df136dad6be283c45901cc1e17cbdcd949f16aa898a9773ede517812553505",
-    "sha256": "392fd7671ca18d01a4b72ed019787c1407a1e23675008872329b20177524054c",
+    "sha256": "6dc56e8466c60eb9afbd715b2854f745cd3bc8f023337cb9f1497972e331a79c",
     "approved": true
   },
   {
