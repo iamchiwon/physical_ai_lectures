@@ -1724,6 +1724,20 @@ export const authoredMetadata: AuthoredMetadata[] = [
     "evidenceRef": "doc/v2/work_items/M25.04.md"
   },
   {
+    "topicId": "M25.05",
+    "source": "ebook/curriculum/M25/M25.05.md",
+    "title": "Replicator·조명/재질/카메라 랜덤화·합성 라벨",
+    "objectives": [
+      "Replicator의 랜덤화·캡처·annotator·writer 역할과 의미를 보존하는 생성 계약을 설계한다.",
+      "합성 생성 manifest에서 채널 완전성·클래스 사전·경계상자·깊이 규약과 동일 capture 정합성을 검사한다.",
+      "자산 단위 분할과 실패/누락 보존을 적용하고 생성 품질·모델 성능·실물 일반화를 구분한다."
+    ],
+    "prerequisiteNote": "M25.04의 고정조건/미사용 평가가 선수다. 카메라 기하와 데이터 분할은 M12.02·M20.03/.06으로 보충한다. 합성 생성 계획과 기록을 분석하며 실제 Replicator/GPU·이미지 생성·학습/실물 평가를 실행하지 않는다. 일반 언어/문법은 제외한다.",
+    "sha256": "a008578af78cc36019e55537476af1065af9dfc43da95bded1d90e35512d24e7",
+    "reviewed": true,
+    "evidenceRef": "doc/v2/work_items/M25.05.md"
+  },
+  {
     "topicId": "M27.01",
     "source": "ebook/curriculum/M27/M27.01.md",
     "title": "Raspberry Pi·엣지 컴퓨팅·메모리·전력 제약",
@@ -2156,10 +2170,10 @@ export const legacyRevisions: LegacyRevision[] = [
   {
     "source": "ebook/book/04_sensor_data_pipeline/chapter.md",
     "baselineSha256": "69a8cf6f0e2f6e584bda629d3a17fbbe37f75ec024eab2237847807a2a3796fa",
-    "sha256": "c2c2b572effac063e07f1d52df2d724c25a91c8bf832fa597fbbdca900171c8b",
+    "sha256": "7882b1242d5f0972bd575651ffaf0b403de55da54301ad8c8c0d15128654848c",
     "approved": true,
-    "reason": "E1에서 기존 04장으로 선수·실습범위·오개념 연결 보강 / E2: ROS・기구학・제어・모델 선수/후속 연결 및 관련 개념·실행 전제 보완 / E3: 시뮬레이션·학습·비전·카메라/시간 기초의 연결 및 독립검토된 개념/그림 조건 정정 / E4: 로봇팔·데이터·정책·배포·캡스톤 선수/후속과 교육용 계산·실행·안전 계약 보완 / E5: 모바일 경로·시뮬레이터 구분·map/odom/base·계획/미션·주행-조작 연결 보완 / E5 후속: 공유 TF와 로봇별 토픽·버퍼 격리 대안 및 외부 결합 계약 구분 / W02 M14.02: 센서별 측정량·단위·장착점/시각 계약과 신규 기초 원고 연결",
-    "evidenceRef": "doc/v2/work_items/M14.02.md"
+    "reason": "E1에서 기존 04장으로 선수·실습범위·오개념 연결 보강 / E2: ROS・기구학・제어・모델 선수/후속 연결 및 관련 개념·실행 전제 보완 / E3: 시뮬레이션·학습·비전·카메라/시간 기초의 연결 및 독립검토된 개념/그림 조건 정정 / E4: 로봇팔·데이터·정책·배포·캡스톤 선수/후속과 교육용 계산·실행·안전 계약 보완 / E5: 모바일 경로·시뮬레이터 구분·map/odom/base·계획/미션·주행-조작 연결 보완 / E5 후속: 공유 TF와 로봇별 토픽·버퍼 격리 대안 및 외부 결합 계약 구분 / W02 M14.02: 센서별 측정량·단위·장착점/시각 계약과 신규 기초 원고 연결 / M25.05: 동봉랜덤화코드의 고정camera/실제채널범위와 원본자산분할·라벨완전성 정정/연결",
+    "evidenceRef": "doc/v2/work_items/M25.05.md"
   },
   {
     "source": "ebook/book/04_sensor_data_pipeline/exercises/solutions.md",
@@ -2462,7 +2476,7 @@ export const legacyExerciseReferences: DerivedReference[] = [
   {
     "activityId": "legacy:exercise:04_sensor_data_pipeline--chapter-15-q10",
     "baselineSha256": "63c1eb1e5561244715ea76536cb3123f90b3c81c9bd56c3449feea4f20be1cb5",
-    "sha256": "ced371ba6ab204ad5a42c7b95dd70ec550ee2f9ec3eea6e8dc4fb1a5dc937452",
+    "sha256": "134bb0415fd60d4ccd5f892d3857d02d66e0322a575f2fac158871b11a6d1e07",
     "approved": true
   },
   {
