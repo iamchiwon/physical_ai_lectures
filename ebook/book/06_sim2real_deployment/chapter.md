@@ -175,6 +175,8 @@ ACT는 action chunking과 temporal ensembling으로 모방학습의 누적 오�
 
 ## 6.4 안전 배포 감독기
 
+[M31.06 시뮬레이션·Pi 연결과 실물 변경 범위](/study/unit-m31-06-a/)에서 빌드호스트/대상·native호환, 정확한 변경묶음/장치/동작 승인과 현재 상태 관문을 대조한다. 연결/ack·시뮬레이션 통과와 실제 정지/작업 검증, 코드 롤백과 물리 상태 복원은 별도 근거다.
+
 ![그림 6-2. Dry-run에서 정상 운전까지 단계적 승격](images/deployment_promotion_ladder.svg)
 
 ### 6.4.1 승격 상태
