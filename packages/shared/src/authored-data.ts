@@ -1934,6 +1934,20 @@ export const authoredMetadata: AuthoredMetadata[] = [
     "evidenceRef": "doc/v2/work_items/M31.05.md"
   },
   {
+    "topicId": "M31.06",
+    "source": "ebook/curriculum/M31/M31.06.md",
+    "title": "Isaac Sim·Raspberry Pi 연결·실물 변경 승인",
+    "objectives": [
+      "시뮬레이터 호스트와 Pi노드의 역할·Python/native 빌드/런타임·데이터/시간 계약을 대조한다.",
+      "합성 변경묶음·장치·동작 범위와 현재 전제를 비교해 승인 범위 일치와 실행 불가 원인을 판정한다.",
+      "연결/명령/관측·중단/롤백의 근거를 분리하고 실제 확인/미확인과 다음 재검수를 기록한다."
+    ],
+    "prerequisiteNote": "M31.05의 권한·현재 산출물 인수가 선수다. M27의 엣지/장치 환경, M30의 배포/복구, M25.06의 전송/관측을 복습한다. 합성 호환표/승인기록을 분석하며 실제 설치·장치 연결/승인 발급·배포나 모터 실행은 하지 않는다. Python/C/C++ 문법은 제외하고 AI/로봇 실행 환경·wheel/ABI·CMake 도구 선수만 다룬다.",
+    "sha256": "bf09ded33ffa550f08a44930a063c44421fee3eb1ba49837d8f7655f1d7912f5",
+    "reviewed": true,
+    "evidenceRef": "doc/v2/work_items/M31.06.md"
+  },
+  {
     "topicId": "M32.01",
     "source": "ebook/curriculum/M32/M32.01.md",
     "title": "모바일 배달·동적 장애물·언어 미션",
@@ -2238,10 +2252,10 @@ export const legacyRevisions: LegacyRevision[] = [
   {
     "source": "ebook/book/06_sim2real_deployment/chapter.md",
     "baselineSha256": "63e21fba7a365699ea09d4be5e25675e0f9ac0c8d856e41a00bd9d8d7157d971",
-    "sha256": "6605c2a8d8cd8519cc195055c720259b1806a322dbd0f3ba83257d00eebcec10",
+    "sha256": "655609abfd752718fab43d86c73108cb19bf6997eff78a80da8b29dbd677a63e",
     "approved": true,
-    "reason": "E1에서 기존 06장으로 선수·실습범위·오개념 연결 보강 / E2: ROS・기구학・제어・모델 선수/후속 연결 및 관련 개념·실행 전제 보완 / E3: 시뮬레이션·학습·비전·카메라/시간 기초의 연결 및 독립검토된 개념/그림 조건 정정 / E4: 로봇팔·데이터·정책·배포·캡스톤 선수/후속과 교육용 계산·실행·안전 계약 보완 / E5: 모바일 경로·시뮬레이터 구분·map/odom/base·계획/미션·주행-조작 연결 보완",
-    "evidenceRef": "doc/v2/work_items/E5-review.md"
+    "reason": "E1에서 기존 06장으로 선수·실습범위·오개념 연결 보강 / E2: ROS・기구학・제어・모델 선수/후속 연결 및 관련 개념·실행 전제 보완 / E3: 시뮬레이션·학습·비전·카메라/시간 기초의 연결 및 독립검토된 개념/그림 조건 정정 / E4: 로봇팔·데이터·정책·배포·캡스톤 선수/후속과 교육용 계산·실행·안전 계약 보완 / E5: 모바일 경로·시뮬레이터 구분·map/odom/base·계획/미션·주행-조작 연결 보완 / M31.06: host/target·native환경과정확변경/대상권한·현재관측/롤백구분 연결",
+    "evidenceRef": "doc/v2/work_items/M31.06.md"
   },
   {
     "source": "ebook/book/06_sim2real_deployment/code/safety_supervisor.py",
@@ -2660,85 +2674,85 @@ export const legacyExerciseReferences: DerivedReference[] = [
   {
     "activityId": "legacy:exercise:06_sim2real_deployment--chapter-15-q1",
     "baselineSha256": "b72348ed31c2da0784960c1e48c70c50b476be12bc59356f46f330c42d2dffb2",
-    "sha256": "130937d654dd44e7b2794a09d9cbdd56e4476a50211a18675d852b60809088cd",
+    "sha256": "7f492c4ec7e5f5cac1d39d69f3c844576f99ccd467648beccb88a6d6783f736c",
     "approved": true
   },
   {
     "activityId": "legacy:exercise:06_sim2real_deployment--chapter-15-q2",
     "baselineSha256": "538bd9b19d59d0a13bcdd06583a5832fa158781f7a81037373dc1ec62b0e6189",
-    "sha256": "e6942e971ac41804385ae08b77147c3dd7aebcd79d388637d145850cd080bdcc",
+    "sha256": "3e7cc7c3042455fd9d7cedfb0c60ce9b394fb31deaa754e8f17e1d42bfba97cc",
     "approved": true
   },
   {
     "activityId": "legacy:exercise:06_sim2real_deployment--chapter-15-q3",
     "baselineSha256": "ea2f6042cdc4e7ef4a47d4251ced9127113b2254323f5d8e601aadc902a80f00",
-    "sha256": "23a01926b62f09e197674c409a8a0929665bfa639e36fe062bde06670e9c2cac",
+    "sha256": "a6d1dc11cbdc3b07a9a72ec5de3dfc5de0ce79012f6da706a5d816108df66de1",
     "approved": true
   },
   {
     "activityId": "legacy:exercise:06_sim2real_deployment--chapter-15-q4",
     "baselineSha256": "1d248a19d5f8c87c928950261ceff406151c0c39e3401a966195c443e830957d",
-    "sha256": "94e438b48f27a512d0fc3d6ba23fa4c89105d557013c4b15ed995804685ba912",
+    "sha256": "923e658528919471249439657c5f155c6c4300cb57460a3943d5449cf4b4a2ea",
     "approved": true
   },
   {
     "activityId": "legacy:exercise:06_sim2real_deployment--chapter-15-q5",
     "baselineSha256": "256cb8a8ea9b762b5c188978ac7f02265bcacb4e5c45c3093acfa126f8d44868",
-    "sha256": "c0c4c3e55e1a9de674ca61d8ac645a0f6eb250696852fa66ab15dd27be352a60",
+    "sha256": "f74c0942134bc98df70602152294e65b77690d5198a883f69aefc3a0dc486d05",
     "approved": true
   },
   {
     "activityId": "legacy:exercise:06_sim2real_deployment--chapter-15-q6",
     "baselineSha256": "11df136dad6be283c45901cc1e17cbdcd949f16aa898a9773ede517812553505",
-    "sha256": "ca33960891539fe7a67777da83b2e169b04c7cbf4aeaeb421f0aa81ca325cd0f",
+    "sha256": "392fd7671ca18d01a4b72ed019787c1407a1e23675008872329b20177524054c",
     "approved": true
   },
   {
     "activityId": "legacy:exercise:06_sim2real_deployment--chapter-15-q7",
     "baselineSha256": "0cd5dcf962cb75732c1efc3694543bbda9ceabeded4135b7c9b7f476289e912e",
-    "sha256": "fe278df9d40d50acf56b3a8a2289e3d584d404f0fe1ab953dcf223913edcaade",
+    "sha256": "fec14d23e6547eacda003dd30a57fe60dc2f825c4ec6912000ce4ba666e5da0a",
     "approved": true
   },
   {
     "activityId": "legacy:exercise:06_sim2real_deployment--chapter-15-q8",
     "baselineSha256": "a5cb1330cf26754ea52387f391e6169f247722d784aa4c970b9400b791bbd6f7",
-    "sha256": "5025b6142c01d4d53fd0f9df772dfd8f2767024c2f5cd5f0555e449e73cf4025",
+    "sha256": "e78d350b1536e6e1e1fc88d713a08ca78a35daa9e868eb246169d1252e94194b",
     "approved": true
   },
   {
     "activityId": "legacy:exercise:06_sim2real_deployment--chapter-15-q9",
     "baselineSha256": "59b478bbfd30d6a0dcd5403c7dbf6af9087af582cd6fbe710ada483cb852d108",
-    "sha256": "4ce9badc9fd84792cd45e08922edf2013f462199c14c0d25536cfb656f2fef60",
+    "sha256": "bbbfdfed04c394fb5f76eab703acbf53f32da46e2767731e4dfb42e6fefd2f60",
     "approved": true
   },
   {
     "activityId": "legacy:exercise:06_sim2real_deployment--chapter-15-q10",
     "baselineSha256": "244c20e0271b2db43e0f2ee670129a19c84e38bf4ad357054ccfb04bbd0a071e",
-    "sha256": "5d2bcb606c11487e20754ba3d27d35dfe47c777a7a1c5702381a03866d041e87",
+    "sha256": "438e9ddd76fd7aeac04725642acd1cc27adf7f0d3702f90554db07f6d0579a11",
     "approved": true
   },
   {
     "activityId": "legacy:exercise:06_sim2real_deployment--chapter-16-report",
     "baselineSha256": "c627a6b9ff327734578dfe8f67ed846c3e294fcea5c871cf551b08d4b8a4df2d",
-    "sha256": "e2815404afefae7a9410e37003c9080485c64021aa415f8d68eba75e1f347302",
+    "sha256": "831bf3e144404c43cc5b0ed2196fc5f6e08436921850b7e7e31c1295a60040db",
     "approved": true
   },
   {
     "activityId": "legacy:exercise:06_sim2real_deployment--labs--lab_6_1_diagnostics-1-report",
     "baselineSha256": "c627a6b9ff327734578dfe8f67ed846c3e294fcea5c871cf551b08d4b8a4df2d",
-    "sha256": "e2815404afefae7a9410e37003c9080485c64021aa415f8d68eba75e1f347302",
+    "sha256": "831bf3e144404c43cc5b0ed2196fc5f6e08436921850b7e7e31c1295a60040db",
     "approved": true
   },
   {
     "activityId": "legacy:exercise:06_sim2real_deployment--labs--lab_6_2_supervisor-1-report",
     "baselineSha256": "c627a6b9ff327734578dfe8f67ed846c3e294fcea5c871cf551b08d4b8a4df2d",
-    "sha256": "e2815404afefae7a9410e37003c9080485c64021aa415f8d68eba75e1f347302",
+    "sha256": "831bf3e144404c43cc5b0ed2196fc5f6e08436921850b7e7e31c1295a60040db",
     "approved": true
   },
   {
     "activityId": "legacy:exercise:06_sim2real_deployment--labs--lab_6_3_ros2_guard-1-report",
     "baselineSha256": "c627a6b9ff327734578dfe8f67ed846c3e294fcea5c871cf551b08d4b8a4df2d",
-    "sha256": "e2815404afefae7a9410e37003c9080485c64021aa415f8d68eba75e1f347302",
+    "sha256": "831bf3e144404c43cc5b0ed2196fc5f6e08436921850b7e7e31c1295a60040db",
     "approved": true
   }
 ];
