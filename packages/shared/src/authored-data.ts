@@ -2200,6 +2200,20 @@ export const authoredMetadata: AuthoredMetadata[] = [
     "evidenceRef": "doc/v2/work_items/M26.03.md"
   },
   {
+    "topicId": "M26.04",
+    "source": "ebook/curriculum/M26/M26.04.md",
+    "title": "기구 CAD·무게중심·조립·공차",
+    "objectives": [
+      "파라미터/구속·부품/조립·좌표/질량 근거를 나누어 CAD 검토 흐름을 설명한다.",
+      "같은 좌표계의 합성 무게중심을 계산하고 지그/실제 접촉의 정적 판정 범위를 구분한다.",
+      "치수 공차의 총유격 구간·변형과 변경 영향을 계산해 조립/검증의 미확인을 기록한다."
+    ],
+    "prerequisiteNote": "M26.03의 보드/핀·형상/미확인 검토가 선수다. 기존2.7 COM/관성을 연결하되 CAD/조립/공차의 제공 자료 분석을 보충한다. 언어 문법 없이 종이 계산/개념도를 사용한다. 실제 CAD/구조해석·제조/조립/계측·동적 균형/장비 실증은 수행하지 않는다.",
+    "sha256": "482638a24852a6398321148eceed94a60f408884a8430d877c3a43490ff10621",
+    "reviewed": true,
+    "evidenceRef": "doc/v2/work_items/M26.04.md"
+  },
+  {
     "topicId": "M02.06",
     "source": "ebook/curriculum/M02/M02.06.md",
     "title": "고윳값·안정성·오차 전파의 직관",
@@ -2348,10 +2362,10 @@ export const legacyRevisions: LegacyRevision[] = [
   {
     "source": "ebook/book/02_physx_simulation/chapter.md",
     "baselineSha256": "a21459dc9d4dd74be968ed41bcc237d55d1e56f5bf0d3d5b151da99e48011c40",
-    "sha256": "3552cfcc20a5ee5a6bebcb7e754dd9758dbd4676976bec0a479b2f6cbea206ed",
+    "sha256": "7f767943b4c43f4388fdbb0ae4d6be9efa3f9a4a87c8a3d61a3883e0943271a8",
     "approved": true,
-    "reason": "E1에서 기존 02장으로 선수·실습범위·오개념 연결 보강 / latest를 재현 가능한 고정버전 안내로 정정 / 수학브리지독립검수: Euler 고정축적용xyz와행렬곱RzRyRx 용어정정·실행수식/함수명보존 / 짐벌락정확특이점과근처조건악화구분 / E2: ROS・기구학・제어・모델 선수/후속 연결 및 관련 개념·실행 전제 보완 / E3: 시뮬레이션·학습·비전·카메라/시간 기초의 연결 및 독립검토된 개념/그림 조건 정정 / E4: 로봇팔·데이터·정책·배포·캡스톤 선수/후속과 교육용 계산·실행·안전 계약 보완 / E5: 모바일 경로·시뮬레이터 구분·map/odom/base·계획/미션·주행-조작 연결 보완 / M25.01: 자산 계층·참조 단위 보정과 정적/동적/실물 검수 범위 연결 / M25.03: 충돌후보/접촉/보고·그룹/개별제외·시각 정렬 연결 / M25.04: force/acceleration·포화/분리보정·미사용평가 연결",
-    "evidenceRef": "doc/v2/work_items/M25.04.md"
+    "reason": "E1에서 기존 02장으로 선수·실습범위·오개념 연결 보강 / latest를 재현 가능한 고정버전 안내로 정정 / 수학브리지독립검수: Euler 고정축적용xyz와행렬곱RzRyRx 용어정정·실행수식/함수명보존 / 짐벌락정확특이점과근처조건악화구분 / E2: ROS・기구학・제어・모델 선수/후속 연결 및 관련 개념·실행 전제 보완 / E3: 시뮬레이션·학습·비전·카메라/시간 기초의 연결 및 독립검토된 개념/그림 조건 정정 / E4: 로봇팔·데이터·정책·배포·캡스톤 선수/후속과 교육용 계산·실행·안전 계약 보완 / E5: 모바일 경로·시뮬레이터 구분·map/odom/base·계획/미션·주행-조작 연결 보완 / M25.01: 자산 계층·참조 단위 보정과 정적/동적/실물 검수 범위 연결 / M25.03: 충돌후보/접촉/보고·그룹/개별제외·시각 정렬 연결 / M25.04: force/acceleration·포화/분리보정·미사용평가 연결 / M26.04: COM높이의정적지지조건과 CAD/실제접촉·조립/공차·형상 연결",
+    "evidenceRef": "doc/v2/work_items/M26.04.md"
   },
   {
     "source": "ebook/book/02_physx_simulation/code/transforms.py",
@@ -2538,7 +2552,7 @@ export const legacyExerciseReferences: DerivedReference[] = [
   {
     "activityId": "legacy:exercise:02_physx_simulation--chapter-18-q9",
     "baselineSha256": "50bfcac7c1440f01c08887816b64e5d9ca9f7d6d9a4d2b9004496489e97019a9",
-    "sha256": "a3fe470d3dcdfb418f03aaa227243a716b698ba055f973659e8971aa3de78720",
+    "sha256": "db059ec05c63eaf8666028881c15974fd7c162b027239d5e755e2d88a2ebc971",
     "approved": true
   },
   {
@@ -2551,6 +2565,12 @@ export const legacyExerciseReferences: DerivedReference[] = [
     "activityId": "legacy:exercise:02_physx_simulation--exercises--problem_set-1-q4",
     "baselineSha256": "62df5206b8b78715573634f7d98939981f622c72d9128994dc3516195f8678cb",
     "sha256": "e5f2c8bddef3bf996331ef6aabe0a4b0207355fc2bf47463191d28bfdd94c230",
+    "approved": true
+  },
+  {
+    "activityId": "legacy:exercise:02_physx_simulation--exercises--problem_set-1-q7",
+    "baselineSha256": "b365e1123062125696ef3a41deaa6f23b2923463fa5a9610e093c355ce387861",
+    "sha256": "033d0d9b5692086edb214bdbdc7a1fb2c537277026d4838e1a204078d40f0c38",
     "approved": true
   },
   {
