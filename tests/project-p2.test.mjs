@@ -58,3 +58,28 @@ test('P2 CLI preserves inputs and reports and rejects malformed, partial or mism
   const book=JSON.parse(fs.readFileSync(path.join(dir,'cases.json')));book.schema_version=true;fs.writeFileSync(input,JSON.stringify(book));assert.equal(run(['--cases',input]).status,2,'boolean schema is not integer version 1');
  }finally{fs.rmSync(temp,{recursive:true,force:true});}
 });
+
+test('P2 archive matches the exact reviewed thirteen source files while P1 revision remains unchanged',()=>{
+ const manifest=JSON.parse(fs.readFileSync('apps/web/public/project-starters/P2.json')),zip=fs.readFileSync('apps/web/public/project-starters/P2.zip'),metadata=JSON.parse(fs.readFileSync('apps/web/src/lib/p2-starter-data.json')),registry=JSON.parse(fs.readFileSync('doc/v2/inventory/project-reviews.json'));
+ assert.equal(manifest.projectId,'P2');assert.equal(manifest.files.length,13);assert.equal(manifest.bundleSha256,hash(zip));assert.equal(metadata.revision,'sha256:'+hash(zip));assert.equal(registry.projects.P2.bundleSha256,hash(zip));
+ for(const entry of manifest.files){const raw=fs.readFileSync(path.join(root,'examples',entry.path));assert.equal(entry.sha256,hash(raw));assert.equal(entry.bytes,raw.length);}
+ const r=probe(`import zipfile,pathlib\nz=zipfile.ZipFile(${JSON.stringify(path.join(root,'apps/web/public/project-starters/P2.zip'))})\nassert z.testzip() is None\nprint(json.dumps({'names':z.namelist(),'same':all(z.read(n)==(pathlib.Path(${JSON.stringify(path.join(root,'examples'))})/n).read_bytes() for n in z.namelist())}))`);assert.deepEqual(r.names,manifest.files.map(f=>f.path));assert.equal(r.same,true);
+ assert.equal(hash(fs.readFileSync('apps/web/public/project-starters/P1.zip')),'7349c4a732c13e00738185b55581e52aefd55b4a386f59a19c4dae329540e5bb');
+});
+
+test('P2 stale, missing or out-of-scope review cannot change either published bundle',()=>{
+ const fixture=fs.mkdtempSync(path.join(os.tmpdir(),'p2-publication-'));try{
+  fs.mkdirSync(path.join(fixture,'scripts'),{recursive:true});fs.mkdirSync(path.join(fixture,'apps/web/src/lib'),{recursive:true});fs.mkdirSync(path.join(fixture,'doc/v2/inventory'),{recursive:true});for(const id of ['P1','P2'])fs.cpSync(path.join(root,'examples',id),path.join(fixture,'examples',id),{recursive:true});fs.copyFileSync('scripts/prepare-projects.mjs',path.join(fixture,'scripts/prepare-projects.mjs'));fs.writeFileSync(path.join(fixture,'evidence.md'),'fixture review');
+  const registry=JSON.parse(fs.readFileSync('doc/v2/inventory/project-reviews.json'));for(const row of Object.values(registry.projects))row.evidenceRef='evidence.md';const registryPath=path.join(fixture,'doc/v2/inventory/project-reviews.json');fs.writeFileSync(registryPath,JSON.stringify(registry));const prepare=(args=[])=>spawnSync(process.execPath,[path.join(fixture,'scripts/prepare-projects.mjs'),...args],{encoding:'utf8'});assert.equal(prepare().status,0);
+  const outputs=['P1.zip','P1.json','P2.zip','P2.json'].map(name=>path.join(fixture,'apps/web/public/project-starters',name)),before=outputs.map(p=>fs.readFileSync(p)),source=path.join(fixture,'examples/P2/runner.py'),raw=fs.readFileSync(source);fs.appendFileSync(source,'\n# stale review\n');assert.notEqual(prepare().status,0);outputs.forEach((p,i)=>assert.deepEqual(fs.readFileSync(p),before[i]));
+  assert.equal(prepare(['--inspect','P2']).status,0);outputs.forEach((p,i)=>assert.deepEqual(fs.readFileSync(p),before[i]));fs.writeFileSync(source,raw);fs.unlinkSync(path.join(fixture,'evidence.md'));assert.notEqual(prepare().status,0);outputs.forEach((p,i)=>assert.deepEqual(fs.readFileSync(p),before[i]));
+  fs.writeFileSync(path.join(fixture,'evidence.md'),'fixture review');registry.projects.P3=registry.projects.P2;fs.writeFileSync(registryPath,JSON.stringify(registry));assert.notEqual(prepare().status,0);outputs.forEach((p,i)=>assert.deepEqual(fs.readFileSync(p),before[i]));
+ }finally{fs.rmSync(fixture,{recursive:true,force:true});}
+});
+
+test('P2 web guide uses its own commands evidence IDs and prerequisite-bounded AI destinations',async()=>{
+ const {build}=await import('esbuild');const bundle=await build({stdin:{contents:'export {learningProjects} from "./apps/web/src/lib/learning-projects.ts";export {projectExecutionGuides} from "./apps/web/src/lib/project-execution.ts";',resolveDir:root},bundle:true,platform:'node',format:'esm',write:false});const c=await import('data:text/javascript;base64,'+Buffer.from(bundle.outputFiles[0].text).toString('base64'));
+ assert.equal(c.learningProjects.find(p=>p.id==='P2').starter.href,'/project-starters/P2.zip');assert.deepEqual(c.projectExecutionGuides.P2.evidence.map(e=>e.id),['inputs','states','failures','scope']);assert.deepEqual(c.projectExecutionGuides.P1.evidence.map(e=>e.id),['inputs','failures','feedback','scope']);assert.ok(c.projectExecutionGuides.P2.commands.includes('--scenario temporary-block'));assert.ok(!c.projectExecutionGuides.P2.commands.includes('frames.json'));assert.ok(c.projectExecutionGuides.P2.description.includes('실제 ROS/Nav2'));
+ for(const id of ['P3','P4'])assert.equal(c.learningProjects.find(p=>p.id===id).starter,null);
+ assert.deepEqual(c.projectExecutionGuides.P2.aiLinks.map(l=>l.href),['/study/unit-m09-04-a/?track=track-main','/study/unit-m18-04-a/?track=track-main']);
+});
