@@ -753,7 +753,7 @@ export const authoredMetadata: AuthoredMetadata[] = [
       "거리별 누락·오검출·위치 오차와 ID품질을 나누어 추적 결과의 한계와 평가 근거를 설명한다."
     ],
     "prerequisiteNote": "M13.05의 깊이/품질과 앞선 프레임·점군을 연결한다. M12.05의2D추적을 보충으로 읽을 수 있다. 일반 코딩·문법·학습 기반3D검출·Kalman/EKF·설치는 요구하지 않는다. 관측과 속도가 주어진 합성 기록으로 계산하며 실제 추적기/장비 성능과 구분한다.",
-    "sha256": "6538430f4dcd9a1ac714055794ea1ada5412b7788889c710f00ed63f85b8a3ce",
+    "sha256": "5787131cfdcd335b4bb1da1f4c3bc374cf4870869f2f5202ec043f0afe54e434",
     "reviewed": true,
     "evidenceRef": "doc/v2/work_items/M13.06.md"
   },
