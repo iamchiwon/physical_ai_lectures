@@ -772,6 +772,20 @@ export const authoredMetadata: AuthoredMetadata[] = [
     "evidenceRef": "doc/v2/work_items/M14.02.md"
   },
   {
+    "topicId": "M14.04",
+    "source": "ebook/curriculum/M14/M14.04.md",
+    "title": "Kalman/EKF·관측 모델·공분산·센서 가중치",
+    "objectives": [
+      "상태와 관측 모델의 역할, P/Q/R의 단위와 가정을 구분하고 잘못된 공분산·중복 정보를 진단한다.",
+      "선형 스칼라 필터의 예측·혁신·가중 갱신을 계산하고 관측 신뢰도·누락·이상치에 따른 처리를 비교한다.",
+      "EKF의 관측 함수와 Jacobian을 작은 거리 예제로 해석하고 선형화·초기값·모호성 및 확신의 한계를 설명한다."
+    ],
+    "prerequisiteNote": "M14.03의 시각/관측 계약과 M02.04의 분산·공분산을 사용한다. 미분/Jacobian은 예제에서 풀이한다. M14.02의 센서별 입력 계약은 보충으로 연결한다. 일반 코딩·문법·FilterPy/ROS 설치나 실제 필터 실행은 필요 없으며 합성 모델을 손계산한다.",
+    "sha256": "02d355da05fadf12eb34005e3a30e4c282ceea18835e3af59fc446c974909fec",
+    "reviewed": true,
+    "evidenceRef": "doc/v2/work_items/M14.04.md"
+  },
+  {
     "topicId": "M06.05",
     "source": "ebook/curriculum/M06/M06.05.md",
     "title": "차동·옴니·메카넘 순/역운동학",
