@@ -2172,6 +2172,20 @@ export const authoredMetadata: AuthoredMetadata[] = [
     "evidenceRef": "doc/v2/work_items/M26.01.md"
   },
   {
+    "topicId": "M26.02",
+    "source": "ebook/curriculum/M26/M26.02.md",
+    "title": "IMU·모터 드라이버·센서 필터·균형 제어",
+    "objectives": [
+      "IMU의 각속도/가속도와 기울기 추정·bias/동적 오염·필터 주기의 영향을 구분한다.",
+      "가상 국소 균형 모형의 피드백 부호·근과 포화/지연에 따른 해석 범위를 계산한다.",
+      "센서 유효성·driver/출력 제한·차단 정책과 실제 물리 결과를 나눈 계약을 작성한다."
+    ],
+    "prerequisiteNote": "M26.01의 요구/HSI·주기/마감, M07의 샘플링/피드백과 M04의 단위/오류 계약을 연결한다. 일반 언어 문법 없이 가상 필터/국소 모형을 종이로 계산한다. 실제 IMU/모터·펌웨어/시뮬레이터 실행, 2륜 동역학·균형 유지/안전 실증은 수행하지 않는다.",
+    "sha256": "23074e8eb53fbe5aabcf97ac9eaaa56510fb190cb3bb456adb38c96dbc8e423a",
+    "reviewed": true,
+    "evidenceRef": "doc/v2/work_items/M26.02.md"
+  },
+  {
     "topicId": "M02.06",
     "source": "ebook/curriculum/M02/M02.06.md",
     "title": "고윳값·안정성·오차 전파의 직관",
@@ -2392,10 +2406,10 @@ export const legacyRevisions: LegacyRevision[] = [
   {
     "source": "ebook/book/06_sim2real_deployment/chapter.md",
     "baselineSha256": "63e21fba7a365699ea09d4be5e25675e0f9ac0c8d856e41a00bd9d8d7157d971",
-    "sha256": "df15830e69ed9814fe4b7260628d4e1c6a16234cada67f8619f2103a0929bbb2",
+    "sha256": "b617ca47a66acd36937ed6c021b7949c6074edcb2481e2f01b9d48e49bc7e319",
     "approved": true,
-    "reason": "E1에서 기존 06장으로 선수·실습범위·오개념 연결 보강 / E2: ROS・기구학・제어・모델 선수/후속 연결 및 관련 개념·실행 전제 보완 / E3: 시뮬레이션·학습·비전·카메라/시간 기초의 연결 및 독립검토된 개념/그림 조건 정정 / E4: 로봇팔·데이터·정책·배포·캡스톤 선수/후속과 교육용 계산·실행·안전 계약 보완 / E5: 모바일 경로·시뮬레이터 구분·map/odom/base·계획/미션·주행-조작 연결 보완 / M31.06: host/target·native환경과정확변경/대상권한·현재관측/롤백구분 연결 / M34.01: 수신/원본시각·현재/마지막값·이벤트순서와관제근거 연결 / M34.02: 장면의 좌표·시각·버전 정합과 현재 미확인 연결 / M34.03: 요청·취소·소프트웨어 결과와 물리 관측/감사 연결 / M26.01: 임베디드 요구/HSI·형상 조합과 제공/실물 검증 범위 연결",
-    "evidenceRef": "doc/v2/work_items/M26.01.md"
+    "reason": "E1에서 기존 06장으로 선수·실습범위·오개념 연결 보강 / E2: ROS・기구학・제어・모델 선수/후속 연결 및 관련 개념·실행 전제 보완 / E3: 시뮬레이션·학습·비전·카메라/시간 기초의 연결 및 독립검토된 개념/그림 조건 정정 / E4: 로봇팔·데이터·정책·배포·캡스톤 선수/후속과 교육용 계산·실행·안전 계약 보완 / E5: 모바일 경로·시뮬레이터 구분·map/odom/base·계획/미션·주행-조작 연결 보완 / M31.06: host/target·native환경과정확변경/대상권한·현재관측/롤백구분 연결 / M34.01: 수신/원본시각·현재/마지막값·이벤트순서와관제근거 연결 / M34.02: 장면의 좌표·시각·버전 정합과 현재 미확인 연결 / M34.03: 요청·취소·소프트웨어 결과와 물리 관측/감사 연결 / M26.01: 임베디드 요구/HSI·형상 조합과 제공/실물 검증 범위 연결 / M26.02: IMU 추정/필터 주기·국소 제어 부호/포화와 실제 전력·균형 검증 범위 연결",
+    "evidenceRef": "doc/v2/work_items/M26.02.md"
   },
   {
     "source": "ebook/book/06_sim2real_deployment/code/safety_supervisor.py",
@@ -2858,7 +2872,7 @@ export const legacyExerciseReferences: DerivedReference[] = [
   {
     "activityId": "legacy:exercise:06_sim2real_deployment--chapter-15-q7",
     "baselineSha256": "0cd5dcf962cb75732c1efc3694543bbda9ceabeded4135b7c9b7f476289e912e",
-    "sha256": "e5f90e43c6b1f2bd972bb293b2e4f4f18c117fcbf7e7a500d45a507c0a232cd1",
+    "sha256": "71cd8a505a7e74b8e2e4c8e9aa98df61d32219a60981454684356fa2c0072244",
     "approved": true
   },
   {
