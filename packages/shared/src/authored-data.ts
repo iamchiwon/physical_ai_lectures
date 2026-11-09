@@ -1066,6 +1066,20 @@ export const authoredMetadata: AuthoredMetadata[] = [
     "evidenceRef": "doc/v2/work_items/M18.04.md"
   },
   {
+    "topicId": "M31.03",
+    "source": "ebook/curriculum/M31/M31.03.md",
+    "title": "실패 재현·로그·가설·수정·회귀 실험",
+    "objectives": [
+      "소스·입력·환경·시계/단위가 고정된 실패 재현 명세를 만들고 관측 사실과 반증 가능한 원인 가설을 구분한다.",
+      "작은 수정 전후에 같은 정상·경계·실패 사례를 비교하여 원래 기준의 회귀 결과와 입력/판정 보존을 확인한다.",
+      "AI도구가 제출한 차이·실행/검사 개수·산출물의 연결을 검토하고 완료·검증 실패·미확인 범위를 판정한다."
+    ],
+    "prerequisiteNote": "M31.01의 명세/완료 기준과 M31.02의 도구·사람 검토를 사용한다. 단위와 시계 개념은 아래 로그에서 보충한다. 일반 코딩·문법·특정 AI도구/ROS 설치를 요구하지 않으며 합성 기록을 분석한다. 실제 ROS버그 수정이나 실물 실행으로 해석하지 않는다.",
+    "sha256": "356ab21abf893d68ddb74ec2623b40a1f60822136a36f0808a48051bacca7ed0",
+    "reviewed": true,
+    "evidenceRef": "doc/v2/work_items/M31.03.md"
+  },
+  {
     "topicId": "M06.02",
     "source": "ebook/curriculum/M06/M06.02.md",
     "title": "DH 파라미터·정기구학·작업공간",

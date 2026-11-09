@@ -229,3 +229,9 @@ test('W02 authority covers only six classical perception and fusion gaps',()=>{
  const data={schemaVersion:1,topics:Object.fromEntries(registry.topicIds.map(id=>[id,review]))};assert.equal(Object.keys(mergeAuthoredReviews([{...registry,data}],known).topics).length,6);
  for(const id of ['M13.03','M13.04','M14.01','M14.03','M14.05','M14.06','M16.01','M31.01'])assert.throws(()=>mergeAuthoredReviews([{...registry,data:{schemaVersion:1,topics:{[id]:review}}}],known),/scope/);
 });
+
+test('W03 approval authority is limited to mobile reproduction and CI units',()=>{
+ const registry=authoredReviewRegistries.find(r=>r.file==='doc/v2/inventory/w03-reviews.json');
+ assert.deepEqual(registry.topicIds,['M31.03','M31.04']);
+ for(const topicId of ['M31.01','M31.02','M31.05','M31.06','M14.04','M34.01'])assert.ok(!registry.topicIds.includes(topicId));
+});
