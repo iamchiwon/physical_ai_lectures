@@ -207,7 +207,8 @@
     "svgTextFiles": 27,
     "videoAudioFiles": 0,
     "pdfEpubGenerated": false,
-    "deployed": false
+    "deployed": false,
+    "finalReview": "F06 passed; current artifacts only; future requested PDF/EPUB requires separate review"
   },
   "newManuscriptSpacingProof": [
     {
@@ -446,5 +447,6 @@
     "author self-review; no independent learner study",
     "basic synthetic data and equipment-free activities",
     "no GPU training commercial-tool or physical-device execution"
-  ]
+  ],
+  "uncheckedCurrentItems": 0
 }
