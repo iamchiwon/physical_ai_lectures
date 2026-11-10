@@ -2814,6 +2814,20 @@ export const authoredMetadata: AuthoredMetadata[] = [
     "sha256": "8c8165ca27a91a005dad56d8824f9da35aa9f6e2b4567c44271cef3cf9cda7ae",
     "reviewed": true,
     "evidenceRef": "doc/v2/work_items/M33.06.md"
+  },
+  {
+    "topicId": "M29.01",
+    "source": "ebook/curriculum/M29/M29.01.md",
+    "title": "차량 운동학·도로·차선·객체·의사결정",
+    "objectives": [
+      "차량 상태·도로/차선·인지/위치추정/계획/제어를 구분한다.",
+      "저속 bicycle 모형과 정지거리 예제를 계산한다.",
+      "ODD·의사결정 상태와 관측 부족/중단을 명세한다."
+    ],
+    "prerequisiteNote": "M07.05, M12.05, M13.04, M14.04, M15.06, M17.06의 개념을 사용한다. 필요한 새 용어·기호는 본문에서 정의한다. 일반 코딩 문법/실제 장비 설치를 요구하지 않으며 합성 자료로 기본 경로를 수행한다.",
+    "sha256": "898c090ef90b67d6132fc9bdd542c3d2a80788c6b0fa12ae5d6cb9b890046269",
+    "reviewed": true,
+    "evidenceRef": "doc/v2/work_items/M29.01.md"
   }
 ];
 export const legacyRevisions: LegacyRevision[] = [
