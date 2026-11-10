@@ -2368,6 +2368,20 @@ export const authoredMetadata: AuthoredMetadata[] = [
     "evidenceRef": "doc/v2/work_items/M13.04.md"
   },
   {
+    "topicId": "M14.05",
+    "source": "ebook/curriculum/M14/M14.05.md",
+    "title": "단일 모달과 다중 모달 3D Detection·융합 위치",
+    "objectives": [
+      "단일/다중 모달과 early/feature/late 융합을 구분한다.",
+      "시간·프레임·대응 오류가 융합 출력에 미치는 영향을 계산한다.",
+      "모달 누락과 상관오차를 포함한 비교 평가를 설계한다."
+    ],
+    "prerequisiteNote": "M14.04, M13.01의 개념을 사용한다. 필요한 새 용어·기호는 본문에서 정의한다. 일반 코딩 문법/실제 장비 설치를 요구하지 않으며 합성 자료로 기본 경로를 수행한다.",
+    "sha256": "779bfdb27509d0621f96a684d9fcae284461f2b15bd1aa179873b28b48ccd12d",
+    "reviewed": true,
+    "evidenceRef": "doc/v2/work_items/M14.05.md"
+  },
+  {
     "topicId": "M17.03",
     "source": "ebook/curriculum/M17/M17.03.md",
     "title": "PRM과 변형·연결성·샘플링",
