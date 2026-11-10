@@ -2676,6 +2676,20 @@ export const authoredMetadata: AuthoredMetadata[] = [
     "evidenceRef": "doc/v2/work_items/M24.03.md"
   },
   {
+    "topicId": "M24.04",
+    "source": "ebook/curriculum/M24/M24.04.md",
+    "title": "기준 자세·PD 제어·학습 정책 연결",
+    "objectives": [
+      "정책 위치 잔차와 PD·feedforward 토크의 역할을 구분한다.",
+      "기준 자세·측정 상태로 PD 출력과 제한을 계산한다.",
+      "주기/지연·gain/관절 매핑 불일치를 진단한다."
+    ],
+    "prerequisiteNote": "M24.03의 개념을 사용한다. 필요한 새 용어·기호는 본문에서 정의한다. 일반 코딩 문법/실제 장비 설치를 요구하지 않으며 합성 자료로 기본 경로를 수행한다.",
+    "sha256": "1c3a060e86f8f334e8a11f6f4ca7859cacb4d70d2992fceb4d75c796300ad2ed",
+    "reviewed": true,
+    "evidenceRef": "doc/v2/work_items/M24.04.md"
+  },
+  {
     "topicId": "M32.04",
     "source": "ebook/curriculum/M32/M32.04.md",
     "title": "휴머노이드 보행 외란 대응 또는 밸런싱 로봇",
