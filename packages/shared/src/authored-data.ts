@@ -2550,6 +2550,20 @@ export const authoredMetadata: AuthoredMetadata[] = [
     "evidenceRef": "doc/v2/work_items/M21.05.md"
   },
   {
+    "topicId": "M23.01",
+    "source": "ebook/curriculum/M23/M23.01.md",
+    "title": "MDP/POMDP·정책·가치·보상·종료 조건",
+    "objectives": [
+      "MDP/POMDP의 상태·관측·정책과 전이를 구분한다.",
+      "할인 수익과 가치·보상의 차이를 계산한다.",
+      "성공/실패 종료와 시간 제한 truncation을 구분한다."
+    ],
+    "prerequisiteNote": "M07.03, M10.05, M11.04의 개념을 사용한다. 필요한 새 용어·기호는 본문에서 정의한다. 일반 코딩 문법/실제 장비 설치를 요구하지 않으며 합성 자료로 기본 경로를 수행한다.",
+    "sha256": "46c9970ff58de3bbbb185fba3cc0c5503d441c5a2b7606c771b69a48e198a084",
+    "reviewed": true,
+    "evidenceRef": "doc/v2/work_items/M23.01.md"
+  },
+  {
     "topicId": "M32.04",
     "source": "ebook/curriculum/M32/M32.04.md",
     "title": "휴머노이드 보행 외란 대응 또는 밸런싱 로봇",
