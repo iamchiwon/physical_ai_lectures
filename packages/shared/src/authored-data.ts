@@ -2564,6 +2564,20 @@ export const authoredMetadata: AuthoredMetadata[] = [
     "evidenceRef": "doc/v2/work_items/M23.01.md"
   },
   {
+    "topicId": "M23.02",
+    "source": "ebook/curriculum/M23/M23.02.md",
+    "title": "Rollout·Actor-Critic·PPO의 업데이트",
+    "objectives": [
+      "rollout·actor·critic·advantage와 on-policy 자료를 구분한다.",
+      "확률비와 PPO clipped surrogate를 부호별로 계산한다.",
+      "종료/마스크·과도한 업데이트·학습안정성 기록을 진단한다."
+    ],
+    "prerequisiteNote": "M23.01의 개념을 사용한다. 필요한 새 용어·기호는 본문에서 정의한다. 일반 코딩 문법/실제 장비 설치를 요구하지 않으며 합성 자료로 기본 경로를 수행한다.",
+    "sha256": "717d1a3edd5f264efc4329b77aa9164c57bd77d7ca77bf7cf332c6cbb6032b86",
+    "reviewed": true,
+    "evidenceRef": "doc/v2/work_items/M23.02.md"
+  },
+  {
     "topicId": "M32.04",
     "source": "ebook/curriculum/M32/M32.04.md",
     "title": "휴머노이드 보행 외란 대응 또는 밸런싱 로봇",
