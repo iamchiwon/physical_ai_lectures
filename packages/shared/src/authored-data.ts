@@ -2396,6 +2396,20 @@ export const authoredMetadata: AuthoredMetadata[] = [
     "evidenceRef": "doc/v2/work_items/M16.01.md"
   },
   {
+    "topicId": "M16.02",
+    "source": "ebook/curriculum/M16/M16.02.md",
+    "title": "LiDAR Odometry·점군 잔차·강건 추정",
+    "objectives": [
+      "LiDAR 오도메트리의 정합·누적·deskew 역할을 구분한다.",
+      "점/평면 잔차와 강건 손실을 계산한다.",
+      "기하 퇴화와 동적점·낮은 잔차의 한계를 진단한다."
+    ],
+    "prerequisiteNote": "M16.01의 개념을 사용한다. 필요한 새 용어·기호는 본문에서 정의한다. 일반 코딩 문법/실제 장비 설치를 요구하지 않으며 합성 자료로 기본 경로를 수행한다.",
+    "sha256": "2c63fe5405d404c59e3c94a165f8479b4020a37c5e7e9db069fc9c4529672fa8",
+    "reviewed": true,
+    "evidenceRef": "doc/v2/work_items/M16.02.md"
+  },
+  {
     "topicId": "M17.03",
     "source": "ebook/curriculum/M17/M17.03.md",
     "title": "PRM과 변형·연결성·샘플링",
