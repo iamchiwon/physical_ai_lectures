@@ -2842,6 +2842,20 @@ export const authoredMetadata: AuthoredMetadata[] = [
     "sha256": "420e819f31cb6c94006ba07675e0a575c7406fcd72b28fa023a4a3593a92a388",
     "reviewed": true,
     "evidenceRef": "doc/v2/work_items/M29.02.md"
+  },
+  {
+    "topicId": "M29.03",
+    "source": "ebook/curriculum/M29/M29.03.md",
+    "title": "LiDAR 기반 Perception와 지도·SLAM",
+    "objectives": [
+      "LiDAR 검출·지도정합·오도메트리/SLAM 출력을 구분한다.",
+      "sensor/body/map 변환과 단순 평면잔차를 계산한다.",
+      "지도변경·퇴화·deskew/관측상실의 실패를 진단한다."
+    ],
+    "prerequisiteNote": "M29.02의 개념을 사용한다. 필요한 새 용어·기호는 본문에서 정의한다. 일반 코딩 문법/실제 장비 설치를 요구하지 않으며 합성 자료로 기본 경로를 수행한다.",
+    "sha256": "f11934a811ba8b258c953a3e2988df7cfc4d45db56e0a65adc8edcede41b9a98",
+    "reviewed": true,
+    "evidenceRef": "doc/v2/work_items/M29.03.md"
   }
 ];
 export const legacyRevisions: LegacyRevision[] = [
