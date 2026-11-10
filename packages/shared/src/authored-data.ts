@@ -2744,6 +2744,20 @@ export const authoredMetadata: AuthoredMetadata[] = [
     "sha256": "24442d2312b22111658071eb4869730342d97e59d3b922a8f75ec9254a9882e2",
     "reviewed": true,
     "evidenceRef": "doc/v2/work_items/M33.01.md"
+  },
+  {
+    "topicId": "M33.02",
+    "source": "ebook/curriculum/M33/M33.02.md",
+    "title": "FPV 조작 축·모드·카메라 시점·조종기 설정",
+    "objectives": [
+      "FPV 시점·body축·roll/pitch/yaw/throttle을 구분한다.",
+      "조종기 채널·deadband/scale과 간단한 매핑을 계산한다.",
+      "각도/각속도 모드·카메라 기울기·입력 불일치를 진단한다."
+    ],
+    "prerequisiteNote": "M00.04의 개념을 사용한다. 필요한 새 용어·기호는 본문에서 정의한다. 일반 코딩 문법/실제 장비 설치를 요구하지 않으며 합성 자료로 기본 경로를 수행한다.",
+    "sha256": "efd886c7faada9d3e67aa31fffa48cadeef2eb50f067ff0703ea54a1c3a8cdcc",
+    "reviewed": true,
+    "evidenceRef": "doc/v2/work_items/M33.02.md"
   }
 ];
 export const legacyRevisions: LegacyRevision[] = [

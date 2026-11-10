@@ -4,6 +4,10 @@
     "M33.01": {
       "sourceSha256": "24442d2312b22111658071eb4869730342d97e59d3b922a8f75ec9254a9882e2",
       "evidenceRef": "doc/v2/work_items/M33.01.md"
+    },
+    "M33.02": {
+      "sourceSha256": "efd886c7faada9d3e67aa31fffa48cadeef2eb50f067ff0703ea54a1c3a8cdcc",
+      "evidenceRef": "doc/v2/work_items/M33.02.md"
     }
   }
 }
