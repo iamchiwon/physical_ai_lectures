@@ -2452,6 +2452,20 @@ export const authoredMetadata: AuthoredMetadata[] = [
     "evidenceRef": "doc/v2/work_items/M16.05.md"
   },
   {
+    "topicId": "M16.06",
+    "source": "ebook/curriculum/M16/M16.06.md",
+    "title": "학습 기반 SLAM·CPU/SIMD·CUDA·Jetson 최적화·벤치마크·드론/스캐너/사족/VR·AR 응용",
+    "objectives": [
+      "학습 기반 SLAM 구성과 전체 추정 시스템의 차이를 설명한다.",
+      "CPU/GPU 전송·처리 지연과 기한 초과율을 계산한다.",
+      "장치/응용별 동일 조건의 정확도·지연·실패 벤치마크를 설계한다."
+    ],
+    "prerequisiteNote": "M16.05의 개념을 사용한다. 필요한 새 용어·기호는 본문에서 정의한다. 일반 코딩 문법/실제 장비 설치를 요구하지 않으며 합성 자료로 기본 경로를 수행한다.",
+    "sha256": "2bb119aba453bdd11ab823a471ebc00ffd74523ad0d5a34a2127708957601a43",
+    "reviewed": true,
+    "evidenceRef": "doc/v2/work_items/M16.06.md"
+  },
+  {
     "topicId": "M17.03",
     "source": "ebook/curriculum/M17/M17.03.md",
     "title": "PRM과 변형·연결성·샘플링",
