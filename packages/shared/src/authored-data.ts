@@ -2856,6 +2856,20 @@ export const authoredMetadata: AuthoredMetadata[] = [
     "sha256": "f11934a811ba8b258c953a3e2988df7cfc4d45db56e0a65adc8edcede41b9a98",
     "reviewed": true,
     "evidenceRef": "doc/v2/work_items/M29.03.md"
+  },
+  {
+    "topicId": "M29.04",
+    "source": "ebook/curriculum/M29/M29.04.md",
+    "title": "멀티모달 인지와 주변 객체 추적",
+    "objectives": [
+      "센서 융합·물체 대응·시간 추적의 역할을 구분한다.",
+      "동일시각 예측/게이트와 간단한 위치 결합을 계산한다.",
+      "가림/ID교환·모달 누락·상관/지연의 실패를 진단한다."
+    ],
+    "prerequisiteNote": "M29.03의 개념을 사용한다. 필요한 새 용어·기호는 본문에서 정의한다. 일반 코딩 문법/실제 장비 설치를 요구하지 않으며 합성 자료로 기본 경로를 수행한다.",
+    "sha256": "3858cd8e10c1852a90e0a710cc5dcae12a74817e042dd071a8dde7db3c06797b",
+    "reviewed": true,
+    "evidenceRef": "doc/v2/work_items/M29.04.md"
   }
 ];
 export const legacyRevisions: LegacyRevision[] = [
