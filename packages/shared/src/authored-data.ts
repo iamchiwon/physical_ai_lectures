@@ -2884,6 +2884,20 @@ export const authoredMetadata: AuthoredMetadata[] = [
     "sha256": "83c21a67534a96aeccd4eb1543be8339bcbcee446ae1930bdf0de343d2b0ddb3",
     "reviewed": true,
     "evidenceRef": "doc/v2/work_items/M29.05.md"
+  },
+  {
+    "topicId": "M29.06",
+    "source": "ebook/curriculum/M29/M29.06.md",
+    "title": "Auto Valet Parking·실패 분석·재현 실험",
+    "objectives": [
+      "주차 미션의 수락·계획·실행·완료/중단 상태를 구분한다.",
+      "차체/주차공간 여유와 요청/실행 성공률을 계산한다.",
+      "실패 재현·수정/회귀·최종 보고 패키지를 작성한다."
+    ],
+    "prerequisiteNote": "M29.05의 개념을 사용한다. 필요한 새 용어·기호는 본문에서 정의한다. 일반 코딩 문법/실제 장비 설치를 요구하지 않으며 합성 자료로 기본 경로를 수행한다.",
+    "sha256": "b4d0b0bdba1a8958041dc2dcd81efe25feb2d2fe876250affdf9b34745444027",
+    "reviewed": true,
+    "evidenceRef": "doc/v2/work_items/M29.06.md"
   }
 ];
 export const legacyRevisions: LegacyRevision[] = [
