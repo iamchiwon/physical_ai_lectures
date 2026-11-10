@@ -2870,6 +2870,20 @@ export const authoredMetadata: AuthoredMetadata[] = [
     "sha256": "3858cd8e10c1852a90e0a710cc5dcae12a74817e042dd071a8dde7db3c06797b",
     "reviewed": true,
     "evidenceRef": "doc/v2/work_items/M29.04.md"
+  },
+  {
+    "topicId": "M29.05",
+    "source": "ebook/curriculum/M29/M29.05.md",
+    "title": "Motion Planning·제어·도심 시나리오",
+    "objectives": [
+      "행동/경로/시간 궤적·계획/제어의 책임을 구분한다.",
+      "곡률·횡가속/정지거리와 후보 거부를 계산한다.",
+      "도심 가상 시나리오의 동적장애물·지연/중단을 검증한다."
+    ],
+    "prerequisiteNote": "M29.04의 개념을 사용한다. 필요한 새 용어·기호는 본문에서 정의한다. 일반 코딩 문법/실제 장비 설치를 요구하지 않으며 합성 자료로 기본 경로를 수행한다.",
+    "sha256": "83c21a67534a96aeccd4eb1543be8339bcbcee446ae1930bdf0de343d2b0ddb3",
+    "reviewed": true,
+    "evidenceRef": "doc/v2/work_items/M29.05.md"
   }
 ];
 export const legacyRevisions: LegacyRevision[] = [
