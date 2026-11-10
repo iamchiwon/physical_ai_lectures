@@ -2382,6 +2382,20 @@ export const authoredMetadata: AuthoredMetadata[] = [
     "evidenceRef": "doc/v2/work_items/M14.05.md"
   },
   {
+    "topicId": "M16.01",
+    "source": "ebook/curriculum/M16/M16.01.md",
+    "title": "특징 기반/직접법 Visual Odometry·다중 시점 기하",
+    "objectives": [
+      "특징 기반과 직접법 VO의 잔차/가정을 구분한다.",
+      "영상 이동·시차·깊이와 스케일의 관계를 계산한다.",
+      "저텍스처·조명·동적 장면의 실패를 진단한다."
+    ],
+    "prerequisiteNote": "M02.05, M13.02, M14.04, M15.04의 개념을 사용한다. 필요한 새 용어·기호는 본문에서 정의한다. 일반 코딩 문법/실제 장비 설치를 요구하지 않으며 합성 자료로 기본 경로를 수행한다.",
+    "sha256": "6076cd834eb1d3f02dc6b59e1df9273e70a95a9d86c3f60fdc85b1a428630c57",
+    "reviewed": true,
+    "evidenceRef": "doc/v2/work_items/M16.01.md"
+  },
+  {
     "topicId": "M17.03",
     "source": "ebook/curriculum/M17/M17.03.md",
     "title": "PRM과 변형·연결성·샘플링",
