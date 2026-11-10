@@ -2438,6 +2438,20 @@ export const authoredMetadata: AuthoredMetadata[] = [
     "evidenceRef": "doc/v2/work_items/M16.04.md"
   },
   {
+    "topicId": "M16.05",
+    "source": "ebook/curriculum/M16/M16.05.md",
+    "title": "Loop Closure·백엔드 최적화·실패 사례",
+    "objectives": [
+      "재방문 후보·기하검증·루프제약의 단계를 구분한다.",
+      "모순된 루프가 그래프 해에 미치는 영향을 계산한다.",
+      "거짓루프/실제루프의 실패와 복구·평가를 설계한다."
+    ],
+    "prerequisiteNote": "M16.04의 개념을 사용한다. 필요한 새 용어·기호는 본문에서 정의한다. 일반 코딩 문법/실제 장비 설치를 요구하지 않으며 합성 자료로 기본 경로를 수행한다.",
+    "sha256": "873587826a399ea71fc64b72e728698bc3dd3c4433362b48c9db9d2d7ac04a71",
+    "reviewed": true,
+    "evidenceRef": "doc/v2/work_items/M16.05.md"
+  },
+  {
     "topicId": "M17.03",
     "source": "ebook/curriculum/M17/M17.03.md",
     "title": "PRM과 변형·연결성·샘플링",
