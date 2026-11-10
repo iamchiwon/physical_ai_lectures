@@ -10,8 +10,8 @@
       "evidenceRef": "doc/v2/work_items/M28.02.md"
     },
     "M28.03": {
-      "sourceSha256": "2a381fdf943b078fe11f82fdcde743f50a3c71cfb7b781849ed76a8b094957e1",
-      "evidenceRef": "doc/v2/work_items/W09.md"
+      "sourceSha256": "e01eca11f96492dfe40e75758b63a615716228e9f37920a6fc4373975c4c9551",
+      "evidenceRef": "doc/v2/work_items/publication-source-privacy.md"
     },
     "M28.04": {
       "sourceSha256": "0dfc903f7d63aea21e9c1476386e359a2d19012f88d0e4388e7584d8a25e0b68",
@@ -22,8 +22,8 @@
       "evidenceRef": "doc/v2/work_items/M28.05.md"
     },
     "M28.06": {
-      "sourceSha256": "ca3921e2def864baefb301482041245dcc6a23652784ab8e2161eb5033d75da3",
-      "evidenceRef": "doc/v2/work_items/M28.06.md"
+      "sourceSha256": "a9de59a42a75cec418aafe0b26542f75eb2c9a1f46f8223dc5bf96dbd0a7064a",
+      "evidenceRef": "doc/v2/work_items/publication-source-privacy.md"
     }
   }
 }

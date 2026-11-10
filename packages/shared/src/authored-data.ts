@@ -39,9 +39,9 @@ export const authoredMetadata: AuthoredMetadata[] = [
       "운반 과제의 환경 조건을 읽고 가능한 구성과 실패 원인·추가 확인 항목을 제안한다."
     ],
     "prerequisiteNote": "M00.01~02의 폐루프와 상태·관측·행동 구분을 사용한다. 기구학·제어 수식이나 특정 로봇 제품 지식은 필요 없다.",
-    "sha256": "003b4c37875241097191de0ce098aeb6b333b71078d7f9e459d284c5f1215d0a",
+    "sha256": "e3822b55012d3c8dd2c85f8a71aa55f55fdf39a6a9899ab1fb467911bc027a31",
     "reviewed": true,
-    "evidenceRef": "doc/v2/work_items/M00.03.md"
+    "evidenceRef": "doc/v2/work_items/publication-source-privacy.md"
   },
   {
     "topicId": "M00.04",
@@ -249,9 +249,9 @@ export const authoredMetadata: AuthoredMetadata[] = [
       "중복된 방정식의 정보 부족과 모순을 구분하고 역행렬을 무조건 적용하면 안 되는 이유를 설명한다."
     ],
     "prerequisiteNote": "M00의 단위와 M01의 자료 축 구분을 사용한다. 사칙연산부터 시작하며 행렬·내적·외적 기호는 아래에서 정의한다. NumPy 설치 없이 종이로 계산한다.",
-    "sha256": "b075ad01620438a3e11f0849b3f0bc3067afe57decd892a481bb65e2afe23184",
+    "sha256": "f7cacdbe4007672a30233ae6762fca8c8896f1044c07c3a646e4c2f6611ff62d",
     "reviewed": true,
-    "evidenceRef": "doc/v2/work_items/M02.01.md"
+    "evidenceRef": "doc/v2/work_items/publication-source-privacy.md"
   },
   {
     "topicId": "M02.02",
@@ -263,9 +263,9 @@ export const authoredMetadata: AuthoredMetadata[] = [
       "단위 쿼터니언의 성분 순서·정규화·부호 이중표현을 계산하고 잘못된 입력을 구분한다."
     ],
     "prerequisiteNote": "M02.01의 열벡터·행렬 곱·내적을 사용한다. 모든 예제는 오른손 기준축과 열벡터를 쓰며, 길이는m, 각도는rad로 계산한다. NumPy·ROS 설치는 필요 없다.",
-    "sha256": "53a9af216faa56668997c8baa42af89ffc6a351f0a0d0c1b024e9e00d146da68",
+    "sha256": "8e89b82f3d051549838d5c72521a89a8694b81fb7426b778f28862b2c3df12c3",
     "reviewed": true,
-    "evidenceRef": "doc/v2/work_items/M02.02.md"
+    "evidenceRef": "doc/v2/work_items/publication-source-privacy.md"
   },
   {
     "topicId": "M02.03",
@@ -277,9 +277,9 @@ export const authoredMetadata: AuthoredMetadata[] = [
       "수치 미분 간격과 선형화 변화량의 영향을 비교해 작은 간격·큰 이동의 한계를 설명한다."
     ],
     "prerequisiteNote": "M02.01의 행렬 곱과 M02.02의 단위·프레임 구분을 사용한다. 사칙연산·제곱부터 예를 전개하며 기호를 외워 온 것으로 가정하지 않는다. 종이 계산이 기본이다.",
-    "sha256": "ffafb2e23c68725c224757ff4450c17ed5aff952cb03832ac467e86b493d491d",
+    "sha256": "28520eecad4e6c99f1891a65c8786ddabe9fdf5df8312cb447cdc5a50ef30cbc",
     "reviewed": true,
-    "evidenceRef": "doc/v2/work_items/M02.03.md"
+    "evidenceRef": "doc/v2/work_items/publication-source-privacy.md"
   },
   {
     "topicId": "M02.04",
@@ -305,9 +305,9 @@ export const authoredMetadata: AuthoredMetadata[] = [
       "가상 반전 기록에서 백래시 가능성과 측정 위치의 한계를 설명하고 분해능을 정확도로 과장하지 않는다."
     ],
     "prerequisiteNote": "M02의 단위·벡터 기초를 사용한다. 실제 로봇·모터·분해 도구 없이 구조 설명과 합성 수치로 수행한다. 모든 정격 수치는 가상 예제다.",
-    "sha256": "92e620ae80a6ba1f9a97c4c80b2bf714c22e14eaf1865713b0db481ae9d9661f",
+    "sha256": "117fc8352a7352d97df73535999a22a1d56d68382c0d26081e59af89ce4cba5d",
     "reviewed": true,
-    "evidenceRef": "doc/v2/work_items/M03.01.md"
+    "evidenceRef": "doc/v2/work_items/publication-source-privacy.md"
   },
   {
     "topicId": "M03.02",
@@ -361,9 +361,9 @@ export const authoredMetadata: AuthoredMetadata[] = [
       "직렬 팔과 델타의 연결 구조·작업 범위 차이를 설명하고 과제에 필요한 추가 설계 정보를 제안한다."
     ],
     "prerequisiteNote": "M03.01의 관절·자유도, M02의 좌표·각속도 단위를 사용한다. 기본 활동은 종이 속도 계산과 가상 구조표이며 로봇 주행·실물 팔 동작은 수행하지 않는다.",
-    "sha256": "ea5578bfbfa724e61cac63b82fc8e8cbcd7271f25d8cb6013a38a6ebac238f91",
+    "sha256": "20c3048e81b12b40b1db2ad4575f7c04ecd80693bc9605513145da8632e2845c",
     "reviewed": true,
-    "evidenceRef": "doc/v2/work_items/M03.05.md"
+    "evidenceRef": "doc/v2/work_items/publication-source-privacy.md"
   },
   {
     "topicId": "M03.06",
@@ -389,9 +389,9 @@ export const authoredMetadata: AuthoredMetadata[] = [
       "센서/도구 오프셋과 변환 순서 오류를 수치 반례로 찾아 모델 검증에 필요한 기록을 제안한다."
     ],
     "prerequisiteNote": "M02.01~02의 행렬·회전·동차변환, M03의 링크와 센서가 선수다. 기호가 낯설면 M02.02로 돌아간다. 본 단위는 기구학 모델의 프레임 계약과 오류 진단을 보강하며 종이 계산만으로 수행한다.",
-    "sha256": "af500605e805eb751e1ced7bdd8a0f25525f72d6c1c48e464719f3987b73e9c5",
+    "sha256": "fa8b6c6f4ecd901e632a7ca9d95dbc55efe7c3c4c2a8fd5881924aa837dbb2b5",
     "reviewed": true,
-    "evidenceRef": "doc/v2/work_items/M06.01.md"
+    "evidenceRef": "doc/v2/work_items/publication-source-privacy.md"
   },
   {
     "topicId": "M05.03",
@@ -459,9 +459,9 @@ export const authoredMetadata: AuthoredMetadata[] = [
       "질량·거리·기어 변화의 영향을 비교하고 파라미터·정격 및 센서 추정의 검증 범위를 판정한다."
     ],
     "prerequisiteNote": "M02의 미분·단위, M03의 모터·기어·토크, M06의 관절 자세가 선수다. 기본 활동은 종이 토크 수지 계산이다. 가상 파라미터를 실제 로봇 정격으로 사용하지 않으며 전류나 토크를 인가하지 않는다.",
-    "sha256": "547414d1fbcd8f35cb5726210536b1a48d4114d95accf11f28d79487b0b9bb61",
+    "sha256": "4bf7fdf6fe653ede847c689987d5dc0b27b2f5cee54fc356b8ff9b737b02bb83",
     "reviewed": true,
-    "evidenceRef": "doc/v2/work_items/M07.01.md"
+    "evidenceRef": "doc/v2/work_items/publication-source-privacy.md"
   },
   {
     "topicId": "M08.01",
@@ -515,9 +515,9 @@ export const authoredMetadata: AuthoredMetadata[] = [
       "관성 텐서의 대칭·양의 주관성·삼각 조건을 검사하고 근거 없는 자동 보정과 실제 검증의 한계를 설명한다."
     ],
     "prerequisiteNote": "M08.01의 균질 상자와 세 모델 요소, M07.01의 관성, M06.01의 회전이 선수다. 기본 활동은 가상 치수와 텐서의 종이 계산이며 메시 처리 도구나 물리 엔진을 실행하지 않는다.",
-    "sha256": "b663f57f41a6090120099bee10e3ca95c4c15a721423ceb728ddf94d8eb4b68a",
+    "sha256": "c16f7ed9b7a602a15e1f2aecddf902ea5a6f531bbd4880e0318284fadc17b03d",
     "reviewed": true,
-    "evidenceRef": "doc/v2/work_items/M08.04.md"
+    "evidenceRef": "doc/v2/work_items/publication-source-privacy.md"
   },
   {
     "topicId": "M08.05",
@@ -627,9 +627,9 @@ export const authoredMetadata: AuthoredMetadata[] = [
       "내부 상태와 입출력, 연속 모델과 이산 구현의 안정성을 구별하고 유한 로그의 검증 한계를 설명한다."
     ],
     "prerequisiteNote": "M02의 미분·행렬·고유값과 M07.01의 동역학이 선수다. u와 y가 정규화된 가상 모델을 사용한다. 계산기와 종이로 수행하며 실제 제어기나 로봇을 실행하지 않는다.",
-    "sha256": "3c0179aaa6755571e95b7dbc0ae854ec68e48b2233229857847533f082428135",
+    "sha256": "e28c67d6f7d45e0aeadfa462359ba539437ef2d6d288124fe8cebc5547a790a4",
     "reviewed": true,
-    "evidenceRef": "doc/v2/work_items/M07.02.md"
+    "evidenceRef": "doc/v2/work_items/publication-source-privacy.md"
   },
   {
     "topicId": "M07.03",
@@ -641,9 +641,9 @@ export const authoredMetadata: AuthoredMetadata[] = [
       "미분 잡음·샘플 간격·포화 기록을 해석하여 튜닝 주장의 검증 조건과 모형의 한계를 설명한다."
     ],
     "prerequisiteNote": "M02의 미분/적분, M05.06의 샘플 간격, M07.02의 응답과 안정성이 선수다. 본문의 정규화 로그를 종이로 계산한다. 실제 PID 튜닝·토크 인가·모터 동작은 수행하지 않는다.",
-    "sha256": "15a9fdbf12cfea26935f0bd64c76fde16658535ea90d10fc2653ea9817a22fef",
+    "sha256": "ee09bcb415368e57eaf2186b1764912b370722c984beec0dd701bd24bfb1a095",
     "reviewed": true,
-    "evidenceRef": "doc/v2/work_items/M07.03.md"
+    "evidenceRef": "doc/v2/work_items/publication-source-privacy.md"
   },
   {
     "topicId": "M07.05",
@@ -655,9 +655,9 @@ export const authoredMetadata: AuthoredMetadata[] = [
       "동일 시각의 추종 오차와 입력 포화를 분석하여 궤적 성공 및 실제 안전의 검증 범위를 설명한다."
     ],
     "prerequisiteNote": "M07.01/02/03의 구동·응답·피드백 및 M02.03의 미분을 사용한다. 기본 1축 관절 경로와 단위는 본문에서 제공하므로 팔의 FK/IK나 주파수 설계 전체를 먼저 이수하지 않아도 계산할 수 있다. 실제 팔 기구학은 M06.02~04, 주파수 안정성 설계는 M07.04로 확장한다. 합성 추종/로그 해석이며 실제 모터·로봇을 실행하지 않는다.",
-    "sha256": "3d96644f6ce3675e411392c50cb88be599b315a3a203cb0de5ff8c354c7ad43b",
+    "sha256": "0c180a3baa83ee1c94c98bf952bfaa4907db46919ba99d6ec327635e01b8907b",
     "reviewed": true,
-    "evidenceRef": "doc/v2/work_items/M07.05.md"
+    "evidenceRef": "doc/v2/work_items/publication-source-privacy.md"
   },
   {
     "topicId": "M07.06",
@@ -795,9 +795,9 @@ export const authoredMetadata: AuthoredMetadata[] = [
       "바퀴 속도 한계와 메카넘의 모델 일관성 잔차를 검사하고 실제 이동·미끄럼에 대한 추론 한계를 설명한다."
     ],
     "prerequisiteNote": "M03.05의 바퀴 구조, M06.01의 좌표 변환, M02.01의 행렬이 선수다. 모든 치수와 로그는 가상 모델이다. 계산기와 종이만 사용하며 실제 베이스를 주행하지 않는다.",
-    "sha256": "941f39e397e315ed84f2cc87ac7d4870887b00e86304bcc45251a12e7ce79754",
+    "sha256": "f9853395a7bdc99786590a720373888bb145202448ba921fd747317b2acf8b87",
     "reviewed": true,
-    "evidenceRef": "doc/v2/work_items/M06.05.md"
+    "evidenceRef": "doc/v2/work_items/publication-source-privacy.md"
   },
   {
     "topicId": "M09.01",
@@ -977,9 +977,9 @@ export const authoredMetadata: AuthoredMetadata[] = [
       "격자와 로드맵의 점·간선·연결성을 판정하고 모델과 실제 이동의 한계를 설명한다."
     ],
     "prerequisiteNote": "M02의 거리/비용, M06.01의 프레임, M07.05의 추종과 M15의 지도 좌표를 연결한다. 기본 모바일 도형 검사는 제공한 footprint와 정적 도형으로 수행하며 팔의 DH/FK 전체 이수를 요구하지 않는다. configuration·충돌 공간·점/간선과 연속 구간은 본문에서 보충한다. 팔 링크의 실제 배치를 확장할 때는 M06.02와 연결한다. 실제 플래너·로봇 실행은 하지 않는다.",
-    "sha256": "e83f7aa8c4d8a2950bd3ed12ccc631d8840fffc0353a0d1c334285e6bb2e3c7f",
+    "sha256": "5235b8ed0dc69ab1c7235f5e47f27dab0e264cd3cc5733df6a3fb7b06a72e2aa",
     "reviewed": true,
-    "evidenceRef": "doc/v2/work_items/M17.01.md"
+    "evidenceRef": "doc/v2/work_items/publication-source-privacy.md"
   },
   {
     "topicId": "M17.02",
@@ -991,9 +991,9 @@ export const authoredMetadata: AuthoredMetadata[] = [
       "비용 정의와 변경에 따른 경로 선택을 설명하고 그래프 최적성의 적용 범위를 보고한다."
     ],
     "prerequisiteNote": "M17.01의 node·간선·연결성을 연결한다. 우선순위, 비용 완화, heuristic과 최적성의 조건을 본문에서 정의한다. 작은 완전 입력 그래프를 종이로 탐색하며 실제 플래너나 로봇 실행은 필요하지 않다.",
-    "sha256": "7a51918e2813d3aaa43ca940d0035f0567e121f5c26017f3e3ca0064689a52f2",
+    "sha256": "971d22f9fe3d509fd49a0f77cb8dd5bb8f953a1bd3946c13e78266e3e53c2005",
     "reviewed": true,
-    "evidenceRef": "doc/v2/work_items/M17.02.md"
+    "evidenceRef": "doc/v2/work_items/publication-source-privacy.md"
   },
   {
     "topicId": "M17.06",
@@ -1005,9 +1005,9 @@ export const authoredMetadata: AuthoredMetadata[] = [
       "현재 상태·관측 나이·계산 지연·지도 변경을 반영해 재계획과 궤적 전환의 근거를 점검한다."
     ],
     "prerequisiteNote": "M17.01/02의 기하 경로, M02.03의 미분과 M07.05의 추종을 연결한다. CHOMP/STOMP 등 최적화 경로 개선 전체를 시간 배정의 필수 선수로 요구하지 않는다. 진행 변수·시간 스케일·최대 미분값과 재계획의 상태 연속성을 본문에서 보충한다. 기본은 합성 관절 계산과 로그 판정이며 실제 제어기·로봇을 실행하지 않는다.",
-    "sha256": "b4c32bda9cb504e3d2be08f2b9de9a7a38d2e69342e7d940df9d7ab6ffd6a5e5",
+    "sha256": "15dd6bdbd92f807f32db2c045edd4647d336f0481d6dab524845519500e04775",
     "reviewed": true,
-    "evidenceRef": "doc/v2/work_items/M17.06.md"
+    "evidenceRef": "doc/v2/work_items/publication-source-privacy.md"
   },
   {
     "topicId": "M18.01",
@@ -1103,9 +1103,9 @@ export const authoredMetadata: AuthoredMetadata[] = [
       "이상적인 위치 작업공간의 안쪽/바깥쪽 경계를 계산하고 실제 관절 제한·도구 자세·모델 검증의 추가 조건을 설명한다."
     ],
     "prerequisiteNote": "M06.01의 열벡터·프레임 합성과 M02의 삼각함수, M03의 회전 관절이 선수다. 계산은 종이와 계산기로 충분하며 NumPy나 실제 로봇은 필요 없다. 모든 링크 길이는 교육용 가상 값이다.",
-    "sha256": "323b8d3ecd6e567c78f18ffb931d1f941411ebd3775e93c82e66b24a8a943e73",
+    "sha256": "aa1e749016d1c2111ba04bef828e66d77c1d410673853a1e67e58194492df357",
     "reviewed": true,
-    "evidenceRef": "doc/v2/work_items/M06.02.md"
+    "evidenceRef": "doc/v2/work_items/publication-source-privacy.md"
   },
   {
     "topicId": "M06.03",
@@ -1117,9 +1117,9 @@ export const authoredMetadata: AuthoredMetadata[] = [
       "갱신 뒤 FK 잔차와 제약을 다시 확인하여 국소 선형화·감쇠·수치 실패의 한계 및 중단 조건을 설명한다."
     ],
     "prerequisiteNote": "M06.02의 길이 0.3/0.2 m 평면 2R와 M02의 미분·행렬·최소제곱이 선수다. 기본 활동은 종이 수치 계산이다. 도구 방향을 제외한 2차원 위치 IK를 다루며 실제 로봇이나 NumPy 실행은 필요 없다.",
-    "sha256": "fd73a8ed99ffc2221c844556b30b9d96ca247c60685e947752a42bdf920e78c8",
+    "sha256": "13d6b4790f8b2ee03cad8e8824eeb8f0e1f4228db9c7e208175a8a159c57848d",
     "reviewed": true,
-    "evidenceRef": "doc/v2/work_items/M06.03.md"
+    "evidenceRef": "doc/v2/work_items/publication-source-privacy.md"
   },
   {
     "topicId": "M06.04",
@@ -1131,9 +1131,9 @@ export const authoredMetadata: AuthoredMetadata[] = [
       "연속 목표의 관절 증분·속도·각도 표현을 검토하고 끝점의 유효성과 경로의 유효성을 구분한다."
     ],
     "prerequisiteNote": "M06.02~03의 평면 2R, 기하 IK와 위치 Jacobian, M02.01의 2×2 행렬식이 선수다. 종이 계산과 합성 후보표를 사용하며 실제 관절 동작이나 충돌 검사는 수행하지 않는다.",
-    "sha256": "8a6aa1262972a73b1299c42dcc818eeeb1faff33b0e80d678ec7f16ad952cefd",
+    "sha256": "22693a2bff73a2cb5ba627b6c718aa70e52d83f4f7d7c8e63a07ee154ba92364",
     "reviewed": true,
-    "evidenceRef": "doc/v2/work_items/M06.04.md"
+    "evidenceRef": "doc/v2/work_items/publication-source-privacy.md"
   },
   {
     "topicId": "M06.06",
@@ -1145,9 +1145,9 @@ export const authoredMetadata: AuthoredMetadata[] = [
       "별도 기준 기록으로 캘리브레이션 후보를 검증하고 모델 버전·단위·영점·측정 한계를 구분하여 보류 근거를 남긴다."
     ],
     "prerequisiteNote": "M03의 기어/엔코더, M06의 프레임·FK·제약과 M05의 시각 기록을 사용한다. 모든 수치는 가상 기록이며 실제 엔코더 보정·모터 명령·로봇 이동은 수행하지 않는다.",
-    "sha256": "6212a3079ba1af49d6c462e0d770e9a2b9ba93951c0934b238075c31fa4b5bf5",
+    "sha256": "3f7d147ae2e80ed8c4ef116ccd1eefba800ba53b16e78a0941b07f10b6b25cfd",
     "reviewed": true,
-    "evidenceRef": "doc/v2/work_items/M06.06.md"
+    "evidenceRef": "doc/v2/work_items/publication-source-privacy.md"
   },
   {
     "topicId": "M10.01",
@@ -1201,9 +1201,9 @@ export const authoredMetadata: AuthoredMetadata[] = [
       "단일 강체와 articulation을 구분하고 베이스·관절 제약에 따른 자유도와 모델 검증 범위를 설명한다."
     ],
     "prerequisiteNote": "M07.01의 힘/토크와 M08.04의 관성/평행축, M10.02의 변환 기록이 선수다. 종이 수치와 가상 구성표를 사용하며 Isaac Sim·GPU·실물 실행이 필요하지 않다.",
-    "sha256": "3752704ee4ef1d0935b56cdf4948c5e0d5459b3c15e734ffde9fdb6134d03eda",
+    "sha256": "688f9fa07fb97beebdab5b505e61a46832c7ccc22cf7bc3900a9311a824fde95",
     "reviewed": true,
-    "evidenceRef": "doc/v2/work_items/M10.04.md"
+    "evidenceRef": "doc/v2/work_items/publication-source-privacy.md"
   },
   {
     "topicId": "M10.05",
@@ -1243,9 +1243,9 @@ export const authoredMetadata: AuthoredMetadata[] = [
       "카메라 장착 방식에 따른 핸드아이 변환 방향과 필요한 관측/검증 조건을 판정한다."
     ],
     "prerequisiteNote": "M06의 좌표 변환과 M14.01/03/06의 카메라 프레임·시간·잔차가 선수다. 목표 자세와 경로의 차이는 본문에서 보충하며 M17.01의 구성 공간·충돌과 이어 읽는다. 기본은 합성 좌표와 보정 기록의 종이 계산이다.",
-    "sha256": "925921abc1e53e526c82b4280d3341007e9789d979609609f60264a118dcf0c9",
+    "sha256": "ff8552b6bb2cd0a4ac7dd342a76d70bf721ed42826e98d049a84b6741f9586ba",
     "reviewed": true,
-    "evidenceRef": "doc/v2/work_items/M19.01.md"
+    "evidenceRef": "doc/v2/work_items/publication-source-privacy.md"
   },
   {
     "topicId": "M19.02",
@@ -1509,9 +1509,9 @@ export const authoredMetadata: AuthoredMetadata[] = [
       "다중 시연 행동/평균의 실패와 시연 품질·개입/분할 조건을 진단하고 평가 근거를 설계한다."
     ],
     "prerequisiteNote": "M11의 손실/학습, M19의 과업/실행과 M20의 시연/분할이 선수다. 상태 분포와 폐루프를 본문에서 보충한다. 기본은 합성 행동/오차 계산이며 정책 학습이나 실제 로봇 실행은 하지 않는다.",
-    "sha256": "13c1c6022b666e3e061bf77d0b1d24173d52db8d31cbd56e9f050d8923231480",
+    "sha256": "f37c2750392ca13f0faa9b04c2834bf577578ac2303f7ff190dae7d466573442",
     "reviewed": true,
-    "evidenceRef": "doc/v2/work_items/M21.01.md"
+    "evidenceRef": "doc/v2/work_items/publication-source-privacy.md"
   },
   {
     "topicId": "M21.02",
@@ -1649,9 +1649,9 @@ export const authoredMetadata: AuthoredMetadata[] = [
       "협동/이동 조작의 통합 상태·검증 근거를 설계하고 기하 도달/하중 통과와 실제 작업 안전/성공의 차이를 설명한다."
     ],
     "prerequisiteNote": "M03의 구성·구동, M06의 변환/도달성, M19.01~05의 공구·계획/작업 증거가 선수다. 모바일의 베이스 이동/정지·최신 위치 개념은 본문에서 보충하며 M17.06의 재계획·제한과 M18.06의 주행-조작 미션으로 연결한다. 합성 사양/기록의 종이 계산이 기본이다.",
-    "sha256": "35f1eb1323d4b52e9b79afb667b14e304c4700bb5ac79ae9a52347015ce927b6",
+    "sha256": "9b3804490b343c1752627c36499ce88252c4f575e4d97f6dae41b2be776d284f",
     "reviewed": true,
-    "evidenceRef": "doc/v2/work_items/M19.06.md"
+    "evidenceRef": "doc/v2/work_items/publication-source-privacy.md"
   },
   {
     "topicId": "M18.06",
@@ -1663,9 +1663,9 @@ export const authoredMetadata: AuthoredMetadata[] = [
       "합성 미션 기록의 부분 성공·보류·실패를 구분하고 복구·전체 완료 근거를 제안한다."
     ],
     "prerequisiteNote": "M06의 팔 기구학, M15의 좌표와 M17~18의 계획·과업 상태를 연결한다. base와 arm 원점의 차이, TCP 점과 자세, 미션 관문을 본문에서 보충한다. 기본은 합성 변환·시간·상태표이며 실제 주행·팔·물체·ROS 실행은 없다.",
-    "sha256": "ceee7c8bc2060d92ab74bfffee56aa8738361f5edf51205a6d22d8e7c67aadda",
+    "sha256": "230cabdaf5edbdca4b036728f6cc475ad2f4fb0d1c8c2c518b9a65f099a726d1",
     "reviewed": true,
-    "evidenceRef": "doc/v2/work_items/M18.06.md"
+    "evidenceRef": "doc/v2/work_items/publication-source-privacy.md"
   },
   {
     "topicId": "M25.01",
@@ -1845,9 +1845,9 @@ export const authoredMetadata: AuthoredMetadata[] = [
       "같은 잔차의 대안 원인을 구분할 기준 관측/통제 비교와 수정 후 검증을 설계한다."
     ],
     "prerequisiteNote": "M03의 기어/센서, M07의 동역학, M14의 프레임/시간과 M27의 지연을 사용한다. 백래시/마찰과 잔차/인과를 본문에서 보충한다. 기본은 합성 기록 진단이며 실제 장비를 움직이거나 원인을 확정하지 않는다.",
-    "sha256": "84cb5a67e7f24dc8dc4f227e61571f1f067487481be34178c859b9430ca576c7",
+    "sha256": "ae05a23cf3c8279dfe92e148bd11287acaba62bd1bac7dbe306657e0dfb19c1d",
     "reviewed": true,
-    "evidenceRef": "doc/v2/work_items/M30.01.md"
+    "evidenceRef": "doc/v2/work_items/publication-source-privacy.md"
   },
   {
     "topicId": "M30.02",
@@ -2027,9 +2027,9 @@ export const authoredMetadata: AuthoredMetadata[] = [
       "전체 제약/단계별 미상·감독/실패/비교 평가의 근거를 포함한 프로젝트 리포트를 작성한다."
     ],
     "prerequisiteNote": "M06의 이동/팔 기구학, M19.06의 이동 조작과 M30의 감독/평가를 연결한다. 전체 configuration·결합 제약과 순차/동시 역할은 본문에서 보충한다. 제공한 양팔 수치 활동은 본문 입력으로 수행하며 양팔 정책·실행 확장을 선택하면 M21.05를 추가로 확인한다. M17.01의 충돌과 M18.06의 주행-조작 전환 계약을 함께 읽는다. 기본은 합성 좌표/상태표이며 장비/정책 실행을 하지 않는다.",
-    "sha256": "75009cc6767c20e13f2d2de9766358a5cf8a68306bdbd42c0285d9b09b5ea69c",
+    "sha256": "0cddacde8a56a3a9642a04646cc4c530918a3880bc988c51ff828172ae988ce2",
     "reviewed": true,
-    "evidenceRef": "doc/v2/work_items/K01-01.md"
+    "evidenceRef": "doc/v2/work_items/publication-source-privacy.md"
   },
   {
     "topicId": "M32.05",
@@ -2153,9 +2153,9 @@ export const authoredMetadata: AuthoredMetadata[] = [
       "가상 지연이 위상 여유에 주는 영향을 계산하고 주파수 지표만으로 보장할 수 없는 조건을 설명한다."
     ],
     "prerequisiteNote": "M07.02의 전달함수·극·연속 안정성, M02의 복소수와 삼각함수, M07.03의 이득 개념을 사용한다. 시간은 s, 입출력은 정규화값인 가상 모델이다. 실제 로봇 주파수 시험이나 MATLAB 설치는 필요 없다.",
-    "sha256": "ebaae66ae54d807801bf081182e59dcf778ca9c313a9ea9d44e9aaa501be8fc5",
+    "sha256": "2072cc3fc7c2e90cb585dc6b7109f5ebc4d1be33b345dfe5126f862f037c3143",
     "reviewed": true,
-    "evidenceRef": "doc/v2/work_items/M07.04.md"
+    "evidenceRef": "doc/v2/work_items/publication-source-privacy.md"
   },
   {
     "topicId": "M26.01",
@@ -2279,9 +2279,9 @@ export const authoredMetadata: AuthoredMetadata[] = [
       "진단 응답·세션/권한·시간 대기와 실제 작업 결과의 근거를 분리한다."
     ],
     "prerequisiteNote": "M28.02까지의 Classical/FD·타이밍/오류·신호 해석을 연결한다. 자체 가상 Classical11bit/8B·normal addressing·단일요청 기록을 분석하며 실제 차량/장비 진단·송수신·세션 변경은 수행하지 않는다. 일반 언어 문법이나 실제 인터페이스 설정을 추가하지 않는다.",
-    "sha256": "2a381fdf943b078fe11f82fdcde743f50a3c71cfb7b781849ed76a8b094957e1",
+    "sha256": "e01eca11f96492dfe40e75758b63a615716228e9f37920a6fc4373975c4c9551",
     "reviewed": true,
-    "evidenceRef": "doc/v2/work_items/W09.md"
+    "evidenceRef": "doc/v2/work_items/publication-source-privacy.md"
   },
   {
     "topicId": "M28.04",
@@ -2321,9 +2321,9 @@ export const authoredMetadata: AuthoredMetadata[] = [
       "캘리브레이션 값의 범위·페이지/readback·실제 적용/영속화와 검증을 나눈다."
     ],
     "prerequisiteNote": "M28.05까지의 형상/원본·신호 해석/시간·전송/실제 적용 구분을 사용한다. 자체 가상 메타데이터/바이트·이벤트/페이지 표를 분석하며 정식 A2L/펌웨어 파일이나 실제 툴/장비의 XCP 접속·읽기/쓰기·파라미터 조정/저장·재부팅을 수행하지 않는다. 일반 언어 문법은 추가하지 않는다.",
-    "sha256": "ca3921e2def864baefb301482041245dcc6a23652784ab8e2161eb5033d75da3",
+    "sha256": "a9de59a42a75cec418aafe0b26542f75eb2c9a1f46f8223dc5bf96dbd0a7064a",
     "reviewed": true,
-    "evidenceRef": "doc/v2/work_items/M28.06.md"
+    "evidenceRef": "doc/v2/work_items/publication-source-privacy.md"
   },
   {
     "topicId": "M02.06",
@@ -2335,9 +2335,9 @@ export const authoredMetadata: AuthoredMetadata[] = [
       "선형 및 일차 근사에서 분산·공분산 전파를 계산하고 상관·단위·모형 오차의 조건을 설명한다."
     ],
     "prerequisiteNote": "M02.01의 행렬, M02.03의 미분·Jacobian, M02.04의 분산/공분산을 사용한다. 합성 수치의 종이 계산이 기본이며 실제 로봇의 안정성·안전 인증을 수행하지 않는다.",
-    "sha256": "11bc4b670e8d715b3139716056ff7403d8a196e38a91c702dd320de2dc491712",
+    "sha256": "b0a52e579c1d1887b579635c6da4d634bbfd8647472a542d3bda0eb089cc0aa4",
     "reviewed": true,
-    "evidenceRef": "doc/v2/work_items/M02.06.md"
+    "evidenceRef": "doc/v2/work_items/publication-source-privacy.md"
   },
   {
     "topicId": "M17.03",
@@ -2349,9 +2349,9 @@ export const authoredMetadata: AuthoredMetadata[] = [
       "유한 표본과 확률적 보장·PRM*/Lazy의 조건 및 지도 재사용의 한계를 판정한다."
     ],
     "prerequisiteNote": "M17.01~02의 C-space, 간선 검사와 그래프 탐색을 연결한다. sampling, local planner, query와 확률적 완전성의 뜻을 본문에서 보충한다. 기본은 합성 점과 사각 장애물 계산이며 실제 PRM·OMPL이나 로봇을 실행하지 않는다.",
-    "sha256": "e128bacb35909aff52d159b6f9f992cbecd7e8dc8406bb0c88f50ee8baf90fc2",
+    "sha256": "76d83057661db95b11f0201ed6f8b301d8c09c35578172f9db1a2abfc914a534",
     "reviewed": true,
-    "evidenceRef": "doc/v2/work_items/M17.03.md"
+    "evidenceRef": "doc/v2/work_items/publication-source-privacy.md"
   },
   {
     "topicId": "M17.04",
@@ -2363,9 +2363,9 @@ export const authoredMetadata: AuthoredMetadata[] = [
       "목표 편향과 RRT-Connect·RRT*의 역할 및 유한 실패·점근 보장의 조건을 판정한다."
     ],
     "prerequisiteNote": "M17.01~03의 C-space, 연결 검사와 비용을 연결한다. 트리·확장·목표 편향·재배선을 본문에서 정의한다. 기본은 점 configuration의 합성 평면 계산이며 실제 RRT·OMPL이나 로봇을 실행하지 않는다.",
-    "sha256": "746650390ba7c76104e9f512652b556886c05e219182d32eaab77701abbf6afc",
+    "sha256": "960fe03c6dc609c4377d952392ca4f4aa0df1efb2957a7c076858969d8c8ee32",
     "reviewed": true,
-    "evidenceRef": "doc/v2/work_items/M17.04.md"
+    "evidenceRef": "doc/v2/work_items/publication-source-privacy.md"
   },
   {
     "topicId": "M17.05",
@@ -2377,9 +2377,9 @@ export const authoredMetadata: AuthoredMetadata[] = [
       "초기 경로·국소성·유한 벌점의 한계를 설명하고 전체 충돌·시간 제약을 별도로 판정한다."
     ],
     "prerequisiteNote": "M02의 미분·최적화와 M17의 경로·충돌을 연결한다. 목적함수, gradient, metric과 비용 가중 후보를 본문에서 정의한다. 종이 계산과 임시 CPU 검산이 기본이며 교육용 스칼라 예는 실제 CHOMP/STOMP 구현이 아니다.",
-    "sha256": "26193b2edacd69f3b889f3493be4985bbe9406f0215c7ef9477b407443b870a2",
+    "sha256": "f980fab97830e654a99764988c8301ec62e1230623e1032269975317299a6544",
     "reviewed": true,
-    "evidenceRef": "doc/v2/work_items/M17.05.md"
+    "evidenceRef": "doc/v2/work_items/publication-source-privacy.md"
   },
   {
     "topicId": "M21.03",

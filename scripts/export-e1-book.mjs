@@ -4,6 +4,7 @@ import { createHash } from 'node:crypto';
 import { fileURLToPath } from 'node:url';
 import { build } from 'esbuild';
 import { readAuthoredReviews } from './authored-metadata.mjs';
+import { assertPublicationText } from './publication-policy.mjs';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const destination = process.argv[2];
@@ -35,6 +36,7 @@ for (const topic of topics) {
   const source = `ebook/curriculum/${module}/${topic}.md`;
   if (!fs.lstatSync(path.join(root, source)).isFile()) throw Error(`Invalid authored source file: ${topic}`);
   const raw = fs.readFileSync(path.join(root, source), 'utf8');
+  assertPublicationText(raw, source);
   const sha = createHash('sha256').update(raw).digest('hex');
   const review = registry.topics[topic];
   if (sha !== review.sourceSha256 || !fs.existsSync(path.join(root, review.evidenceRef)) || !fs.lstatSync(path.join(root, review.evidenceRef)).isFile()) throw Error(`Stale or missing review: ${topic}`);
@@ -65,6 +67,7 @@ for (const topic of topics) {
     '### 문제 해설·판정', doc.questions.map(question => `#### ${question.id.toUpperCase()} 해설\n\n${nested(question.answer)}`).join('\n\n'),
     '### 참고 자료·기존 응용 교재 연결', nested(doc.references));
 }
+assertPublicationText(chunks.join('\n\n'), 'authored book input');
 fs.mkdirSync(path.dirname(path.resolve(destination)), { recursive: true });
 fs.writeFileSync(destination, chunks.join('\n\n') + '\n');
 const baseline = JSON.parse(fs.readFileSync(path.join(root, 'doc/v2/inventory/legacy-content.json'), 'utf8'));

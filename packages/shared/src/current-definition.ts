@@ -77,7 +77,7 @@ export function applyCurrentDefinition(base: Catalog): Catalog {
     const id = unitId(topicId), objectives = [{ id: `objective-${topicId.toLowerCase().replace(".", "-")}`, description: `${title}의 입력·판정·한계를 설명한다.` }];
     const requirement = { mode: "required" as const, reason: "준비중 · 원고와 활동을 집필하고 독립 검수해야 합니다.", objectiveIds: objectives.map(goal => goal.id), activityIds: [] };
     result.topics.push({ id: topicId, moduleId: "M34", title, unitIds: [id], objectives });
-    result.units.push({ id, topicId, title, revision: "planned-kant-2026-11-06", definitionStatus: "pending", objectives, prerequisites: { allOf: prerequisites.map(unitId), anyOf: [], supplementalUnitIds: [], definitionStatus: "pending", reason: "계획 선수이며 상세 원고와 함께 검수해야 합니다." }, requirements: { definitionStatus: "pending", explanation: structuredClone(requirement), practice: structuredClone(requirement), assessment: structuredClone(requirement) }, slots: { explanation: [], practice: [], assessment: [] }, gaps: { explanation: "준비중 · 상세 본문이 아직 없습니다.", practice: "준비중 · 실습·실행 패키지가 아직 없습니다.", assessment: "준비중 · 문항·해설이 아직 없습니다." }, estimatedMinutes: null });
+    result.units.push({ id, topicId, title, revision: "planned-sequence-2026-11-06", definitionStatus: "pending", objectives, prerequisites: { allOf: prerequisites.map(unitId), anyOf: [], supplementalUnitIds: [], definitionStatus: "pending", reason: "계획 선수이며 상세 원고와 함께 검수해야 합니다." }, requirements: { definitionStatus: "pending", explanation: structuredClone(requirement), practice: structuredClone(requirement), assessment: structuredClone(requirement) }, slots: { explanation: [], practice: [], assessment: [] }, gaps: { explanation: "준비중 · 상세 본문이 아직 없습니다.", practice: "준비중 · 실습·실행 패키지가 아직 없습니다.", assessment: "준비중 · 문항·해설이 아직 없습니다." }, estimatedMinutes: null });
   }
   const topics = currentStageData.flatMap(stage => [...stage.topicIds]);
   if (new Set(topics).size !== result.topics.length || topics.some(id => !result.topics.some(topic => topic.id === id))) throw Error("Current stages must cover each topic exactly once");
@@ -90,7 +90,7 @@ export function applyCurrentDefinition(base: Catalog): Catalog {
   const optional = new Set(["M32.01", "M32.02", "M32.03"]);
   const mainSteps = result.units.filter(unit => mainTopics.has(unit.topicId)).map(unit => ({ id: `main:${unit.id}`, unitId: unit.id, required: !optional.has(unit.topicId) }));
   result.tracks.unshift({ id: "track-main", title: "일반 AI·로봇 공통 과정", description: "일반 코딩 가능자의 S00~S11 공통 경로입니다. 세 캡스톤 변형은 선택하며 재현 패키지와 검토는 필수입니다. 심화 분기의 조건부 선수는 별도로 확인합니다.", steps: orderedSteps(mainSteps, result.units, rank) });
-  result.revision = `${base.revision}+kant-2026-11-06`;
+  result.revision = `${base.revision}+sequence-2026-11-06`;
   return result;
 }
 export const currentDefinitionCatalog = catalogSchema.parse(applyCurrentDefinition(catalogSchema.parse(catalogData)));

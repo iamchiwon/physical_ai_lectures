@@ -1,4 +1,4 @@
-// Adopted KANT topic placement, 2026-11-06. Stable topic IDs are retained.
+// Adopted curriculum topic placement, 2026-11-06. Stable topic IDs are retained.
 // B01–B07 syntax introductions are excluded; M01 remains a developer tooling path.
 export const currentStageData = [
   {

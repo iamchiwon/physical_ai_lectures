@@ -1,16 +1,16 @@
 # Physical AI 엔지니어링 통합 커리큘럼
 
-이 문서는 공개 강의의 **학습 목표를 통합한 우리 사이트의 신규 설계안**입니다. 강의들을 이어 붙인 시간표나 원자료에 없는 차시를 복원한 자료가 아닙니다. 원래 세부 목차는 [31개 과정 문서](course_inventory.md)에 남깁니다.
+이 문서는 우리 사이트의 학습 목표·선수 조건·실습과 평가를 정의하는 통합 커리큘럼입니다.
 
 ## 1. 재편 방향
 
 현재 교재 **Physical AI 로봇 제어 실무**의 로봇팔·시뮬레이션·데이터·VLA·Sim2Real 강점을 유지하면서, 공통 공학 기반과 모바일·인지·휴머노이드·임베디드를 확장합니다. 공통 개념은 한 번 학습하고 이후 응용에서 짧게 회상합니다. 도구 사용 입문 → 원리 → 실패 진단 → 통합 과제의 순환으로 깊이를 높입니다.
 
-대상은 일반적인 코딩을 이미 할 수 있는 개발자입니다. 언어·문법·일반 코딩 입문은 가르치지 않습니다. Python·C/C++은 AI·로봇 실행 환경 구성, 패키지·네이티브 확장·ABI, CMake·colcon과 빌드 오류, 텐서·시간·데이터 계약 등 일반 개발과 다른 도구 선수지식만 다룹니다. 로봇 수학·제어·하드웨어·ML은 진단과 풀이로 필요한 브리지를 보충합니다. 한국어 설명에 영어 용어를 병기합니다. 기존 Linux Ubuntu 24.04 / ROS 2 Jazzy 기준을 유지하며, 원자료의 오래된 버전·C#·MATLAB·Windows 전용 도구를 그대로 필수화하지 않습니다. Isaac Sim·Isaac Lab·Gazebo 등 상세 조합은 실제 콘텐츠 제작 시 호환성을 확인해 별도 고정합니다.
+대상은 일반적인 코딩을 이미 할 수 있는 개발자입니다. 언어·문법·일반 코딩 입문은 가르치지 않습니다. Python·C/C++은 AI·로봇 실행 환경 구성, 패키지·네이티브 확장·ABI, CMake·colcon과 빌드 오류, 텐서·시간·데이터 계약 등 일반 개발과 다른 도구 선수지식만 다룹니다. 로봇 수학·제어·하드웨어·ML은 진단과 풀이로 필요한 브리지를 보충합니다. 한국어 설명에 영어 용어를 병기합니다. 기존 Linux Ubuntu 24.04 / ROS 2 Jazzy 기준을 유지하며, 오래된 버전·C#·MATLAB·Windows 전용 도구를 공통 필수로 요구하지 않습니다. Isaac Sim·Isaac Lab·Gazebo 등 상세 조합은 실제 콘텐츠 제작 시 호환성을 확인해 별도 고정합니다.
 
 ## 2. 전체 구조와 추천 경로
 
-모듈 번호 M00~M34는 내용을 찾는 고정 ID이며 학습 순서가 아닙니다. 2026-11-06에 KANT의 실습 진입 → 로봇 기반 → 모바일 → 조작 → AI → 통합이라는 흐름을 참고하여 기존 내용을 소주제 단위로 재배치했습니다. 세부 설명은 우리 콘텐츠로 보충합니다. 웹의 기본 이전·다음 이동과 공통 과정은 아래 순서를 사용합니다.
+모듈 번호 M00~M34는 내용을 찾는 고정 ID이며 학습 순서가 아닙니다. 실습 진입 → 로봇 기반 → 모바일 → 조작 → AI → 통합의 흐름으로 소주제를 배치하고 필요한 선수와 설명을 보충했습니다. 웹의 기본 이전·다음 이동과 공통 과정은 아래 순서를 사용합니다.
 
 일반 코딩 경험을 전제하므로 Python 문법 입문은 추가하지 않습니다. 처음부터 기구학·딥러닝 전체를 요구하지 않고 제공된 가상 노드와 고전적 영상 연산으로 시작합니다. 다만 좌표·시간·제어 등 실제로 필요한 선수는 건너뛰지 않습니다.
 
@@ -42,13 +42,12 @@ M31의 명세·재현·검토 습관은 초기에, 자동화·다중 에이전�
 
 ## 3. 세부 모듈
 
-각 모듈의 소주제는 1~여러 개의 짧은 학습 단위로 제작합니다. 아래 실습과 판정 기준은 신규 서비스 제안입니다. 출처 ID는 주제 근거를 추적하기 위한 것으로 세부 설명이 원자료와 동일하다는 뜻은 아닙니다.
+각 모듈의 소주제는 1~여러 개의 짧은 학습 단위로 제작합니다. 아래 실습과 판정 기준은 신규 서비스 제안입니다. 소주제 ID는 자료·학습 기록·선수 관계를 연결하는 고정 식별자입니다.
 
 
 ### M00. 문제 정의·학습 진단·로봇 안전
 
 - 선수 조건: 없음
-- 주제 참고: [FC01](fastcampus/FC01_data_online_physicalai.md) · [FC27](fastcampus/FC27_data_thecamp_physicalai.md) · [FC31](fastcampus/FC31_event_online_isaacsim.md)
 
 소주제:
 
@@ -65,7 +64,6 @@ M31의 명세·재현·검토 습관은 초기에, 자동화·다중 에이전�
 ### M01. AI·로봇 실행 환경·패키지·네이티브 빌드
 
 - 선수 조건: M00
-- 주제 참고: [FC01](fastcampus/FC01_data_online_physicalai.md) · [FC04](fastcampus/FC04_data_online_selfdriving.md) · [FC07](fastcampus/FC07_data_online_ros2.md) · [FC23](fastcampus/FC23_data_online_embedded.md) · [FC25](fastcampus/FC25_data_online_clauderobot.md)
 
 소주제:
 
@@ -82,7 +80,6 @@ M31의 명세·재현·검토 습관은 초기에, 자동화·다중 에이전�
 ### M02. 로봇 수학·확률·최적화 브리지
 
 - 선수 조건: M00, M01
-- 주제 참고: [FC01](fastcampus/FC01_data_online_physicalai.md) · [FC15](fastcampus/FC15_data_online_mp.md) · [FC17](fastcampus/FC17_data_online_slam.md) · [FC18](fastcampus/FC18_data_online_autovehicle.md) · [FC19](fastcampus/FC19_data_online_matlab.md)
 
 소주제:
 
@@ -99,7 +96,6 @@ M31의 명세·재현·검토 습관은 초기에, 자동화·다중 에이전�
 ### M03. 기구·센서·액추에이터·전원
 
 - 선수 조건: M00, M02 기하 기초
-- 주제 참고: [FC01](fastcampus/FC01_data_online_physicalai.md) · [FC02](fastcampus/FC02_data_online_robotbegin.md) · [FC06](fastcampus/FC06_data_online_ros2ai.md) · [FC12](fastcampus/FC12_data_online_realrobot.md) · [FC23](fastcampus/FC23_data_online_embedded.md)
 
 소주제:
 
@@ -116,7 +112,6 @@ M31의 명세·재현·검토 습관은 초기에, 자동화·다중 에이전�
 ### M04. MCU·주변장치·드라이버 입문
 
 - 선수 조건: M01, M03
-- 주제 참고: [FC02](fastcampus/FC02_data_online_robotbegin.md) · [FC23](fastcampus/FC23_data_online_embedded.md)
 
 소주제:
 
@@ -133,7 +128,6 @@ M31의 명세·재현·검토 습관은 초기에, 자동화·다중 에이전�
 ### M05. ROS 2 통신·실행·관측 도구
 
 - 선수 조건: M01, M03
-- 주제 참고: [FC04](fastcampus/FC04_data_online_selfdriving.md) · [FC07](fastcampus/FC07_data_online_ros2.md) · [FC13](fastcampus/FC13_data_online_realrobotros2.md) · [FC15](fastcampus/FC15_data_online_mp.md) · [FC21](fastcampus/FC21_data_online_vla.md) · [FC30](fastcampus/FC30_data_camp_roboai.md)
 
 소주제:
 
@@ -150,7 +144,6 @@ M31의 명세·재현·검토 습관은 초기에, 자동화·다중 에이전�
 ### M06. 기구학·좌표계·역기구학
 
 - 선수 조건: M02, M03
-- 주제 참고: [FC01](fastcampus/FC01_data_online_physicalai.md) · [FC02](fastcampus/FC02_data_online_robotbegin.md) · [FC03](fastcampus/FC03_data_online_articulatedrobot.md) · [FC15](fastcampus/FC15_data_online_mp.md) · [FC27](fastcampus/FC27_data_thecamp_physicalai.md)
 
 소주제:
 
@@ -167,7 +160,6 @@ M31의 명세·재현·검토 습관은 초기에, 자동화·다중 에이전�
 ### M07. 동역학·피드백 제어
 
 - 선수 조건: M02, M03, M06
-- 주제 참고: [FC15](fastcampus/FC15_data_online_mp.md) · [FC19](fastcampus/FC19_data_online_matlab.md) · [FC23](fastcampus/FC23_data_online_embedded.md)
 
 소주제:
 
@@ -184,7 +176,6 @@ M31의 명세·재현·검토 습관은 초기에, 자동화·다중 에이전�
 ### M08. URDF·Xacro·로봇 모델 계약
 
 - 선수 조건: M05, M06, M07 관성 기초
-- 주제 참고: [FC05](fastcampus/FC05_data_online_selfdriving2.md) · [FC08](fastcampus/FC08_data_online_urdf.md) · [FC09](fastcampus/FC09_data_online_gazebo.md) · [FC15](fastcampus/FC15_data_online_mp.md) · [FC21](fastcampus/FC21_data_online_vla.md)
 
 소주제:
 
@@ -201,7 +192,6 @@ M31의 명세·재현·검토 습관은 초기에, 자동화·다중 에이전�
 ### M09. Gazebo 기반 모바일·센서 시뮬레이션
 
 - 선수 조건: M05, M07, M08
-- 주제 참고: [FC05](fastcampus/FC05_data_online_selfdriving2.md) · [FC09](fastcampus/FC09_data_online_gazebo.md) · [FC13](fastcampus/FC13_data_online_realrobotros2.md) · [FC21](fastcampus/FC21_data_online_vla.md)
 
 소주제:
 
@@ -218,7 +208,6 @@ M31의 명세·재현·검토 습관은 초기에, 자동화·다중 에이전�
 ### M10. OpenUSD·Isaac Sim·PhysX 기초
 
 - 선수 조건: M05, M07, M08
-- 주제 참고: [FC16](fastcampus/FC16_data_online_yolov11.md) · [FC22](fastcampus/FC22_data_online_humanoid.md) · [FC26](fastcampus/FC26_data_online_digitaltwin.md) · [FC27](fastcampus/FC27_data_thecamp_physicalai.md)
 
 소주제:
 
@@ -235,7 +224,6 @@ M31의 명세·재현·검토 습관은 초기에, 자동화·다중 에이전�
 ### M11. ML·딥러닝·PyTorch 핵심
 
 - 선수 조건: M01, M02
-- 주제 참고: [FC01](fastcampus/FC01_data_online_physicalai.md) · [FC16](fastcampus/FC16_data_online_yolov11.md) · [FC18](fastcampus/FC18_data_online_autovehicle.md) · [FC20](fastcampus/FC20_data_online_il.md) · [FC21](fastcampus/FC21_data_online_vla.md)
 
 소주제:
 
@@ -252,7 +240,6 @@ M31의 명세·재현·검토 습관은 초기에, 자동화·다중 에이전�
 ### M12. 카메라 비전·YOLO·분할·추적
 
 - 선수 조건: M02, M11
-- 주제 참고: [FC01](fastcampus/FC01_data_online_physicalai.md) · [FC16](fastcampus/FC16_data_online_yolov11.md) · [FC18](fastcampus/FC18_data_online_autovehicle.md)
 
 소주제:
 
@@ -269,7 +256,6 @@ M31의 명세·재현·검토 습관은 초기에, 자동화·다중 에이전�
 ### M13. LiDAR·포인트클라우드·3D 인지
 
 - 선수 조건: M13.01/.02의 고전적 점군/정합은 M02 좌표·최적화와 M12 투영 기초에서 시작한다. M11 전체를 공통 필수로 요구하지 않으며 학습 기반 특징/3D 검출은 해당 소주제의 ML 선수를 추가한다. 다중 시점/추적은 각 단위의 프레임·보정·기하 선수를 확인한다.
-- 주제 참고: [FC17](fastcampus/FC17_data_online_slam.md) · [FC18](fastcampus/FC18_data_online_autovehicle.md)
 
 소주제:
 
@@ -286,7 +272,6 @@ M31의 명세·재현·검토 습관은 초기에, 자동화·다중 에이전�
 ### M14. 캘리브레이션·시간 정합·센서퓨전
 
 - 선수 조건: M05, M12, M02 확률; 점군/다중 모달 심화는 M13 추가
-- 주제 참고: [FC16](fastcampus/FC16_data_online_yolov11.md) · [FC17](fastcampus/FC17_data_online_slam.md) · [FC18](fastcampus/FC18_data_online_autovehicle.md) · [FC27](fastcampus/FC27_data_thecamp_physicalai.md)
 
 소주제:
 
@@ -303,7 +288,6 @@ M31의 명세·재현·검토 습관은 초기에, 자동화·다중 에이전�
 ### M15. SLAM·지도·위치추정 입문
 
 - 선수 조건: M05, M09 또는 동등 로그, M14 기초
-- 주제 참고: [FC04](fastcampus/FC04_data_online_selfdriving.md) · [FC10](fastcampus/FC10_data_online_slambasic.md) · [FC17](fastcampus/FC17_data_online_slam.md) · [FC18](fastcampus/FC18_data_online_autovehicle.md)
 
 소주제:
 
@@ -320,7 +304,6 @@ M31의 명세·재현·검토 습관은 초기에, 자동화·다중 에이전�
 ### M16. SLAM 심화·최적화·연구 구현
 
 - 선수 조건: M02 최적화, M13, M14, M15
-- 주제 참고: [FC17](fastcampus/FC17_data_online_slam.md) · [FC18](fastcampus/FC18_data_online_autovehicle.md)
 
 소주제:
 
@@ -337,7 +320,6 @@ M31의 명세·재현·검토 습관은 초기에, 자동화·다중 에이전�
 ### M17. 모션 플래닝·경로·궤적
 
 - 선수 조건: M02, M06, M07
-- 주제 참고: [FC01](fastcampus/FC01_data_online_physicalai.md) · [FC15](fastcampus/FC15_data_online_mp.md) · [FC18](fastcampus/FC18_data_online_autovehicle.md)
 
 소주제:
 
@@ -354,7 +336,6 @@ M31의 명세·재현·검토 습관은 초기에, 자동화·다중 에이전�
 ### M18. Nav2·미션·다중 로봇
 
 - 선수 조건: M05, M07, M09, M15, M17
-- 주제 참고: [FC04](fastcampus/FC04_data_online_selfdriving.md) · [FC11](fastcampus/FC11_data_online_nav2.md) · [FC13](fastcampus/FC13_data_online_realrobotros2.md) · [FC15](fastcampus/FC15_data_online_mp.md)
 
 소주제:
 
@@ -371,7 +352,6 @@ M31의 명세·재현·검토 습관은 초기에, 자동화·다중 에이전�
 ### M19. 매니퓰레이션·MoveIt 2·산업용 티칭
 
 - 선수 조건: M06, M07, M08, M12, M17
-- 주제 참고: [FC02](fastcampus/FC02_data_online_robotbegin.md) · [FC03](fastcampus/FC03_data_online_articulatedrobot.md) · [FC15](fastcampus/FC15_data_online_mp.md) · [FC30](fastcampus/FC30_data_camp_roboai.md)
 
 소주제:
 
@@ -388,7 +368,6 @@ M31의 명세·재현·검토 습관은 초기에, 자동화·다중 에이전�
 ### M20. 텔레오퍼레이션·데이터 파이프라인
 
 - 선수 조건: M05, M06, M10 또는 MuJoCo 입문, M14
-- 주제 참고: [FC02](fastcampus/FC02_data_online_robotbegin.md) · [FC20](fastcampus/FC20_data_online_il.md) · [FC21](fastcampus/FC21_data_online_vla.md) · [FC27](fastcampus/FC27_data_thecamp_physicalai.md)
 
 소주제:
 
@@ -405,7 +384,6 @@ M31의 명세·재현·검토 습관은 초기에, 자동화·다중 에이전�
 ### M21. 모방학습·BC·ACT·Diffusion Policy
 
 - 선수 조건: M11, M19 기초, M20
-- 주제 참고: [FC20](fastcampus/FC20_data_online_il.md) · [FC21](fastcampus/FC21_data_online_vla.md) · [FC27](fastcampus/FC27_data_thecamp_physicalai.md)
 
 소주제:
 
@@ -422,7 +400,6 @@ M31의 명세·재현·검토 습관은 초기에, 자동화·다중 에이전�
 ### M22. 로봇 LLM·VLM·VLA와 접지된 실행
 
 - 선수 조건: M11, M18 또는 M19, M20, M21
-- 주제 참고: [FC06](fastcampus/FC06_data_online_ros2ai.md) · [FC14](fastcampus/FC14_data_online_aidevrobot.md) · [FC21](fastcampus/FC21_data_online_vla.md) · [FC27](fastcampus/FC27_data_thecamp_physicalai.md)
 
 소주제:
 
@@ -439,7 +416,6 @@ M31의 명세·재현·검토 습관은 초기에, 자동화·다중 에이전�
 ### M23. 강화학습·PPO·Isaac Lab
 
 - 선수 조건: M07, M10, M11
-- 주제 참고: [FC22](fastcampus/FC22_data_online_humanoid.md)
 
 소주제:
 
@@ -456,7 +432,6 @@ M31의 명세·재현·검토 습관은 초기에, 자동화·다중 에이전�
 ### M24. 휴머노이드·보행·전신 제어
 
 - 선수 조건: M06, M07, M23
-- 주제 참고: [FC22](fastcampus/FC22_data_online_humanoid.md)
 
 소주제:
 
@@ -473,7 +448,6 @@ M31의 명세·재현·검토 습관은 초기에, 자동화·다중 에이전�
 ### M25. 디지털 트윈·합성데이터·복합 접촉
 
 - 선수 조건: M10, M12, M20
-- 주제 참고: [FC16](fastcampus/FC16_data_online_yolov11.md) · [FC26](fastcampus/FC26_data_online_digitaltwin.md) · [FC27](fastcampus/FC27_data_thecamp_physicalai.md)
 
 소주제:
 
@@ -490,7 +464,6 @@ M31의 명세·재현·검토 습관은 초기에, 자동화·다중 에이전�
 ### M26. 임베디드 심화·HSI·밸런싱 로봇
 
 - 선수 조건: M04, M07
-- 주제 참고: [FC01](fastcampus/FC01_data_online_physicalai.md) · [FC23](fastcampus/FC23_data_online_embedded.md)
 
 소주제:
 
@@ -507,7 +480,6 @@ M31의 명세·재현·검토 습관은 초기에, 자동화·다중 에이전�
 ### M27. 엣지 실행·추론 최적화
 
 - 선수 조건: M11, M21 또는 M22 또는 M23
-- 주제 참고: [FC06](fastcampus/FC06_data_online_ros2ai.md) · [FC21](fastcampus/FC21_data_online_vla.md) · [FC25](fastcampus/FC25_data_online_clauderobot.md) · [FC27](fastcampus/FC27_data_thecamp_physicalai.md)
 
 소주제:
 
@@ -524,7 +496,6 @@ M31의 명세·재현·검토 습관은 초기에, 자동화·다중 에이전�
 ### M28. 차량 CAN·UDS·진단·캘리브레이션
 
 - 선수 조건: M01, M03, M04 통신 기초
-- 주제 참고: [FC24](fastcampus/FC24_data_online_can.md)
 
 소주제:
 
@@ -541,7 +512,6 @@ M31의 명세·재현·검토 습관은 초기에, 자동화·다중 에이전�
 ### M29. 자율주행 차량·센서 통합 프로젝트
 
 - 선수 조건: M07, M12, M13, M14, M15, M17
-- 주제 참고: [FC18](fastcampus/FC18_data_online_autovehicle.md)
 
 소주제:
 
@@ -558,7 +528,6 @@ M31의 명세·재현·검토 습관은 초기에, 자동화·다중 에이전�
 ### M30. Sim2Real·안전 배포·정량 평가
 
 - 선수 조건: M07, M14 및 선택 트랙의 정책/제어 모듈
-- 주제 참고: [FC20](fastcampus/FC20_data_online_il.md) · [FC22](fastcampus/FC22_data_online_humanoid.md) · [FC25](fastcampus/FC25_data_online_clauderobot.md) · [FC27](fastcampus/FC27_data_thecamp_physicalai.md)
 
 소주제:
 
@@ -575,7 +544,6 @@ M31의 명세·재현·검토 습관은 초기에, 자동화·다중 에이전�
 ### M31. AI 개발 에이전트·검증 자동화
 
 - 선수 조건: M31.01/.02는 M01의 실행 환경·자료 계약을 바탕으로 S01에서 시작한다. M31.03/.04는 모바일·시뮬레이션 적용, M31.05/.06는 후반 자동화·실물 변경의 해당 선수 후에 이수한다. ROS·한 트랙 전체 경험을 초반 두 단위의 공통 필수로 요구하지 않는다.
-- 주제 참고: [FC25](fastcampus/FC25_data_online_clauderobot.md) · [FC18](fastcampus/FC18_data_online_autovehicle.md) · [FC23](fastcampus/FC23_data_online_embedded.md)
 
 소주제:
 
@@ -592,7 +560,6 @@ M31의 명세·재현·검토 습관은 초기에, 자동화·다중 에이전�
 ### M32. 통합 캡스톤·포트폴리오
 
 - 선수 조건: 공통 기반과 선택 트랙, M30; M31 권장
-- 주제 참고: [FC03](fastcampus/FC03_data_online_articulatedrobot.md) · [FC06](fastcampus/FC06_data_online_ros2ai.md) · [FC15](fastcampus/FC15_data_online_mp.md) · [FC18](fastcampus/FC18_data_online_autovehicle.md) · [FC20](fastcampus/FC20_data_online_il.md) · [FC22](fastcampus/FC22_data_online_humanoid.md) · [FC23](fastcampus/FC23_data_online_embedded.md) · [FC25](fastcampus/FC25_data_online_clauderobot.md) · [FC27](fastcampus/FC27_data_thecamp_physicalai.md) · [FC30](fastcampus/FC30_data_camp_roboai.md)
 
 소주제:
 
@@ -609,7 +576,6 @@ M31의 명세·재현·검토 습관은 초기에, 자동화·다중 에이전�
 ### M33. 선택 체험·비전공 브리지·도구 비교
 
 - 선수 조건: M00; FPV는 조작·안전 안내
-- 주제 참고: [FC02](fastcampus/FC02_data_online_robotbegin.md) · [FC19](fastcampus/FC19_data_online_matlab.md) · [FC23](fastcampus/FC23_data_online_embedded.md) · [FC28](fastcampus/FC28_dev_online_aicoding.md) · [FC29](fastcampus/FC29_dgn_online_fpvdrone.md) · [FC31](fastcampus/FC31_event_online_isaacsim.md)
 
 소주제:
 

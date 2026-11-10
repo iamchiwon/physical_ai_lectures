@@ -50,28 +50,28 @@
       "evidenceRef": "doc/v2/work_items/M15.06.md"
     },
     "M17.01": {
-      "sourceSha256": "e83f7aa8c4d8a2950bd3ed12ccc631d8840fffc0353a0d1c334285e6bb2e3c7f",
-      "evidenceRef": "doc/v2/work_items/M17.01.md"
+      "sourceSha256": "5235b8ed0dc69ab1c7235f5e47f27dab0e264cd3cc5733df6a3fb7b06a72e2aa",
+      "evidenceRef": "doc/v2/work_items/publication-source-privacy.md"
     },
     "M17.02": {
-      "sourceSha256": "7a51918e2813d3aaa43ca940d0035f0567e121f5c26017f3e3ca0064689a52f2",
-      "evidenceRef": "doc/v2/work_items/M17.02.md"
+      "sourceSha256": "971d22f9fe3d509fd49a0f77cb8dd5bb8f953a1bd3946c13e78266e3e53c2005",
+      "evidenceRef": "doc/v2/work_items/publication-source-privacy.md"
     },
     "M17.03": {
-      "sourceSha256": "e128bacb35909aff52d159b6f9f992cbecd7e8dc8406bb0c88f50ee8baf90fc2",
-      "evidenceRef": "doc/v2/work_items/M17.03.md"
+      "sourceSha256": "76d83057661db95b11f0201ed6f8b301d8c09c35578172f9db1a2abfc914a534",
+      "evidenceRef": "doc/v2/work_items/publication-source-privacy.md"
     },
     "M17.04": {
-      "sourceSha256": "746650390ba7c76104e9f512652b556886c05e219182d32eaab77701abbf6afc",
-      "evidenceRef": "doc/v2/work_items/M17.04.md"
+      "sourceSha256": "960fe03c6dc609c4377d952392ca4f4aa0df1efb2957a7c076858969d8c8ee32",
+      "evidenceRef": "doc/v2/work_items/publication-source-privacy.md"
     },
     "M17.05": {
-      "sourceSha256": "26193b2edacd69f3b889f3493be4985bbe9406f0215c7ef9477b407443b870a2",
-      "evidenceRef": "doc/v2/work_items/M17.05.md"
+      "sourceSha256": "f980fab97830e654a99764988c8301ec62e1230623e1032269975317299a6544",
+      "evidenceRef": "doc/v2/work_items/publication-source-privacy.md"
     },
     "M17.06": {
-      "sourceSha256": "b4c32bda9cb504e3d2be08f2b9de9a7a38d2e69342e7d940df9d7ab6ffd6a5e5",
-      "evidenceRef": "doc/v2/work_items/M17.06.md"
+      "sourceSha256": "15dd6bdbd92f807f32db2c045edd4647d336f0481d6dab524845519500e04775",
+      "evidenceRef": "doc/v2/work_items/publication-source-privacy.md"
     },
     "M18.01": {
       "sourceSha256": "1d0b2e4b75d89efd853b8732bb601763606221685a0ca99d16af532f9a9690ce",
@@ -94,8 +94,8 @@
       "evidenceRef": "doc/v2/work_items/M18.05.md"
     },
     "M18.06": {
-      "sourceSha256": "ceee7c8bc2060d92ab74bfffee56aa8738361f5edf51205a6d22d8e7c67aadda",
-      "evidenceRef": "doc/v2/work_items/M18.06.md"
+      "sourceSha256": "230cabdaf5edbdca4b036728f6cc475ad2f4fb0d1c8c2c518b9a65f099a726d1",
+      "evidenceRef": "doc/v2/work_items/publication-source-privacy.md"
     }
   }
 }
