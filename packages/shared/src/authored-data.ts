@@ -2592,6 +2592,20 @@ export const authoredMetadata: AuthoredMetadata[] = [
     "evidenceRef": "doc/v2/work_items/M23.03.md"
   },
   {
+    "topicId": "M23.04",
+    "source": "ebook/curriculum/M23/M23.04.md",
+    "title": "Isaac Lab·병렬 환경·rsl_rl 구성",
+    "objectives": [
+      "Isaac Lab 과제/환경과 rsl_rl 학습기 구성을 구분한다.",
+      "물리/정책 주기·병렬 rollout 크기를 계산한다.",
+      "버전·관측/행동·reset·장치 계약의 불일치를 진단한다."
+    ],
+    "prerequisiteNote": "M23.03의 개념을 사용한다. 필요한 새 용어·기호는 본문에서 정의한다. 일반 코딩 문법/실제 장비 설치를 요구하지 않으며 합성 자료로 기본 경로를 수행한다.",
+    "sha256": "703fc8fafe44989f14c350bc399669f4e4060a862cbd340148b9f646acbb46f4",
+    "reviewed": true,
+    "evidenceRef": "doc/v2/work_items/M23.04.md"
+  },
+  {
     "topicId": "M32.04",
     "source": "ebook/curriculum/M32/M32.04.md",
     "title": "휴머노이드 보행 외란 대응 또는 밸런싱 로봇",
