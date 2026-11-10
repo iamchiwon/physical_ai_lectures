@@ -23,6 +23,7 @@ export const authoredReviewRegistries = [
   { file: 'doc/v2/inventory/w12-reviews.json', modules: ['M23'] },
   { file: 'doc/v2/inventory/w13-reviews.json', modules: ['M24'] },
   { file: 'doc/v2/inventory/w14-reviews.json', modules: ['M33'] },
+  { file: 'doc/v2/inventory/w15-reviews.json', modules: ['M29'] },
 ];
 const object = value => value !== null && typeof value === 'object' && !Array.isArray(value);
 const exactKeys = (value, keys) => Object.keys(value).every(key => keys.includes(key));
