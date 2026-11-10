@@ -2704,6 +2704,20 @@ export const authoredMetadata: AuthoredMetadata[] = [
     "evidenceRef": "doc/v2/work_items/M24.05.md"
   },
   {
+    "topicId": "M24.06",
+    "source": "ebook/curriculum/M24/M24.06.md",
+    "title": "보행 정책 배포·Sim2Real 전 단계 점검",
+    "objectives": [
+      "정책/모델/전처리/제어의 배포 형상을 대조한다.",
+      "shadow/제한 실행·지연/유효기간·중단 조건을 계산한다.",
+      "Sim2Real 전 단계 판정과 재현/롤백 근거를 작성한다."
+    ],
+    "prerequisiteNote": "M24.05의 개념을 사용한다. 필요한 새 용어·기호는 본문에서 정의한다. 일반 코딩 문법/실제 장비 설치를 요구하지 않으며 합성 자료로 기본 경로를 수행한다.",
+    "sha256": "295943879b537df2ff88f11b56bcbdc8865c2ce0be072f9844785adbe5e979d7",
+    "reviewed": true,
+    "evidenceRef": "doc/v2/work_items/M24.06.md"
+  },
+  {
     "topicId": "M32.04",
     "source": "ebook/curriculum/M32/M32.04.md",
     "title": "휴머노이드 보행 외란 대응 또는 밸런싱 로봇",
