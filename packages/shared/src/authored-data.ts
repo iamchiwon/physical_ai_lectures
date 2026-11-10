@@ -2662,6 +2662,20 @@ export const authoredMetadata: AuthoredMetadata[] = [
     "evidenceRef": "doc/v2/work_items/M24.02.md"
   },
   {
+    "topicId": "M24.03",
+    "source": "ebook/curriculum/M24/M24.03.md",
+    "title": "보상·넘어짐·리셋·지면·보행 평가",
+    "objectives": [
+      "보행 성공·넘어짐·접촉/지면·reset 기준을 분리한다.",
+      "추종오차·조건별 성공률과 혼합 평균을 계산한다.",
+      "생존 보상/조기 종료의 허점을 검출하는 평가를 설계한다."
+    ],
+    "prerequisiteNote": "M24.02의 개념을 사용한다. 필요한 새 용어·기호는 본문에서 정의한다. 일반 코딩 문법/실제 장비 설치를 요구하지 않으며 합성 자료로 기본 경로를 수행한다.",
+    "sha256": "86f201feff7c309e0aab6e4788a6dabc06408269015f92502e8d0eaf5cd56065",
+    "reviewed": true,
+    "evidenceRef": "doc/v2/work_items/M24.03.md"
+  },
+  {
     "topicId": "M32.04",
     "source": "ebook/curriculum/M32/M32.04.md",
     "title": "휴머노이드 보행 외란 대응 또는 밸런싱 로봇",
