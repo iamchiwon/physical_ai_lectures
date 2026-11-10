@@ -2772,6 +2772,20 @@ export const authoredMetadata: AuthoredMetadata[] = [
     "sha256": "ea8382a38d39013bad6dca6cc8e57d61f8aa0244bd5c12e11c4e0451efd4ccd8",
     "reviewed": true,
     "evidenceRef": "doc/v2/work_items/M33.03.md"
+  },
+  {
+    "topicId": "M33.04",
+    "source": "ebook/curriculum/M33/M33.04.md",
+    "title": "C# OpenJigware·MATLAB/Simulink·전용 GUI 비교",
+    "objectives": [
+      "라이브러리·모델링 도구·전용 GUI의 역할과 경계를 비교한다.",
+      "단위/주기·설정 전달의 동등성 예제를 계산한다.",
+      "환경·재현·라이선스/내보내기 기준으로 도구 선택표를 작성한다."
+    ],
+    "prerequisiteNote": "M00.04의 개념을 사용한다. 필요한 새 용어·기호는 본문에서 정의한다. 일반 코딩 문법/실제 장비 설치를 요구하지 않으며 합성 자료로 기본 경로를 수행한다.",
+    "sha256": "9226e8e2074cc9676cfac58e21ab4f6ea70476f13d5f5850710432147d6fa942",
+    "reviewed": true,
+    "evidenceRef": "doc/v2/work_items/M33.04.md"
   }
 ];
 export const legacyRevisions: LegacyRevision[] = [
