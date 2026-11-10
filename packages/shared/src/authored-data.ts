@@ -2800,6 +2800,20 @@ export const authoredMetadata: AuthoredMetadata[] = [
     "sha256": "9c0052e9e1efd430c3b392afc6a2df6b03793fdcab44076d5ce31ca624b2bfea",
     "reviewed": true,
     "evidenceRef": "doc/v2/work_items/M33.05.md"
+  },
+  {
+    "topicId": "M33.06",
+    "source": "ebook/curriculum/M33/M33.06.md",
+    "title": "현업 세미나·포트폴리오 자료 읽기",
+    "objectives": [
+      "발표/포트폴리오의 주장과 실제 수행 근거를 구분한다.",
+      "성공률·제외 시도·지연의 보고 오류를 계산한다.",
+      "재현/한계·본인 기여·다음 실험을 포함한 검토표를 작성한다."
+    ],
+    "prerequisiteNote": "M00.04의 개념을 사용한다. 필요한 새 용어·기호는 본문에서 정의한다. 일반 코딩 문법/실제 장비 설치를 요구하지 않으며 합성 자료로 기본 경로를 수행한다.",
+    "sha256": "8c8165ca27a91a005dad56d8824f9da35aa9f6e2b4567c44271cef3cf9cda7ae",
+    "reviewed": true,
+    "evidenceRef": "doc/v2/work_items/M33.06.md"
   }
 ];
 export const legacyRevisions: LegacyRevision[] = [
