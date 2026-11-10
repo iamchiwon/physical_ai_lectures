@@ -2730,6 +2730,20 @@ export const authoredMetadata: AuthoredMetadata[] = [
     "sha256": "43ba40d8286fa57b0e610b52b20503269cfd5f2970b393bdca9e890f82e8b970",
     "reviewed": true,
     "evidenceRef": "doc/v2/work_items/M32.04.md"
+  },
+  {
+    "topicId": "M33.01",
+    "source": "ebook/curriculum/M33/M33.01.md",
+    "title": "Scratch·IoT·코딩로봇의 입력-처리-출력 체험",
+    "objectives": [
+      "블록/IoT/로봇 사례를 입력·처리·출력·피드백으로 분해한다.",
+      "문턱/히스테리시스·유효기간 상태전이를 계산한다.",
+      "통신접수와 실제동작·선택체험/필수선수를 구분한다."
+    ],
+    "prerequisiteNote": "M00.04의 개념을 사용한다. 필요한 새 용어·기호는 본문에서 정의한다. 일반 코딩 문법/실제 장비 설치를 요구하지 않으며 합성 자료로 기본 경로를 수행한다.",
+    "sha256": "24442d2312b22111658071eb4869730342d97e59d3b922a8f75ec9254a9882e2",
+    "reviewed": true,
+    "evidenceRef": "doc/v2/work_items/M33.01.md"
   }
 ];
 export const legacyRevisions: LegacyRevision[] = [
