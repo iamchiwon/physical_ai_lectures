@@ -2690,6 +2690,20 @@ export const authoredMetadata: AuthoredMetadata[] = [
     "evidenceRef": "doc/v2/work_items/M24.04.md"
   },
   {
+    "topicId": "M24.05",
+    "source": "ebook/curriculum/M24/M24.05.md",
+    "title": "외란·마찰·지연·질량 변화와 일반화",
+    "objectives": [
+      "외란·마찰·질량·지연 변화와 학습 분포를 구분한다.",
+      "단순 마찰/지연 예제와 조건별 성공률을 계산한다.",
+      "단일요인/결합요인·독립 조건의 일반화 평가를 설계한다."
+    ],
+    "prerequisiteNote": "M24.04의 개념을 사용한다. 필요한 새 용어·기호는 본문에서 정의한다. 일반 코딩 문법/실제 장비 설치를 요구하지 않으며 합성 자료로 기본 경로를 수행한다.",
+    "sha256": "6e3a999f72780cad9486de825fb2e0915c8e8d00fa831c2bccea65f5e6b65236",
+    "reviewed": true,
+    "evidenceRef": "doc/v2/work_items/M24.05.md"
+  },
+  {
     "topicId": "M32.04",
     "source": "ebook/curriculum/M32/M32.04.md",
     "title": "휴머노이드 보행 외란 대응 또는 밸런싱 로봇",
