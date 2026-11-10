@@ -2648,6 +2648,20 @@ export const authoredMetadata: AuthoredMetadata[] = [
     "evidenceRef": "doc/v2/work_items/M24.01.md"
   },
   {
+    "topicId": "M24.02",
+    "source": "ebook/curriculum/M24/M24.02.md",
+    "title": "속도 지령·보행 관측·행동 스케일",
+    "objectives": [
+      "속도 지령과 실제 body/world 속도 관측을 구분한다.",
+      "행동 스케일·기준 자세·주기와 관측 이력을 계산한다.",
+      "순서/프레임/정규화·지연 불일치를 진단한다."
+    ],
+    "prerequisiteNote": "M24.01의 개념을 사용한다. 필요한 새 용어·기호는 본문에서 정의한다. 일반 코딩 문법/실제 장비 설치를 요구하지 않으며 합성 자료로 기본 경로를 수행한다.",
+    "sha256": "a78f995817e4f781027025d0ae69cd392f0b60b9be5971c68a42bb76d7a3e70c",
+    "reviewed": true,
+    "evidenceRef": "doc/v2/work_items/M24.02.md"
+  },
+  {
     "topicId": "M32.04",
     "source": "ebook/curriculum/M32/M32.04.md",
     "title": "휴머노이드 보행 외란 대응 또는 밸런싱 로봇",
