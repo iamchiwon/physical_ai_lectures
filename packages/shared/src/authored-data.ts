@@ -2620,6 +2620,20 @@ export const authoredMetadata: AuthoredMetadata[] = [
     "evidenceRef": "doc/v2/work_items/M23.05.md"
   },
   {
+    "topicId": "M23.06",
+    "source": "ebook/curriculum/M23/M23.06.md",
+    "title": "MuJoCo 비교·Domain Randomization·정책 내보내기",
+    "objectives": [
+      "simulator 간 물리/센서/제어 계약의 차이를 구분한다.",
+      "randomization 범위·지연과 행동 후처리 예제를 계산한다.",
+      "정책 내보내기와 단계별 전이 평가/롤백 명세를 작성한다."
+    ],
+    "prerequisiteNote": "M23.05의 개념을 사용한다. 필요한 새 용어·기호는 본문에서 정의한다. 일반 코딩 문법/실제 장비 설치를 요구하지 않으며 합성 자료로 기본 경로를 수행한다.",
+    "sha256": "3c1e503538f0cb99103d1d0109f846725301f585025f69a45b2c65dd0de12aae",
+    "reviewed": true,
+    "evidenceRef": "doc/v2/work_items/M23.06.md"
+  },
+  {
     "topicId": "M32.04",
     "source": "ebook/curriculum/M32/M32.04.md",
     "title": "휴머노이드 보행 외란 대응 또는 밸런싱 로봇",
