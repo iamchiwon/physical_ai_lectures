@@ -15,6 +15,7 @@ const canonicalTitles: Record<string, string> = {
   "M01.06": "Python 실험과 C++ 실행 경계·시간·데이터 계약",
 };
 const prerequisiteUpdates: Record<string, { allOf: string[]; anyOf?: string[]; supplemental: string[]; reason: string }> = {
+  "M33.03": { allOf: ["M00.04", "M33.02"], supplemental: [], reason: "가상 연습의 범위/중단 조건과 FPV 축·모드·카메라/채널 계약을 먼저 확인합니다. 선택 체험 내부의 선수이며 공통 경로를 추가로 제한하지 않습니다." },
   "M01.05": { allOf: ["M01.01", "M01.02"], supplemental: ["M01.03", "M01.04"], reason: "경로·환경·패키지 계약으로 Git과 의존성 고정에 진입합니다. C++ 빌드 작업은 S01의 ABI·CMake 기본 도구 경로를 함께 사용합니다." },
   "M05.01": { allOf: ["M01.05"], supplemental: ["M03.06"], reason: "재현 환경과 제공된 가상 노드로 시작합니다. 실제 장치 연결을 선택하면 BOM·배선·기계 한계도 확인합니다." },
   "M06.05": { allOf: ["M02.01", "M03.05", "M06.01"], supplemental: ["M06.04"], reason: "행렬·바퀴 구조·프레임으로 차동·옴니·메카넘 계산에 진입합니다. 팔 특이점은 별도 심화입니다." },

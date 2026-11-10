@@ -2,27 +2,27 @@
   "schemaVersion": 1,
   "topics": {
     "M23.01": {
-      "sourceSha256": "46c9970ff58de3bbbb185fba3cc0c5503d441c5a2b7606c771b69a48e198a084",
+      "sourceSha256": "0ac2740e09b3c4ce4e1f9d7621459eaf3a995bc900f04ced05fd2a2154c4ce7e",
       "evidenceRef": "doc/v2/work_items/M23.01.md"
     },
     "M23.02": {
-      "sourceSha256": "717d1a3edd5f264efc4329b77aa9164c57bd77d7ca77bf7cf332c6cbb6032b86",
+      "sourceSha256": "fefa4f60e31188908c21f32dc0f06dc565b4e3a6a2f7581dd46225d58bc8203e",
       "evidenceRef": "doc/v2/work_items/M23.02.md"
     },
     "M23.03": {
-      "sourceSha256": "8f1fa04a494a3f6c4c984a8b7403e40c1993b453417df1a638047c246c455a8f",
+      "sourceSha256": "85a6673297e38fd0c32704609d03aa726e52ebf9ac704253161ea8e04bc9fef5",
       "evidenceRef": "doc/v2/work_items/M23.03.md"
     },
     "M23.04": {
-      "sourceSha256": "703fc8fafe44989f14c350bc399669f4e4060a862cbd340148b9f646acbb46f4",
+      "sourceSha256": "bc3f16fd42f2c5f198947d7a8663dfa172eb4efdcefae18847c8395e84791f02",
       "evidenceRef": "doc/v2/work_items/M23.04.md"
     },
     "M23.05": {
-      "sourceSha256": "5b8b8425d49f156983b57578168bb7f016530790f8867ec98b2329d2b89a7693",
+      "sourceSha256": "32e5668de7a2ea363939fcc9ea5a6efff0a11f43209500dd4f29db45baa8d079",
       "evidenceRef": "doc/v2/work_items/M23.05.md"
     },
     "M23.06": {
-      "sourceSha256": "3c1e503538f0cb99103d1d0109f846725301f585025f69a45b2c65dd0de12aae",
+      "sourceSha256": "0af8486eccbd76ff64fcd32b7f09587c2c772f25680ce7969dc3ac31e1d5fbbe",
       "evidenceRef": "doc/v2/work_items/M23.06.md"
     }
   }

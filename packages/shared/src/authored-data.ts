@@ -2349,7 +2349,7 @@ export const authoredMetadata: AuthoredMetadata[] = [
       "학습 분할과 희소성 변화에 따른 실패를 진단한다."
     ],
     "prerequisiteNote": "M13.02의 개념을 사용한다. 필요한 새 용어·기호는 본문에서 정의한다. 일반 코딩 문법/실제 장비 설치를 요구하지 않으며 합성 자료로 기본 경로를 수행한다.",
-    "sha256": "ce2ed2122df5051d18a345226527ba1e99cbc9b2b560226f2cf3e8071ff7db20",
+    "sha256": "867750419c84386acb90c845b837842244783518dae0085f09282022d0d6b191",
     "reviewed": true,
     "evidenceRef": "doc/v2/work_items/M13.03.md"
   },
@@ -2363,7 +2363,7 @@ export const authoredMetadata: AuthoredMetadata[] = [
       "거리/가림·매칭/문턱에 따른 실패를 진단한다."
     ],
     "prerequisiteNote": "M13.03의 개념을 사용한다. 필요한 새 용어·기호는 본문에서 정의한다. 일반 코딩 문법/실제 장비 설치를 요구하지 않으며 합성 자료로 기본 경로를 수행한다.",
-    "sha256": "884f547eea283a9d00002ce5b8f31b7f048fbeca9f903559d3392944d7ee1d64",
+    "sha256": "8d2fc922208cb806ee6657f6eb5a4800405d7cb4c6f1afccd11288f0b8727fe5",
     "reviewed": true,
     "evidenceRef": "doc/v2/work_items/M13.04.md"
   },
@@ -2377,7 +2377,7 @@ export const authoredMetadata: AuthoredMetadata[] = [
       "모달 누락과 상관오차를 포함한 비교 평가를 설계한다."
     ],
     "prerequisiteNote": "M14.04, M13.01의 개념을 사용한다. 필요한 새 용어·기호는 본문에서 정의한다. 일반 코딩 문법/실제 장비 설치를 요구하지 않으며 합성 자료로 기본 경로를 수행한다.",
-    "sha256": "779bfdb27509d0621f96a684d9fcae284461f2b15bd1aa179873b28b48ccd12d",
+    "sha256": "b46430269533a3d624a1440fe4cb57532163b90d99e87185064a1099eaa57c63",
     "reviewed": true,
     "evidenceRef": "doc/v2/work_items/M14.05.md"
   },
@@ -2391,7 +2391,7 @@ export const authoredMetadata: AuthoredMetadata[] = [
       "저텍스처·조명·동적 장면의 실패를 진단한다."
     ],
     "prerequisiteNote": "M02.05, M13.02, M14.04, M15.04의 개념을 사용한다. 필요한 새 용어·기호는 본문에서 정의한다. 일반 코딩 문법/실제 장비 설치를 요구하지 않으며 합성 자료로 기본 경로를 수행한다.",
-    "sha256": "6076cd834eb1d3f02dc6b59e1df9273e70a95a9d86c3f60fdc85b1a428630c57",
+    "sha256": "ef4a3edc5bf81031339e75fa949941fb2495cab3b75c6f4bd3f927dc35467a74",
     "reviewed": true,
     "evidenceRef": "doc/v2/work_items/M16.01.md"
   },
@@ -2405,7 +2405,7 @@ export const authoredMetadata: AuthoredMetadata[] = [
       "기하 퇴화와 동적점·낮은 잔차의 한계를 진단한다."
     ],
     "prerequisiteNote": "M16.01의 개념을 사용한다. 필요한 새 용어·기호는 본문에서 정의한다. 일반 코딩 문법/실제 장비 설치를 요구하지 않으며 합성 자료로 기본 경로를 수행한다.",
-    "sha256": "2c63fe5405d404c59e3c94a165f8479b4020a37c5e7e9db069fc9c4529672fa8",
+    "sha256": "47dbfe1ffca31549022b6ede42c3ac708be7f81b2a31404990e0058066973c54",
     "reviewed": true,
     "evidenceRef": "doc/v2/work_items/M16.02.md"
   },
@@ -2419,7 +2419,7 @@ export const authoredMetadata: AuthoredMetadata[] = [
       "초기화/관측가능성·느슨한/긴밀한 결합의 한계를 설명한다."
     ],
     "prerequisiteNote": "M16.02의 개념을 사용한다. 필요한 새 용어·기호는 본문에서 정의한다. 일반 코딩 문법/실제 장비 설치를 요구하지 않으며 합성 자료로 기본 경로를 수행한다.",
-    "sha256": "c3e24f0a96c1c11b3fdc5ec90fdc557fc38c521ff4fdbc3445d6156ece71d9ca",
+    "sha256": "0c3ee24a6c0fc181c1c000a62348541e5b0ec09e82d1daf5d098f5f6c2819eb7",
     "reviewed": true,
     "evidenceRef": "doc/v2/work_items/M16.03.md"
   },
@@ -2433,7 +2433,7 @@ export const authoredMetadata: AuthoredMetadata[] = [
       "gauge 자유도·가중치·상관 관측의 실패를 진단한다."
     ],
     "prerequisiteNote": "M16.03의 개념을 사용한다. 필요한 새 용어·기호는 본문에서 정의한다. 일반 코딩 문법/실제 장비 설치를 요구하지 않으며 합성 자료로 기본 경로를 수행한다.",
-    "sha256": "8afd9d2c9658170ad0868c9e9fbfa5db78d46dc25cb852884a9e8ed162e6ca82",
+    "sha256": "4ed79028f4ba6525901dadf5a6b0928f81bc48e0d103be9f6a6faa64db5718ec",
     "reviewed": true,
     "evidenceRef": "doc/v2/work_items/M16.04.md"
   },
@@ -2447,7 +2447,7 @@ export const authoredMetadata: AuthoredMetadata[] = [
       "거짓루프/실제루프의 실패와 복구·평가를 설계한다."
     ],
     "prerequisiteNote": "M16.04의 개념을 사용한다. 필요한 새 용어·기호는 본문에서 정의한다. 일반 코딩 문법/실제 장비 설치를 요구하지 않으며 합성 자료로 기본 경로를 수행한다.",
-    "sha256": "873587826a399ea71fc64b72e728698bc3dd3c4433362b48c9db9d2d7ac04a71",
+    "sha256": "a4c2aa617b5f3ee35ecbe39e11fa8039f9832e18ae3e75f86e0d7c5917f025ed",
     "reviewed": true,
     "evidenceRef": "doc/v2/work_items/M16.05.md"
   },
@@ -2461,7 +2461,7 @@ export const authoredMetadata: AuthoredMetadata[] = [
       "장치/응용별 동일 조건의 정확도·지연·실패 벤치마크를 설계한다."
     ],
     "prerequisiteNote": "M16.05의 개념을 사용한다. 필요한 새 용어·기호는 본문에서 정의한다. 일반 코딩 문법/실제 장비 설치를 요구하지 않으며 합성 자료로 기본 경로를 수행한다.",
-    "sha256": "2bb119aba453bdd11ab823a471ebc00ffd74523ad0d5a34a2127708957601a43",
+    "sha256": "d324f12417f2bd885de82abf7a5617a2466e548d401dc0886981093f29e2db54",
     "reviewed": true,
     "evidenceRef": "doc/v2/work_items/M16.06.md"
   },
@@ -2559,7 +2559,7 @@ export const authoredMetadata: AuthoredMetadata[] = [
       "성공/실패 종료와 시간 제한 truncation을 구분한다."
     ],
     "prerequisiteNote": "M07.03, M10.05, M11.04의 개념을 사용한다. 필요한 새 용어·기호는 본문에서 정의한다. 일반 코딩 문법/실제 장비 설치를 요구하지 않으며 합성 자료로 기본 경로를 수행한다.",
-    "sha256": "46c9970ff58de3bbbb185fba3cc0c5503d441c5a2b7606c771b69a48e198a084",
+    "sha256": "0ac2740e09b3c4ce4e1f9d7621459eaf3a995bc900f04ced05fd2a2154c4ce7e",
     "reviewed": true,
     "evidenceRef": "doc/v2/work_items/M23.01.md"
   },
@@ -2573,7 +2573,7 @@ export const authoredMetadata: AuthoredMetadata[] = [
       "종료/마스크·과도한 업데이트·학습안정성 기록을 진단한다."
     ],
     "prerequisiteNote": "M23.01의 개념을 사용한다. 필요한 새 용어·기호는 본문에서 정의한다. 일반 코딩 문법/실제 장비 설치를 요구하지 않으며 합성 자료로 기본 경로를 수행한다.",
-    "sha256": "717d1a3edd5f264efc4329b77aa9164c57bd77d7ca77bf7cf332c6cbb6032b86",
+    "sha256": "fefa4f60e31188908c21f32dc0f06dc565b4e3a6a2f7581dd46225d58bc8203e",
     "reviewed": true,
     "evidenceRef": "doc/v2/work_items/M23.02.md"
   },
@@ -2587,7 +2587,7 @@ export const authoredMetadata: AuthoredMetadata[] = [
       "성공/제약·독립 평가로 보상 수정을 검증한다."
     ],
     "prerequisiteNote": "M23.02의 개념을 사용한다. 필요한 새 용어·기호는 본문에서 정의한다. 일반 코딩 문법/실제 장비 설치를 요구하지 않으며 합성 자료로 기본 경로를 수행한다.",
-    "sha256": "8f1fa04a494a3f6c4c984a8b7403e40c1993b453417df1a638047c246c455a8f",
+    "sha256": "85a6673297e38fd0c32704609d03aa726e52ebf9ac704253161ea8e04bc9fef5",
     "reviewed": true,
     "evidenceRef": "doc/v2/work_items/M23.03.md"
   },
@@ -2601,7 +2601,7 @@ export const authoredMetadata: AuthoredMetadata[] = [
       "버전·관측/행동·reset·장치 계약의 불일치를 진단한다."
     ],
     "prerequisiteNote": "M23.03의 개념을 사용한다. 필요한 새 용어·기호는 본문에서 정의한다. 일반 코딩 문법/실제 장비 설치를 요구하지 않으며 합성 자료로 기본 경로를 수행한다.",
-    "sha256": "703fc8fafe44989f14c350bc399669f4e4060a862cbd340148b9f646acbb46f4",
+    "sha256": "bc3f16fd42f2c5f198947d7a8663dfa172eb4efdcefae18847c8395e84791f02",
     "reviewed": true,
     "evidenceRef": "doc/v2/work_items/M23.04.md"
   },
@@ -2615,7 +2615,7 @@ export const authoredMetadata: AuthoredMetadata[] = [
       "체크포인트 선택/실패 보존·학습안정성 재현 명세를 작성한다."
     ],
     "prerequisiteNote": "M23.04의 개념을 사용한다. 필요한 새 용어·기호는 본문에서 정의한다. 일반 코딩 문법/실제 장비 설치를 요구하지 않으며 합성 자료로 기본 경로를 수행한다.",
-    "sha256": "5b8b8425d49f156983b57578168bb7f016530790f8867ec98b2329d2b89a7693",
+    "sha256": "32e5668de7a2ea363939fcc9ea5a6efff0a11f43209500dd4f29db45baa8d079",
     "reviewed": true,
     "evidenceRef": "doc/v2/work_items/M23.05.md"
   },
@@ -2629,7 +2629,7 @@ export const authoredMetadata: AuthoredMetadata[] = [
       "정책 내보내기와 단계별 전이 평가/롤백 명세를 작성한다."
     ],
     "prerequisiteNote": "M23.05의 개념을 사용한다. 필요한 새 용어·기호는 본문에서 정의한다. 일반 코딩 문법/실제 장비 설치를 요구하지 않으며 합성 자료로 기본 경로를 수행한다.",
-    "sha256": "3c1e503538f0cb99103d1d0109f846725301f585025f69a45b2c65dd0de12aae",
+    "sha256": "0af8486eccbd76ff64fcd32b7f09587c2c772f25680ce7969dc3ac31e1d5fbbe",
     "reviewed": true,
     "evidenceRef": "doc/v2/work_items/M23.06.md"
   },
@@ -2643,7 +2643,7 @@ export const authoredMetadata: AuthoredMetadata[] = [
       "G1 모델/하드웨어 형상과 관측 가용성의 차이를 진단한다."
     ],
     "prerequisiteNote": "M06.03, M07.05, M23.06의 개념을 사용한다. 필요한 새 용어·기호는 본문에서 정의한다. 일반 코딩 문법/실제 장비 설치를 요구하지 않으며 합성 자료로 기본 경로를 수행한다.",
-    "sha256": "ed4070adc773c3690ccbcd9c0cbb1cbd03796590cac705f7db2cdd24713823ff",
+    "sha256": "299520390a3655689dc898bd81ccb2640c6211010d15a321155305ecb76b7025",
     "reviewed": true,
     "evidenceRef": "doc/v2/work_items/M24.01.md"
   },
@@ -2657,7 +2657,7 @@ export const authoredMetadata: AuthoredMetadata[] = [
       "순서/프레임/정규화·지연 불일치를 진단한다."
     ],
     "prerequisiteNote": "M24.01의 개념을 사용한다. 필요한 새 용어·기호는 본문에서 정의한다. 일반 코딩 문법/실제 장비 설치를 요구하지 않으며 합성 자료로 기본 경로를 수행한다.",
-    "sha256": "a78f995817e4f781027025d0ae69cd392f0b60b9be5971c68a42bb76d7a3e70c",
+    "sha256": "c42d1d7b6a8091008c096766767feb886f788018414de39d27ce652ab3ee8b21",
     "reviewed": true,
     "evidenceRef": "doc/v2/work_items/M24.02.md"
   },
@@ -2671,7 +2671,7 @@ export const authoredMetadata: AuthoredMetadata[] = [
       "생존 보상/조기 종료의 허점을 검출하는 평가를 설계한다."
     ],
     "prerequisiteNote": "M24.02의 개념을 사용한다. 필요한 새 용어·기호는 본문에서 정의한다. 일반 코딩 문법/실제 장비 설치를 요구하지 않으며 합성 자료로 기본 경로를 수행한다.",
-    "sha256": "86f201feff7c309e0aab6e4788a6dabc06408269015f92502e8d0eaf5cd56065",
+    "sha256": "6ae657c12d38c67f2f724b1f368f714313c4eca7755cb713f13144265f820b7e",
     "reviewed": true,
     "evidenceRef": "doc/v2/work_items/M24.03.md"
   },
@@ -2685,7 +2685,7 @@ export const authoredMetadata: AuthoredMetadata[] = [
       "주기/지연·gain/관절 매핑 불일치를 진단한다."
     ],
     "prerequisiteNote": "M24.03의 개념을 사용한다. 필요한 새 용어·기호는 본문에서 정의한다. 일반 코딩 문법/실제 장비 설치를 요구하지 않으며 합성 자료로 기본 경로를 수행한다.",
-    "sha256": "1c3a060e86f8f334e8a11f6f4ca7859cacb4d70d2992fceb4d75c796300ad2ed",
+    "sha256": "06287f9dc50b27e891a1a86329d4fe323be4c4c95689450942647bbc279b6fe5",
     "reviewed": true,
     "evidenceRef": "doc/v2/work_items/M24.04.md"
   },
@@ -2699,7 +2699,7 @@ export const authoredMetadata: AuthoredMetadata[] = [
       "단일요인/결합요인·독립 조건의 일반화 평가를 설계한다."
     ],
     "prerequisiteNote": "M24.04의 개념을 사용한다. 필요한 새 용어·기호는 본문에서 정의한다. 일반 코딩 문법/실제 장비 설치를 요구하지 않으며 합성 자료로 기본 경로를 수행한다.",
-    "sha256": "6e3a999f72780cad9486de825fb2e0915c8e8d00fa831c2bccea65f5e6b65236",
+    "sha256": "9a0436eb2fe3d14bedb380806b5cde8153ea3ffa048a9479705790cefdbd3d57",
     "reviewed": true,
     "evidenceRef": "doc/v2/work_items/M24.05.md"
   },
@@ -2713,7 +2713,7 @@ export const authoredMetadata: AuthoredMetadata[] = [
       "Sim2Real 전 단계 판정과 재현/롤백 근거를 작성한다."
     ],
     "prerequisiteNote": "M24.05의 개념을 사용한다. 필요한 새 용어·기호는 본문에서 정의한다. 일반 코딩 문법/실제 장비 설치를 요구하지 않으며 합성 자료로 기본 경로를 수행한다.",
-    "sha256": "295943879b537df2ff88f11b56bcbdc8865c2ce0be072f9844785adbe5e979d7",
+    "sha256": "7d6b08625b5f7c09bf1c3084267f753b779b980a1d6fd35312488c2deb76edf8",
     "reviewed": true,
     "evidenceRef": "doc/v2/work_items/M24.06.md"
   },
@@ -2741,7 +2741,7 @@ export const authoredMetadata: AuthoredMetadata[] = [
       "통신접수와 실제동작·선택체험/필수선수를 구분한다."
     ],
     "prerequisiteNote": "M00.04의 개념을 사용한다. 필요한 새 용어·기호는 본문에서 정의한다. 일반 코딩 문법/실제 장비 설치를 요구하지 않으며 합성 자료로 기본 경로를 수행한다.",
-    "sha256": "24442d2312b22111658071eb4869730342d97e59d3b922a8f75ec9254a9882e2",
+    "sha256": "5cf09ccecf077a5e1e21866cc89de51ccbf9eed907c6eb11e01b5fad050d4199",
     "reviewed": true,
     "evidenceRef": "doc/v2/work_items/M33.01.md"
   },
@@ -2755,7 +2755,7 @@ export const authoredMetadata: AuthoredMetadata[] = [
       "각도/각속도 모드·카메라 기울기·입력 불일치를 진단한다."
     ],
     "prerequisiteNote": "M00.04의 개념을 사용한다. 필요한 새 용어·기호는 본문에서 정의한다. 일반 코딩 문법/실제 장비 설치를 요구하지 않으며 합성 자료로 기본 경로를 수행한다.",
-    "sha256": "efd886c7faada9d3e67aa31fffa48cadeef2eb50f067ff0703ea54a1c3a8cdcc",
+    "sha256": "ddad88c6c80d1631ac537f79c0a895eddd310adaabf0259e8fd6ee8de940cdd1",
     "reviewed": true,
     "evidenceRef": "doc/v2/work_items/M33.02.md"
   },
@@ -2768,8 +2768,8 @@ export const authoredMetadata: AuthoredMetadata[] = [
       "코스 진행·성공률·촬영 프레임 변위를 계산한다.",
       "재시작·충돌·카메라 설정을 포함한 연습 기록을 설계한다."
     ],
-    "prerequisiteNote": "M00.04의 개념을 사용한다. 필요한 새 용어·기호는 본문에서 정의한다. 일반 코딩 문법/실제 장비 설치를 요구하지 않으며 합성 자료로 기본 경로를 수행한다.",
-    "sha256": "ea8382a38d39013bad6dca6cc8e57d61f8aa0244bd5c12e11c4e0451efd4ccd8",
+    "prerequisiteNote": "M00.04의 성공/중단 조건과 M33.02의 FPV 축·모드·채널/카메라 계약을 사용한다. 일반 코딩 문법이나 실제 비행은 요구하지 않으며 제공된 합성 코스/촬영 기록으로 기본 활동을 수행한다.",
+    "sha256": "cb84a5387027f8e76b8bbf5d9e4a0cf1af1a44a8d6147ed97d26440c0eeb0e25",
     "reviewed": true,
     "evidenceRef": "doc/v2/work_items/M33.03.md"
   },
@@ -2783,7 +2783,7 @@ export const authoredMetadata: AuthoredMetadata[] = [
       "환경·재현·라이선스/내보내기 기준으로 도구 선택표를 작성한다."
     ],
     "prerequisiteNote": "M00.04의 개념을 사용한다. 필요한 새 용어·기호는 본문에서 정의한다. 일반 코딩 문법/실제 장비 설치를 요구하지 않으며 합성 자료로 기본 경로를 수행한다.",
-    "sha256": "9226e8e2074cc9676cfac58e21ab4f6ea70476f13d5f5850710432147d6fa942",
+    "sha256": "6555297e1f5746086342130d3dfc2e7bcf166b1942df7ce5384b24025a13bcce",
     "reviewed": true,
     "evidenceRef": "doc/v2/work_items/M33.04.md"
   },
@@ -2797,7 +2797,7 @@ export const authoredMetadata: AuthoredMetadata[] = [
       "현재 환경을 유지하는 대체 경로와 검증 목록을 작성한다."
     ],
     "prerequisiteNote": "M00.04의 개념을 사용한다. 필요한 새 용어·기호는 본문에서 정의한다. 일반 코딩 문법/실제 장비 설치를 요구하지 않으며 합성 자료로 기본 경로를 수행한다.",
-    "sha256": "9c0052e9e1efd430c3b392afc6a2df6b03793fdcab44076d5ce31ca624b2bfea",
+    "sha256": "5d160f5c2928f2a0c6575bf122182e330c2ad937e68815de00b82bfcdea0b94c",
     "reviewed": true,
     "evidenceRef": "doc/v2/work_items/M33.05.md"
   },
@@ -2811,7 +2811,7 @@ export const authoredMetadata: AuthoredMetadata[] = [
       "재현/한계·본인 기여·다음 실험을 포함한 검토표를 작성한다."
     ],
     "prerequisiteNote": "M00.04의 개념을 사용한다. 필요한 새 용어·기호는 본문에서 정의한다. 일반 코딩 문법/실제 장비 설치를 요구하지 않으며 합성 자료로 기본 경로를 수행한다.",
-    "sha256": "8c8165ca27a91a005dad56d8824f9da35aa9f6e2b4567c44271cef3cf9cda7ae",
+    "sha256": "4a5357045e313febd03d19b2f68d55dda5758f0b651381aa19e493298848b15b",
     "reviewed": true,
     "evidenceRef": "doc/v2/work_items/M33.06.md"
   },
@@ -2825,7 +2825,7 @@ export const authoredMetadata: AuthoredMetadata[] = [
       "ODD·의사결정 상태와 관측 부족/중단을 명세한다."
     ],
     "prerequisiteNote": "M07.05, M12.05, M13.04, M14.04, M15.06, M17.06의 개념을 사용한다. 필요한 새 용어·기호는 본문에서 정의한다. 일반 코딩 문법/실제 장비 설치를 요구하지 않으며 합성 자료로 기본 경로를 수행한다.",
-    "sha256": "898c090ef90b67d6132fc9bdd542c3d2a80788c6b0fa12ae5d6cb9b890046269",
+    "sha256": "ebdd462c687fb3f658c438adb6082fbd45cde850600741f62aefc468f582ae3a",
     "reviewed": true,
     "evidenceRef": "doc/v2/work_items/M29.01.md"
   },
@@ -2839,7 +2839,7 @@ export const authoredMetadata: AuthoredMetadata[] = [
       "야간/가림·지도/관측 불일치의 실패 평가를 설계한다."
     ],
     "prerequisiteNote": "M29.01의 개념을 사용한다. 필요한 새 용어·기호는 본문에서 정의한다. 일반 코딩 문법/실제 장비 설치를 요구하지 않으며 합성 자료로 기본 경로를 수행한다.",
-    "sha256": "420e819f31cb6c94006ba07675e0a575c7406fcd72b28fa023a4a3593a92a388",
+    "sha256": "f51a287d974540ff89324803a1d8cfbe36e109e7922615357fe5c65da408535a",
     "reviewed": true,
     "evidenceRef": "doc/v2/work_items/M29.02.md"
   },
@@ -2853,7 +2853,7 @@ export const authoredMetadata: AuthoredMetadata[] = [
       "지도변경·퇴화·deskew/관측상실의 실패를 진단한다."
     ],
     "prerequisiteNote": "M29.02의 개념을 사용한다. 필요한 새 용어·기호는 본문에서 정의한다. 일반 코딩 문법/실제 장비 설치를 요구하지 않으며 합성 자료로 기본 경로를 수행한다.",
-    "sha256": "f11934a811ba8b258c953a3e2988df7cfc4d45db56e0a65adc8edcede41b9a98",
+    "sha256": "2edb6c000bdb4dfb3d4b262c07b4d3cd85d6623a0d0829a731e4a54bb9e437c4",
     "reviewed": true,
     "evidenceRef": "doc/v2/work_items/M29.03.md"
   },
@@ -2867,7 +2867,7 @@ export const authoredMetadata: AuthoredMetadata[] = [
       "가림/ID교환·모달 누락·상관/지연의 실패를 진단한다."
     ],
     "prerequisiteNote": "M29.03의 개념을 사용한다. 필요한 새 용어·기호는 본문에서 정의한다. 일반 코딩 문법/실제 장비 설치를 요구하지 않으며 합성 자료로 기본 경로를 수행한다.",
-    "sha256": "3858cd8e10c1852a90e0a710cc5dcae12a74817e042dd071a8dde7db3c06797b",
+    "sha256": "30eb7dbc9a61c0f1b3fe00fc59dfeb8c6e537f875357876cc55a3b88fbe06400",
     "reviewed": true,
     "evidenceRef": "doc/v2/work_items/M29.04.md"
   },
@@ -2881,7 +2881,7 @@ export const authoredMetadata: AuthoredMetadata[] = [
       "도심 가상 시나리오의 동적장애물·지연/중단을 검증한다."
     ],
     "prerequisiteNote": "M29.04의 개념을 사용한다. 필요한 새 용어·기호는 본문에서 정의한다. 일반 코딩 문법/실제 장비 설치를 요구하지 않으며 합성 자료로 기본 경로를 수행한다.",
-    "sha256": "83c21a67534a96aeccd4eb1543be8339bcbcee446ae1930bdf0de343d2b0ddb3",
+    "sha256": "792d6c7f73838c6a08df3579404637ec68ed13d9619d0a1511b74ca8fd5f7ba1",
     "reviewed": true,
     "evidenceRef": "doc/v2/work_items/M29.05.md"
   },
@@ -2895,7 +2895,7 @@ export const authoredMetadata: AuthoredMetadata[] = [
       "실패 재현·수정/회귀·최종 보고 패키지를 작성한다."
     ],
     "prerequisiteNote": "M29.05의 개념을 사용한다. 필요한 새 용어·기호는 본문에서 정의한다. 일반 코딩 문법/실제 장비 설치를 요구하지 않으며 합성 자료로 기본 경로를 수행한다.",
-    "sha256": "b4d0b0bdba1a8958041dc2dcd81efe25feb2d2fe876250affdf9b34745444027",
+    "sha256": "9677a1b797bb72a998aeb724193fe952ae9d9ff60ec34a2f2d53e5aa877e6494",
     "reviewed": true,
     "evidenceRef": "doc/v2/work_items/M29.06.md"
   }

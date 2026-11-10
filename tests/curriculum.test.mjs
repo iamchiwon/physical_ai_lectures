@@ -71,3 +71,11 @@ test('M34 module guidance does not retain a planned-content warning after all le
  assert.ok(!module.prerequisiteNote.includes('계획 단위'));
  for(const unit of c.moduleUnits('M34'))assert.equal(c.unitReadiness(unit,c.curriculumIndex).state,'ready');
 });
+
+test('FPV simulator requires its control-mode bridge without promoting optional experiences into core tracks',()=>{
+ const simulator=c.catalog.units.find(unit=>unit.topicId==='M33.03');
+ assert.deepEqual(simulator.prerequisites.allOf,['unit-m00-04-a','unit-m33-02-a']);
+ const main=c.catalog.tracks.find(track=>track.id==='track-main');
+ assert.ok(main.steps.every(step=>!step.unitId.startsWith('unit-m33-')));
+ for(const unit of c.catalog.units.filter(unit=>!unit.topicId.startsWith('M33.')))assert.ok([...unit.prerequisites.allOf,...unit.prerequisites.anyOf].every(id=>!id.startsWith('unit-m33-')));
+});
