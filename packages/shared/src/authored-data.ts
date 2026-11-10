@@ -2424,6 +2424,20 @@ export const authoredMetadata: AuthoredMetadata[] = [
     "evidenceRef": "doc/v2/work_items/M16.03.md"
   },
   {
+    "topicId": "M16.04",
+    "source": "ebook/curriculum/M16/M16.04.md",
+    "title": "Factor Graph·Pose Graph·Bundle Adjustment",
+    "objectives": [
+      "변수·factor와 pose graph/BA의 차이를 설명한다.",
+      "고정 기준과 가중 잔차의 최소점을 계산한다.",
+      "gauge 자유도·가중치·상관 관측의 실패를 진단한다."
+    ],
+    "prerequisiteNote": "M16.03의 개념을 사용한다. 필요한 새 용어·기호는 본문에서 정의한다. 일반 코딩 문법/실제 장비 설치를 요구하지 않으며 합성 자료로 기본 경로를 수행한다.",
+    "sha256": "8afd9d2c9658170ad0868c9e9fbfa5db78d46dc25cb852884a9e8ed162e6ca82",
+    "reviewed": true,
+    "evidenceRef": "doc/v2/work_items/M16.04.md"
+  },
+  {
     "topicId": "M17.03",
     "source": "ebook/curriculum/M17/M17.03.md",
     "title": "PRM과 변형·연결성·샘플링",
