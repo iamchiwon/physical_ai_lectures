@@ -2578,6 +2578,20 @@ export const authoredMetadata: AuthoredMetadata[] = [
     "evidenceRef": "doc/v2/work_items/M23.02.md"
   },
   {
+    "topicId": "M23.03",
+    "source": "ebook/curriculum/M23/M23.03.md",
+    "title": "관측·행동·보상 설계와 Reward Hacking",
+    "objectives": [
+      "관측/행동의 단위·주기·스케일 계약을 작성한다.",
+      "보상 합성과 reward hacking 반례를 계산한다.",
+      "성공/제약·독립 평가로 보상 수정을 검증한다."
+    ],
+    "prerequisiteNote": "M23.02의 개념을 사용한다. 필요한 새 용어·기호는 본문에서 정의한다. 일반 코딩 문법/실제 장비 설치를 요구하지 않으며 합성 자료로 기본 경로를 수행한다.",
+    "sha256": "8f1fa04a494a3f6c4c984a8b7403e40c1993b453417df1a638047c246c455a8f",
+    "reviewed": true,
+    "evidenceRef": "doc/v2/work_items/M23.03.md"
+  },
+  {
     "topicId": "M32.04",
     "source": "ebook/curriculum/M32/M32.04.md",
     "title": "휴머노이드 보행 외란 대응 또는 밸런싱 로봇",
