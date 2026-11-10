@@ -2410,6 +2410,20 @@ export const authoredMetadata: AuthoredMetadata[] = [
     "evidenceRef": "doc/v2/work_items/M16.02.md"
   },
   {
+    "topicId": "M16.03",
+    "source": "ebook/curriculum/M16/M16.03.md",
+    "title": "비주얼-관성·LiDAR-관성 추정",
+    "objectives": [
+      "관성 전파와 영상/LiDAR 보정의 역할을 구분한다.",
+      "중력·bias·시간 오차가 운동 추정에 주는 영향을 계산한다.",
+      "초기화/관측가능성·느슨한/긴밀한 결합의 한계를 설명한다."
+    ],
+    "prerequisiteNote": "M16.02의 개념을 사용한다. 필요한 새 용어·기호는 본문에서 정의한다. 일반 코딩 문법/실제 장비 설치를 요구하지 않으며 합성 자료로 기본 경로를 수행한다.",
+    "sha256": "c3e24f0a96c1c11b3fdc5ec90fdc557fc38c521ff4fdbc3445d6156ece71d9ca",
+    "reviewed": true,
+    "evidenceRef": "doc/v2/work_items/M16.03.md"
+  },
+  {
     "topicId": "M17.03",
     "source": "ebook/curriculum/M17/M17.03.md",
     "title": "PRM과 변형·연결성·샘플링",
