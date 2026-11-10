@@ -2354,6 +2354,20 @@ export const authoredMetadata: AuthoredMetadata[] = [
     "evidenceRef": "doc/v2/work_items/M13.03.md"
   },
   {
+    "topicId": "M13.04",
+    "source": "ebook/curriculum/M13/M13.04.md",
+    "title": "3D Object Detection·3D Segmentation",
+    "objectives": [
+      "3D 검출·의미/인스턴스 분할의 출력 계약을 구분한다.",
+      "상자 겹침과 점 분할 지표를 계산한다.",
+      "거리/가림·매칭/문턱에 따른 실패를 진단한다."
+    ],
+    "prerequisiteNote": "M13.03의 개념을 사용한다. 필요한 새 용어·기호는 본문에서 정의한다. 일반 코딩 문법/실제 장비 설치를 요구하지 않으며 합성 자료로 기본 경로를 수행한다.",
+    "sha256": "884f547eea283a9d00002ce5b8f31b7f048fbeca9f903559d3392944d7ee1d64",
+    "reviewed": true,
+    "evidenceRef": "doc/v2/work_items/M13.04.md"
+  },
+  {
     "topicId": "M17.03",
     "source": "ebook/curriculum/M17/M17.03.md",
     "title": "PRM과 변형·연결성·샘플링",
