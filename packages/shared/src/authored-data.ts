@@ -2758,6 +2758,20 @@ export const authoredMetadata: AuthoredMetadata[] = [
     "sha256": "efd886c7faada9d3e67aa31fffa48cadeef2eb50f067ff0703ea54a1c3a8cdcc",
     "reviewed": true,
     "evidenceRef": "doc/v2/work_items/M33.02.md"
+  },
+  {
+    "topicId": "M33.03",
+    "source": "ebook/curriculum/M33/M33.03.md",
+    "title": "Uncrashed 등 시뮬레이터 기초·선회·코스·촬영 연습",
+    "objectives": [
+      "시뮬레이터 설정을 고정하고 조작/항로/촬영 목표를 분리한다.",
+      "코스 진행·성공률·촬영 프레임 변위를 계산한다.",
+      "재시작·충돌·카메라 설정을 포함한 연습 기록을 설계한다."
+    ],
+    "prerequisiteNote": "M00.04의 개념을 사용한다. 필요한 새 용어·기호는 본문에서 정의한다. 일반 코딩 문법/실제 장비 설치를 요구하지 않으며 합성 자료로 기본 경로를 수행한다.",
+    "sha256": "ea8382a38d39013bad6dca6cc8e57d61f8aa0244bd5c12e11c4e0451efd4ccd8",
+    "reviewed": true,
+    "evidenceRef": "doc/v2/work_items/M33.03.md"
   }
 ];
 export const legacyRevisions: LegacyRevision[] = [
