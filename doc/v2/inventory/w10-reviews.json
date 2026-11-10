@@ -1,0 +1,9 @@
+{
+  "schemaVersion": 1,
+  "topics": {
+    "M13.03": {
+      "sourceSha256": "ce2ed2122df5051d18a345226527ba1e99cbc9b2b560226f2cf3e8071ff7db20",
+      "evidenceRef": "doc/v2/work_items/M13.03.md"
+    }
+  }
+}

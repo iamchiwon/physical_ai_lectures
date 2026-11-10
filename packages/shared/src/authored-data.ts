@@ -2340,6 +2340,20 @@ export const authoredMetadata: AuthoredMetadata[] = [
     "evidenceRef": "doc/v2/work_items/publication-source-privacy.md"
   },
   {
+    "topicId": "M13.03",
+    "source": "ebook/curriculum/M13/M13.03.md",
+    "title": "Point Cloud Backbone·학습 기반 특징",
+    "objectives": [
+      "점 특징과 전역 특징을 구분하고 대칭 집계 결과를 계산한다.",
+      "point·voxel·pillar 표현의 정보/계산 절충을 설명한다.",
+      "학습 분할과 희소성 변화에 따른 실패를 진단한다."
+    ],
+    "prerequisiteNote": "M13.02의 개념을 사용한다. 필요한 새 용어·기호는 본문에서 정의한다. 일반 코딩 문법/실제 장비 설치를 요구하지 않으며 합성 자료로 기본 경로를 수행한다.",
+    "sha256": "ce2ed2122df5051d18a345226527ba1e99cbc9b2b560226f2cf3e8071ff7db20",
+    "reviewed": true,
+    "evidenceRef": "doc/v2/work_items/M13.03.md"
+  },
+  {
     "topicId": "M17.03",
     "source": "ebook/curriculum/M17/M17.03.md",
     "title": "PRM과 변형·연결성·샘플링",
