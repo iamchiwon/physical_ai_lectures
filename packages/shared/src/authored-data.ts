@@ -2606,6 +2606,20 @@ export const authoredMetadata: AuthoredMetadata[] = [
     "evidenceRef": "doc/v2/work_items/M23.04.md"
   },
   {
+    "topicId": "M23.05",
+    "source": "ebook/curriculum/M23/M23.05.md",
+    "title": "학습 안정성·평가 Seed·재현성",
+    "objectives": [
+      "학습 seed와 평가 초기조건/정책을 분리한다.",
+      "seed별 성공률·조건별 집계와 변동을 계산한다.",
+      "체크포인트 선택/실패 보존·학습안정성 재현 명세를 작성한다."
+    ],
+    "prerequisiteNote": "M23.04의 개념을 사용한다. 필요한 새 용어·기호는 본문에서 정의한다. 일반 코딩 문법/실제 장비 설치를 요구하지 않으며 합성 자료로 기본 경로를 수행한다.",
+    "sha256": "5b8b8425d49f156983b57578168bb7f016530790f8867ec98b2329d2b89a7693",
+    "reviewed": true,
+    "evidenceRef": "doc/v2/work_items/M23.05.md"
+  },
+  {
     "topicId": "M32.04",
     "source": "ebook/curriculum/M32/M32.04.md",
     "title": "휴머노이드 보행 외란 대응 또는 밸런싱 로봇",
