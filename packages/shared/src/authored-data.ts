@@ -2786,6 +2786,20 @@ export const authoredMetadata: AuthoredMetadata[] = [
     "sha256": "9226e8e2074cc9676cfac58e21ab4f6ea70476f13d5f5850710432147d6fa942",
     "reviewed": true,
     "evidenceRef": "doc/v2/work_items/M33.04.md"
+  },
+  {
+    "topicId": "M33.05",
+    "source": "ebook/curriculum/M33/M33.05.md",
+    "title": "Android·Fusion360·Microchip Studio의 대체 도구 경로",
+    "objectives": [
+      "모바일UI·기구CAD·MCU도구의 책임과 교환 계약을 구분한다.",
+      "CAD 단위/공차와 명령 유효기간 예제를 계산한다.",
+      "현재 환경을 유지하는 대체 경로와 검증 목록을 작성한다."
+    ],
+    "prerequisiteNote": "M00.04의 개념을 사용한다. 필요한 새 용어·기호는 본문에서 정의한다. 일반 코딩 문법/실제 장비 설치를 요구하지 않으며 합성 자료로 기본 경로를 수행한다.",
+    "sha256": "9c0052e9e1efd430c3b392afc6a2df6b03793fdcab44076d5ce31ca624b2bfea",
+    "reviewed": true,
+    "evidenceRef": "doc/v2/work_items/M33.05.md"
   }
 ];
 export const legacyRevisions: LegacyRevision[] = [
