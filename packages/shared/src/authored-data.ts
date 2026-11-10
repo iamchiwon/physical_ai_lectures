@@ -2828,6 +2828,20 @@ export const authoredMetadata: AuthoredMetadata[] = [
     "sha256": "898c090ef90b67d6132fc9bdd542c3d2a80788c6b0fa12ae5d6cb9b890046269",
     "reviewed": true,
     "evidenceRef": "doc/v2/work_items/M29.01.md"
+  },
+  {
+    "topicId": "M29.02",
+    "source": "ebook/curriculum/M29/M29.02.md",
+    "title": "카메라 기반 Perception와 위치추정",
+    "objectives": [
+      "카메라 차선/객체 인지와 차량 위치추정의 출력을 구분한다.",
+      "투영·깊이/시간 오차의 작은 예제를 계산한다.",
+      "야간/가림·지도/관측 불일치의 실패 평가를 설계한다."
+    ],
+    "prerequisiteNote": "M29.01의 개념을 사용한다. 필요한 새 용어·기호는 본문에서 정의한다. 일반 코딩 문법/실제 장비 설치를 요구하지 않으며 합성 자료로 기본 경로를 수행한다.",
+    "sha256": "420e819f31cb6c94006ba07675e0a575c7406fcd72b28fa023a4a3593a92a388",
+    "reviewed": true,
+    "evidenceRef": "doc/v2/work_items/M29.02.md"
   }
 ];
 export const legacyRevisions: LegacyRevision[] = [
