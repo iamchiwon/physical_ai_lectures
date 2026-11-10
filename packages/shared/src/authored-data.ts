@@ -2634,6 +2634,20 @@ export const authoredMetadata: AuthoredMetadata[] = [
     "evidenceRef": "doc/v2/work_items/M23.06.md"
   },
   {
+    "topicId": "M24.01",
+    "source": "ebook/curriculum/M24/M24.01.md",
+    "title": "Unitree G1 모델·관절·접촉·전신 상태",
+    "objectives": [
+      "자유부유 body·관절·구동기·센서 상태를 구분한다.",
+      "관절 매핑과 접촉/무게중심의 작은 예제를 계산한다.",
+      "G1 모델/하드웨어 형상과 관측 가용성의 차이를 진단한다."
+    ],
+    "prerequisiteNote": "M06.03, M07.05, M23.06의 개념을 사용한다. 필요한 새 용어·기호는 본문에서 정의한다. 일반 코딩 문법/실제 장비 설치를 요구하지 않으며 합성 자료로 기본 경로를 수행한다.",
+    "sha256": "ed4070adc773c3690ccbcd9c0cbb1cbd03796590cac705f7db2cdd24713823ff",
+    "reviewed": true,
+    "evidenceRef": "doc/v2/work_items/M24.01.md"
+  },
+  {
     "topicId": "M32.04",
     "source": "ebook/curriculum/M32/M32.04.md",
     "title": "휴머노이드 보행 외란 대응 또는 밸런싱 로봇",
