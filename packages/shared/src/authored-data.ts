@@ -25,7 +25,7 @@ export const authoredMetadata: AuthoredMetadata[] = [
       "관측 부족과 실행 실패를 혼동한 설명을 고쳐 필요한 추가 기록을 제안한다."
     ],
     "prerequisiteNote": "M00.01의 관측→판단→행동→새 관측 구조를 읽고 온다. 로그의 열 이름을 읽을 수 있으면 되며 강화학습 알고리즘은 몰라도 된다.",
-    "sha256": "207fb67443bbd1350f550039630963669ec12cdda3fe5eff3fc7846b7d97228e",
+    "sha256": "b50c431c9e15f2308cb37144bba6e6f31f34462e2c901e42f1ca86905a8d7068",
     "reviewed": true,
     "evidenceRef": "doc/v2/work_items/M00.02.md"
   },
