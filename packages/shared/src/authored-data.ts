@@ -1271,7 +1271,7 @@ export const authoredMetadata: AuthoredMetadata[] = [
       "주어진 구역 모형에서 공구 크기·불확실성·정지 여유를 계산하고 전체 팔/실제 안전을 보장할 수 없는 범위를 판정한다."
     ],
     "prerequisiteNote": "M19.01의 TCP/작업 프레임과 M19.02의 경로/궤적이 선수다. 티칭 패널이나 실물을 사용하지 않고 합성 작업표의 좌표·속도/구역을 검토한다. 제조사 예시는 해당 문서 버전의 의미 설명이며 실제 설정 명령이 아니다.",
-    "sha256": "a51488e42b0bebaebf629241a4583c62004ad9b4deb705739f1c5718b814dba3",
+    "sha256": "01e3b0b76a388b84e4a9c36d3c5b89ea13d324c0f7ce8a8f1db8470d7a3cd5d1",
     "reviewed": true,
     "evidenceRef": "doc/v2/work_items/M19.03.md"
   },
