@@ -1999,7 +1999,7 @@ export const authoredMetadata: AuthoredMetadata[] = [
       "재관측/감독·미상/재개와 조건별 성공·실패/원본 근거를 포함한 프로젝트 리포트를 작성한다."
     ],
     "prerequisiteNote": "M06의 이동 로봇/프레임, M22의 언어 감독과 M30의 평가를 연결한다. 경로/궤적·지도/위치와 planner/controller 역할은 본문에서 보충한다. M15.06의 오차 평가, M17.02/.06의 경로·시간 궤적과 M18.03/.04의 도착·작업 상태를 적용해 과제 근거를 확장한다. 기본은 가상 지도/사건표이며 실제 Nav2/주행/배달을 하지 않는다.",
-    "sha256": "438a20dd51c36c3ee3a272f042cc2080a7f8dcc9626c2548cdf49a9259e123f3",
+    "sha256": "ab4f24c833847a7a23ff13f7e93bcd19ebeb16d046bf81a6f9396a5d2456d8b0",
     "reviewed": true,
     "evidenceRef": "doc/v2/work_items/K01-01.md"
   },
