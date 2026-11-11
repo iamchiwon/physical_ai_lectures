@@ -740,8 +740,22 @@
       "evidence": "doc/visual-review/units/M07.04.md"
     },
     "M07.05": {
-      "status": "pending",
-      "source": "ebook/curriculum/M07/M07.05.md"
+      "status": "reviewed",
+      "source": "ebook/curriculum/M07/M07.05.md",
+      "sourceSha256": "6e7389227191a9193b22339126bd73c15e4f071b369af72bc1929336bf77a440",
+      "reason": "제어 계층마다 목표 물리량이 다르다의 연결/구분은 글만으로 단계나 경계를 혼동하기 쉬워 설명 도식을 추가한다. 본문의 표·수치·문제 조건도 대조한다.",
+      "assets": [
+        {
+          "path": "apps/web/public/textbook-visuals/M07.05-concept.svg",
+          "sha256": "930db2d65a5017c3c3f96ef311168429f7c3ccf59a39a7aed86c10bff574185e",
+          "method": "original-svg",
+          "model": null,
+          "prompt": null,
+          "alt": "제어 계층마다 목표 물리량이 다르다: 상위 위치 목표 → 속도 제어 경계 → 토크/전류 제어 경계 → 새 상태 관측.",
+          "caption": "각 칸은 서로 다른 역할/근거다. 아래 방향은 자료/처리의 연결이며 실제 성공을 자동으로 보장하지 않는다. 직접 제작한 개념도이며 본문의 조건과 함께 읽는다."
+        }
+      ],
+      "evidence": "doc/visual-review/units/M07.05.md"
     },
     "M07.06": {
       "status": "pending",

@@ -655,7 +655,7 @@ export const authoredMetadata: AuthoredMetadata[] = [
       "동일 시각의 추종 오차와 입력 포화를 분석하여 궤적 성공 및 실제 안전의 검증 범위를 설명한다."
     ],
     "prerequisiteNote": "M07.01/02/03의 구동·응답·피드백 및 M02.03의 미분을 사용한다. 기본 1축 관절 경로와 단위는 본문에서 제공하므로 팔의 FK/IK나 주파수 설계 전체를 먼저 이수하지 않아도 계산할 수 있다. 실제 팔 기구학은 M06.02~04, 주파수 안정성 설계는 M07.04로 확장한다. 합성 추종/로그 해석이며 실제 모터·로봇을 실행하지 않는다.",
-    "sha256": "0c180a3baa83ee1c94c98bf952bfaa4907db46919ba99d6ec327635e01b8907b",
+    "sha256": "6e7389227191a9193b22339126bd73c15e4f071b369af72bc1929336bf77a440",
     "reviewed": true,
     "evidenceRef": "doc/v2/work_items/publication-source-privacy.md"
   },
