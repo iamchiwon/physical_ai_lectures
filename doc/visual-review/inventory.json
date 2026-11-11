@@ -92,8 +92,22 @@
       "evidence": "doc/visual-review/units/M00.05.md"
     },
     "M00.06": {
-      "status": "pending",
-      "source": "ebook/curriculum/M00/M00.06.md"
+      "status": "reviewed",
+      "source": "ebook/curriculum/M00/M00.06.md",
+      "sourceSha256": "786ec617b869dd8291a20ca224bc372b80283792a7303da4705af79a68482007",
+      "reason": "화면이 움직여도 근거는 다르다의 연결/구분은 글만으로 단계나 경계를 혼동하기 쉬워 설명 도식을 추가한다. 본문의 표·수치·문제 조건도 대조한다.",
+      "assets": [
+        {
+          "path": "apps/web/public/textbook-visuals/M00.06-concept.svg",
+          "sha256": "b3f7ee221b221fbfcb7cb76936f0adf68695bf4321760ad5d60d81e74eeaff7c",
+          "method": "original-svg",
+          "model": null,
+          "prompt": null,
+          "alt": "화면이 움직여도 근거는 다르다: 종이 계산 → 로그 재생 → 시뮬레이션 폐루프 → 실물 폐루프.",
+          "caption": "각 칸은 서로 다른 역할/근거다. 나란히 비교할 항목이며 위아래가 시간 순서를 뜻하지 않는다. 직접 제작한 개념도이며 본문의 조건과 함께 읽는다."
+        }
+      ],
+      "evidence": "doc/visual-review/units/M00.06.md"
     },
     "M01.01": {
       "status": "pending",

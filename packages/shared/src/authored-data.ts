@@ -81,7 +81,7 @@ export const authoredMetadata: AuthoredMetadata[] = [
       "가설에 맞는 장비 없는 검증 단계를 선택하고 필요한 기록·한계·중단 조건을 포함한 다음 학습 계획을 작성한다."
     ],
     "prerequisiteNote": "M00.01~05의 모형·관측·명령·성공 조건과 진단 기록을 사용한다. ROS 설치·GPU·로봇 장비 없이 종이와 제공된 표로 수행한다.",
-    "sha256": "76004cc6c608b5bb1e8508f957fcab2af71bbd9d0c7dcfbd221d87a4a5717256",
+    "sha256": "786ec617b869dd8291a20ca224bc372b80283792a7303da4705af79a68482007",
     "reviewed": true,
     "evidenceRef": "doc/v2/work_items/M00.06.md"
   },
