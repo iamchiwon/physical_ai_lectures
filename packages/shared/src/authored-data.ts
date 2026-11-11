@@ -809,7 +809,7 @@ export const authoredMetadata: AuthoredMetadata[] = [
       "pause/reset 뒤 시간/상태·외부 큐/세대를 확인해 재현/준비·실패/미상을 판정한다."
     ],
     "prerequisiteNote": "M05의 ROS/시간, M07의 이산 제어와 M08의 모델을 사용한다. SDF/world/model·entity 생성과 physics step/RTF를 본문에서 보충한다. 기준은 Ubuntu 24.04/ROS 2 Jazzy/Gazebo Harmonic이며 기본 활동은 합성 로그 계산이다. 실제 설치·Gazebo/ROS/장비 실행은 요구하지 않는다.",
-    "sha256": "b24f3aceae5a5585ef5f4182629d009a1de0b5e3d036fba0d769543846e8cfd1",
+    "sha256": "132e3192f939abf2a549a07dde95363734d8144a7626d0111cbe667c563eff2f",
     "reviewed": true,
     "evidenceRef": "doc/v2/work_items/M09.01.md"
   },
