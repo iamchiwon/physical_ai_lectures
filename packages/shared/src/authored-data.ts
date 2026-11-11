@@ -1425,7 +1425,7 @@ export const authoredMetadata: AuthoredMetadata[] = [
       "목표 제한과 실제 관측을 구분해 전송/기록 계약을 설계하고 제한·통신/보정 상태의 실패를 진단한다."
     ],
     "prerequisiteNote": "M03의 엔코더/구동, M06.06의 영점/범위와 M19의 상태/공구 계약을 연결한다. 실제 SO-101은 필요하지 않으며 숫자는 합성 보정/로그다. 클러치는 본문의 교육용 상대 매핑 설계이고 LeRobot의 내장 기능으로 가정하지 않는다.",
-    "sha256": "14c0ebedb5f870819af52ee31b77681ed1266ab344429c6a39010145298a735a",
+    "sha256": "b136e9b04bf28f75c7aa6dedcbdb977154e4520e36a6f4bcb6f061579a5b3f70",
     "reviewed": true,
     "evidenceRef": "doc/v2/work_items/M20.01.md"
   },

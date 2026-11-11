@@ -1872,8 +1872,22 @@
       "evidence": "doc/visual-review/units/M19.06.md"
     },
     "M20.01": {
-      "status": "pending",
-      "source": "ebook/curriculum/M20/M20.01.md"
+      "status": "reviewed",
+      "source": "ebook/curriculum/M20/M20.01.md",
+      "sourceSha256": "b136e9b04bf28f75c7aa6dedcbdb977154e4520e36a6f4bcb6f061579a5b3f70",
+      "reason": "Leader 명령과 Follower 관측의 연결/구분은 글만으로 단계나 경계를 혼동하기 쉬워 설명 도식을 추가한다. 본문의 표·수치·문제 조건도 대조한다.",
+      "assets": [
+        {
+          "path": "apps/web/public/textbook-visuals/M20.01-concept.svg",
+          "sha256": "23ecd9949d923bed90fb31157df30479b0466664dde348b9e4039453ef632a79",
+          "method": "original-svg",
+          "model": null,
+          "prompt": null,
+          "alt": "Leader 명령과 Follower 관측: Leader 관절 측정 → 매핑/클러치 → Follower 목표 → Follower 실제 상태.",
+          "caption": "각 칸은 서로 다른 역할/근거다. 아래 방향은 자료/처리의 연결이며 실제 성공을 자동으로 보장하지 않는다. 직접 제작한 개념도이며 본문의 조건과 함께 읽는다."
+        }
+      ],
+      "evidence": "doc/visual-review/units/M20.01.md"
     },
     "M20.02": {
       "status": "pending",
