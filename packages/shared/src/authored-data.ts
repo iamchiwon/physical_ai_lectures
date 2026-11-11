@@ -123,7 +123,7 @@ export const authoredMetadata: AuthoredMetadata[] = [
       "생산·소비·재사용·해제 사건표에서 소유권과 데이터 유효 기간을 판정하고 보존 방법을 제안한다."
     ],
     "prerequisiteNote": "일반 코딩 경험과 M01.02의 dtype·shape·device를 전제로 한다. C/C++ 언어 문법과 포인터 기호를 입문 과정으로 가르치지 않는다. native 확장과 버퍼 계약은 본문에서 보충하며 위험 코드·컴파일러·장비 실행 없이 사건표로 수행한다.",
-    "sha256": "f47d0dab4d59333bb69e47af2ddb3f3272d5253328f02ffb0fe1fe7fd49f0bc8",
+    "sha256": "85ca430c5c40e96c9782706b9cf49d815d2cead452fc9a4ef76a11b04c8900c0",
     "reviewed": true,
     "evidenceRef": "doc/v2/work_items/M01.03.md"
   },
