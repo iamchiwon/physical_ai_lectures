@@ -1313,7 +1313,7 @@ export const authoredMetadata: AuthoredMetadata[] = [
       "PyTorch의 기울기 초기화·역전파·파라미터 갱신 역할을 구분하고 학습률/누적 오류와 검증 범위를 진단한다."
     ],
     "prerequisiteNote": "M02.03의 미분과 M02.05의 최적화, M01.02의 Python이 선수다. 기본은 두 합성 표본의 종이 계산이다. 선택 CPU 코드는 이미 PyTorch가 있는 환경용 완전 예제이며 GPU/실제 로봇 학습이 필요하지 않다.",
-    "sha256": "19ccfe618ebc721691b08c4e1e7dc99812b4468c575804c95b1b086a4a815770",
+    "sha256": "7f13b916f4e23b9f3ca110d18ffb3108b104ede273e8b426a8d85cc41cad51a2",
     "reviewed": true,
     "evidenceRef": "doc/v2/work_items/M11.01.md"
   },
