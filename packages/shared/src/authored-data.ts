@@ -2013,7 +2013,7 @@ export const authoredMetadata: AuthoredMetadata[] = [
       "조건별 성공/개입·미상과 원본/버전·실패 가설을 연결해 프로젝트 평가/개선 리포트를 작성한다."
     ],
     "prerequisiteNote": "M06 기구학, M12/M14 영상/보정, M19 파지와 M21 정책·M30 평가를 연결한다. 접근 경로/충돌·단계별 계획 용어를 본문에서 보충한다. 기본은 합성 입력의 판단 프로젝트이며 SO-101/산업용 팔·모델 학습/추론 실행을 요구하지 않는다.",
-    "sha256": "b41816883d9ec666428aca1a5311d4ea90491d6a8ac0aba4264003d581aa88fb",
+    "sha256": "040e0c50d2799bf6f5196df201cd22bf7a8a748f3698ff779682744e1322449b",
     "reviewed": true,
     "evidenceRef": "doc/v2/work_items/K01-01.md"
   },
