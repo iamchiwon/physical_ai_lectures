@@ -2881,7 +2881,7 @@ export const authoredMetadata: AuthoredMetadata[] = [
       "도심 가상 시나리오의 동적장애물·지연/중단을 검증한다."
     ],
     "prerequisiteNote": "M29.04의 개념을 사용한다. 필요한 새 용어·기호는 본문에서 정의한다. 일반 코딩 문법/실제 장비 설치를 요구하지 않으며 합성 자료로 기본 경로를 수행한다.",
-    "sha256": "792d6c7f73838c6a08df3579404637ec68ed13d9619d0a1511b74ca8fd5f7ba1",
+    "sha256": "2e8a59541709b53ab7e116dbcc9cfd06b8d00010234e0bb1c2ada232fe25dce8",
     "reviewed": true,
     "evidenceRef": "doc/v2/work_items/M29.05.md"
   },

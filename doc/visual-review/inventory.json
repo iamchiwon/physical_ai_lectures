@@ -2716,8 +2716,22 @@
       "evidence": "doc/visual-review/units/M29.04.md"
     },
     "M29.05": {
-      "status": "pending",
-      "source": "ebook/curriculum/M29/M29.05.md"
+      "status": "reviewed",
+      "source": "ebook/curriculum/M29/M29.05.md",
+      "sourceSha256": "2e8a59541709b53ab7e116dbcc9cfd06b8d00010234e0bb1c2ada232fe25dce8",
+      "reason": "동적 장애물은 시간까지 비교의 연결/구분은 글만으로 단계나 경계를 혼동하기 쉬워 설명 도식을 추가한다. 본문의 표·수치·문제 조건도 대조한다.",
+      "assets": [
+        {
+          "path": "apps/web/public/textbook-visuals/M29.05-concept.svg",
+          "sha256": "1aab8c4be100414f38b497da6df7f8c0faf96e30fdca26cca362a1bbe4749195",
+          "method": "original-svg",
+          "model": null,
+          "prompt": null,
+          "alt": "동적 장애물은 시간까지 비교: 차량 후보 궤적 → 장애물 예측 → 시간을 맞춘 충돌 검사 → 제어/재계획.",
+          "caption": "각 칸은 서로 다른 역할/근거다. 아래 방향은 자료/처리의 연결이며 실제 성공을 자동으로 보장하지 않는다. 직접 제작한 개념도이며 본문의 조건과 함께 읽는다."
+        }
+      ],
+      "evidence": "doc/visual-review/units/M29.05.md"
     },
     "M29.06": {
       "status": "pending",
