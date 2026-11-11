@@ -2224,8 +2224,22 @@
       "evidence": "doc/visual-review/units/M23.06.md"
     },
     "M24.01": {
-      "status": "pending",
-      "source": "ebook/curriculum/M24/M24.01.md"
+      "status": "reviewed",
+      "source": "ebook/curriculum/M24/M24.01.md",
+      "sourceSha256": "748d1edc614e8ff4391061b1eadc60af9055fffa56dc19229158fc0ef3226777",
+      "reason": "전신 상태와 관측의 차이의 연결/구분은 글만으로 단계나 경계를 혼동하기 쉬워 설명 도식을 추가한다. 본문의 표·수치·문제 조건도 대조한다.",
+      "assets": [
+        {
+          "path": "apps/web/public/textbook-visuals/M24.01-concept.svg",
+          "sha256": "374bd041d264d43f30018fe9b7a35ce82c39cb98644612e17f3aac2f59421d04",
+          "method": "original-svg",
+          "model": null,
+          "prompt": null,
+          "alt": "전신 상태와 관측의 차이: 몸체/관절의 모형 상태 → 센서로 가용한 관측 → 정책 입력 → 남는 미상.",
+          "caption": "각 칸은 서로 다른 역할/근거다. 아래 방향은 자료/처리의 연결이며 실제 성공을 자동으로 보장하지 않는다. 직접 제작한 개념도이며 본문의 조건과 함께 읽는다."
+        }
+      ],
+      "evidence": "doc/visual-review/units/M24.01.md"
     },
     "M24.02": {
       "status": "pending",

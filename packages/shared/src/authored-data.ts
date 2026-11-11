@@ -2643,7 +2643,7 @@ export const authoredMetadata: AuthoredMetadata[] = [
       "G1 모델/하드웨어 형상과 관측 가용성의 차이를 진단한다."
     ],
     "prerequisiteNote": "M06.03, M07.05, M23.06의 개념을 사용한다. 필요한 새 용어·기호는 본문에서 정의한다. 일반 코딩 문법/실제 장비 설치를 요구하지 않으며 합성 자료로 기본 경로를 수행한다.",
-    "sha256": "299520390a3655689dc898bd81ccb2640c6211010d15a321155305ecb76b7025",
+    "sha256": "748d1edc614e8ff4391061b1eadc60af9055fffa56dc19229158fc0ef3226777",
     "reviewed": true,
     "evidenceRef": "doc/v2/work_items/M24.01.md"
   },
