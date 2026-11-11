@@ -2958,8 +2958,12 @@
       "evidence": "doc/visual-review/units/M32.05.md"
     },
     "M32.06": {
-      "status": "pending",
-      "source": "ebook/curriculum/M32/M32.06.md"
+      "status": "reviewed",
+      "source": "ebook/curriculum/M32/M32.06.md",
+      "sourceSha256": "77ffe2d34499ee04a6974934857c1d627c854d3d15cf613614aa6c8b89c12508",
+      "reason": "본문의 「데모는 무엇을 입증하는지 먼저 밝힌다」부터 「수정은 새 근거와 재평가로 닫는다」까지 시각 참조/입력 조건을 점검했다. 제공 표·정의와 수치/판정 절차가 글 안에서 주어지고 특정 미제공 사진/그림의 식별에 의존하지 않아 이번에는 이미지를 추가하지 않는다. 공간 구조의 세부 설명은 연결된 선수 단위의 그림과 함께 읽는다.",
+      "assets": [],
+      "evidence": "doc/visual-review/units/M32.06.md"
     },
     "M33.01": {
       "status": "pending",
