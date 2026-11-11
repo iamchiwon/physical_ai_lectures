@@ -2489,7 +2489,7 @@ export const authoredMetadata: AuthoredMetadata[] = [
       "목표 편향과 RRT-Connect·RRT*의 역할 및 유한 실패·점근 보장의 조건을 판정한다."
     ],
     "prerequisiteNote": "M17.01~03의 C-space, 연결 검사와 비용을 연결한다. 트리·확장·목표 편향·재배선을 본문에서 정의한다. 기본은 점 configuration의 합성 평면 계산이며 실제 RRT·OMPL이나 로봇을 실행하지 않는다.",
-    "sha256": "960fe03c6dc609c4377d952392ca4f4aa0df1efb2957a7c076858969d8c8ee32",
+    "sha256": "307fa97876bec98166e1f47d1240ee2c36b9854999b722cf72d3ae11b3efc1f2",
     "reviewed": true,
     "evidenceRef": "doc/v2/work_items/publication-source-privacy.md"
   },
