@@ -1716,8 +1716,8 @@
     "M17.04": {
       "status": "reviewed",
       "source": "ebook/curriculum/M17/M17.04.md",
-      "sourceSha256": "307fa97876bec98166e1f47d1240ee2c36b9854999b722cf72d3ae11b3efc1f2",
-      "reason": "RRT는 연결된 트리를 확장한다의 연결/구분은 글만으로 단계나 경계를 혼동하기 쉬워 설명 도식을 추가한다. 본문의 표·수치·문제 조건도 대조한다.",
+      "sourceSha256": "b35691541c108850d55def0c51645c612ded3cb24e9aec9c511996a86e001e4d",
+      "reason": "RRT의 트리 확장는 공간/파형 관계를 직접 보아야 식의 기준과 적용 범위를 혼동하지 않으므로 도식을 추가한다. 제공된 식·본문 조건과 대조했다.",
       "assets": [
         {
           "path": "apps/web/public/textbook-visuals/M17.04-concept.svg",
@@ -1727,6 +1727,15 @@
           "prompt": null,
           "alt": "RRT는 연결된 트리를 확장한다: 샘플 선택 → 트리의 가까운 노드 → 제한 길이만큼 확장 → 충돌 검사 뒤 추가.",
           "caption": "각 칸은 서로 다른 역할/근거다. 아래 방향은 자료/처리의 연결이며 실제 성공을 자동으로 보장하지 않는다. 직접 제작한 개념도이며 본문의 조건과 함께 읽는다."
+        },
+        {
+          "path": "apps/web/public/textbook-visuals/M17.04-spatial.svg",
+          "sha256": "c25a3410d5ce6ed6c383b9c59adf0783b96d7b3ab863001f606b608241a1c55b",
+          "method": "original-svg",
+          "model": null,
+          "prompt": null,
+          "alt": "RRT의 트리 확장. 시작점에서 이미 연결된 트리를 확장하는 별도 점 모델 개념도다. 주황 확장 후보도 연결 구간 검사를 거쳐야 한다. 일반 차량의 조향/동역학을 직선 연결로 대체한 모델은 아니다.",
+          "caption": "시작점에서 이미 연결된 트리를 확장하는 별도 점 모델 개념도다. 주황 확장 후보도 연결 구간 검사를 거쳐야 한다. 일반 차량의 조향/동역학을 직선 연결로 대체한 모델은 아니다. 직접 제작."
         }
       ],
       "evidence": "doc/visual-review/units/M17.04.md"
