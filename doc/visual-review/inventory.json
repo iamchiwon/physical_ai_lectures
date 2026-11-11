@@ -482,8 +482,22 @@
       "evidence": "doc/visual-review/units/M04.06.md"
     },
     "M05.01": {
-      "status": "pending",
-      "source": "ebook/curriculum/M05/M05.01.md"
+      "status": "reviewed",
+      "source": "ebook/curriculum/M05/M05.01.md",
+      "sourceSha256": "3c5f523b7afd3a98a6bf8de21a89eafe1be8e41092ff28ef4d00a579022570f0",
+      "reason": "콜백 실행 전까지의 경로의 연결/구분은 글만으로 단계나 경계를 혼동하기 쉬워 설명 도식을 추가한다. 본문의 표·수치·문제 조건도 대조한다.",
+      "assets": [
+        {
+          "path": "apps/web/public/textbook-visuals/M05.01-concept.svg",
+          "sha256": "3927b57fd9e9ec6dedf52bbd2dbc40667f4cd3dbee8ffced416bc9b156c8dafa",
+          "method": "original-svg",
+          "model": null,
+          "prompt": null,
+          "alt": "콜백 실행 전까지의 경로: 센서 메시지 발행 → 미들웨어 수신/대기 → Executor가 작업 선택 → 사용자 콜백.",
+          "caption": "각 칸은 서로 다른 역할/근거다. 아래 방향은 자료/처리의 연결이며 실제 성공을 자동으로 보장하지 않는다. 직접 제작한 개념도이며 본문의 조건과 함께 읽는다."
+        }
+      ],
+      "evidence": "doc/visual-review/units/M05.01.md"
     },
     "M05.02": {
       "status": "pending",

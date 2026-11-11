@@ -207,7 +207,7 @@ export const authoredMetadata: AuthoredMetadata[] = [
       "패키지 탐색 실패와 콜백 지연을 구별하여 가상 기록에서 다음 확인 증거를 선택한다."
     ],
     "prerequisiteNote": "M01의 경로·프로세스·재현 환경과 일반 Python 코딩을 사용한다. 기본 활동의 센서/명령 역할은 제공된 가상 노드와 입력으로 설명한다. 실제 장치를 연결할 때는 M03.06의 BOM·배선·인터페이스 계약을 추가로 확인한다. ROS 설치 없이 표와 로그로 기본 활동을 수행하며 실제 ROS 실행 여부와 구분한다.",
-    "sha256": "14a85a10b01524c5e7081f6f40993235b278dbec37902f2c89f88e4c92a83df8",
+    "sha256": "3c5f523b7afd3a98a6bf8de21a89eafe1be8e41092ff28ef4d00a579022570f0",
     "reviewed": true,
     "evidenceRef": "doc/v2/work_items/M05.01.md"
   },
