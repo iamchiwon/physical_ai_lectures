@@ -3090,85 +3090,151 @@ export const legacyExerciseReferences: DerivedReference[] = [
   {
     "activityId": "legacy:exercise:02_physx_simulation--chapter-18-q1",
     "baselineSha256": "1b9eff2d969be08df43208bb3bdedf2e4123f09b04800e816764fd22ba3bc6f3",
-    "sha256": "d33560a59ad1441a890bf2d2f43d1b660ce2853e07efa78a0fa1d6769c0bd49e",
+    "sha256": "e88830df779bbe4b6ce31637ef75c6cc89095b8181ac782b69c12a3788c815d1",
     "approved": true
   },
   {
     "activityId": "legacy:exercise:02_physx_simulation--chapter-18-q2",
     "baselineSha256": "1f079e0bf0beecf40c0bc0640d90b593dbbc865661a90c539998e52ac7e3abc1",
-    "sha256": "62fecc396a500b80b7d8c884b0781835f1d49eb172d3f9313b5be2242f6d9885",
+    "sha256": "14ba58f7e8dda1a4b4ad3d619d70c5ab26a5e7bf4419a534edff4e6afb99b522",
     "approved": true
   },
   {
     "activityId": "legacy:exercise:02_physx_simulation--chapter-18-q3",
     "baselineSha256": "747879cb145bcf8236d9696fd1d270f77bc0e8bfba191ae092f623ea03684163",
-    "sha256": "c3d5cfbfba7eb6eba465bb5c72b2a2a779e4b5017bd4f01fdaf40a0bd765e3d6",
+    "sha256": "4960ebd50c72795cbfae36fb0f996bfc3e068df92320f6e4a2c80a21540e47ea",
     "approved": true
   },
   {
     "activityId": "legacy:exercise:02_physx_simulation--chapter-18-q4",
     "baselineSha256": "1f079e0bf0beecf40c0bc0640d90b593dbbc865661a90c539998e52ac7e3abc1",
-    "sha256": "62fecc396a500b80b7d8c884b0781835f1d49eb172d3f9313b5be2242f6d9885",
+    "sha256": "14ba58f7e8dda1a4b4ad3d619d70c5ab26a5e7bf4419a534edff4e6afb99b522",
     "approved": true
   },
   {
     "activityId": "legacy:exercise:02_physx_simulation--chapter-18-q5",
     "baselineSha256": "32b2adbeac3f669d8308692160e3d626b8f65bc43c104419945eedb30afea7f6",
-    "sha256": "5264c82e6dcc75b6827c053525b04f87082cbc17c0ad9e10be7dd669f0733ca4",
+    "sha256": "c733c72f9051425bcbf312dc22956d17be3bb62b113c1b77545a0dba621adf69",
+    "approved": true
+  },
+  {
+    "activityId": "legacy:exercise:02_physx_simulation--chapter-18-q6",
+    "baselineSha256": "1cb19301c841238d7f60054c3e190baaf491b45204de4a8e643447d417df697f",
+    "sha256": "37288ef2a40df354cc75435e14055e0f2cb5fa6f5abf63b975d96f2d7a0292e0",
+    "approved": true
+  },
+  {
+    "activityId": "legacy:exercise:02_physx_simulation--chapter-18-q7",
+    "baselineSha256": "083a90088c78105e5e6193958a6c5801d7025e13f12c2a7c11bbc3d623d51920",
+    "sha256": "d8dc5115eeb10ed4169ee2a8f227fd0447d275c1d286483a7e7bfa36d9d4914d",
     "approved": true
   },
   {
     "activityId": "legacy:exercise:02_physx_simulation--chapter-18-q8",
     "baselineSha256": "3bfc926b00ec60eb6b2bc0c6028cb9892aac1b3e85eb47a411686e5c1583a902",
-    "sha256": "dda4d6b46b02d0f2c45bf72b03333d31411c94b35e6ab1f5b71ad610c158a339",
+    "sha256": "ef211ae390ea08a1016743e9823e31f8d8ab6a22f133dbe0c2d2633a34200f31",
     "approved": true
   },
   {
     "activityId": "legacy:exercise:02_physx_simulation--chapter-18-q9",
     "baselineSha256": "50bfcac7c1440f01c08887816b64e5d9ca9f7d6d9a4d2b9004496489e97019a9",
-    "sha256": "db059ec05c63eaf8666028881c15974fd7c162b027239d5e755e2d88a2ebc971",
+    "sha256": "12b40f28280ba53f8a2dd5f697c009ac7c64de7a86b3ff64130b04251ceef5d2",
+    "approved": true
+  },
+  {
+    "activityId": "legacy:exercise:02_physx_simulation--chapter-18-q10",
+    "baselineSha256": "a74d542be28fc632e6a7e5b8e62216682e366cdcf99350084be950e69454a0f8",
+    "sha256": "92b9b36a9ef2d0cc9b9233b8cb1074c588278c6141a8024c3363a7af216b62b1",
+    "approved": true
+  },
+  {
+    "activityId": "legacy:exercise:02_physx_simulation--exercises--problem_set-1-q1",
+    "baselineSha256": "c7463fc0e5e7637daf04d28c27a35cd1a110a919bde62be725f2e270f7272c8c",
+    "sha256": "f9d17a1f20e7551a2348522e955ba0ef6f46c48bba615590ae77e9bdd3ba8dc8",
+    "approved": true
+  },
+  {
+    "activityId": "legacy:exercise:02_physx_simulation--exercises--problem_set-1-q2",
+    "baselineSha256": "f441456984eb5886824f95a831289f448577f0c4aca923d69b64b648c06b782d",
+    "sha256": "dce7904f8c1bf68b1ea72be0d8ba573d353299199bf5d3ed8cf2a8dbadbe7a25",
     "approved": true
   },
   {
     "activityId": "legacy:exercise:02_physx_simulation--exercises--problem_set-1-q3",
     "baselineSha256": "8b07e9ea8308a5f6a09c54cf44dbcc2dacf2862fd97dbc2faf505ec1fbe5bd81",
-    "sha256": "e5f2c8bddef3bf996331ef6aabe0a4b0207355fc2bf47463191d28bfdd94c230",
+    "sha256": "dca9954a41289c8d5d3a6803b91543ce7080454d3a7c2c037fc4d50daf8ab481",
     "approved": true
   },
   {
     "activityId": "legacy:exercise:02_physx_simulation--exercises--problem_set-1-q4",
     "baselineSha256": "62df5206b8b78715573634f7d98939981f622c72d9128994dc3516195f8678cb",
-    "sha256": "e5f2c8bddef3bf996331ef6aabe0a4b0207355fc2bf47463191d28bfdd94c230",
+    "sha256": "dca9954a41289c8d5d3a6803b91543ce7080454d3a7c2c037fc4d50daf8ab481",
+    "approved": true
+  },
+  {
+    "activityId": "legacy:exercise:02_physx_simulation--exercises--problem_set-1-q5",
+    "baselineSha256": "df35530b5d57d467c0a91f5ce2810c02444e44d0d7d4730d0ee0c5ce30328a30",
+    "sha256": "7be8e4cd550838bef0aff1917814b5aad28ec0e2f0a411350eaf3b9bd296669c",
+    "approved": true
+  },
+  {
+    "activityId": "legacy:exercise:02_physx_simulation--exercises--problem_set-1-q6",
+    "baselineSha256": "d015d5654e16838a60708c3734f04496680b13c7f4270aac8ed141eaa9eb99b8",
+    "sha256": "48ee17cffdeb8a5ef7cfc4a0e82034f9fede1757a84eca80901169347c496431",
     "approved": true
   },
   {
     "activityId": "legacy:exercise:02_physx_simulation--exercises--problem_set-1-q7",
     "baselineSha256": "b365e1123062125696ef3a41deaa6f23b2923463fa5a9610e093c355ce387861",
-    "sha256": "033d0d9b5692086edb214bdbdc7a1fb2c537277026d4838e1a204078d40f0c38",
+    "sha256": "70b086f8f479c54b4d4781ef948443dccf5a3495cb9a637df6ef71c69bcc86cd",
     "approved": true
   },
   {
     "activityId": "legacy:exercise:02_physx_simulation--exercises--problem_set-1-q8",
     "baselineSha256": "1bf26dfe5915bc6ad7b8b054a30dbd9f56f486d276f7c4803c7d4ced7372e1ed",
-    "sha256": "c475fe5ccb79931568217018821e6c0bd88ca5bc86d42a314a981003385268ce",
+    "sha256": "6f85f1ac8ec48a385a3a583416efce3cbf3f4b7c6a3f6d0b73dce17c207b02e0",
+    "approved": true
+  },
+  {
+    "activityId": "legacy:exercise:02_physx_simulation--exercises--problem_set-1-q9",
+    "baselineSha256": "d015d5654e16838a60708c3734f04496680b13c7f4270aac8ed141eaa9eb99b8",
+    "sha256": "48ee17cffdeb8a5ef7cfc4a0e82034f9fede1757a84eca80901169347c496431",
+    "approved": true
+  },
+  {
+    "activityId": "legacy:exercise:02_physx_simulation--exercises--problem_set-1-q10",
+    "baselineSha256": "416f1967bb68e1bfa8f6807b1775c3d06b4ac5cdfc3c6043961c0c192323e759",
+    "sha256": "692728dc57230f371a8c0e1367c6a777a4219a01e872ab1a6a54111383de778e",
     "approved": true
   },
   {
     "activityId": "legacy:exercise:02_physx_simulation--exercises--problem_set-1-q11",
     "baselineSha256": "ccc70d3965c2864ca66693486d399fd88d17495ab41a560e8207747e71f9c0cc",
-    "sha256": "171c77fa2b1153950c616035f75ce45777d64f47b1cb0bed556bc7c3b137a19a",
+    "sha256": "91cd2426718179bf1fe950a28c49cd9ab6ba325a96e870c010525b732d6f37c0",
     "approved": true
   },
   {
     "activityId": "legacy:exercise:02_physx_simulation--exercises--problem_set-1-q12",
     "baselineSha256": "57b1f506125dca116eaaa201aeed44215d9be9e2c60ae037d744bce68c7b0dcd",
-    "sha256": "42773fdaa879501c63129a19bc170bb9ce79c05f3dc07f4d3db4d569d90fc5d9",
+    "sha256": "3192942bcc2ec33e18afaea31c166ca19b6b558f3c5bd0469fe754977f5ca2ec",
+    "approved": true
+  },
+  {
+    "activityId": "legacy:exercise:02_physx_simulation--exercises--problem_set-1-q13",
+    "baselineSha256": "5e21d5c7fbc040dabb55e7aeccfb73fc6066316c0920f2780a4775f810d13fe0",
+    "sha256": "8042dd8bb851845e73462276ff1a2e11e03f63f2d6913f46520bd3b0ae5240fe",
+    "approved": true
+  },
+  {
+    "activityId": "legacy:exercise:02_physx_simulation--exercises--problem_set-1-q14",
+    "baselineSha256": "697fc990e1c00b1d87f22e16a40b09e49241ca4e3ed60f1a89385a295e1b038b",
+    "sha256": "4d2f58bb735ffe28ca38b8412f6e5fa07d125fa172a08e00c939683efaf8ab9c",
     "approved": true
   },
   {
     "activityId": "legacy:exercise:02_physx_simulation--exercises--problem_set-1-q15",
     "baselineSha256": "44ff1094fa742fafe37a2afd57540a17a6a0d3a73c7a42d7fc2bebeaa6d285be",
-    "sha256": "440b9327604f36b2cdf6f7da1d0cc799b53f15bd2038fed7df8db45f08805be7",
+    "sha256": "1cf8936f8cde5b2937e0d383133b83f9b18d2d811178e53ee5c45abf11bc6d3a",
     "approved": true
   },
   {
@@ -3306,145 +3372,193 @@ export const legacyExerciseReferences: DerivedReference[] = [
   {
     "activityId": "legacy:exercise:05_lerobot_smolvla--chapter-21-q1",
     "baselineSha256": "605ccc84f6b8884141ff8c44770b4a7080ae4c223247a74c2c1845b1bd3dbf3e",
-    "sha256": "a827e46b1cb51723887b2a48615641b1ec10f3fe519ba82de0bcd522890e382b",
+    "sha256": "5dbafe1442249f907ddd2c2b1c35ee32a5cc3392c0ba80a864e0befaf29ea8fe",
     "approved": true
   },
   {
     "activityId": "legacy:exercise:05_lerobot_smolvla--chapter-21-q2",
     "baselineSha256": "3ad078fc14432c0bce24c9576494b2ffef67623fe5e0e31b6086ce130e0c7ab3",
-    "sha256": "e759f5157c4092f430851e5a2ddc548c0831643420e264be4af0aaa91ef77369",
+    "sha256": "097b400c17e3c7681af3c03f67d36ec276581570d488674c9a5d8e3763994e41",
     "approved": true
   },
   {
     "activityId": "legacy:exercise:05_lerobot_smolvla--chapter-21-q3",
     "baselineSha256": "c185714f9ad65eef44351d8d916737fe9ffcda26e5f7661cc265384ac78d5d15",
-    "sha256": "22c79e216b4185386769aea4b04107f9f2aece4afebed53834be4b27743565ca",
+    "sha256": "9bb6d9b417137b5881c720ab848bb2b1b2b7789d2c7ec511201ba6f63961a4eb",
+    "approved": true
+  },
+  {
+    "activityId": "legacy:exercise:05_lerobot_smolvla--chapter-21-q4",
+    "baselineSha256": "0afe05fd85ec2dfd4e6621ff0df2a21dbbe718bb99f547b91c018b9215e4d165",
+    "sha256": "e1526db9dc3c6f5eb9bd417033a0ee088cdf556a76b381e06c2d1d5e980c743a",
     "approved": true
   },
   {
     "activityId": "legacy:exercise:05_lerobot_smolvla--chapter-21-q5",
     "baselineSha256": "dd1d0dfe07a5706a4fcac211f3b6fe3d55a5fa855ddc55394503d28132ba0ace",
-    "sha256": "324e215e139ea82034d49e46d26eda27eb269748735d57f20f577367a2c8e709",
+    "sha256": "91532e7db06bd21a2d65c261307d3db1e3a34b183caa6da6a69be2457660a3e6",
     "approved": true
   },
   {
     "activityId": "legacy:exercise:05_lerobot_smolvla--chapter-21-q6",
     "baselineSha256": "17b6fb934fce88c9b14c018ed3e3c481c5ba3eb7f594d4a940d61908f1951457",
-    "sha256": "8e61cc5da89d4ce0b4fd4876850c36e4871b0306eb399f379732cca9e7c28589",
+    "sha256": "d4e56592fd851cf7448ec8175f02b2d2260d250c05ceef020e45a75b9a30e518",
     "approved": true
   },
   {
     "activityId": "legacy:exercise:05_lerobot_smolvla--chapter-21-q7",
     "baselineSha256": "f99ebf02fd9a5c0be80344b6f92700de21b49f24a0effc321da4d51d7d2c6133",
-    "sha256": "ce77582361b6fe6a71464634c0d4143ddf3e1d45a3b388c3e259dadcb3348d59",
+    "sha256": "0c5b2b74812c75311d375642536a2724ec006fb1c1092c2f505bc50085741ff7",
+    "approved": true
+  },
+  {
+    "activityId": "legacy:exercise:05_lerobot_smolvla--chapter-21-q8",
+    "baselineSha256": "1b4852afd13b6283ed6892b85153089bd9c8a83f2aeba641a047cdf2cb9d57bc",
+    "sha256": "b38fda6639618bec8773f619ffbed1182847069d9ae52c6f044ec2cfae3ede28",
     "approved": true
   },
   {
     "activityId": "legacy:exercise:05_lerobot_smolvla--chapter-21-q9",
     "baselineSha256": "4e9f070c9f01c666de3a35bbb010fd1387e10ed7a7327159ceaa668b6ac9cadc",
-    "sha256": "29854a83d772a26abf12952d2447a0b884f33a204cf48e76c2a7ff7283920b1a",
+    "sha256": "d16a3ef91a8ef6ad6f1d24462b9e10512a72eed26bcf4617dc21f542422b09e2",
+    "approved": true
+  },
+  {
+    "activityId": "legacy:exercise:05_lerobot_smolvla--chapter-21-q10",
+    "baselineSha256": "72adb277b288b96ffe6aa42d67b782c8e78054c897aebc9a31e89361515abe8a",
+    "sha256": "9d85985a142181843636cec4216b41537e4ea5e0f9d931677f1594df3e6e4cf9",
     "approved": true
   },
   {
     "activityId": "legacy:exercise:05_lerobot_smolvla--chapter-21-q11",
     "baselineSha256": "a8e93ae8e110e8326a973a69650d831479492caca0c4d85cbff3f7c6c9fb6c3c",
-    "sha256": "2f8c8318a944b908f2393296cfdd94751fb85b8d175e7c61a2a09c1082709d91",
+    "sha256": "af449c772e9e0bf458105178d8216ea5abd9c8642fa5f3e2d683b618f64d84da",
+    "approved": true
+  },
+  {
+    "activityId": "legacy:exercise:05_lerobot_smolvla--chapter-21-q12",
+    "baselineSha256": "4a8f35999e9152eb091d2cf39fe441582168d70a3ea19cd9c1e894e22d91a673",
+    "sha256": "42da442dfb3c271d4ede8601912e467d096b586d448c559671680e35b59b0548",
     "approved": true
   },
   {
     "activityId": "legacy:exercise:05_lerobot_smolvla--exercises--problem_set-1-q1",
     "baselineSha256": "c442c95e0af2a4b4c99886013315d74d863e6b0d25aefcb23f56b4f90bf4a347",
-    "sha256": "c50f8734875aac0402db76be6f97de400fc1fb93ababf3dd10bc64db206cf674",
+    "sha256": "25fdfc67e4af26d412c9d3ee0e0665944f3877a97e5e1fd4d454456d36295b10",
     "approved": true
   },
   {
     "activityId": "legacy:exercise:05_lerobot_smolvla--exercises--problem_set-1-q2",
     "baselineSha256": "852238de9a49013fa1ae1f066bf6a04092f36a2033e031ee222fa453c99bdff2",
-    "sha256": "30cdde7a502c72cc721cfef30bac5dcbc9983aced1f738a35ed44bd84d49a3df",
+    "sha256": "f98e3f8d8c39badc27f31c647e4799dc2ddc149e0b96ec31213da23fce48415e",
+    "approved": true
+  },
+  {
+    "activityId": "legacy:exercise:05_lerobot_smolvla--exercises--problem_set-1-q3",
+    "baselineSha256": "20a23d35b2e47a3eb5f3292f372b8bae635b120a4d718fe603f74691b6caf86e",
+    "sha256": "3ec2a0a9e547a3521fe4056784232fd83ed0dc5469d3f479851cc0f2009ef7b1",
     "approved": true
   },
   {
     "activityId": "legacy:exercise:05_lerobot_smolvla--exercises--problem_set-1-q4",
     "baselineSha256": "4e9f070c9f01c666de3a35bbb010fd1387e10ed7a7327159ceaa668b6ac9cadc",
-    "sha256": "29854a83d772a26abf12952d2447a0b884f33a204cf48e76c2a7ff7283920b1a",
+    "sha256": "d16a3ef91a8ef6ad6f1d24462b9e10512a72eed26bcf4617dc21f542422b09e2",
     "approved": true
   },
   {
     "activityId": "legacy:exercise:05_lerobot_smolvla--exercises--problem_set-1-q5",
     "baselineSha256": "219737a4e040b75b48b289cf23425f84219e1b3cf67b304e8be910bfd19217b2",
-    "sha256": "537e7eba570fac9a2f5dcc247a966da48c48bcca15d6736107c744a2cdcfd426",
+    "sha256": "919737ff994047d06ee7f9ffee79cf5435fcfd196960275bc20353e5c6233a7c",
     "approved": true
   },
   {
     "activityId": "legacy:exercise:05_lerobot_smolvla--exercises--problem_set-1-q6",
     "baselineSha256": "cb42d6f47b42aeb59c0f25e9c60e73558f8a31e301254728cc4cea5dd881c434",
-    "sha256": "a24fc702fc659cffcaecd2d92380fbabb72142e50e16a8314e71a5b162905da7",
+    "sha256": "becd973ea85fabc143390a9b685e1fb1832862e9d72675f68ff8c89485b3a678",
     "approved": true
   },
   {
     "activityId": "legacy:exercise:05_lerobot_smolvla--exercises--problem_set-1-q7",
     "baselineSha256": "d944b6c7a6b7fac11a89e23dc1b789963aaf7e0cbc2ee3ae6ef918ddb99bf581",
-    "sha256": "f9b4e3b7e0d0dcc75ff3dc08ea6cbc44729fe98a3e494ea74042a84bed2ffd59",
+    "sha256": "60c80895d67ab709beb7a14c02f4e6fed6e7237253d23bafae2eeea61c3db239",
+    "approved": true
+  },
+  {
+    "activityId": "legacy:exercise:05_lerobot_smolvla--exercises--problem_set-1-q8",
+    "baselineSha256": "77ff6fab8c7b3f0d98ea6b372e137d460f9520d3ab7a0054a415b5483ebc27d7",
+    "sha256": "c52250b95c0728095d5a10ce3a730933d89f19c7b3005828f416f285616c0ea5",
     "approved": true
   },
   {
     "activityId": "legacy:exercise:05_lerobot_smolvla--exercises--problem_set-1-q9",
     "baselineSha256": "d052f217272c6e0ff13e26a4e4e9629ab870032125e8fc075494f533b9cbf1ba",
-    "sha256": "801464cfc602cec4d6a8535a52a2296d59b5b839e7ddc278fd9c635ebec1bb30",
+    "sha256": "c9efee74b8569266a8319d48a610dbe856a30503cf9e45db6d6b2e40406ccbaa",
+    "approved": true
+  },
+  {
+    "activityId": "legacy:exercise:05_lerobot_smolvla--exercises--problem_set-1-q10",
+    "baselineSha256": "7f37cd8e7073fb127134db1d0282096fbc9327b106fb60ebe655ff6243d64ef0",
+    "sha256": "1d7b6af4267bb2176ddc0c8b7f02c1d27390315d5fe0bb5bdb833741e42fac60",
     "approved": true
   },
   {
     "activityId": "legacy:exercise:05_lerobot_smolvla--exercises--problem_set-1-q11",
     "baselineSha256": "c185714f9ad65eef44351d8d916737fe9ffcda26e5f7661cc265384ac78d5d15",
-    "sha256": "22c79e216b4185386769aea4b04107f9f2aece4afebed53834be4b27743565ca",
+    "sha256": "9bb6d9b417137b5881c720ab848bb2b1b2b7789d2c7ec511201ba6f63961a4eb",
+    "approved": true
+  },
+  {
+    "activityId": "legacy:exercise:05_lerobot_smolvla--exercises--problem_set-1-q12",
+    "baselineSha256": "90a2f3c38b8540bf3b6bbd2bd331c2d80bd0bc487bfa974e59fee06d42275c67",
+    "sha256": "fc380bd0d4ab2f439eb5cee95b00c44f168a8271d9f176862267848fef8b25e0",
     "approved": true
   },
   {
     "activityId": "legacy:exercise:05_lerobot_smolvla--exercises--problem_set-1-q13",
     "baselineSha256": "fc2aa23eedb5cc858dc7bbafae217fcb08a472d16be07b7b234c7e37b7235b0d",
-    "sha256": "0720b6895bc3daa6382ced7aaae54f3dba3a9f3fd94a7d99110c36b6c73c0f13",
+    "sha256": "da38d608db00411482ded4844fe07fcb6242cd30abd47e0f65bc4313ff50c988",
     "approved": true
   },
   {
     "activityId": "legacy:exercise:05_lerobot_smolvla--exercises--problem_set-1-q14",
     "baselineSha256": "48b5883113e3c5e7eb20349960a6e030fcad656a062db31b2d82f82d1eac95cc",
-    "sha256": "6920df949b2d694f977e7e59a78f63e5ffe0f284f5f04568eaf65448f77de8c7",
+    "sha256": "75993a69d237a3bc1ad407859f6f64dca2b37066f2be05b527a00f0a864b2a4f",
     "approved": true
   },
   {
     "activityId": "legacy:exercise:05_lerobot_smolvla--exercises--problem_set-1-q15",
     "baselineSha256": "c185714f9ad65eef44351d8d916737fe9ffcda26e5f7661cc265384ac78d5d15",
-    "sha256": "22c79e216b4185386769aea4b04107f9f2aece4afebed53834be4b27743565ca",
+    "sha256": "9bb6d9b417137b5881c720ab848bb2b1b2b7789d2c7ec511201ba6f63961a4eb",
     "approved": true
   },
   {
     "activityId": "legacy:exercise:05_lerobot_smolvla--exercises--problem_set-1-q16",
     "baselineSha256": "beb35e59afd6cf9311492f79a941f0b2d87164f0fe28331bc6ab10bcc714fcb1",
-    "sha256": "90e9558f9fcd39a6771cbe3a3cc120acafb5410f922c3eb931416aebd682dcf0",
+    "sha256": "02b39ed48eab16a005b13f6a96ea0f5b05b5a7b6b03abd5719861547055076dd",
     "approved": true
   },
   {
     "activityId": "legacy:exercise:05_lerobot_smolvla--exercises--problem_set-1-q17",
     "baselineSha256": "a0816543361beb3bf2493bd09863790054f67c0ccab4fa7c49b215d9da5ddac1",
-    "sha256": "336137d0443031696187935741c5decc89463b068eb59566280173c8476c48d4",
+    "sha256": "b9e9e999976323b7697f3add3fe6131a2021031622c48af93b92d78117f6205a",
     "approved": true
   },
   {
     "activityId": "legacy:exercise:05_lerobot_smolvla--exercises--problem_set-1-q18",
     "baselineSha256": "400356f9fc2b9b4899ecbe605c378d356b6e0b33f9ac0c912466001f1dcad968",
-    "sha256": "890a40b60ee282b005b04b56fa3d29f1fac515134536100d658f1ae5748cb36a",
+    "sha256": "690f5d3bf40599ce8e43f2047fd6cd4e3084c9589a838b011fa3738b015f8a00",
     "approved": true
   },
   {
     "activityId": "legacy:exercise:05_lerobot_smolvla--exercises--problem_set-1-q19",
     "baselineSha256": "96d9c045859fee200abcd7a747d2731c1c9be72392c7891d53ed288c35004383",
-    "sha256": "2659aa8f6e2c923679a4488c53ee001dc456e31c5235d10939b56ecd603a92a6",
+    "sha256": "068ca15e5bea2e0a55e5c6eb5cda436d4f09413169df946ecde1f69c7e0b69d9",
     "approved": true
   },
   {
     "activityId": "legacy:exercise:05_lerobot_smolvla--exercises--problem_set-1-q20",
     "baselineSha256": "6c38fa3e4d0640dd12b3a53de5b2e568be8898a20656ccfc8d7769dab0cf68fc",
-    "sha256": "c28bcfb7f07a00ed3712c981c0b43cf87bc20a4fb0e6940d43557bf5d8cc6dd3",
+    "sha256": "f00453cf0e50233dfba865bd6b5dd7bf4f7a66c41705ce5539227a5bf66aa228",
     "approved": true
   },
   {

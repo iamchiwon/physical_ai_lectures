@@ -61,11 +61,13 @@ export type ErrorResponse = z.infer<typeof errorResponseSchema>;
 
 export const assessmentRequestSchema = z.object({
   question: z.string().trim().min(2).max(16000),
-  answer: z.string().trim().min(10).max(8000),
+  answer: z.string().trim().min(1).max(8000),
   reference: z.string().max(16000),
+  context: z.string().max(32000).optional(),
 });
 export const assessmentResponseSchema = z.object({
   feedback: z.string(),
+  lessonContextIncluded: z.boolean().optional(),
   mode: z.enum(["openrouter", "gemini", "self-review"]),
 });
 export type AssessmentRequest = z.infer<typeof assessmentRequestSchema>;

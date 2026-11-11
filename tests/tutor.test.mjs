@@ -261,3 +261,20 @@ test('rendered strong text selection retrieves the source paragraph instead of n
   const underscore={id:'underscore',title:'조건',content:'서로 __모두__ 충족해야 합니다.'};assert.match(retrieval.retrieveLessonContext('선택한 이 조건은 왜 필요한가요?',[underscore],{selectedText:'서로 모두 충족해야 합니다.'}).text,/자료 ID: underscore/);
   const code=[{id:'python',title:'제곱 연산',content:'```python\nvalue = a ** b\n```'}];assert.match(retrieval.retrieveLessonContext('이 코드의 첫 번째 줄을 설명해주세요.',code,{selectedText:'value = a ** b'}).text,/1: value = a \*\* b/);
 });
+
+test('assessment passes the supplied body intact and limits feedback to grounded review rather than invented model answers',async()=>{
+ const original=globalThis.fetch;const oldInfo=console.info;const oldWarn=console.warn;const logs=[];console.info=(...args)=>logs.push(args);console.warn=(...args)=>logs.push(args);
+ const input={question:'이 모형의 이동 거리는?',answer:'0.2m',reference:'0.2m. 실제 장비 결과가 아닌 합성 계산이다.',context:'## 제공 모형\n속도4m/s·시간0.05s의 일정속도 합성 모형이다. 실제 장비를 실행하지 않는다. PRIVATE_BODY'};
+ const upstream=[];
+ try {
+  globalThis.fetch=async(_url,options)=>{upstream.push(JSON.parse(options.body));return Response.json({choices:[{message:{content:'판정: 충분\n제공 모형의 단위와 합성 조건을 지켰습니다.'},finish_reason:'stop'}]});};
+  const response=await app.request('/v1/assessment',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(input)},{ALLOWED_ORIGINS:'http://localhost:3000',OPENROUTER_API_KEY:'PRIVATE_KEY'});
+  assert.equal(response.status,200);const result=await response.json();assert.equal(result.mode,'openrouter');assert.equal(result.lessonContextIncluded,true);
+  assert.deepEqual(JSON.parse(upstream[0].messages.find(m=>m.role==='user').content),input);
+  const system=upstream[0].messages.find(m=>m.role==='system').content;
+  assert.ok(system.includes('판정 유보'));assert.ok(system.includes('대안 풀이를 인정'));
+  assert.ok(system.includes('긴 모범답안·전체 해설의 재작성·새 문제/조건을 만들지 않는다'));
+  assert.ok(system.includes('context가 없으면'));assert.equal(upstream[0].max_tokens,1536);
+  assert.ok(!JSON.stringify(logs).includes('PRIVATE_BODY'));assert.ok(!JSON.stringify(logs).includes('PRIVATE_KEY'));
+ } finally {globalThis.fetch=original;console.info=oldInfo;console.warn=oldWarn;}
+});

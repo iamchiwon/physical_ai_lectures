@@ -71,8 +71,14 @@ export function createLearningStore(storage: () => Pick<Storage, "getItem" | "se
       const records = { ...snapshot.data.activityRecords };
       const previous = records[activityId];
       if (previous && previous.revision !== revision) records[`${activityId}@${previous.revision}`] = previous;
-      records[activityId] = { revision, answer, evidence: selfReviewed ? "self-reviewed" : "" };
+      records[activityId] = { revision, answer, evidence: selfReviewed ? "self-reviewed" : "", ...(selfReviewed && previous?.revision === revision && previous.answer === answer && previous.feedback ? { feedback: previous.feedback } : {}) };
       return commit({ ...snapshot.data, activityRecords: records }, true);
+    },
+    saveFeedback(activityId: string, revision: string, answer: string, feedback: string) {
+      const record = snapshot.data.activityRecords[activityId];
+      if (!snapshot.hydrated || snapshot.blocked || !feedback.trim() || feedback.length > 16000
+        || record?.revision !== revision || record.answer !== answer) return false;
+      return commit({ ...snapshot.data, activityRecords: { ...snapshot.data.activityRecords, [activityId]: { ...record, feedback } } }, true);
     },
     complete(unitId: string, contentRevision: string, catalogRevision: string, readiness: string, activityIds: string[]) {
       if (!snapshot.hydrated || readiness !== "ready") return false;

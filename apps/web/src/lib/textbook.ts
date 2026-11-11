@@ -104,7 +104,7 @@ export function exercisesForUnit(unit: TextbookUnit): WrittenExercise[] {
     const relevant = textbookUnits.filter((item) => item.chapter === unit.chapter && item.source.endsWith("/chapter.md") && item.slug !== unit.slug)
       .map((item) => ({ item, score: keywords.filter((word) => item.content.toLowerCase().includes(word.toLowerCase())).length }))
       .sort((a, b) => b.score - a.score).slice(0, 2).map(({ item }) => item.content).join("\n").slice(0, 8500);
-    return { id: `${unit.slug}-q${index + 1}`, question: match[2]!, reference: [answer ? `교재 해설: ${answer}` : "교재에 개별 모범답안이 없는 문제입니다. 관련 개념을 바탕으로 평가하고 추론한 해설임을 표시하세요.", relevant, context].join("\n").slice(0, 15000) };
+    return { id: `${unit.slug}-q${index + 1}`, question: match[2]!, reference: [answer ? `교재 해설: ${answer}` : "교재에 개별 해설이 없는 문제입니다. 아래 관련 본문만으로 판단 가능한 부분을 확인하고 근거가 부족한 부분은 판정을 유보해야 합니다.", relevant, context].join("\n").slice(0, 15000) };
   });
 }
 
