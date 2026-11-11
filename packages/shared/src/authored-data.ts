@@ -1635,7 +1635,7 @@ export const authoredMetadata: AuthoredMetadata[] = [
       "공동 구역의 시간 예약 충돌과 실제 점유·통신·교착에 필요한 조정을 판정한다."
     ],
     "prerequisiteNote": "M05의 이름 공간, M15의 지도 정합과 M18의 과업 상태를 연결한다. TF 공유·격리, 공통 좌표와 구역 예약을 본문에서 보충한다. 기본은 합성 이름 목록·평면 변환·시간표이며 실제 fleet·Nav2·로봇 실행은 없다.",
-    "sha256": "11307c3746cfc7183cc37b6bca7442af10bee8abb53e5281d071f8cca4d4f15f",
+    "sha256": "1e997bf5a720cc16a89dbb52b068b72d87f32580184734e70ded6ace6996f678",
     "reviewed": true,
     "evidenceRef": "doc/v2/work_items/M18.05.md"
   },
