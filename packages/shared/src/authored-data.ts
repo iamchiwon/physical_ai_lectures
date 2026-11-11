@@ -2027,7 +2027,7 @@ export const authoredMetadata: AuthoredMetadata[] = [
       "전체 제약/단계별 미상·감독/실패/비교 평가의 근거를 포함한 프로젝트 리포트를 작성한다."
     ],
     "prerequisiteNote": "M06의 이동/팔 기구학, M19.06의 이동 조작과 M30의 감독/평가를 연결한다. 전체 configuration·결합 제약과 순차/동시 역할은 본문에서 보충한다. 제공한 양팔 수치 활동은 본문 입력으로 수행하며 양팔 정책·실행 확장을 선택하면 M21.05를 추가로 확인한다. M17.01의 충돌과 M18.06의 주행-조작 전환 계약을 함께 읽는다. 기본은 합성 좌표/상태표이며 장비/정책 실행을 하지 않는다.",
-    "sha256": "0cddacde8a56a3a9642a04646cc4c530918a3880bc988c51ff828172ae988ce2",
+    "sha256": "d91f44477f5e859661328b36196edc524f3a7737d5f80e7b0509fd099767bd8f",
     "reviewed": true,
     "evidenceRef": "doc/v2/work_items/publication-source-privacy.md"
   },

@@ -2924,8 +2924,22 @@
       "evidence": "doc/visual-review/units/M32.02.md"
     },
     "M32.03": {
-      "status": "pending",
-      "source": "ebook/curriculum/M32/M32.03.md"
+      "status": "reviewed",
+      "source": "ebook/curriculum/M32/M32.03.md",
+      "sourceSha256": "d91f44477f5e859661328b36196edc524f3a7737d5f80e7b0509fd099767bd8f",
+      "reason": "양팔이 같은 물체를 다루는 기준의 연결/구분은 글만으로 단계나 경계를 혼동하기 쉬워 설명 도식을 추가한다. 본문의 표·수치·문제 조건도 대조한다.",
+      "assets": [
+        {
+          "path": "apps/web/public/textbook-visuals/M32.03-concept.svg",
+          "sha256": "80bf76db7fed4c1808d7b73b8ac22a2dec3c4f414b14cd80c49a8ea2c3fe2eb7",
+          "method": "original-svg",
+          "model": null,
+          "prompt": null,
+          "alt": "양팔이 같은 물체를 다루는 기준: 공통 World/Base → 좌/우 TCP → 물체 강체 관계 → 전체 검수.",
+          "caption": "각 칸은 서로 다른 역할/근거다. 아래 방향은 자료/처리의 연결이며 실제 성공을 자동으로 보장하지 않는다. 직접 제작한 개념도이며 본문의 조건과 함께 읽는다."
+        }
+      ],
+      "evidence": "doc/visual-review/units/M32.03.md"
     },
     "M32.04": {
       "status": "pending",
