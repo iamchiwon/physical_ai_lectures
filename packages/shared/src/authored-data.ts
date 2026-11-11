@@ -2867,7 +2867,7 @@ export const authoredMetadata: AuthoredMetadata[] = [
       "가림/ID교환·모달 누락·상관/지연의 실패를 진단한다."
     ],
     "prerequisiteNote": "M29.03의 개념을 사용한다. 필요한 새 용어·기호는 본문에서 정의한다. 일반 코딩 문법/실제 장비 설치를 요구하지 않으며 합성 자료로 기본 경로를 수행한다.",
-    "sha256": "30eb7dbc9a61c0f1b3fe00fc59dfeb8c6e537f875357876cc55a3b88fbe06400",
+    "sha256": "eddf3fe5e1c7f2a0751ae6aeb82fe725712da6c877c59114bce7d02ec1ba461f",
     "reviewed": true,
     "evidenceRef": "doc/v2/work_items/M29.04.md"
   },

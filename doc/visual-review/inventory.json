@@ -2698,8 +2698,22 @@
       "evidence": "doc/visual-review/units/M29.03.md"
     },
     "M29.04": {
-      "status": "pending",
-      "source": "ebook/curriculum/M29/M29.04.md"
+      "status": "reviewed",
+      "source": "ebook/curriculum/M29/M29.04.md",
+      "sourceSha256": "eddf3fe5e1c7f2a0751ae6aeb82fe725712da6c877c59114bce7d02ec1ba461f",
+      "reason": "현재 관측과 추적 예측을 구분의 연결/구분은 글만으로 단계나 경계를 혼동하기 쉬워 설명 도식을 추가한다. 본문의 표·수치·문제 조건도 대조한다.",
+      "assets": [
+        {
+          "path": "apps/web/public/textbook-visuals/M29.04-concept.svg",
+          "sha256": "2e0d9985621a954bf1308b2955fefabe71e59f92db0defcd4080ac68721da074",
+          "method": "original-svg",
+          "model": null,
+          "prompt": null,
+          "alt": "현재 관측과 추적 예측을 구분: 정렬한 센서 관측 → 검출/추정 후보 → 일대일 추적 대응 → 미래 예측.",
+          "caption": "각 칸은 서로 다른 역할/근거다. 아래 방향은 자료/처리의 연결이며 실제 성공을 자동으로 보장하지 않는다. 직접 제작한 개념도이며 본문의 조건과 함께 읽는다."
+        }
+      ],
+      "evidence": "doc/visual-review/units/M29.04.md"
     },
     "M29.05": {
       "status": "pending",
