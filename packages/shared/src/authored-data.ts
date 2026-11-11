@@ -1033,7 +1033,7 @@ export const authoredMetadata: AuthoredMetadata[] = [
       "합성 관측의 marking·clearing과 자료 나이·미상·layer 결합 결과를 판정한다."
     ],
     "prerequisiteNote": "M15.02의 점유 격자와 M17의 로봇 형상·충돌을 연결한다. costmap 값, layer, footprint, inflation과 광선 기반 clearing을 본문에서 정의한다. 기준은 Jazzy이며 기본은 합성 비용 표와 광선 기록이다. 실제 costmap·ROS 실행은 없다.",
-    "sha256": "f8e74efe59e511db132281787a562ce1760cb865441e476c37faeafcbd51a126",
+    "sha256": "d42e6d1443d1b0d507fcb253fbac99eb6a36fb6dc642d0e2107f2e760b537ccc",
     "reviewed": true,
     "evidenceRef": "doc/v2/work_items/M18.02.md"
   },
