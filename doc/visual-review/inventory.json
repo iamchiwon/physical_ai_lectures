@@ -1036,8 +1036,22 @@
       "evidence": "doc/visual-review/units/M11.02.md"
     },
     "M11.03": {
-      "status": "pending",
-      "source": "ebook/curriculum/M11/M11.03.md"
+      "status": "reviewed",
+      "source": "ebook/curriculum/M11/M11.03.md",
+      "sourceSha256": "ec46cb6b59b5bce57bffe686a95047e6c71bbe2afb07b93c74909dba102f36ed",
+      "reason": "자료 분리는 원본 그룹부터의 연결/구분은 글만으로 단계나 경계를 혼동하기 쉬워 설명 도식을 추가한다. 본문의 표·수치·문제 조건도 대조한다.",
+      "assets": [
+        {
+          "path": "apps/web/public/textbook-visuals/M11.03-concept.svg",
+          "sha256": "234ac9c36a844b235cf218d44b3314287f9c2ff4e48e8cd5b96ae7541b0909f4",
+          "method": "original-svg",
+          "model": null,
+          "prompt": null,
+          "alt": "자료 분리는 원본 그룹부터: 원본 episode/대상 그룹 → 학습 분할 → 검증 분할 → 시험 분할.",
+          "caption": "각 칸은 서로 다른 역할/근거다. 아래 방향은 자료/처리의 연결이며 실제 성공을 자동으로 보장하지 않는다. 직접 제작한 개념도이며 본문의 조건과 함께 읽는다."
+        }
+      ],
+      "evidence": "doc/visual-review/units/M11.03.md"
     },
     "M11.04": {
       "status": "pending",

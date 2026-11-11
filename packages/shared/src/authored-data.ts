@@ -1341,7 +1341,7 @@ export const authoredMetadata: AuthoredMetadata[] = [
       "가상 학습곡선에서 모델 선택과 과적합 신호를 해석하고 시험 잠금 및 결과 기록 범위를 설명한다."
     ],
     "prerequisiteNote": "M11.01의 손실/학습과 M11.02의 전처리·Dataset, M02.04의 평균/분산이 선수다. 기본은 합성 분할표/곡선과 종이 계산이다. 실제 학습을 돌리거나 일반화 성능을 실증한 자료가 아니다.",
-    "sha256": "d75a56d58171756f2440bb331781acdbe7edd1d8b3d240a0dcae0fda0af7feea",
+    "sha256": "ec46cb6b59b5bce57bffe686a95047e6c71bbe2afb07b93c74909dba102f36ed",
     "reviewed": true,
     "evidenceRef": "doc/v2/work_items/M11.03.md"
   },
