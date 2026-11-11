@@ -1159,7 +1159,7 @@ export const authoredMetadata: AuthoredMetadata[] = [
       "reference와 scenegraph instancing의 재사용/편집 범위를 비교하고 가상 비용 및 개별 변경 요구로 구성을 선택한다."
     ],
     "prerequisiteNote": "M08의 모델/자산 경로와 시각·물리 구분이 선수다. 기본은 경로·의견 표의 종이 분석이며 OpenUSD나 Isaac Sim 설치가 필요하지 않다. 실제 USD 합성 결과를 실행해 얻었다고 주장하지 않는다.",
-    "sha256": "47303f5c58c587c3fb67899decdf7fa673119f2ebbac9cbbd94a70a004a7396b",
+    "sha256": "74f007fce58e50d5914cf8456415ef54e7727f2ae72e255a595c2ab107770680",
     "reviewed": true,
     "evidenceRef": "doc/v2/work_items/M10.01.md"
   },
