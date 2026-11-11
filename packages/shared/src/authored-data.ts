@@ -1691,7 +1691,7 @@ export const authoredMetadata: AuthoredMetadata[] = [
       "합성 관절 명세와 목표/관측표로 한계·부호·단위 오류를 진단하고 기하 예측과 실제 실행 근거를 구분한다."
     ],
     "prerequisiteNote": "M25.01의 자산 계층/단위/물리 입력이 선수다. 자유도·회전은 M06.01/.02, 관절 규약은 M08.02와 M10.04로 보충한다. 세 강체의 가상 구성표를 계산하며 실제 USD/물리/모터·GPU 실행은 요구하지 않는다. 일반 코딩 문법은 다루지 않는다.",
-    "sha256": "98b3bb32fd84d7aa9d8e2fa342af587377edf52b66a208b5ccf69354e0911955",
+    "sha256": "aef690c25bad5d13310cc6af3659cb26354637fd95f1cc6c9b138ff1637b3e63",
     "reviewed": true,
     "evidenceRef": "doc/v2/work_items/M25.02.md"
   },
