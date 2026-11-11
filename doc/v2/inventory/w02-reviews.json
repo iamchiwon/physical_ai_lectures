@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 1,
+  "topics": {
+    "M13.01": {
+      "sourceSha256": "3201d9d5575ae78afec5dd86e50deb1102abd2dc3497416c4a2b0681d016927b",
+      "evidenceRef": "doc/v2/work_items/M13.01.md"
+    },
+    "M13.02": {
+      "sourceSha256": "9030007651d4ad13e01186a18c336cb5b84a264909e9b606bf268c3d76effa8b",
+      "evidenceRef": "doc/v2/work_items/M13.02.md"
+    },
+    "M13.05": {
+      "sourceSha256": "cf4e3ae83343cb6a7338da544727ae048f611006729ed7e655ddd614b8cb7dc8",
+      "evidenceRef": "doc/v2/work_items/M13.05.md"
+    },
+    "M13.06": {
+      "sourceSha256": "5787131cfdcd335b4bb1da1f4c3bc374cf4870869f2f5202ec043f0afe54e434",
+      "evidenceRef": "doc/v2/work_items/M13.06.md"
+    },
+    "M14.02": {
+      "sourceSha256": "feae76883481e77a1c943f02eb74dbcba6e43aaf62c966d64bfb11be99dd77d4",
+      "evidenceRef": "doc/v2/work_items/M14.02.md"
+    },
+    "M14.04": {
+      "sourceSha256": "02d355da05fadf12eb34005e3a30e4c282ceea18835e3af59fc446c974909fec",
+      "evidenceRef": "doc/v2/work_items/M14.04.md"
+    }
+  }
+}

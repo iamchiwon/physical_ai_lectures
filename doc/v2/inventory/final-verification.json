@@ -1,0 +1,452 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-11-10",
+  "status": "passed-basic-curriculum",
+  "runtime": {
+    "modules": 35,
+    "topics": 207,
+    "tracks": 7,
+    "stages": 17,
+    "mainSteps": 147,
+    "counts": {
+      "ready": 207
+    },
+    "resources": 2403,
+    "activities": 1019,
+    "aliases": 317,
+    "reviewedSources": 207,
+    "authoredCorpusDocuments": 2070,
+    "allCorpusFiles": 207,
+    "manifestUnits": 207,
+    "baselineBookFiles": 142,
+    "changedBook": 16,
+    "approvedLegacySourceChanges": 17,
+    "currentDerivedReferences": 82,
+    "modelHashes": {
+      "apps/web/src/components/virtual-lab.tsx": "230cfa9927803281c8f7c9d681b52c745ccf55ade2509bebfe11700bae91e688",
+      "apps/web/src/lib/control-model.ts": "e059dcf9748d4d96806bfdbb8ada26b711fe3ed6c1a958c17194dc825d2932e2",
+      "apps/web/src/components/control-concept-lab.tsx": "33447d3b285350fd62f6fc3cb21a321eab20d8b4c5368e3e8386a9b14802c91b",
+      "apps/web/src/lib/wheel-model.ts": "7d5668748fdce07540d223a3c14eb96d416189d35e3d301787857b7ad0cff584",
+      "apps/web/src/components/wheel-concept-lab.tsx": "f7a9f3be9001a090267ee082e32c0b79397d47842adb7b827fb4956db4d13b2c",
+      "apps/web/src/lib/threshold-model.ts": "657418df2a623f1ef3b11e51f7a476c48baded752fab745082d3ce02378f52ef",
+      "apps/web/src/components/threshold-concept-lab.tsx": "974589a992513570690d81db466a47ea7e07d957b4bba962dfeab0106bbc34a5",
+      "apps/web/src/lib/projection-model.ts": "78a661e269c51f55b6d4d7bf457c2ca13fef80983b781ca77f68978dc012d609",
+      "apps/web/src/components/projection-concept-lab.tsx": "7de02b2512d2765b2b386c17e3185a5fe895c4fe302a07ae5a5cbf002c1c1ab5"
+    }
+  },
+  "tracks": [
+    {
+      "id": "track-main",
+      "steps": 147,
+      "optional": 3,
+      "externalPrerequisiteEdges": 0,
+      "conditionalGroups": 6
+    },
+    {
+      "id": "track-mobile",
+      "steps": 125,
+      "optional": 34,
+      "externalPrerequisiteEdges": 0,
+      "conditionalGroups": 4
+    },
+    {
+      "id": "track-manipulation",
+      "steps": 113,
+      "optional": 0,
+      "externalPrerequisiteEdges": 0,
+      "conditionalGroups": 5
+    },
+    {
+      "id": "track-humanoid",
+      "steps": 91,
+      "optional": 0,
+      "externalPrerequisiteEdges": 0,
+      "conditionalGroups": 3
+    },
+    {
+      "id": "track-embedded",
+      "steps": 78,
+      "optional": 6,
+      "externalPrerequisiteEdges": 0,
+      "conditionalGroups": 2
+    },
+    {
+      "id": "track-autonomous-vehicle",
+      "steps": 120,
+      "optional": 16,
+      "externalPrerequisiteEdges": 0,
+      "conditionalGroups": 2
+    },
+    {
+      "id": "track-digital-twin",
+      "steps": 107,
+      "optional": 6,
+      "externalPrerequisiteEdges": 0,
+      "conditionalGroups": 3
+    }
+  ],
+  "stages": [
+    {
+      "id": "S00",
+      "units": 6,
+      "ready": true
+    },
+    {
+      "id": "S01",
+      "units": 8,
+      "ready": true
+    },
+    {
+      "id": "S02",
+      "units": 3,
+      "ready": true
+    },
+    {
+      "id": "S03",
+      "units": 26,
+      "ready": true
+    },
+    {
+      "id": "S04",
+      "units": 13,
+      "ready": true
+    },
+    {
+      "id": "S05",
+      "units": 22,
+      "ready": true
+    },
+    {
+      "id": "S06",
+      "units": 15,
+      "ready": true
+    },
+    {
+      "id": "S07",
+      "units": 17,
+      "ready": true
+    },
+    {
+      "id": "S08",
+      "units": 6,
+      "ready": true
+    },
+    {
+      "id": "S09",
+      "units": 3,
+      "ready": true
+    },
+    {
+      "id": "S10",
+      "units": 23,
+      "ready": true
+    },
+    {
+      "id": "S11",
+      "units": 5,
+      "ready": true
+    },
+    {
+      "id": "A01",
+      "units": 19,
+      "ready": true
+    },
+    {
+      "id": "A02",
+      "units": 16,
+      "ready": true
+    },
+    {
+      "id": "A03",
+      "units": 13,
+      "ready": true
+    },
+    {
+      "id": "A04",
+      "units": 6,
+      "ready": true
+    },
+    {
+      "id": "A05",
+      "units": 6,
+      "ready": true
+    }
+  ],
+  "static": {
+    "htmlFiles": 415,
+    "links": 14144,
+    "assets": 7144,
+    "errors": [],
+    "corpus": 207
+  },
+  "test": {
+    "total": 182,
+    "passed": 182,
+    "failed": 0,
+    "typecheck": true,
+    "lint": true,
+    "buildSharedWebApiDryRun": true
+  },
+  "browser": {
+    "specializationPages": 41,
+    "revisedPagesRechecked": 33,
+    "revisedAnswersAndSolutions": 132,
+    "tracks": 7,
+    "keyboardRoundTrips": 9,
+    "aiContextCases": 6,
+    "realExternalModelQualityTested": false,
+    "nativeTypingTested": false,
+    "originalLocalSessionStorageRestored": true,
+    "privateBackupDeleted": true
+  },
+  "publication": {
+    "textFiles": 2943,
+    "archiveEntries": 43,
+    "pngFiles": 13,
+    "uniquePngViewed": 7,
+    "svgTextFiles": 27,
+    "videoAudioFiles": 0,
+    "pdfEpubGenerated": false,
+    "deployed": false,
+    "finalReview": "F06 passed; current artifacts only; future requested PDF/EPUB requires separate review"
+  },
+  "newManuscriptSpacingProof": [
+    {
+      "topic": "M13.03",
+      "bodyNonWhitespacePreserved": true,
+      "headingsReferencesPreserved": true,
+      "sha256": "867750419c84386acb90c845b837842244783518dae0085f09282022d0d6b191",
+      "prerequisiteMetadataUpdated": false
+    },
+    {
+      "topic": "M13.04",
+      "bodyNonWhitespacePreserved": true,
+      "headingsReferencesPreserved": true,
+      "sha256": "8d2fc922208cb806ee6657f6eb5a4800405d7cb4c6f1afccd11288f0b8727fe5",
+      "prerequisiteMetadataUpdated": false
+    },
+    {
+      "topic": "M14.05",
+      "bodyNonWhitespacePreserved": true,
+      "headingsReferencesPreserved": true,
+      "sha256": "b46430269533a3d624a1440fe4cb57532163b90d99e87185064a1099eaa57c63",
+      "prerequisiteMetadataUpdated": false
+    },
+    {
+      "topic": "M16.01",
+      "bodyNonWhitespacePreserved": true,
+      "headingsReferencesPreserved": true,
+      "sha256": "ef4a3edc5bf81031339e75fa949941fb2495cab3b75c6f4bd3f927dc35467a74",
+      "prerequisiteMetadataUpdated": false
+    },
+    {
+      "topic": "M16.02",
+      "bodyNonWhitespacePreserved": true,
+      "headingsReferencesPreserved": true,
+      "sha256": "47dbfe1ffca31549022b6ede42c3ac708be7f81b2a31404990e0058066973c54",
+      "prerequisiteMetadataUpdated": false
+    },
+    {
+      "topic": "M16.03",
+      "bodyNonWhitespacePreserved": true,
+      "headingsReferencesPreserved": true,
+      "sha256": "0c3ee24a6c0fc181c1c000a62348541e5b0ec09e82d1daf5d098f5f6c2819eb7",
+      "prerequisiteMetadataUpdated": false
+    },
+    {
+      "topic": "M16.04",
+      "bodyNonWhitespacePreserved": true,
+      "headingsReferencesPreserved": true,
+      "sha256": "4ed79028f4ba6525901dadf5a6b0928f81bc48e0d103be9f6a6faa64db5718ec",
+      "prerequisiteMetadataUpdated": false
+    },
+    {
+      "topic": "M16.05",
+      "bodyNonWhitespacePreserved": true,
+      "headingsReferencesPreserved": true,
+      "sha256": "a4c2aa617b5f3ee35ecbe39e11fa8039f9832e18ae3e75f86e0d7c5917f025ed",
+      "prerequisiteMetadataUpdated": false
+    },
+    {
+      "topic": "M16.06",
+      "bodyNonWhitespacePreserved": true,
+      "headingsReferencesPreserved": true,
+      "sha256": "d324f12417f2bd885de82abf7a5617a2466e548d401dc0886981093f29e2db54",
+      "prerequisiteMetadataUpdated": false
+    },
+    {
+      "topic": "M23.01",
+      "bodyNonWhitespacePreserved": true,
+      "headingsReferencesPreserved": true,
+      "sha256": "0ac2740e09b3c4ce4e1f9d7621459eaf3a995bc900f04ced05fd2a2154c4ce7e",
+      "prerequisiteMetadataUpdated": false
+    },
+    {
+      "topic": "M23.02",
+      "bodyNonWhitespacePreserved": true,
+      "headingsReferencesPreserved": true,
+      "sha256": "fefa4f60e31188908c21f32dc0f06dc565b4e3a6a2f7581dd46225d58bc8203e",
+      "prerequisiteMetadataUpdated": false
+    },
+    {
+      "topic": "M23.03",
+      "bodyNonWhitespacePreserved": true,
+      "headingsReferencesPreserved": true,
+      "sha256": "85a6673297e38fd0c32704609d03aa726e52ebf9ac704253161ea8e04bc9fef5",
+      "prerequisiteMetadataUpdated": false
+    },
+    {
+      "topic": "M23.04",
+      "bodyNonWhitespacePreserved": true,
+      "headingsReferencesPreserved": true,
+      "sha256": "bc3f16fd42f2c5f198947d7a8663dfa172eb4efdcefae18847c8395e84791f02",
+      "prerequisiteMetadataUpdated": false
+    },
+    {
+      "topic": "M23.05",
+      "bodyNonWhitespacePreserved": true,
+      "headingsReferencesPreserved": true,
+      "sha256": "32e5668de7a2ea363939fcc9ea5a6efff0a11f43209500dd4f29db45baa8d079",
+      "prerequisiteMetadataUpdated": false
+    },
+    {
+      "topic": "M23.06",
+      "bodyNonWhitespacePreserved": true,
+      "headingsReferencesPreserved": true,
+      "sha256": "0af8486eccbd76ff64fcd32b7f09587c2c772f25680ce7969dc3ac31e1d5fbbe",
+      "prerequisiteMetadataUpdated": false
+    },
+    {
+      "topic": "M24.01",
+      "bodyNonWhitespacePreserved": true,
+      "headingsReferencesPreserved": true,
+      "sha256": "299520390a3655689dc898bd81ccb2640c6211010d15a321155305ecb76b7025",
+      "prerequisiteMetadataUpdated": false
+    },
+    {
+      "topic": "M24.02",
+      "bodyNonWhitespacePreserved": true,
+      "headingsReferencesPreserved": true,
+      "sha256": "c42d1d7b6a8091008c096766767feb886f788018414de39d27ce652ab3ee8b21",
+      "prerequisiteMetadataUpdated": false
+    },
+    {
+      "topic": "M24.03",
+      "bodyNonWhitespacePreserved": true,
+      "headingsReferencesPreserved": true,
+      "sha256": "6ae657c12d38c67f2f724b1f368f714313c4eca7755cb713f13144265f820b7e",
+      "prerequisiteMetadataUpdated": false
+    },
+    {
+      "topic": "M24.04",
+      "bodyNonWhitespacePreserved": true,
+      "headingsReferencesPreserved": true,
+      "sha256": "06287f9dc50b27e891a1a86329d4fe323be4c4c95689450942647bbc279b6fe5",
+      "prerequisiteMetadataUpdated": false
+    },
+    {
+      "topic": "M24.05",
+      "bodyNonWhitespacePreserved": true,
+      "headingsReferencesPreserved": true,
+      "sha256": "9a0436eb2fe3d14bedb380806b5cde8153ea3ffa048a9479705790cefdbd3d57",
+      "prerequisiteMetadataUpdated": false
+    },
+    {
+      "topic": "M24.06",
+      "bodyNonWhitespacePreserved": true,
+      "headingsReferencesPreserved": true,
+      "sha256": "7d6b08625b5f7c09bf1c3084267f753b779b980a1d6fd35312488c2deb76edf8",
+      "prerequisiteMetadataUpdated": false
+    },
+    {
+      "topic": "M29.01",
+      "bodyNonWhitespacePreserved": true,
+      "headingsReferencesPreserved": true,
+      "sha256": "ebdd462c687fb3f658c438adb6082fbd45cde850600741f62aefc468f582ae3a",
+      "prerequisiteMetadataUpdated": false
+    },
+    {
+      "topic": "M29.02",
+      "bodyNonWhitespacePreserved": true,
+      "headingsReferencesPreserved": true,
+      "sha256": "f51a287d974540ff89324803a1d8cfbe36e109e7922615357fe5c65da408535a",
+      "prerequisiteMetadataUpdated": false
+    },
+    {
+      "topic": "M29.03",
+      "bodyNonWhitespacePreserved": true,
+      "headingsReferencesPreserved": true,
+      "sha256": "2edb6c000bdb4dfb3d4b262c07b4d3cd85d6623a0d0829a731e4a54bb9e437c4",
+      "prerequisiteMetadataUpdated": false
+    },
+    {
+      "topic": "M29.04",
+      "bodyNonWhitespacePreserved": true,
+      "headingsReferencesPreserved": true,
+      "sha256": "30eb7dbc9a61c0f1b3fe00fc59dfeb8c6e537f875357876cc55a3b88fbe06400",
+      "prerequisiteMetadataUpdated": false
+    },
+    {
+      "topic": "M29.05",
+      "bodyNonWhitespacePreserved": true,
+      "headingsReferencesPreserved": true,
+      "sha256": "792d6c7f73838c6a08df3579404637ec68ed13d9619d0a1511b74ca8fd5f7ba1",
+      "prerequisiteMetadataUpdated": false
+    },
+    {
+      "topic": "M29.06",
+      "bodyNonWhitespacePreserved": true,
+      "headingsReferencesPreserved": true,
+      "sha256": "9677a1b797bb72a998aeb724193fe952ae9d9ff60ec34a2f2d53e5aa877e6494",
+      "prerequisiteMetadataUpdated": false
+    },
+    {
+      "topic": "M33.01",
+      "bodyNonWhitespacePreserved": true,
+      "headingsReferencesPreserved": true,
+      "sha256": "5cf09ccecf077a5e1e21866cc89de51ccbf9eed907c6eb11e01b5fad050d4199",
+      "prerequisiteMetadataUpdated": false
+    },
+    {
+      "topic": "M33.02",
+      "bodyNonWhitespacePreserved": true,
+      "headingsReferencesPreserved": true,
+      "sha256": "ddad88c6c80d1631ac537f79c0a895eddd310adaabf0259e8fd6ee8de940cdd1",
+      "prerequisiteMetadataUpdated": false
+    },
+    {
+      "topic": "M33.03",
+      "bodyNonWhitespacePreserved": true,
+      "headingsReferencesPreserved": true,
+      "sha256": "cb84a5387027f8e76b8bbf5d9e4a0cf1af1a44a8d6147ed97d26440c0eeb0e25",
+      "prerequisiteMetadataUpdated": true
+    },
+    {
+      "topic": "M33.04",
+      "bodyNonWhitespacePreserved": true,
+      "headingsReferencesPreserved": true,
+      "sha256": "6555297e1f5746086342130d3dfc2e7bcf166b1942df7ce5384b24025a13bcce",
+      "prerequisiteMetadataUpdated": false
+    },
+    {
+      "topic": "M33.05",
+      "bodyNonWhitespacePreserved": true,
+      "headingsReferencesPreserved": true,
+      "sha256": "5d160f5c2928f2a0c6575bf122182e330c2ad937e68815de00b82bfcdea0b94c",
+      "prerequisiteMetadataUpdated": false
+    },
+    {
+      "topic": "M33.06",
+      "bodyNonWhitespacePreserved": true,
+      "headingsReferencesPreserved": true,
+      "sha256": "4a5357045e313febd03d19b2f68d55dda5758f0b651381aa19e493298848b15b",
+      "prerequisiteMetadataUpdated": false
+    }
+  ],
+  "limitations": [
+    "author self-review; no independent learner study",
+    "basic synthetic data and equipment-free activities",
+    "no GPU training commercial-tool or physical-device execution"
+  ],
+  "uncheckedCurrentItems": 0
+}

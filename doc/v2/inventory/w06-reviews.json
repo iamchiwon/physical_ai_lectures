@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "topics": {
+    "M34.01": {
+      "sourceSha256": "5889842420a321e2d06816ccb3c3dc68c1e85f8b3bcfde9a536a77e7b5240fd1",
+      "evidenceRef": "doc/v2/work_items/M34.01.md"
+    },
+    "M34.02": {
+      "sourceSha256": "f7f06814e91902bf46e7b5a53056af5560a86f58d984c806f083c2edf3e61294",
+      "evidenceRef": "doc/v2/work_items/M34.02.md"
+    },
+    "M34.03": {
+      "sourceSha256": "66705f31d835d1d1521f99d0a863c663379621989aabd3c38c18d850ad6fb431",
+      "evidenceRef": "doc/v2/work_items/M34.03.md"
+    }
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "lease_ms": 1000,
+  "event_ttl_ms": 100,
+  "state_ttl_ms": 1000,
+  "clock_id": "ClockA",
+  "world_revision": "world-shared-1",
+  "map_revision": "map-shared-1",
+  "resource_id": "corridor-1",
+  "robots": {
+    "r1": {"namespace": "/r1", "base_frame": "r1/base_link", "job_id": "job-r1-v1", "nav_goal_id": "nav-r1-1", "arm_goal_id": "arm-r1-1"},
+    "r2": {"namespace": "/r2", "base_frame": "r2/base_link", "job_id": "job-r2-v1", "nav_goal_id": "nav-r2-1", "arm_goal_id": "arm-r2-1"}
+  }
+}

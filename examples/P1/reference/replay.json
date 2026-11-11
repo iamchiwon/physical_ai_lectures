@@ -1,0 +1,156 @@
+{
+  "version": "P1-1",
+  "mode": "replay",
+  "python": "3.12.11",
+  "platform": "Darwin",
+  "source_sha256": "213019e3ccfc18ecd13b741f88bf02f914f4cb507b4d0bb959a6e0f743646c59",
+  "config_sha256": "7f37e331937fe8bf8402ae9a26986bb93864df314026699a2e45df7f1ef7b8c2",
+  "input_sha256": "db5507d7c0f7656d0d4dcf7a8647b5824ffb4c82c0c94c404a566a4c2231b0e8",
+  "config": {
+    "ttl_ms": 100,
+    "reacquire": 2,
+    "gain": 0.6,
+    "max_command": 0.25,
+    "deadband": 0.1
+  },
+  "units": "virtual pixels per step",
+  "limitation": "synthetic input/toy feedback; no ROS, camera, motor or physical safety validation",
+  "counts": {
+    "ACQUIRING": 3,
+    "TRACKING": 3,
+    "LOST": 1,
+    "STALE": 1,
+    "AMBIGUOUS": 1,
+    "INVALID": 2
+  },
+  "rows": [
+    {
+      "frame_id": 0,
+      "t_ms": 0,
+      "age_ms": 0,
+      "state": "ACQUIRING",
+      "reason": "waiting for consecutive valid observations",
+      "centroid": [
+        5.0,
+        1.0
+      ],
+      "normalized_error": 0.6666666666666666,
+      "command_px_per_step": 0.0
+    },
+    {
+      "frame_id": 1,
+      "t_ms": 50,
+      "age_ms": 0,
+      "state": "TRACKING",
+      "reason": "valid marker",
+      "centroid": [
+        5.0,
+        1.0
+      ],
+      "normalized_error": 0.6666666666666666,
+      "command_px_per_step": 0.25
+    },
+    {
+      "frame_id": 2,
+      "t_ms": 100,
+      "age_ms": 0,
+      "state": "LOST",
+      "reason": "no marker",
+      "centroid": null,
+      "normalized_error": null,
+      "command_px_per_step": 0.0
+    },
+    {
+      "frame_id": 3,
+      "t_ms": 150,
+      "age_ms": 110,
+      "state": "STALE",
+      "reason": "observation expired",
+      "centroid": null,
+      "normalized_error": null,
+      "command_px_per_step": 0.0
+    },
+    {
+      "frame_id": 4,
+      "t_ms": 200,
+      "age_ms": 0,
+      "state": "ACQUIRING",
+      "reason": "waiting for consecutive valid observations",
+      "centroid": [
+        1.0,
+        1.0
+      ],
+      "normalized_error": -0.6666666666666666,
+      "command_px_per_step": 0.0
+    },
+    {
+      "frame_id": 5,
+      "t_ms": 250,
+      "age_ms": 0,
+      "state": "TRACKING",
+      "reason": "valid marker",
+      "centroid": [
+        1.0,
+        1.0
+      ],
+      "normalized_error": -0.6666666666666666,
+      "command_px_per_step": -0.25
+    },
+    {
+      "frame_id": 6,
+      "t_ms": 300,
+      "age_ms": 0,
+      "state": "AMBIGUOUS",
+      "reason": "multiple components",
+      "centroid": null,
+      "normalized_error": null,
+      "command_px_per_step": 0.0
+    },
+    {
+      "frame_id": 7,
+      "t_ms": 350,
+      "age_ms": -50,
+      "state": "INVALID",
+      "reason": "observation is from the future",
+      "centroid": null,
+      "normalized_error": null,
+      "command_px_per_step": 0.0
+    },
+    {
+      "frame_id": 8,
+      "t_ms": 400,
+      "age_ms": 0,
+      "state": "INVALID",
+      "reason": "row width violates HWC layout",
+      "centroid": null,
+      "normalized_error": null,
+      "command_px_per_step": 0.0
+    },
+    {
+      "frame_id": 9,
+      "t_ms": 450,
+      "age_ms": 0,
+      "state": "ACQUIRING",
+      "reason": "waiting for consecutive valid observations",
+      "centroid": [
+        3.0,
+        1.0
+      ],
+      "normalized_error": 0.0,
+      "command_px_per_step": 0.0
+    },
+    {
+      "frame_id": 10,
+      "t_ms": 500,
+      "age_ms": 0,
+      "state": "TRACKING",
+      "reason": "valid marker",
+      "centroid": [
+        3.0,
+        1.0
+      ],
+      "normalized_error": 0.0,
+      "command_px_per_step": 0.0
+    }
+  ]
+}

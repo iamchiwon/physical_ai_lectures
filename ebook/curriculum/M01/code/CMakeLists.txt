@@ -1,0 +1,5 @@
+cmake_minimum_required(VERSION 3.16)
+project(M01Examples LANGUAGES CXX)
+add_executable(contract_demo contract.cpp)
+target_compile_features(contract_demo PRIVATE cxx_std_17)
+set_target_properties(contract_demo PROPERTIES CXX_EXTENSIONS OFF)

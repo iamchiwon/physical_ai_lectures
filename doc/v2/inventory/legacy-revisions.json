@@ -1,0 +1,124 @@
+{
+  "schemaVersion": 1,
+  "files": [
+    {
+      "source": "ebook/book/01_physical_ai_isaac_ros2/chapter.md",
+      "baselineSha256": "a080ac9eddac666c3400d843913886913468677e9c2ab4bf60bcaa76b18a7d93",
+      "sha256": "46ba5eb99d261de5dc6d3e42355ea045ef6934fa912346b4e80f7bc6afcfb5d8",
+      "reason": "신규 기초와 기존 응용 장 사이 선수/범위/장비 없는 진입 연결 / 결정론을 Software/Physical 구분으로 오해하는 문장 정정 / POMDP 누락기호 gamma와 관측독립/시간축 가정 명시 / 순차 처리 지연과 목표 샘플 주기 구분 / 주기 예산 수치의 가정 및 새 목표설계 단위 연결 / E2: ROS・기구학・제어・모델 선수/후속 연결 및 관련 개념·실행 전제 보완 / E3: 시뮬레이션·학습·비전·카메라/시간 기초의 연결 및 독립검토된 개념/그림 조건 정정 / E4: 로봇팔·데이터·정책·배포·캡스톤 선수/후속과 교육용 계산·실행·안전 계약 보완 / E5: 모바일 경로·시뮬레이터 구분·map/odom/base·계획/미션·주행-조작 연결 보완",
+      "evidenceRef": "doc/v2/work_items/E5-review.md"
+    },
+    {
+      "source": "ebook/book/02_physx_simulation/chapter.md",
+      "baselineSha256": "a21459dc9d4dd74be968ed41bcc237d55d1e56f5bf0d3d5b151da99e48011c40",
+      "sha256": "7f767943b4c43f4388fdbb0ae4d6be9efa3f9a4a87c8a3d61a3883e0943271a8",
+      "reason": "E1에서 기존 02장으로 선수·실습범위·오개념 연결 보강 / latest를 재현 가능한 고정버전 안내로 정정 / 수학브리지독립검수: Euler 고정축적용xyz와행렬곱RzRyRx 용어정정·실행수식/함수명보존 / 짐벌락정확특이점과근처조건악화구분 / E2: ROS・기구학・제어・모델 선수/후속 연결 및 관련 개념·실행 전제 보완 / E3: 시뮬레이션·학습·비전·카메라/시간 기초의 연결 및 독립검토된 개념/그림 조건 정정 / E4: 로봇팔·데이터·정책·배포·캡스톤 선수/후속과 교육용 계산·실행·안전 계약 보완 / E5: 모바일 경로·시뮬레이터 구분·map/odom/base·계획/미션·주행-조작 연결 보완 / M25.01: 자산 계층·참조 단위 보정과 정적/동적/실물 검수 범위 연결 / M25.03: 충돌후보/접촉/보고·그룹/개별제외·시각 정렬 연결 / M25.04: force/acceleration·포화/분리보정·미사용평가 연결 / M26.04: COM높이의정적지지조건과 CAD/실제접촉·조립/공차·형상 연결",
+      "evidenceRef": "doc/v2/work_items/M26.04.md"
+    },
+    {
+      "source": "ebook/book/03_so101_kinematics_teleop/chapter.md",
+      "baselineSha256": "8083685d7b190de126d12ce6ec53469e742dd2143eb5fa7ec0fe8274410490aa",
+      "sha256": "6e6ce28eb9ec19bf4849a657461c12ad6b0ccc878cb6ba1c859bac6d895640db",
+      "reason": "E1에서 기존 03장으로 선수·실습범위·오개념 연결 보강 / latest 설치조건과 E1 의존성 고정 원칙의 불일치 보완 / M03검토: 명목전압숫자일치와동작범위/극성/전류/논리핀/절대최대정격구분 / E2: ROS・기구학・제어・모델 선수/후속 연결 및 관련 개념·실행 전제 보완 / M08.05: JointState 한 메시지 동일시각 계약·비동기 정렬/추정 출처를 엄밀화하고 공식 명세 링크 연결 / E3: 시뮬레이션·학습·비전·카메라/시간 기초의 연결 및 독립검토된 개념/그림 조건 정정 / E4: 로봇팔·데이터·정책·배포·캡스톤 선수/후속과 교육용 계산·실행·안전 계약 보완 / E5: 모바일 경로·시뮬레이터 구분·map/odom/base·계획/미션·주행-조작 연결 보완 / M25.02: 바퀴/서랍·연결 그래프와 고정/부유 루트·관측 검수 연결 / M25.06: 키보드/속도·접촉 관문과 전송/관측·에피소드/실패분모 연결",
+      "evidenceRef": "doc/v2/work_items/M25.06.md"
+    },
+    {
+      "source": "ebook/book/04_sensor_data_pipeline/chapter.md",
+      "baselineSha256": "69a8cf6f0e2f6e584bda629d3a17fbbe37f75ec024eab2237847807a2a3796fa",
+      "sha256": "1d02ad8e310b2938086d4a93bd77c59f46991afe1eeedd0861b299b609fe8cb4",
+      "reason": "E1에서 기존 04장으로 선수·실습범위·오개념 연결 보강 / E2: ROS・기구학・제어・모델 선수/후속 연결 및 관련 개념·실행 전제 보완 / E3: 시뮬레이션·학습·비전·카메라/시간 기초의 연결 및 독립검토된 개념/그림 조건 정정 / E4: 로봇팔·데이터·정책·배포·캡스톤 선수/후속과 교육용 계산·실행·안전 계약 보완 / E5: 모바일 경로·시뮬레이터 구분·map/odom/base·계획/미션·주행-조작 연결 보완 / E5 후속: 공유 TF와 로봇별 토픽·버퍼 격리 대안 및 외부 결합 계약 구분 / W02 M14.02: 센서별 측정량·단위·장착점/시각 계약과 신규 기초 원고 연결 / M25.05: 동봉랜덤화코드의 고정camera/실제채널범위와 원본자산분할·라벨완전성 정정/연결 / M04.01: MCU 펌웨어/호스트의 타깃·메모리/공유 접근과 센서 시각 연결 / M04.02: 타이머 사건/ISR·UART 선로와 원본/수신 시각 연결 / M04.03: ADC 획득/완료/결과 쌍·샘플링/alias와 PWM/실제 관측 연결 / M04.04: 버스 주소/바이트 규약·ACK와 센서/EEPROM 유효성·원본 시각 연결 / M04.05: 호스트 대기/장치 만료·clock과 접수/관측 구분 연결 / M04.06: 원시/표준 단위·목적별 범위/오류와 과거 정상 기록의 원본 시각 보존 연결 / M28.01: CAN ACK/계층·ID와 원본 표본 시각/응용 결과 구분 연결 / M28.02: DBC변환과버전/무효·원본clock/나이·고장해결 근거 연결 / M28.03: ISO-TP재조립/UDS응답·전송/진단timer·원본시각/결과 연결 / M28.04: DTC기록/검사미완료·현재원본/삭제/설정과수리·관찰공백 연결 / M28.06: XCP계측/DAQ·원본/event/수신clock·A2L형상/페이지/적용근거 연결 / W09: M28시간계약교량5문단을기본설명뒤4.4.5로재배치·사실/링크/코드/수식보존",
+      "evidenceRef": "doc/v2/work_items/W09.md"
+    },
+    {
+      "source": "ebook/book/05_lerobot_smolvla/chapter.md",
+      "baselineSha256": "637909ee6456fa438f421ae0290a3b536cd925567ba1246a1f2e58c0b113a9fa",
+      "sha256": "e9e2cf784ea580448917e8cd484e02d279d3eae0c4996cc3681556ed4df64de4",
+      "reason": "E1에서 기존 05장으로 선수·실습범위·오개념 연결 보강 / 설치 예시에 실제 커밋/태그 고정 전제와 미지정 중단 추가 / 독립검수: 설치 전체 subshell fail-fast로 미지정/오류 revision 뒤 실행 방지 / E2: ROS・기구학・제어・모델 선수/후속 연결 및 관련 개념·실행 전제 보완 / E3: 시뮬레이션·학습·비전·카메라/시간 기초의 연결 및 독립검토된 개념/그림 조건 정정 / E4: 로봇팔·데이터·정책·배포·캡스톤 선수/후속과 교육용 계산·실행·안전 계약 보완 / E4 M20.03 연계: 저장 모달리티/metadata와 로드 텐서의 CHW·시간·배치 축 구분 / E4 M21.02 연계: relative 고정 기준과 delta 누적 증분·채널/정규화 계약 구분 / E4 M27.04 연계: 명령 의미와 제한 시간에 따른 HOLD/STOP 계약 명료화 / E5: 모바일 경로·시뮬레이터 구분·map/odom/base·계획/미션·주행-조작 연결 보완 / M25.06: 키보드/속도·접촉 관문과 전송/관측·에피소드/실패분모 연결",
+      "evidenceRef": "doc/v2/work_items/M25.06.md"
+    },
+    {
+      "source": "ebook/book/06_sim2real_deployment/chapter.md",
+      "baselineSha256": "63e21fba7a365699ea09d4be5e25675e0f9ac0c8d856e41a00bd9d8d7157d971",
+      "sha256": "87400d8791b81be2ff2f05268f314618eb48b89627a1a5f47d7c2e866e9ed78d",
+      "reason": "E1에서 기존 06장으로 선수·실습범위·오개념 연결 보강 / E2: ROS・기구학・제어・모델 선수/후속 연결 및 관련 개념·실행 전제 보완 / E3: 시뮬레이션·학습·비전·카메라/시간 기초의 연결 및 독립검토된 개념/그림 조건 정정 / E4: 로봇팔·데이터·정책·배포·캡스톤 선수/후속과 교육용 계산·실행·안전 계약 보완 / E5: 모바일 경로·시뮬레이터 구분·map/odom/base·계획/미션·주행-조작 연결 보완 / M31.06: host/target·native환경과정확변경/대상권한·현재관측/롤백구분 연결 / M34.01: 수신/원본시각·현재/마지막값·이벤트순서와관제근거 연결 / M34.02: 장면의 좌표·시각·버전 정합과 현재 미확인 연결 / M34.03: 요청·취소·소프트웨어 결과와 물리 관측/감사 연결 / M26.01: 임베디드 요구/HSI·형상 조합과 제공/실물 검증 범위 연결 / M26.02: IMU 추정/필터 주기·국소 제어 부호/포화와 실제 전력·균형 검증 범위 연결 / M26.03: 보드 전원/논리/버스·라이브러리/핀과 ERC/DRC·실물 검증 범위 연결 / M26.05: UI요청/표시와 접수/원본clock·지연분모/물리성과 연결 / M26.06: 임베디드제공사례/성능·실패/물리분모·재현/미해결범위와영상선택편향정정 / M28.05: 진단전송/권한/hash와활성화·reset/새epoch/실물근거 연결",
+      "evidenceRef": "doc/v2/work_items/M28.05.md"
+    },
+    {
+      "source": "ebook/book/00_frontmatter/environment.md",
+      "baselineSha256": "0668193d160e404d2a76f15adc467940808fb494eaacdade3f574ec0ab11e857",
+      "sha256": "c297bdd09c3cab96cda354faafece91473dbef857b3eac8ce32d9c1882886ec6",
+      "reason": "확장E1 기본경로와 기존GPU/실물장비요구조건 분리 / E2: 공통 기초→ROS/기구학/제어/모델 경로와 기본·선택 실행/모형 한계, 사용자 상태 표시 원칙 동기화 / E3: 시뮬레이션·학습·비전·카메라/시간 기초의 연결 및 독립검토된 개념/그림 조건 정정",
+      "evidenceRef": "doc/v2/work_items/E3-review.md"
+    },
+    {
+      "source": "ebook/book/00_frontmatter/safety.md",
+      "baselineSha256": "d8f3364e8046bcca7b1f62c840206b24e9160419d92eff595cd295dc79fadb52",
+      "sha256": "95f5010200f483cf752c5ffcfd8f49b20e463268f106f1be6059453eb2a4dbef",
+      "reason": "단순 전원차단=안전 오개념 보완 및 기존안전→E1 기초 연결 / E2: 공통 기초→ROS/기구학/제어/모델 경로와 기본·선택 실행/모형 한계, 사용자 상태 표시 원칙 동기화",
+      "evidenceRef": "doc/v2/work_items/E2.md"
+    },
+    {
+      "source": "ebook/book/00_frontmatter/how_to_use.md",
+      "baselineSha256": "a3d1e94f176ffd9b1a9070929a0a1d5ed28034e02c8f60d56926d601bdbb841b",
+      "sha256": "46b85a50ace4501ff3b561df6fe685ee2cb227fc2bf72bbf5e0dbc75b3827e84",
+      "reason": "여섯장 단일프로젝트에서 통합과정 기초→응용 학습경로로 안내 개정 / SIM표식=장비없는브라우저 실행으로 오인하는 설명 보완 / E2: 공통 기초→ROS/기구학/제어/모델 경로와 기본·선택 실행/모형 한계, 사용자 상태 표시 원칙 동기화 / E3: 시뮬레이션·학습·비전·카메라/시간 기초의 연결 및 독립검토된 개념/그림 조건 정정 / E4: 로봇팔·데이터·정책·배포·캡스톤 선수/후속과 교육용 계산·실행·안전 계약 보완 / E5: 모바일 경로·시뮬레이터 구분·map/odom/base·계획/미션·주행-조작 연결 보완 / E5 후속: 미집필 모바일 안내를 새 경로 연결로 정정 / 2026-11-06: 코딩 가능자 전제·현행 S단계·집필 묶음 구분 및 준비중 범위 정합",
+      "evidenceRef": "doc/v2/work_items/sequence-adoption-review.md"
+    },
+    {
+      "source": "ebook/book/02_physx_simulation/code/transforms.py",
+      "baselineSha256": "1e593f38b21fdf7638b7b4869b6569cb904acba1cbd78e1456882b1d52926853",
+      "sha256": "968e542e974fc0609d6b7bcb4ee022c9a8d9d4f10aa6c57d5fb537f0227fccab",
+      "reason": " / 수학브리지독립검수: Euler 고정축적용xyz와행렬곱RzRyRx 용어정정·실행수식/함수명보존",
+      "evidenceRef": "doc/v2/work_items/E1.md"
+    },
+    {
+      "source": "apps/web/src/components/virtual-lab.tsx",
+      "baselineSha256": "d1ba2b385368ae225e3f3236c0cc2b6162f7d6925852564b05932f7bf22412de",
+      "sha256": "230cfa9927803281c8f7c9d681b52c745ccf55ade2509bebfe11700bae91e688",
+      "reason": "E2 기구학 연결: 2R 안/바깥 반경 도달 판정·불가 목표 거부/추종 정지·수치 roundoff만 보정·주기각 최단 보간·교육용 한계 명시. root 별도 수학/코드 검토 후 승인, 실제 화면은 E2 통합 검수 기록.",
+      "evidenceRef": "doc/v2/work_items/E2-validation.md"
+    },
+    {
+      "source": "ebook/book/04_sensor_data_pipeline/images/time_alignment.svg",
+      "baselineSha256": "4d6b42bbe23d373a08a786c1d5876cd146ba0b70d75f96e993afbfd8634a00d8",
+      "reason": " / E3: 시뮬레이션·학습·비전·카메라/시간 기초의 연결 및 독립검토된 개념/그림 조건 정정",
+      "sha256": "03379450f80c5819698f71acd0fcc8d87314f967ba1814bdfec14f5b6a4b28b6",
+      "evidenceRef": "doc/v2/work_items/E3-review.md"
+    },
+    {
+      "source": "ebook/book/04_sensor_data_pipeline/exercises/solutions.md",
+      "baselineSha256": "e8ab5bc40c9bef1d7e6d1f9fd75dedcfa9151b8a0f7cdd18337f9dee2478f75f",
+      "sha256": "7d61c3d11f67fe4b18713be00736863ff80a6c212a92be757898d7443bc7e7c8",
+      "reason": "E3 시간 정합 본문과 문항 해설의 slop/표본 가용성 조건 동기화",
+      "evidenceRef": "doc/v2/work_items/E3-review.md"
+    },
+    {
+      "source": "ebook/book/03_so101_kinematics_teleop/code/safe_teleop_core.py",
+      "baselineSha256": "4be799137d99d24ffa727033e970d1018f32aefcfe559c1416d6327629a5649e",
+      "sha256": "e24a9c037415c93e4d37ae493de9187f55a8cf7b811bd0036b528db5913907fc",
+      "reason": "E4: 교육용 제어 예제의 finite·시각·범위·오류 후 복귀 계약 보완",
+      "evidenceRef": "doc/v2/work_items/E4-review.md"
+    },
+    {
+      "source": "ebook/book/05_lerobot_smolvla/code/closed_loop_20hz.py",
+      "baselineSha256": "5d9c05153ee52c1a2e0d4cb4a4abe42cc3a2232335f75ff63cf64951a26bd7f5",
+      "sha256": "e90f12a72fbe41ead9ee9f068499cf50af103bd225f20154292e922bc31d5c0f",
+      "reason": "E4: 교육용 제어 예제의 finite·시각·범위·오류 후 복귀 계약 보완",
+      "evidenceRef": "doc/v2/work_items/E4-review.md"
+    },
+    {
+      "source": "ebook/book/06_sim2real_deployment/code/safety_supervisor.py",
+      "baselineSha256": "c06b8f77a713aa7f5cb74d3c8549bf2fe9da3e2793412bedfc31e63c33cb0a8d",
+      "sha256": "1bcf6aca1fad053dd77c2a4de567bf61796252234d8b854d16e38ad17160672a",
+      "reason": "E4: 교육용 제어 예제의 finite·시각·범위·오류 후 복귀 계약 보완",
+      "evidenceRef": "doc/v2/work_items/E4-review.md"
+    },
+    {
+      "source": "ebook/book/06_sim2real_deployment/exercises/project_rubric.md",
+      "baselineSha256": "71faf03d27a28733dd30e4cc508cde80ce946f3e79a04cd23e39fc4927583d27",
+      "sha256": "fadfdc9a3198238c374c7311e209586536baa922220cd5ca0e6e58cfa1d16c64",
+      "reason": "K01-01: 기본 선택 캡스톤/공통 산출물·문서 평가와 기존 선택 실물 루브릭의 적용 범위 구분 / K01-02: 패키지별 재사용 경계·재현/제출 양식 보충 / K01-03: 제공 입력의 작성/판정 예·실패 분모·평가/발표 연결 / K01-04: 기본 C와 실제 양팔 정책/실행·RL+VLA 선택 심화의 범위 구분",
+      "evidenceRef": "doc/v2/work_items/K01-04.md"
+    }
+  ]
+}

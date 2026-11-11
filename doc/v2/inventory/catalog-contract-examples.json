@@ -1,0 +1,176 @@
+{
+  "contractVersion": 1,
+  "fixtureOnly": true,
+  "scope": "A02 illustrative subset, NOT production catalog or A03 mapping; all goals/prerequisites still need A03 validation",
+  "baselineCommit": "f874e4a043f5e32b163e2107f4331be82b2bf693",
+  "resources": [
+    {
+      "id": "legacy:textbook:03_so101_kinematics_teleop--chapter-6",
+      "kind": "legacy-textbook",
+      "publication": "published",
+      "revision": "baseline-f874e4a043f5",
+      "locator": {
+        "legacyUnitId": "03_so101_kinematics_teleop--chapter-6",
+        "source": "03_so101_kinematics_teleop/chapter.md",
+        "legacyUrl": "/textbook/03_so101_kinematics_teleop--chapter-6/",
+        "baselineCommit": "f874e4a043f5e32b163e2107f4331be82b2bf693",
+        "baselineFileSha256": "8083685d7b190de126d12ce6ec53469e742dd2143eb5fa7ec0fe8274410490aa"
+      },
+      "integrity": {
+        "status": "matched",
+        "evidence": "legacy-content.json snapshot only; live render and objective review pending"
+      }
+    }
+  ],
+  "units": [
+    {
+      "id": "unit-m06-02-a",
+      "topicId": "M06.02",
+      "title": "DH 파라미터·정기구학·작업공간",
+      "revision": "draft-1",
+      "objectives": [
+        {
+          "id": "goal-m06-02-dh",
+          "description": "DH 파라미터의 의미와 변환을 설명한다."
+        },
+        {
+          "id": "goal-m06-02-fk",
+          "description": "관절각에서 말단 위치를 계산한다."
+        },
+        {
+          "id": "goal-m06-02-workspace",
+          "description": "기구의 작업공간과 도달 가능성을 설명한다."
+        }
+      ],
+      "prerequisites": {
+        "allOf": [],
+        "anyOf": [],
+        "definitionStatus": "pending-A03"
+      },
+      "requirements": {
+        "definitionStatus": "confirmed-for-example-only",
+        "explanation": {
+          "mode": "required",
+          "objectiveIds": [
+            "goal-m06-02-dh",
+            "goal-m06-02-fk",
+            "goal-m06-02-workspace"
+          ]
+        },
+        "practice": {
+          "mode": "required",
+          "objectiveIds": [
+            "goal-m06-02-fk",
+            "goal-m06-02-workspace"
+          ]
+        },
+        "assessment": {
+          "mode": "required",
+          "objectiveIds": [
+            "goal-m06-02-dh",
+            "goal-m06-02-fk",
+            "goal-m06-02-workspace"
+          ]
+        }
+      },
+      "slots": {
+        "explanation": [
+          {
+            "resourceId": "legacy:textbook:03_so101_kinematics_teleop--chapter-6",
+            "role": "primary",
+            "objectiveIds": [
+              "goal-m06-02-fk"
+            ],
+            "coverage": "partial",
+            "review": {
+              "verdict": "unreviewed",
+              "reviewedRevision": null,
+              "evidenceRef": null
+            }
+          }
+        ],
+        "practice": [],
+        "assessment": []
+      },
+      "expectedReadiness": "partial"
+    },
+    {
+      "id": "unit-m23-04-a",
+      "topicId": "M23.04",
+      "title": "Isaac Lab·병렬 환경·rsl_rl 구성",
+      "revision": "draft-1",
+      "objectives": [
+        {
+          "id": "goal-m23-04-config",
+          "description": "학습 환경과 병렬 실행 설정의 역할을 설명한다."
+        }
+      ],
+      "prerequisites": {
+        "allOf": [],
+        "anyOf": [],
+        "definitionStatus": "pending-A03"
+      },
+      "requirements": {
+        "definitionStatus": "pending-A03",
+        "explanation": {
+          "mode": "required",
+          "objectiveIds": [
+            "goal-m23-04-config"
+          ]
+        },
+        "practice": {
+          "mode": "required",
+          "objectiveIds": [
+            "goal-m23-04-config"
+          ]
+        },
+        "assessment": {
+          "mode": "required",
+          "objectiveIds": [
+            "goal-m23-04-config"
+          ]
+        }
+      },
+      "slots": {
+        "explanation": [],
+        "practice": [],
+        "assessment": []
+      },
+      "expectedReadiness": "tbd"
+    }
+  ],
+  "trackFragments": [
+    {
+      "id": "track-manipulation",
+      "steps": [
+        {
+          "id": "step-manipulation-fk",
+          "unitId": "unit-m06-02-a",
+          "required": true
+        }
+      ]
+    },
+    {
+      "id": "track-digital-twin",
+      "steps": [
+        {
+          "id": "step-digital-twin-fk",
+          "unitId": "unit-m06-02-a",
+          "required": true
+        }
+      ]
+    }
+  ],
+  "aliases": [
+    {
+      "kind": "legacy-resource-id",
+      "legacyId": "03_so101_kinematics_teleop--chapter-6",
+      "canonicalId": "legacy:textbook:03_so101_kinematics_teleop--chapter-6"
+    }
+  ],
+  "notes": [
+    "Track fragments only; no full path or prerequisite completeness is claimed.",
+    "Both tracks refer to the SAME unit, never two copies.",
+    "No real user records, runtime availability or review-passed status are asserted."
+  ]
+}

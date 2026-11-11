@@ -16,7 +16,7 @@ app.use("/v1/*", cors({
   maxAge: 86_400,
 }));
 
-app.get("/v1/health", (c) => c.json({ status: "ok", service: "physical-ai-learning-api", diagnosticsVersion: DIAGNOSTICS_VERSION }));
+app.get("/v1/health", (c) => c.json({ status: "ok", service: "physical-ai-learning-api", diagnosticsVersion: DIAGNOSTICS_VERSION, supportedContextVersions: [1] }));
 app.route("/v1", aiRoutes);
 
 app.notFound((c) => c.json({ error: "요청한 API 경로를 찾을 수 없습니다." }, 404));

@@ -1,6 +1,7 @@
 import { build } from 'esbuild';
 import assert from 'node:assert/strict';
 import { test } from 'node:test';
+import fs from 'node:fs';
 
 async function load(entry) {
   const result = await build({entryPoints:[entry],bundle:true,platform:'node',format:'esm',write:false});
@@ -175,6 +176,35 @@ test('API injects persona and learner state, returns grounded updates without lo
 });
 
 const retrieval = await load('apps/web/src/lib/tutor-retrieval.ts');
+test('headings label real prose without consuming retrieval slots or swallowing fenced comments',()=>{
+  const result=retrieval.retrieveLessonContext('Wilson 구간', [{id:'facts',title:'평가',content:'## Wilson 구간\n\n첫 근거입니다.\n\n두 번째 근거입니다.\n\n세 번째 근거입니다.'}]);
+  for(const text of ['첫 근거','두 번째 근거','세 번째 근거'])assert.ok(result.text.includes(text));
+  assert.ok(!result.text.includes('\n## Wilson'));assert.equal((result.text.match(/자료 ID:/g)??[]).length,3);
+  const code=retrieval.retrieveLessonContext('이 코드 첫 번째 줄은?', [{id:'comments',title:'주석',content:'## 계산\n```python\n# original comment\nx = 1\n```'}]);
+  assert.match(code.text,/1: # original comment/);assert.match(code.text,/2: x = 1/);
+});
+test('literal fractions, decimals and percentages use exact boundaries and retain matching excerpts',()=>{
+  for(const [literal,other]of [['18/20','118/200'],['0.95','10.950'],['90%','190%']]){
+    const docs=[{id:'unrelated',title:'Wilson 구간',content:`다른 조건 ${other}의 일반 설명입니다.`},{id:'exact',title:'계산',content:`계산 입력 ${literal}의 실제 근거입니다.`}];
+    const result=retrieval.retrieveLessonContext(`${literal} 계산`,docs);assert.match(result.text,/자료 ID: exact/);assert.ok(!result.text.includes('자료 ID: unrelated'));
+    assert.equal(retrieval.retrieveLessonContext(literal,[docs[0]]).state,'none');
+    assert.equal(retrieval.retrieveLessonContext(`${literal}.`,[docs[1]]).state,'found');
+  }
+  const text='Wilson '+('일반적인 배경 설명입니다. '.repeat(180))+'\n18/20의 실제 계산 근거입니다.';
+  const result=retrieval.retrieveLessonContext('Wilson 18/20',[{id:'long',title:'긴 계산',content:text}]);
+  assert.match(result.text,/18\/20의 실제 계산/);assert.ok(result.text.length<=4000);assert.ok(shared.estimateTokens(result.text)<=2000);
+  const docs=[{id:'numbers',title:'계산',content:'0.95의 일반 계산'},{id:'focus',title:'선택',content:'사용자가 선택한 실제 근거'}];
+  assert.match(retrieval.retrieveLessonContext('선택한 이 부분과 0.95 설명',docs,{selectedText:'사용자가 선택한 실제 근거'}).text,/자료 ID: focus/);
+});
+test('current M30.05 numeric comparison retrieves the worked Wilson intervals instead of heading-only or general prose',async()=>{
+  const {parseAuthoredMarkdown}=await load('packages/shared/src/authored-format.ts');
+  const authored=parseAuthoredMarkdown(fs.readFileSync('ebook/curriculum/M30/M30.05.md','utf8'));
+  const legacy=fs.readFileSync('ebook/book/06_sim2real_deployment/chapter.md','utf8').split('## 6.6 ')[1].split('## 6.7 ')[0];
+  const documents=[{id:'legacy',title:'평가 설계',content:legacy},{id:'authored-body',title:authored.title,content:authored.body},...authored.questions.map(q=>({id:q.id,title:`${authored.title} 해설`,content:q.answer}))];
+  const result=retrieval.retrieveLessonContext('본문 18/20과 90/100의 Wilson 구간 수치와 표본 크기를 설명해 주세요.',documents);
+  assert.match(result.text,/18\/20/);assert.match(result.text,/90\/100/);assert.match(result.text,/0\.699/);assert.match(result.text,/0\.972/);assert.match(result.text,/0\.826/);assert.match(result.text,/0\.945/);
+  assert.ok(!result.text.includes('\n### 6.6.2'));assert.ok(result.text.length<=4000);assert.ok(shared.estimateTokens(result.text)<=2000);
+});
 const lessonDocs = [{id:'current',title:'ROS 2 실습',content:'# ROS 2 실습\n\n'+('앞부분의 일반 설명입니다. '.repeat(600))+'\n\n## 초기화 예제\n\n노드 생성 전에 초기화합니다.\n\n```python\nimport rclpy\nrclpy.init()\nnode = rclpy.create_node("demo")\n```\n\n종료 시에는 shutdown을 호출합니다.\n'}];
 test('retrieves code beyond the former 3900-character prefix and provides exact line numbers',()=>{
   const result=retrieval.retrieveLessonContext('이 코드의 두 번째 줄은 왜 필요한가요?',lessonDocs);
@@ -220,4 +250,31 @@ test('API can request one lookup and refuses repeated lookup after completion wi
 test('a missing named function does not retrieve unrelated lab prose',()=>{
   const result=retrieval.retrieveLessonContext('missing_function() 함수가 실습 코드에 필요한 이유',lessonDocs);
   assert.equal(result.state,'not_found');assert.ok(!result.text.includes('rclpy.init'));
+});
+
+test('rendered strong text selection retrieves the source paragraph instead of numeric competitors',()=>{
+  const source='사전 통과 조건은 |힘 오차|≤0.10N이고 |가속도 오차|≤0.05m/s²를 **모두** 만족하는 것이다. 이번 힘 오차0.04N·가속도 오차0.02m/s²는 통과한다.';
+  const selected=source.replace('**모두**','모두');
+  const docs=[...Array.from({length:4},(_,i)=>({id:'competitor-'+i,title:'보정 조건과 기준',content:'여기서 힘오차0.04N과가속도오차0.02는 왜 통과인가요? 수치가 같은 다른 사례입니다.'})),{id:'authored:resource:M25.04:body',title:'미사용 평가',content:'# 기준\n\n'+source}];
+  const result=retrieval.retrieveLessonContext('여기서 힘오차0.04N과가속도오차0.02는 왜 통과인가요?',docs,{selectedText:selected});
+  assert.equal(result.state,'found');assert.match(result.text,/자료 ID: authored:resource:M25.04:body/);assert.ok(result.text.includes('0.10N'));assert.ok(result.text.includes('0.05m/s²'));assert.ok(result.text.includes('**모두**'));assert.ok(!result.text.includes('자료 ID: competitor-'));
+  const underscore={id:'underscore',title:'조건',content:'서로 __모두__ 충족해야 합니다.'};assert.match(retrieval.retrieveLessonContext('선택한 이 조건은 왜 필요한가요?',[underscore],{selectedText:'서로 모두 충족해야 합니다.'}).text,/자료 ID: underscore/);
+  const code=[{id:'python',title:'제곱 연산',content:'```python\nvalue = a ** b\n```'}];assert.match(retrieval.retrieveLessonContext('이 코드의 첫 번째 줄을 설명해주세요.',code,{selectedText:'value = a ** b'}).text,/1: value = a \*\* b/);
+});
+
+test('assessment passes the supplied body intact and limits feedback to grounded review rather than invented model answers',async()=>{
+ const original=globalThis.fetch;const oldInfo=console.info;const oldWarn=console.warn;const logs=[];console.info=(...args)=>logs.push(args);console.warn=(...args)=>logs.push(args);
+ const input={question:'이 모형의 이동 거리는?',answer:'0.2m',reference:'0.2m. 실제 장비 결과가 아닌 합성 계산이다.',context:'## 제공 모형\n속도4m/s·시간0.05s의 일정속도 합성 모형이다. 실제 장비를 실행하지 않는다. PRIVATE_BODY'};
+ const upstream=[];
+ try {
+  globalThis.fetch=async(_url,options)=>{upstream.push(JSON.parse(options.body));return Response.json({choices:[{message:{content:'판정: 충분\n제공 모형의 단위와 합성 조건을 지켰습니다.'},finish_reason:'stop'}]});};
+  const response=await app.request('/v1/assessment',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(input)},{ALLOWED_ORIGINS:'http://localhost:3000',OPENROUTER_API_KEY:'PRIVATE_KEY'});
+  assert.equal(response.status,200);const result=await response.json();assert.equal(result.mode,'openrouter');assert.equal(result.lessonContextIncluded,true);
+  assert.deepEqual(JSON.parse(upstream[0].messages.find(m=>m.role==='user').content),input);
+  const system=upstream[0].messages.find(m=>m.role==='system').content;
+  assert.ok(system.includes('판정 유보'));assert.ok(system.includes('대안 풀이를 인정'));
+  assert.ok(system.includes('긴 모범답안·전체 해설의 재작성·새 문제/조건을 만들지 않는다'));
+  assert.ok(system.includes('context가 없으면'));assert.equal(upstream[0].max_tokens,1536);
+  assert.ok(!JSON.stringify(logs).includes('PRIVATE_BODY'));assert.ok(!JSON.stringify(logs).includes('PRIVATE_KEY'));
+ } finally {globalThis.fetch=original;console.info=oldInfo;console.warn=oldWarn;}
 });

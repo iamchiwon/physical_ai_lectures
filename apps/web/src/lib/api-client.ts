@@ -8,8 +8,14 @@ import {
   type TutorResponse,
 } from "@physical-ai/shared";
 
-export async function evaluateAnswer(input: AssessmentRequest) {
-  return assessmentResponseSchema.parse(await requestJson("/v1/assessment", { method: "POST", body: JSON.stringify(input) }));
+export async function evaluateAnswer(input: AssessmentRequest, signal?: AbortSignal) {
+  const payload = await requestJson("/v1/assessment", { method: "POST", body: JSON.stringify(input), signal: signal ?? null });
+  const result = assessmentResponseSchema.safeParse(payload);
+  if (!result.success) throw new Error("평가 응답을 읽을 수 없습니다. 답안은 유지되니 잠시 후 다시 평가해 주세요.");
+  if (input.context?.trim() && result.data.mode !== "self-review" && result.data.lessonContextIncluded !== true) {
+    throw new Error("평가 서비스에서 본문 문맥 전달을 확인하지 못했습니다. 이 평가 결과는 사용하지 않습니다. 답안은 저장했으니 해설과 비교하거나 잠시 후 다시 확인해 주세요.");
+  }
+  return result.data;
 }
 
 const configuredApiBaseUrl = process.env.NEXT_PUBLIC_API_BASE_URL?.trim().replace(/\/$/, "") ?? "";
@@ -51,4 +57,11 @@ export async function askTutor(input: TutorRequest, signal?: AbortSignal): Promi
 
 export async function summarizeTutor(input: TutorSummaryRequest, signal?: AbortSignal) {
   return tutorSummaryResponseSchema.parse(await requestJson("/v1/tutor/summary", { method:"POST", body:JSON.stringify(input), signal: signal ?? null }));
+}
+
+export async function supportsLearningContext(signal?: AbortSignal): Promise<boolean> {
+  try {
+    const health = await requestJson("/v1/health", { signal: signal ?? null }) as { supportedContextVersions?: number[] };
+    return Array.isArray(health.supportedContextVersions) && health.supportedContextVersions.includes(1);
+  } catch { return false; }
 }

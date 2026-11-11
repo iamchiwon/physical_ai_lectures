@@ -24,6 +24,14 @@ Physical AI는 인공지능 모델이 텍스트나 화면 안에서 답을 생�
 
 ## 선수 지식과 준비물
 
+모바일 시뮬레이션은 [M09.02 구동·브리지](/study/unit-m09-02-a/)와 [M09.04 프레임·시뮬레이션 시간](/study/unit-m09-04-a/)으로 확장한다. 이 장의 Isaac 브리지 설정을 Gazebo에 그대로 복사하지 말고 메시지 형식·단위·명령/측정 방향·clock 소유자를 다시 확인한다. [M18.04 Action·작업 상태](/study/unit-m18-04-a/)에서는 통신 요청 수락과 실제 도착·작업 완료를 구분한다.
+
+E4에서는 [M19.02 계획 장면·궤적 실행](/study/unit-m19-02-a/)과 [M22.02 구조화 출력·ROS Action](/study/unit-m22-02-a/)으로 이어진다. 브리지로 메시지를 보냈다는 사실과 계획 유효성·실행 결과·작업 성공은 각각 확인한다.
+
+[M10.01 Stage·레이어·참조](/study/unit-m10-01-a/)와 [M10.02 URDF/USD 자산](/study/unit-m10-02-a/)에서 장면 표현·저장·자산 재사용을 먼저 확인하고, [M10.06 ROS 브리지](/study/unit-m10-06-a/)와 아래 연결 예제를 이어 읽는다. 시각 장면이 만들어졌다는 사실과 물리·센서·통신이 실행됐다는 사실을 구분한다.
+
+통신 예제를 실행하기 전 [M05.01 작업공간·Executor](/study/unit-m05-01-a/), [M05.02 인터페이스](/study/unit-m05-02-a/), [M05.03 QoS·발견](/study/unit-m05-03-a/), [M05.06 시간과 장애](/study/unit-m05-06-a/)를 이어 읽는다. 이 장은 Isaac Sim 브리지 응용이며, 기본 ROS 실행·진단 개념은 E2에서 가상 로그로 먼저 익힌다.
+
 - Python 3의 클래스, 예외, NumPy 배열
 - C++17의 클래스, 람다, 스마트 포인터
 - 선형대수의 벡터·행렬 기초
@@ -31,13 +39,15 @@ Physical AI는 인공지능 모델이 텍스트나 화면 안에서 답을 생�
 - Ubuntu 24.04 LTS, ROS 2 Jazzy Jalisco
 - NVIDIA Isaac Sim은 선택 사항이다. OpenUSD 예제는 `usd-core` 또는 Isaac Sim Python 환경에서 실행할 수 있다.
 
+**통합 커리큘럼의 기초에서 이 장으로 넘어오기.** 처음 등장하는 개발 용어가 낯설면 [M01 개발 기반](/modules/M01/)에서 셸·가상환경·C++ 수명·빌드를 먼저 확인한다. 수식의 벡터/행렬과 단위는 [M02 수학 브리지](/modules/M02/), 관절·센서·구동·전원은 [M03 구성요소](/modules/M03/)에서 보충한다. 장비 없이 시작하는 학습자는 [M00.06](/study/unit-m00-06-a/)의 계산·로그 재생 경로를 선택할 수 있다. 이 여섯 장은 확장 과정 안의 로봇팔·시뮬레이션 응용 경로이며, 모바일·차량 전체를 이 장만으로 다루지는 않는다.
+
 > **버전 주의**: 이 책의 ROS 예제는 Jazzy를 기준으로 한다. Isaac Sim Python API와 확장 이름은 제품 릴리스에 따라 이동할 수 있다. 특정 API 이름보다 Stage, Simulation Context, ROS graph, clock ownership이라는 설계 개념을 우선해서 익힌다.
 
 ## 1.1 Physical AI의 문제 정의
 
 ### 1.1.1 정보 처리에서 물리적 상호작용으로
 
-일반적인 소프트웨어 함수는 같은 입력에 같은 출력을 내도록 설계할 수 있다. 로봇의 입력은 그렇지 않다. 카메라 노출, 조명, 마찰, 기어 백래시(backlash), 통신 지연, 물체의 미세한 위치가 매 주기 달라진다. 로봇은 부분 관측(partial observation) 아래에서 행동하고, 그 행동이 다음 관측 자체를 바꾼다.
+결정론적으로 구현한 함수는 같은 입력에 같은 출력을 낸다. 그러나 Software AI도 확률적 추론이나 외부 상태를 사용할 수 있으므로, 결정론 여부만으로 Physical AI를 구분하지 않는다. 여기서 핵심은 **행동이 물리 환경을 바꾸고, 바뀐 환경을 다시 관측하며, 시간·기계적 제약 안에서 다음 행동을 결정한다**는 점이다. 카메라 노출, 조명, 마찰, 기어 백래시(backlash), 통신 지연, 물체의 미세한 위치가 관측과 결과에 영향을 준다. 시뮬레이션도 정보를 숨기면 부분 관측 문제를 만들 수 있다. [M00.01](/study/unit-m00-01-a/)에서 로봇팔·이동 로봇의 구체 사례를 비교하고 이 장의 모델과 연결한다.
 
 이를 부분 관측 마르코프 의사결정 과정(Partially Observable Markov Decision Process, POMDP)으로 쓰면 다음과 같다.
 
@@ -51,6 +61,9 @@ Physical AI는 인공지능 모델이 텍스트나 화면 안에서 답을 생�
 - \(T(s_{t+1}|s_t,a_t)\): 행동 뒤 상태가 변하는 동역학
 - \(R(s_t,a_t)\): 성공, 시간, 에너지, 충돌을 반영하는 보상
 - \(O(o_t|s_t)\): 상태가 센서 관측으로 나타나는 과정
+- \(\gamma\in[0,1)\): 미래 보상의 가중치를 줄이는 할인율. 유한 시간 문제에서는 \(\gamma=1\)도 사용할 수 있다.
+
+여기서는 관측이 현재 상태에만 조건부로 의존하는 간단한 모형을 썼다. 센서 선택이나 측정 행동이 관측 품질을 바꾸면 \(O(o_{t+1}|s_{t+1},a_t)\)처럼 행동도 조건에 포함한다. 관측의 인덱스는 행동 전 \(o_t\)를 읽고 \(a_t\)를 적용한 뒤 다음 상태·관측을 얻는 순서다. 일반 POMDP의 관측 모형과 belief(가능한 상태에 대한 분포)는 [Kaelbling 등의 원 논문](https://cdn.aaai.org/AAAI/1994/AAAI94-157.pdf)에서 확인할 수 있다. belief는 실제 상태를 완벽하게 안다는 뜻이 아니다.
 
 정책(policy) \(\pi(a_t|h_t)\)는 현재 관측 하나만이 아니라 관측과 행동의 이력 \(h_t\)를 사용할 수 있다. Vision-Language-Action(VLA) 모델은 영상과 언어를 조건으로 연속 또는 이산화된 행동을 출력하는 학습 정책의 한 종류다. 그러나 VLA도 센서 드라이버, 좌표 변환, 제어 주기, 안전 제한을 대신하지 않는다.
 
@@ -83,13 +96,13 @@ Physical AI는 인공지능 모델이 텍스트나 화면 안에서 답을 생�
 5. **저수준 제어(Control)**: 보간, PID/임피던스 제어, 모터 프로토콜 변환을 수행한다.
 6. **행동과 피드백(Action & feedback)**: 물리 상태가 바뀌고 다음 관측이 들어온다.
 
-주기 \(T\)는 구성 요소 시간의 합과 대기 시간으로 결정된다.
+아래 식은 단계를 **순차로 실행하는 한 경로의 처리 지연**을 합산한 단순 예산이다. 실제 스케줄의 목표 샘플 주기 \(\Delta t\)와 구분한다. 여러 센서·제어기를 병렬로 실행하면 지연은 의존 경로와 큐 대기에 따라 달라져 모든 스레드 시간을 단순히 더할 수 없다.
 
 \[
 T_{loop}=T_{sensor}+T_{transport}+T_{pre}+T_{infer}+T_{safety}+T_{actuator}+T_{wait}
 \]
 
-20 Hz 정책 루프의 주기 예산은 50 ms다. 추론이 평균 35 ms여도 최악 지연이 80 ms이면 주기를 놓친다. 따라서 평균뿐 아니라 p95/p99 지연, 센서 데이터의 나이(age), 명령 만료 시간(time-to-live)을 기록해야 한다.
+20 Hz 정책의 목표 갱신 간격은 \(1000/20=50\) ms다. 한 주기 안에 추론을 마쳐야 하는 직렬 설계에서 추론의 평균이35 ms여도 한 번의 실행이80 ms라면 그 주기의 마감 시각을 놓친다. 비동기 설계에서는 새 관측의 주기와 명령 나이를 따로 측정해야 한다. [M00.04](/study/unit-m00-04-a/)에서 성공 조건·지연·중단 기준을 먼저 수치로 정의한다. 따라서 평균뿐 아니라 p95/p99 지연, 센서 데이터의 나이(age), 명령 만료 시간(time-to-live)을 기록해야 한다.
 
 ### 1.1.4 책임의 분리
 
@@ -110,14 +123,14 @@ Isaac Sim은 하나의 물리 엔진이 아니라 여러 계층이 결합된 애
 
 - **Kit 애플리케이션 런타임**: 확장(extension), UI, 명령, Python 환경의 생명주기를 관리한다.
 - **OpenUSD**: 장면의 구조, 속성, 참조, 변형을 표현한다.
-- **PhysX**: 강체, 관절, 접촉, 충돌을 시간에 따라 적분한다.
+- **물리 백엔드**: PhysX 경로에서는 강체·관절·접촉·충돌의 상태 변화를 PhysX가 계산한다. Isaac Sim 6.2는 Newton 백엔드도 지원하므로 실행 앱·활성 엔진·해당 API를 기록한다.
 - **RTX 렌더러와 센서 모델**: 카메라 관측과 합성 데이터를 생성한다.
 - **OmniGraph/Action Graph**: 데이터 흐름과 실행 노드를 연결한다.
 - **ROS 2 Bridge**: ROS 메시지와 시뮬레이터의 상태·명령을 변환한다.
 
 ![Isaac Sim 계층](images/isaac_stack.svg)
 
-**그림 1-2.** USD는 장면의 정적·구성적 표현을, PhysX는 시간에 따른 상태 변화를, ROS 2 Bridge는 외부 시스템과의 메시지 교환을 담당한다.
+**그림 1-2.** 그림은 PhysX 경로를 예로 든다. USD는 장면 표현, 선택한 물리 백엔드는 시간에 따른 상태 변화, ROS 2 Bridge는 외부 메시지 교환을 담당한다. [6.2 백엔드 안내](https://docs.isaacsim.omniverse.nvidia.com/6.2.0/physics/newton_physics.html)는 PhysX와 Newton 경로를 구분한다.
 
 ### 1.2.2 Stage와 시뮬레이션 상태를 구분하라
 
@@ -259,24 +272,24 @@ Action은 내부적으로 여러 Topic과 Service를 사용하지만, 사용자�
 
 ROS 2 클라이언트 라이브러리 `rclpy`와 `rclcpp` 아래에는 ROS middleware interface(RMW)가 있다. RMW 구현은 DDS 또는 다른 전송 계층과 ROS 타입·발견·통신을 연결한다. 애플리케이션은 보통 동일한 ROS API를 사용하지만, 발견 방식, 설정, 성능 특성은 구현에 따라 달라질 수 있다.
 
-DDS의 데이터 중심 publish/subscribe는 중앙 브로커 없이 참가자를 발견하고, Topic 단위의 QoS를 협상한다. 이는 네트워크 설정이 필요 없다는 뜻이 아니다. 멀티캐스트가 차단된 네트워크, 컨테이너, VPN에서는 발견이 실패할 수 있다.
+DDS의 데이터 중심 publish/subscribe는 중앙 브로커 없이 참가자를 발견한다. QoS는 발행자가 제공하는 정책과 구독자가 요청하는 정책의 호환성을 검사하며, 비호환 설정을 자동으로 같은 값으로 바꾸는 협상이 아니다. 이는 네트워크 설정이 필요 없다는 뜻이 아니다. 멀티캐스트가 차단된 네트워크, 컨테이너, VPN에서는 발견이 실패할 수 있다.
 
 ### 1.4.4 QoS는 인터페이스 계약이다
 
 중요 QoS 정책은 다음과 같다.
 
-- **Reliability**: `RELIABLE`은 전달 재시도를, `BEST_EFFORT`는 최신성 우선 전달을 뜻한다.
+- **Reliability**: `RELIABLE`은 전달을 위한 재시도를 수행할 수 있고, `BEST_EFFORT`는 손실을 허용한다. 센서용 프로파일의 작은 큐와 함께 최신성을 우선하는 구성이 흔하지만 `BEST_EFFORT` 자체가 지연 상한을 보장하지는 않는다.
 - **Durability**: `TRANSIENT_LOCAL`은 늦게 참여한 구독자에게 보관 표본을 제공할 수 있다.
-- **History/Depth**: 큐에 보관할 표본 수를 제한한다.
-- **Deadline**: 표본이 기대 주기 안에 도착해야 한다는 계약을 표현한다.
+- **History/Depth**: `KEEP_LAST`는 depth만큼 최근 표본을 보관한다. `KEEP_ALL`도 미들웨어 자원 한계를 받으며 depth를 같은 방식으로 적용하지 않는다.
+- **Deadline**: 발행·수신 표본 사이의 기대 최대 간격을 표현하고 위반 이벤트를 감시한다. 콜백 처리 완료나 액추에이터 실행의 실시간 마감 보장은 아니다.
 - **Liveliness**: 발행자가 살아 있음을 판단한다.
 - **Lifespan**: 오래된 표본의 유효 기간을 제한한다.
 
 카메라 미리보기는 손실된 과거 프레임을 재전송하느라 현재 프레임이 늦어지는 것보다 `BEST_EFFORT`, 작은 depth가 나을 수 있다. 반대로 낮은 빈도의 설정 변경은 `RELIABLE`과 `TRANSIENT_LOCAL`이 적절할 수 있다. 발행자와 구독자의 QoS가 호환되지 않으면 그래프에 이름이 보여도 데이터가 흐르지 않는다.
 
-### 1.4.5 시간의 두 종류
+### 1.4.5 시스템·ROS·steady 시간
 
-ROS Node는 시스템 시간과 시뮬레이션 시간을 구분한다. `/clock`을 사용하고 `use_sim_time=true`이면 시뮬레이터가 시간의 권위자(authority)가 된다. 시뮬레이션을 일시정지하거나 reset하면 시간도 멈추거나 되돌아갈 수 있다.
+ROS 시간은 별도 시간원이 비활성일 때 시스템 시간을 따르고, 노드의 `use_sim_time=true`로 ROS 시간원이 활성화되면 `/clock` 표본을 따른다. 시간원은 시뮬레이터 또는 기록 재생기일 수 있다. 첫 clock 표본을 받기 전 0은 미초기화 상태로 처리한다. 시뮬레이션의 일시정지·reset·재생 탐색은 시간을 멈추거나 되돌릴 수 있다. 하드웨어 watchdog의 경과시간에는 단조 증가하는 steady 시간을 사용하며 서로 다른 시간원의 숫자를 직접 빼지 않는다.
 
 - 메시지 헤더는 측정 시각을 기록한다.
 - 처리 완료 시각을 헤더에 넣지 않는다.
@@ -342,16 +355,27 @@ watchdog: stale command rejected
 
 `code/ros2_jazzy/physical_ai_demo/physical_ai_demo/joint_state_source.py`는 가상의 관절 상태를 발행한다. 센서형 QoS와 명시적 timestamp를 사용한다.
 
+ROS 2 Jazzy와 빌드 의존성이 설치되어 있다는 전제의 실행 절차다. 아래 빌드는 기존 overlay가 섞이지 않은 새 터미널에서 장 루트를 기준으로 수행한다. 작업공간·패키지 구분과 환경 적용은 M05.01에서 설명한다. 이 명령을 읽는 활동과 실제 ROS 실행 검증을 구분한다.
+
 ```bash
-cd code/ros2_jazzy/physical_ai_demo
-colcon build --symlink-install
-source install/setup.bash
+source /opt/ros/jazzy/setup.bash
+cd code/ros2_jazzy
+colcon build --symlink-install --packages-select physical_ai_demo
+```
+
+패키지별 빌드 성공을 확인한 경우에만 다음으로 진행한다. 실패하면 여기서 멈추고 로그를 확인한다. 남아 있는 install 디렉터리를 새 빌드 성공으로 간주하지 않는다. 성공한 경우 새 실행 터미널에서 장 루트를 기준으로 다음을 실행한다.
+
+```bash
+source /opt/ros/jazzy/setup.bash
+source code/ros2_jazzy/install/setup.bash
 ros2 run physical_ai_demo joint_state_source
 ```
 
-다른 터미널:
+다른 터미널에서도 장 루트를 기준으로 같은 환경을 적용한다. 조회와 주기 관찰 명령은 필요하면 각각의 터미널에서 실행한다.
 
 ```bash
+source /opt/ros/jazzy/setup.bash
+source code/ros2_jazzy/install/setup.bash
 ros2 topic echo /demo/joint_states
 ros2 topic hz /demo/joint_states
 ```
@@ -374,10 +398,9 @@ position: [0.31]
 cd code/ros2_jazzy
 source /opt/ros/jazzy/setup.bash
 colcon build --symlink-install --packages-select physical_ai_demo safety_gate_cpp
-source install/setup.bash
 ```
 
-터미널 A에서 게이트, 터미널 B에서 현재 timestamp가 있는 교육용 명령 발생기, 터미널 C에서 안전 명령을 실행한다.
+두 패키지가 모두 성공했는지 확인한 경우에만 다음 실행 단계로 진행한다. 실패하면 기존 설치물을 실행하지 말고 빌드 로그부터 확인한다. 터미널 A에서 게이트, 터미널 B에서 현재 timestamp가 있는 교육용 명령 발생기, 터미널 C에서 안전 명령을 관찰한다. 각 새 터미널은 장 루트에서 `/opt/ros/jazzy/setup.bash`와 `code/ros2_jazzy/install/setup.bash`를 차례로 source한 뒤 해당 명령을 실행한다.
 
 ```bash
 # 터미널 A

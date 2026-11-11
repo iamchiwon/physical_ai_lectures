@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 1,
+  "topics": {
+    "M24.01": {
+      "sourceSha256": "299520390a3655689dc898bd81ccb2640c6211010d15a321155305ecb76b7025",
+      "evidenceRef": "doc/v2/work_items/M24.01.md"
+    },
+    "M24.02": {
+      "sourceSha256": "c42d1d7b6a8091008c096766767feb886f788018414de39d27ce652ab3ee8b21",
+      "evidenceRef": "doc/v2/work_items/M24.02.md"
+    },
+    "M24.03": {
+      "sourceSha256": "6ae657c12d38c67f2f724b1f368f714313c4eca7755cb713f13144265f820b7e",
+      "evidenceRef": "doc/v2/work_items/M24.03.md"
+    },
+    "M24.04": {
+      "sourceSha256": "06287f9dc50b27e891a1a86329d4fe323be4c4c95689450942647bbc279b6fe5",
+      "evidenceRef": "doc/v2/work_items/M24.04.md"
+    },
+    "M24.05": {
+      "sourceSha256": "9a0436eb2fe3d14bedb380806b5cde8153ea3ffa048a9479705790cefdbd3d57",
+      "evidenceRef": "doc/v2/work_items/M24.05.md"
+    },
+    "M24.06": {
+      "sourceSha256": "7d6b08625b5f7c09bf1c3084267f753b779b980a1d6fd35312488c2deb76edf8",
+      "evidenceRef": "doc/v2/work_items/M24.06.md"
+    }
+  }
+}

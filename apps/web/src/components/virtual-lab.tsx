@@ -13,6 +13,35 @@ import {
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
+export type PlanarArmSolution = { radius: number | null; inner: number; outer: number } & (
+  { reachable: false; reason: "invalid" | "inner" | "outer" }
+  | { reachable: true; q1Degrees: number; q2Degrees: number; singular: boolean }
+);
+/** Unconstrained planar 2R arm, positive-q2 branch. Lengths are illustrative millimetres. */
+export function solvePlanarArm(x: number, y: number, l1 = 78, l2 = 64): PlanarArmSolution {
+  if (![l1, l2, l1 + l2].every(Number.isFinite) || l1 <= 0 || l2 <= 0) throw Error("Invalid link lengths");
+  const inner = Math.abs(l1 - l2), outer = l1 + l2;
+  if (![x, y].every(Number.isFinite)) return { reachable: false, reason: "invalid", radius: null, inner, outer };
+  const radius = Math.hypot(x, y), tolerance = 32 * Number.EPSILON * Math.max(1, outer);
+  if (radius < inner - tolerance) return { reachable: false, reason: "inner", radius, inner, outer };
+  if (radius > outer + tolerance) return { reachable: false, reason: "outer", radius, inner, outer };
+  const denominator = 2 * l1 * l2;
+  const cosine = (radius * radius - l1 * l1 - l2 * l2) / denominator;
+  const cosineTolerance = 64 * Number.EPSILON * Math.max(1, (radius * radius + l1 * l1 + l2 * l2) / denominator);
+  if (!Number.isFinite(cosine) || cosine < -1 - cosineTolerance || cosine > 1 + cosineTolerance) return { reachable: false, reason: "invalid", radius, inner, outer };
+  // Only roundoff at ±1 is corrected; unreachable goals never get projected to a boundary.
+  const corrected = cosine < -1 ? -1 : cosine > 1 ? 1 : cosine;
+  const q2 = Math.acos(corrected);
+  const q1 = Math.atan2(y, x) - Math.atan2(l2 * Math.sin(q2), l1 + l2 * Math.cos(q2));
+  return { reachable: true, radius, inner, outer, q1Degrees: q1 * 180 / Math.PI, q2Degrees: q2 * 180 / Math.PI, singular: Math.abs(Math.sin(q2)) < 1e-8 };
+}
+/** Periodic joint coordinates: use the shortest change across the ±180° seam. */
+export function advanceJointAngle(current: number, desired: number, fraction = 0.16) {
+  if (![current, desired, fraction].every(Number.isFinite) || fraction < 0 || fraction > 1) throw Error("Invalid angle update");
+  const difference = ((desired - current + 180) % 360 + 360) % 360 - 180;
+  return ((current + fraction * difference + 180) % 360 + 360) % 360 - 180;
+}
+
 type LabKind = "closed-loop" | "arm" | "sensor-sync";
 
 const armLessons = new Set([
@@ -185,23 +214,26 @@ function ArmKinematicsLab() {
   const l1 = 78;
   const l2 = 64;
 
-  const solveIk = React.useCallback(() => {
-    const r2 = targetX ** 2 + targetY ** 2;
-    const c2 = Math.max(-1, Math.min(1, (r2 - l1 ** 2 - l2 ** 2) / (2 * l1 * l2)));
-    const nextQ2 = Math.acos(c2);
-    const nextQ1 = Math.atan2(targetY, targetX) - Math.atan2(l2 * Math.sin(nextQ2), l1 + l2 * Math.cos(nextQ2));
-    return [nextQ1 * 180 / Math.PI, nextQ2 * 180 / Math.PI] as const;
-  }, [targetX, targetY]);
-
+  const solution = React.useMemo(() => solvePlanarArm(targetX, targetY, l1, l2), [targetX, targetY]);
+  const reachable = solution.reachable;
+  const diagnosis = solution.reachable ? solution.singular ? "작업공간 경계의 특이자세입니다." : "양의 q₂를 택한 해석적 IK 해가 있습니다." : solution.reason === "inner" ? "목표가 안쪽 제외 영역에 있어 해가 없습니다." : solution.reason === "outer" ? "목표가 바깥 반경을 넘어 해가 없습니다." : "유효한 수치 해를 계산할 수 없습니다.";
   React.useEffect(() => {
-    if (!running) return;
+    if (!running || !solution.reachable) return;
+    const { q1Degrees, q2Degrees } = solution;
     const timer = window.setInterval(() => {
-      const [desiredQ1, desiredQ2] = solveIk();
-      setQ1((value) => value + (desiredQ1 - value) * 0.16);
-      setQ2((value) => value + (desiredQ2 - value) * 0.16);
+      setQ1(value => advanceJointAngle(value, q1Degrees));
+      setQ2(value => advanceJointAngle(value, q2Degrees));
     }, 100);
     return () => window.clearInterval(timer);
-  }, [running, solveIk]);
+  }, [running, solution]);
+  const updateTarget = (x: number, y: number) => {
+    setTargetX(x); setTargetY(y);
+    const next = solvePlanarArm(x, y, l1, l2);
+    if (!next.reachable) {
+      setRunning(false);
+      setLogs(current => [`추종 정지: ${next.reason === "inner" ? "안쪽 제외 영역" : "바깥 영역 또는 잘못된 수치"} · 목표를 고친 뒤 다시 실행하세요.`, ...current].slice(0, 5));
+    }
+  };
 
   const a1 = q1 * Math.PI / 180;
   const a2 = (q1 + q2) * Math.PI / 180;
@@ -210,7 +242,7 @@ function ArmKinematicsLab() {
   const endX = jointX + l2 * Math.cos(a2);
   const endY = jointY + l2 * Math.sin(a2);
   const error = Math.hypot(targetX - endX, targetY - endY);
-  const reachable = Math.hypot(targetX, targetY) <= l1 + l2;
+
 
   const reset = () => {
     setRunning(false);
@@ -222,6 +254,7 @@ function ArmKinematicsLab() {
   };
 
   const toggleTracking = () => {
+    if (!reachable) return;
     if (!running) {
       setLogs((current) => [`추종 시작: 목표 (${targetX}, ${targetY})mm`, ...current].slice(0, 5));
     }
@@ -240,6 +273,8 @@ function ArmKinematicsLab() {
             <svg viewBox="-165 -155 330 310" className="h-full min-h-72 w-full" role="img" aria-label={`두 관절 로봇팔, 말단 오차 ${error.toFixed(1)}`}>
               <defs><pattern id="lab-grid" width="20" height="20" patternUnits="userSpaceOnUse"><path d="M 20 0 L 0 0 0 20" fill="none" stroke="#dbeafe" strokeWidth="1" /></pattern></defs>
               <rect x="-165" y="-155" width="330" height="310" fill="url(#lab-grid)" />
+              <circle cx="0" cy="0" r={l1 + l2} fill="none" stroke="#93c5fd" strokeDasharray="4 4" />
+              <circle cx="0" cy="0" r={Math.abs(l1 - l2)} fill="#fee2e2" stroke="#fca5a5" />
               <circle cx={targetX} cy={-targetY} r="8" fill="#10b981" opacity=".25" />
               <circle cx={targetX} cy={-targetY} r="3" fill="#059669" />
               <line x1="0" y1="0" x2={jointX} y2={-jointY} stroke="#2563eb" strokeWidth="12" strokeLinecap="round" />
@@ -253,16 +288,17 @@ function ArmKinematicsLab() {
           <div className="mt-5 grid gap-4 sm:grid-cols-3">
             <Metric label="말단 X" value={endX.toFixed(1)} unit="mm" />
             <Metric label="말단 Y" value={endY.toFixed(1)} unit="mm" />
-            <Metric label="위치 오차" value={error.toFixed(1)} unit="mm" tone={error < 3 ? "good" : "normal"} />
+            <Metric label="위치 오차" value={error.toFixed(1)} unit="mm" tone={reachable && error < 3 ? "good" : "normal"} />
           </div>
         </div>
         <div className="space-y-4">
-          <RangeControl label="관절 q₁" value={q1} min={-80} max={120} step={1} unit="°" onChange={setQ1} />
-          <RangeControl label="관절 q₂" value={q2} min={-130} max={145} step={1} unit="°" onChange={setQ2} />
+          <RangeControl label="관절 q₁" value={q1} min={-180} max={180} step={1} unit="°" onChange={value => { setRunning(false); setQ1(value); }} />
+          <RangeControl label="관절 q₂" value={q2} min={-180} max={180} step={1} unit="°" onChange={value => { setRunning(false); setQ2(value); }} />
           <div className="grid grid-cols-2 gap-3">
-            <RangeControl label="목표 X" value={targetX} min={15} max={140} step={1} unit="mm" onChange={setTargetX} />
-            <RangeControl label="목표 Y" value={targetY} min={-100} max={130} step={1} unit="mm" onChange={setTargetY} />
+            <RangeControl label="목표 X" value={targetX} min={-150} max={150} step={1} unit="mm" onChange={value => updateTarget(value, targetY)} />
+            <RangeControl label="목표 Y" value={targetY} min={-130} max={130} step={1} unit="mm" onChange={value => updateTarget(targetX, value)} />
           </div>
+          <p className="text-xs leading-6 text-slate-600">임의 길이 78·64 mm, 관절 제한이 없는 평면 2링크 모형입니다. 실제 SO-101 치수가 아닙니다. 도달 반경은 14 ≤ r ≤ 142 mm이며 원점은 제외됩니다. 현재 r={solution.radius?.toFixed(1) ?? "수치 오류"} mm. {diagnosis} 해석적 IK의 양의 q₂ 한 분기이며 DLS가 아닙니다. ±180° 슬라이더는 교육용 각도 표시이고 실제 SO-101 관절 한계가 아닙니다. 각도 동치를 이용한 보간은 관절 제한·충돌·연속해 선택이나 안전한 연속 궤적을 보장하지 않습니다. 화면의 목표 근접 표시는 오차 3 mm 미만입니다.</p>
           <LabButtons running={running} onToggle={toggleTracking} onReset={reset} disabled={!reachable} />
           <StatusPanel title={!reachable ? "도달할 수 없는 목표" : error < 3 ? "목표점 도달" : running ? "역기구학 추종 중" : "수동 관절 조작"} good={reachable && error < 3} logs={logs} />
         </div>

@@ -29,6 +29,16 @@
 
 ## 선수 지식과 준비물
 
+이동 로봇의 언어 미션으로 확장할 때는 [M18.04 작업 상태](/study/unit-m18-04-a/)와 [M18.06 주행-조작 전환](/study/unit-m18-06-a/)을 먼저 연결한다. 이 장의 관절 행동 벡터를 베이스 속도 명령으로 그대로 재사용하지 않는다. 행동의 단위·좌표계·유효 시간·중단 의미를 채널별로 정의하고, 정책 출력·미션 요청·실제 도착/조작 성공을 따로 기록한다.
+
+E4의 [M20 데이터 파이프라인](/modules/M20/), [M21 모방학습](/modules/M21/), [M22 언어·시각·행동과 실행 감독](/modules/M22/)에서 이 장의 선수 개념을 단위별 계산·실습·문제로 보충한다. [M27 엣지 실행](/modules/M27/)과 [M30 배포·평가](/modules/M30/)를 거쳐 [M32.02 팔 캡스톤](/study/unit-m32-02-a/)의 요구사항·실험표를 작성한다. 교안을 읽고 합성 기록을 분석한 결과와 실제 학습·장비 실증을 구분한다.
+
+PyTorch·손실·역전파는 [M11.01](/study/unit-m11-01-a/), 텐서·데이터 로더·저장은 [M11.02](/study/unit-m11-02-a/), 시연 분할·누수는 [M11.03](/study/unit-m11-03-a/)에서 보충한다. [M11.04 표현 모델](/study/unit-m11-04-a/)과 [M11.06 실험 추적](/study/unit-m11-06-a/)을 이 장의 VLA 구조·추론 지연과 연결한다. E3의 작은 CPU 예제는 실제 VLA 학습·성능 검증을 대신하지 않는다.
+
+정책의 관절 목표를 실제 제어기로 넘기는 부분은 [M07.03 포화·샘플링](/study/unit-m07-03-a/), [M07.05 제어 계층·궤적](/study/unit-m07-05-a/), [M07.06 필터·지연](/study/unit-m07-06-a/)과 이어 읽는다. 행동 목표를 잘 예측했다는 결과가 구동기의 추종·접촉·정지 성능까지 보장하지 않으며, [M08.06 구동 인터페이스 계약](/study/unit-m08-06-a/)으로 명령 의미와 단위를 명시한다.
+
+기초 복귀: [M01.02 가상환경·로그](/study/unit-m01-02-a/), [M01.05 재현 환경](/study/unit-m01-05-a/), [M02.04 확률·공분산](/study/unit-m02-04-a/), [M02.05 최적화](/study/unit-m02-05-a/)가 필요하다. E1은 PyTorch·Transformer 전체를 가르치지 않으므로 아래 tensor/attention 용어가 낯설면 후속 M11의 ML 기초를 먼저 학습한다. E1 완료만으로 이 장의 모든 선수가 충족되는 것은 아니다. GPU 없는 학습자는 데이터 분할·정규화 계산·기록 해석을 수행하고 실제 모델 학습·성능 검증과 구분한다.
+
 ### 선수 지식
 
 - PyTorch의 tensor, module, optimizer, dataloader
@@ -47,16 +57,22 @@
 설치 명령은 프로젝트의 현재 문서를 우선한다. SmolVLA 추가 의존성은 공식 문서에서 다음과 같이 안내된다.
 
 ```bash
-git clone https://github.com/huggingface/lerobot.git
-cd lerobot
-python3 -m venv .venv
-source .venv/bin/activate
-pip install -e ".[smolvla,peft]"
-git rev-parse HEAD
-lerobot-train --help
+# 아래 블록 전체를 실행한다. 실패하면 별도 셸이 중단되어 뒤 설치를 실행하지 않는다.
+(
+  set -eu
+  : "${LEROBOT_REVISION:?공식 문서와 검증한 LeRobot 커밋 또는 태그를 지정하세요}"
+  git clone https://github.com/huggingface/lerobot.git
+  cd lerobot
+  git checkout --detach "$LEROBOT_REVISION"
+  python3 -m venv .venv
+  . .venv/bin/activate
+  python -m pip install -e ".[smolvla,peft]"
+  git rev-parse HEAD
+  lerobot-train --help
+)
 ```
 
-마지막 두 명령의 출력을 실험 기록에 저장한다. `latest` 또는 `main`만 기록하면 같은 실험 환경을 다시 만들 수 없다.
+이 블록은 별도 셸에서 실행하므로 끝나면 원래 디렉터리·환경으로 돌아온다. **성공한 경우에만** 이후 작업 셸에서 `cd lerobot`와 `. .venv/bin/activate`로 해당 환경에 들어간다. revision이 없거나 존재하지 않는 태그라면 그 오류부터 해결하고, venv나 패키지 설치가 완료되었다고 간주하지 않는다. 마지막 두 명령의 출력을 실험 기록에 저장한다. `latest` 또는 `main`만 기록하면 같은 실험 환경을 다시 만들 수 없다.
 
 ## 5.1 모방학습과 행동 복제
 
@@ -81,7 +97,7 @@ D = \{\tau_i\}_{i=1}^{N}, \qquad
 \left[\|\pi_\theta(o)-a\|_1\right]
 \]
 
-L1 또는 Smooth L1은 큰 이상치에 대한 민감도가 L2보다 낮다. 하지만 loss가 낮다고 task success가 반드시 높지는 않다. 같은 관측에서 왼쪽과 오른쪽으로 우회하는 두 성공 행동이 존재하면 평균 회귀 결과는 장애물 중앙으로 향할 수 있다. 행동 분포의 다봉성(multimodality)이 중요한 이유다.
+L1 또는 Smooth L1은 큰 이상치에 대한 민감도가 L2보다 낮다. 그러나 손실이 작다고 task success가 반드시 높지는 않다. 제곱 L2의 최적 예측은 조건부 평균이며, 성분별 L1은 각 성분의 조건부 중앙값 집합을 최소해로 갖는다. 예를 들어 같은 관측의 1차원 목표가 −1과+1로 같은 빈도라면 평균 제곱 오차는 예측0에서 유일하게 최소지만, 평균 L1은 −1~+1 전체에서 같은 최소값1이다. 따라서 위 L1 식을 곧바로 평균 회귀라고 해석해서는 안 된다. 두 행동이 각각 장애물의 다른 쪽을 우회하는 경우 중간 행동은 위험할 수 있고, 어떤 손실을 택해도 한 개의 결정론적 출력만으로 두 성공 모드를 모두 표현하지는 못한다. 이것이 행동 분포의 다봉성(multimodality)을 구분해야 하는 이유다.
 
 ### 5.1.3 covariate shift와 복구 데이터
 
@@ -186,6 +202,8 @@ dataset/
 | `episode_index` | scalar | int | episode 식별자 |
 | `task_index` | scalar | int | 언어 task 연결 |
 
+이 표의 video는 저장 모달리티이고 `[3,H,W]`는 RGB 한 프레임을 로더가 반환하는 CHW 텐서의 예다. 이를 저장 metadata의 shape/dtype 값으로 그대로 복사하지 않는다. [공식 v3 로딩 예](https://huggingface.co/docs/lerobot/lerobot-dataset-v3#load-a-dataset-for-training)의 단일 영상은 `[C,H,W]`, 시간 창은 `[T,C,H,W]`이며 DataLoader의 배치 축은 별도로 붙는다. 저장 metadata의 shape·dtype·축 이름과 디코딩/전처리 후 텐서 shape·채널 순서를 각각 확인하고 기록한다.
+
 shape만으로 충분하지 않다. joint order, unit, absolute/delta, camera color order, resize/crop, gripper sign convention을 dataset card에 기록한다.
 
 ### 5.3.3 episode 경계와 split
@@ -199,6 +217,8 @@ train/validation/test는 **frame이 아니라 episode 단위**로 분할한다. 
 v3 writer는 incremental Parquet writing과 metadata buffer를 사용한다. 수집 종료 후 `finalize()`를 호출해야 buffer를 flush하고 Parquet footer를 완성한다. 프로그램이 비정상 종료되면 최근 episode가 불완전할 수 있다. 공식 [Dataset API](https://huggingface.co/docs/lerobot/main/api/datasets)는 `finalize()`를 생략한 dataset이 유효하지 않을 수 있다고 명시한다.
 
 ## 5.4 데이터 수집과 품질 관리
+
+도구 접촉/서랍 시연은 [M25.06 상태·행동 기록](/study/unit-m25-06-a/)에서 입력·제안/전송 명령·ack·다음 실제 관측과 중단/부분성과를 나누어 연습한다. 학습 행동의 단위/시점·제한 전후를 명시하고, 학습 행 선택 때문에 원래 실패/누락 에피소드나 평가 분모를 삭제하지 않는다.
 
 ### 5.4.1 다양성과 반복의 균형
 
@@ -264,8 +284,10 @@ feature \(x\)의 Z-score는 다음과 같다.
 ### 5.5.3 action representation
 
 - absolute joint target: 누적 drift가 적지만 embodiment와 calibration에 민감하다.
-- delta joint: local motion 학습이 쉽지만 drift와 scale 선택이 중요하다.
+- delta joint: 작은 변위로 표현할 수 있지만, 증분의 기준과 누적 여부에 따라 drift와 scale 해석이 달라진다.
 - end-effector delta: task geometry에 직관적이지만 IK와 singularity 처리가 필요하다.
+
+relative/delta라는 이름만으로 기준을 정하지 않는다. [LeRobot의 표현 계약](https://huggingface.co/docs/lerobot/action_representations)은 relative를 예측 시점의 같은 current state에 대한 chunk 전체의 변위로, delta를 이전 action에서 다음 action으로의 순차 증분으로 구분한다. 예를 들어 기준 0.3 rad와 값 [0.1,0.2] rad는 고정 기준이면 목표 [0.4,0.5] rad, 누적 증분이면 [0.4,0.6] rad다. 기준 상태의 시각·프레임, 누적 방식, 그리퍼 등의 제외 채널과 변환/정규화 순서를 명시하고 학습·배포에서 맞춘다. 그리퍼까지 관절 각도처럼 무조건 빼거나 모든 정책의 전처리 순서가 같다고 가정하지 않는다.
 
 학습과 배포에서 같은 representation과 inverse normalization을 사용한다. action 통계를 state 통계로 역정규화하는 실수는 shape가 같으면 조용히 지나갈 수 있다.
 
@@ -426,7 +448,7 @@ VLA inference가 50 ms를 넘으면 매 cycle 동기 추론은 deadline을 놓�
 - action chunk를 queue에 넣고 control loop가 소비한다.
 - policy worker를 별 thread/process/machine에 둔다.
 - execution horizon이 소진되기 전에 다음 chunk를 요청한다.
-- inference가 늦으면 이전 안전 action을 유지하거나 정지한다.
+- inference가 늦으면 사전에 정한 HOLD/STOP 계약으로 전환한다. 이전 명령 유지는 유효한 절대 위치 목표처럼 해당 의미가 허용되는 경우에만 제한 시간 안에서 사용한다. delta·속도·토글 명령의 반복 송신은 정지를 뜻하지 않으며 무조건 재사용하지 않는다.
 
 LeRobot은 [Asynchronous Inference](https://huggingface.co/docs/lerobot/async)와 RTC 방식 안내를 제공한다. 사용 API는 버전에 따라 달라질 수 있으므로 개념과 실제 CLI를 구분한다.
 
@@ -443,7 +465,7 @@ chunk 전체를 끝까지 open-loop로 실행하지 않고 첫 \(h\)개만 실�
 \qquad w_j=\exp(-\lambda j)
 \]
 
-`code/temporal_ensemble.py`가 이를 구현한다. 평균은 discontinuity를 줄일 수 있지만 multimodal 행동의 서로 다른 mode를 섞으면 위험한 중간 행동을 만들 수 있다. grasp 전환점처럼 mode switch가 있는 구간은 history를 reset하거나 phase-aware ensemble을 사용한다.
+`code/temporal_ensemble.py`가 이를 구현한다. 여기서 j는 현재 step에서 예측 생성 step까지의 나이이며 양의 λ는 최신 예측에 더 큰 가중치를 준다. 이는 이 책의 교육용 계약이다. [LeRobot ACT 구현](https://github.com/huggingface/lerobot/blob/main/src/lerobot/policies/act/modeling_act.py)의 `ACTTemporalEnsembler`는 가장 오래된 후보를 인덱스 0으로 두어 양의 `temporal_ensemble_coeff`일 때 오래된 후보를 더 크게 반영한다. 계수의 부호와 후보 순서가 다르므로 이 예제의 값을 그대로 ACT 설정에 옮기지 않는다. 평균은 discontinuity를 줄일 수 있지만 multimodal 행동의 서로 다른 mode를 섞으면 위험한 중간 행동을 만들 수 있다. grasp 전환점처럼 mode switch가 있는 구간은 history를 reset하거나 phase-aware ensemble을 사용한다.
 
 후보를 무조건 평균하지 않는다. 각 proposal에 schema, unit, finite, source timestamp, task/phase, 기본 hard limit 검사를 먼저 적용하고 stale/invalid proposal을 버린다. 유효 후보만 ensemble/filter한 뒤 최종 결과에 rate, joint/workspace, collision 검사를 다시 적용한다.
 
@@ -460,7 +482,7 @@ chunk 전체를 끝까지 open-loop로 실행하지 않고 첫 \(h\)개만 실�
 7. watchdog heartbeat
 8. command 전송
 
-`code/closed_loop_20hz.py`는 hardware-free mock loop로 joint limit과 per-cycle delta limit을 보여 준다. 실제 안전 정지는 software exception 하나에 의존하지 않고 hardware E-stop과 독립 watchdog을 둔다.
+`code/closed_loop_20hz.py`는 hardware-free mock loop로 joint limit과 per-cycle delta limit을 보여 준다. 제안·이전 명령·제한 벡터의 shape와 유한값을 clamp 전에 확인한다. Inf를 먼저 clamp하면 유한한 한계값으로 바뀌어 오류가 숨기므로 순서를 바꾸지 않는다. 이전 명령이 이미 범위 밖이면 자동 복구를 시도하지 않고 예외로 거부하며, 이 예제는 실제 모터 송신을 하지 않는다. 실제 안전 정지는 software exception 하나에 의존하지 않고 hardware E-stop과 독립 watchdog을 둔다.
 
 ::: {.learning-check}
 **잠깐 점검 — 부드러운 출력과 안전한 출력은 같은가**

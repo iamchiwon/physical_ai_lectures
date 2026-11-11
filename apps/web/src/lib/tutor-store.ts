@@ -35,17 +35,30 @@ export function successfulTurns(turns: StoredTutorTurn[]): ConversationTurn[] {
 }
 export function createTutorStore(storage: () => Pick<Storage, "getItem" | "setItem" | "removeItem">) {
   let state = INITIAL;
+  let storageWritable = true;
+  let persistedRaw: string | null = null;
+  let unsavedChanges = false;
   const listeners = new Set<() => void>();
   function notify() { listeners.forEach((listener) => listener()); }
   function persist() {
+    unsavedChanges = true;
     try {
-      if (!state.turns.length && !state.memory) storage().removeItem(TUTOR_STORAGE_KEY);
-      else storage().setItem(TUTOR_STORAGE_KEY, JSON.stringify({ version:1, turns:state.turns, memory:state.memory }));
+      if (!storageWritable || storage().getItem(TUTOR_STORAGE_KEY) !== persistedRaw) {
+        storageWritable = false;
+        state = {...state, storageNotice:"저장된 대화 원본을 보호하기 위해 저장을 멈췄습니다. 현재 대화는 이 화면에만 유지됩니다. 원본을 백업·복구한 뒤 새로고침하세요."};
+        return;
+      }
+      const raw = !state.turns.length && !state.memory ? null : JSON.stringify({ version:1, turns:state.turns, memory:state.memory });
+      if (raw === null) storage().removeItem(TUTOR_STORAGE_KEY);
+      else storage().setItem(TUTOR_STORAGE_KEY, raw);
+      // Retain exactly our write, not an unseen concurrent write read back afterwards.
+      persistedRaw = raw;
+      unsavedChanges = false;
       state = {...state, storageNotice:null};
     } catch { state = {...state, storageNotice:"브라우저에 대화를 저장하지 못했습니다. 현재 화면에서는 유지되지만 새로고침하면 최근 변경이 사라질 수 있습니다."}; }
   }
   function restore(raw: string | null) {
-    const parsed = raw ? storedSchema.parse(JSON.parse(raw)) : { turns:[], memory:null };
+    const parsed = raw === null ? { turns:[], memory:null } : storedSchema.parse(JSON.parse(raw));
     const turns = parsed.turns.map((turn): StoredTutorTurn => turn.status === "pending" ? {...turn,status:"failed"} : turn);
     const memory = parsed.memory && successfulTurns(turns).some((turn) => turn.id === parsed.memory!.throughId) ? parsed.memory : null;
     return { turns, memory, learnerState: deriveLearnerState(turns) };
@@ -56,8 +69,8 @@ export function createTutorStore(storage: () => Pick<Storage, "getItem" | "setIt
     subscribe(listener: () => void) { listeners.add(listener); return () => { listeners.delete(listener); }; },
     hydrate() {
       if (state.hydrated) return;
-      try { state = {...state,...restore(storage().getItem(TUTOR_STORAGE_KEY)),hydrated:true}; }
-      catch { state = {...state,hydrated:true,storageNotice:"저장된 대화를 읽지 못했습니다. 이 화면에서 새 대화를 시작할 수 있지만 이전 기록은 복원되지 않았습니다."}; }
+      try { persistedRaw = storage().getItem(TUTOR_STORAGE_KEY); state = {...state,...restore(persistedRaw),hydrated:true}; }
+      catch { storageWritable = false; state = {...state,hydrated:true,storageNotice:"저장된 대화를 읽지 못했습니다. 원본을 보호하기 위해 저장을 멈췄습니다. 새 대화는 이 화면에만 유지됩니다. 원본을 백업·복구한 뒤 새로고침하세요."}; }
       notify();
     },
     update(patch: Partial<TutorState>, save = false) {
@@ -76,8 +89,18 @@ export function createTutorStore(storage: () => Pick<Storage, "getItem" | "setIt
     },
     receiveStorage(raw: string | null) {
       try {
-        state = {...state,...restore(raw),epoch:state.epoch+1,loading:false,error:null,contextNotice:"다른 탭에서 변경한 대화를 불러왔습니다.",storageNotice:null};
-      } catch { state = {...state,storageNotice:"다른 탭의 대화 저장 형식이 올바르지 않아 현재 대화를 유지했습니다."}; }
+        const restored = restore(raw);
+        if (unsavedChanges && raw !== null) {
+          storageWritable = false;
+          persistedRaw = raw;
+          state = {...state, turns:state.turns.map((turn): StoredTutorTurn => turn.status === "pending" ? {...turn,status:"failed"} : turn), epoch:state.epoch+1, loading:false,
+            storageNotice:"다른 탭의 대화가 바뀌었습니다. 저장되지 않은 현재 대화는 이 화면에 유지했고 다른 탭 원본도 덮어쓰지 않았습니다. 현재 대화를 복사해 보관한 뒤 새로고침하세요."};
+          notify();
+          return;
+        }
+        persistedRaw = raw; storageWritable = true; unsavedChanges = false;
+        state = {...state,...restored,epoch:state.epoch+1,loading:false,error:null,contextNotice:"다른 탭에서 변경한 대화를 불러왔습니다.",storageNotice:null};
+      } catch { storageWritable = false; state = {...state,epoch:state.epoch+1,loading:false,storageNotice:"다른 탭의 대화 저장 형식이 올바르지 않아 현재 대화를 유지했습니다. 원본 보호를 위해 저장을 멈췄습니다."}; }
       notify();
     },
   };

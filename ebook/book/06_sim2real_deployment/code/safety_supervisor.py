@@ -30,6 +30,8 @@ class Decision:
 
 class SafetySupervisor:
     def __init__(self, timeout_s: float = 0.25) -> None:
+        if not math.isfinite(timeout_s) or timeout_s <= 0:
+            raise ValueError("timeout_s must be finite and positive")
         self.mode = Mode.OFFLINE
         self.timeout_s = timeout_s
         self._last_observation_s: float | None = None
@@ -43,7 +45,11 @@ class SafetySupervisor:
         return (0.10, -0.18, 0.02), (0.34, 0.18, 0.30)
 
     def record_observation(self, now_s: float | None = None) -> None:
-        self._last_observation_s = time.monotonic() if now_s is None else now_s
+        observed_s = time.monotonic() if now_s is None else now_s
+        if not math.isfinite(observed_s):
+            self.trip("invalid observation timestamp")
+            return
+        self._last_observation_s = observed_s
 
     def authorize_reset(self, *, human_approval: bool, pose_aligned: bool) -> None:
         self._human_approval = human_approval
@@ -55,6 +61,7 @@ class SafetySupervisor:
         if not (self._human_approval and self._pose_aligned):
             return False
         self.mode = Mode.DRY_RUN
+        self._last_observation_s = None
         self._human_approval = False
         self._pose_aligned = False
         return True
@@ -69,6 +76,9 @@ class SafetySupervisor:
 
     def trip(self, reason: str) -> Decision:
         self.mode = Mode.FAULT
+        self._last_observation_s = None
+        self._human_approval = False
+        self._pose_aligned = False
         return Decision(False, False, self.mode, reason)
 
     def evaluate_target(
@@ -77,11 +87,13 @@ class SafetySupervisor:
         now_s = time.monotonic() if now_s is None else now_s
         if self.mode in {Mode.OFFLINE, Mode.FAULT}:
             return Decision(False, False, self.mode, "mode does not accept live targets")
+        if not math.isfinite(now_s):
+            return self.trip("invalid watchdog clock")
         if len(xyz) != 3 or not all(math.isfinite(value) for value in xyz):
             return self.trip("invalid target")
         if (
             self._last_observation_s is None
-            or now_s - self._last_observation_s > self.timeout_s
+            or not 0.0 <= now_s - self._last_observation_s <= self.timeout_s
         ):
             return self.trip("observation watchdog timeout")
         lower, upper = self.bounds

@@ -5,7 +5,13 @@ export interface ReadingFocus { selectedText?: string | undefined; visibleCode?:
 interface Block { document: LessonDocument; title: string; content: string; start: number; code: number; language: string }
 export interface RetrievedContext { text: string; state: "none" | "found" | "ambiguous" | "not_found" }
 const normal = (text: string) => text.replace(/\s+/g, " ").trim();
+// Strong emphasis is absent from rendered selections; preserve literal code and source excerpts.
+const proseNormal = (text: string) => normal(text.replace(/\*\*([\s\S]+?)\*\*/g, "$1").replace(/__([\s\S]+?)__/g, "$1"));
 const stop = new Set(["코드","번째","설명","설명해","설명해줘","설명해주세요","알려주세요","왜","필요한가요","무엇","이것","이거","지금","본문","강의","여기","어떻게","주세요","the","this","that","line","code"]);
+// Literal fractions, decimals and percentages only; bare code line numbers stay separate.
+function numericLiterals(text: string) {
+  return [...text.matchAll(/(?<![A-Za-z0-9_./%+-])[+-]?\d+(?:(?:\/|\.)\d+%?|%)(?![A-Za-z0-9_/%]|\.\d)/g)].map(match => ({ value: match[0], at: match.index }));
+}
 function terms(question: string) {
   return [...new Set((question.toLowerCase().match(/[\p{L}_][\p{L}\p{N}_.-]*/gu) ?? []).map((word) => word.replace(/(?:에서는|에서|인가요|인가|은|는|을|를|의|이|가|에|과|와)$/u, "")).filter((word) => word.length > 1 && !stop.has(word)))];
 }
@@ -16,7 +22,7 @@ function blocks(document: LessonDocument): Block[] {
   for (let i=0;i<lines.length;i++) {
     const line=lines[i]!;
     const heading=/^#{1,6}\s+(.+)/.exec(line);
-    if(heading){flush();title=heading[1]!.replace(/\s*\{[^}]+\}\s*$/," ").trim();}
+    if(heading){flush();title=heading[1]!.replace(/\s*\{[^}]+\}\s*$/," ").trim();start=i+2;continue;}
     const fence=/^\s*(`{3,}|~{3,})(.*)$/.exec(line);
     if(fence){
       flush();const begin=i+2, body:string[]=[];const marker=fence[1]!;
@@ -45,9 +51,10 @@ function codeExcerpt(block: Block, question: string) {
 }
 export function retrieveLessonContext(question:string, documents:LessonDocument[], focus:ReadingFocus={}):RetrievedContext {
   const all=documents.flatMap(blocks), codes=all.filter(block=>block.code), query=terms(question);
+  const numeric = new Set(numericLiterals(question).map(literal => literal.value));
   const identifiers=[...question.matchAll(/\b[A-Za-z_]\w*(?:\.[A-Za-z_]\w*)+(?:\(\))?|\b[A-Za-z_]\w*(?=\s*\()/g)].map(match=>match[0].replace(/\(\)$/," ").trim().toLowerCase());
-  if(identifiers.length&&!all.some(block=>identifiers.some(name=>block.content.toLowerCase().includes(name))))return {state:"not_found",text:"[자료 상태: 요청한 함수·식별자를 찾지 못함] 다른 예제의 동작으로 대체하지 말고 추가 조회 또는 코드 확인을 요청하세요."};
-  const score=(block:Block)=>identifiers.filter(name=>block.content.toLowerCase().includes(name)).length*20+query.reduce((sum,term)=>sum+(block.content.toLowerCase().includes(term)?2:0)+(block.title.toLowerCase().includes(term)?3:0),0);
+  if(identifiers.length&&!all.some(block=>identifiers.some(name=>`${block.document.id} ${block.document.title} ${block.content}`.toLowerCase().includes(name))))return {state:"not_found",text:"[자료 상태: 요청한 함수·식별자를 찾지 못함] 다른 예제의 동작으로 대체하지 말고 추가 조회 또는 코드 확인을 요청하세요."};
+  const score=(block:Block)=>new Set(numericLiterals(block.content).filter(literal=>numeric.has(literal.value)).map(literal=>literal.value)).size*20+identifiers.filter(name=>block.content.toLowerCase().includes(name)).length*20+query.reduce((sum,term)=>sum+(block.content.toLowerCase().includes(term)?2:0)+(block.title.toLowerCase().includes(term)?3:0),0);
   const deicticCode=/이\s*코드|위\s*코드|아래\s*코드|해당\s*코드|본문.*코드|여기.*코드|this\s+code/i.test(question)||requestedLine(question)!==undefined;
   const codeQuestion=/코드|함수|명령어|스크립트|code|\bline\b/i.test(question)||requestedLine(question)!==undefined;
   const focusRelevant=deicticCode||/이\s*(?:내용|문장|부분|수식|개념|것)|이거|여기|선택|왜|어떻게/.test(question)||query.some(term=>(focus.selectedText??"").toLowerCase().includes(term));
@@ -72,15 +79,18 @@ export function retrieveLessonContext(question:string, documents:LessonDocument[
     if(!target&&codes.length>1&&deicticCode)return {state:"ambiguous",text:`[자료 상태: 지칭 대상 불명확]\n질문에 해당하는 코드가 여러 개입니다. 임의로 골라 답하지 말고 코드 선택 또는 제목을 확인해 주세요.\n${codes.slice(0,8).map(label).join("\n")}`};
     if(!target&&!codes.length&&deicticCode)return {state:"not_found",text:"[자료 상태: 현재 검색 범위에서 코드를 찾지 못함] 코드를 지어내지 마세요."};
   }
-  const selectedBlocks=selected?all.filter(block=>normal(block.content).includes(selected)):[];
+  const selectedBlocks=selected?all.filter(block=>normal(block.content).includes(selected)||(!block.code&&proseNormal(block.content).includes(selected))):[];
   const ranked=all.map(block=>({block,score:score(block)})).filter(item=>item.score>0).sort((a,b)=>b.score-a.score);
   const relevant=target?[target]:selectedBlocks.length?selectedBlocks.slice(0,2):ranked.slice(0,3).map(item=>item.block);
   if(!relevant.length)return {state:"none",text:""};
   const snippets=relevant.map(block=>{
     if(block.code)return codeExcerpt(block,question);
     const lower=block.content.toLowerCase();
-    const positions=query.map(term=>lower.indexOf(term)).filter(index=>index>=0);
-    const at=selected?normal(block.content).indexOf(selected):positions.length?Math.min(...positions):0;
+    const numericPositions=numericLiterals(block.content).filter(literal=>numeric.has(literal.value)).map(literal=>literal.at);
+    const positions=numericPositions.length?numericPositions:query.map(term=>lower.indexOf(term)).filter(index=>index>=0);
+    const sourceAt=selected?normal(block.content).indexOf(selected):-1;
+    const renderedAt=selected?proseNormal(block.content).indexOf(selected):-1;
+    const at=sourceAt>=0?sourceAt:renderedAt>=0?renderedAt:positions.length?Math.min(...positions):0;
     return `${label(block)}\n${block.content.slice(Math.max(0,at-200),Math.max(0,at-200)+1200)}`;
   });
   // Include the prose immediately around the target code, without sending the full lesson.

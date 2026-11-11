@@ -26,6 +26,16 @@ SO-101은 자세를 만드는 5개의 팔 관절과 그리퍼 구동기 1개를 
 
 ## 선수 지식과 준비물
 
+경로 계획의 공통 기반은 [M17.01 구성 공간·충돌](/study/unit-m17-01-a/)과 [M17.06 경로·시간 궤적](/study/unit-m17-06-a/)에서 보충한다. 이 장의 관절 제한·증분 제한은 전체 로봇의 충돌 없는 경로를 보장하지 않는다. 이동 베이스와 팔을 함께 쓰는 경우에는 [M18.06 주행-조작 미션](/study/unit-m18-06-a/)의 정지 확인·작업공간·권한 전환 계약을 별도로 적용한다.
+
+E4의 [M19.01 Tool·작업 프레임](/study/unit-m19-01-a/), [M19.03 티칭·접근/후퇴](/study/unit-m19-03-a/), [M20.01 영점·스케일·클러치](/study/unit-m20-01-a/)로 보충한다. 기구학 계산·Leader 매핑·기록된 시연·실제 추종 결과는 서로 다른 근거다. [M32.02 팔 캡스톤](/study/unit-m32-02-a/)은 제공된 기록으로 기본 보고서를 작성한 뒤 실제 장비 확장을 별도로 선택한다.
+
+[M10.02](/study/unit-m10-02-a/)에서 원본 URDF와 변환된 USD의 이름·기본 자세·물리/드라이브 속성 계약을 확인한다. 관절 기록의 시각을 맞추는 방법은 [M14.03 시간 정합](/study/unit-m14-03-a/)에서 보충한다. 변환 보고서나 TF가 맞는 것과 실제 장치의 구동·추종이 맞는 것은 별도다.
+
+이 장의 5축 예제를 읽기 전 [M06.01 프레임·합성](/study/unit-m06-01-a/)→[M06.02 DH·FK](/study/unit-m06-02-a/)→[M06.03 IK·Jacobian](/study/unit-m06-03-a/)→[M06.04 특이점·해의 연속성](/study/unit-m06-04-a/)을 이어 읽는다. [M06.06 영점 보정](/study/unit-m06-06-a/)은 교육용 기하와 실제 장치 명세를 구별하고, [M08.05 JointState와 TF](/study/unit-m08-05-a/)는 아래 브리지의 상태·변환 역할을 보충한다.
+
+기초 복귀: [M03.01 자유도·관절·기어비](/study/unit-m03-01-a/), [M03.02 구동기·엔코더](/study/unit-m03-02-a/), [M03.06 인터페이스/기계 한계](/study/unit-m03-06-a/)를 먼저 확인한다. 엔코더 수치 하나는 해당 축의 측정이며 말단의 전체 자세를 직접 측정한 값이 아니다. [M02.02](/study/unit-m02-02-a/)의 변환 방향·라디안 규약과 [M01.01](/study/unit-m01-01-a/)의 장치 권한을 확인한 뒤 아래 구현으로 넘어간다. 그리퍼 구동기를 세는 것과 팔이 독립적으로 조절할 수 있는 말단 자유도를 세는 것은 구분한다.
+
 ### 선수 지식
 
 - Python, NumPy 및 C++17 기초
@@ -39,7 +49,7 @@ SO-101은 자세를 만드는 5개의 팔 관절과 그리퍼 구동기 1개를 
 - ROS 2 Jazzy Jalisco
 - Python 3.12, NumPy
 - C++17, `rclcpp`, `sensor_msgs`
-- LeRobot 최신 안정 릴리스: CLI와 설정 필드는 릴리스에 따라 바뀔 수 있으므로 실행 전 공식 SO-101 문서를 확인한다.
+- LeRobot: 기준 환경 문서와 설치 릴리스의 공식 SO-101 문서를 대조한 뒤 태그 또는 커밋을 고정한다. CLI와 설정 필드는 릴리스에 따라 바뀔 수 있다.
 - 선택: SO-101 Leader/Follower, 각 암의 전원 공급 장치와 USB 직렬 어댑터
 - 선택: NVIDIA Isaac Sim과 SO-101 URDF/USD 자산
 
@@ -50,7 +60,7 @@ SO-101은 자세를 만드는 5개의 팔 관절과 그리퍼 구동기 1개를 
 실물 전원을 넣기 전에 다음을 확인한다.
 
 1. 암을 단단한 작업대에 고정하고 예상 작업 공간에서 사람, 케이블, 공구를 치운다.
-2. 모터와 전원 공급 장치의 정격 전압이 일치하는지 확인한다. 변형별 정격이 다를 수 있다.
+2. 해당 모델·변형의 제조사 권장 **동작 전압 범위**, 공급 전압의 변동·극성, 드라이버·배선의 연속/순간 전류 조건을 문서로 확인한다. 명목 전압 숫자가 같다는 사실만으로 호환성을 보장하지 않는다. 전원 입력과 통신 논리핀의 전압 정격도 별개이며, 절대 최대 정격을 정상 동작 목표로 삼지 않는다. [M03.04](/study/unit-m03-04-a/)와 [M03.06](/study/unit-m03-06-a/)의 가상 명세 읽기에서 이 구분을 먼저 연습한다.
 3. 하드웨어 전원 차단 수단을 조작자의 손이 닿는 곳에 둔다. 소프트웨어의 `Ctrl+C`는 비상 정지가 아니다.
 4. 최초 시험은 토크 비활성 또는 저속·무부하 조건에서 수행한다.
 5. 관절별 소프트 리밋(software limit)을 실제 기계 한계보다 안쪽에 둔다.
@@ -72,7 +82,7 @@ URDF(Unified Robot Description Format)는 로봇을 링크(link)와 관절(joint
 | 5 | 손목 롤 | `wrist_roll` | 그리퍼 축 주위 회전 |
 | 6 | 그리퍼 | `gripper` | 손가락 개폐, 팔의 pose DoF에는 미포함 |
 
-이름은 LeRobot/URDF 버전에 따라 다를 수 있다. 이름을 정수 인덱스로 암묵적으로 치환하지 말고, 항상 메시지의 `name` 배열을 기준으로 재정렬한다. `JointState`의 `position[i]`, `velocity[i]`, `effort[i]`는 같은 인덱스의 `name[i]`에 대응하며, 각 배열은 비어 있을 수 있다. 타임스탬프는 모든 관절 값이 획득된 시각 또는 가능한 한 가까운 시각을 나타내야 한다.[ROS 2 `JointState` 명세]
+이름은 LeRobot/URDF 버전에 따라 다를 수 있다. 이름을 정수 인덱스로 암묵적으로 치환하지 말고, 항상 메시지의 `name` 배열을 기준으로 재정렬한다. `JointState`의 `position[i]`, `velocity[i]`, `effort[i]`는 같은 인덱스의 `name[i]`에 대응하며, 각 배열은 비어 있을 수 있다. header는 관절 상태가 기록된 시각을 나타내며, 한 메시지에 담는 상태는 같은 시각을 나타내야 한다. 비동기 센서 값을 합칠 때는 먼저 공통 기준 시각으로 정렬·추정하고 원래 측정 시각과 사용한 정책·오차를 별도로 기록한다. 서로 다른 시각의 원시 값을 그대로 묶고 대략적인 시각 하나를 붙이는 것은 이 조건을 충족하지 않는다. [ROS 2 `JointState` 공식 명세](https://github.com/ros2/common_interfaces/blob/jazzy/sensor_msgs/msg/JointState.msg)
 
 ### 3.1.2 URDF에서 읽어야 할 정보
 
@@ -107,7 +117,11 @@ OpenUSD의 `UsdPhysicsArticulationRootAPI`는 여러 강체와 관절을 축약 
 6. **드라이브:** 너무 큰 stiffness는 수치적으로 불안정하거나 실물보다 과도하게 단단한 응답을 만든다.
 7. **Mimic/그리퍼:** 단일 구동기로 양쪽 손가락을 묶는 관계가 임포트 후 유지되는지 확인한다.
 
+바퀴/서랍의 회전·병진 관절과 고정/부유 베이스를 비교하려면 [M25.02 관절·Articulation Root](/study/unit-m25-02-a/)로 이어간다. 부모 계층과 body0/body1 연결 그래프, root 표식과 world 고정 제약, 목표 입력과 실제 위치/속도 관측을 각각 구분한다.
+
 USD Physics 명세는 관절계 루트, 관절, 강체 목록으로 articulation을 구성하며 회전 관절 한계와 드라이브를 명시한다.[OpenUSD, 2026]
+
+변환 결과를 PhysX 전용 속성만으로 가정하지 않는다. [Isaac Sim 6.2 URDF Importer](https://docs.isaacsim.omniverse.nvidia.com/6.2.0/importer_exporter/ext_isaacsim_asset_importer_urdf.html)는 mimic과 articulation의 Newton 스키마도 작성한다. 원본 규약·변환 옵션·작성된 API·선택한 런타임의 소비 여부를 나눠 확인하고, 가져오기에 성공했다는 이유만으로 그리퍼 연동이나 제어 동작을 승인하지 않는다.
 
 ![그림 3-2. URDF에서 USD articulation으로 보존해야 할 정보](images/urdf_to_usd.svg)
 
@@ -288,6 +302,8 @@ LeRobot의 공식 Isaac Teleop 예제도 기본적으로 Follower를 Leader의 �
 
 ## 3.5 안전한 텔레오퍼레이션 루프
 
+[M25.06 키보드·도구 접촉·상태/행동 기록](/study/unit-m25-06-a/)에서 활성 입력/신선도와 제한 후 속도 전송·접촉 관측을 구분한다. 아래 관절 위치 HOLD와 속도0은 서로 다른 인터페이스이며 어느 쪽도 실제 정지/힘0의 관측을 자동 생성하지 않는다.
+
 ![그림 3-3. 안전 계층을 포함한 Leader-Follower 제어 루프](images/safe_teleop_pipeline.svg)
 
 ### 3.5.1 안전 계층
@@ -304,7 +320,7 @@ LeRobot의 공식 Isaac Teleop 예제도 기본적으로 Follower를 Leader의 �
 | 데드맨 스위치 | 조작자 지속 입력 | hold |
 | 독립 하드웨어 | 전원 차단/E-stop | 모터 전력 차단 |
 
-`code/safe_teleop_core.py`는 하드웨어와 분리된 순수 Python 예제다. `JointSafetyFilter`가 이름 기반 재정렬, 위치 clamp, 속도 제한, timeout을 적용한다. `--dry-run`과 같은 단계 없이 실물 송신 함수를 연결하지 않는다.
+`code/safe_teleop_core.py`는 하드웨어와 분리된 순수 Python 예제다. `JointSafetyFilter`가 이름 기반 재정렬, 위치 clamp, 속도 제한, timeout을 적용한다. 측정 시작값과 HOLD 자세가 이미 soft limit 안에 있어야 한다. 범위 밖 측정을 clamp해 즉시 복구 명령으로 쓰지 않고 FAULT로 거부한다. dt와 수신 단조 시각의 유한성·양수 기간·시각 역전을 검사하며, 이 예제의 now는 수신 시각이라 원본 센서 stamp 검증을 대신하지 않는다. FAULT의 command는 빈 딕셔너리이며 송신하지 않는다. 이 필터의 오류 표시는 한 번의 입력 거부이고 latched 복귀·승격은 별도 감독기가 담당한다. `--dry-run`과 같은 단계 없이 실물 송신 함수를 연결하지 않는다.
 
 ### 3.5.2 주기와 지연
 
@@ -346,12 +362,12 @@ $$
 
 ### 3.6.3 robot_state_publisher와 TF
 
-`robot_state_publisher`는 URDF와 `joint_states`를 사용해 링크 TF를 발행한다. 실물과 시뮬레이터가 같은 TF 트리에 동시에 같은 프레임 이름을 발행하면 충돌하므로 접두사를 둔다.
+`robot_state_publisher`는 URDF와 측정 `joint_states`로 링크 변환을 계산한다. 고정 관절은 시작 시 `/tf_static`에, 움직이는 관절은 상태 갱신에 따라 `/tf`에 발행한다. 이 노드는 위치 목표를 생성하거나 모터를 구동하지 않는다. 실물과 시뮬레이터가 같은 TF 버퍼에 동시에 같은 child 프레임을 발행하면 충돌하므로 명시적인 프레임 접두사를 둔다.
 
 - 실물: `real/base_link`, `real/gripper_frame_link`
 - 시뮬레이터: `sim/base_link`, `sim/gripper_frame_link`
 
-또는 서로 다른 ROS domain/namespace를 사용하고 브리지에서 필요한 토픽만 연결한다. 정적 카메라 외부 파라미터와 동적 관절 TF를 중복 발행하지 않는다.
+서로 다른 ROS domain으로 그래프를 격리할 수도 있다. namespace만 바꾸면 메시지 안의 frame_id 문자열은 자동으로 바뀌지 않는다. `frame_prefix` 또는 모델의 프레임 이름·모든 관련 센서의 header.frame_id를 일관되게 설정하고, TF 토픽을 공유할지 별도 버퍼로 나눌지 정한다. 격리된 그래프를 브리지할 때도 프레임 계약을 다시 확인한다. 정적 카메라 외부 파라미터와 동적 관절 TF를 중복 발행하지 않는다.
 
 ### 3.6.4 Isaac Sim 미러링
 
@@ -401,13 +417,15 @@ solution [deg]      : [ 15.3  10.6  63.0 -43.3   0.0]
 python code/safe_teleop_core.py
 ```
 
+초기 그리퍼 측정값은 하한 5이며 속도 제한 후 7, 9, 11, 13으로 움직인다. 다른 관절의 초기값 0도 각각의 범위 안이다.
+
 **예상 출력 예시**
 
 ```text
-frame=0 status=ALIGNING command=[0.01, -0.01, 0.01, -0.01, 0.02, 2.00]
-frame=1 status=ALIGNING command=[0.02, -0.02, 0.02, -0.03, 0.04, 4.00]
-frame=2 status=ALIGNING command=[0.03, -0.03, 0.04, -0.04, 0.06, 6.00]
-frame=3 status=ALIGNING command=[0.04, -0.04, 0.05, -0.06, 0.08, 8.00]
+frame=0 status=ALIGNING command=[0.01, -0.01, 0.01, -0.01, 0.02, 7.00]
+frame=1 status=ALIGNING command=[0.02, -0.02, 0.02, -0.03, 0.04, 9.00]
+frame=2 status=ALIGNING command=[0.03, -0.03, 0.04, -0.04, 0.06, 11.00]
+frame=3 status=ALIGNING command=[0.04, -0.04, 0.05, -0.06, 0.08, 13.00]
 watchdog status=HOLD reason=leader stream stale
 ```
 

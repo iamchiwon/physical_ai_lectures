@@ -32,7 +32,7 @@ export function TextbookMarkdown({ unit }: { unit: TextbookUnit }) {
   return (
     <div className="textbook-copy tutor-markdown">
       <ReactMarkdown
-        remarkPlugins={[remarkCjkFriendly, remarkGfm, remarkMath]}
+        remarkPlugins={[remarkCjkFriendly, [remarkGfm, { singleTilde: false }], remarkMath]}
         rehypePlugins={[[rehypeKatex, { strict: false, throwOnError: false, trust: false }]]}
         urlTransform={(url) => textbookLink(url, unit)}
         components={{

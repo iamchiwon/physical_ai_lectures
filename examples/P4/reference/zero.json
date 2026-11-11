@@ -1,0 +1,1382 @@
+{
+  "schema_version": 1,
+  "mode": "train_select_locked_test_and_simulate",
+  "split_counts": {
+    "train": 4,
+    "validation": 2,
+    "test": 2
+  },
+  "demonstrations": {
+    "schema_version": 1,
+    "rows": [
+      {
+        "id": "d1",
+        "session": "session-t1",
+        "split": "train",
+        "x_m": -1,
+        "u_mps": 0.5
+      },
+      {
+        "id": "d2",
+        "session": "session-t1",
+        "split": "train",
+        "x_m": -0.5,
+        "u_mps": 0.25
+      },
+      {
+        "id": "d3",
+        "session": "session-t2",
+        "split": "train",
+        "x_m": 0.5,
+        "u_mps": -0.25
+      },
+      {
+        "id": "d4",
+        "session": "session-t2",
+        "split": "train",
+        "x_m": 1,
+        "u_mps": -0.5
+      },
+      {
+        "id": "d5",
+        "session": "session-v1",
+        "split": "validation",
+        "x_m": -0.25,
+        "u_mps": 0.125
+      },
+      {
+        "id": "d6",
+        "session": "session-v1",
+        "split": "validation",
+        "x_m": 0.25,
+        "u_mps": -0.125
+      },
+      {
+        "id": "d7",
+        "session": "session-e1",
+        "split": "test",
+        "x_m": -0.8,
+        "u_mps": 0.4
+      },
+      {
+        "id": "d8",
+        "session": "session-e1",
+        "split": "test",
+        "x_m": 0.8,
+        "u_mps": -0.4
+      }
+    ]
+  },
+  "training": {
+    "policies": {
+      "affine": {
+        "a": -0.5,
+        "b": 0.0
+      },
+      "zero": {
+        "a": 0.0,
+        "b": 0.0
+      }
+    },
+    "selected_policy_id": "affine",
+    "validation_mse_mps2": {
+      "affine": 0.0,
+      "zero": 0.015625
+    },
+    "locked_test_mse_mps2": {
+      "affine": 0.0,
+      "zero": 0.16000000000000003
+    },
+    "train_ids": [
+      "d1",
+      "d2",
+      "d3",
+      "d4"
+    ]
+  },
+  "evaluated_policy_id": "zero",
+  "total_experiments": 6,
+  "simulated_successes": 0,
+  "simulated_success_rate": 0.0,
+  "invalid_experiments": 3,
+  "results": [
+    {
+      "scenario": "nominal",
+      "input_case": {
+        "id": "nominal",
+        "gain": 1,
+        "events": []
+      },
+      "mode": "synthetic_closed_loop",
+      "terminal_state": "HORIZON_FAILED",
+      "simulated_success": false,
+      "command_count": 8,
+      "final_simulated_x_m": 1.0,
+      "epoch": 1,
+      "processed_ticks": 8,
+      "unprocessed_ticks": 0,
+      "ticks": [
+        {
+          "tick": 0,
+          "heartbeat_stamp_ms": 1000,
+          "admission_ms": 1010,
+          "observation": {
+            "clock_id": "ClockA",
+            "robot_id": "r1",
+            "boot_id": "bootA",
+            "map_revision": "map-v7",
+            "model_revision": "model-v3",
+            "calibration_revision": "cal-c2",
+            "frame_id": "map",
+            "unit": "m",
+            "action_schema": "velocity-map-x-v1",
+            "bundle_id": "bundle-A",
+            "stamp_ms": 1000,
+            "transform_stamp_ms": 1000,
+            "x_m": 1.0
+          },
+          "request": {
+            "issued_ms": 1000,
+            "request_id": "nominal-q0",
+            "epoch": 1,
+            "bundle_id": "bundle-A",
+            "action_schema": "velocity-map-x-v1"
+          },
+          "reason": null,
+          "observation_age_ms": 10,
+          "current_x_m": 1.0,
+          "last_simulated_x_m": 1.0,
+          "new_command": {
+            "raw_u_mps": 0.0,
+            "limited_u_mps": 0.0,
+            "effect": "synthetic_only"
+          },
+          "next_simulated_observation": {
+            "x_m": 1.0,
+            "stamp_ms": 1500,
+            "source": "noiseless_one_axis_model"
+          },
+          "outcome": "SIMULATED_STEP"
+        },
+        {
+          "tick": 1,
+          "heartbeat_stamp_ms": 1500,
+          "admission_ms": 1510,
+          "observation": {
+            "clock_id": "ClockA",
+            "robot_id": "r1",
+            "boot_id": "bootA",
+            "map_revision": "map-v7",
+            "model_revision": "model-v3",
+            "calibration_revision": "cal-c2",
+            "frame_id": "map",
+            "unit": "m",
+            "action_schema": "velocity-map-x-v1",
+            "bundle_id": "bundle-A",
+            "stamp_ms": 1500,
+            "transform_stamp_ms": 1500,
+            "x_m": 1.0
+          },
+          "request": {
+            "issued_ms": 1500,
+            "request_id": "nominal-q1",
+            "epoch": 1,
+            "bundle_id": "bundle-A",
+            "action_schema": "velocity-map-x-v1"
+          },
+          "reason": null,
+          "observation_age_ms": 10,
+          "current_x_m": 1.0,
+          "last_simulated_x_m": 1.0,
+          "new_command": {
+            "raw_u_mps": 0.0,
+            "limited_u_mps": 0.0,
+            "effect": "synthetic_only"
+          },
+          "next_simulated_observation": {
+            "x_m": 1.0,
+            "stamp_ms": 2000,
+            "source": "noiseless_one_axis_model"
+          },
+          "outcome": "SIMULATED_STEP"
+        },
+        {
+          "tick": 2,
+          "heartbeat_stamp_ms": 2000,
+          "admission_ms": 2010,
+          "observation": {
+            "clock_id": "ClockA",
+            "robot_id": "r1",
+            "boot_id": "bootA",
+            "map_revision": "map-v7",
+            "model_revision": "model-v3",
+            "calibration_revision": "cal-c2",
+            "frame_id": "map",
+            "unit": "m",
+            "action_schema": "velocity-map-x-v1",
+            "bundle_id": "bundle-A",
+            "stamp_ms": 2000,
+            "transform_stamp_ms": 2000,
+            "x_m": 1.0
+          },
+          "request": {
+            "issued_ms": 2000,
+            "request_id": "nominal-q2",
+            "epoch": 1,
+            "bundle_id": "bundle-A",
+            "action_schema": "velocity-map-x-v1"
+          },
+          "reason": null,
+          "observation_age_ms": 10,
+          "current_x_m": 1.0,
+          "last_simulated_x_m": 1.0,
+          "new_command": {
+            "raw_u_mps": 0.0,
+            "limited_u_mps": 0.0,
+            "effect": "synthetic_only"
+          },
+          "next_simulated_observation": {
+            "x_m": 1.0,
+            "stamp_ms": 2500,
+            "source": "noiseless_one_axis_model"
+          },
+          "outcome": "SIMULATED_STEP"
+        },
+        {
+          "tick": 3,
+          "heartbeat_stamp_ms": 2500,
+          "admission_ms": 2510,
+          "observation": {
+            "clock_id": "ClockA",
+            "robot_id": "r1",
+            "boot_id": "bootA",
+            "map_revision": "map-v7",
+            "model_revision": "model-v3",
+            "calibration_revision": "cal-c2",
+            "frame_id": "map",
+            "unit": "m",
+            "action_schema": "velocity-map-x-v1",
+            "bundle_id": "bundle-A",
+            "stamp_ms": 2500,
+            "transform_stamp_ms": 2500,
+            "x_m": 1.0
+          },
+          "request": {
+            "issued_ms": 2500,
+            "request_id": "nominal-q3",
+            "epoch": 1,
+            "bundle_id": "bundle-A",
+            "action_schema": "velocity-map-x-v1"
+          },
+          "reason": null,
+          "observation_age_ms": 10,
+          "current_x_m": 1.0,
+          "last_simulated_x_m": 1.0,
+          "new_command": {
+            "raw_u_mps": 0.0,
+            "limited_u_mps": 0.0,
+            "effect": "synthetic_only"
+          },
+          "next_simulated_observation": {
+            "x_m": 1.0,
+            "stamp_ms": 3000,
+            "source": "noiseless_one_axis_model"
+          },
+          "outcome": "SIMULATED_STEP"
+        },
+        {
+          "tick": 4,
+          "heartbeat_stamp_ms": 3000,
+          "admission_ms": 3010,
+          "observation": {
+            "clock_id": "ClockA",
+            "robot_id": "r1",
+            "boot_id": "bootA",
+            "map_revision": "map-v7",
+            "model_revision": "model-v3",
+            "calibration_revision": "cal-c2",
+            "frame_id": "map",
+            "unit": "m",
+            "action_schema": "velocity-map-x-v1",
+            "bundle_id": "bundle-A",
+            "stamp_ms": 3000,
+            "transform_stamp_ms": 3000,
+            "x_m": 1.0
+          },
+          "request": {
+            "issued_ms": 3000,
+            "request_id": "nominal-q4",
+            "epoch": 1,
+            "bundle_id": "bundle-A",
+            "action_schema": "velocity-map-x-v1"
+          },
+          "reason": null,
+          "observation_age_ms": 10,
+          "current_x_m": 1.0,
+          "last_simulated_x_m": 1.0,
+          "new_command": {
+            "raw_u_mps": 0.0,
+            "limited_u_mps": 0.0,
+            "effect": "synthetic_only"
+          },
+          "next_simulated_observation": {
+            "x_m": 1.0,
+            "stamp_ms": 3500,
+            "source": "noiseless_one_axis_model"
+          },
+          "outcome": "SIMULATED_STEP"
+        },
+        {
+          "tick": 5,
+          "heartbeat_stamp_ms": 3500,
+          "admission_ms": 3510,
+          "observation": {
+            "clock_id": "ClockA",
+            "robot_id": "r1",
+            "boot_id": "bootA",
+            "map_revision": "map-v7",
+            "model_revision": "model-v3",
+            "calibration_revision": "cal-c2",
+            "frame_id": "map",
+            "unit": "m",
+            "action_schema": "velocity-map-x-v1",
+            "bundle_id": "bundle-A",
+            "stamp_ms": 3500,
+            "transform_stamp_ms": 3500,
+            "x_m": 1.0
+          },
+          "request": {
+            "issued_ms": 3500,
+            "request_id": "nominal-q5",
+            "epoch": 1,
+            "bundle_id": "bundle-A",
+            "action_schema": "velocity-map-x-v1"
+          },
+          "reason": null,
+          "observation_age_ms": 10,
+          "current_x_m": 1.0,
+          "last_simulated_x_m": 1.0,
+          "new_command": {
+            "raw_u_mps": 0.0,
+            "limited_u_mps": 0.0,
+            "effect": "synthetic_only"
+          },
+          "next_simulated_observation": {
+            "x_m": 1.0,
+            "stamp_ms": 4000,
+            "source": "noiseless_one_axis_model"
+          },
+          "outcome": "SIMULATED_STEP"
+        },
+        {
+          "tick": 6,
+          "heartbeat_stamp_ms": 4000,
+          "admission_ms": 4010,
+          "observation": {
+            "clock_id": "ClockA",
+            "robot_id": "r1",
+            "boot_id": "bootA",
+            "map_revision": "map-v7",
+            "model_revision": "model-v3",
+            "calibration_revision": "cal-c2",
+            "frame_id": "map",
+            "unit": "m",
+            "action_schema": "velocity-map-x-v1",
+            "bundle_id": "bundle-A",
+            "stamp_ms": 4000,
+            "transform_stamp_ms": 4000,
+            "x_m": 1.0
+          },
+          "request": {
+            "issued_ms": 4000,
+            "request_id": "nominal-q6",
+            "epoch": 1,
+            "bundle_id": "bundle-A",
+            "action_schema": "velocity-map-x-v1"
+          },
+          "reason": null,
+          "observation_age_ms": 10,
+          "current_x_m": 1.0,
+          "last_simulated_x_m": 1.0,
+          "new_command": {
+            "raw_u_mps": 0.0,
+            "limited_u_mps": 0.0,
+            "effect": "synthetic_only"
+          },
+          "next_simulated_observation": {
+            "x_m": 1.0,
+            "stamp_ms": 4500,
+            "source": "noiseless_one_axis_model"
+          },
+          "outcome": "SIMULATED_STEP"
+        },
+        {
+          "tick": 7,
+          "heartbeat_stamp_ms": 4500,
+          "admission_ms": 4510,
+          "observation": {
+            "clock_id": "ClockA",
+            "robot_id": "r1",
+            "boot_id": "bootA",
+            "map_revision": "map-v7",
+            "model_revision": "model-v3",
+            "calibration_revision": "cal-c2",
+            "frame_id": "map",
+            "unit": "m",
+            "action_schema": "velocity-map-x-v1",
+            "bundle_id": "bundle-A",
+            "stamp_ms": 4500,
+            "transform_stamp_ms": 4500,
+            "x_m": 1.0
+          },
+          "request": {
+            "issued_ms": 4500,
+            "request_id": "nominal-q7",
+            "epoch": 1,
+            "bundle_id": "bundle-A",
+            "action_schema": "velocity-map-x-v1"
+          },
+          "reason": null,
+          "observation_age_ms": 10,
+          "current_x_m": 1.0,
+          "last_simulated_x_m": 1.0,
+          "new_command": {
+            "raw_u_mps": 0.0,
+            "limited_u_mps": 0.0,
+            "effect": "synthetic_only"
+          },
+          "next_simulated_observation": {
+            "x_m": 1.0,
+            "stamp_ms": 5000,
+            "source": "noiseless_one_axis_model"
+          },
+          "outcome": "SIMULATED_STEP"
+        }
+      ],
+      "real_robot_or_safety_verified": false
+    },
+    {
+      "scenario": "shifted-dynamics",
+      "input_case": {
+        "id": "shifted-dynamics",
+        "gain": 0,
+        "events": []
+      },
+      "mode": "synthetic_closed_loop",
+      "terminal_state": "HORIZON_FAILED",
+      "simulated_success": false,
+      "command_count": 8,
+      "final_simulated_x_m": 1.0,
+      "epoch": 1,
+      "processed_ticks": 8,
+      "unprocessed_ticks": 0,
+      "ticks": [
+        {
+          "tick": 0,
+          "heartbeat_stamp_ms": 1000,
+          "admission_ms": 1010,
+          "observation": {
+            "clock_id": "ClockA",
+            "robot_id": "r1",
+            "boot_id": "bootA",
+            "map_revision": "map-v7",
+            "model_revision": "model-v3",
+            "calibration_revision": "cal-c2",
+            "frame_id": "map",
+            "unit": "m",
+            "action_schema": "velocity-map-x-v1",
+            "bundle_id": "bundle-A",
+            "stamp_ms": 1000,
+            "transform_stamp_ms": 1000,
+            "x_m": 1.0
+          },
+          "request": {
+            "issued_ms": 1000,
+            "request_id": "shifted-dynamics-q0",
+            "epoch": 1,
+            "bundle_id": "bundle-A",
+            "action_schema": "velocity-map-x-v1"
+          },
+          "reason": null,
+          "observation_age_ms": 10,
+          "current_x_m": 1.0,
+          "last_simulated_x_m": 1.0,
+          "new_command": {
+            "raw_u_mps": 0.0,
+            "limited_u_mps": 0.0,
+            "effect": "synthetic_only"
+          },
+          "next_simulated_observation": {
+            "x_m": 1.0,
+            "stamp_ms": 1500,
+            "source": "noiseless_one_axis_model"
+          },
+          "outcome": "SIMULATED_STEP"
+        },
+        {
+          "tick": 1,
+          "heartbeat_stamp_ms": 1500,
+          "admission_ms": 1510,
+          "observation": {
+            "clock_id": "ClockA",
+            "robot_id": "r1",
+            "boot_id": "bootA",
+            "map_revision": "map-v7",
+            "model_revision": "model-v3",
+            "calibration_revision": "cal-c2",
+            "frame_id": "map",
+            "unit": "m",
+            "action_schema": "velocity-map-x-v1",
+            "bundle_id": "bundle-A",
+            "stamp_ms": 1500,
+            "transform_stamp_ms": 1500,
+            "x_m": 1.0
+          },
+          "request": {
+            "issued_ms": 1500,
+            "request_id": "shifted-dynamics-q1",
+            "epoch": 1,
+            "bundle_id": "bundle-A",
+            "action_schema": "velocity-map-x-v1"
+          },
+          "reason": null,
+          "observation_age_ms": 10,
+          "current_x_m": 1.0,
+          "last_simulated_x_m": 1.0,
+          "new_command": {
+            "raw_u_mps": 0.0,
+            "limited_u_mps": 0.0,
+            "effect": "synthetic_only"
+          },
+          "next_simulated_observation": {
+            "x_m": 1.0,
+            "stamp_ms": 2000,
+            "source": "noiseless_one_axis_model"
+          },
+          "outcome": "SIMULATED_STEP"
+        },
+        {
+          "tick": 2,
+          "heartbeat_stamp_ms": 2000,
+          "admission_ms": 2010,
+          "observation": {
+            "clock_id": "ClockA",
+            "robot_id": "r1",
+            "boot_id": "bootA",
+            "map_revision": "map-v7",
+            "model_revision": "model-v3",
+            "calibration_revision": "cal-c2",
+            "frame_id": "map",
+            "unit": "m",
+            "action_schema": "velocity-map-x-v1",
+            "bundle_id": "bundle-A",
+            "stamp_ms": 2000,
+            "transform_stamp_ms": 2000,
+            "x_m": 1.0
+          },
+          "request": {
+            "issued_ms": 2000,
+            "request_id": "shifted-dynamics-q2",
+            "epoch": 1,
+            "bundle_id": "bundle-A",
+            "action_schema": "velocity-map-x-v1"
+          },
+          "reason": null,
+          "observation_age_ms": 10,
+          "current_x_m": 1.0,
+          "last_simulated_x_m": 1.0,
+          "new_command": {
+            "raw_u_mps": 0.0,
+            "limited_u_mps": 0.0,
+            "effect": "synthetic_only"
+          },
+          "next_simulated_observation": {
+            "x_m": 1.0,
+            "stamp_ms": 2500,
+            "source": "noiseless_one_axis_model"
+          },
+          "outcome": "SIMULATED_STEP"
+        },
+        {
+          "tick": 3,
+          "heartbeat_stamp_ms": 2500,
+          "admission_ms": 2510,
+          "observation": {
+            "clock_id": "ClockA",
+            "robot_id": "r1",
+            "boot_id": "bootA",
+            "map_revision": "map-v7",
+            "model_revision": "model-v3",
+            "calibration_revision": "cal-c2",
+            "frame_id": "map",
+            "unit": "m",
+            "action_schema": "velocity-map-x-v1",
+            "bundle_id": "bundle-A",
+            "stamp_ms": 2500,
+            "transform_stamp_ms": 2500,
+            "x_m": 1.0
+          },
+          "request": {
+            "issued_ms": 2500,
+            "request_id": "shifted-dynamics-q3",
+            "epoch": 1,
+            "bundle_id": "bundle-A",
+            "action_schema": "velocity-map-x-v1"
+          },
+          "reason": null,
+          "observation_age_ms": 10,
+          "current_x_m": 1.0,
+          "last_simulated_x_m": 1.0,
+          "new_command": {
+            "raw_u_mps": 0.0,
+            "limited_u_mps": 0.0,
+            "effect": "synthetic_only"
+          },
+          "next_simulated_observation": {
+            "x_m": 1.0,
+            "stamp_ms": 3000,
+            "source": "noiseless_one_axis_model"
+          },
+          "outcome": "SIMULATED_STEP"
+        },
+        {
+          "tick": 4,
+          "heartbeat_stamp_ms": 3000,
+          "admission_ms": 3010,
+          "observation": {
+            "clock_id": "ClockA",
+            "robot_id": "r1",
+            "boot_id": "bootA",
+            "map_revision": "map-v7",
+            "model_revision": "model-v3",
+            "calibration_revision": "cal-c2",
+            "frame_id": "map",
+            "unit": "m",
+            "action_schema": "velocity-map-x-v1",
+            "bundle_id": "bundle-A",
+            "stamp_ms": 3000,
+            "transform_stamp_ms": 3000,
+            "x_m": 1.0
+          },
+          "request": {
+            "issued_ms": 3000,
+            "request_id": "shifted-dynamics-q4",
+            "epoch": 1,
+            "bundle_id": "bundle-A",
+            "action_schema": "velocity-map-x-v1"
+          },
+          "reason": null,
+          "observation_age_ms": 10,
+          "current_x_m": 1.0,
+          "last_simulated_x_m": 1.0,
+          "new_command": {
+            "raw_u_mps": 0.0,
+            "limited_u_mps": 0.0,
+            "effect": "synthetic_only"
+          },
+          "next_simulated_observation": {
+            "x_m": 1.0,
+            "stamp_ms": 3500,
+            "source": "noiseless_one_axis_model"
+          },
+          "outcome": "SIMULATED_STEP"
+        },
+        {
+          "tick": 5,
+          "heartbeat_stamp_ms": 3500,
+          "admission_ms": 3510,
+          "observation": {
+            "clock_id": "ClockA",
+            "robot_id": "r1",
+            "boot_id": "bootA",
+            "map_revision": "map-v7",
+            "model_revision": "model-v3",
+            "calibration_revision": "cal-c2",
+            "frame_id": "map",
+            "unit": "m",
+            "action_schema": "velocity-map-x-v1",
+            "bundle_id": "bundle-A",
+            "stamp_ms": 3500,
+            "transform_stamp_ms": 3500,
+            "x_m": 1.0
+          },
+          "request": {
+            "issued_ms": 3500,
+            "request_id": "shifted-dynamics-q5",
+            "epoch": 1,
+            "bundle_id": "bundle-A",
+            "action_schema": "velocity-map-x-v1"
+          },
+          "reason": null,
+          "observation_age_ms": 10,
+          "current_x_m": 1.0,
+          "last_simulated_x_m": 1.0,
+          "new_command": {
+            "raw_u_mps": 0.0,
+            "limited_u_mps": 0.0,
+            "effect": "synthetic_only"
+          },
+          "next_simulated_observation": {
+            "x_m": 1.0,
+            "stamp_ms": 4000,
+            "source": "noiseless_one_axis_model"
+          },
+          "outcome": "SIMULATED_STEP"
+        },
+        {
+          "tick": 6,
+          "heartbeat_stamp_ms": 4000,
+          "admission_ms": 4010,
+          "observation": {
+            "clock_id": "ClockA",
+            "robot_id": "r1",
+            "boot_id": "bootA",
+            "map_revision": "map-v7",
+            "model_revision": "model-v3",
+            "calibration_revision": "cal-c2",
+            "frame_id": "map",
+            "unit": "m",
+            "action_schema": "velocity-map-x-v1",
+            "bundle_id": "bundle-A",
+            "stamp_ms": 4000,
+            "transform_stamp_ms": 4000,
+            "x_m": 1.0
+          },
+          "request": {
+            "issued_ms": 4000,
+            "request_id": "shifted-dynamics-q6",
+            "epoch": 1,
+            "bundle_id": "bundle-A",
+            "action_schema": "velocity-map-x-v1"
+          },
+          "reason": null,
+          "observation_age_ms": 10,
+          "current_x_m": 1.0,
+          "last_simulated_x_m": 1.0,
+          "new_command": {
+            "raw_u_mps": 0.0,
+            "limited_u_mps": 0.0,
+            "effect": "synthetic_only"
+          },
+          "next_simulated_observation": {
+            "x_m": 1.0,
+            "stamp_ms": 4500,
+            "source": "noiseless_one_axis_model"
+          },
+          "outcome": "SIMULATED_STEP"
+        },
+        {
+          "tick": 7,
+          "heartbeat_stamp_ms": 4500,
+          "admission_ms": 4510,
+          "observation": {
+            "clock_id": "ClockA",
+            "robot_id": "r1",
+            "boot_id": "bootA",
+            "map_revision": "map-v7",
+            "model_revision": "model-v3",
+            "calibration_revision": "cal-c2",
+            "frame_id": "map",
+            "unit": "m",
+            "action_schema": "velocity-map-x-v1",
+            "bundle_id": "bundle-A",
+            "stamp_ms": 4500,
+            "transform_stamp_ms": 4500,
+            "x_m": 1.0
+          },
+          "request": {
+            "issued_ms": 4500,
+            "request_id": "shifted-dynamics-q7",
+            "epoch": 1,
+            "bundle_id": "bundle-A",
+            "action_schema": "velocity-map-x-v1"
+          },
+          "reason": null,
+          "observation_age_ms": 10,
+          "current_x_m": 1.0,
+          "last_simulated_x_m": 1.0,
+          "new_command": {
+            "raw_u_mps": 0.0,
+            "limited_u_mps": 0.0,
+            "effect": "synthetic_only"
+          },
+          "next_simulated_observation": {
+            "x_m": 1.0,
+            "stamp_ms": 5000,
+            "source": "noiseless_one_axis_model"
+          },
+          "outcome": "SIMULATED_STEP"
+        }
+      ],
+      "real_robot_or_safety_verified": false
+    },
+    {
+      "scenario": "stale",
+      "input_case": {
+        "id": "stale",
+        "gain": 1,
+        "events": [
+          {
+            "tick": 2,
+            "kind": "stale"
+          }
+        ]
+      },
+      "mode": "synthetic_closed_loop",
+      "terminal_state": "INVALID_STOP",
+      "simulated_success": false,
+      "command_count": 2,
+      "final_simulated_x_m": 1.0,
+      "epoch": 1,
+      "processed_ticks": 3,
+      "unprocessed_ticks": 5,
+      "ticks": [
+        {
+          "tick": 0,
+          "heartbeat_stamp_ms": 1000,
+          "admission_ms": 1010,
+          "observation": {
+            "clock_id": "ClockA",
+            "robot_id": "r1",
+            "boot_id": "bootA",
+            "map_revision": "map-v7",
+            "model_revision": "model-v3",
+            "calibration_revision": "cal-c2",
+            "frame_id": "map",
+            "unit": "m",
+            "action_schema": "velocity-map-x-v1",
+            "bundle_id": "bundle-A",
+            "stamp_ms": 1000,
+            "transform_stamp_ms": 1000,
+            "x_m": 1.0
+          },
+          "request": {
+            "issued_ms": 1000,
+            "request_id": "stale-q0",
+            "epoch": 1,
+            "bundle_id": "bundle-A",
+            "action_schema": "velocity-map-x-v1"
+          },
+          "reason": null,
+          "observation_age_ms": 10,
+          "current_x_m": 1.0,
+          "last_simulated_x_m": 1.0,
+          "new_command": {
+            "raw_u_mps": 0.0,
+            "limited_u_mps": 0.0,
+            "effect": "synthetic_only"
+          },
+          "next_simulated_observation": {
+            "x_m": 1.0,
+            "stamp_ms": 1500,
+            "source": "noiseless_one_axis_model"
+          },
+          "outcome": "SIMULATED_STEP"
+        },
+        {
+          "tick": 1,
+          "heartbeat_stamp_ms": 1500,
+          "admission_ms": 1510,
+          "observation": {
+            "clock_id": "ClockA",
+            "robot_id": "r1",
+            "boot_id": "bootA",
+            "map_revision": "map-v7",
+            "model_revision": "model-v3",
+            "calibration_revision": "cal-c2",
+            "frame_id": "map",
+            "unit": "m",
+            "action_schema": "velocity-map-x-v1",
+            "bundle_id": "bundle-A",
+            "stamp_ms": 1500,
+            "transform_stamp_ms": 1500,
+            "x_m": 1.0
+          },
+          "request": {
+            "issued_ms": 1500,
+            "request_id": "stale-q1",
+            "epoch": 1,
+            "bundle_id": "bundle-A",
+            "action_schema": "velocity-map-x-v1"
+          },
+          "reason": null,
+          "observation_age_ms": 10,
+          "current_x_m": 1.0,
+          "last_simulated_x_m": 1.0,
+          "new_command": {
+            "raw_u_mps": 0.0,
+            "limited_u_mps": 0.0,
+            "effect": "synthetic_only"
+          },
+          "next_simulated_observation": {
+            "x_m": 1.0,
+            "stamp_ms": 2000,
+            "source": "noiseless_one_axis_model"
+          },
+          "outcome": "SIMULATED_STEP"
+        },
+        {
+          "tick": 2,
+          "heartbeat_stamp_ms": 2000,
+          "admission_ms": 2010,
+          "observation": {
+            "clock_id": "ClockA",
+            "robot_id": "r1",
+            "boot_id": "bootA",
+            "map_revision": "map-v7",
+            "model_revision": "model-v3",
+            "calibration_revision": "cal-c2",
+            "frame_id": "map",
+            "unit": "m",
+            "action_schema": "velocity-map-x-v1",
+            "bundle_id": "bundle-A",
+            "stamp_ms": 1799,
+            "transform_stamp_ms": 1799,
+            "x_m": 1.0
+          },
+          "request": {
+            "issued_ms": 2000,
+            "request_id": "stale-q2",
+            "epoch": 1,
+            "bundle_id": "bundle-A",
+            "action_schema": "velocity-map-x-v1"
+          },
+          "reason": "observation_age",
+          "observation_age_ms": 211,
+          "current_x_m": null,
+          "last_simulated_x_m": 1.0,
+          "new_command": null,
+          "next_simulated_observation": null,
+          "outcome": "INVALID_STOP"
+        }
+      ],
+      "real_robot_or_safety_verified": false
+    },
+    {
+      "scenario": "wrong-version",
+      "input_case": {
+        "id": "wrong-version",
+        "gain": 1,
+        "events": [
+          {
+            "tick": 2,
+            "kind": "wrong-version"
+          }
+        ]
+      },
+      "mode": "synthetic_closed_loop",
+      "terminal_state": "INVALID_STOP",
+      "simulated_success": false,
+      "command_count": 2,
+      "final_simulated_x_m": 1.0,
+      "epoch": 1,
+      "processed_ticks": 3,
+      "unprocessed_ticks": 5,
+      "ticks": [
+        {
+          "tick": 0,
+          "heartbeat_stamp_ms": 1000,
+          "admission_ms": 1010,
+          "observation": {
+            "clock_id": "ClockA",
+            "robot_id": "r1",
+            "boot_id": "bootA",
+            "map_revision": "map-v7",
+            "model_revision": "model-v3",
+            "calibration_revision": "cal-c2",
+            "frame_id": "map",
+            "unit": "m",
+            "action_schema": "velocity-map-x-v1",
+            "bundle_id": "bundle-A",
+            "stamp_ms": 1000,
+            "transform_stamp_ms": 1000,
+            "x_m": 1.0
+          },
+          "request": {
+            "issued_ms": 1000,
+            "request_id": "wrong-version-q0",
+            "epoch": 1,
+            "bundle_id": "bundle-A",
+            "action_schema": "velocity-map-x-v1"
+          },
+          "reason": null,
+          "observation_age_ms": 10,
+          "current_x_m": 1.0,
+          "last_simulated_x_m": 1.0,
+          "new_command": {
+            "raw_u_mps": 0.0,
+            "limited_u_mps": 0.0,
+            "effect": "synthetic_only"
+          },
+          "next_simulated_observation": {
+            "x_m": 1.0,
+            "stamp_ms": 1500,
+            "source": "noiseless_one_axis_model"
+          },
+          "outcome": "SIMULATED_STEP"
+        },
+        {
+          "tick": 1,
+          "heartbeat_stamp_ms": 1500,
+          "admission_ms": 1510,
+          "observation": {
+            "clock_id": "ClockA",
+            "robot_id": "r1",
+            "boot_id": "bootA",
+            "map_revision": "map-v7",
+            "model_revision": "model-v3",
+            "calibration_revision": "cal-c2",
+            "frame_id": "map",
+            "unit": "m",
+            "action_schema": "velocity-map-x-v1",
+            "bundle_id": "bundle-A",
+            "stamp_ms": 1500,
+            "transform_stamp_ms": 1500,
+            "x_m": 1.0
+          },
+          "request": {
+            "issued_ms": 1500,
+            "request_id": "wrong-version-q1",
+            "epoch": 1,
+            "bundle_id": "bundle-A",
+            "action_schema": "velocity-map-x-v1"
+          },
+          "reason": null,
+          "observation_age_ms": 10,
+          "current_x_m": 1.0,
+          "last_simulated_x_m": 1.0,
+          "new_command": {
+            "raw_u_mps": 0.0,
+            "limited_u_mps": 0.0,
+            "effect": "synthetic_only"
+          },
+          "next_simulated_observation": {
+            "x_m": 1.0,
+            "stamp_ms": 2000,
+            "source": "noiseless_one_axis_model"
+          },
+          "outcome": "SIMULATED_STEP"
+        },
+        {
+          "tick": 2,
+          "heartbeat_stamp_ms": 2000,
+          "admission_ms": 2010,
+          "observation": {
+            "clock_id": "ClockA",
+            "robot_id": "r1",
+            "boot_id": "bootA",
+            "map_revision": "map-v8",
+            "model_revision": "model-v3",
+            "calibration_revision": "cal-c2",
+            "frame_id": "map",
+            "unit": "m",
+            "action_schema": "velocity-map-x-v1",
+            "bundle_id": "bundle-A",
+            "stamp_ms": 2000,
+            "transform_stamp_ms": 2000,
+            "x_m": 1.0
+          },
+          "request": {
+            "issued_ms": 2000,
+            "request_id": "wrong-version-q2",
+            "epoch": 1,
+            "bundle_id": "bundle-A",
+            "action_schema": "velocity-map-x-v1"
+          },
+          "reason": "contract_mismatch:map_revision",
+          "observation_age_ms": 10,
+          "current_x_m": null,
+          "last_simulated_x_m": 1.0,
+          "new_command": null,
+          "next_simulated_observation": null,
+          "outcome": "INVALID_STOP"
+        }
+      ],
+      "real_robot_or_safety_verified": false
+    },
+    {
+      "scenario": "missing-observation",
+      "input_case": {
+        "id": "missing-observation",
+        "gain": 1,
+        "events": [
+          {
+            "tick": 2,
+            "kind": "missing-observation"
+          }
+        ]
+      },
+      "mode": "synthetic_closed_loop",
+      "terminal_state": "INVALID_STOP",
+      "simulated_success": false,
+      "command_count": 2,
+      "final_simulated_x_m": 1.0,
+      "epoch": 1,
+      "processed_ticks": 3,
+      "unprocessed_ticks": 5,
+      "ticks": [
+        {
+          "tick": 0,
+          "heartbeat_stamp_ms": 1000,
+          "admission_ms": 1010,
+          "observation": {
+            "clock_id": "ClockA",
+            "robot_id": "r1",
+            "boot_id": "bootA",
+            "map_revision": "map-v7",
+            "model_revision": "model-v3",
+            "calibration_revision": "cal-c2",
+            "frame_id": "map",
+            "unit": "m",
+            "action_schema": "velocity-map-x-v1",
+            "bundle_id": "bundle-A",
+            "stamp_ms": 1000,
+            "transform_stamp_ms": 1000,
+            "x_m": 1.0
+          },
+          "request": {
+            "issued_ms": 1000,
+            "request_id": "missing-observation-q0",
+            "epoch": 1,
+            "bundle_id": "bundle-A",
+            "action_schema": "velocity-map-x-v1"
+          },
+          "reason": null,
+          "observation_age_ms": 10,
+          "current_x_m": 1.0,
+          "last_simulated_x_m": 1.0,
+          "new_command": {
+            "raw_u_mps": 0.0,
+            "limited_u_mps": 0.0,
+            "effect": "synthetic_only"
+          },
+          "next_simulated_observation": {
+            "x_m": 1.0,
+            "stamp_ms": 1500,
+            "source": "noiseless_one_axis_model"
+          },
+          "outcome": "SIMULATED_STEP"
+        },
+        {
+          "tick": 1,
+          "heartbeat_stamp_ms": 1500,
+          "admission_ms": 1510,
+          "observation": {
+            "clock_id": "ClockA",
+            "robot_id": "r1",
+            "boot_id": "bootA",
+            "map_revision": "map-v7",
+            "model_revision": "model-v3",
+            "calibration_revision": "cal-c2",
+            "frame_id": "map",
+            "unit": "m",
+            "action_schema": "velocity-map-x-v1",
+            "bundle_id": "bundle-A",
+            "stamp_ms": 1500,
+            "transform_stamp_ms": 1500,
+            "x_m": 1.0
+          },
+          "request": {
+            "issued_ms": 1500,
+            "request_id": "missing-observation-q1",
+            "epoch": 1,
+            "bundle_id": "bundle-A",
+            "action_schema": "velocity-map-x-v1"
+          },
+          "reason": null,
+          "observation_age_ms": 10,
+          "current_x_m": 1.0,
+          "last_simulated_x_m": 1.0,
+          "new_command": {
+            "raw_u_mps": 0.0,
+            "limited_u_mps": 0.0,
+            "effect": "synthetic_only"
+          },
+          "next_simulated_observation": {
+            "x_m": 1.0,
+            "stamp_ms": 2000,
+            "source": "noiseless_one_axis_model"
+          },
+          "outcome": "SIMULATED_STEP"
+        },
+        {
+          "tick": 2,
+          "heartbeat_stamp_ms": 2000,
+          "admission_ms": 2010,
+          "observation": null,
+          "request": {
+            "issued_ms": 2000,
+            "request_id": "missing-observation-q2",
+            "epoch": 1,
+            "bundle_id": "bundle-A",
+            "action_schema": "velocity-map-x-v1"
+          },
+          "reason": "missing_observation",
+          "observation_age_ms": null,
+          "current_x_m": null,
+          "last_simulated_x_m": 1.0,
+          "new_command": null,
+          "next_simulated_observation": null,
+          "outcome": "INVALID_STOP"
+        }
+      ],
+      "real_robot_or_safety_verified": false
+    },
+    {
+      "scenario": "rollback",
+      "input_case": {
+        "id": "rollback",
+        "gain": 1,
+        "events": [
+          {
+            "tick": 2,
+            "kind": "rollback"
+          }
+        ]
+      },
+      "mode": "synthetic_closed_loop",
+      "terminal_state": "ROLLBACK_HOLD",
+      "simulated_success": false,
+      "command_count": 2,
+      "final_simulated_x_m": 1.0,
+      "epoch": 2,
+      "processed_ticks": 3,
+      "unprocessed_ticks": 5,
+      "ticks": [
+        {
+          "tick": 0,
+          "heartbeat_stamp_ms": 1000,
+          "admission_ms": 1010,
+          "observation": {
+            "clock_id": "ClockA",
+            "robot_id": "r1",
+            "boot_id": "bootA",
+            "map_revision": "map-v7",
+            "model_revision": "model-v3",
+            "calibration_revision": "cal-c2",
+            "frame_id": "map",
+            "unit": "m",
+            "action_schema": "velocity-map-x-v1",
+            "bundle_id": "bundle-A",
+            "stamp_ms": 1000,
+            "transform_stamp_ms": 1000,
+            "x_m": 1.0
+          },
+          "request": {
+            "issued_ms": 1000,
+            "request_id": "rollback-q0",
+            "epoch": 1,
+            "bundle_id": "bundle-A",
+            "action_schema": "velocity-map-x-v1"
+          },
+          "reason": null,
+          "observation_age_ms": 10,
+          "current_x_m": 1.0,
+          "last_simulated_x_m": 1.0,
+          "new_command": {
+            "raw_u_mps": 0.0,
+            "limited_u_mps": 0.0,
+            "effect": "synthetic_only"
+          },
+          "next_simulated_observation": {
+            "x_m": 1.0,
+            "stamp_ms": 1500,
+            "source": "noiseless_one_axis_model"
+          },
+          "outcome": "SIMULATED_STEP"
+        },
+        {
+          "tick": 1,
+          "heartbeat_stamp_ms": 1500,
+          "admission_ms": 1510,
+          "observation": {
+            "clock_id": "ClockA",
+            "robot_id": "r1",
+            "boot_id": "bootA",
+            "map_revision": "map-v7",
+            "model_revision": "model-v3",
+            "calibration_revision": "cal-c2",
+            "frame_id": "map",
+            "unit": "m",
+            "action_schema": "velocity-map-x-v1",
+            "bundle_id": "bundle-A",
+            "stamp_ms": 1500,
+            "transform_stamp_ms": 1500,
+            "x_m": 1.0
+          },
+          "request": {
+            "issued_ms": 1500,
+            "request_id": "rollback-q1",
+            "epoch": 1,
+            "bundle_id": "bundle-A",
+            "action_schema": "velocity-map-x-v1"
+          },
+          "reason": null,
+          "observation_age_ms": 10,
+          "current_x_m": 1.0,
+          "last_simulated_x_m": 1.0,
+          "new_command": {
+            "raw_u_mps": 0.0,
+            "limited_u_mps": 0.0,
+            "effect": "synthetic_only"
+          },
+          "next_simulated_observation": {
+            "x_m": 1.0,
+            "stamp_ms": 2000,
+            "source": "noiseless_one_axis_model"
+          },
+          "outcome": "SIMULATED_STEP"
+        },
+        {
+          "tick": 2,
+          "heartbeat_stamp_ms": 2000,
+          "admission_ms": 2010,
+          "observation": {
+            "clock_id": "ClockA",
+            "robot_id": "r1",
+            "boot_id": "bootA",
+            "map_revision": "map-v7",
+            "model_revision": "model-v3",
+            "calibration_revision": "cal-c2",
+            "frame_id": "map",
+            "unit": "m",
+            "action_schema": "velocity-map-x-v1",
+            "bundle_id": "bundle-A",
+            "stamp_ms": 2000,
+            "transform_stamp_ms": 2000,
+            "x_m": 1.0
+          },
+          "request": {
+            "issued_ms": 2000,
+            "request_id": "rollback-q2",
+            "epoch": 1,
+            "bundle_id": "bundle-B",
+            "action_schema": "position-map-x-v2"
+          },
+          "reason": "command_bundle_mismatch",
+          "observation_age_ms": 10,
+          "current_x_m": null,
+          "last_simulated_x_m": 1.0,
+          "new_command": null,
+          "next_simulated_observation": null,
+          "rollback": {
+            "selected_bundle": "bundle-A",
+            "new_epoch": 2,
+            "pending_chunks_discarded": true,
+            "resumed": false,
+            "physical_state_restored": false
+          },
+          "outcome": "ROLLBACK_HOLD"
+        }
+      ],
+      "real_robot_or_safety_verified": false
+    }
+  ],
+  "real_robot_or_safety_verified": false,
+  "python": "3.12.11",
+  "platform": "Darwin",
+  "source_sha256": "4e360b0558e35f48618b583b446582003feda7792b44efb8c3d5ecb890e4ffb5",
+  "config_sha256": "ac3f4914d3111d30b5b1c9379d204d8a038afb4d71ea7fb0eb229e8c25b2a5b4",
+  "data_sha256": "11b7e1a2adaa42ee159a1e750271e2135013e9d6c65dd81317155005876d8682",
+  "cases_sha256": "86e5c14728018934ef6edee43b4f0aaf65700e5729d23180001ca9c39f8cb1e6"
+}

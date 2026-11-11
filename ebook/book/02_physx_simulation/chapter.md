@@ -30,6 +30,18 @@
 
 ## 선수 지식과 준비물
 
+모바일 로봇의 월드·리셋·고정 스텝은 [M09.01](/study/unit-m09-01-a/), 센서 설정은 [M09.03](/study/unit-m09-03-a/)에서 이어 배운다. 아래 PhysX 파라미터 이름과 Gazebo 시스템 플러그인·센서 구성은 다른 인터페이스다. 같은 로봇 형상이나 시간 스텝만 맞추어 두 시뮬레이터가 같은 접촉·오도메트리·센서 결과를 낸다고 가정하지 않는다.
+
+E4의 [M19.02 계획 장면](/study/unit-m19-02-a/), [M19.04 시뮬레이터 비교](/study/unit-m19-04-a/), [M30.01 Reality Gap 진단](/study/unit-m30-01-a/)과 연결한다. 계획기의 충돌 검사와 동역학 시뮬레이션, 실물 접촉 검증을 같은 결과로 취급하지 않는다.
+
+[M10.03 접촉·마찰·CCD](/study/unit-m10-03-a/), [M10.04 질량·관성·Articulation](/study/unit-m10-04-a/), [M10.05 물리/렌더 스텝](/study/unit-m10-05-a/)이 아래 물리 실험의 개념 기초다. 이 장의 PhysX 관련 옵션·문서는 PhysX 경로를 설명하며, 다른 백엔드에 같은 속성·결과가 그대로 적용된다고 가정하지 않는다.
+
+물리 파라미터를 입력하기 전 [M07.01 질량·관성·중력](/study/unit-m07-01-a/)에서 힘과 토크를 구분하고 [M08.01 모델 요소](/study/unit-m08-01-a/)와 [M08.04 관성·충돌 형상](/study/unit-m08-04-a/)에서 시각 형상과 물리 모델을 분리한다. 제어 응답 문제는 [M07.06 필터·지연](/study/unit-m07-06-a/)과 함께 해석하며 모든 불안정성을 시간 스텝 하나로 해결한다고 가정하지 않는다.
+
+이 장에 앞서 [M02.01 벡터·행렬](/study/unit-m02-01-a/), [M02.02 회전·변환](/study/unit-m02-02-a/), [M02.03 미분과 시간 변화](/study/unit-m02-03-a/)를 확인한다. 힘·운동·계산 예제의 단위가 낯설면 각 수량을 SI 단위로 적고 식을 따라가며 계산부터 수행한다. 기존 Isaac Sim 실습은 GPU가 있는 선택 실행 경로다. GPU 없는 기본 학습은 본문의 변환·시간간격·마찰 예측과 브라우저 개념 모형/기록 해석으로 구분하며, 이것을 PhysX 실제 실행 결과로 제출하지 않는다.
+
+자산을 장면에 합성하기 전 [M25.01 자산 계층·단위·재질 검수](/study/unit-m25-01-a/)에서 참조의 단위 보정과 외관/충돌/질량·물리 재질을 별도로 확인한다. 단위 메타데이터 변경만으로 좌표·명시 질량이 자동 보정된다고 가정하지 않으며, 정적 명세 충족과 동적 접촉·실물 검증을 구분한다.
+
 ### 선수 지식
 
 - Python과 NumPy의 배열 연산
@@ -41,7 +53,7 @@
 
 - Ubuntu 24.04 LTS
 - NVIDIA RTX GPU와 호환 드라이버
-- NVIDIA Isaac Sim 최신 안정 릴리스
+- NVIDIA Isaac Sim: 기준 환경 문서와 호환되는 검증 릴리스를 선택하고 실제 버전·드라이버를 기록한다.
 - Python 3.12(범용 수학 예제), Isaac Sim 내장 Python(시뮬레이터 예제)
 
 Isaac Sim 공식 요구사항은 Ubuntu 22.04와 24.04를 지원 대상으로 명시하고, 복잡한 장면에는 충분한 RAM과 VRAM이 필요하다고 안내한다. 정확한 GPU/드라이버 요구사항은 릴리스마다 달라지므로 설치 직전에 [Isaac Sim Requirements](https://docs.isaacsim.omniverse.nvidia.com/latest/installation/requirements.html)를 확인한다. 이 책의 코드는 특정 GPU 성능을 보장하지 않으며 출력은 예시이다.
@@ -57,7 +69,7 @@ Isaac Sim 공식 요구사항은 Ubuntu 22.04와 24.04를 지원 대상으로 �
 Isaac Sim 장면을 구성할 때 세 층을 구분하면 문제를 빠르게 진단할 수 있다.
 
 - **USD Stage**: Prim과 Attribute로 저장되는 장면 명세다. 파일로 저장할 수 있는 선언적 상태이다.
-- **Physics simulation**: Stage의 물리 schema를 읽어 PhysX가 시간에 따른 상태를 계산한다.
+- **Physics simulation**: 선택한 백엔드가 지원하는 Stage의 물리 schema를 읽어 시간에 따른 상태를 계산한다. 아래 PhysX 옵션을 다른 엔진에 그대로 적용하지 않는다.
 - **Rendering**: Stage의 geometry, material, light, camera를 읽어 픽셀을 생성한다.
 
 Stage에 큐브가 보인다고 해서 그 큐브가 중력의 영향을 받는 것은 아니다. USD Prim에는 물리 기능이 기본으로 활성화되지 않으며, rigid body와 collision API를 별도로 적용해야 한다. 반대로 viewport에서 숨긴 충돌 형상도 collision API가 유지되면 물리 계산에 참여할 수 있다. 이 분리는 [Isaac Sim Physics Simulation Fundamentals](https://docs.isaacsim.omniverse.nvidia.com/latest/physics/simulation_fundamentals.html)의 기본 원칙이다.
@@ -150,7 +162,7 @@ Euler angle은 roll, pitch, yaw 세 값으로 방향을 설명해 사람이 이�
 - right-handed/left-handed 좌표계
 - radian/degree 단위
 
-이 장의 예제는 오른손 좌표계에서 고정 world 축에 대한 extrinsic Z-Y-X 합성, 즉 \(R=R_z(yaw)R_y(pitch)R_x(roll)\)을 사용한다. pitch가 ±90° 근처가 되면 서로 다른 두 회전축이 정렬되어 자유도 하나를 구분할 수 없게 된다. 이것이 짐벌 락(gimbal lock)이다. 실제 물체가 자유도를 잃는 것이 아니라 Euler 파라미터화가 특이해지는 것이다.
+이 장은 오른손 좌표계와 열벡터 \(v'=Rv\)를 사용하고 \(R=R_z(yaw)R_y(pitch)R_x(roll)\)로 행렬을 만든다. **벡터에 실제 적용되는 고정축 회전 순서는 오른쪽부터 X(roll)→Y(pitch)→Z(yaw)**이며, extrinsic xyz라고 부른다. 이는 움직이는 몸체축을 사용하는 intrinsic Z→Y→X(yaw,pitch,roll)와 동치다. 코드의 `euler_zyx_to_matrix` 이름은 행렬을 왼쪽부터 Z·Y·X로 곱하는 관례를 보존한 것이며 고정축 적용 순서를 뜻하지 않는다. 회전 이름만 외우기보다 행렬·열벡터·적용 방향을 함께 적는다. [SciPy의 공식 Euler 규약](https://docs.scipy.org/doc/scipy/reference/generated/scipy.spatial.transform.Rotation.from_euler.html)은 소문자 축을 extrinsic, 대문자 축을 intrinsic으로 구분한다. [M02.02](/study/unit-m02-02-a/)의 변환 방향·회전 순서 계산과 이어 확인한다. pitch가 정확히 ±90°일 때 Euler 표현의 두 회전축이 정렬되어 두 각도를 독립적으로 구분할 수 없게 된다. 이것이 짐벌 락(gimbal lock)이다. 그 근처에서는 조건이 나빠져 작은 회전·측정 오차에도 각도 표현이 크게 변할 수 있다. 실제 물체가 자유도를 잃는 것이 아니라 Euler 파라미터화가 특이해지는 것이다.
 
 ### 2.2.4 quaternion과 순서 문제
 
@@ -252,6 +264,8 @@ V-HACD 계열 분해는 오목한 메시를 여러 convex hull로 바꾼다. hul
 1. **Broad phase**: AABB 등 싼 표현으로 충돌 가능성이 있는 pair를 찾는다.
 2. **Narrow phase**: 실제 geometry를 사용해 접촉점, 법선, penetration을 계산한다.
 
+충돌 후보쌍과 제외 규칙은 [M25.03 Collision Group·개별 제외·디버그](/study/unit-m25-03-a/)에서 구체적으로 비교한다. 그룹 차단과 개별 제외를 각각 확인하고, 필터 통과를 실제 접촉이나 보고 수집 완료로 읽지 않는다. 렌더와 물리 디버그 자료는 tick·시각·프레임을 맞추어 비교한다.
+
 scene에 collider가 많으면 broad phase pair 수가 증가한다. 로봇 링크끼리 절대 접촉할 필요가 없는 조합은 collision filtering으로 제외한다. 하지만 실제 self-collision 가능성이 있는 pair까지 제거하면 안전성이 과대평가된다.
 
 ## 2.5 Tunneling과 CCD
@@ -334,7 +348,9 @@ e = -\frac{v_{after}}{v_{before}}
 - 무게중심/질량중심(center of mass, COM) 위치
 - COM 기준 관성 텐서 \(I\)
 
-병진 운동은 \(F=ma\), 회전 운동은 단순한 주축 조건에서 \(\tau=I\alpha\)로 설명된다. 질량이 같아도 질량이 중심에 모였는지 바깥에 퍼졌는지에 따라 각가속도가 다르다. COM이 실제보다 높으면 물체가 쉽게 넘어지고, 낮으면 지나치게 안정적으로 보인다.
+병진 운동은 \(F=ma\), 회전 운동은 단순한 주축 조건에서 \(\tau=I\alpha\)로 설명된다. 질량이 같아도 질량이 중심에 모였는지 바깥에 퍼졌는지에 따라 각가속도가 다르다. 같은 직사각형 지지영역과 COM 수평 위치의 정적 기울임 비교에서는 COM 높이가 커질수록 넘어짐 각도 여유가 줄 수 있다. 접촉/가속·관성/제어가 다른 계에 이를 자동 일반화하지 않는다.
+
+전문 선택 [M26.04 기구 CAD·COM·조립/공차](/study/unit-m26-04-a/)에서 부품별 좌표/질량의 합성과 실제 접촉점을 연결한다. 지그 지지영역·CAD fixed 상태를 두 바퀴의 실제 균형 근거로 바꾸지 않고, 명목 조립/공차 구간·제작 능력을 구분한다. 질량/외형만으로 전체 관성이나 실물 성능이 확정되지 않는다.
 
 ### 2.7.2 직육면체 관성
 
@@ -388,6 +404,8 @@ roughness와 friction은 이름이 비슷한 직관을 주지만 서로 다른 �
 실험에서 광원 종류, intensity, color temperature, pose를 기록한다. 카메라 auto exposure를 켜면 조명 변화가 픽셀 변화로 직접 나타나지 않을 수 있으므로 데이터 생성 목적에 따라 exposure를 고정하거나 메타데이터에 기록한다.
 
 ## 2.9 물리 파라미터 튜닝 절차
+
+[M25.04 강성·감쇠·마찰·질량 보정](/study/unit-m25-04-a/)은 직선 force drive의 단위/포화와 분리 관측을 계산하고, 보정에 쓰지 않은 조건의 오차를 평가한다. 단위·충돌 필터·관측 시각 오류를 물성으로 가리지 않으며 force/acceleration 모드와 접촉 재질의 계수를 구분한다.
 
 ![물리 파라미터 튜닝 루프](images/material_tuning_loop.svg)
 

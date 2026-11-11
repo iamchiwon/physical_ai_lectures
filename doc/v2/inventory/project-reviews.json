@@ -1,0 +1,21 @@
+{
+  "schemaVersion": 1,
+  "projects": {
+    "P1": {
+      "bundleSha256": "7349c4a732c13e00738185b55581e52aefd55b4a386f59a19c4dae329540e5bb",
+      "evidenceRef": "doc/v2/work_items/PKG-P1-05.md"
+    },
+    "P2": {
+      "bundleSha256": "aa84ab262ed4bb2c1f1bb8c87e1e211b03eb69bf902e636e470d6adcb404ba97",
+      "evidenceRef": "doc/v2/work_items/PKG-P2-05.md"
+    },
+    "P3": {
+      "bundleSha256": "cd4057518da35d0f1f92b27ff4a5bc4a478cfd7240ba8e9f0a2ba6bf1cde9d5b",
+      "evidenceRef": "doc/v2/work_items/PKG-P3-05.md"
+    },
+    "P4": {
+      "bundleSha256": "e7555fed9f81080dc9649c2e2890f9fd13710f3a75d4668966d2129ffaecd42d",
+      "evidenceRef": "doc/v2/work_items/PKG-P4-05.md"
+    }
+  }
+}
