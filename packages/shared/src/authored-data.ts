@@ -1803,7 +1803,7 @@ export const authoredMetadata: AuthoredMetadata[] = [
       "관측/기록·절대/증분 명령의 의미에 맞춰 drop/백프레셔·만료/장애 정책을 제안한다."
     ],
     "prerequisiteNote": "M27.03의 시간 경계와 M21의 행동 표현을 사용한다. 생산자/소비자·FIFO/유한 큐/백프레셔를 본문에서 보충한다. 기본은 종이 사건표이며 실제 ROS/장치 실행은 없다.",
-    "sha256": "5223a744c6f8ec110ff2f0ab4553521ae2bad3e587fd09d94a47a26a9122a06c",
+    "sha256": "58580e7b4d5f20b67e408249fa6eaa228151ac79ffe104d3129a089f117df8c5",
     "reviewed": true,
     "evidenceRef": "doc/v2/work_items/M27.04.md"
   },
