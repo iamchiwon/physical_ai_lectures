@@ -361,7 +361,7 @@ export const authoredMetadata: AuthoredMetadata[] = [
       "직렬 팔과 델타의 연결 구조·작업 범위 차이를 설명하고 과제에 필요한 추가 설계 정보를 제안한다."
     ],
     "prerequisiteNote": "M03.01의 관절·자유도, M02의 좌표·각속도 단위를 사용한다. 기본 활동은 종이 속도 계산과 가상 구조표이며 로봇 주행·실물 팔 동작은 수행하지 않는다.",
-    "sha256": "20c3048e81b12b40b1db2ad4575f7c04ecd80693bc9605513145da8632e2845c",
+    "sha256": "5f3030c223dfdcd9fad19e3767b853b343ec04bde10fcc100c50c0d66c6ae53e",
     "reviewed": true,
     "evidenceRef": "doc/v2/work_items/publication-source-privacy.md"
   },
