@@ -1232,8 +1232,22 @@
       "evidence": "doc/visual-review/units/M13.02.md"
     },
     "M13.03": {
-      "status": "pending",
-      "source": "ebook/curriculum/M13/M13.03.md"
+      "status": "reviewed",
+      "source": "ebook/curriculum/M13/M13.03.md",
+      "sourceSha256": "4aad098894b0cfbd2573c50a05db2ff11e526c233a045357959798b3fd5ee6db",
+      "reason": "점 집계와 공간 이웃의 차이의 연결/구분은 글만으로 단계나 경계를 혼동하기 쉬워 설명 도식을 추가한다. 본문의 표·수치·문제 조건도 대조한다.",
+      "assets": [
+        {
+          "path": "apps/web/public/textbook-visuals/M13.03-concept.svg",
+          "sha256": "eb91e92359e1eccb717dc97b5714fc72ec094d1a7a6a138b12e8980d3e6f394e",
+          "method": "original-svg",
+          "model": null,
+          "prompt": null,
+          "alt": "점 집계와 공간 이웃의 차이: 공유 점별 변환 → 대칭 집계 → 공간 이웃 특징 → Voxel/Pillar.",
+          "caption": "각 칸은 서로 다른 역할/근거다. 나란히 비교할 항목이며 위아래가 시간 순서를 뜻하지 않는다. 직접 제작한 개념도이며 본문의 조건과 함께 읽는다."
+        }
+      ],
+      "evidence": "doc/visual-review/units/M13.03.md"
     },
     "M13.04": {
       "status": "pending",

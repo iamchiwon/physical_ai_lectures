@@ -2349,7 +2349,7 @@ export const authoredMetadata: AuthoredMetadata[] = [
       "학습 분할과 희소성 변화에 따른 실패를 진단한다."
     ],
     "prerequisiteNote": "M13.02의 개념을 사용한다. 필요한 새 용어·기호는 본문에서 정의한다. 일반 코딩 문법/실제 장비 설치를 요구하지 않으며 합성 자료로 기본 경로를 수행한다.",
-    "sha256": "867750419c84386acb90c845b837842244783518dae0085f09282022d0d6b191",
+    "sha256": "4aad098894b0cfbd2573c50a05db2ff11e526c233a045357959798b3fd5ee6db",
     "reviewed": true,
     "evidenceRef": "doc/v2/work_items/M13.03.md"
   },
