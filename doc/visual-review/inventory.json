@@ -678,8 +678,22 @@
       "evidence": "doc/visual-review/units/M06.06.md"
     },
     "M07.01": {
-      "status": "pending",
-      "source": "ebook/curriculum/M07/M07.01.md"
+      "status": "reviewed",
+      "source": "ebook/curriculum/M07/M07.01.md",
+      "sourceSha256": "79a27ed9eb9c25967d8af6c1c1f1e90324c87b12185500531dde2dc649b0a789",
+      "reason": "한 링크의 중력 방향과 토크는 공간/파형 관계를 직접 보아야 식의 기준과 적용 범위를 혼동하지 않으므로 도식을 추가한다. 제공된 식·본문 조건과 대조했다.",
+      "assets": [
+        {
+          "path": "apps/web/public/textbook-visuals/M07.01-concept.svg",
+          "sha256": "9fb6ec1ccc1cf068097e0a33c8c281bac9daaa7b7afaaa636dad109d1c882515",
+          "method": "original-svg",
+          "model": null,
+          "prompt": null,
+          "alt": "한 링크의 중력 방향과 토크. 본문의 질량 없는 막대 끝 질점 모델이다. q는 수평에서 반시계 방향, 중력은 아래 방향이므로 중력 토크는 −mgl cos q다. 분포 질량·다관절 모형과 구별한다.",
+          "caption": "본문의 질량 없는 막대 끝 질점 모델이다. q는 수평에서 반시계 방향, 중력은 아래 방향이므로 중력 토크는 −mgl cos q다. 분포 질량·다관절 모형과 구별한다. 직접 제작."
+        }
+      ],
+      "evidence": "doc/visual-review/units/M07.01.md"
     },
     "M07.02": {
       "status": "pending",

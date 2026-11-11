@@ -459,7 +459,7 @@ export const authoredMetadata: AuthoredMetadata[] = [
       "질량·거리·기어 변화의 영향을 비교하고 파라미터·정격 및 센서 추정의 검증 범위를 판정한다."
     ],
     "prerequisiteNote": "M02의 미분·단위, M03의 모터·기어·토크, M06의 관절 자세가 선수다. 기본 활동은 종이 토크 수지 계산이다. 가상 파라미터를 실제 로봇 정격으로 사용하지 않으며 전류나 토크를 인가하지 않는다.",
-    "sha256": "4bf7fdf6fe653ede847c689987d5dc0b27b2f5cee54fc356b8ff9b737b02bb83",
+    "sha256": "79a27ed9eb9c25967d8af6c1c1f1e90324c87b12185500531dde2dc649b0a789",
     "reviewed": true,
     "evidenceRef": "doc/v2/work_items/publication-source-privacy.md"
   },
