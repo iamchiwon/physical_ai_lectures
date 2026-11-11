@@ -1668,8 +1668,22 @@
       "evidence": "doc/visual-review/units/M17.05.md"
     },
     "M17.06": {
-      "status": "pending",
-      "source": "ebook/curriculum/M17/M17.06.md"
+      "status": "reviewed",
+      "source": "ebook/curriculum/M17/M17.06.md",
+      "sourceSha256": "8c405f8266eae9f24b154287eba09dd731e9ed3150d75f53584b06c1bdc3239d",
+      "reason": "경로에 시간을 붙이는 단계의 연결/구분은 글만으로 단계나 경계를 혼동하기 쉬워 설명 도식을 추가한다. 본문의 표·수치·문제 조건도 대조한다.",
+      "assets": [
+        {
+          "path": "apps/web/public/textbook-visuals/M17.06-concept.svg",
+          "sha256": "53c532c7eb8f79d459cae0c4c58f55c629044a2a8d1d38d28e8d8299918fad76",
+          "method": "original-svg",
+          "model": null,
+          "prompt": null,
+          "alt": "경로에 시간을 붙이는 단계: 기하 경로 q(s) → 시간 스케일 s(t) → 속도/가속도 → 실행/재계획.",
+          "caption": "각 칸은 서로 다른 역할/근거다. 아래 방향은 자료/처리의 연결이며 실제 성공을 자동으로 보장하지 않는다. 직접 제작한 개념도이며 본문의 조건과 함께 읽는다."
+        }
+      ],
+      "evidence": "doc/visual-review/units/M17.06.md"
     },
     "M18.01": {
       "status": "pending",

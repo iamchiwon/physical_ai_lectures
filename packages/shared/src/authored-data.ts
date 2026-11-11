@@ -1005,7 +1005,7 @@ export const authoredMetadata: AuthoredMetadata[] = [
       "현재 상태·관측 나이·계산 지연·지도 변경을 반영해 재계획과 궤적 전환의 근거를 점검한다."
     ],
     "prerequisiteNote": "M17.01/02의 기하 경로, M02.03의 미분과 M07.05의 추종을 연결한다. CHOMP/STOMP 등 최적화 경로 개선 전체를 시간 배정의 필수 선수로 요구하지 않는다. 진행 변수·시간 스케일·최대 미분값과 재계획의 상태 연속성을 본문에서 보충한다. 기본은 합성 관절 계산과 로그 판정이며 실제 제어기·로봇을 실행하지 않는다.",
-    "sha256": "15dd6bdbd92f807f32db2c045edd4647d336f0481d6dab524845519500e04775",
+    "sha256": "8c405f8266eae9f24b154287eba09dd731e9ed3150d75f53584b06c1bdc3239d",
     "reviewed": true,
     "evidenceRef": "doc/v2/work_items/publication-source-privacy.md"
   },
