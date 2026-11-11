@@ -2559,7 +2559,7 @@ export const authoredMetadata: AuthoredMetadata[] = [
       "성공/실패 종료와 시간 제한 truncation을 구분한다."
     ],
     "prerequisiteNote": "M07.03, M10.05, M11.04의 개념을 사용한다. 필요한 새 용어·기호는 본문에서 정의한다. 일반 코딩 문법/실제 장비 설치를 요구하지 않으며 합성 자료로 기본 경로를 수행한다.",
-    "sha256": "0ac2740e09b3c4ce4e1f9d7621459eaf3a995bc900f04ced05fd2a2154c4ce7e",
+    "sha256": "4f98ae1e1a0c39d362468b55d60ec9e8db43b1b71e2cf4937ed0c497e00a075d",
     "reviewed": true,
     "evidenceRef": "doc/v2/work_items/M23.01.md"
   },
