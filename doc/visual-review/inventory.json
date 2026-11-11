@@ -2260,8 +2260,12 @@
       "evidence": "doc/visual-review/units/M24.02.md"
     },
     "M24.03": {
-      "status": "pending",
-      "source": "ebook/curriculum/M24/M24.03.md"
+      "status": "reviewed",
+      "source": "ebook/curriculum/M24/M24.03.md",
+      "sourceSha256": "6ae657c12d38c67f2f724b1f368f714313c4eca7755cb713f13144265f820b7e",
+      "reason": "본문의 「오래 서 있었다는 사실과 보행 성공을 나눈다」부터 「reset은 실패 기록을 지우는 기능이 아니다」까지 시각 참조/입력 조건을 점검했다. 정의와 수치/판정 절차가 글 안에서 주어지고 특정 미제공 사진/그림의 식별에 의존하지 않아 이번에는 이미지를 추가하지 않는다. 공간 구조의 세부 설명은 연결된 선수 단위의 그림과 함께 읽는다.",
+      "assets": [],
+      "evidence": "doc/visual-review/units/M24.03.md"
     },
     "M24.04": {
       "status": "pending",
