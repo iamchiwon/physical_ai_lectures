@@ -1131,7 +1131,7 @@ export const authoredMetadata: AuthoredMetadata[] = [
       "연속 목표의 관절 증분·속도·각도 표현을 검토하고 끝점의 유효성과 경로의 유효성을 구분한다."
     ],
     "prerequisiteNote": "M06.02~03의 평면 2R, 기하 IK와 위치 Jacobian, M02.01의 2×2 행렬식이 선수다. 종이 계산과 합성 후보표를 사용하며 실제 관절 동작이나 충돌 검사는 수행하지 않는다.",
-    "sha256": "22693a2bff73a2cb5ba627b6c718aa70e52d83f4f7d7c8e63a07ee154ba92364",
+    "sha256": "ee25dd5f7b1adb47c50c45d079dcbe9af85fc5c4ca5ade0964da8b24af2f995a",
     "reviewed": true,
     "evidenceRef": "doc/v2/work_items/publication-source-privacy.md"
   },

@@ -624,8 +624,22 @@
       "evidence": "doc/visual-review/units/M06.03.md"
     },
     "M06.04": {
-      "status": "pending",
-      "source": "ebook/curriculum/M06/M06.04.md"
+      "status": "reviewed",
+      "source": "ebook/curriculum/M06/M06.04.md",
+      "sourceSha256": "ee25dd5f7b1adb47c50c45d079dcbe9af85fc5c4ca5ade0964da8b24af2f995a",
+      "reason": "펼친 팔에서 잃는 순간 운동 방향는 공간/파형 관계를 직접 보아야 식의 기준과 적용 범위를 혼동하지 않으므로 도식을 추가한다. 제공된 식·본문 조건과 대조했다.",
+      "assets": [
+        {
+          "path": "apps/web/public/textbook-visuals/M06.04-concept.svg",
+          "sha256": "ddde667b18121efa2437f0adfbc1f29cc5a51ab12f7f631f639650f26d0d6619",
+          "method": "original-svg",
+          "model": null,
+          "prompt": null,
+          "alt": "펼친 팔에서 잃는 순간 운동 방향. 펼친 2R 팔은 말단 (0.5,0) m에 도달하지만 현재 Jacobian의 x방향 일차 속도 성분은 0이다. 특이점과 작업공간 밖 목표를 같은 뜻으로 읽지 않는다.",
+          "caption": "펼친 2R 팔은 말단 (0.5,0) m에 도달하지만 현재 Jacobian의 x방향 일차 속도 성분은 0이다. 특이점과 작업공간 밖 목표를 같은 뜻으로 읽지 않는다. 직접 제작."
+        }
+      ],
+      "evidence": "doc/visual-review/units/M06.04.md"
     },
     "M06.05": {
       "status": "pending",
