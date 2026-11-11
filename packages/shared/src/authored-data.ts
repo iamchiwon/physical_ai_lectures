@@ -333,7 +333,7 @@ export const authoredMetadata: AuthoredMetadata[] = [
       "센서 간 불일치와 GNSS 위치 기록으로 확정할 수 없는 결론을 구별하고 추가 증거를 제안한다."
     ],
     "prerequisiteNote": "M02의 좌표 변환·시간·벡터 기초를 사용한다. 종이 기록만으로 수행하며 실제 센서나 수신기 설치는 필요 없다. 예제 갱신율·수치는 특정 제품 사양이 아니다.",
-    "sha256": "9a2f0c7897b29d88c5b8e4f010d938c963c2ae39a87e89ee1e68b0acda4ad1c4",
+    "sha256": "a683660e06ca2ec2626f6df9a795d8fdad84db03f8674c9cf4a297848587a626",
     "reviewed": true,
     "evidenceRef": "doc/v2/work_items/M03.03.md"
   },
