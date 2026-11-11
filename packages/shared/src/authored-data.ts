@@ -2251,7 +2251,7 @@ export const authoredMetadata: AuthoredMetadata[] = [
       "프레임의 전송 비용을 계산하고 ACK·ID·수신 시각으로 보장할 수 없는 것을 설명한다."
     ],
     "prerequisiteNote": "M01.03의 시간/시스템 계약, M03.04의 전기 인터페이스, M04.04의 버스/프레임·ACK를 연결한다. 일반 언어 문법 없이 자체 가상 그림·비트열·수치표를 분석한다. 실제 차량/장비 연결·송수신·수리나 규격 적합성 시험은 수행하지 않는다.",
-    "sha256": "bb7687bdb8f7a544267dcdb92dafcd59134959f11e2846b10bc8a7ddf5869f5b",
+    "sha256": "11efe34bee915acf2a629cd8cae02a9aecac7313ac88d3c1a872ffd31fc0f7b9",
     "reviewed": true,
     "evidenceRef": "doc/v2/work_items/M28.01.md"
   },
