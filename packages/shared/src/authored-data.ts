@@ -2475,7 +2475,7 @@ export const authoredMetadata: AuthoredMetadata[] = [
       "유한 표본과 확률적 보장·PRM*/Lazy의 조건 및 지도 재사용의 한계를 판정한다."
     ],
     "prerequisiteNote": "M17.01~02의 C-space, 간선 검사와 그래프 탐색을 연결한다. sampling, local planner, query와 확률적 완전성의 뜻을 본문에서 보충한다. 기본은 합성 점과 사각 장애물 계산이며 실제 PRM·OMPL이나 로봇을 실행하지 않는다.",
-    "sha256": "76d83057661db95b11f0201ed6f8b301d8c09c35578172f9db1a2abfc914a534",
+    "sha256": "b775cfa95b7e9ca0418364397650f87352e4ac7acdf4265613069895a3ee2257",
     "reviewed": true,
     "evidenceRef": "doc/v2/work_items/publication-source-privacy.md"
   },

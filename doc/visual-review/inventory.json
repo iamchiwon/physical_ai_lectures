@@ -1614,8 +1614,22 @@
       "evidence": "doc/visual-review/units/M17.02.md"
     },
     "M17.03": {
-      "status": "pending",
-      "source": "ebook/curriculum/M17/M17.03.md"
+      "status": "reviewed",
+      "source": "ebook/curriculum/M17/M17.03.md",
+      "sourceSha256": "b775cfa95b7e9ca0418364397650f87352e4ac7acdf4265613069895a3ee2257",
+      "reason": "PRM의 샘플과 연결 검사의 연결/구분은 글만으로 단계나 경계를 혼동하기 쉬워 설명 도식을 추가한다. 본문의 표·수치·문제 조건도 대조한다.",
+      "assets": [
+        {
+          "path": "apps/web/public/textbook-visuals/M17.03-concept.svg",
+          "sha256": "3474210af25689216bff1e9b7766e7f5a836e6f3aef6207e9ed07f60df4d3fa7",
+          "method": "original-svg",
+          "model": null,
+          "prompt": null,
+          "alt": "PRM의 샘플과 연결 검사: 자유 배치 샘플 → 이웃 후보 → 국소 경로 검사 → 로드맵 그래프.",
+          "caption": "각 칸은 서로 다른 역할/근거다. 아래 방향은 자료/처리의 연결이며 실제 성공을 자동으로 보장하지 않는다. 직접 제작한 개념도이며 본문의 조건과 함께 읽는다."
+        }
+      ],
+      "evidence": "doc/visual-review/units/M17.03.md"
     },
     "M17.04": {
       "status": "pending",
