@@ -501,7 +501,7 @@ export const authoredMetadata: AuthoredMetadata[] = [
       "링크 트리와 mimic 의존 관계에서 중복 부모·순환·누락 참조를 찾아 수정 근거와 검증 범위를 설명한다."
     ],
     "prerequisiteNote": "M06.01의 프레임/합성과 M06.04의 관절 제한, M08.01~02의 URDF/확장 모델이 선수다. 종이 그래프·좌표·범위 계산이며 실제 관절을 움직이지 않는다.",
-    "sha256": "22af283dacf34c0033f5bdc30321b40a3fb93084373490206d8e6ce98ab4ef55",
+    "sha256": "b4ddd5ee725e87fe85affa945d5ba7808d2328b3998e334327f17eee65a26449",
     "reviewed": true,
     "evidenceRef": "doc/v2/work_items/M08.03.md"
   },
