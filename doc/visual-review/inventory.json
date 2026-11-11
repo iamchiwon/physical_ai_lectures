@@ -1226,8 +1226,8 @@
     "M13.01": {
       "status": "reviewed",
       "source": "ebook/curriculum/M13/M13.01.md",
-      "sourceSha256": "4622029e1817b54a4b15386169c35e7afafc45affd8fa928ebad5ef22392faa8",
-      "reason": "점군 처리 단계가 만드는 다른 집합의 연결/구분은 글만으로 단계나 경계를 혼동하기 쉬워 설명 도식을 추가한다. 본문의 표·수치·문제 조건도 대조한다.",
+      "sourceSha256": "8f1b24bad9f8dbc7de1a1cf066e8c8cb4eff765b5f9b2426d9317bae0fba3793",
+      "reason": "Voxel 안의 입력 점과 대표점는 공간/파형 관계를 직접 보아야 식의 기준과 적용 범위를 혼동하지 않으므로 도식을 추가한다. 제공된 식·본문 조건과 대조했다.",
       "assets": [
         {
           "path": "apps/web/public/textbook-visuals/M13.01-concept.svg",
@@ -1237,6 +1237,15 @@
           "prompt": null,
           "alt": "점군 처리 단계가 만드는 다른 집합: 원본 점/계약 → 유효값/관심영역 필터 → Voxel 대표점 → 이웃/군집.",
           "caption": "각 칸은 서로 다른 역할/근거다. 아래 방향은 자료/처리의 연결이며 실제 성공을 자동으로 보장하지 않는다. 직접 제작한 개념도이며 본문의 조건과 함께 읽는다."
+        },
+        {
+          "path": "apps/web/public/textbook-visuals/M13.01-spatial.svg",
+          "sha256": "3a03d4003b3634f0f5e31f9fc98a027ef401d665567236da0e4e10ed032f0db9",
+          "method": "original-svg",
+          "model": null,
+          "prompt": null,
+          "alt": "Voxel 안의 입력 점과 대표점. 3D voxel의 아이디어를 보여 주는 별도 xy 단면도다. 파란 점들을 같은 셀끼리 묶어 주황 평균점으로 요약했다. 대표점은 센서가 그 위치를 직접 측정했다는 뜻이 아니며 본문 계산 표의 원본 점 집합과는 별개다.",
+          "caption": "3D voxel의 아이디어를 보여 주는 별도 xy 단면도다. 파란 점들을 같은 셀끼리 묶어 주황 평균점으로 요약했다. 대표점은 센서가 그 위치를 직접 측정했다는 뜻이 아니며 본문 계산 표의 원본 점 집합과는 별개다. 직접 제작."
         }
       ],
       "evidence": "doc/visual-review/units/M13.01.md"

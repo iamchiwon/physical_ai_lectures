@@ -711,7 +711,7 @@ export const authoredMetadata: AuthoredMetadata[] = [
       "거리 연결 군집을 계산하고 임계값에 따른 합침/분할과 실제 물체·장애물 판정의 한계를 설명한다."
     ],
     "prerequisiteNote": "M02.01의 좌표/거리, M02.05의 수치 계산, M12.02의 카메라 기하를 사용한다. 일반 코딩은 할 수 있다고 전제하며 언어 문법·ML 학습·PCL 설치는 요구하지 않는다. 제공된 작은 합성 점군으로 계산하고 실제 LiDAR·PCL·ROS·장비 실행 결과와 구분한다.",
-    "sha256": "4622029e1817b54a4b15386169c35e7afafc45affd8fa928ebad5ef22392faa8",
+    "sha256": "8f1b24bad9f8dbc7de1a1cf066e8c8cb4eff765b5f9b2426d9317bae0fba3793",
     "reviewed": true,
     "evidenceRef": "doc/v2/work_items/M13.01.md"
   },
