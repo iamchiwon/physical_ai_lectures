@@ -1299,7 +1299,7 @@ export const authoredMetadata: AuthoredMetadata[] = [
       "계획/그리퍼/유지·배치 증거를 구분하고 단계별 성공률의 분모와 실패 원인을 기록한다."
     ],
     "prerequisiteNote": "M12.02의 핀홀, M14 기초의 프레임/시간, M19.01~03의 TCP/경로/접근이 선수다. 물체 자세/파지 후보의 의미를 본문에서 보충하며 M17/M18의 미래 원고를 요구하지 않는다. 합성 영상 수치/작업 로그만으로 활동을 완료한다.",
-    "sha256": "3ff98ea96d39e1385c72e53bfd98e841bf691d71b38095684edadbd00c6f1cd4",
+    "sha256": "1357bb27042291d46422569ef547cee479703a2aafb9399e20448825227e5fc2",
     "reviewed": true,
     "evidenceRef": "doc/v2/work_items/M19.05.md"
   },
