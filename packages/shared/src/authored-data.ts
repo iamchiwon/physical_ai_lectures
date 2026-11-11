@@ -2265,7 +2265,7 @@ export const authoredMetadata: AuthoredMetadata[] = [
       "신호 정의로 payload를 물리 값에 대응시키고 버전·무효값·표본 시각을 함께 판정한다."
     ],
     "prerequisiteNote": "M28.01의 제어기/트랜시버·중재·프레임/ACK와 전송 비용을 사용한다. 언어 문법 없이 자체 가상 설정·오류 상태·신호 정의/바이트 표를 종이로 분석한다. 실제 차량/인터페이스 설정·송수신·bus-off 복구/규격 시험은 수행하지 않는다.",
-    "sha256": "afdf2dde4650902da9ab2a9ccb497c113f058ccccca17997d0ab0fdba3f1242b",
+    "sha256": "c9200fcf56ac339ce4cb1d9b7a13671eed653e18ed256fb05811d08b7d8b1c79",
     "reviewed": true,
     "evidenceRef": "doc/v2/work_items/M28.02.md"
   },
