@@ -235,7 +235,7 @@ export const authoredMetadata: AuthoredMetadata[] = [
       "영상 특징과 실제 물체/기하 위치를 구분하고 반복 무늬·저대비·가림에서 필요한 추가 검사를 제안한다."
     ],
     "prerequisiteNote": "일반 Python 코딩과 M01.02의 배열·shape·dtype 계약을 사용한다. 픽셀 축·경계·이웃 연산과 출력 의미는 본문에서 보충한다. 고전적 영상 처리 입문에 신경망 학습·평가나 3D 회전 단원 전체를 선수로 요구하지 않는다. 기본은 합성 픽셀 계산이며 선택 NumPy 코드는 개념 연산만 실행한다. OpenCV/카메라 실제 실행과 구분한다.",
-    "sha256": "f1736a0726531ad09216f112d1edcd702bcaccb17db51c4b5a94fadea57167ff",
+    "sha256": "d9b0f337a305e742f0eed66290c745f7903e5f7763d2841ee192fc75b8fdf70d",
     "reviewed": true,
     "evidenceRef": "doc/v2/work_items/M12.01.md"
   },
