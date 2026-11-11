@@ -2111,7 +2111,7 @@ export const authoredMetadata: AuthoredMetadata[] = [
       "EEPROM의 별도 공간·쓰기 예산과 주어진 기록의 schema/범위·CRC/commit 유효성을 비교해 복구/미확인을 설명한다."
     ],
     "prerequisiteNote": "M04.03의 획득/결과 출처·sampling/driver 구분이 선수다. 가상 버스/기록표를 종이로 읽으며 일반 C/C++ 문법/버스 쓰기 코드를 요구하지 않는다. 실제 배선/장비 전송·EEPROM 쓰기/정전 시험·펌웨어 실행은 수행하지 않는다.",
-    "sha256": "7db1146f36901e1a0015a3152725423df27424331fec7b1bd9eefd552b2d152d",
+    "sha256": "4568b2dfd3406b6f89dfef7ce02b80c5becc759e4141833c6a5025dbb5c52f23",
     "reviewed": true,
     "evidenceRef": "doc/v2/work_items/M04.04.md"
   },
