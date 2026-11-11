@@ -1173,7 +1173,7 @@ export const authoredMetadata: AuthoredMetadata[] = [
       "재가져오기와 자산 의존성 변경에 대비한 출처 기록 및 단계별 재검사 계획을 작성한다."
     ],
     "prerequisiteNote": "M08.01~06의 URDF/모델 이식과 M10.01의 reference/레이어가 선수다. 기본 활동은 합성 변환 보고서의 종이 검사다. Isaac Sim 6.2 문서를 기준으로 설명하되 실제 importer나 GPU를 실행하지 않는다.",
-    "sha256": "f8ff08536d3c61d68dd2a1176c9972871fadf35164e420b9e3fa183c18e474d3",
+    "sha256": "17d97d34e2e70ae4ba916e0b1663d17b4f92abbe711f2e8463729a431520c6ae",
     "reviewed": true,
     "evidenceRef": "doc/v2/work_items/M10.02.md"
   },
