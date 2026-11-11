@@ -2950,8 +2950,12 @@
       "evidence": "doc/visual-review/units/M32.04.md"
     },
     "M32.05": {
-      "status": "pending",
-      "source": "ebook/curriculum/M32/M32.05.md"
+      "status": "reviewed",
+      "source": "ebook/curriculum/M32/M32.05.md",
+      "sourceSha256": "6e9dd42c200311191fb3c6c51840d84c4be1d5d9afcaab31e03a14235fa86b63",
+      "reason": "본문의 「모호한 기대를 확인할 수 있는 요구로 바꾼다」부터 「재현 패키지는 남이 순서를 따라갈 수 있어야 한다」까지 시각 참조/입력 조건을 점검했다. 제공 표·정의와 수치/판정 절차가 글 안에서 주어지고 특정 미제공 사진/그림의 식별에 의존하지 않아 이번에는 이미지를 추가하지 않는다. 공간 구조의 세부 설명은 연결된 선수 단위의 그림과 함께 읽는다.",
+      "assets": [],
+      "evidence": "doc/visual-review/units/M32.05.md"
     },
     "M32.06": {
       "status": "pending",
