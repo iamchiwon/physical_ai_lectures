@@ -431,7 +431,7 @@ export const authoredMetadata: AuthoredMetadata[] = [
       "rosbag2와 MCAP의 역할을 설명하고 기록 범위·재생 배속·시간 조건에서 재현 주장의 한계를 판정한다."
     ],
     "prerequisiteNote": "M02.02의 좌표 변환과 M05.01~04의 이름·QoS·시각 기록을 사용한다. 기본 실습은 종이 변환과 합성 메타데이터 해석이다. 실제 bag 재생이나 로봇 명령 송신은 하지 않는다.",
-    "sha256": "be44aeae62f7a5aaa10c641d9992330f28f1fd1e862552e1439f9708b2f7cdf9",
+    "sha256": "23b68dbbdf40efbfcfd9dfebc3dd0adc46c2b93522e09af27d9aae607b07719d",
     "reviewed": true,
     "evidenceRef": "doc/v2/work_items/M05.05.md"
   },
