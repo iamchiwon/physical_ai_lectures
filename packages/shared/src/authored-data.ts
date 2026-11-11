@@ -1705,7 +1705,7 @@ export const authoredMetadata: AuthoredMetadata[] = [
       "합성 Physics Debug 기록의 적용 형상·활성/필터·물리 시각·수집 상태를 대조하여 접촉0과 미관측을 구분한다."
     ],
     "prerequisiteNote": "M25.02의 관절/강체 연결과 M25.01의 collider·계층이 선수다. 기존 M10.03의 충돌/접촉을 복습할 수 있다. 네 collider의 집합과 제공 관찰표를 분석하며 실제 PhysX/GUI·GPU·실물 실행은 요구하지 않는다. 일반 문법/설치 절차는 다루지 않는다.",
-    "sha256": "de35fca6c79ab3bfe7aa85c4e80f0f90084a62697d688a062df7f0b83511b952",
+    "sha256": "8690df6c2ed655e48222c920709ecaa44c87fdc59996b7ee6f2d9f8dcfa6d3fc",
     "reviewed": true,
     "evidenceRef": "doc/v2/work_items/M25.03.md"
   },

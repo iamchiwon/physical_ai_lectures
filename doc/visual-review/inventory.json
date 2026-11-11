@@ -2348,8 +2348,22 @@
       "evidence": "doc/visual-review/units/M25.02.md"
     },
     "M25.03": {
-      "status": "pending",
-      "source": "ebook/curriculum/M25/M25.03.md"
+      "status": "reviewed",
+      "source": "ebook/curriculum/M25/M25.03.md",
+      "sourceSha256": "8690df6c2ed655e48222c920709ecaa44c87fdc59996b7ee6f2d9f8dcfa6d3fc",
+      "reason": "충돌 제외는 접촉을 지울 수 있다의 연결/구분은 글만으로 단계나 경계를 혼동하기 쉬워 설명 도식을 추가한다. 본문의 표·수치·문제 조건도 대조한다.",
+      "assets": [
+        {
+          "path": "apps/web/public/textbook-visuals/M25.03-concept.svg",
+          "sha256": "c5aa8a4a83980810bd35b897cf4fcfd554a2c59806895153e6d08752fc7c77f9",
+          "method": "original-svg",
+          "model": null,
+          "prompt": null,
+          "alt": "충돌 제외는 접촉을 지울 수 있다: Collider 활성/형상 → Group/Filter → 개별 pair 제외 → Physics Debug/관측.",
+          "caption": "각 칸은 서로 다른 역할/근거다. 아래 방향은 자료/처리의 연결이며 실제 성공을 자동으로 보장하지 않는다. 직접 제작한 개념도이며 본문의 조건과 함께 읽는다."
+        }
+      ],
+      "evidence": "doc/visual-review/units/M25.03.md"
     },
     "M25.04": {
       "status": "pending",
