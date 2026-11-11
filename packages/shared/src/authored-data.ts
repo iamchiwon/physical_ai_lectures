@@ -2447,7 +2447,7 @@ export const authoredMetadata: AuthoredMetadata[] = [
       "거짓루프/실제루프의 실패와 복구·평가를 설계한다."
     ],
     "prerequisiteNote": "M16.04의 개념을 사용한다. 필요한 새 용어·기호는 본문에서 정의한다. 일반 코딩 문법/실제 장비 설치를 요구하지 않으며 합성 자료로 기본 경로를 수행한다.",
-    "sha256": "a4c2aa617b5f3ee35ecbe39e11fa8039f9832e18ae3e75f86e0d7c5917f025ed",
+    "sha256": "b25d8ec79a643390bb076defe38c1dee27a13c8ccfd3aa60703ef7750197eb4f",
     "reviewed": true,
     "evidenceRef": "doc/v2/work_items/M16.05.md"
   },

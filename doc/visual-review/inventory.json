@@ -1552,8 +1552,22 @@
       "evidence": "doc/visual-review/units/M16.04.md"
     },
     "M16.05": {
-      "status": "pending",
-      "source": "ebook/curriculum/M16/M16.05.md"
+      "status": "reviewed",
+      "source": "ebook/curriculum/M16/M16.05.md",
+      "sourceSha256": "b25d8ec79a643390bb076defe38c1dee27a13c8ccfd3aa60703ef7750197eb4f",
+      "reason": "비슷한 장면을 루프로 확정하지 않기의 연결/구분은 글만으로 단계나 경계를 혼동하기 쉬워 설명 도식을 추가한다. 본문의 표·수치·문제 조건도 대조한다.",
+      "assets": [
+        {
+          "path": "apps/web/public/textbook-visuals/M16.05-concept.svg",
+          "sha256": "aa312a5ea164c5473a4952014e92ac7f48a815ae6ce4947200ab575ea2c5ffd9",
+          "method": "original-svg",
+          "model": null,
+          "prompt": null,
+          "alt": "비슷한 장면을 루프로 확정하지 않기: 장소 후보 검색 → 기하 검증 → 제약 수락/보류 → 백엔드 재평가.",
+          "caption": "각 칸은 서로 다른 역할/근거다. 아래 방향은 자료/처리의 연결이며 실제 성공을 자동으로 보장하지 않는다. 직접 제작한 개념도이며 본문의 조건과 함께 읽는다."
+        }
+      ],
+      "evidence": "doc/visual-review/units/M16.05.md"
     },
     "M16.06": {
       "status": "pending",
