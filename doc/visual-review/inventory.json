@@ -606,8 +606,22 @@
       "evidence": "doc/visual-review/units/M06.02.md"
     },
     "M06.03": {
-      "status": "pending",
-      "source": "ebook/curriculum/M06/M06.03.md"
+      "status": "reviewed",
+      "source": "ebook/curriculum/M06/M06.03.md",
+      "sourceSha256": "c352665e8dba5faeac3daf7db4fb10c97aa2994e2fcfc48710786ed7314d3997",
+      "reason": "같은 끝점에 이르는 두 IK 분기는 공간/파형 관계를 직접 보아야 식의 기준과 적용 범위를 혼동하지 않으므로 도식을 추가한다. 제공된 식·본문 조건과 대조했다.",
+      "assets": [
+        {
+          "path": "apps/web/public/textbook-visuals/M06.03-concept.svg",
+          "sha256": "0893fd69ae36fb8fd21f012e6d4c69f966fcc8d9e4a5ce20dcc03f3449cc9e4f",
+          "method": "original-svg",
+          "model": null,
+          "prompt": null,
+          "alt": "같은 끝점에 이르는 두 IK 분기. 본문의 목표 (0.3,0.2) m를 만족하는 두 기하 분기를 겹쳐 보였다. 끝점이 같아도 팔꿈치·경로는 다르다. 관절 제한·충돌·도구 방향은 이 기하 해에 포함되지 않는다.",
+          "caption": "본문의 목표 (0.3,0.2) m를 만족하는 두 기하 분기를 겹쳐 보였다. 끝점이 같아도 팔꿈치·경로는 다르다. 관절 제한·충돌·도구 방향은 이 기하 해에 포함되지 않는다. 직접 제작."
+        }
+      ],
+      "evidence": "doc/visual-review/units/M06.03.md"
     },
     "M06.04": {
       "status": "pending",

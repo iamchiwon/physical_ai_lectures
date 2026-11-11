@@ -1117,7 +1117,7 @@ export const authoredMetadata: AuthoredMetadata[] = [
       "갱신 뒤 FK 잔차와 제약을 다시 확인하여 국소 선형화·감쇠·수치 실패의 한계 및 중단 조건을 설명한다."
     ],
     "prerequisiteNote": "M06.02의 길이 0.3/0.2 m 평면 2R와 M02의 미분·행렬·최소제곱이 선수다. 기본 활동은 종이 수치 계산이다. 도구 방향을 제외한 2차원 위치 IK를 다루며 실제 로봇이나 NumPy 실행은 필요 없다.",
-    "sha256": "13d6b4790f8b2ee03cad8e8824eeb8f0e1f4228db9c7e208175a8a159c57848d",
+    "sha256": "c352665e8dba5faeac3daf7db4fb10c97aa2994e2fcfc48710786ed7314d3997",
     "reviewed": true,
     "evidenceRef": "doc/v2/work_items/publication-source-privacy.md"
   },
