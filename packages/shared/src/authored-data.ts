@@ -935,7 +935,7 @@ export const authoredMetadata: AuthoredMetadata[] = [
       "작은 잔차와 올바른 장소 대응을 구분하고 초기값·이상치·루프 검증 근거를 제안한다."
     ],
     "prerequisiteNote": "M15.01~03의 상대 관측·파이프라인을 연결한다. 잔차와 제곱합, pose graph의 점과 연결선 및 기준 고정을 본문에서 보충한다. 기본 활동은 합성 점과 1D 궤적 계산이며 실제 ICP나 SLAM 최적화 실행이 아니다.",
-    "sha256": "3f5f3fcef3218cad9b4fef6a35b5e98ceef862f8c8128d04ce451498909e62cb",
+    "sha256": "9c3c5592f316ca52ebb0e06d6cda846f3f09ce77159c9af2fc1fde128f0bdc10",
     "reviewed": true,
     "evidenceRef": "doc/v2/work_items/M15.04.md"
   },
