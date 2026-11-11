@@ -2966,8 +2966,22 @@
       "evidence": "doc/visual-review/units/M32.06.md"
     },
     "M33.01": {
-      "status": "pending",
-      "source": "ebook/curriculum/M33/M33.01.md"
+      "status": "reviewed",
+      "source": "ebook/curriculum/M33/M33.01.md",
+      "sourceSha256": "1d7bc04f5a1afe0948eec85aae2aac32fd3827019fd9fd1dbad1eae401102539",
+      "reason": "화면 이벤트와 물리 피드백의 연결/구분은 글만으로 단계나 경계를 혼동하기 쉬워 설명 도식을 추가한다. 본문의 표·수치·문제 조건도 대조한다.",
+      "assets": [
+        {
+          "path": "apps/web/public/textbook-visuals/M33.01-concept.svg",
+          "sha256": "ef5ec51b5ad3c42573955927ddd6fda3d2f323330b12db4eb96ec00921fb5969",
+          "method": "original-svg",
+          "model": null,
+          "prompt": null,
+          "alt": "화면 이벤트와 물리 피드백: 입력/이벤트 → 처리/상태 → 출력 요청 → 실제 관측.",
+          "caption": "각 칸은 서로 다른 역할/근거다. 아래 방향은 자료/처리의 연결이며 실제 성공을 자동으로 보장하지 않는다. 직접 제작한 개념도이며 본문의 조건과 함께 읽는다."
+        }
+      ],
+      "evidence": "doc/visual-review/units/M33.01.md"
     },
     "M33.02": {
       "status": "pending",

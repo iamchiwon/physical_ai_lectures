@@ -2741,7 +2741,7 @@ export const authoredMetadata: AuthoredMetadata[] = [
       "통신접수와 실제동작·선택체험/필수선수를 구분한다."
     ],
     "prerequisiteNote": "M00.04의 개념을 사용한다. 필요한 새 용어·기호는 본문에서 정의한다. 일반 코딩 문법/실제 장비 설치를 요구하지 않으며 합성 자료로 기본 경로를 수행한다.",
-    "sha256": "5cf09ccecf077a5e1e21866cc89de51ccbf9eed907c6eb11e01b5fad050d4199",
+    "sha256": "1d7bc04f5a1afe0948eec85aae2aac32fd3827019fd9fd1dbad1eae401102539",
     "reviewed": true,
     "evidenceRef": "doc/v2/work_items/M33.01.md"
   },
