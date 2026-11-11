@@ -291,7 +291,7 @@ export const authoredMetadata: AuthoredMetadata[] = [
       "명시한 유한 모형에서 공분산을 계산하고 상관·독립·인과를 같은 뜻으로 해석하지 않는다."
     ],
     "prerequisiteNote": "M02.01의 벡터/행렬과 M02.03의 누적·적분 직관을 사용한다. 실습은 합성 사건 표와 산수이며 센서의 실제 오차 분포를 추정한 것이 아니다.",
-    "sha256": "efdd385e1080dbd1bd9bd021e4aeb48f5015c7916ade0bfb67bb3f3f0beb550c",
+    "sha256": "e8e22d71625ccac64babf51e2a5150eea2f425909351dae066ea80e452aed940",
     "reviewed": true,
     "evidenceRef": "doc/v2/work_items/M02.04.md"
   },

@@ -242,8 +242,22 @@
       "evidence": "doc/visual-review/units/M02.03.md"
     },
     "M02.04": {
-      "status": "pending",
-      "source": "ebook/curriculum/M02/M02.04.md"
+      "status": "reviewed",
+      "source": "ebook/curriculum/M02/M02.04.md",
+      "sourceSha256": "e8e22d71625ccac64babf51e2a5150eea2f425909351dae066ea80e452aed940",
+      "reason": "공분산은 함께 변하는 방향이다는 공간/파형 관계를 직접 보아야 식의 기준과 적용 범위를 혼동하지 않으므로 도식을 추가한다. 제공된 식·본문 조건과 대조했다.",
+      "assets": [
+        {
+          "path": "apps/web/public/textbook-visuals/M02.04-concept.svg",
+          "sha256": "8972e3508373c5ef3c2e2709ec793756dda9f8c4d61122c2a0256eaf852fc4d6",
+          "method": "original-svg",
+          "model": null,
+          "prompt": null,
+          "alt": "공분산은 함께 변하는 방향이다. 타원의 기울기는 두 오차가 함께 증가하는지 반대로 변하는지의 직관을 보인다. 특정 행렬이나 신뢰수준을 그린 등확률 타원은 아니다. 표준편차와 분산의 단위도 구별한다.",
+          "caption": "타원의 기울기는 두 오차가 함께 증가하는지 반대로 변하는지의 직관을 보인다. 특정 행렬이나 신뢰수준을 그린 등확률 타원은 아니다. 표준편차와 분산의 단위도 구별한다. 직접 제작."
+        }
+      ],
+      "evidence": "doc/visual-review/units/M02.04.md"
     },
     "M02.05": {
       "status": "pending",
