@@ -2517,7 +2517,7 @@ export const authoredMetadata: AuthoredMetadata[] = [
       "같은 적용 시각 후보의 temporal ensemble을 가중 순서/부호와 함께 계산하고 관측 나이·기하/안전 한계를 판정한다."
     ],
     "prerequisiteNote": "M11의 신경망/Transformer 기초와 M21.01/02의 BC·행동 표현/정규화·mask가 선수다. 잠재 변수/조건부 VAE는 본문에서 보충한다. 기본은 합성 chunk/손실·후보 표 계산이며 ACT 모델/실물/GPU 실행은 하지 않는다.",
-    "sha256": "8d43056ad99f54a7d52751e0cb07769adcfa9e383b70de3d929fbf23c51fb202",
+    "sha256": "0e7bf2668ecff314728f304c712ed8a0a7ed6b5bda172f2302d8574f6c8702f2",
     "reviewed": true,
     "evidenceRef": "doc/v2/work_items/M21.03.md"
   },
