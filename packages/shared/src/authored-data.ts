@@ -1369,7 +1369,7 @@ export const authoredMetadata: AuthoredMetadata[] = [
       "점수 threshold와 오류 비용을 비교하여 검증 자료의 선택 기준 및 실제 작업 성공의 별도 조건을 제안한다."
     ],
     "prerequisiteNote": "M11.01~04의 손실/출력·검증 분리와 평균 계산이 선수다. 기본은 합성 점수·영역·오차의 종이 계산이며 모델 학습/검출이나 실제 작업 성과를 실행하지 않는다.",
-    "sha256": "8566ee1c1cd478f2fafa25554339d5e673ffebd023aec2fe3e1144f6dff2271e",
+    "sha256": "c7c21d21838b95a634be4400e6a305b09b8675eebba063bd8cad0610001221d1",
     "reviewed": true,
     "evidenceRef": "doc/v2/work_items/M11.05.md"
   },

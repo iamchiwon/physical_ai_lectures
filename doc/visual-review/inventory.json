@@ -1072,8 +1072,22 @@
       "evidence": "doc/visual-review/units/M11.04.md"
     },
     "M11.05": {
-      "status": "pending",
-      "source": "ebook/curriculum/M11/M11.05.md"
+      "status": "reviewed",
+      "source": "ebook/curriculum/M11/M11.05.md",
+      "sourceSha256": "c7c21d21838b95a634be4400e6a305b09b8675eebba063bd8cad0610001221d1",
+      "reason": "출력 형태마다 다른 정답 단위의 연결/구분은 글만으로 단계나 경계를 혼동하기 쉬워 설명 도식을 추가한다. 본문의 표·수치·문제 조건도 대조한다.",
+      "assets": [
+        {
+          "path": "apps/web/public/textbook-visuals/M11.05-concept.svg",
+          "sha256": "ad9e7568f1ece87dbf6fabeba5a2a312574dfa2c295ef50d0b57b9523f9eea8b",
+          "method": "original-svg",
+          "model": null,
+          "prompt": null,
+          "alt": "출력 형태마다 다른 정답 단위: 분류 → 검출 → 분할 → 회귀.",
+          "caption": "각 칸은 서로 다른 역할/근거다. 나란히 비교할 항목이며 위아래가 시간 순서를 뜻하지 않는다. 직접 제작한 개념도이며 본문의 조건과 함께 읽는다."
+        }
+      ],
+      "evidence": "doc/visual-review/units/M11.05.md"
     },
     "M11.06": {
       "status": "pending",
