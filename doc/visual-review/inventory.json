@@ -1516,7 +1516,7 @@
         },
         {
           "path": "apps/web/public/textbook-visuals/M15.04-spatial.svg",
-          "sha256": "6bbbd8dc36e0d2789b7f9f94208f3a1d33ff8e21d48aaf805380fd24de98f4a4",
+          "sha256": "9f79b999e86ba0534aafdfa83f0e4aef2d9f113843be8f3440b5f6b1596f9944",
           "method": "original-svg",
           "model": null,
           "prompt": null,
