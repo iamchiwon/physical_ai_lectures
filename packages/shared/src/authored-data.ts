@@ -2545,7 +2545,7 @@ export const authoredMetadata: AuthoredMetadata[] = [
       "정적/이동 조작 자료의 통합·가중 지표를 계산하고 정책/통합 실행의 검증 근거를 설계한다."
     ],
     "prerequisiteNote": "M19.06의 이동 베이스 좌표, M20의 시연/시각과 M21.02~04의 정책/시퀀스가 선수다. 양팔 상대 제약과 공동학습은 본문에서 보충한다. 기본은 합성 좌표/데이터 표 계산이며 Mobile ALOHA 장비나 학습 코드를 실행하지 않는다.",
-    "sha256": "4b85ce4e46bffde007ee66d86f6f7dfdf67616d66c4edd54dbb1adf49c4e8cb5",
+    "sha256": "0a79ab2d1990785ffd156845453cdf3d1d951ca4db0c99961473db0e3cd16ab4",
     "reviewed": true,
     "evidenceRef": "doc/v2/work_items/M21.05.md"
   },
