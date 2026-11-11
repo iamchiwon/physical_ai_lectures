@@ -571,7 +571,7 @@ export const authoredMetadata: AuthoredMetadata[] = [
       "보정 자료/재투영 잔차와 변경 기록을 해석하여 독립 검사·재보정 조건 및 검증 한계를 제안한다."
     ],
     "prerequisiteNote": "M06.01의 열벡터 프레임, M12.02의 핀홀/왜곡과 M08.05의 TF가 선수다. M13 점군이나 Kalman/EKF는 필요하지 않다. 기본은 합성 좌표·보정 기록의 종이 계산이며 실제 카메라 보정을 수행하지 않는다.",
-    "sha256": "4921462a74f0e2f5a62fb585f93c229a2b4d877b943d7596466101203c96c674",
+    "sha256": "ed0879ba8299835cd40619f26f9978191826d234cc5a24a8ea7891abaa9c19ef",
     "reviewed": true,
     "evidenceRef": "doc/v2/work_items/M14.01.md"
   },

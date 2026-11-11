@@ -1294,8 +1294,22 @@
       "evidence": "doc/visual-review/units/M13.06.md"
     },
     "M14.01": {
-      "status": "pending",
-      "source": "ebook/curriculum/M14/M14.01.md"
+      "status": "reviewed",
+      "source": "ebook/curriculum/M14/M14.01.md",
+      "sourceSha256": "ed0879ba8299835cd40619f26f9978191826d234cc5a24a8ea7891abaa9c19ef",
+      "reason": "점이 픽셀이 되는 두 변환의 연결/구분은 글만으로 단계나 경계를 혼동하기 쉬워 설명 도식을 추가한다. 본문의 표·수치·문제 조건도 대조한다.",
+      "assets": [
+        {
+          "path": "apps/web/public/textbook-visuals/M14.01-concept.svg",
+          "sha256": "1811fc64ee842393461d8fd7ae7f789a3d897d5fc1100184ea7001851094ef97",
+          "method": "original-svg",
+          "model": null,
+          "prompt": null,
+          "alt": "점이 픽셀이 되는 두 변환: 다른 프레임의 점 → 외부 변환 → 내부 파라미터/왜곡 → 검수.",
+          "caption": "각 칸은 서로 다른 역할/근거다. 아래 방향은 자료/처리의 연결이며 실제 성공을 자동으로 보장하지 않는다. 직접 제작한 개념도이며 본문의 조건과 함께 읽는다."
+        }
+      ],
+      "evidence": "doc/visual-review/units/M14.01.md"
     },
     "M14.02": {
       "status": "pending",
