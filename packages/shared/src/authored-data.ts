@@ -2307,7 +2307,7 @@ export const authoredMetadata: AuthoredMetadata[] = [
       "전송 종료·내용/신뢰 검증·활성화와 리셋 후 실제 상태 확인을 분리한다."
     ],
     "prerequisiteNote": "M28.04까지의 진단 응답·기록/원본·시간/세션을 사용한다. 자체 가상 서버와 실행 가능한 펌웨어가 아닌20B 전송 예시를 분석한다. 실제 차량/장비 접속·보안 접근/키 계산·메모리 쓰기/erase/flash/리셋·언어 문법이나 실행 파일 생성은 수행하지 않는다.",
-    "sha256": "9fc74813eb41ba5ed80534d60f908c3f98f3ea3077d98ddca9daf76115b706e7",
+    "sha256": "8e40e4013ac7a2f72506af3f6d184e11b4593239765a05d61c5c5e5c1336b88e",
     "reviewed": true,
     "evidenceRef": "doc/v2/work_items/M28.05.md"
   },
