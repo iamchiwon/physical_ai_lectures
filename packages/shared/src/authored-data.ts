@@ -2405,7 +2405,7 @@ export const authoredMetadata: AuthoredMetadata[] = [
       "기하 퇴화와 동적점·낮은 잔차의 한계를 진단한다."
     ],
     "prerequisiteNote": "M16.01의 개념을 사용한다. 필요한 새 용어·기호는 본문에서 정의한다. 일반 코딩 문법/실제 장비 설치를 요구하지 않으며 합성 자료로 기본 경로를 수행한다.",
-    "sha256": "47dbfe1ffca31549022b6ede42c3ac708be7f81b2a31404990e0058066973c54",
+    "sha256": "55565e590a4db8dd14f8bd7a36bfa75d583312e63732b32afd644767d03175a0",
     "reviewed": true,
     "evidenceRef": "doc/v2/work_items/M16.02.md"
   },
