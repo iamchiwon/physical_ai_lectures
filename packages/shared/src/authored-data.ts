@@ -1103,7 +1103,7 @@ export const authoredMetadata: AuthoredMetadata[] = [
       "이상적인 위치 작업공간의 안쪽/바깥쪽 경계를 계산하고 실제 관절 제한·도구 자세·모델 검증의 추가 조건을 설명한다."
     ],
     "prerequisiteNote": "M06.01의 열벡터·프레임 합성과 M02의 삼각함수, M03의 회전 관절이 선수다. 계산은 종이와 계산기로 충분하며 NumPy나 실제 로봇은 필요 없다. 모든 링크 길이는 교육용 가상 값이다.",
-    "sha256": "aa1e749016d1c2111ba04bef828e66d77c1d410673853a1e67e58194492df357",
+    "sha256": "024fe4ab4b3c9d0b3d93fd085ddced2b211f843326dbbeb521c6b34db083edcb",
     "reviewed": true,
     "evidenceRef": "doc/v2/work_items/publication-source-privacy.md"
   },
