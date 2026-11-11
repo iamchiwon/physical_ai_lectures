@@ -48,8 +48,22 @@
       "evidence": "doc/visual-review/units/M00.02.md"
     },
     "M00.03": {
-      "status": "pending",
-      "source": "ebook/curriculum/M00/M00.03.md"
+      "status": "reviewed",
+      "source": "ebook/curriculum/M00/M00.03.md",
+      "sourceSha256": "da0640809b7f0b1ccfade15b422988dbf9b71528a1c941b58b13db64d50de201",
+      "reason": "이름만으로 로봇팔·AMR·휴머노이드·차량의 베이스/접촉/이동 구조를 떠올리기 어려워 네 가지 몸체 형태의 생성 비교 그림을 제공한다.",
+      "assets": [
+        {
+          "path": "apps/web/public/textbook-visuals/M00.03-robot-forms.webp",
+          "sha256": "0b7bda4252a9007e8b32fc7b674ae0ea4aae24c0f5a39fae45fb051f435db92d",
+          "method": "imagegen-api",
+          "model": "gpt-image-2.5-sunburst",
+          "prompt": "doc/visual-review/prompts/M00.03-robot-forms.txt",
+          "alt": "왼쪽 위 고정 로봇팔, 오른쪽 위 상자를 싣는 바퀴형 AMR, 왼쪽 아래 두 발 휴머노이드, 오른쪽 아래 조향하는 도로 차량.",
+          "caption": "서로 다른 몸체 형태의 예시. 고정 베이스·이동 베이스·두 발 접촉·차량 조향의 차이를 표의 과제/관측과 연결해 읽는다. AI 생성 개념 그림이며 특정 제품의 사양이나 실험 사진이 아니다."
+        }
+      ],
+      "evidence": "doc/visual-review/units/M00.03.md"
     },
     "M00.04": {
       "status": "pending",

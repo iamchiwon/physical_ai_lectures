@@ -39,7 +39,7 @@ export const authoredMetadata: AuthoredMetadata[] = [
       "운반 과제의 환경 조건을 읽고 가능한 구성과 실패 원인·추가 확인 항목을 제안한다."
     ],
     "prerequisiteNote": "M00.01~02의 폐루프와 상태·관측·행동 구분을 사용한다. 기구학·제어 수식이나 특정 로봇 제품 지식은 필요 없다.",
-    "sha256": "e3822b55012d3c8dd2c85f8a71aa55f55fdf39a6a9899ab1fb467911bc027a31",
+    "sha256": "da0640809b7f0b1ccfade15b422988dbf9b71528a1c941b58b13db64d50de201",
     "reviewed": true,
     "evidenceRef": "doc/v2/work_items/publication-source-privacy.md"
   },
