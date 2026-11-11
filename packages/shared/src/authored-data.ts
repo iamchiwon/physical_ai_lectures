@@ -1145,7 +1145,7 @@ export const authoredMetadata: AuthoredMetadata[] = [
       "별도 기준 기록으로 캘리브레이션 후보를 검증하고 모델 버전·단위·영점·측정 한계를 구분하여 보류 근거를 남긴다."
     ],
     "prerequisiteNote": "M03의 기어/엔코더, M06의 프레임·FK·제약과 M05의 시각 기록을 사용한다. 모든 수치는 가상 기록이며 실제 엔코더 보정·모터 명령·로봇 이동은 수행하지 않는다.",
-    "sha256": "c3e66156ba3768b4d2d314d4c1bbd4c2d13a109e81841d6da5f2ddb581d6e0e0",
+    "sha256": "7301ba0f09e964a25258842edfe6c0e9ac1b1ba53bd7cdea94c7a7d28504ba25",
     "reviewed": true,
     "evidenceRef": "doc/v2/work_items/publication-source-privacy.md"
   },

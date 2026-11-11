@@ -671,8 +671,8 @@
     "M06.06": {
       "status": "reviewed",
       "source": "ebook/curriculum/M06/M06.06.md",
-      "sourceSha256": "c3e66156ba3768b4d2d314d4c1bbd4c2d13a109e81841d6da5f2ddb581d6e0e0",
-      "reason": "직렬 사슬과 병렬 연결의 연결/구분은 글만으로 단계나 경계를 혼동하기 쉬워 설명 도식을 추가한다. 본문의 표·수치·문제 조건도 대조한다.",
+      "sourceSha256": "7301ba0f09e964a25258842edfe6c0e9ac1b1ba53bd7cdea94c7a7d28504ba25",
+      "reason": "직렬 사슬과 달라지는 병렬 연결는 공간/파형 관계를 직접 보아야 식의 기준과 적용 범위를 혼동하지 않으므로 도식을 추가한다. 제공된 식·본문 조건과 대조했다.",
       "assets": [
         {
           "path": "apps/web/public/textbook-visuals/M06.06-concept.svg",
@@ -682,6 +682,15 @@
           "prompt": null,
           "alt": "직렬 사슬과 병렬 연결: 직렬 팔 → 병렬 델타 → 독립 좌표 → 엔코더 계약.",
           "caption": "각 칸은 서로 다른 역할/근거다. 나란히 비교할 항목이며 위아래가 시간 순서를 뜻하지 않는다. 직접 제작한 개념도이며 본문의 조건과 함께 읽는다."
+        },
+        {
+          "path": "apps/web/public/textbook-visuals/M06.06-spatial.svg",
+          "sha256": "3fae1693d9c5fbe09a8eae1d34e1d5c205bc40f5337918b8b9dcf59e8bc2e534",
+          "method": "original-svg",
+          "model": null,
+          "prompt": null,
+          "alt": "직렬 사슬과 달라지는 병렬 연결. 직렬 팔은 베이스에서 말단으로 하나의 사슬을 따른다. 이 델타 연결 개념도는 세 다리가 같은 플랫폼을 함께 제약하는 차이를 보인다. 초록 이중선은 평행한 하부 링크 쌍의 역할을 나타내며 실제 3D 배치/관절 축/치수·운동 해를 정하는 도면은 아니다.",
+          "caption": "직렬 팔은 베이스에서 말단으로 하나의 사슬을 따른다. 이 델타 연결 개념도는 세 다리가 같은 플랫폼을 함께 제약하는 차이를 보인다. 초록 이중선은 평행한 하부 링크 쌍의 역할을 나타내며 실제 3D 배치/관절 축/치수·운동 해를 정하는 도면은 아니다. 직접 제작."
         }
       ],
       "evidence": "doc/visual-review/units/M06.06.md"
