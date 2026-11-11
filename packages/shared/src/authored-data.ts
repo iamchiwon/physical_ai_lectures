@@ -2419,7 +2419,7 @@ export const authoredMetadata: AuthoredMetadata[] = [
       "초기화/관측가능성·느슨한/긴밀한 결합의 한계를 설명한다."
     ],
     "prerequisiteNote": "M16.02의 개념을 사용한다. 필요한 새 용어·기호는 본문에서 정의한다. 일반 코딩 문법/실제 장비 설치를 요구하지 않으며 합성 자료로 기본 경로를 수행한다.",
-    "sha256": "0c3ee24a6c0fc181c1c000a62348541e5b0ec09e82d1daf5d098f5f6c2819eb7",
+    "sha256": "ae15239250ff3448b8c91ec69c6d1057e8cea0a8db0747743ee2dbda30da402b",
     "reviewed": true,
     "evidenceRef": "doc/v2/work_items/M16.03.md"
   },
