@@ -739,7 +739,7 @@ export const authoredMetadata: AuthoredMetadata[] = [
       "작은 시차·잘못된 대응·척도와 재투영의 한계를 구분하여 깊이 추정의 유효성과 품질을 판단한다."
     ],
     "prerequisiteNote": "M06.01의 프레임 변환, M12.02의 핀홀 투영과 M14.01의 내부/외부 보정을 사용한다. 언어 문법·OpenCV 설치·실제 카메라 실행은 필요 없다. 기본 활동은 보정/정렬이 완료되었다고 명시한 합성 픽셀의 손계산이며 일반3D삼각측량 해법 유도는 제외한다.",
-    "sha256": "cf4e3ae83343cb6a7338da544727ae048f611006729ed7e655ddd614b8cb7dc8",
+    "sha256": "f69fb063ce3265f9163f5f68fb84980bb78c5e3a94badfed116cd15af8c44520",
     "reviewed": true,
     "evidenceRef": "doc/v2/work_items/M13.05.md"
   },

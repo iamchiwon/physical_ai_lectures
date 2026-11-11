@@ -1268,8 +1268,22 @@
       "evidence": "doc/visual-review/units/M13.04.md"
     },
     "M13.05": {
-      "status": "pending",
-      "source": "ebook/curriculum/M13/M13.05.md"
+      "status": "reviewed",
+      "source": "ebook/curriculum/M13/M13.05.md",
+      "sourceSha256": "f69fb063ce3265f9163f5f68fb84980bb78c5e3a94badfed116cd15af8c44520",
+      "reason": "삼각측량의 두 시점과 광선는 공간/파형 관계를 직접 보아야 식의 기준과 적용 범위를 혼동하지 않으므로 도식을 추가한다. 제공된 식·본문 조건과 대조했다.",
+      "assets": [
+        {
+          "path": "apps/web/public/textbook-visuals/M13.05-concept.svg",
+          "sha256": "862eb8df5022475e4d8f8e55794a59095552a9154496895c014a677ade799ac9",
+          "method": "original-svg",
+          "model": null,
+          "prompt": null,
+          "alt": "삼각측량의 두 시점과 광선. 두 광선은 같은 물리점의 관측을 공통 프레임에서 표현한다. baseline은 카메라 중심 간 거리다. 잡음이 있으면 교차하지 않을 수 있고 작은 시차/잘못된 대응은 깊이 추정을 불안정하게 한다.",
+          "caption": "두 광선은 같은 물리점의 관측을 공통 프레임에서 표현한다. baseline은 카메라 중심 간 거리다. 잡음이 있으면 교차하지 않을 수 있고 작은 시차/잘못된 대응은 깊이 추정을 불안정하게 한다. 직접 제작."
+        }
+      ],
+      "evidence": "doc/visual-review/units/M13.05.md"
     },
     "M13.06": {
       "status": "pending",
