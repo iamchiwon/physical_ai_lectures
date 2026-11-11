@@ -2335,7 +2335,7 @@ export const authoredMetadata: AuthoredMetadata[] = [
       "선형 및 일차 근사에서 분산·공분산 전파를 계산하고 상관·단위·모형 오차의 조건을 설명한다."
     ],
     "prerequisiteNote": "M02.01의 행렬, M02.03의 미분·Jacobian, M02.04의 분산/공분산을 사용한다. 합성 수치의 종이 계산이 기본이며 실제 로봇의 안정성·안전 인증을 수행하지 않는다.",
-    "sha256": "b0a52e579c1d1887b579635c6da4d634bbfd8647472a542d3bda0eb089cc0aa4",
+    "sha256": "e2288e411081cc337d387168373aa0c367740d6996ca0d1bddd4da4015429872",
     "reviewed": true,
     "evidenceRef": "doc/v2/work_items/publication-source-privacy.md"
   },

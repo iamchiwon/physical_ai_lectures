@@ -278,8 +278,22 @@
       "evidence": "doc/visual-review/units/M02.05.md"
     },
     "M02.06": {
-      "status": "pending",
-      "source": "ebook/curriculum/M02/M02.06.md"
+      "status": "reviewed",
+      "source": "ebook/curriculum/M02/M02.06.md",
+      "sourceSha256": "e2288e411081cc337d387168373aa0c367740d6996ca0d1bddd4da4015429872",
+      "reason": "이산 오차의 크기와 부호는 공간/파형 관계를 직접 보아야 식의 기준과 적용 범위를 혼동하지 않으므로 도식을 추가한다. 제공된 식·본문 조건과 대조했다.",
+      "assets": [
+        {
+          "path": "apps/web/public/textbook-visuals/M02.06-concept.svg",
+          "sha256": "c31e297ab51f62a033433981191a5f0b99a41c394f1a185641d0df3a1b749d14",
+          "method": "original-svg",
+          "model": null,
+          "prompt": null,
+          "alt": "이산 오차의 크기와 부호. A=diag(0.5,−0.2), e0=(2,5)인 본문 모델의 k=0~4를 그렸다. 음의 고윳값 성분은 부호가 바뀌면서도 크기는 줄어든다. 연속시간의 안정성 판정과 혼용하지 않는다.",
+          "caption": "A=diag(0.5,−0.2), e0=(2,5)인 본문 모델의 k=0~4를 그렸다. 음의 고윳값 성분은 부호가 바뀌면서도 크기는 줄어든다. 연속시간의 안정성 판정과 혼용하지 않는다. 직접 제작."
+        }
+      ],
+      "evidence": "doc/visual-review/units/M02.06.md"
     },
     "M03.01": {
       "status": "pending",
