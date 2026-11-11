@@ -1873,7 +1873,7 @@ export const authoredMetadata: AuthoredMetadata[] = [
       "복합 제약/경로·현재 상태/초기화의 한계를 판정하고 미상/복구·재검증 절차를 설계한다."
     ],
     "prerequisiteNote": "M07의 필터, M21.03의 chunk/ensemble과 M27의 시간/버전을 사용한다. 후보의 실행 시점/age·가중 인덱스와 물리 제한의 교집합을 본문에서 보충한다. 기본은 종이 계산이며 실제 정책/장비 명령·안전 인증은 하지 않는다.",
-    "sha256": "8eec671052fb3c63b3f07498e56868a414d80f3f91aa061410f73d6c4c22eaca",
+    "sha256": "73d2f50528f3b1078bbdb87e09b740d9610e62b5af442ad95561a7ac93104358",
     "reviewed": true,
     "evidenceRef": "doc/v2/work_items/M30.03.md"
   },
