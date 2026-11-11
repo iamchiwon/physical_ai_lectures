@@ -1593,7 +1593,7 @@ export const authoredMetadata: AuthoredMetadata[] = [
       "checkpoint/전후처리·시각/자원/사용 조건을 확인하고 합성 지연 사례에서 출력의 유효성과 평가 근거를 판정한다."
     ],
     "prerequisiteNote": "M12의 영상, M21의 행동 표현/생성과 M22.01~03의 접지/실행·자원이 선수다. 행동 토큰/연속 flow는 본문에서 보충한다. 기본은 합성 구간/시간 계산이며 모델 다운로드·추론/파인튜닝이나 실제 로봇 동작은 하지 않는다.",
-    "sha256": "fa1ae59c7f403fd47fa3f8d12263bacef361e24926197a9cf2391e629ea8f78b",
+    "sha256": "190a2054a538cbfd22fff5acc9c4c5f3154eb5d7cdd23704469e2f40e93ae696",
     "reviewed": true,
     "evidenceRef": "doc/v2/work_items/M22.04.md"
   },

@@ -2102,8 +2102,22 @@
       "evidence": "doc/visual-review/units/M22.03.md"
     },
     "M22.04": {
-      "status": "pending",
-      "source": "ebook/curriculum/M22/M22.04.md"
+      "status": "reviewed",
+      "source": "ebook/curriculum/M22/M22.04.md",
+      "sourceSha256": "190a2054a538cbfd22fff5acc9c4c5f3154eb5d7cdd23704469e2f40e93ae696",
+      "reason": "관측에서 행동 표현까지의 연결/구분은 글만으로 단계나 경계를 혼동하기 쉬워 설명 도식을 추가한다. 본문의 표·수치·문제 조건도 대조한다.",
+      "assets": [
+        {
+          "path": "apps/web/public/textbook-visuals/M22.04-concept.svg",
+          "sha256": "16f021242253faea9e2361c4e69ace1beeb07e50120fc2c548f86ccdaf5187f9",
+          "method": "original-svg",
+          "model": null,
+          "prompt": null,
+          "alt": "관측에서 행동 표현까지: 영상·언어·상태 → 멀티모달 표현 → 행동 표현/디코딩 → 실행 인터페이스.",
+          "caption": "각 칸은 서로 다른 역할/근거다. 아래 방향은 자료/처리의 연결이며 실제 성공을 자동으로 보장하지 않는다. 직접 제작한 개념도이며 본문의 조건과 함께 읽는다."
+        }
+      ],
+      "evidence": "doc/visual-review/units/M22.04.md"
     },
     "M22.05": {
       "status": "pending",
