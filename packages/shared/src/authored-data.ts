@@ -795,7 +795,7 @@ export const authoredMetadata: AuthoredMetadata[] = [
       "바퀴 속도 한계와 메카넘의 모델 일관성 잔차를 검사하고 실제 이동·미끄럼에 대한 추론 한계를 설명한다."
     ],
     "prerequisiteNote": "M03.05의 바퀴 구조, M06.01의 좌표 변환, M02.01의 행렬이 선수다. 모든 치수와 로그는 가상 모델이다. 계산기와 종이만 사용하며 실제 베이스를 주행하지 않는다.",
-    "sha256": "f9853395a7bdc99786590a720373888bb145202448ba921fd747317b2acf8b87",
+    "sha256": "b6a2e0384288a5988c48609defa1f91ddef293865507fb06c85ff18ff490050e",
     "reviewed": true,
     "evidenceRef": "doc/v2/work_items/publication-source-privacy.md"
   },

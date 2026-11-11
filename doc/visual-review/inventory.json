@@ -642,8 +642,22 @@
       "evidence": "doc/visual-review/units/M06.04.md"
     },
     "M06.05": {
-      "status": "pending",
-      "source": "ebook/curriculum/M06/M06.05.md"
+      "status": "reviewed",
+      "source": "ebook/curriculum/M06/M06.05.md",
+      "sourceSha256": "b6a2e0384288a5988c48609defa1f91ddef293865507fb06c85ff18ff490050e",
+      "reason": "바퀴 배치와 양의 구동 방향는 공간/파형 관계를 직접 보아야 식의 기준과 적용 범위를 혼동하지 않으므로 도식을 추가한다. 제공된 식·본문 조건과 대조했다.",
+      "assets": [
+        {
+          "path": "apps/web/public/textbook-visuals/M06.05-concept.svg",
+          "sha256": "e03e5c4a5333f28c3f77f3b18e5394834719e21c4142f11b7236e450eb6e2456",
+          "method": "original-svg",
+          "model": null,
+          "prompt": null,
+          "alt": "바퀴 배치와 양의 구동 방향. 오른쪽은 위치 (R sinβ,−R cosβ), 구동 방향 β=0/120/240°인 본문의 3옴니 모델이다. 화살표는 각 바퀴의 양의 주 구동 방향이며 차체가 언제나 그 방향으로만 움직인다는 뜻은 아니다. 왼쪽 차동 모델은 이상 무미끄럼에서 vy=0이다.",
+          "caption": "오른쪽은 위치 (R sinβ,−R cosβ), 구동 방향 β=0/120/240°인 본문의 3옴니 모델이다. 화살표는 각 바퀴의 양의 주 구동 방향이며 차체가 언제나 그 방향으로만 움직인다는 뜻은 아니다. 왼쪽 차동 모델은 이상 무미끄럼에서 vy=0이다. 직접 제작."
+        }
+      ],
+      "evidence": "doc/visual-review/units/M06.05.md"
     },
     "M06.06": {
       "status": "pending",
