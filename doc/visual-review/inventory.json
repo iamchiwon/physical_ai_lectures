@@ -1650,8 +1650,22 @@
       "evidence": "doc/visual-review/units/M17.04.md"
     },
     "M17.05": {
-      "status": "pending",
-      "source": "ebook/curriculum/M17/M17.05.md"
+      "status": "reviewed",
+      "source": "ebook/curriculum/M17/M17.05.md",
+      "sourceSha256": "e99145de7644267c47f64d0cf5077e33c1e68ff30a76159963a7e84537bb2be6",
+      "reason": "짧은 경로와 유효한 경로의 연결/구분은 글만으로 단계나 경계를 혼동하기 쉬워 설명 도식을 추가한다. 본문의 표·수치·문제 조건도 대조한다.",
+      "assets": [
+        {
+          "path": "apps/web/public/textbook-visuals/M17.05-concept.svg",
+          "sha256": "feb91ea1845b8967b83026ead83e1848008aae86c265f3ed7ef71008a5643760",
+          "method": "original-svg",
+          "model": null,
+          "prompt": null,
+          "alt": "짧은 경로와 유효한 경로: 경로 변수 → 매끄러움 비용 → 장애물 비용/제약 → 후보 검증.",
+          "caption": "각 칸은 서로 다른 역할/근거다. 아래 방향은 자료/처리의 연결이며 실제 성공을 자동으로 보장하지 않는다. 직접 제작한 개념도이며 본문의 조건과 함께 읽는다."
+        }
+      ],
+      "evidence": "doc/visual-review/units/M17.05.md"
     },
     "M17.06": {
       "status": "pending",

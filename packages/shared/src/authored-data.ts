@@ -2503,7 +2503,7 @@ export const authoredMetadata: AuthoredMetadata[] = [
       "초기 경로·국소성·유한 벌점의 한계를 설명하고 전체 충돌·시간 제약을 별도로 판정한다."
     ],
     "prerequisiteNote": "M02의 미분·최적화와 M17의 경로·충돌을 연결한다. 목적함수, gradient, metric과 비용 가중 후보를 본문에서 정의한다. 종이 계산과 임시 CPU 검산이 기본이며 교육용 스칼라 예는 실제 CHOMP/STOMP 구현이 아니다.",
-    "sha256": "f980fab97830e654a99764988c8301ec62e1230623e1032269975317299a6544",
+    "sha256": "e99145de7644267c47f64d0cf5077e33c1e68ff30a76159963a7e84537bb2be6",
     "reviewed": true,
     "evidenceRef": "doc/v2/work_items/publication-source-privacy.md"
   },
