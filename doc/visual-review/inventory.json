@@ -2646,8 +2646,22 @@
       "evidence": "doc/visual-review/units/M28.05.md"
     },
     "M28.06": {
-      "status": "pending",
-      "source": "ebook/curriculum/M28/M28.06.md"
+      "status": "reviewed",
+      "source": "ebook/curriculum/M28/M28.06.md",
+      "sourceSha256": "0a744fe290a407e2f3be6d52f4c0c2a40efb3552f705648a702d9a8a1170884c",
+      "reason": "메타데이터와 실제 계측 경로의 연결/구분은 글만으로 단계나 경계를 혼동하기 쉬워 설명 도식을 추가한다. 본문의 표·수치·문제 조건도 대조한다.",
+      "assets": [
+        {
+          "path": "apps/web/public/textbook-visuals/M28.06-concept.svg",
+          "sha256": "a2849cb6d05900a191c6bd38e3d516a6ab63e58b2bd4bb53cfe1365325bde394",
+          "method": "original-svg",
+          "model": null,
+          "prompt": null,
+          "alt": "메타데이터와 실제 계측 경로: A2L/빌드 계약 → 폴링 → DAQ → 해석/보존.",
+          "caption": "각 칸은 서로 다른 역할/근거다. 나란히 비교할 항목이며 위아래가 시간 순서를 뜻하지 않는다. 직접 제작한 개념도이며 본문의 조건과 함께 읽는다."
+        }
+      ],
+      "evidence": "doc/visual-review/units/M28.06.md"
     },
     "M29.01": {
       "status": "pending",

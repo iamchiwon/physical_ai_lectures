@@ -2321,7 +2321,7 @@ export const authoredMetadata: AuthoredMetadata[] = [
       "캘리브레이션 값의 범위·페이지/readback·실제 적용/영속화와 검증을 나눈다."
     ],
     "prerequisiteNote": "M28.05까지의 형상/원본·신호 해석/시간·전송/실제 적용 구분을 사용한다. 자체 가상 메타데이터/바이트·이벤트/페이지 표를 분석하며 정식 A2L/펌웨어 파일이나 실제 툴/장비의 XCP 접속·읽기/쓰기·파라미터 조정/저장·재부팅을 수행하지 않는다. 일반 언어 문법은 추가하지 않는다.",
-    "sha256": "a9de59a42a75cec418aafe0b26542f75eb2c9a1f46f8223dc5bf96dbd0a7064a",
+    "sha256": "0a744fe290a407e2f3be6d52f4c0c2a40efb3552f705648a702d9a8a1170884c",
     "reviewed": true,
     "evidenceRef": "doc/v2/work_items/publication-source-privacy.md"
   },
