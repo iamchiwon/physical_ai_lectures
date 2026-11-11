@@ -1411,7 +1411,7 @@ export const authoredMetadata: AuthoredMetadata[] = [
       "분할된 도로를 실제 주행 가능 영역과 구분하여 가림·경계·조건 변화의 실패 근거 및 추가 확인을 제안한다."
     ],
     "prerequisiteNote": "M11.05의 IoU와 M12.01~03의 영상/투영/라벨이 선수다. 기본은 여섯 픽셀의 합성 mask와 도로 장면 설명의 종이 분석이다. 실제 segmentation 모델이나 차량/로봇을 실행하지 않는다.",
-    "sha256": "5dc99984d34fa871f9a340f9949966536627fb9da7094bf4b2f93ee95e39fd5f",
+    "sha256": "f4b89e8ce7f588caf84062cf3640195dcbbe067a692b54d3ace5ebc4bc59b121",
     "reviewed": true,
     "evidenceRef": "doc/v2/work_items/M12.04.md"
   },

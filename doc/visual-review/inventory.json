@@ -1152,8 +1152,22 @@
       "evidence": "doc/visual-review/units/M12.03.md"
     },
     "M12.04": {
-      "status": "pending",
-      "source": "ebook/curriculum/M12/M12.04.md"
+      "status": "reviewed",
+      "source": "ebook/curriculum/M12/M12.04.md",
+      "sourceSha256": "f4b89e8ce7f588caf84062cf3640195dcbbe067a692b54d3ace5ebc4bc59b121",
+      "reason": "Semantic과 Instance의 구분는 공간/파형 관계를 직접 보아야 식의 기준과 적용 범위를 혼동하지 않으므로 도식을 추가한다. 제공된 식·본문 조건과 대조했다.",
+      "assets": [
+        {
+          "path": "apps/web/public/textbook-visuals/M12.04-concept.svg",
+          "sha256": "548f0c4d3b33307ee2db5e3767912b11899c3cf5e1682c1ca4c6f94007f36e43",
+          "method": "original-svg",
+          "model": null,
+          "prompt": null,
+          "alt": "Semantic과 Instance의 구분. 같은 클래스의 두 물체를 semantic 지도는 같은 값으로, instance 지도는 개체별 값으로 나눈다. 색 자체는 class ID가 아니며 단일 프레임 instance ID와 시간 추적 ID도 다르다.",
+          "caption": "같은 클래스의 두 물체를 semantic 지도는 같은 값으로, instance 지도는 개체별 값으로 나눈다. 색 자체는 class ID가 아니며 단일 프레임 instance ID와 시간 추적 ID도 다르다. 직접 제작."
+        }
+      ],
+      "evidence": "doc/visual-review/units/M12.04.md"
     },
     "M12.05": {
       "status": "pending",
