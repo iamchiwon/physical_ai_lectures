@@ -907,7 +907,7 @@ export const authoredMetadata: AuthoredMetadata[] = [
       "저장 지도를 재사용할 때 좌표·위치 추정·환경 유효성과 실행 근거를 점검한다."
     ],
     "prerequisiteNote": "M15.01의 지도와 위치 추정을 연결한다. 좌표 회전과 배열 순서는 본문에서 다시 정의한다. 작은 합성 격자와 가상 파일을 종이로 해석하며 실제 Nav2·지도 저장이나 로봇을 실행하지 않는다.",
-    "sha256": "a01eeb7b3f27a896fab2656ac890a095e3bb823de078da09d8f418a3ad58ff45",
+    "sha256": "71c52b9568b3614f433d0ed4398d0d1e9a53e29e8fdb7be76657316118c8b9bd",
     "reviewed": true,
     "evidenceRef": "doc/v2/work_items/M15.02.md"
   },
