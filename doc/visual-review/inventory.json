@@ -2506,8 +2506,12 @@
       "evidence": "doc/visual-review/units/M27.01.md"
     },
     "M27.02": {
-      "status": "pending",
-      "source": "ebook/curriculum/M27/M27.02.md"
+      "status": "reviewed",
+      "source": "ebook/curriculum/M27/M27.02.md",
+      "sourceSha256": "66c20f99e32064fb8be54d02f744a73916f358e28ab65fa5e8080baeadf6d792",
+      "reason": "본문의 「파라미터 수와 한 성분의 저장 크기를 곱한다」부터 「batch 처리량의 향상은 각 관측의 지연과 다르다」까지 시각 참조/입력 조건을 점검했다. 정의와 수치/판정 절차가 글 안에서 주어지고 특정 미제공 사진/그림의 식별에 의존하지 않아 이번에는 이미지를 추가하지 않는다. 공간 구조의 세부 설명은 연결된 선수 단위의 그림과 함께 읽는다.",
+      "assets": [],
+      "evidence": "doc/visual-review/units/M27.02.md"
     },
     "M27.03": {
       "status": "pending",
