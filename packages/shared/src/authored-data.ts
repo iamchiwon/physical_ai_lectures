@@ -1971,7 +1971,7 @@ export const authoredMetadata: AuthoredMetadata[] = [
       "버전 변경·지연·누락 때 마지막 정합 장면과 현재 미확인을 분리하고 재동기화 근거를 기록한다."
     ],
     "prerequisiteNote": "M34.01의 관측/신선도, M06.01의 열벡터·프레임 변환, M14.03의 시계/시간 정합이 선수다. 종이 계산과 합성 기록표로 수행하며 실제 ROS/tf2·3D엔진·로봇을 실행하지 않는다. 코드·문법 입문은 제외한다.",
-    "sha256": "f7f06814e91902bf46e7b5a53056af5560a86f58d984c806f083c2edf3e61294",
+    "sha256": "abd1c86db0b00b6b8a34f7b9e46039460db0eddad9ce4fcb9c60626698838349",
     "reviewed": true,
     "evidenceRef": "doc/v2/work_items/M34.02.md"
   },

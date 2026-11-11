@@ -3042,8 +3042,22 @@
       "evidence": "doc/visual-review/units/M34.01.md"
     },
     "M34.02": {
-      "status": "pending",
-      "source": "ebook/curriculum/M34/M34.02.md"
+      "status": "reviewed",
+      "source": "ebook/curriculum/M34/M34.02.md",
+      "sourceSha256": "abd1c86db0b00b6b8a34f7b9e46039460db0eddad9ce4fcb9c60626698838349",
+      "reason": "3D 장면의 한 스냅샷의 연결/구분은 글만으로 단계나 경계를 혼동하기 쉬워 설명 도식을 추가한다. 본문의 표·수치·문제 조건도 대조한다.",
+      "assets": [
+        {
+          "path": "apps/web/public/textbook-visuals/M34.02-concept.svg",
+          "sha256": "0de0b3f86b209736fac9e76fb6e16c85084dc54901d83754391e666fb249036c",
+          "method": "original-svg",
+          "model": null,
+          "prompt": null,
+          "alt": "3D 장면의 한 스냅샷: 상태/측정 묶음 → 관측 시각의 TF → 자산/계약 revision → 일괄 표시 전환.",
+          "caption": "각 칸은 서로 다른 역할/근거다. 아래 방향은 자료/처리의 연결이며 실제 성공을 자동으로 보장하지 않는다. 직접 제작한 개념도이며 본문의 조건과 함께 읽는다."
+        }
+      ],
+      "evidence": "doc/visual-review/units/M34.02.md"
     },
     "M34.03": {
       "status": "pending",
