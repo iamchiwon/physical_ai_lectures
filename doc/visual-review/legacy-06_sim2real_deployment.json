@@ -1,0 +1,173 @@
+{
+  "scope": "기존 교재 읽기 단위의 시각 참조·이미지 파일 연결 검사. 원본/실습·해설 유지.",
+  "decision": "기존 장별 좌표/기구/데이터/시간/배포 도식을 유지하며 현재 커리큘럼의 추가 도식으로 보충한다.",
+  "units": [
+    {
+      "slug": "06_sim2real_deployment--chapter-1",
+      "title": "제6장 Sim2Real 배포 최적화와 최종 실증",
+      "source": "06_sim2real_deployment/chapter.md",
+      "contentSha256": "49bf4a6a01978e51c92f38fd45c9ea2dd9b5a287464d0041f04f34b3b19295f4",
+      "images": 0
+    },
+    {
+      "slug": "06_sim2real_deployment--chapter-2",
+      "title": "장 개요",
+      "source": "06_sim2real_deployment/chapter.md",
+      "contentSha256": "03ca8a81be982696176f19ed6eeb2998f1e0b8c365fc616beff690089c49d70a",
+      "images": 1
+    },
+    {
+      "slug": "06_sim2real_deployment--chapter-3",
+      "title": "학습 목표",
+      "source": "06_sim2real_deployment/chapter.md",
+      "contentSha256": "91e3c393ca785e981f69371fc9803275702f77b7b29bb8d7aa2d83aa06ab7057",
+      "images": 0
+    },
+    {
+      "slug": "06_sim2real_deployment--chapter-4",
+      "title": "선수 지식과 준비물",
+      "source": "06_sim2real_deployment/chapter.md",
+      "contentSha256": "330dddf84c7d04d24738b81c80f96da90de8bf4053bc7f38372ffdb30134d567",
+      "images": 0
+    },
+    {
+      "slug": "06_sim2real_deployment--chapter-5",
+      "title": "6.1 Reality Gap의 구조",
+      "source": "06_sim2real_deployment/chapter.md",
+      "contentSha256": "51938fcc61729f4e51fd6bc19a0e594225a0e95e00e8bc085b9dcf7280cf1da4",
+      "images": 0
+    },
+    {
+      "slug": "06_sim2real_deployment--chapter-6",
+      "title": "6.2 정량 진단",
+      "source": "06_sim2real_deployment/chapter.md",
+      "contentSha256": "b3b99288ddd928a1d7f07e682a62923c6fb4c4ab07e35b4b0587a6b3c4b1c1d6",
+      "images": 0
+    },
+    {
+      "slug": "06_sim2real_deployment--chapter-7",
+      "title": "6.3 출력 안정화",
+      "source": "06_sim2real_deployment/chapter.md",
+      "contentSha256": "0cb492244371990cab678bf000fa86ab926c299baa26b22a73c178f3049e3fd7",
+      "images": 0
+    },
+    {
+      "slug": "06_sim2real_deployment--chapter-8",
+      "title": "6.4 안전 배포 감독기",
+      "source": "06_sim2real_deployment/chapter.md",
+      "contentSha256": "93a15c1f725b108d8099089e1f4b23db6ef2e3497cbba1908315061023b7cb9e",
+      "images": 1
+    },
+    {
+      "slug": "06_sim2real_deployment--chapter-9",
+      "title": "6.5 End-to-End Pick & Place 배포",
+      "source": "06_sim2real_deployment/chapter.md",
+      "contentSha256": "d6516529a0146694c9a028f0b93df9d8d94b3008f30453d56a3a20ca216c4e27",
+      "images": 1
+    },
+    {
+      "slug": "06_sim2real_deployment--chapter-10",
+      "title": "6.6 평가 설계",
+      "source": "06_sim2real_deployment/chapter.md",
+      "contentSha256": "622130186369b23dc88ac8733e8e6e4bdbe867b8c5bdd70eeddf4ceab6624c8f",
+      "images": 1
+    },
+    {
+      "slug": "06_sim2real_deployment--chapter-11",
+      "title": "6.7 트러블슈팅 매트릭스",
+      "source": "06_sim2real_deployment/chapter.md",
+      "contentSha256": "2f9190795cd220c9b1e08b2392ba6ba84e93bf3c17ab28c0170316747fc249a8",
+      "images": 0
+    },
+    {
+      "slug": "06_sim2real_deployment--chapter-12",
+      "title": "6.8 포트폴리오 패키징",
+      "source": "06_sim2real_deployment/chapter.md",
+      "contentSha256": "51fd893aa324daec31fd6196ff8d70cfdadafee57f9911564e93ecaacc73f909",
+      "images": 0
+    },
+    {
+      "slug": "06_sim2real_deployment--chapter-13",
+      "title": "6.9 단계별 실습",
+      "source": "06_sim2real_deployment/chapter.md",
+      "contentSha256": "e15b5c3d3de05c0d27819b46d0cc328707b64a39f6b18716fcbc53bec1339ab3",
+      "images": 0
+    },
+    {
+      "slug": "06_sim2real_deployment--chapter-14",
+      "title": "6.10 요약",
+      "source": "06_sim2real_deployment/chapter.md",
+      "contentSha256": "db810170aef76a3934adf9bf94a81edf60e472627f18cdaf58d6c34a17bb3ce8",
+      "images": 0
+    },
+    {
+      "slug": "06_sim2real_deployment--chapter-15",
+      "title": "6.11 확인문제",
+      "source": "06_sim2real_deployment/chapter.md",
+      "contentSha256": "adfb7260f20a7e9b3c81bcd6f18e1541ab9b38a3108fe511889d8ed5b3790b4b",
+      "images": 0
+    },
+    {
+      "slug": "06_sim2real_deployment--chapter-16",
+      "title": "6.12 최종 프로젝트",
+      "source": "06_sim2real_deployment/chapter.md",
+      "contentSha256": "dabb8f41623d85b125c416ff881325b4a86ebe14125f11ff60f260ea4ceb2b24",
+      "images": 0
+    },
+    {
+      "slug": "06_sim2real_deployment--chapter-17",
+      "title": "6.13 실습·평가·참고자료",
+      "source": "06_sim2real_deployment/chapter.md",
+      "contentSha256": "121e0c4626d78207fde50d19367706be3eb5c82ea013faa7cbcab158fe85d3ca",
+      "images": 0
+    },
+    {
+      "slug": "06_sim2real_deployment--labs--lab_6_1_diagnostics-1",
+      "title": "실습 6-1: Sim2Real 로그 진단",
+      "source": "06_sim2real_deployment/labs/lab_6_1_diagnostics.md",
+      "contentSha256": "d7f1fb26ca7b1b94e0ba15b215e47d50e509d0cbe186297c0187f5166f176522",
+      "images": 0
+    },
+    {
+      "slug": "06_sim2real_deployment--labs--lab_6_2_supervisor-1",
+      "title": "실습 6-2: Temporal Filter와 안전 승격 감독기",
+      "source": "06_sim2real_deployment/labs/lab_6_2_supervisor.md",
+      "contentSha256": "a7a9ce8281329ec7cffaa3808d8c62c9e479f9a9b5c6544d9580dc29beac42ec",
+      "images": 0
+    },
+    {
+      "slug": "06_sim2real_deployment--labs--lab_6_3_ros2_guard-1",
+      "title": "실습 6-3: ROS 2 Cartesian Workspace Guard",
+      "source": "06_sim2real_deployment/labs/lab_6_3_ros2_guard.md",
+      "contentSha256": "334d12fefe10159cf22695d6429965e16fde443c60d97b57d1f3e69253d54d84",
+      "images": 0
+    }
+  ],
+  "images": [
+    {
+      "unit": "06_sim2real_deployment--chapter-2",
+      "alt": "그림 6-1. Reality Gap을 측정 가능한 오차 항목으로 분해하는 폐루프",
+      "source": "ebook/book/06_sim2real_deployment/images/reality_gap_loop.svg",
+      "exists": true
+    },
+    {
+      "unit": "06_sim2real_deployment--chapter-8",
+      "alt": "그림 6-2. Dry-run에서 정상 운전까지 단계적 승격",
+      "source": "ebook/book/06_sim2real_deployment/images/deployment_promotion_ladder.svg",
+      "exists": true
+    },
+    {
+      "unit": "06_sim2real_deployment--chapter-9",
+      "alt": "그림 6-3. 인지-정책-안전-실행-관측 배포 아키텍처",
+      "source": "ebook/book/06_sim2real_deployment/images/pick_place_deployment.svg",
+      "exists": true
+    },
+    {
+      "unit": "06_sim2real_deployment--chapter-10",
+      "alt": "그림 6-4. 조건을 층화한 평가와 실패 원인 기록",
+      "source": "ebook/book/06_sim2real_deployment/images/evaluation_matrix.svg",
+      "exists": true
+    }
+  ],
+  "missing": []
+}
