@@ -2433,7 +2433,7 @@ export const authoredMetadata: AuthoredMetadata[] = [
       "gauge 자유도·가중치·상관 관측의 실패를 진단한다."
     ],
     "prerequisiteNote": "M16.03의 개념을 사용한다. 필요한 새 용어·기호는 본문에서 정의한다. 일반 코딩 문법/실제 장비 설치를 요구하지 않으며 합성 자료로 기본 경로를 수행한다.",
-    "sha256": "b9fd31cfe60a8d07544364a2ea796a709afd8879bda7c174a36a3e3841655b35",
+    "sha256": "08edc2071f0e05676b1d5a66c7a81011ada7919543270a3e1b5b51813a4efd41",
     "reviewed": true,
     "evidenceRef": "doc/v2/work_items/M16.04.md"
   },
