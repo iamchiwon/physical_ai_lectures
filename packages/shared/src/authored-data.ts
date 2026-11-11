@@ -263,7 +263,7 @@ export const authoredMetadata: AuthoredMetadata[] = [
       "단위 쿼터니언의 성분 순서·정규화·부호 이중표현을 계산하고 잘못된 입력을 구분한다."
     ],
     "prerequisiteNote": "M02.01의 열벡터·행렬 곱·내적을 사용한다. 모든 예제는 오른손 기준축과 열벡터를 쓰며, 길이는m, 각도는rad로 계산한다. NumPy·ROS 설치는 필요 없다.",
-    "sha256": "8e89b82f3d051549838d5c72521a89a8694b81fb7426b778f28862b2c3df12c3",
+    "sha256": "5c5dc92ae672aafcaa55caabe1d5bf5f2fdcae59ab174a0ce3e760036c3542e8",
     "reviewed": true,
     "evidenceRef": "doc/v2/work_items/publication-source-privacy.md"
   },
