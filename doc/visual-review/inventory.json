@@ -1689,8 +1689,8 @@
     "M17.03": {
       "status": "reviewed",
       "source": "ebook/curriculum/M17/M17.03.md",
-      "sourceSha256": "b775cfa95b7e9ca0418364397650f87352e4ac7acdf4265613069895a3ee2257",
-      "reason": "PRM의 샘플과 연결 검사의 연결/구분은 글만으로 단계나 경계를 혼동하기 쉬워 설명 도식을 추가한다. 본문의 표·수치·문제 조건도 대조한다.",
+      "sourceSha256": "720dda48047da47ec558e29bdb734db6355604cbe60d3e61fee094e5a662b2de",
+      "reason": "로드맵의 점과 간선는 공간/파형 관계를 직접 보아야 식의 기준과 적용 범위를 혼동하지 않으므로 도식을 추가한다. 제공된 식·본문 조건과 대조했다.",
       "assets": [
         {
           "path": "apps/web/public/textbook-visuals/M17.03-concept.svg",
@@ -1700,6 +1700,15 @@
           "prompt": null,
           "alt": "PRM의 샘플과 연결 검사: 자유 배치 샘플 → 이웃 후보 → 국소 경로 검사 → 로드맵 그래프.",
           "caption": "각 칸은 서로 다른 역할/근거다. 아래 방향은 자료/처리의 연결이며 실제 성공을 자동으로 보장하지 않는다. 직접 제작한 개념도이며 본문의 조건과 함께 읽는다."
+        },
+        {
+          "path": "apps/web/public/textbook-visuals/M17.03-spatial.svg",
+          "sha256": "2ccd2e0c9ba25af920a5f4a1f530e31410c78e7f2b18b035e606e085e55ba8d4",
+          "method": "original-svg",
+          "model": null,
+          "prompt": null,
+          "alt": "로드맵의 점과 간선. 별도 평면 점 configuration 개념도다. 자유 노드라도 그 사이 간선이 장애물과 충돌할 수 있다. 회색은 이미 로봇 크기를 반영했다고 가정한 금지 영역이며 본문 수치 입력을 대체하지 않는다.",
+          "caption": "별도 평면 점 configuration 개념도다. 자유 노드라도 그 사이 간선이 장애물과 충돌할 수 있다. 회색은 이미 로봇 크기를 반영했다고 가정한 금지 영역이며 본문 수치 입력을 대체하지 않는다. 직접 제작."
         }
       ],
       "evidence": "doc/visual-review/units/M17.03.md"
