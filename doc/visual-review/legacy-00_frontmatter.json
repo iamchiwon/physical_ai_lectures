@@ -1,0 +1,43 @@
+{
+  "scope": "기존 교재 읽기 단위의 시각 참조·이미지 파일 연결 검사. 원본/실습·해설 유지.",
+  "decision": "기존 장별 좌표/기구/데이터/시간/배포 도식을 유지하며 현재 커리큘럼의 추가 도식으로 보충한다.",
+  "units": [
+    {
+      "slug": "00_frontmatter--environment-1",
+      "title": "기준 실습 환경",
+      "source": "00_frontmatter/environment.md",
+      "contentSha256": "50c17d3884a35165fbefe49ee91190e930be8c894615fd88d3162a6a0c9dace7",
+      "images": 0
+    },
+    {
+      "slug": "00_frontmatter--environment-2",
+      "title": "운영체제와 미들웨어",
+      "source": "00_frontmatter/environment.md",
+      "contentSha256": "df5102a6cf9e0fe6671b5907f3254ab3f4d0ccd2f431e16b41b846bfdcaecb44",
+      "images": 0
+    },
+    {
+      "slug": "00_frontmatter--environment-3",
+      "title": "집필 기준 버전과 검증 상태",
+      "source": "00_frontmatter/environment.md",
+      "contentSha256": "c80bb08aa89bcf920e36a6884a451976b12c19f8c92013ec84f2dc26df4d6f9f",
+      "images": 0
+    },
+    {
+      "slug": "00_frontmatter--environment-4",
+      "title": "실습 장비",
+      "source": "00_frontmatter/environment.md",
+      "contentSha256": "04155908f2714152b0445aba448654837045ab5a2aa871d0da0951da0009f96a",
+      "images": 0
+    },
+    {
+      "slug": "00_frontmatter--safety-1",
+      "title": "안전 수칙",
+      "source": "00_frontmatter/safety.md",
+      "contentSha256": "95f5010200f483cf752c5ffcfd8f49b20e463268f106f1be6059453eb2a4dbef",
+      "images": 0
+    }
+  ],
+  "images": [],
+  "missing": []
+}

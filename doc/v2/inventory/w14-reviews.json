@@ -2,11 +2,11 @@
   "schemaVersion": 1,
   "topics": {
     "M33.01": {
-      "sourceSha256": "5cf09ccecf077a5e1e21866cc89de51ccbf9eed907c6eb11e01b5fad050d4199",
+      "sourceSha256": "1d7bc04f5a1afe0948eec85aae2aac32fd3827019fd9fd1dbad1eae401102539",
       "evidenceRef": "doc/v2/work_items/M33.01.md"
     },
     "M33.02": {
-      "sourceSha256": "ddad88c6c80d1631ac537f79c0a895eddd310adaabf0259e8fd6ee8de940cdd1",
+      "sourceSha256": "9b4dc9aaa0bf0fe9bde1b5a915a54403e257afeb8b038d59058c3eab5d57e700",
       "evidenceRef": "doc/v2/work_items/M33.02.md"
     },
     "M33.03": {

@@ -2,11 +2,11 @@
   "schemaVersion": 1,
   "topics": {
     "M23.01": {
-      "sourceSha256": "0ac2740e09b3c4ce4e1f9d7621459eaf3a995bc900f04ced05fd2a2154c4ce7e",
+      "sourceSha256": "4f98ae1e1a0c39d362468b55d60ec9e8db43b1b71e2cf4937ed0c497e00a075d",
       "evidenceRef": "doc/v2/work_items/M23.01.md"
     },
     "M23.02": {
-      "sourceSha256": "fefa4f60e31188908c21f32dc0f06dc565b4e3a6a2f7581dd46225d58bc8203e",
+      "sourceSha256": "51c7bb6834c46139ced2499a5fe7dd8047b4ee6da02ecad5fa737ffe3956927f",
       "evidenceRef": "doc/v2/work_items/M23.02.md"
     },
     "M23.03": {
@@ -14,7 +14,7 @@
       "evidenceRef": "doc/v2/work_items/M23.03.md"
     },
     "M23.04": {
-      "sourceSha256": "bc3f16fd42f2c5f198947d7a8663dfa172eb4efdcefae18847c8395e84791f02",
+      "sourceSha256": "7e4f465f30d860aeee6bb62d7c0793e3e28e19513fcf4245e5399e74e6996283",
       "evidenceRef": "doc/v2/work_items/M23.04.md"
     },
     "M23.05": {

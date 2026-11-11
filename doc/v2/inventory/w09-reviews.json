@@ -2,15 +2,15 @@
   "schemaVersion": 1,
   "topics": {
     "M28.01": {
-      "sourceSha256": "bb7687bdb8f7a544267dcdb92dafcd59134959f11e2846b10bc8a7ddf5869f5b",
+      "sourceSha256": "11efe34bee915acf2a629cd8cae02a9aecac7313ac88d3c1a872ffd31fc0f7b9",
       "evidenceRef": "doc/v2/work_items/M28.01.md"
     },
     "M28.02": {
-      "sourceSha256": "afdf2dde4650902da9ab2a9ccb497c113f058ccccca17997d0ab0fdba3f1242b",
+      "sourceSha256": "c9200fcf56ac339ce4cb1d9b7a13671eed653e18ed256fb05811d08b7d8b1c79",
       "evidenceRef": "doc/v2/work_items/M28.02.md"
     },
     "M28.03": {
-      "sourceSha256": "e01eca11f96492dfe40e75758b63a615716228e9f37920a6fc4373975c4c9551",
+      "sourceSha256": "1826bbb284088938aefc4820de645eaffc11ce55e18ae7173760b0a3de23c5ae",
       "evidenceRef": "doc/v2/work_items/publication-source-privacy.md"
     },
     "M28.04": {
@@ -18,11 +18,11 @@
       "evidenceRef": "doc/v2/work_items/M28.04.md"
     },
     "M28.05": {
-      "sourceSha256": "9fc74813eb41ba5ed80534d60f908c3f98f3ea3077d98ddca9daf76115b706e7",
+      "sourceSha256": "8e40e4013ac7a2f72506af3f6d184e11b4593239765a05d61c5c5e5c1336b88e",
       "evidenceRef": "doc/v2/work_items/M28.05.md"
     },
     "M28.06": {
-      "sourceSha256": "a9de59a42a75cec418aafe0b26542f75eb2c9a1f46f8223dc5bf96dbd0a7064a",
+      "sourceSha256": "0a744fe290a407e2f3be6d52f4c0c2a40efb3552f705648a702d9a8a1170884c",
       "evidenceRef": "doc/v2/work_items/publication-source-privacy.md"
     }
   }

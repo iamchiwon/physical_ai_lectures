@@ -1,0 +1,3171 @@
+{
+  "schemaVersion": 1,
+  "base": "caab3d5",
+  "units": {
+    "M00.01": {
+      "status": "reviewed",
+      "source": "ebook/curriculum/M00/M00.01.md",
+      "sourceSha256": "438291cb108eb3c775f925962c04fa27809caf1a767f8a49780abf0e89685279",
+      "reason": "첫 문단이 사진 속 컵을 지칭하지만 사진이 없어 대상을 특정할 수 없었다. 컵의 보이는 색과 관측되지 않은 뒷면/접촉을 구분하는 생성 사진, 결과를 되돌리는 폐루프 도식이 필요하다.",
+      "assets": [
+        {
+          "path": "apps/web/public/textbook-visuals/M00.01-cup.webp",
+          "sha256": "0542912128f15506fca85e107e99785f0bab1bda0658bccca1012e4cd06b4cde",
+          "method": "imagegen-api",
+          "model": "gpt-image-2.5-sunburst",
+          "prompt": "doc/visual-review/prompts/M00.01-cup.txt",
+          "alt": "나무 탁자 위 파란 컵의 정면 사진. 손잡이는 오른쪽에 있고 뒤쪽 물체와의 접촉 여부는 보이지 않는다.",
+          "caption": "색을 묻는 입력 사진의 예. 파란 컵의 앞면과 손잡이는 보이지만 뒷면의 접촉 상태나 집기 성공은 이 사진만으로 확인할 수 없다. AI 생성 예시이며 실험 사진이 아니다."
+        },
+        {
+          "path": "apps/web/public/textbook-visuals/M00.01-closed-loop.svg",
+          "sha256": "5628c2a65547c5fdb40ddcf738b81ea5ffef56071dbc894a33193d08ec2e1cbe",
+          "method": "original-svg",
+          "model": null,
+          "prompt": null,
+          "alt": "관측, 판단, 행동과 세계 변화, 새 관측으로 이어지고 새 관측이 다음 판단에 되돌아가는 폐루프.",
+          "caption": "결과의 새 관측이 다음 판단에 영향을 줄 때 피드백이 된다. 같은 명령을 반복하는 것만으로는 이 연결이 닫히지 않는다. 도식은 안정성이나 실제 장비 안전을 보장하지 않는다. 직접 제작."
+        }
+      ],
+      "evidence": "doc/visual-review/units/M00.01.md"
+    },
+    "M00.02": {
+      "status": "reviewed",
+      "source": "ebook/curriculum/M00/M00.02.md",
+      "sourceSha256": "b50c431c9e15f2308cb37144bba6e6f31f34462e2c901e42f1ca86905a8d7068",
+      "reason": "세계·관측·추정·명령은 다른 값이다의 연결/구분은 글만으로 단계나 경계를 혼동하기 쉬워 설명 도식을 추가한다. 본문의 표·수치·문제 조건도 대조한다.",
+      "assets": [
+        {
+          "path": "apps/web/public/textbook-visuals/M00.02-concept.svg",
+          "sha256": "48de303d658d13b02825e08158161fc7862a66c76edc47e99c90711883b75eae",
+          "method": "original-svg",
+          "model": null,
+          "prompt": null,
+          "alt": "세계·관측·추정·명령은 다른 값이다: 세계의 상태 → 관측 → 추정 → 행동 명령.",
+          "caption": "각 칸은 서로 다른 역할/근거다. 나란히 비교할 항목이며 위아래가 시간 순서를 뜻하지 않는다. 직접 제작한 개념도이며 본문의 조건과 함께 읽는다."
+        }
+      ],
+      "evidence": "doc/visual-review/units/M00.02.md"
+    },
+    "M00.03": {
+      "status": "reviewed",
+      "source": "ebook/curriculum/M00/M00.03.md",
+      "sourceSha256": "da0640809b7f0b1ccfade15b422988dbf9b71528a1c941b58b13db64d50de201",
+      "reason": "이름만으로 로봇팔·AMR·휴머노이드·차량의 베이스/접촉/이동 구조를 떠올리기 어려워 네 가지 몸체 형태의 생성 비교 그림을 제공한다.",
+      "assets": [
+        {
+          "path": "apps/web/public/textbook-visuals/M00.03-robot-forms.webp",
+          "sha256": "0b7bda4252a9007e8b32fc7b674ae0ea4aae24c0f5a39fae45fb051f435db92d",
+          "method": "imagegen-api",
+          "model": "gpt-image-2.5-sunburst",
+          "prompt": "doc/visual-review/prompts/M00.03-robot-forms.txt",
+          "alt": "왼쪽 위 고정 로봇팔, 오른쪽 위 상자를 싣는 바퀴형 AMR, 왼쪽 아래 두 발 휴머노이드, 오른쪽 아래 조향하는 도로 차량.",
+          "caption": "서로 다른 몸체 형태의 예시. 고정 베이스·이동 베이스·두 발 접촉·차량 조향의 차이를 표의 과제/관측과 연결해 읽는다. AI 생성 개념 그림이며 특정 제품의 사양이나 실험 사진이 아니다."
+        }
+      ],
+      "evidence": "doc/visual-review/units/M00.03.md"
+    },
+    "M00.04": {
+      "status": "reviewed",
+      "source": "ebook/curriculum/M00/M00.04.md",
+      "sourceSha256": "0888767f4aff83ea1936fa19ded3d507ed995a77ea8f118ed1b2241b234bbac5",
+      "reason": "주기와 한 표본의 지연을 나누기의 연결/구분은 글만으로 단계나 경계를 혼동하기 쉬워 설명 도식을 추가한다. 본문의 표·수치·문제 조건도 대조한다.",
+      "assets": [
+        {
+          "path": "apps/web/public/textbook-visuals/M00.04-concept.svg",
+          "sha256": "3da5c8330b67c78af2e80f7369041ed0dc87f64357285d075f828e07f5ab36a3",
+          "method": "original-svg",
+          "model": null,
+          "prompt": null,
+          "alt": "주기와 한 표본의 지연을 나누기: 시작 간격 P → 표본의 직렬 처리 L → 마감 여유.",
+          "caption": "P는 연속 시작 사이의 간격, L은 한 표본을 처리하는 지연이다. 이 예제는 직렬 합산 조건이다. 겹쳐 처리하는 시스템에서는 P와 L을 같다고 놓지 않는다. 직접 제작."
+        }
+      ],
+      "evidence": "doc/visual-review/units/M00.04.md"
+    },
+    "M00.05": {
+      "status": "reviewed",
+      "source": "ebook/curriculum/M00/M00.05.md",
+      "sourceSha256": "facca52cb15d76128834925d24e38f4cef9036014750c95cc3ab117fb03163d2",
+      "reason": "본문의 「진단은 입학시험보다 길 찾기에 가깝다」부터 「선행학습은 진단 근거와 연결한다」까지 시각 참조/입력 조건을 점검했다. 정의와 수치/판정 절차가 글 안에서 주어지고 특정 미제공 사진/그림의 식별에 의존하지 않아 이번에는 이미지를 추가하지 않는다. 공간 구조의 세부 설명은 연결된 선수 단위의 그림과 함께 읽는다.",
+      "assets": [],
+      "evidence": "doc/visual-review/units/M00.05.md"
+    },
+    "M00.06": {
+      "status": "reviewed",
+      "source": "ebook/curriculum/M00/M00.06.md",
+      "sourceSha256": "786ec617b869dd8291a20ca224bc372b80283792a7303da4705af79a68482007",
+      "reason": "화면이 움직여도 근거는 다르다의 연결/구분은 글만으로 단계나 경계를 혼동하기 쉬워 설명 도식을 추가한다. 본문의 표·수치·문제 조건도 대조한다.",
+      "assets": [
+        {
+          "path": "apps/web/public/textbook-visuals/M00.06-concept.svg",
+          "sha256": "b3f7ee221b221fbfcb7cb76936f0adf68695bf4321760ad5d60d81e74eeaff7c",
+          "method": "original-svg",
+          "model": null,
+          "prompt": null,
+          "alt": "화면이 움직여도 근거는 다르다: 종이 계산 → 로그 재생 → 시뮬레이션 폐루프 → 실물 폐루프.",
+          "caption": "각 칸은 서로 다른 역할/근거다. 나란히 비교할 항목이며 위아래가 시간 순서를 뜻하지 않는다. 직접 제작한 개념도이며 본문의 조건과 함께 읽는다."
+        }
+      ],
+      "evidence": "doc/visual-review/units/M00.06.md"
+    },
+    "M01.01": {
+      "status": "reviewed",
+      "source": "ebook/curriculum/M01/M01.01.md",
+      "sourceSha256": "d3b41de8d1846e982077fdf742840fa52254db4a0ad854faab553d8bb752134a",
+      "reason": "본문의 「편집한 프로젝트와 실행된 프로그램을 연결한다」부터 「Endpoint는 어느 네트워크 환경의 주소인가」까지 시각 참조/입력 조건을 점검했다. 정의와 수치/판정 절차가 글 안에서 주어지고 특정 미제공 사진/그림의 식별에 의존하지 않아 이번에는 이미지를 추가하지 않는다. 공간 구조의 세부 설명은 연결된 선수 단위의 그림과 함께 읽는다.",
+      "assets": [],
+      "evidence": "doc/visual-review/units/M01.01.md"
+    },
+    "M01.02": {
+      "status": "reviewed",
+      "source": "ebook/curriculum/M01/M01.02.md",
+      "sourceSha256": "b5e97a77ffdf720de85cd8a6cf68e94952e2504d44fa21fa50a7f6978f22c7a7",
+      "reason": "본문의 「패키지 설치 기록을 실제 실행과 연결한다」부터 「Dtype·device·버퍼 배치도 입력 계약이다」까지 시각 참조/입력 조건을 점검했다. 명시된 코드/설정·정의와 수치/판정 절차가 글 안에서 주어지고 특정 미제공 사진/그림의 식별에 의존하지 않아 이번에는 이미지를 추가하지 않는다. 공간 구조의 세부 설명은 연결된 선수 단위의 그림과 함께 읽는다.",
+      "assets": [],
+      "evidence": "doc/visual-review/units/M01.02.md"
+    },
+    "M01.03": {
+      "status": "reviewed",
+      "source": "ebook/curriculum/M01/M01.03.md",
+      "sourceSha256": "85ca430c5c40e96c9782706b9cf49d815d2cead452fc9a4ef76a11b04c8900c0",
+      "reason": "버퍼 소유자와 소비자의 수명의 연결/구분은 글만으로 단계나 경계를 혼동하기 쉬워 설명 도식을 추가한다. 본문의 표·수치·문제 조건도 대조한다.",
+      "assets": [
+        {
+          "path": "apps/web/public/textbook-visuals/M01.03-concept.svg",
+          "sha256": "5c9b65d314bcbab1606ff5a16bdc025a8235235312db5ee470375fb0cc3d05d7",
+          "method": "original-svg",
+          "model": null,
+          "prompt": null,
+          "alt": "버퍼 소유자와 소비자의 수명: 소유자가 버퍼 생성 → 소비자에게 view 전달 → 소비 완료까지 유효성 유지 → 소유권 종료/재사용.",
+          "caption": "각 칸은 서로 다른 역할/근거다. 아래 방향은 자료/처리의 연결이며 실제 성공을 자동으로 보장하지 않는다. 직접 제작한 개념도이며 본문의 조건과 함께 읽는다."
+        }
+      ],
+      "evidence": "doc/visual-review/units/M01.03.md"
+    },
+    "M01.04": {
+      "status": "reviewed",
+      "source": "ebook/curriculum/M01/M01.04.md",
+      "sourceSha256": "a32b88201fdd1e221d8e76e014ae2028a076dbb39a1df3be5ae404cc65321d95",
+      "reason": "구성에서 실행까지의 경계의 연결/구분은 글만으로 단계나 경계를 혼동하기 쉬워 설명 도식을 추가한다. 본문의 표·수치·문제 조건도 대조한다.",
+      "assets": [
+        {
+          "path": "apps/web/public/textbook-visuals/M01.04-concept.svg",
+          "sha256": "8a70450d24d87a2608ceb8a1b071dfc92d57e0ddb72171134e06064b8bb012a7",
+          "method": "original-svg",
+          "model": null,
+          "prompt": null,
+          "alt": "구성에서 실행까지의 경계: Configure → Build → Install → 실행 검색 환경.",
+          "caption": "각 칸은 서로 다른 역할/근거다. 아래 방향은 자료/처리의 연결이며 실제 성공을 자동으로 보장하지 않는다. 직접 제작한 개념도이며 본문의 조건과 함께 읽는다."
+        }
+      ],
+      "evidence": "doc/visual-review/units/M01.04.md"
+    },
+    "M01.05": {
+      "status": "reviewed",
+      "source": "ebook/curriculum/M01/M01.05.md",
+      "sourceSha256": "9e4aa7f315820121e070d5cb5a71e0ea104044200a42d9ce6e2ec76ce11aa9bd",
+      "reason": "본문의 「'같은 코드'를 먼저 구체적으로 말하기」부터 「결과의 재현 범위도 미리 정의한다」까지 시각 참조/입력 조건을 점검했다. 정의와 수치/판정 절차가 글 안에서 주어지고 특정 미제공 사진/그림의 식별에 의존하지 않아 이번에는 이미지를 추가하지 않는다. 공간 구조의 세부 설명은 연결된 선수 단위의 그림과 함께 읽는다.",
+      "assets": [],
+      "evidence": "doc/visual-review/units/M01.05.md"
+    },
+    "M01.06": {
+      "status": "reviewed",
+      "source": "ebook/curriculum/M01/M01.06.md",
+      "sourceSha256": "468d0f13670e71aa252db049e06e43ece517003fd474cd155afa5d905ff86833",
+      "reason": "호출 반환과 장치 완료는 다르다의 연결/구분은 글만으로 단계나 경계를 혼동하기 쉬워 설명 도식을 추가한다. 본문의 표·수치·문제 조건도 대조한다.",
+      "assets": [
+        {
+          "path": "apps/web/public/textbook-visuals/M01.06-concept.svg",
+          "sha256": "b717c3a6dfd6151da6ceeae9caf9e9ae43df032827182faab9ee083f65b58cf7",
+          "method": "original-svg",
+          "model": null,
+          "prompt": null,
+          "alt": "호출 반환과 장치 완료는 다르다: 호스트가 작업 제출 → 호출 반환 → 장치 완료/동기화 → 후속 명령 적용.",
+          "caption": "각 칸은 서로 다른 역할/근거다. 아래 방향은 자료/처리의 연결이며 실제 성공을 자동으로 보장하지 않는다. 직접 제작한 개념도이며 본문의 조건과 함께 읽는다."
+        }
+      ],
+      "evidence": "doc/visual-review/units/M01.06.md"
+    },
+    "M02.01": {
+      "status": "reviewed",
+      "source": "ebook/curriculum/M02/M02.01.md",
+      "sourceSha256": "8394d1d2bfd7b392b04db71b1d6c197a3a07be0b9440cf91e3e7846401f67a4a",
+      "reason": "벡터의 성분과 길이는 공간/파형 관계를 직접 보아야 식의 기준과 적용 범위를 혼동하지 않으므로 도식을 추가한다. 제공된 식·본문 조건과 대조했다.",
+      "assets": [
+        {
+          "path": "apps/web/public/textbook-visuals/M02.01-concept.svg",
+          "sha256": "b04d25328e099716b9250596eaddf11680af56cf2b49c7d75fcf85cd9898c3e9",
+          "method": "original-svg",
+          "model": null,
+          "prompt": null,
+          "alt": "벡터의 성분과 길이. 실선은 변위 벡터, 점선은 x/y축 성분의 투영이다. x성분 2 m와 벡터 전체 길이 √5 m는 다르다.",
+          "caption": "실선은 변위 벡터, 점선은 x/y축 성분의 투영이다. x성분 2 m와 벡터 전체 길이 √5 m는 다르다. 직접 제작."
+        }
+      ],
+      "evidence": "doc/visual-review/units/M02.01.md"
+    },
+    "M02.02": {
+      "status": "reviewed",
+      "source": "ebook/curriculum/M02/M02.02.md",
+      "sourceSha256": "5c5dc92ae672aafcaa55caabe1d5bf5f2fdcae59ab174a0ce3e760036c3542e8",
+      "reason": "같은 점, 서로 다른 프레임는 공간/파형 관계를 직접 보아야 식의 기준과 적용 범위를 혼동하지 않으므로 도식을 추가한다. 제공된 식·본문 조건과 대조했다.",
+      "assets": [
+        {
+          "path": "apps/web/public/textbook-visuals/M02.02-concept.svg",
+          "sha256": "8d422212f9f865a9ccc2de5e1e77d35221afc81de1a430988a961ce5511625c3",
+          "method": "original-svg",
+          "model": null,
+          "prompt": null,
+          "alt": "같은 점, 서로 다른 프레임. 프레임은 원점과 축의 묶음이다. 같은 점 P의 좌표를 B에서 A로 바꾸는 것과 점을 실제로 이동시키는 것은 다르다. +z 쪽에서 xy 평면을 본 개념도이며 수치 예제와는 별개다.",
+          "caption": "프레임은 원점과 축의 묶음이다. 같은 점 P의 좌표를 B에서 A로 바꾸는 것과 점을 실제로 이동시키는 것은 다르다. +z 쪽에서 xy 평면을 본 개념도이며 수치 예제와는 별개다. 직접 제작."
+        }
+      ],
+      "evidence": "doc/visual-review/units/M02.02.md"
+    },
+    "M02.03": {
+      "status": "reviewed",
+      "source": "ebook/curriculum/M02/M02.03.md",
+      "sourceSha256": "f6e4ecd8ed405573bb4267cfd603c4695a2c59c0d5bae808391acfd85116179b",
+      "reason": "평균 변화율과 순간 변화율는 공간/파형 관계를 직접 보아야 식의 기준과 적용 범위를 혼동하지 않으므로 도식을 추가한다. 제공된 식·본문 조건과 대조했다.",
+      "assets": [
+        {
+          "path": "apps/web/public/textbook-visuals/M02.03-concept.svg",
+          "sha256": "d39f2cfc02cb6c2cffbfe289f207dedcddc2d888c838677e25cbf68e85e32465",
+          "method": "original-svg",
+          "model": null,
+          "prompt": null,
+          "alt": "평균 변화율과 순간 변화율. x=t²인 본문의 예에서 t=1~2의 평균 속도는 할선의 기울기 3 m/s다. t=1의 순간 속도 2 m/s는 접선의 기울기이며 구간 전체의 속도와 다르다.",
+          "caption": "x=t²인 본문의 예에서 t=1~2의 평균 속도는 할선의 기울기 3 m/s다. t=1의 순간 속도 2 m/s는 접선의 기울기이며 구간 전체의 속도와 다르다. 직접 제작."
+        }
+      ],
+      "evidence": "doc/visual-review/units/M02.03.md"
+    },
+    "M02.04": {
+      "status": "reviewed",
+      "source": "ebook/curriculum/M02/M02.04.md",
+      "sourceSha256": "e8e22d71625ccac64babf51e2a5150eea2f425909351dae066ea80e452aed940",
+      "reason": "공분산은 함께 변하는 방향이다는 공간/파형 관계를 직접 보아야 식의 기준과 적용 범위를 혼동하지 않으므로 도식을 추가한다. 제공된 식·본문 조건과 대조했다.",
+      "assets": [
+        {
+          "path": "apps/web/public/textbook-visuals/M02.04-concept.svg",
+          "sha256": "8972e3508373c5ef3c2e2709ec793756dda9f8c4d61122c2a0256eaf852fc4d6",
+          "method": "original-svg",
+          "model": null,
+          "prompt": null,
+          "alt": "공분산은 함께 변하는 방향이다. 타원의 기울기는 두 오차가 함께 증가하는지 반대로 변하는지의 직관을 보인다. 특정 행렬이나 신뢰수준을 그린 등확률 타원은 아니다. 표준편차와 분산의 단위도 구별한다.",
+          "caption": "타원의 기울기는 두 오차가 함께 증가하는지 반대로 변하는지의 직관을 보인다. 특정 행렬이나 신뢰수준을 그린 등확률 타원은 아니다. 표준편차와 분산의 단위도 구별한다. 직접 제작."
+        }
+      ],
+      "evidence": "doc/visual-review/units/M02.04.md"
+    },
+    "M02.05": {
+      "status": "reviewed",
+      "source": "ebook/curriculum/M02/M02.05.md",
+      "sourceSha256": "15567d266039e21da45ce12e1c9cd317d2c99c7b9ac65f6c1849032df11d94fd",
+      "reason": "최소제곱은 잔차 제곱의 절충는 공간/파형 관계를 직접 보아야 식의 기준과 적용 범위를 혼동하지 않으므로 도식을 추가한다. 제공된 식·본문 조건과 대조했다.",
+      "assets": [
+        {
+          "path": "apps/web/public/textbook-visuals/M02.05-concept.svg",
+          "sha256": "55206a75b92f079712988fc513d71e155d2a2b231e56bfb8140b68d606a72755",
+          "method": "original-svg",
+          "model": null,
+          "prompt": null,
+          "alt": "최소제곱은 잔차 제곱의 절충. 본문의 측정 2 m와 4 m에 대해 잔차는 x−2와 x−4다. F의 최소 위치 3 m는 이 목적함수의 절충이며 실제 위치가 반드시 3 m라는 증거는 아니다.",
+          "caption": "본문의 측정 2 m와 4 m에 대해 잔차는 x−2와 x−4다. F의 최소 위치 3 m는 이 목적함수의 절충이며 실제 위치가 반드시 3 m라는 증거는 아니다. 직접 제작."
+        }
+      ],
+      "evidence": "doc/visual-review/units/M02.05.md"
+    },
+    "M02.06": {
+      "status": "reviewed",
+      "source": "ebook/curriculum/M02/M02.06.md",
+      "sourceSha256": "e2288e411081cc337d387168373aa0c367740d6996ca0d1bddd4da4015429872",
+      "reason": "이산 오차의 크기와 부호는 공간/파형 관계를 직접 보아야 식의 기준과 적용 범위를 혼동하지 않으므로 도식을 추가한다. 제공된 식·본문 조건과 대조했다.",
+      "assets": [
+        {
+          "path": "apps/web/public/textbook-visuals/M02.06-concept.svg",
+          "sha256": "c31e297ab51f62a033433981191a5f0b99a41c394f1a185641d0df3a1b749d14",
+          "method": "original-svg",
+          "model": null,
+          "prompt": null,
+          "alt": "이산 오차의 크기와 부호. A=diag(0.5,−0.2), e0=(2,5)인 본문 모델의 k=0~4를 그렸다. 음의 고윳값 성분은 부호가 바뀌면서도 크기는 줄어든다. 연속시간의 안정성 판정과 혼용하지 않는다.",
+          "caption": "A=diag(0.5,−0.2), e0=(2,5)인 본문 모델의 k=0~4를 그렸다. 음의 고윳값 성분은 부호가 바뀌면서도 크기는 줄어든다. 연속시간의 안정성 판정과 혼용하지 않는다. 직접 제작."
+        }
+      ],
+      "evidence": "doc/visual-review/units/M02.06.md"
+    },
+    "M03.01": {
+      "status": "reviewed",
+      "source": "ebook/curriculum/M03/M03.01.md",
+      "sourceSha256": "150053c273e9c0722c5765da878073a7768b6c0a4dfa50374ce31c7ca4b92c9e",
+      "reason": "백래시의 국소 접촉 개념는 공간/파형 관계를 직접 보아야 식의 기준과 적용 범위를 혼동하지 않으므로 도식을 추가한다. 제공된 식·본문 조건과 대조했다.",
+      "assets": [
+        {
+          "path": "apps/web/public/textbook-visuals/M03.01-concept.svg",
+          "sha256": "cd39111d4ca028fcede6378e9b3f8c7862590fde7af5d2f8fad86c4ccb666954",
+          "method": "original-svg",
+          "model": null,
+          "prompt": null,
+          "alt": "관절·기어·엔코더의 연결: 모터 축 → 기어 전달 → 출력 관절 → 물체/말단.",
+          "caption": "각 칸은 서로 다른 역할/근거다. 아래 방향은 자료/처리의 연결이며 실제 성공을 자동으로 보장하지 않는다. 직접 제작한 개념도이며 본문의 조건과 함께 읽는다."
+        },
+        {
+          "path": "apps/web/public/textbook-visuals/M03.01-spatial.svg",
+          "sha256": "f7f421571c4cf534e39bb2cee4ffd2151f2fc3139f79b90b9e1bc102d5db57dc",
+          "method": "original-svg",
+          "model": null,
+          "prompt": null,
+          "alt": "백래시의 국소 접촉 개념. 맞물린 치면 사이를 펼쳐 그린 개념도다. 방향 반전 때 접촉이 바뀌기 전의 틈은 모터 축 회전과 실제 출력 변화를 다르게 만든다. 기어의 실제 형상/간격이나 모든 백래시 원인을 그린 도면은 아니다.",
+          "caption": "맞물린 치면 사이를 펼쳐 그린 개념도다. 방향 반전 때 접촉이 바뀌기 전의 틈은 모터 축 회전과 실제 출력 변화를 다르게 만든다. 기어의 실제 형상/간격이나 모든 백래시 원인을 그린 도면은 아니다. 직접 제작."
+        }
+      ],
+      "evidence": "doc/visual-review/units/M03.01.md"
+    },
+    "M03.02": {
+      "status": "reviewed",
+      "source": "ebook/curriculum/M03/M03.02.md",
+      "sourceSha256": "ed2d9dd882260b164910949ac17dbfb30cbbe6e00fe25ef8e1b82b9cdb3e26ff",
+      "reason": "제어 신호와 동력 경로의 연결/구분은 글만으로 단계나 경계를 혼동하기 쉬워 설명 도식을 추가한다. 본문의 표·수치·문제 조건도 대조한다.",
+      "assets": [
+        {
+          "path": "apps/web/public/textbook-visuals/M03.02-concept.svg",
+          "sha256": "4ef38a038444daf53eca0015a151c18d3f7fe2cca003eb694ecd95db525ece5b",
+          "method": "original-svg",
+          "model": null,
+          "prompt": null,
+          "alt": "제어 신호와 동력 경로: 제어기 → 드라이버 → 모터·기구 → 엔코더 피드백.",
+          "caption": "각 칸은 서로 다른 역할/근거다. 아래 방향은 자료/처리의 연결이며 실제 성공을 자동으로 보장하지 않는다. 직접 제작한 개념도이며 본문의 조건과 함께 읽는다."
+        }
+      ],
+      "evidence": "doc/visual-review/units/M03.02.md"
+    },
+    "M03.03": {
+      "status": "reviewed",
+      "source": "ebook/curriculum/M03/M03.03.md",
+      "sourceSha256": "a683660e06ca2ec2626f6df9a795d8fdad84db03f8674c9cf4a297848587a626",
+      "reason": "센서 이름보다 측정량을 읽는다의 연결/구분은 글만으로 단계나 경계를 혼동하기 쉬워 설명 도식을 추가한다. 본문의 표·수치·문제 조건도 대조한다.",
+      "assets": [
+        {
+          "path": "apps/web/public/textbook-visuals/M03.03-concept.svg",
+          "sha256": "cf2f393fa21c98533983698caec78eeed89a0e81db7346aac3dbe1809a32f7fc",
+          "method": "original-svg",
+          "model": null,
+          "prompt": null,
+          "alt": "센서 이름보다 측정량을 읽는다: 카메라·깊이 → LiDAR → IMU → GNSS.",
+          "caption": "각 칸은 서로 다른 역할/근거다. 나란히 비교할 항목이며 위아래가 시간 순서를 뜻하지 않는다. 직접 제작한 개념도이며 본문의 조건과 함께 읽는다."
+        }
+      ],
+      "evidence": "doc/visual-review/units/M03.03.md"
+    },
+    "M03.04": {
+      "status": "reviewed",
+      "source": "ebook/curriculum/M03/M03.04.md",
+      "sourceSha256": "5c0971ce40348b0e7f331ad147b010d8f3fec13815c667bab7e5d8f2a80bde3b",
+      "reason": "명령선과 전력 경로를 구별의 연결/구분은 글만으로 단계나 경계를 혼동하기 쉬워 설명 도식을 추가한다. 본문의 표·수치·문제 조건도 대조한다.",
+      "assets": [
+        {
+          "path": "apps/web/public/textbook-visuals/M03.04-concept.svg",
+          "sha256": "ead35364ae82b742df00ba1d68f7a3b0abe6c403eb2602b02d3048b1fb8eb11c",
+          "method": "original-svg",
+          "model": null,
+          "prompt": null,
+          "alt": "명령선과 전력 경로를 구별: 신호 경로 → 전력 경로 → 기준 전위 → 별도 검사.",
+          "caption": "각 칸은 서로 다른 역할/근거다. 나란히 비교할 항목이며 위아래가 시간 순서를 뜻하지 않는다. 직접 제작한 개념도이며 본문의 조건과 함께 읽는다."
+        }
+      ],
+      "evidence": "doc/visual-review/units/M03.04.md"
+    },
+    "M03.05": {
+      "status": "reviewed",
+      "source": "ebook/curriculum/M03/M03.05.md",
+      "sourceSha256": "5f3030c223dfdcd9fad19e3767b853b343ec04bde10fcc100c50c0d66c6ae53e",
+      "reason": "바퀴 배치와 양의 구동 방향는 공간/파형 관계를 직접 보아야 식의 기준과 적용 범위를 혼동하지 않으므로 도식을 추가한다. 제공된 식·본문 조건과 대조했다.",
+      "assets": [
+        {
+          "path": "apps/web/public/textbook-visuals/M03.05-concept.svg",
+          "sha256": "e03e5c4a5333f28c3f77f3b18e5394834719e21c4142f11b7236e450eb6e2456",
+          "method": "original-svg",
+          "model": null,
+          "prompt": null,
+          "alt": "바퀴 배치와 양의 구동 방향. 오른쪽은 위치 (R sinβ,−R cosβ), 구동 방향 β=0/120/240°인 본문의 3옴니 모델이다. 화살표는 각 바퀴의 양의 주 구동 방향이며 차체가 언제나 그 방향으로만 움직인다는 뜻은 아니다. 왼쪽 차동 모델은 이상 무미끄럼에서 vy=0이다.",
+          "caption": "오른쪽은 위치 (R sinβ,−R cosβ), 구동 방향 β=0/120/240°인 본문의 3옴니 모델이다. 화살표는 각 바퀴의 양의 주 구동 방향이며 차체가 언제나 그 방향으로만 움직인다는 뜻은 아니다. 왼쪽 차동 모델은 이상 무미끄럼에서 vy=0이다. 직접 제작."
+        }
+      ],
+      "evidence": "doc/visual-review/units/M03.05.md"
+    },
+    "M03.06": {
+      "status": "reviewed",
+      "source": "ebook/curriculum/M03/M03.06.md",
+      "sourceSha256": "9dd9333960e5834821349ed9025effb759170415a26815432d64e000439ec223",
+      "reason": "본문의 「부품 이름을 계약의 묶음으로 바꾼다」부터 「기계 범위도 데이터 계약이다」까지 시각 참조/입력 조건을 점검했다. 정의와 수치/판정 절차가 글 안에서 주어지고 특정 미제공 사진/그림의 식별에 의존하지 않아 이번에는 이미지를 추가하지 않는다. 공간 구조의 세부 설명은 연결된 선수 단위의 그림과 함께 읽는다.",
+      "assets": [],
+      "evidence": "doc/visual-review/units/M03.06.md"
+    },
+    "M04.01": {
+      "status": "reviewed",
+      "source": "ebook/curriculum/M04/M04.01.md",
+      "sourceSha256": "4c8ca2cd4ce0ea912b46bbc283bf518fd3a2fe6ca4ba074b9f3629ac80f06a82",
+      "reason": "메모리 영역은 역할이 다르다의 연결/구분은 글만으로 단계나 경계를 혼동하기 쉬워 설명 도식을 추가한다. 본문의 표·수치·문제 조건도 대조한다.",
+      "assets": [
+        {
+          "path": "apps/web/public/textbook-visuals/M04.01-concept.svg",
+          "sha256": "e63f9ab7a6b5b9507d7fb04d7a885fe7fdeaaa9477aa0d8697c7517220ca15b1",
+          "method": "original-svg",
+          "model": null,
+          "prompt": null,
+          "alt": "메모리 영역은 역할이 다르다: Flash → SRAM → EEPROM → 레지스터/I/O.",
+          "caption": "각 칸은 서로 다른 역할/근거다. 나란히 비교할 항목이며 위아래가 시간 순서를 뜻하지 않는다. 직접 제작한 개념도이며 본문의 조건과 함께 읽는다."
+        }
+      ],
+      "evidence": "doc/visual-review/units/M04.01.md"
+    },
+    "M04.02": {
+      "status": "reviewed",
+      "source": "ebook/curriculum/M04/M04.02.md",
+      "sourceSha256": "bb14b6ecf0e66633db7d55d9a93bf3b5917f47900eefaa3ee9dff522c1a5c5a3",
+      "reason": "본문의 「설정한 주기와 실제로 처리한 시각을 나눈다」부터 「호스트 메시지에는 측정·처리·전송을 구분해 남긴다」까지 시각 참조/입력 조건을 점검했다. 제공 표·정의와 수치/판정 절차가 글 안에서 주어지고 특정 미제공 사진/그림의 식별에 의존하지 않아 이번에는 이미지를 추가하지 않는다. 공간 구조의 세부 설명은 연결된 선수 단위의 그림과 함께 읽는다.",
+      "assets": [],
+      "evidence": "doc/visual-review/units/M04.02.md"
+    },
+    "M04.03": {
+      "status": "reviewed",
+      "source": "ebook/curriculum/M04/M04.03.md",
+      "sourceSha256": "d3edc86e0975cbfe26eb74456239906d898782f5224defdbe207afff8ab85a29",
+      "reason": "PWM 25%와 평균 전압는 공간/파형 관계를 직접 보아야 식의 기준과 적용 범위를 혼동하지 않으므로 도식을 추가한다. 제공된 식·본문 조건과 대조했다.",
+      "assets": [
+        {
+          "path": "apps/web/public/textbook-visuals/M04.03-concept.svg",
+          "sha256": "a1f1aa9af38b0afdee718e7bdab57bb4daa85d555b66fa8c29012f006102931c",
+          "method": "original-svg",
+          "model": null,
+          "prompt": null,
+          "alt": "PWM 25%와 평균 전압. 본문의 이상 0/12 V 전력단에서 duty 25%를 그렸다. 점선 평균 3 V와 계속 3 V인 선로는 다르다. 모터 속도/토크가 최대의 25%라는 결론도 아니다.",
+          "caption": "본문의 이상 0/12 V 전력단에서 duty 25%를 그렸다. 점선 평균 3 V와 계속 3 V인 선로는 다르다. 모터 속도/토크가 최대의 25%라는 결론도 아니다. 직접 제작."
+        }
+      ],
+      "evidence": "doc/visual-review/units/M04.03.md"
+    },
+    "M04.04": {
+      "status": "reviewed",
+      "source": "ebook/curriculum/M04/M04.04.md",
+      "sourceSha256": "4568b2dfd3406b6f89dfef7ce02b80c5becc759e4141833c6a5025dbb5c52f23",
+      "reason": "SPI와 I2C의 선로 계약의 연결/구분은 글만으로 단계나 경계를 혼동하기 쉬워 설명 도식을 추가한다. 본문의 표·수치·문제 조건도 대조한다.",
+      "assets": [
+        {
+          "path": "apps/web/public/textbook-visuals/M04.04-concept.svg",
+          "sha256": "fb99dbd005c0dd9777b2e23b76a34b9a6b4e21e1f7317d58bac1edba15a63ebc",
+          "method": "original-svg",
+          "model": null,
+          "prompt": null,
+          "alt": "SPI와 I2C의 선로 계약: SPI → I2C/TWI → 각 대상의 명세 → 완료 기록.",
+          "caption": "각 칸은 서로 다른 역할/근거다. 나란히 비교할 항목이며 위아래가 시간 순서를 뜻하지 않는다. 직접 제작한 개념도이며 본문의 조건과 함께 읽는다."
+        }
+      ],
+      "evidence": "doc/visual-review/units/M04.04.md"
+    },
+    "M04.05": {
+      "status": "reviewed",
+      "source": "ebook/curriculum/M04/M04.05.md",
+      "sourceSha256": "1972def25ea9cdde18a6d6dab3063a75ab3142eef4049de0af4a7b56e5fed075",
+      "reason": "명령과 통신을 감독하는 상태의 연결/구분은 글만으로 단계나 경계를 혼동하기 쉬워 설명 도식을 추가한다. 본문의 표·수치·문제 조건도 대조한다.",
+      "assets": [
+        {
+          "path": "apps/web/public/textbook-visuals/M04.05-concept.svg",
+          "sha256": "ab1edde9e1b2c88ee1edcf357ba35a3c579e04fb91844db6690b69d64fbe9928",
+          "method": "original-svg",
+          "model": null,
+          "prompt": null,
+          "alt": "명령과 통신을 감독하는 상태: 상태별 출력 허용 → 명령 수신/검사 → 접수와 실행 감시 → 만료/고장/재개.",
+          "caption": "각 칸은 서로 다른 역할/근거다. 아래 방향은 자료/처리의 연결이며 실제 성공을 자동으로 보장하지 않는다. 직접 제작한 개념도이며 본문의 조건과 함께 읽는다."
+        }
+      ],
+      "evidence": "doc/visual-review/units/M04.05.md"
+    },
+    "M04.06": {
+      "status": "reviewed",
+      "source": "ebook/curriculum/M04/M04.06.md",
+      "sourceSha256": "52f0eefb31c0053cb8e381bbd6c8617513749961ede612d7e10c42c6e418e07d",
+      "reason": "본문의 「드라이버가 숫자 하나만 반환하면 무엇이 사라지는가」부터 「센서에서 호스트/제어기로 넘길 계약을 완성한다」까지 시각 참조/입력 조건을 점검했다. 제공 표·정의와 수치/판정 절차가 글 안에서 주어지고 특정 미제공 사진/그림의 식별에 의존하지 않아 이번에는 이미지를 추가하지 않는다. 공간 구조의 세부 설명은 연결된 선수 단위의 그림과 함께 읽는다.",
+      "assets": [],
+      "evidence": "doc/visual-review/units/M04.06.md"
+    },
+    "M05.01": {
+      "status": "reviewed",
+      "source": "ebook/curriculum/M05/M05.01.md",
+      "sourceSha256": "3c5f523b7afd3a98a6bf8de21a89eafe1be8e41092ff28ef4d00a579022570f0",
+      "reason": "콜백 실행 전까지의 경로의 연결/구분은 글만으로 단계나 경계를 혼동하기 쉬워 설명 도식을 추가한다. 본문의 표·수치·문제 조건도 대조한다.",
+      "assets": [
+        {
+          "path": "apps/web/public/textbook-visuals/M05.01-concept.svg",
+          "sha256": "3927b57fd9e9ec6dedf52bbd2dbc40667f4cd3dbee8ffced416bc9b156c8dafa",
+          "method": "original-svg",
+          "model": null,
+          "prompt": null,
+          "alt": "콜백 실행 전까지의 경로: 센서 메시지 발행 → 미들웨어 수신/대기 → Executor가 작업 선택 → 사용자 콜백.",
+          "caption": "각 칸은 서로 다른 역할/근거다. 아래 방향은 자료/처리의 연결이며 실제 성공을 자동으로 보장하지 않는다. 직접 제작한 개념도이며 본문의 조건과 함께 읽는다."
+        }
+      ],
+      "evidence": "doc/visual-review/units/M05.01.md"
+    },
+    "M05.02": {
+      "status": "reviewed",
+      "source": "ebook/curriculum/M05/M05.02.md",
+      "sourceSha256": "790c876130ed6eb3aee1f89258aa9bb47227817928c4e8f74072e5179a3363c8",
+      "reason": "인터페이스의 상호작용 방식의 연결/구분은 글만으로 단계나 경계를 혼동하기 쉬워 설명 도식을 추가한다. 본문의 표·수치·문제 조건도 대조한다.",
+      "assets": [
+        {
+          "path": "apps/web/public/textbook-visuals/M05.02-concept.svg",
+          "sha256": "7994c9821e5570360620a52f55cb15e7ed50690777f68d50be43bec118b36459",
+          "method": "original-svg",
+          "model": null,
+          "prompt": null,
+          "alt": "인터페이스의 상호작용 방식: Topic → Service → Action → Parameter.",
+          "caption": "각 칸은 서로 다른 역할/근거다. 나란히 비교할 항목이며 위아래가 시간 순서를 뜻하지 않는다. 직접 제작한 개념도이며 본문의 조건과 함께 읽는다."
+        }
+      ],
+      "evidence": "doc/visual-review/units/M05.02.md"
+    },
+    "M05.03": {
+      "status": "reviewed",
+      "source": "ebook/curriculum/M05/M05.03.md",
+      "sourceSha256": "ce32721c236df2344d6408600559c692db774f548cf82c06a7a062526bb9da71",
+      "reason": "본문의 「서로를 찾는 것과 자료를 처리하는 것」부터 「깊이와 시간은 서로 다른 질문이다」까지 시각 참조/입력 조건을 점검했다. 제공 표·정의와 수치/판정 절차가 글 안에서 주어지고 특정 미제공 사진/그림의 식별에 의존하지 않아 이번에는 이미지를 추가하지 않는다. 공간 구조의 세부 설명은 연결된 선수 단위의 그림과 함께 읽는다.",
+      "assets": [],
+      "evidence": "doc/visual-review/units/M05.03.md"
+    },
+    "M05.04": {
+      "status": "reviewed",
+      "source": "ebook/curriculum/M05/M05.04.md",
+      "sourceSha256": "dea7096b3020b2a4b296e171f8a998b10a9d50066386d9cda8e3a5fdcdb26fba",
+      "reason": "Lifecycle은 준비 절차를 드러낸다의 연결/구분은 글만으로 단계나 경계를 혼동하기 쉬워 설명 도식을 추가한다. 본문의 표·수치·문제 조건도 대조한다.",
+      "assets": [
+        {
+          "path": "apps/web/public/textbook-visuals/M05.04-concept.svg",
+          "sha256": "bab14ac07f38349442ef15e47b824f5f8ab144fc7972c4b4a0556b6450be2885",
+          "method": "original-svg",
+          "model": null,
+          "prompt": null,
+          "alt": "Lifecycle은 준비 절차를 드러낸다: Unconfigured → Inactive → Active → Error/Shutdown.",
+          "caption": "Lifecycle의 주요 상태/절차를 간추린 개념도다. 가능한 모든 전이를 그린 상태전이도나 장비 안전 인증이 아니다. 활성 상태만으로 센서 최신성·실제 동작을 보장하지 않는다. 직접 제작."
+        }
+      ],
+      "evidence": "doc/visual-review/units/M05.04.md"
+    },
+    "M05.05": {
+      "status": "reviewed",
+      "source": "ebook/curriculum/M05/M05.05.md",
+      "sourceSha256": "23b68dbbdf40efbfcfd9dfebc3dd0adc46c2b93522e09af27d9aae607b07719d",
+      "reason": "TF·표시·기록의 다른 역할의 연결/구분은 글만으로 단계나 경계를 혼동하기 쉬워 설명 도식을 추가한다. 본문의 표·수치·문제 조건도 대조한다.",
+      "assets": [
+        {
+          "path": "apps/web/public/textbook-visuals/M05.05-concept.svg",
+          "sha256": "a8eb68194fd7d700a17acf50c1ed64083750c78b13fae957b8fb6c7fda7de059",
+          "method": "original-svg",
+          "model": null,
+          "prompt": null,
+          "alt": "TF·표시·기록의 다른 역할: TF → RViz → rqt → rosbag2/MCAP.",
+          "caption": "각 칸은 서로 다른 역할/근거다. 나란히 비교할 항목이며 위아래가 시간 순서를 뜻하지 않는다. 직접 제작한 개념도이며 본문의 조건과 함께 읽는다."
+        }
+      ],
+      "evidence": "doc/visual-review/units/M05.05.md"
+    },
+    "M05.06": {
+      "status": "reviewed",
+      "source": "ebook/curriculum/M05/M05.06.md",
+      "sourceSha256": "85b1db644460f0040d0caed0fd70e7b87440736f6b1703ceb24336cb68e105aa",
+      "reason": "본문의 「시간값 앞에 어떤 시계인지 적는다」부터 「수신 중단과 오래된 자료는 다르게 찾는다」까지 시각 참조/입력 조건을 점검했다. 정의와 수치/판정 절차가 글 안에서 주어지고 특정 미제공 사진/그림의 식별에 의존하지 않아 이번에는 이미지를 추가하지 않는다. 공간 구조의 세부 설명은 연결된 선수 단위의 그림과 함께 읽는다.",
+      "assets": [],
+      "evidence": "doc/visual-review/units/M05.06.md"
+    },
+    "M06.01": {
+      "status": "reviewed",
+      "source": "ebook/curriculum/M06/M06.01.md",
+      "sourceSha256": "4268a0c95269b1486fa8eb7127378dbda7908c65ae8b21cf8b9b8d498f47d7d7",
+      "reason": "같은 점, 서로 다른 프레임는 공간/파형 관계를 직접 보아야 식의 기준과 적용 범위를 혼동하지 않으므로 도식을 추가한다. 제공된 식·본문 조건과 대조했다.",
+      "assets": [
+        {
+          "path": "apps/web/public/textbook-visuals/M06.01-concept.svg",
+          "sha256": "8d422212f9f865a9ccc2de5e1e77d35221afc81de1a430988a961ce5511625c3",
+          "method": "original-svg",
+          "model": null,
+          "prompt": null,
+          "alt": "같은 점, 서로 다른 프레임. 프레임은 원점과 축의 묶음이다. 같은 점 P의 좌표를 B에서 A로 바꾸는 것과 점을 실제로 이동시키는 것은 다르다. +z 쪽에서 xy 평면을 본 개념도이며 수치 예제와는 별개다.",
+          "caption": "프레임은 원점과 축의 묶음이다. 같은 점 P의 좌표를 B에서 A로 바꾸는 것과 점을 실제로 이동시키는 것은 다르다. +z 쪽에서 xy 평면을 본 개념도이며 수치 예제와는 별개다. 직접 제작."
+        }
+      ],
+      "evidence": "doc/visual-review/units/M06.01.md"
+    },
+    "M06.02": {
+      "status": "reviewed",
+      "source": "ebook/curriculum/M06/M06.02.md",
+      "sourceSha256": "024fe4ab4b3c9d0b3d93fd085ddced2b211f843326dbbeb521c6b34db083edcb",
+      "reason": "2R 팔의 상대각과 링크는 공간/파형 관계를 직접 보아야 식의 기준과 적용 범위를 혼동하지 않으므로 도식을 추가한다. 제공된 식·본문 조건과 대조했다.",
+      "assets": [
+        {
+          "path": "apps/web/public/textbook-visuals/M06.02-concept.svg",
+          "sha256": "3a5795cf3675b69ff264adbee27c2ec6a008c32852e24243922551e7ce86747b",
+          "method": "original-svg",
+          "model": null,
+          "prompt": null,
+          "alt": "2R 팔의 상대각과 링크. 본문의 L1=0.3 m, L2=0.2 m, q1=0°, q2=90° 자세다. 둘째 링크의 절대 방향은 q1+q2이며 q2는 첫 링크 기준 상대각이다. 도구 오프셋은 0이다.",
+          "caption": "본문의 L1=0.3 m, L2=0.2 m, q1=0°, q2=90° 자세다. 둘째 링크의 절대 방향은 q1+q2이며 q2는 첫 링크 기준 상대각이다. 도구 오프셋은 0이다. 직접 제작."
+        }
+      ],
+      "evidence": "doc/visual-review/units/M06.02.md"
+    },
+    "M06.03": {
+      "status": "reviewed",
+      "source": "ebook/curriculum/M06/M06.03.md",
+      "sourceSha256": "c352665e8dba5faeac3daf7db4fb10c97aa2994e2fcfc48710786ed7314d3997",
+      "reason": "같은 끝점에 이르는 두 IK 분기는 공간/파형 관계를 직접 보아야 식의 기준과 적용 범위를 혼동하지 않으므로 도식을 추가한다. 제공된 식·본문 조건과 대조했다.",
+      "assets": [
+        {
+          "path": "apps/web/public/textbook-visuals/M06.03-concept.svg",
+          "sha256": "0893fd69ae36fb8fd21f012e6d4c69f966fcc8d9e4a5ce20dcc03f3449cc9e4f",
+          "method": "original-svg",
+          "model": null,
+          "prompt": null,
+          "alt": "같은 끝점에 이르는 두 IK 분기. 본문의 목표 (0.3,0.2) m를 만족하는 두 기하 분기를 겹쳐 보였다. 끝점이 같아도 팔꿈치·경로는 다르다. 관절 제한·충돌·도구 방향은 이 기하 해에 포함되지 않는다.",
+          "caption": "본문의 목표 (0.3,0.2) m를 만족하는 두 기하 분기를 겹쳐 보였다. 끝점이 같아도 팔꿈치·경로는 다르다. 관절 제한·충돌·도구 방향은 이 기하 해에 포함되지 않는다. 직접 제작."
+        }
+      ],
+      "evidence": "doc/visual-review/units/M06.03.md"
+    },
+    "M06.04": {
+      "status": "reviewed",
+      "source": "ebook/curriculum/M06/M06.04.md",
+      "sourceSha256": "ee25dd5f7b1adb47c50c45d079dcbe9af85fc5c4ca5ade0964da8b24af2f995a",
+      "reason": "펼친 팔에서 잃는 순간 운동 방향는 공간/파형 관계를 직접 보아야 식의 기준과 적용 범위를 혼동하지 않으므로 도식을 추가한다. 제공된 식·본문 조건과 대조했다.",
+      "assets": [
+        {
+          "path": "apps/web/public/textbook-visuals/M06.04-concept.svg",
+          "sha256": "ddde667b18121efa2437f0adfbc1f29cc5a51ab12f7f631f639650f26d0d6619",
+          "method": "original-svg",
+          "model": null,
+          "prompt": null,
+          "alt": "펼친 팔에서 잃는 순간 운동 방향. 펼친 2R 팔은 말단 (0.5,0) m에 도달하지만 현재 Jacobian의 x방향 일차 속도 성분은 0이다. 특이점과 작업공간 밖 목표를 같은 뜻으로 읽지 않는다.",
+          "caption": "펼친 2R 팔은 말단 (0.5,0) m에 도달하지만 현재 Jacobian의 x방향 일차 속도 성분은 0이다. 특이점과 작업공간 밖 목표를 같은 뜻으로 읽지 않는다. 직접 제작."
+        }
+      ],
+      "evidence": "doc/visual-review/units/M06.04.md"
+    },
+    "M06.05": {
+      "status": "reviewed",
+      "source": "ebook/curriculum/M06/M06.05.md",
+      "sourceSha256": "b6a2e0384288a5988c48609defa1f91ddef293865507fb06c85ff18ff490050e",
+      "reason": "바퀴 배치와 양의 구동 방향는 공간/파형 관계를 직접 보아야 식의 기준과 적용 범위를 혼동하지 않으므로 도식을 추가한다. 제공된 식·본문 조건과 대조했다.",
+      "assets": [
+        {
+          "path": "apps/web/public/textbook-visuals/M06.05-concept.svg",
+          "sha256": "e03e5c4a5333f28c3f77f3b18e5394834719e21c4142f11b7236e450eb6e2456",
+          "method": "original-svg",
+          "model": null,
+          "prompt": null,
+          "alt": "바퀴 배치와 양의 구동 방향. 오른쪽은 위치 (R sinβ,−R cosβ), 구동 방향 β=0/120/240°인 본문의 3옴니 모델이다. 화살표는 각 바퀴의 양의 주 구동 방향이며 차체가 언제나 그 방향으로만 움직인다는 뜻은 아니다. 왼쪽 차동 모델은 이상 무미끄럼에서 vy=0이다.",
+          "caption": "오른쪽은 위치 (R sinβ,−R cosβ), 구동 방향 β=0/120/240°인 본문의 3옴니 모델이다. 화살표는 각 바퀴의 양의 주 구동 방향이며 차체가 언제나 그 방향으로만 움직인다는 뜻은 아니다. 왼쪽 차동 모델은 이상 무미끄럼에서 vy=0이다. 직접 제작."
+        }
+      ],
+      "evidence": "doc/visual-review/units/M06.05.md"
+    },
+    "M06.06": {
+      "status": "reviewed",
+      "source": "ebook/curriculum/M06/M06.06.md",
+      "sourceSha256": "7301ba0f09e964a25258842edfe6c0e9ac1b1ba53bd7cdea94c7a7d28504ba25",
+      "reason": "직렬 사슬과 달라지는 병렬 연결는 공간/파형 관계를 직접 보아야 식의 기준과 적용 범위를 혼동하지 않으므로 도식을 추가한다. 제공된 식·본문 조건과 대조했다.",
+      "assets": [
+        {
+          "path": "apps/web/public/textbook-visuals/M06.06-concept.svg",
+          "sha256": "68e7aa06ced6e12fb60498284fac6971d9301df151b96873eebb7c581b5d12e8",
+          "method": "original-svg",
+          "model": null,
+          "prompt": null,
+          "alt": "직렬 사슬과 병렬 연결: 직렬 팔 → 병렬 델타 → 독립 좌표 → 엔코더 계약.",
+          "caption": "각 칸은 서로 다른 역할/근거다. 나란히 비교할 항목이며 위아래가 시간 순서를 뜻하지 않는다. 직접 제작한 개념도이며 본문의 조건과 함께 읽는다."
+        },
+        {
+          "path": "apps/web/public/textbook-visuals/M06.06-spatial.svg",
+          "sha256": "3fae1693d9c5fbe09a8eae1d34e1d5c205bc40f5337918b8b9dcf59e8bc2e534",
+          "method": "original-svg",
+          "model": null,
+          "prompt": null,
+          "alt": "직렬 사슬과 달라지는 병렬 연결. 직렬 팔은 베이스에서 말단으로 하나의 사슬을 따른다. 이 델타 연결 개념도는 세 다리가 같은 플랫폼을 함께 제약하는 차이를 보인다. 초록 이중선은 평행한 하부 링크 쌍의 역할을 나타내며 실제 3D 배치/관절 축/치수·운동 해를 정하는 도면은 아니다.",
+          "caption": "직렬 팔은 베이스에서 말단으로 하나의 사슬을 따른다. 이 델타 연결 개념도는 세 다리가 같은 플랫폼을 함께 제약하는 차이를 보인다. 초록 이중선은 평행한 하부 링크 쌍의 역할을 나타내며 실제 3D 배치/관절 축/치수·운동 해를 정하는 도면은 아니다. 직접 제작."
+        }
+      ],
+      "evidence": "doc/visual-review/units/M06.06.md"
+    },
+    "M07.01": {
+      "status": "reviewed",
+      "source": "ebook/curriculum/M07/M07.01.md",
+      "sourceSha256": "79a27ed9eb9c25967d8af6c1c1f1e90324c87b12185500531dde2dc649b0a789",
+      "reason": "한 링크의 중력 방향과 토크는 공간/파형 관계를 직접 보아야 식의 기준과 적용 범위를 혼동하지 않으므로 도식을 추가한다. 제공된 식·본문 조건과 대조했다.",
+      "assets": [
+        {
+          "path": "apps/web/public/textbook-visuals/M07.01-concept.svg",
+          "sha256": "9fb6ec1ccc1cf068097e0a33c8c281bac9daaa7b7afaaa636dad109d1c882515",
+          "method": "original-svg",
+          "model": null,
+          "prompt": null,
+          "alt": "한 링크의 중력 방향과 토크. 본문의 질량 없는 막대 끝 질점 모델이다. q는 수평에서 반시계 방향, 중력은 아래 방향이므로 중력 토크는 −mgl cos q다. 분포 질량·다관절 모형과 구별한다.",
+          "caption": "본문의 질량 없는 막대 끝 질점 모델이다. q는 수평에서 반시계 방향, 중력은 아래 방향이므로 중력 토크는 −mgl cos q다. 분포 질량·다관절 모형과 구별한다. 직접 제작."
+        }
+      ],
+      "evidence": "doc/visual-review/units/M07.01.md"
+    },
+    "M07.02": {
+      "status": "reviewed",
+      "source": "ebook/curriculum/M07/M07.02.md",
+      "sourceSha256": "e28c67d6f7d45e0aeadfa462359ba539437ef2d6d288124fe8cebc5547a790a4",
+      "reason": "본문의 「어떤 상태가 미래를 결정하는가」부터 「안정적이라는 말의 대상을 붙인다」까지 시각 참조/입력 조건을 점검했다. 정의와 수치/판정 절차가 글 안에서 주어지고 특정 미제공 사진/그림의 식별에 의존하지 않아 이번에는 이미지를 추가하지 않는다. 공간 구조의 세부 설명은 연결된 선수 단위의 그림과 함께 읽는다.",
+      "assets": [],
+      "evidence": "doc/visual-review/units/M07.02.md"
+    },
+    "M07.03": {
+      "status": "reviewed",
+      "source": "ebook/curriculum/M07/M07.03.md",
+      "sourceSha256": "1f567d8c8d3be76111b17d02776859d9a6bad68510d4f3de8f912d861e866d3e",
+      "reason": "PID와 포화 후 적분 처리의 연결/구분은 글만으로 단계나 경계를 혼동하기 쉬워 설명 도식을 추가한다. 본문의 표·수치·문제 조건도 대조한다.",
+      "assets": [
+        {
+          "path": "apps/web/public/textbook-visuals/M07.03-concept.svg",
+          "sha256": "27c6c836a7b07848e285c971915c2bd68f8248a04a337ea82d31adf894be6bb4",
+          "method": "original-svg",
+          "model": null,
+          "prompt": null,
+          "alt": "PID와 포화 후 적분 처리: 목표/측정의 오차 → P·I·D 항 계산 → 출력 범위 제한 → 적분 상태 갱신.",
+          "caption": "각 칸은 서로 다른 역할/근거다. 아래 방향은 자료/처리의 연결이며 실제 성공을 자동으로 보장하지 않는다. 직접 제작한 개념도이며 본문의 조건과 함께 읽는다."
+        }
+      ],
+      "evidence": "doc/visual-review/units/M07.03.md"
+    },
+    "M07.04": {
+      "status": "reviewed",
+      "source": "ebook/curriculum/M07/M07.04.md",
+      "sourceSha256": "3c8d7f10db6eb4904c1e59210ff006d054da8777a0517857a3b7c8d6ec850c6f",
+      "reason": "주파수 1 rad/s에서의 위상 지연는 공간/파형 관계를 직접 보아야 식의 기준과 적용 범위를 혼동하지 않으므로 도식을 추가한다. 제공된 식·본문 조건과 대조했다.",
+      "assets": [
+        {
+          "path": "apps/web/public/textbook-visuals/M07.04-concept.svg",
+          "sha256": "1d538a8bac0cdcd04d89fd076ed498ca7a3cde52a45c87b400618017443fba2d",
+          "method": "original-svg",
+          "model": null,
+          "prompt": null,
+          "alt": "주파수 1 rad/s에서의 위상 지연. G(s)=1/(s+1), ω=1 rad/s인 본문 모델의 정상 정현파 응답이다. 초기 과도응답은 제외했다. 주파수가 달라지면 진폭과 위상도 달라진다.",
+          "caption": "G(s)=1/(s+1), ω=1 rad/s인 본문 모델의 정상 정현파 응답이다. 초기 과도응답은 제외했다. 주파수가 달라지면 진폭과 위상도 달라진다. 직접 제작."
+        }
+      ],
+      "evidence": "doc/visual-review/units/M07.04.md"
+    },
+    "M07.05": {
+      "status": "reviewed",
+      "source": "ebook/curriculum/M07/M07.05.md",
+      "sourceSha256": "6e7389227191a9193b22339126bd73c15e4f071b369af72bc1929336bf77a440",
+      "reason": "제어 계층마다 목표 물리량이 다르다의 연결/구분은 글만으로 단계나 경계를 혼동하기 쉬워 설명 도식을 추가한다. 본문의 표·수치·문제 조건도 대조한다.",
+      "assets": [
+        {
+          "path": "apps/web/public/textbook-visuals/M07.05-concept.svg",
+          "sha256": "930db2d65a5017c3c3f96ef311168429f7c3ccf59a39a7aed86c10bff574185e",
+          "method": "original-svg",
+          "model": null,
+          "prompt": null,
+          "alt": "제어 계층마다 목표 물리량이 다르다: 상위 위치 목표 → 속도 제어 경계 → 토크/전류 제어 경계 → 새 상태 관측.",
+          "caption": "각 칸은 서로 다른 역할/근거다. 아래 방향은 자료/처리의 연결이며 실제 성공을 자동으로 보장하지 않는다. 직접 제작한 개념도이며 본문의 조건과 함께 읽는다."
+        }
+      ],
+      "evidence": "doc/visual-review/units/M07.05.md"
+    },
+    "M07.06": {
+      "status": "reviewed",
+      "source": "ebook/curriculum/M07/M07.06.md",
+      "sourceSha256": "253c49cea84e4d09a012b66e7753404edbe25a0ec5a84bf021114deb991a8659",
+      "reason": "본문의 「부드러운 값이 항상 더 좋은 피드백은 아니다」부터 「제어 품질은 여러 증거로 판단한다」까지 시각 참조/입력 조건을 점검했다. 정의와 수치/판정 절차가 글 안에서 주어지고 특정 미제공 사진/그림의 식별에 의존하지 않아 이번에는 이미지를 추가하지 않는다. 공간 구조의 세부 설명은 연결된 선수 단위의 그림과 함께 읽는다.",
+      "assets": [],
+      "evidence": "doc/visual-review/units/M07.06.md"
+    },
+    "M08.01": {
+      "status": "reviewed",
+      "source": "ebook/curriculum/M08/M08.01.md",
+      "sourceSha256": "84a28bc6c8ad09aaaab50831ee0c1337c8fe4cb499f87e43c6290a99d4b1c9f8",
+      "reason": "한 링크의 세 기준는 공간/파형 관계를 직접 보아야 식의 기준과 적용 범위를 혼동하지 않으므로 도식을 추가한다. 제공된 식·본문 조건과 대조했다.",
+      "assets": [
+        {
+          "path": "apps/web/public/textbook-visuals/M08.01-concept.svg",
+          "sha256": "c5eeea5f89c9803b92db77fea6aabd5c517d151c1960aaff1b08ec8307019454",
+          "method": "original-svg",
+          "model": null,
+          "prompt": null,
+          "alt": "한 링크에 붙는 세 가지 모델: visual → collision → inertial → 공통 링크 프레임.",
+          "caption": "각 칸은 서로 다른 역할/근거다. 나란히 비교할 항목이며 위아래가 시간 순서를 뜻하지 않는다. 직접 제작한 개념도이며 본문의 조건과 함께 읽는다."
+        },
+        {
+          "path": "apps/web/public/textbook-visuals/M08.01-spatial.svg",
+          "sha256": "d3e9d8c2f741c0ba4103940fa0cea86648c7544ab1b873961d54c436bde6dead",
+          "method": "original-svg",
+          "model": null,
+          "prompt": null,
+          "alt": "한 링크의 세 기준. 회색 표시 형상과 파란 충돌 근사 상자, 주황 질량중심은 역할이 다르다. link 원점을 형상의 중앙/COM과 자동으로 같다고 놓지 않는다. 축척이나 실제 관성값이 없는 개념도다.",
+          "caption": "회색 표시 형상과 파란 충돌 근사 상자, 주황 질량중심은 역할이 다르다. link 원점을 형상의 중앙/COM과 자동으로 같다고 놓지 않는다. 축척이나 실제 관성값이 없는 개념도다. 직접 제작."
+        }
+      ],
+      "evidence": "doc/visual-review/units/M08.01.md"
+    },
+    "M08.02": {
+      "status": "reviewed",
+      "source": "ebook/curriculum/M08/M08.02.md",
+      "sourceSha256": "82024f1b63360438b2f58acbde4564f1f96fbce4a0370f6dd57ca8bcc7a3fa99",
+      "reason": "본문의 「반복을 줄이는 언어와 최종 모델」부터 「생성 성공 뒤에도 검토할 것이 남는다」까지 시각 참조/입력 조건을 점검했다. 명시된 코드/설정·정의와 수치/판정 절차가 글 안에서 주어지고 특정 미제공 사진/그림의 식별에 의존하지 않아 이번에는 이미지를 추가하지 않는다. 공간 구조의 세부 설명은 연결된 선수 단위의 그림과 함께 읽는다.",
+      "assets": [],
+      "evidence": "doc/visual-review/units/M08.02.md"
+    },
+    "M08.03": {
+      "status": "reviewed",
+      "source": "ebook/curriculum/M08/M08.03.md",
+      "sourceSha256": "b4ddd5ee725e87fe85affa945d5ba7808d2328b3998e334327f17eee65a26449",
+      "reason": "링크 트리와 mimic 의존성의 연결/구분은 글만으로 단계나 경계를 혼동하기 쉬워 설명 도식을 추가한다. 본문의 표·수치·문제 조건도 대조한다.",
+      "assets": [
+        {
+          "path": "apps/web/public/textbook-visuals/M08.03-concept.svg",
+          "sha256": "5503a630a8aa3e9f6f85109aa1d11d4eb3b3c1a3a694ff61d8942672486d63b9",
+          "method": "original-svg",
+          "model": null,
+          "prompt": null,
+          "alt": "링크 트리와 mimic 의존성: 링크/관절 트리 → mimic 값 의존성 → 검사 대상 → 명령 해석.",
+          "caption": "각 칸은 서로 다른 역할/근거다. 나란히 비교할 항목이며 위아래가 시간 순서를 뜻하지 않는다. 직접 제작한 개념도이며 본문의 조건과 함께 읽는다."
+        }
+      ],
+      "evidence": "doc/visual-review/units/M08.03.md"
+    },
+    "M08.04": {
+      "status": "reviewed",
+      "source": "ebook/curriculum/M08/M08.04.md",
+      "sourceSha256": "c16f7ed9b7a602a15e1f2aecddf902ea5a6f531bbd4880e0318284fadc17b03d",
+      "reason": "본문의 「삼각형 수만 줄이면 좋은 모델인가」부터 「양수처럼 보여도 물리적으로 맞지 않을 수 있다」까지 시각 참조/입력 조건을 점검했다. 정의와 수치/판정 절차가 글 안에서 주어지고 특정 미제공 사진/그림의 식별에 의존하지 않아 이번에는 이미지를 추가하지 않는다. 공간 구조의 세부 설명은 연결된 선수 단위의 그림과 함께 읽는다.",
+      "assets": [],
+      "evidence": "doc/visual-review/units/M08.04.md"
+    },
+    "M08.05": {
+      "status": "reviewed",
+      "source": "ebook/curriculum/M08/M08.05.md",
+      "sourceSha256": "8fc794a41c50ee610d2a6a54371cc396b4c1113f5f907283aec3b6c0a5f0fb23",
+      "reason": "관절 상태가 TF가 되는 경로의 연결/구분은 글만으로 단계나 경계를 혼동하기 쉬워 설명 도식을 추가한다. 본문의 표·수치·문제 조건도 대조한다.",
+      "assets": [
+        {
+          "path": "apps/web/public/textbook-visuals/M08.05-concept.svg",
+          "sha256": "e3abdf21991189f26d46a4a2b03e03b42c46096cabe65ba096b6ce654ee666c5",
+          "method": "original-svg",
+          "model": null,
+          "prompt": null,
+          "alt": "관절 상태가 TF가 되는 경로: JointState → robot_state_publisher → TF 변환 → 소비자/RViz.",
+          "caption": "각 칸은 서로 다른 역할/근거다. 아래 방향은 자료/처리의 연결이며 실제 성공을 자동으로 보장하지 않는다. 직접 제작한 개념도이며 본문의 조건과 함께 읽는다."
+        }
+      ],
+      "evidence": "doc/visual-review/units/M08.05.md"
+    },
+    "M08.06": {
+      "status": "reviewed",
+      "source": "ebook/curriculum/M08/M08.06.md",
+      "sourceSha256": "e7a0a0c30910c70719a5e7f7a2f4cce06f922abfeb55f00e5e28bc1e87342600",
+      "reason": "본문의 「같은 position이라도 명령과 상태는 다르다」부터 「표시·기구학·물리·제어를 따로 판정한다」까지 시각 참조/입력 조건을 점검했다. 정의와 수치/판정 절차가 글 안에서 주어지고 특정 미제공 사진/그림의 식별에 의존하지 않아 이번에는 이미지를 추가하지 않는다. 공간 구조의 세부 설명은 연결된 선수 단위의 그림과 함께 읽는다.",
+      "assets": [],
+      "evidence": "doc/visual-review/units/M08.06.md"
+    },
+    "M09.01": {
+      "status": "reviewed",
+      "source": "ebook/curriculum/M09/M09.01.md",
+      "sourceSha256": "132e3192f939abf2a549a07dde95363734d8144a7626d0111cbe667c563eff2f",
+      "reason": "모형 시간과 벽시계의 다른 축의 연결/구분은 글만으로 단계나 경계를 혼동하기 쉬워 설명 도식을 추가한다. 본문의 표·수치·문제 조건도 대조한다.",
+      "assets": [
+        {
+          "path": "apps/web/public/textbook-visuals/M09.01-concept.svg",
+          "sha256": "8b83bcfb1da8643e9819226b3bc933a69fbd2e86fab7ac133bd9cefac489e9fc",
+          "method": "original-svg",
+          "model": null,
+          "prompt": null,
+          "alt": "모형 시간과 벽시계의 다른 축: Physics step → 실행 소요 시간 → Render/센서 주기 → 리셋/새 epoch.",
+          "caption": "각 칸은 서로 다른 역할/근거다. 나란히 비교할 항목이며 위아래가 시간 순서를 뜻하지 않는다. 직접 제작한 개념도이며 본문의 조건과 함께 읽는다."
+        }
+      ],
+      "evidence": "doc/visual-review/units/M09.01.md"
+    },
+    "M09.02": {
+      "status": "reviewed",
+      "source": "ebook/curriculum/M09/M09.02.md",
+      "sourceSha256": "e34ea0ebc4535d159b9b64b2354f527f434632159d385aa74007fb2a342fee7b",
+      "reason": "주행 명령부터 관측까지의 연결/구분은 글만으로 단계나 경계를 혼동하기 쉬워 설명 도식을 추가한다. 본문의 표·수치·문제 조건도 대조한다.",
+      "assets": [
+        {
+          "path": "apps/web/public/textbook-visuals/M09.02-concept.svg",
+          "sha256": "56bd740c6e82df69b668bd1800f25b7f11185493a6146d63f01a08193ebc0ea8",
+          "method": "original-svg",
+          "model": null,
+          "prompt": null,
+          "alt": "주행 명령부터 관측까지: ROS 속도 명령 → Bridge/플러그인 → 바퀴/모형 운동 → Odometry/관측.",
+          "caption": "각 칸은 서로 다른 역할/근거다. 아래 방향은 자료/처리의 연결이며 실제 성공을 자동으로 보장하지 않는다. 직접 제작한 개념도이며 본문의 조건과 함께 읽는다."
+        }
+      ],
+      "evidence": "doc/visual-review/units/M09.02.md"
+    },
+    "M09.03": {
+      "status": "reviewed",
+      "source": "ebook/curriculum/M09/M09.03.md",
+      "sourceSha256": "d337e3df31502b075e331972960802d50159de575a2ec0948e95efd31af65154",
+      "reason": "본문의 「어떤 값을 어느 좌표와 시각으로 얻는지 적는다」부터 「구성/표본/소비를 한 구간씩 확인한다」까지 시각 참조/입력 조건을 점검했다. 정의와 수치/판정 절차가 글 안에서 주어지고 특정 미제공 사진/그림의 식별에 의존하지 않아 이번에는 이미지를 추가하지 않는다. 공간 구조의 세부 설명은 연결된 선수 단위의 그림과 함께 읽는다.",
+      "assets": [],
+      "evidence": "doc/visual-review/units/M09.03.md"
+    },
+    "M09.04": {
+      "status": "reviewed",
+      "source": "ebook/curriculum/M09/M09.04.md",
+      "sourceSha256": "b0f10c875dfa8b4f4112b88b8e99dd4bb04152baad446c767dba5f1085e46c04",
+      "reason": "map에서 몸체까지 TF 책임의 연결/구분은 글만으로 단계나 경계를 혼동하기 쉬워 설명 도식을 추가한다. 본문의 표·수치·문제 조건도 대조한다.",
+      "assets": [
+        {
+          "path": "apps/web/public/textbook-visuals/M09.04-concept.svg",
+          "sha256": "0c8deb078aa2308889ad2b728a04c90b901e2e0fb0c66c682790965dc5e227e8",
+          "method": "original-svg",
+          "model": null,
+          "prompt": null,
+          "alt": "map에서 몸체까지 TF 책임: map → odom → odom → base_link → 몸체 → 센서 → 동일 시각의 체인.",
+          "caption": "각 칸은 서로 다른 역할/근거다. 아래 방향은 자료/처리의 연결이며 실제 성공을 자동으로 보장하지 않는다. 직접 제작한 개념도이며 본문의 조건과 함께 읽는다."
+        }
+      ],
+      "evidence": "doc/visual-review/units/M09.04.md"
+    },
+    "M09.05": {
+      "status": "reviewed",
+      "source": "ebook/curriculum/M09/M09.05.md",
+      "sourceSha256": "4468cbdf9c4c785bfec1ebdf0c7336be3f74d7f86d271807aa5941d8695a7ab3",
+      "reason": "본문의 「명령과 적용·이동을 다른 기록으로 남긴다」부터 「bag에 무엇을 담았는지 확인한다」까지 시각 참조/입력 조건을 점검했다. 제공 표·명시된 코드/설정·정의와 수치/판정 절차가 글 안에서 주어지고 특정 미제공 사진/그림의 식별에 의존하지 않아 이번에는 이미지를 추가하지 않는다. 공간 구조의 세부 설명은 연결된 선수 단위의 그림과 함께 읽는다.",
+      "assets": [],
+      "evidence": "doc/visual-review/units/M09.05.md"
+    },
+    "M09.06": {
+      "status": "reviewed",
+      "source": "ebook/curriculum/M09/M09.06.md",
+      "sourceSha256": "3204e1dce30b1dd003f04257137841dc6f7438d36cf20436973e212cba3fc0e2",
+      "reason": "본문의 「파일을 실행 책임에 연결해서 읽는다」부터 「준비 순서와 실패 근거를 따라간다」까지 시각 참조/입력 조건을 점검했다. 제공 표·정의와 수치/판정 절차가 글 안에서 주어지고 특정 미제공 사진/그림의 식별에 의존하지 않아 이번에는 이미지를 추가하지 않는다. 공간 구조의 세부 설명은 연결된 선수 단위의 그림과 함께 읽는다.",
+      "assets": [],
+      "evidence": "doc/visual-review/units/M09.06.md"
+    },
+    "M10.01": {
+      "status": "reviewed",
+      "source": "ebook/curriculum/M10/M10.01.md",
+      "sourceSha256": "74f007fce58e50d5914cf8456415ef54e7727f2ae72e255a595c2ab107770680",
+      "reason": "장면 계층과 합성 출처의 연결/구분은 글만으로 단계나 경계를 혼동하기 쉬워 설명 도식을 추가한다. 본문의 표·수치·문제 조건도 대조한다.",
+      "assets": [
+        {
+          "path": "apps/web/public/textbook-visuals/M10.01-concept.svg",
+          "sha256": "bc373c679b8751176c44a803d6710f2fb7f2cae27257a6c0bf53c1e5bdd0b154",
+          "method": "original-svg",
+          "model": null,
+          "prompt": null,
+          "alt": "장면 계층과 합성 출처: Stage의 Prim 경로 → Layer의 의견 → Reference → 합성 결과.",
+          "caption": "각 칸은 서로 다른 역할/근거다. 나란히 비교할 항목이며 위아래가 시간 순서를 뜻하지 않는다. 직접 제작한 개념도이며 본문의 조건과 함께 읽는다."
+        }
+      ],
+      "evidence": "doc/visual-review/units/M10.01.md"
+    },
+    "M10.02": {
+      "status": "reviewed",
+      "source": "ebook/curriculum/M10/M10.02.md",
+      "sourceSha256": "17d97d34e2e70ae4ba916e0b1663d17b4f92abbe711f2e8463729a431520c6ae",
+      "reason": "URDF와 USD 사이의 보존 계약의 연결/구분은 글만으로 단계나 경계를 혼동하기 쉬워 설명 도식을 추가한다. 본문의 표·수치·문제 조건도 대조한다.",
+      "assets": [
+        {
+          "path": "apps/web/public/textbook-visuals/M10.02-concept.svg",
+          "sha256": "94f7465d719b16a3af6a84f07c9ae3628f19d92d27755d0845ba1bacf878afe7",
+          "method": "original-svg",
+          "model": null,
+          "prompt": null,
+          "alt": "URDF와 USD 사이의 보존 계약: 원본 로봇 모델 → 변환 규칙 → 가져온 USD 자산 → 검수.",
+          "caption": "각 칸은 서로 다른 역할/근거다. 아래 방향은 자료/처리의 연결이며 실제 성공을 자동으로 보장하지 않는다. 직접 제작한 개념도이며 본문의 조건과 함께 읽는다."
+        }
+      ],
+      "evidence": "doc/visual-review/units/M10.02.md"
+    },
+    "M10.03": {
+      "status": "reviewed",
+      "source": "ebook/curriculum/M10/M10.03.md",
+      "sourceSha256": "aa66bb8d07e7c9efcf483b325b41f37c42886dfd1ca44ac4d09c86f68c7754bb",
+      "reason": "얇은 벽과 이산 위치 검사는 공간/파형 관계를 직접 보아야 식의 기준과 적용 범위를 혼동하지 않으므로 도식을 추가한다. 제공된 식·본문 조건과 대조했다.",
+      "assets": [
+        {
+          "path": "apps/web/public/textbook-visuals/M10.03-concept.svg",
+          "sha256": "01d3d711d3dbab08e26d3a63f7d34cb6e9b51ed6e2cd866c1ac8677abb7f8644",
+          "method": "original-svg",
+          "model": null,
+          "prompt": null,
+          "alt": "얇은 벽과 이산 위치 검사. 개념도에서 두 표본 위치는 벽과 겹치지 않지만 이동 구간은 벽을 지난다. CCD/스텝 설정의 필요성을 보여 주며 특정 엔진의 CCD 보장을 뜻하지 않는다.",
+          "caption": "개념도에서 두 표본 위치는 벽과 겹치지 않지만 이동 구간은 벽을 지난다. CCD/스텝 설정의 필요성을 보여 주며 특정 엔진의 CCD 보장을 뜻하지 않는다. 직접 제작."
+        }
+      ],
+      "evidence": "doc/visual-review/units/M10.03.md"
+    },
+    "M10.04": {
+      "status": "reviewed",
+      "source": "ebook/curriculum/M10/M10.04.md",
+      "sourceSha256": "f58cbf03947bd39f476603992bc75b695b18c49ffc18056311d997c905172cf4",
+      "reason": "질량중심과 관성의 기준의 연결/구분은 글만으로 단계나 경계를 혼동하기 쉬워 설명 도식을 추가한다. 본문의 표·수치·문제 조건도 대조한다.",
+      "assets": [
+        {
+          "path": "apps/web/public/textbook-visuals/M10.04-concept.svg",
+          "sha256": "e59b4c41e7575ed0d2d248ad5748acab5e15994f5ab77e3acfcadf7ccae430d9",
+          "method": "original-svg",
+          "model": null,
+          "prompt": null,
+          "alt": "질량중심과 관성의 기준: 각 링크 질량/COM → 관성 텐서 → 회전/평행축 변환 → Articulation.",
+          "caption": "각 칸은 서로 다른 역할/근거다. 아래 방향은 자료/처리의 연결이며 실제 성공을 자동으로 보장하지 않는다. 직접 제작한 개념도이며 본문의 조건과 함께 읽는다."
+        }
+      ],
+      "evidence": "doc/visual-review/units/M10.04.md"
+    },
+    "M10.05": {
+      "status": "reviewed",
+      "source": "ebook/curriculum/M10/M10.05.md",
+      "sourceSha256": "0218809e3f6f860bd7426cc42e2c0dd9c0b4d34a71ccfdd17647a92a575f30d5",
+      "reason": "본문의 「한 장의 화면 사이에 여러 물리 계산이 있다」부터 「같은 seed는 조건 중 하나다」까지 시각 참조/입력 조건을 점검했다. 정의와 수치/판정 절차가 글 안에서 주어지고 특정 미제공 사진/그림의 식별에 의존하지 않아 이번에는 이미지를 추가하지 않는다. 공간 구조의 세부 설명은 연결된 선수 단위의 그림과 함께 읽는다.",
+      "assets": [],
+      "evidence": "doc/visual-review/units/M10.05.md"
+    },
+    "M10.06": {
+      "status": "reviewed",
+      "source": "ebook/curriculum/M10/M10.06.md",
+      "sourceSha256": "1b975c6d4181ae73db0a2840c42eb1030b1b6788e87ee73d7c22f562d8a9eede",
+      "reason": "본문의 「토픽이 보이는 것부터 작업 성공까지」부터 「영상·보정·TF가 같은 관측을 가리키는가」까지 시각 참조/입력 조건을 점검했다. 정의와 수치/판정 절차가 글 안에서 주어지고 특정 미제공 사진/그림의 식별에 의존하지 않아 이번에는 이미지를 추가하지 않는다. 공간 구조의 세부 설명은 연결된 선수 단위의 그림과 함께 읽는다.",
+      "assets": [],
+      "evidence": "doc/visual-review/units/M10.06.md"
+    },
+    "M11.01": {
+      "status": "reviewed",
+      "source": "ebook/curriculum/M11/M11.01.md",
+      "sourceSha256": "7f13b916f4e23b9f3ca110d18ffb3108b104ede273e8b426a8d85cc41cad51a2",
+      "reason": "손실·역전파·갱신은 다른 단계의 연결/구분은 글만으로 단계나 경계를 혼동하기 쉬워 설명 도식을 추가한다. 본문의 표·수치·문제 조건도 대조한다.",
+      "assets": [
+        {
+          "path": "apps/web/public/textbook-visuals/M11.01-concept.svg",
+          "sha256": "8c40fd3ba232fb954a524212c6adf59b10495ca0f402f76249f873b2842c5513",
+          "method": "original-svg",
+          "model": null,
+          "prompt": null,
+          "alt": "손실·역전파·갱신은 다른 단계: 순전파 → 손실 → 역전파 → Optimizer 갱신.",
+          "caption": "각 칸은 서로 다른 역할/근거다. 아래 방향은 자료/처리의 연결이며 실제 성공을 자동으로 보장하지 않는다. 직접 제작한 개념도이며 본문의 조건과 함께 읽는다."
+        }
+      ],
+      "evidence": "doc/visual-review/units/M11.01.md"
+    },
+    "M11.02": {
+      "status": "reviewed",
+      "source": "ebook/curriculum/M11/M11.02.md",
+      "sourceSha256": "2c150cdec8842f6078f28e82795efc6a4c54ab07a049a06134edfda1d17b36f2",
+      "reason": "본문의 「모양은 계약의 일부다」부터 「선택 CPU 코드로 형식과 왕복을 확인한다」까지 시각 참조/입력 조건을 점검했다. 명시된 코드/설정·정의와 수치/판정 절차가 글 안에서 주어지고 특정 미제공 사진/그림의 식별에 의존하지 않아 이번에는 이미지를 추가하지 않는다. 공간 구조의 세부 설명은 연결된 선수 단위의 그림과 함께 읽는다.",
+      "assets": [],
+      "evidence": "doc/visual-review/units/M11.02.md"
+    },
+    "M11.03": {
+      "status": "reviewed",
+      "source": "ebook/curriculum/M11/M11.03.md",
+      "sourceSha256": "ec46cb6b59b5bce57bffe686a95047e6c71bbe2afb07b93c74909dba102f36ed",
+      "reason": "자료 분리는 원본 그룹부터의 연결/구분은 글만으로 단계나 경계를 혼동하기 쉬워 설명 도식을 추가한다. 본문의 표·수치·문제 조건도 대조한다.",
+      "assets": [
+        {
+          "path": "apps/web/public/textbook-visuals/M11.03-concept.svg",
+          "sha256": "234ac9c36a844b235cf218d44b3314287f9c2ff4e48e8cd5b96ae7541b0909f4",
+          "method": "original-svg",
+          "model": null,
+          "prompt": null,
+          "alt": "자료 분리는 원본 그룹부터: 원본 episode/대상 그룹 → 학습 분할 → 검증 분할 → 시험 분할.",
+          "caption": "각 칸은 서로 다른 역할/근거다. 아래 방향은 자료/처리의 연결이며 실제 성공을 자동으로 보장하지 않는다. 직접 제작한 개념도이며 본문의 조건과 함께 읽는다."
+        }
+      ],
+      "evidence": "doc/visual-review/units/M11.03.md"
+    },
+    "M11.04": {
+      "status": "reviewed",
+      "source": "ebook/curriculum/M11/M11.04.md",
+      "sourceSha256": "d636272571debf1d6ebf0d9657e340b18afe8b58fa250c73212ddfac28f0bc02",
+      "reason": "CNN과 Attention의 특징 혼합의 연결/구분은 글만으로 단계나 경계를 혼동하기 쉬워 설명 도식을 추가한다. 본문의 표·수치·문제 조건도 대조한다.",
+      "assets": [
+        {
+          "path": "apps/web/public/textbook-visuals/M11.04-concept.svg",
+          "sha256": "dc30502469a7b556d1afa3be8341397b6aac7358d6c44b1b7d785c2b3150568f",
+          "method": "original-svg",
+          "model": null,
+          "prompt": null,
+          "alt": "CNN과 Attention의 특징 혼합: CNN → Attention → 표현의 용도 → 평가 범위.",
+          "caption": "각 칸은 서로 다른 역할/근거다. 나란히 비교할 항목이며 위아래가 시간 순서를 뜻하지 않는다. 직접 제작한 개념도이며 본문의 조건과 함께 읽는다."
+        }
+      ],
+      "evidence": "doc/visual-review/units/M11.04.md"
+    },
+    "M11.05": {
+      "status": "reviewed",
+      "source": "ebook/curriculum/M11/M11.05.md",
+      "sourceSha256": "c7c21d21838b95a634be4400e6a305b09b8675eebba063bd8cad0610001221d1",
+      "reason": "출력 형태마다 다른 정답 단위의 연결/구분은 글만으로 단계나 경계를 혼동하기 쉬워 설명 도식을 추가한다. 본문의 표·수치·문제 조건도 대조한다.",
+      "assets": [
+        {
+          "path": "apps/web/public/textbook-visuals/M11.05-concept.svg",
+          "sha256": "ad9e7568f1ece87dbf6fabeba5a2a312574dfa2c295ef50d0b57b9523f9eea8b",
+          "method": "original-svg",
+          "model": null,
+          "prompt": null,
+          "alt": "출력 형태마다 다른 정답 단위: 분류 → 검출 → 분할 → 회귀.",
+          "caption": "각 칸은 서로 다른 역할/근거다. 나란히 비교할 항목이며 위아래가 시간 순서를 뜻하지 않는다. 직접 제작한 개념도이며 본문의 조건과 함께 읽는다."
+        }
+      ],
+      "evidence": "doc/visual-review/units/M11.05.md"
+    },
+    "M11.06": {
+      "status": "reviewed",
+      "source": "ebook/curriculum/M11/M11.06.md",
+      "sourceSha256": "0b17dfd0391a62a6bb4e4755dd129b2f9bec937313e245b0d8464506a3cf723a",
+      "reason": "본문의 「모델 호출보다 오래된 관측」부터 「실험 기록은 결과를 설명하는 입력이다」까지 시각 참조/입력 조건을 점검했다. 정의와 수치/판정 절차가 글 안에서 주어지고 특정 미제공 사진/그림의 식별에 의존하지 않아 이번에는 이미지를 추가하지 않는다. 공간 구조의 세부 설명은 연결된 선수 단위의 그림과 함께 읽는다.",
+      "assets": [],
+      "evidence": "doc/visual-review/units/M11.06.md"
+    },
+    "M12.01": {
+      "status": "reviewed",
+      "source": "ebook/curriculum/M12/M12.01.md",
+      "sourceSha256": "d9b0f337a305e742f0eed66290c745f7903e5f7763d2841ee192fc75b8fdf70d",
+      "reason": "영상 좌표와 배열 인덱스의 연결/구분은 글만으로 단계나 경계를 혼동하기 쉬워 설명 도식을 추가한다. 본문의 표·수치·문제 조건도 대조한다.",
+      "assets": [
+        {
+          "path": "apps/web/public/textbook-visuals/M12.01-concept.svg",
+          "sha256": "06f4c8ee66e278ad226729c4f76f9ab6c62a2ac53b9c3fad99ea562b7cec44ef",
+          "method": "original-svg",
+          "model": null,
+          "prompt": null,
+          "alt": "영상 좌표와 배열 인덱스: 픽셀 좌표 (u, v) → 배열 image[v, u] → 색 채널 계약 → 변환 뒤 검사.",
+          "caption": "각 칸은 서로 다른 역할/근거다. 나란히 비교할 항목이며 위아래가 시간 순서를 뜻하지 않는다. 직접 제작한 개념도이며 본문의 조건과 함께 읽는다."
+        }
+      ],
+      "evidence": "doc/visual-review/units/M12.01.md"
+    },
+    "M12.02": {
+      "status": "reviewed",
+      "source": "ebook/curriculum/M12/M12.02.md",
+      "sourceSha256": "56c62f3ddea6691b0869e62765b6e4c9b1fcbd54fdbe48974338806c7396d2c9",
+      "reason": "한 픽셀의 깊이 모호성는 공간/파형 관계를 직접 보아야 식의 기준과 적용 범위를 혼동하지 않으므로 도식을 추가한다. 제공된 식·본문 조건과 대조했다.",
+      "assets": [
+        {
+          "path": "apps/web/public/textbook-visuals/M12.02-concept.svg",
+          "sha256": "343b161373b41bd582a8934a62df5873bfb2898c052a803e2f2894667c2a97df",
+          "method": "original-svg",
+          "model": null,
+          "prompt": null,
+          "alt": "한 픽셀의 깊이 모호성. 왜곡 없는 pinhole 모델의 X/Z 단면이다. 앞쪽 가상 영상면에서 같은 광선 위 P와 2P는 같은 픽셀에 투영된다. 이 그림은 깊이 Z와 광선 거리의 차이, 한 영상만으로 깊이가 정해지지 않는 이유를 보여 준다.",
+          "caption": "왜곡 없는 pinhole 모델의 X/Z 단면이다. 앞쪽 가상 영상면에서 같은 광선 위 P와 2P는 같은 픽셀에 투영된다. 이 그림은 깊이 Z와 광선 거리의 차이, 한 영상만으로 깊이가 정해지지 않는 이유를 보여 준다. 직접 제작."
+        }
+      ],
+      "evidence": "doc/visual-review/units/M12.02.md"
+    },
+    "M12.03": {
+      "status": "reviewed",
+      "source": "ebook/curriculum/M12/M12.03.md",
+      "sourceSha256": "74b0d63a33ebe51c97e90c45a603bb7ee71b3d92f4715063427b3c133176fc0a",
+      "reason": "상자와 영상은 함께 변환한다의 연결/구분은 글만으로 단계나 경계를 혼동하기 쉬워 설명 도식을 추가한다. 본문의 표·수치·문제 조건도 대조한다.",
+      "assets": [
+        {
+          "path": "apps/web/public/textbook-visuals/M12.03-concept.svg",
+          "sha256": "386fd1fd127b40acbeee1522555109b8b71f37da5c74961cd555b8b26633d60e",
+          "method": "original-svg",
+          "model": null,
+          "prompt": null,
+          "alt": "상자와 영상은 함께 변환한다: 원본 영상/라벨 → Resize/Crop/Letterbox → 같은 변환을 정답에도 → 학습/평가.",
+          "caption": "각 칸은 서로 다른 역할/근거다. 아래 방향은 자료/처리의 연결이며 실제 성공을 자동으로 보장하지 않는다. 직접 제작한 개념도이며 본문의 조건과 함께 읽는다."
+        }
+      ],
+      "evidence": "doc/visual-review/units/M12.03.md"
+    },
+    "M12.04": {
+      "status": "reviewed",
+      "source": "ebook/curriculum/M12/M12.04.md",
+      "sourceSha256": "f4b89e8ce7f588caf84062cf3640195dcbbe067a692b54d3ace5ebc4bc59b121",
+      "reason": "Semantic과 Instance의 구분는 공간/파형 관계를 직접 보아야 식의 기준과 적용 범위를 혼동하지 않으므로 도식을 추가한다. 제공된 식·본문 조건과 대조했다.",
+      "assets": [
+        {
+          "path": "apps/web/public/textbook-visuals/M12.04-concept.svg",
+          "sha256": "548f0c4d3b33307ee2db5e3767912b11899c3cf5e1682c1ca4c6f94007f36e43",
+          "method": "original-svg",
+          "model": null,
+          "prompt": null,
+          "alt": "Semantic과 Instance의 구분. 같은 클래스의 두 물체를 semantic 지도는 같은 값으로, instance 지도는 개체별 값으로 나눈다. 색 자체는 class ID가 아니며 단일 프레임 instance ID와 시간 추적 ID도 다르다.",
+          "caption": "같은 클래스의 두 물체를 semantic 지도는 같은 값으로, instance 지도는 개체별 값으로 나눈다. 색 자체는 class ID가 아니며 단일 프레임 instance ID와 시간 추적 ID도 다르다. 직접 제작."
+        }
+      ],
+      "evidence": "doc/visual-review/units/M12.04.md"
+    },
+    "M12.05": {
+      "status": "reviewed",
+      "source": "ebook/curriculum/M12/M12.05.md",
+      "sourceSha256": "906e0ae052a6d54e4f16a45ec5cbaabd3d9256a05ca4424cd84f446b0557409f",
+      "reason": "가림 중 예측과 새 관측의 연결/구분은 글만으로 단계나 경계를 혼동하기 쉬워 설명 도식을 추가한다. 본문의 표·수치·문제 조건도 대조한다.",
+      "assets": [
+        {
+          "path": "apps/web/public/textbook-visuals/M12.05-concept.svg",
+          "sha256": "a7fe3e747046e1ccc3001f98625555aa3d25de443d276640790d7875d910756f",
+          "method": "original-svg",
+          "model": null,
+          "prompt": null,
+          "alt": "가림 중 예측과 새 관측: 직전 실측/시각 → 현재 예측 → 새 검출과 대응 → 누락/가림 상태.",
+          "caption": "각 칸은 서로 다른 역할/근거다. 아래 방향은 자료/처리의 연결이며 실제 성공을 자동으로 보장하지 않는다. 직접 제작한 개념도이며 본문의 조건과 함께 읽는다."
+        }
+      ],
+      "evidence": "doc/visual-review/units/M12.05.md"
+    },
+    "M12.06": {
+      "status": "reviewed",
+      "source": "ebook/curriculum/M12/M12.06.md",
+      "sourceSha256": "cb24c551003cd5840c583be52abaf4cc65ef4b64df2210b2409c2167b9fe6bf2",
+      "reason": "상자 IoU의 교집합/합집합는 공간/파형 관계를 직접 보아야 식의 기준과 적용 범위를 혼동하지 않으므로 도식을 추가한다. 제공된 식·본문 조건과 대조했다.",
+      "assets": [
+        {
+          "path": "apps/web/public/textbook-visuals/M12.06-spatial.svg",
+          "sha256": "6348cded3e090e742d71f0cdd26fedb95340ea7da1008299766a52a962ad4c0f",
+          "method": "original-svg",
+          "model": null,
+          "prompt": null,
+          "alt": "상자 IoU의 교집합/합집합. 보라색은 두 상자의 교집합이고 합집합은 두 영역을 중복 없이 합친 전체다. 별도 개념 상자이며 본문의 TP/FP 매칭 입력값을 대체하지 않는다. IoU 하나와 전체 검출 지표도 구별한다.",
+          "caption": "보라색은 두 상자의 교집합이고 합집합은 두 영역을 중복 없이 합친 전체다. 별도 개념 상자이며 본문의 TP/FP 매칭 입력값을 대체하지 않는다. IoU 하나와 전체 검출 지표도 구별한다. 직접 제작."
+        }
+      ],
+      "evidence": "doc/visual-review/units/M12.06.md"
+    },
+    "M13.01": {
+      "status": "reviewed",
+      "source": "ebook/curriculum/M13/M13.01.md",
+      "sourceSha256": "8f1b24bad9f8dbc7de1a1cf066e8c8cb4eff765b5f9b2426d9317bae0fba3793",
+      "reason": "Voxel 안의 입력 점과 대표점는 공간/파형 관계를 직접 보아야 식의 기준과 적용 범위를 혼동하지 않으므로 도식을 추가한다. 제공된 식·본문 조건과 대조했다.",
+      "assets": [
+        {
+          "path": "apps/web/public/textbook-visuals/M13.01-concept.svg",
+          "sha256": "cb8b16170f8166d24cb35dfd01d5399a31735d1f0ef7beed00e6dc676d1a7839",
+          "method": "original-svg",
+          "model": null,
+          "prompt": null,
+          "alt": "점군 처리 단계가 만드는 다른 집합: 원본 점/계약 → 유효값/관심영역 필터 → Voxel 대표점 → 이웃/군집.",
+          "caption": "각 칸은 서로 다른 역할/근거다. 아래 방향은 자료/처리의 연결이며 실제 성공을 자동으로 보장하지 않는다. 직접 제작한 개념도이며 본문의 조건과 함께 읽는다."
+        },
+        {
+          "path": "apps/web/public/textbook-visuals/M13.01-spatial.svg",
+          "sha256": "3a03d4003b3634f0f5e31f9fc98a027ef401d665567236da0e4e10ed032f0db9",
+          "method": "original-svg",
+          "model": null,
+          "prompt": null,
+          "alt": "Voxel 안의 입력 점과 대표점. 3D voxel의 아이디어를 보여 주는 별도 xy 단면도다. 파란 점들을 같은 셀끼리 묶어 주황 평균점으로 요약했다. 대표점은 센서가 그 위치를 직접 측정했다는 뜻이 아니며 본문 계산 표의 원본 점 집합과는 별개다.",
+          "caption": "3D voxel의 아이디어를 보여 주는 별도 xy 단면도다. 파란 점들을 같은 셀끼리 묶어 주황 평균점으로 요약했다. 대표점은 센서가 그 위치를 직접 측정했다는 뜻이 아니며 본문 계산 표의 원본 점 집합과는 별개다. 직접 제작."
+        }
+      ],
+      "evidence": "doc/visual-review/units/M13.01.md"
+    },
+    "M13.02": {
+      "status": "reviewed",
+      "source": "ebook/curriculum/M13/M13.02.md",
+      "sourceSha256": "d5d424f84599931708f7baf7612d8bb44b94561db6d73b654cb1bba575946f4a",
+      "reason": "ICP의 대응점과 변환는 공간/파형 관계를 직접 보아야 식의 기준과 적용 범위를 혼동하지 않으므로 도식을 추가한다. 제공된 식·본문 조건과 대조했다.",
+      "assets": [
+        {
+          "path": "apps/web/public/textbook-visuals/M13.02-concept.svg",
+          "sha256": "15b5469643bd2be4886500473408e97c2fe00b39722108af8be1a929a7dfc73b",
+          "method": "original-svg",
+          "model": null,
+          "prompt": null,
+          "alt": "ICP의 두 가지 반복: 현재 변환으로 원본 정렬 → 대응 후보 선택 → 변환/잔차 갱신 → 다음 반복/판정.",
+          "caption": "반복의 마지막 결과로 원본 점을 다시 변환하여 대응을 새로 찾는다. 도식의 되돌림은 새 센서 취득이 아니라 같은 입력 점군에 대한 계산 반복이다. 낮은 잔차만으로 올바른 정합을 보장하지 않는다. 직접 제작."
+        },
+        {
+          "path": "apps/web/public/textbook-visuals/M13.02-spatial.svg",
+          "sha256": "adc3ac9fe5432747733638e30c4e79dc11ddddca3af648887ef270aa3555e12d",
+          "method": "original-svg",
+          "model": null,
+          "prompt": null,
+          "alt": "ICP의 대응점과 변환. 동일한 모양을 평행 이동한 별도 2D 개념 점군이다. 현재 대응으로 변환을 갱신한 뒤 다시 대응을 찾는다. 점 번호의 일치·대응의 정확성이나 전역 수렴을 그림만으로 보장하지 않는다.",
+          "caption": "동일한 모양을 평행 이동한 별도 2D 개념 점군이다. 현재 대응으로 변환을 갱신한 뒤 다시 대응을 찾는다. 점 번호의 일치·대응의 정확성이나 전역 수렴을 그림만으로 보장하지 않는다. 직접 제작."
+        }
+      ],
+      "evidence": "doc/visual-review/units/M13.02.md"
+    },
+    "M13.03": {
+      "status": "reviewed",
+      "source": "ebook/curriculum/M13/M13.03.md",
+      "sourceSha256": "4aad098894b0cfbd2573c50a05db2ff11e526c233a045357959798b3fd5ee6db",
+      "reason": "점 집계와 공간 이웃의 차이의 연결/구분은 글만으로 단계나 경계를 혼동하기 쉬워 설명 도식을 추가한다. 본문의 표·수치·문제 조건도 대조한다.",
+      "assets": [
+        {
+          "path": "apps/web/public/textbook-visuals/M13.03-concept.svg",
+          "sha256": "eb91e92359e1eccb717dc97b5714fc72ec094d1a7a6a138b12e8980d3e6f394e",
+          "method": "original-svg",
+          "model": null,
+          "prompt": null,
+          "alt": "점 집계와 공간 이웃의 차이: 공유 점별 변환 → 대칭 집계 → 공간 이웃 특징 → Voxel/Pillar.",
+          "caption": "각 칸은 서로 다른 역할/근거다. 나란히 비교할 항목이며 위아래가 시간 순서를 뜻하지 않는다. 직접 제작한 개념도이며 본문의 조건과 함께 읽는다."
+        }
+      ],
+      "evidence": "doc/visual-review/units/M13.03.md"
+    },
+    "M13.04": {
+      "status": "reviewed",
+      "source": "ebook/curriculum/M13/M13.04.md",
+      "sourceSha256": "ca17e46f21ab26f12a42027fcc4501b3b365a87c2e406dcf8040f8412311b7e7",
+      "reason": "3D 검출 상자의 기하는 공간/파형 관계를 직접 보아야 식의 기준과 적용 범위를 혼동하지 않으므로 도식을 추가한다. 제공된 식·본문 조건과 대조했다.",
+      "assets": [
+        {
+          "path": "apps/web/public/textbook-visuals/M13.04-concept.svg",
+          "sha256": "df163d62af7e8a3a93fb658113af4abd8919c39c634a4e1c4f84cea489605b27",
+          "method": "original-svg",
+          "model": null,
+          "prompt": null,
+          "alt": "3D 검출과 분할의 출력: 3D 검출 → 3D 분할 → 후처리/대응 → 평가 범위.",
+          "caption": "각 칸은 서로 다른 역할/근거다. 나란히 비교할 항목이며 위아래가 시간 순서를 뜻하지 않는다. 직접 제작한 개념도이며 본문의 조건과 함께 읽는다."
+        },
+        {
+          "path": "apps/web/public/textbook-visuals/M13.04-spatial.svg",
+          "sha256": "998c744284d5141d7e5e15e0e92a94687a33a3a85b7e40e1c4fedcef5d99c6b8",
+          "method": "original-svg",
+          "model": null,
+          "prompt": null,
+          "alt": "3D 검출 상자의 기하. 별도 직육면체 개념도다. 점별 분할 라벨과 물체 단위의 중심·세 크기·방향을 구별한다. 원근 투영된 그림의 픽셀 길이로 실제 3D 크기/IoU를 계산하지 않는다.",
+          "caption": "별도 직육면체 개념도다. 점별 분할 라벨과 물체 단위의 중심·세 크기·방향을 구별한다. 원근 투영된 그림의 픽셀 길이로 실제 3D 크기/IoU를 계산하지 않는다. 직접 제작."
+        }
+      ],
+      "evidence": "doc/visual-review/units/M13.04.md"
+    },
+    "M13.05": {
+      "status": "reviewed",
+      "source": "ebook/curriculum/M13/M13.05.md",
+      "sourceSha256": "f69fb063ce3265f9163f5f68fb84980bb78c5e3a94badfed116cd15af8c44520",
+      "reason": "삼각측량의 두 시점과 광선는 공간/파형 관계를 직접 보아야 식의 기준과 적용 범위를 혼동하지 않으므로 도식을 추가한다. 제공된 식·본문 조건과 대조했다.",
+      "assets": [
+        {
+          "path": "apps/web/public/textbook-visuals/M13.05-concept.svg",
+          "sha256": "862eb8df5022475e4d8f8e55794a59095552a9154496895c014a677ade799ac9",
+          "method": "original-svg",
+          "model": null,
+          "prompt": null,
+          "alt": "삼각측량의 두 시점과 광선. 두 광선은 같은 물리점의 관측을 공통 프레임에서 표현한다. baseline은 카메라 중심 간 거리다. 잡음이 있으면 교차하지 않을 수 있고 작은 시차/잘못된 대응은 깊이 추정을 불안정하게 한다.",
+          "caption": "두 광선은 같은 물리점의 관측을 공통 프레임에서 표현한다. baseline은 카메라 중심 간 거리다. 잡음이 있으면 교차하지 않을 수 있고 작은 시차/잘못된 대응은 깊이 추정을 불안정하게 한다. 직접 제작."
+        }
+      ],
+      "evidence": "doc/visual-review/units/M13.05.md"
+    },
+    "M13.06": {
+      "status": "reviewed",
+      "source": "ebook/curriculum/M13/M13.06.md",
+      "sourceSha256": "5787131cfdcd335b4bb1da1f4c3bc374cf4870869f2f5202ec043f0afe54e434",
+      "reason": "본문의 「이번에 보인 점과 계속 존재한다고 추정한 물체를 구분한다」부터 「먼 물체가 적게 보이는 문제를 평균 하나로 숨기지 않는다」까지 시각 참조/입력 조건을 점검했다. 제공 표·정의와 수치/판정 절차가 글 안에서 주어지고 특정 미제공 사진/그림의 식별에 의존하지 않아 이번에는 이미지를 추가하지 않는다. 공간 구조의 세부 설명은 연결된 선수 단위의 그림과 함께 읽는다.",
+      "assets": [],
+      "evidence": "doc/visual-review/units/M13.06.md"
+    },
+    "M14.01": {
+      "status": "reviewed",
+      "source": "ebook/curriculum/M14/M14.01.md",
+      "sourceSha256": "ed0879ba8299835cd40619f26f9978191826d234cc5a24a8ea7891abaa9c19ef",
+      "reason": "점이 픽셀이 되는 두 변환의 연결/구분은 글만으로 단계나 경계를 혼동하기 쉬워 설명 도식을 추가한다. 본문의 표·수치·문제 조건도 대조한다.",
+      "assets": [
+        {
+          "path": "apps/web/public/textbook-visuals/M14.01-concept.svg",
+          "sha256": "1811fc64ee842393461d8fd7ae7f789a3d897d5fc1100184ea7001851094ef97",
+          "method": "original-svg",
+          "model": null,
+          "prompt": null,
+          "alt": "점이 픽셀이 되는 두 변환: 다른 프레임의 점 → 외부 변환 → 내부 파라미터/왜곡 → 검수.",
+          "caption": "각 칸은 서로 다른 역할/근거다. 아래 방향은 자료/처리의 연결이며 실제 성공을 자동으로 보장하지 않는다. 직접 제작한 개념도이며 본문의 조건과 함께 읽는다."
+        }
+      ],
+      "evidence": "doc/visual-review/units/M14.01.md"
+    },
+    "M14.02": {
+      "status": "reviewed",
+      "source": "ebook/curriculum/M14/M14.02.md",
+      "sourceSha256": "feae76883481e77a1c943f02eb74dbcba6e43aaf62c966d64bfb11be99dd77d4",
+      "reason": "본문의 「한 시각에 모았다고 같은 종류의 값이 되지는 않는다」부터 「정합을 통과한 뒤에도 독립 정보인지 확인한다」까지 시각 참조/입력 조건을 점검했다. 제공 표·정의와 수치/판정 절차가 글 안에서 주어지고 특정 미제공 사진/그림의 식별에 의존하지 않아 이번에는 이미지를 추가하지 않는다. 공간 구조의 세부 설명은 연결된 선수 단위의 그림과 함께 읽는다.",
+      "assets": [],
+      "evidence": "doc/visual-review/units/M14.02.md"
+    },
+    "M14.03": {
+      "status": "reviewed",
+      "source": "ebook/curriculum/M14/M14.03.md",
+      "sourceSha256": "1ce62604cd0d0a5966fb5804934294435251efe0d71709fb17a859624ff62987",
+      "reason": "시각 짝짓기와 보간은 다르다의 연결/구분은 글만으로 단계나 경계를 혼동하기 쉬워 설명 도식을 추가한다. 본문의 표·수치·문제 조건도 대조한다.",
+      "assets": [
+        {
+          "path": "apps/web/public/textbook-visuals/M14.03-concept.svg",
+          "sha256": "300a39a07f4d6ce1f34a1707d571476e101e9f723c3af358adf4c8f1b950c567",
+          "method": "original-svg",
+          "model": null,
+          "prompt": null,
+          "alt": "시각 짝짓기와 보간은 다르다: 시간원 정합 → 메시지 짝짓기 → 상태 보간 → 별도 검증.",
+          "caption": "각 칸은 서로 다른 역할/근거다. 나란히 비교할 항목이며 위아래가 시간 순서를 뜻하지 않는다. 직접 제작한 개념도이며 본문의 조건과 함께 읽는다."
+        }
+      ],
+      "evidence": "doc/visual-review/units/M14.03.md"
+    },
+    "M14.04": {
+      "status": "reviewed",
+      "source": "ebook/curriculum/M14/M14.04.md",
+      "sourceSha256": "0b1d7775ca1e6f023e8455b19cb213833421758b993b634a87385ed8824b29d9",
+      "reason": "칼만 필터의 예측과 갱신의 연결/구분은 글만으로 단계나 경계를 혼동하기 쉬워 설명 도식을 추가한다. 본문의 표·수치·문제 조건도 대조한다.",
+      "assets": [
+        {
+          "path": "apps/web/public/textbook-visuals/M14.04-concept.svg",
+          "sha256": "854d72ba29b053d6aacfc571a6618fbc5993833f4d4f63089705b90bebf951c4",
+          "method": "original-svg",
+          "model": null,
+          "prompt": null,
+          "alt": "칼만 필터의 예측과 갱신: 이전 추정/공분산 → 모형 예측 → 관측 비교/갱신 → 새 추정.",
+          "caption": "각 칸은 서로 다른 역할/근거다. 아래 방향은 자료/처리의 연결이며 실제 성공을 자동으로 보장하지 않는다. 직접 제작한 개념도이며 본문의 조건과 함께 읽는다."
+        }
+      ],
+      "evidence": "doc/visual-review/units/M14.04.md"
+    },
+    "M14.05": {
+      "status": "reviewed",
+      "source": "ebook/curriculum/M14/M14.05.md",
+      "sourceSha256": "4d8949dd357730e812634b64b273e0e53dca4d89db291a8ba6337d435684cbee",
+      "reason": "어느 표현에서 융합하는가의 연결/구분은 글만으로 단계나 경계를 혼동하기 쉬워 설명 도식을 추가한다. 본문의 표·수치·문제 조건도 대조한다.",
+      "assets": [
+        {
+          "path": "apps/web/public/textbook-visuals/M14.05-concept.svg",
+          "sha256": "b87d37e685e2d810f97fff52cec2b15f6bc5a1f74acaf84002811633bd175cc4",
+          "method": "original-svg",
+          "model": null,
+          "prompt": null,
+          "alt": "어느 표현에서 융합하는가: 입력 수준 → 특징 수준 → 결과 수준 → 공통 전제.",
+          "caption": "각 칸은 서로 다른 역할/근거다. 나란히 비교할 항목이며 위아래가 시간 순서를 뜻하지 않는다. 직접 제작한 개념도이며 본문의 조건과 함께 읽는다."
+        }
+      ],
+      "evidence": "doc/visual-review/units/M14.05.md"
+    },
+    "M14.06": {
+      "status": "reviewed",
+      "source": "ebook/curriculum/M14/M14.06.md",
+      "sourceSha256": "957ff8b7946845f800ef9112a4b3998bb142f24c38666c1f1b35861dc948de70",
+      "reason": "본문의 「작은 잔차를 보기 전에 비교 조건을 맞춘다」부터 「수치와 함께 다시 판단할 근거를 남긴다」까지 시각 참조/입력 조건을 점검했다. 정의와 수치/판정 절차가 글 안에서 주어지고 특정 미제공 사진/그림의 식별에 의존하지 않아 이번에는 이미지를 추가하지 않는다. 공간 구조의 세부 설명은 연결된 선수 단위의 그림과 함께 읽는다.",
+      "assets": [],
+      "evidence": "doc/visual-review/units/M14.06.md"
+    },
+    "M15.01": {
+      "status": "reviewed",
+      "source": "ebook/curriculum/M15/M15.01.md",
+      "sourceSha256": "c8ccd4c364e823f1afc9f86b90a282dba8a79873138aabb1073abd209f09e775",
+      "reason": "지도와 위치 중 무엇이 미지수인가의 연결/구분은 글만으로 단계나 경계를 혼동하기 쉬워 설명 도식을 추가한다. 본문의 표·수치·문제 조건도 대조한다.",
+      "assets": [
+        {
+          "path": "apps/web/public/textbook-visuals/M15.01-concept.svg",
+          "sha256": "ec8bd9952a1eebfef692cb6fb032516c221d99938a6a68f476c5303871cbf2f8",
+          "method": "original-svg",
+          "model": null,
+          "prompt": null,
+          "alt": "지도와 위치 중 무엇이 미지수인가: Odometry → Localization → Mapping → SLAM.",
+          "caption": "각 칸은 서로 다른 역할/근거다. 나란히 비교할 항목이며 위아래가 시간 순서를 뜻하지 않는다. 직접 제작한 개념도이며 본문의 조건과 함께 읽는다."
+        }
+      ],
+      "evidence": "doc/visual-review/units/M15.01.md"
+    },
+    "M15.02": {
+      "status": "reviewed",
+      "source": "ebook/curriculum/M15/M15.02.md",
+      "sourceSha256": "71c52b9568b3614f433d0ed4398d0d1e9a53e29e8fdb7be76657316118c8b9bd",
+      "reason": "점유 격자의 행과 지도 축는 공간/파형 관계를 직접 보아야 식의 기준과 적용 범위를 혼동하지 않으므로 도식을 추가한다. 제공된 식·본문 조건과 대조했다.",
+      "assets": [
+        {
+          "path": "apps/web/public/textbook-visuals/M15.02-concept.svg",
+          "sha256": "87dc6e79b8fd03a4db07de586bad2d7540a975414d1496d0f849b6638ab81244",
+          "method": "original-svg",
+          "model": null,
+          "prompt": null,
+          "alt": "점유 격자의 행과 지도 축. 그림의 숫자는 width=4인 별도 인덱스 예시이며 점유 확률이 아니다. 지도 y는 위로 증가한다. 화면 이미지 행 방향과 지도 셀 j의 대응은 저장/변환 규칙으로 확인한다. 미상은 빈 공간과 다르다.",
+          "caption": "그림의 숫자는 width=4인 별도 인덱스 예시이며 점유 확률이 아니다. 지도 y는 위로 증가한다. 화면 이미지 행 방향과 지도 셀 j의 대응은 저장/변환 규칙으로 확인한다. 미상은 빈 공간과 다르다. 직접 제작."
+        }
+      ],
+      "evidence": "doc/visual-review/units/M15.02.md"
+    },
+    "M15.03": {
+      "status": "reviewed",
+      "source": "ebook/curriculum/M15/M15.03.md",
+      "sourceSha256": "46221c6d2df0e7f010dacd5cfa30f39b7964635e3cceb81a8585ca987d0ddac6",
+      "reason": "로컬 추정과 전역 일관성의 연결/구분은 글만으로 단계나 경계를 혼동하기 쉬워 설명 도식을 추가한다. 본문의 표·수치·문제 조건도 대조한다.",
+      "assets": [
+        {
+          "path": "apps/web/public/textbook-visuals/M15.03-concept.svg",
+          "sha256": "c141b5c9d37a1cf8e1997a319acb684d9577545281e539f7d7dc153eec77ae5f",
+          "method": "original-svg",
+          "model": null,
+          "prompt": null,
+          "alt": "로컬 추정과 전역 일관성: 관측/전처리 → 프런트엔드 → 백엔드 → 재관측/루프.",
+          "caption": "각 칸은 서로 다른 역할/근거다. 아래 방향은 자료/처리의 연결이며 실제 성공을 자동으로 보장하지 않는다. 직접 제작한 개념도이며 본문의 조건과 함께 읽는다."
+        }
+      ],
+      "evidence": "doc/visual-review/units/M15.03.md"
+    },
+    "M15.04": {
+      "status": "reviewed",
+      "source": "ebook/curriculum/M15/M15.04.md",
+      "sourceSha256": "c0c98c1e70b2908f92f4a100d7db3e7d7a0f5339dbfa830d0aa732457e62f7c8",
+      "reason": "포즈 그래프의 루프 연결는 공간/파형 관계를 직접 보아야 식의 기준과 적용 범위를 혼동하지 않으므로 도식을 추가한다. 제공된 식·본문 조건과 대조했다.",
+      "assets": [
+        {
+          "path": "apps/web/public/textbook-visuals/M15.04-concept.svg",
+          "sha256": "39cff0054c041a70fd1f823b6df66d000611824e06f4f180d09cb0b898c0e966",
+          "method": "original-svg",
+          "model": null,
+          "prompt": null,
+          "alt": "루프 폐쇄는 새 제약이다: 연속 이동 제약 → 누적된 궤적 → 과거 장소 재관측 → 추가 제약/최적화.",
+          "caption": "각 칸은 서로 다른 역할/근거다. 아래 방향은 자료/처리의 연결이며 실제 성공을 자동으로 보장하지 않는다. 직접 제작한 개념도이며 본문의 조건과 함께 읽는다."
+        },
+        {
+          "path": "apps/web/public/textbook-visuals/M15.04-spatial.svg",
+          "sha256": "9f79b999e86ba0534aafdfa83f0e4aef2d9f113843be8f3440b5f6b1596f9944",
+          "method": "original-svg",
+          "model": null,
+          "prompt": null,
+          "alt": "포즈 그래프의 루프 연결. 숫자는 시간 순서의 pose 노드다. 주황 점선은 마지막 관측과 과거 장소 사이에서 검증한 추가 제약을 뜻한다. 그림은 참 궤적/최적화 결과가 아니며 잘못된 루프도 생길 수 있다.",
+          "caption": "숫자는 시간 순서의 pose 노드다. 주황 점선은 마지막 관측과 과거 장소 사이에서 검증한 추가 제약을 뜻한다. 그림은 참 궤적/최적화 결과가 아니며 잘못된 루프도 생길 수 있다. 직접 제작."
+        }
+      ],
+      "evidence": "doc/visual-review/units/M15.04.md"
+    },
+    "M15.05": {
+      "status": "reviewed",
+      "source": "ebook/curriculum/M15/M15.05.md",
+      "sourceSha256": "6872f1064f14a4e43dc56d020ac50e4605a576902aaed7fd092c089fc38c4e46",
+      "reason": "추정이 끊긴 뒤의 복구 근거의 연결/구분은 글만으로 단계나 경계를 혼동하기 쉬워 설명 도식을 추가한다. 본문의 표·수치·문제 조건도 대조한다.",
+      "assets": [
+        {
+          "path": "apps/web/public/textbook-visuals/M15.05-concept.svg",
+          "sha256": "1b430ef7005865d771923c5e2c91c0c0ebdb0815d9068db0cbf62fa045bbd016",
+          "method": "original-svg",
+          "model": null,
+          "prompt": null,
+          "alt": "추정이 끊긴 뒤의 복구 근거: IMU/운동 예측 → 외부 관측 → 추적 손실 → 재위치추정.",
+          "caption": "각 칸은 서로 다른 역할/근거다. 아래 방향은 자료/처리의 연결이며 실제 성공을 자동으로 보장하지 않는다. 직접 제작한 개념도이며 본문의 조건과 함께 읽는다."
+        }
+      ],
+      "evidence": "doc/visual-review/units/M15.05.md"
+    },
+    "M15.06": {
+      "status": "reviewed",
+      "source": "ebook/curriculum/M15/M15.06.md",
+      "sourceSha256": "79849afce69bbc38cd95f6d000dc936a822cb78a1f584190989e309d26234d25",
+      "reason": "본문의 「보기 좋은 지도보다 평가 입력을 먼저 고정한다」부터 「추적 실패를 평균 밖으로 숨기지 않는다」까지 시각 참조/입력 조건을 점검했다. 명시된 코드/설정·정의와 수치/판정 절차가 글 안에서 주어지고 특정 미제공 사진/그림의 식별에 의존하지 않아 이번에는 이미지를 추가하지 않는다. 공간 구조의 세부 설명은 연결된 선수 단위의 그림과 함께 읽는다.",
+      "assets": [],
+      "evidence": "doc/visual-review/units/M15.06.md"
+    },
+    "M16.01": {
+      "status": "reviewed",
+      "source": "ebook/curriculum/M16/M16.01.md",
+      "sourceSha256": "238ed56602e4d9b50d77a6718feb49c135fd429f722a91e082f84bac3c24f0ed",
+      "reason": "영상 운동 추정의 두 잔차의 연결/구분은 글만으로 단계나 경계를 혼동하기 쉬워 설명 도식을 추가한다. 본문의 표·수치·문제 조건도 대조한다.",
+      "assets": [
+        {
+          "path": "apps/web/public/textbook-visuals/M16.01-concept.svg",
+          "sha256": "4096007be573aa222e842c4d3abf1cc6a6403be9426f9d044a102d7fef0ea791",
+          "method": "original-svg",
+          "model": null,
+          "prompt": null,
+          "alt": "영상 운동 추정의 두 잔차: 특징 기반 → 직접법 → 공통 기하 → 실패 단서.",
+          "caption": "각 칸은 서로 다른 역할/근거다. 나란히 비교할 항목이며 위아래가 시간 순서를 뜻하지 않는다. 직접 제작한 개념도이며 본문의 조건과 함께 읽는다."
+        }
+      ],
+      "evidence": "doc/visual-review/units/M16.01.md"
+    },
+    "M16.02": {
+      "status": "reviewed",
+      "source": "ebook/curriculum/M16/M16.02.md",
+      "sourceSha256": "55565e590a4db8dd14f8bd7a36bfa75d583312e63732b32afd644767d03175a0",
+      "reason": "점 잔차와 평면 잔차의 연결/구분은 글만으로 단계나 경계를 혼동하기 쉬워 설명 도식을 추가한다. 본문의 표·수치·문제 조건도 대조한다.",
+      "assets": [
+        {
+          "path": "apps/web/public/textbook-visuals/M16.02-concept.svg",
+          "sha256": "6ed2a8b867551ea8cc0300673971f2f922a8f16af0b1818e68cf6e4b9b02c5d9",
+          "method": "original-svg",
+          "model": null,
+          "prompt": null,
+          "alt": "점 잔차와 평면 잔차: 점-점 → 점-평면 → 기하 퇴화 → 강건 추정.",
+          "caption": "각 칸은 서로 다른 역할/근거다. 나란히 비교할 항목이며 위아래가 시간 순서를 뜻하지 않는다. 직접 제작한 개념도이며 본문의 조건과 함께 읽는다."
+        }
+      ],
+      "evidence": "doc/visual-review/units/M16.02.md"
+    },
+    "M16.03": {
+      "status": "reviewed",
+      "source": "ebook/curriculum/M16/M16.03.md",
+      "sourceSha256": "ae15239250ff3448b8c91ec69c6d1057e8cea0a8db0747743ee2dbda30da402b",
+      "reason": "관측을 같은 상태에 연결하기의 연결/구분은 글만으로 단계나 경계를 혼동하기 쉬워 설명 도식을 추가한다. 본문의 표·수치·문제 조건도 대조한다.",
+      "assets": [
+        {
+          "path": "apps/web/public/textbook-visuals/M16.03-concept.svg",
+          "sha256": "2d25c71d1f21185c08a8721405b25bcefe5d2e4de7644eea05d9b3dad64df297",
+          "method": "original-svg",
+          "model": null,
+          "prompt": null,
+          "alt": "관측을 같은 상태에 연결하기: IMU 예측 → 영상 또는 LiDAR → 시간/외부 보정 → 최적화/갱신.",
+          "caption": "각 칸은 서로 다른 역할/근거다. 아래 방향은 자료/처리의 연결이며 실제 성공을 자동으로 보장하지 않는다. 직접 제작한 개념도이며 본문의 조건과 함께 읽는다."
+        }
+      ],
+      "evidence": "doc/visual-review/units/M16.03.md"
+    },
+    "M16.04": {
+      "status": "reviewed",
+      "source": "ebook/curriculum/M16/M16.04.md",
+      "sourceSha256": "08edc2071f0e05676b1d5a66c7a81011ada7919543270a3e1b5b51813a4efd41",
+      "reason": "Factor graph의 변수와 제약는 공간/파형 관계를 직접 보아야 식의 기준과 적용 범위를 혼동하지 않으므로 도식을 추가한다. 제공된 식·본문 조건과 대조했다.",
+      "assets": [
+        {
+          "path": "apps/web/public/textbook-visuals/M16.04-concept.svg",
+          "sha256": "d2107880a7cfb210f5d2ccf378128eab2a6b17b74c576304bcab8ce69daadbe6",
+          "method": "original-svg",
+          "model": null,
+          "prompt": null,
+          "alt": "Factor graph의 두 종류 요소: 변수 노드 → Factor → 연결 → 기준 고정.",
+          "caption": "각 칸은 서로 다른 역할/근거다. 나란히 비교할 항목이며 위아래가 시간 순서를 뜻하지 않는다. 직접 제작한 개념도이며 본문의 조건과 함께 읽는다."
+        },
+        {
+          "path": "apps/web/public/textbook-visuals/M16.04-spatial.svg",
+          "sha256": "a7d2f7a8e3d73904c8136d6a2ce2ae0bf2ae9a54ccb75598531fe7a4be2d9ac6",
+          "method": "original-svg",
+          "model": null,
+          "prompt": null,
+          "alt": "Factor graph의 변수와 제약. 원은 추정 변수, 사각형은 연결한 변수에 대한 잔차/불확실성 factor다. 첫 변수의 prior는 좌표 기준을 고정하는 한 예다. 실제 pose/랜드마크·bias 그래프는 사용 모형에 따라 다르다.",
+          "caption": "원은 추정 변수, 사각형은 연결한 변수에 대한 잔차/불확실성 factor다. 첫 변수의 prior는 좌표 기준을 고정하는 한 예다. 실제 pose/랜드마크·bias 그래프는 사용 모형에 따라 다르다. 직접 제작."
+        }
+      ],
+      "evidence": "doc/visual-review/units/M16.04.md"
+    },
+    "M16.05": {
+      "status": "reviewed",
+      "source": "ebook/curriculum/M16/M16.05.md",
+      "sourceSha256": "b25d8ec79a643390bb076defe38c1dee27a13c8ccfd3aa60703ef7750197eb4f",
+      "reason": "비슷한 장면을 루프로 확정하지 않기의 연결/구분은 글만으로 단계나 경계를 혼동하기 쉬워 설명 도식을 추가한다. 본문의 표·수치·문제 조건도 대조한다.",
+      "assets": [
+        {
+          "path": "apps/web/public/textbook-visuals/M16.05-concept.svg",
+          "sha256": "aa312a5ea164c5473a4952014e92ac7f48a815ae6ce4947200ab575ea2c5ffd9",
+          "method": "original-svg",
+          "model": null,
+          "prompt": null,
+          "alt": "비슷한 장면을 루프로 확정하지 않기: 장소 후보 검색 → 기하 검증 → 제약 수락/보류 → 백엔드 재평가.",
+          "caption": "각 칸은 서로 다른 역할/근거다. 아래 방향은 자료/처리의 연결이며 실제 성공을 자동으로 보장하지 않는다. 직접 제작한 개념도이며 본문의 조건과 함께 읽는다."
+        }
+      ],
+      "evidence": "doc/visual-review/units/M16.05.md"
+    },
+    "M16.06": {
+      "status": "reviewed",
+      "source": "ebook/curriculum/M16/M16.06.md",
+      "sourceSha256": "d324f12417f2bd885de82abf7a5617a2466e548d401dc0886981093f29e2db54",
+      "reason": "본문의 「학습 모듈과 전체 SLAM 시스템을 구분한다」부터 「응용이 바뀌면 중요한 실패도 달라진다」까지 시각 참조/입력 조건을 점검했다. 정의와 수치/판정 절차가 글 안에서 주어지고 특정 미제공 사진/그림의 식별에 의존하지 않아 이번에는 이미지를 추가하지 않는다. 공간 구조의 세부 설명은 연결된 선수 단위의 그림과 함께 읽는다.",
+      "assets": [],
+      "evidence": "doc/visual-review/units/M16.06.md"
+    },
+    "M17.01": {
+      "status": "reviewed",
+      "source": "ebook/curriculum/M17/M17.01.md",
+      "sourceSha256": "21ec9ea6340abc23bdb2fefbd5689135383c291facf4523a8be1cad0fe73faa0",
+      "reason": "원판 로봇의 C-space 장애물는 공간/파형 관계를 직접 보아야 식의 기준과 적용 범위를 혼동하지 않으므로 도식을 추가한다. 제공된 식·본문 조건과 대조했다.",
+      "assets": [
+        {
+          "path": "apps/web/public/textbook-visuals/M17.01-concept.svg",
+          "sha256": "62bed383c7f88f1b98e02a394357d568705c2cf9387fa47b159fca69f24336cf",
+          "method": "original-svg",
+          "model": null,
+          "prompt": null,
+          "alt": "원판 로봇의 C-space 장애물. 주황 실체는 반지름 0.3 m 장애물, 연한 원은 0.5 m로 확장한 금지 영역이다. 파란 원판 반지름은 0.2 m다. 로봇 중심을 점으로 검사할 때는 확장 영역을 사용한다. 방향·제동·추정 오차를 포함한 안전 인증은 아니다.",
+          "caption": "주황 실체는 반지름 0.3 m 장애물, 연한 원은 0.5 m로 확장한 금지 영역이다. 파란 원판 반지름은 0.2 m다. 로봇 중심을 점으로 검사할 때는 확장 영역을 사용한다. 방향·제동·추정 오차를 포함한 안전 인증은 아니다. 직접 제작."
+        }
+      ],
+      "evidence": "doc/visual-review/units/M17.01.md"
+    },
+    "M17.02": {
+      "status": "reviewed",
+      "source": "ebook/curriculum/M17/M17.02.md",
+      "sourceSha256": "6963d0bcd8818cbed6cfddf6901a4b9a5439c9523ea47a656254100a2415cb39",
+      "reason": "경로 탐색의 비용과 추정의 연결/구분은 글만으로 단계나 경계를 혼동하기 쉬워 설명 도식을 추가한다. 본문의 표·수치·문제 조건도 대조한다.",
+      "assets": [
+        {
+          "path": "apps/web/public/textbook-visuals/M17.02-concept.svg",
+          "sha256": "04d35ad4b6d97912725d52f5dd3aaa8cbf5eec9fa2ff17023f8d38789cea135a",
+          "method": "original-svg",
+          "model": null,
+          "prompt": null,
+          "alt": "경로 탐색의 비용과 추정: 지금까지 비용 g → 남은 비용 추정 h → A* 우선순위 f = g + h → 결과 경로.",
+          "caption": "각 칸은 서로 다른 역할/근거다. 아래 방향은 자료/처리의 연결이며 실제 성공을 자동으로 보장하지 않는다. 직접 제작한 개념도이며 본문의 조건과 함께 읽는다."
+        }
+      ],
+      "evidence": "doc/visual-review/units/M17.02.md"
+    },
+    "M17.03": {
+      "status": "reviewed",
+      "source": "ebook/curriculum/M17/M17.03.md",
+      "sourceSha256": "720dda48047da47ec558e29bdb734db6355604cbe60d3e61fee094e5a662b2de",
+      "reason": "로드맵의 점과 간선는 공간/파형 관계를 직접 보아야 식의 기준과 적용 범위를 혼동하지 않으므로 도식을 추가한다. 제공된 식·본문 조건과 대조했다.",
+      "assets": [
+        {
+          "path": "apps/web/public/textbook-visuals/M17.03-concept.svg",
+          "sha256": "3474210af25689216bff1e9b7766e7f5a836e6f3aef6207e9ed07f60df4d3fa7",
+          "method": "original-svg",
+          "model": null,
+          "prompt": null,
+          "alt": "PRM의 샘플과 연결 검사: 자유 배치 샘플 → 이웃 후보 → 국소 경로 검사 → 로드맵 그래프.",
+          "caption": "각 칸은 서로 다른 역할/근거다. 아래 방향은 자료/처리의 연결이며 실제 성공을 자동으로 보장하지 않는다. 직접 제작한 개념도이며 본문의 조건과 함께 읽는다."
+        },
+        {
+          "path": "apps/web/public/textbook-visuals/M17.03-spatial.svg",
+          "sha256": "2ccd2e0c9ba25af920a5f4a1f530e31410c78e7f2b18b035e606e085e55ba8d4",
+          "method": "original-svg",
+          "model": null,
+          "prompt": null,
+          "alt": "로드맵의 점과 간선. 별도 평면 점 configuration 개념도다. 자유 노드라도 그 사이 간선이 장애물과 충돌할 수 있다. 회색은 이미 로봇 크기를 반영했다고 가정한 금지 영역이며 본문 수치 입력을 대체하지 않는다.",
+          "caption": "별도 평면 점 configuration 개념도다. 자유 노드라도 그 사이 간선이 장애물과 충돌할 수 있다. 회색은 이미 로봇 크기를 반영했다고 가정한 금지 영역이며 본문 수치 입력을 대체하지 않는다. 직접 제작."
+        }
+      ],
+      "evidence": "doc/visual-review/units/M17.03.md"
+    },
+    "M17.04": {
+      "status": "reviewed",
+      "source": "ebook/curriculum/M17/M17.04.md",
+      "sourceSha256": "b35691541c108850d55def0c51645c612ded3cb24e9aec9c511996a86e001e4d",
+      "reason": "RRT의 트리 확장는 공간/파형 관계를 직접 보아야 식의 기준과 적용 범위를 혼동하지 않으므로 도식을 추가한다. 제공된 식·본문 조건과 대조했다.",
+      "assets": [
+        {
+          "path": "apps/web/public/textbook-visuals/M17.04-concept.svg",
+          "sha256": "eda8eceed8b22e264739e64dd0392eb90d6bbdbbe1f406f683c274821b335be0",
+          "method": "original-svg",
+          "model": null,
+          "prompt": null,
+          "alt": "RRT는 연결된 트리를 확장한다: 샘플 선택 → 트리의 가까운 노드 → 제한 길이만큼 확장 → 충돌 검사 뒤 추가.",
+          "caption": "각 칸은 서로 다른 역할/근거다. 아래 방향은 자료/처리의 연결이며 실제 성공을 자동으로 보장하지 않는다. 직접 제작한 개념도이며 본문의 조건과 함께 읽는다."
+        },
+        {
+          "path": "apps/web/public/textbook-visuals/M17.04-spatial.svg",
+          "sha256": "c25a3410d5ce6ed6c383b9c59adf0783b96d7b3ab863001f606b608241a1c55b",
+          "method": "original-svg",
+          "model": null,
+          "prompt": null,
+          "alt": "RRT의 트리 확장. 시작점에서 이미 연결된 트리를 확장하는 별도 점 모델 개념도다. 주황 확장 후보도 연결 구간 검사를 거쳐야 한다. 일반 차량의 조향/동역학을 직선 연결로 대체한 모델은 아니다.",
+          "caption": "시작점에서 이미 연결된 트리를 확장하는 별도 점 모델 개념도다. 주황 확장 후보도 연결 구간 검사를 거쳐야 한다. 일반 차량의 조향/동역학을 직선 연결로 대체한 모델은 아니다. 직접 제작."
+        }
+      ],
+      "evidence": "doc/visual-review/units/M17.04.md"
+    },
+    "M17.05": {
+      "status": "reviewed",
+      "source": "ebook/curriculum/M17/M17.05.md",
+      "sourceSha256": "e99145de7644267c47f64d0cf5077e33c1e68ff30a76159963a7e84537bb2be6",
+      "reason": "짧은 경로와 유효한 경로의 연결/구분은 글만으로 단계나 경계를 혼동하기 쉬워 설명 도식을 추가한다. 본문의 표·수치·문제 조건도 대조한다.",
+      "assets": [
+        {
+          "path": "apps/web/public/textbook-visuals/M17.05-concept.svg",
+          "sha256": "feb91ea1845b8967b83026ead83e1848008aae86c265f3ed7ef71008a5643760",
+          "method": "original-svg",
+          "model": null,
+          "prompt": null,
+          "alt": "짧은 경로와 유효한 경로: 경로 변수 → 매끄러움 비용 → 장애물 비용/제약 → 후보 검증.",
+          "caption": "각 칸은 서로 다른 역할/근거다. 아래 방향은 자료/처리의 연결이며 실제 성공을 자동으로 보장하지 않는다. 직접 제작한 개념도이며 본문의 조건과 함께 읽는다."
+        }
+      ],
+      "evidence": "doc/visual-review/units/M17.05.md"
+    },
+    "M17.06": {
+      "status": "reviewed",
+      "source": "ebook/curriculum/M17/M17.06.md",
+      "sourceSha256": "8c405f8266eae9f24b154287eba09dd731e9ed3150d75f53584b06c1bdc3239d",
+      "reason": "경로에 시간을 붙이는 단계의 연결/구분은 글만으로 단계나 경계를 혼동하기 쉬워 설명 도식을 추가한다. 본문의 표·수치·문제 조건도 대조한다.",
+      "assets": [
+        {
+          "path": "apps/web/public/textbook-visuals/M17.06-concept.svg",
+          "sha256": "53c532c7eb8f79d459cae0c4c58f55c629044a2a8d1d38d28e8d8299918fad76",
+          "method": "original-svg",
+          "model": null,
+          "prompt": null,
+          "alt": "경로에 시간을 붙이는 단계: 기하 경로 q(s) → 시간 스케일 s(t) → 속도/가속도 → 실행/재계획.",
+          "caption": "각 칸은 서로 다른 역할/근거다. 아래 방향은 자료/처리의 연결이며 실제 성공을 자동으로 보장하지 않는다. 직접 제작한 개념도이며 본문의 조건과 함께 읽는다."
+        }
+      ],
+      "evidence": "doc/visual-review/units/M17.06.md"
+    },
+    "M18.01": {
+      "status": "reviewed",
+      "source": "ebook/curriculum/M18/M18.01.md",
+      "sourceSha256": "7d45098853105caa09025e72d122219a1abd4bea06cee49ce418962f8d26d921",
+      "reason": "Nav2의 역할을 연결해 읽기의 연결/구분은 글만으로 단계나 경계를 혼동하기 쉬워 설명 도식을 추가한다. 본문의 표·수치·문제 조건도 대조한다.",
+      "assets": [
+        {
+          "path": "apps/web/public/textbook-visuals/M18.01-concept.svg",
+          "sha256": "748337fb0437538787863f119e9dfa6a619bec0a3b7599599c08fd43bd15a8e8",
+          "method": "original-svg",
+          "model": null,
+          "prompt": null,
+          "alt": "Nav2의 역할을 연결해 읽기: 위치/지도·관측 → Planner Server → Controller Server → Lifecycle/감독.",
+          "caption": "각 칸은 서로 다른 역할/근거다. 아래 방향은 자료/처리의 연결이며 실제 성공을 자동으로 보장하지 않는다. 직접 제작한 개념도이며 본문의 조건과 함께 읽는다."
+        }
+      ],
+      "evidence": "doc/visual-review/units/M18.01.md"
+    },
+    "M18.02": {
+      "status": "reviewed",
+      "source": "ebook/curriculum/M18/M18.02.md",
+      "sourceSha256": "d42e6d1443d1b0d507fcb253fbac99eb6a36fb6dc642d0e2107f2e760b537ccc",
+      "reason": "Costmap의 공간 표현의 연결/구분은 글만으로 단계나 경계를 혼동하기 쉬워 설명 도식을 추가한다. 본문의 표·수치·문제 조건도 대조한다.",
+      "assets": [
+        {
+          "path": "apps/web/public/textbook-visuals/M18.02-concept.svg",
+          "sha256": "185cfa64dc9420352cf2dc75ffbb08d3edc5af35672941eec3f87fcf5b3dc65e",
+          "method": "original-svg",
+          "model": null,
+          "prompt": null,
+          "alt": "Costmap의 공간 표현: 정적 지도/실시간 관측 → 장애물 layer → Inflation → 계획/제어의 소비.",
+          "caption": "각 칸은 서로 다른 역할/근거다. 아래 방향은 자료/처리의 연결이며 실제 성공을 자동으로 보장하지 않는다. 직접 제작한 개념도이며 본문의 조건과 함께 읽는다."
+        }
+      ],
+      "evidence": "doc/visual-review/units/M18.02.md"
+    },
+    "M18.03": {
+      "status": "reviewed",
+      "source": "ebook/curriculum/M18/M18.03.md",
+      "sourceSha256": "fd10cf683e05aeb33c7f8b0c257cfe3041fe2b1de0ca1fda66a6bb4212c36bb6",
+      "reason": "본문의 「전역 경로와 지역 제어는 서로 다른 질문에 답한다」부터 「재시도의 범위와 재개 조건을 기록한다」까지 시각 참조/입력 조건을 점검했다. 정의와 수치/판정 절차가 글 안에서 주어지고 특정 미제공 사진/그림의 식별에 의존하지 않아 이번에는 이미지를 추가하지 않는다. 공간 구조의 세부 설명은 연결된 선수 단위의 그림과 함께 읽는다.",
+      "assets": [],
+      "evidence": "doc/visual-review/units/M18.03.md"
+    },
+    "M18.04": {
+      "status": "reviewed",
+      "source": "ebook/curriculum/M18/M18.04.md",
+      "sourceSha256": "0a8a15e722f5b4bc0b2a354b7ec8e39a7ab26544bdaa938d0810c6b8a4e28624",
+      "reason": "BT와 Action의 서로 다른 상태의 연결/구분은 글만으로 단계나 경계를 혼동하기 쉬워 설명 도식을 추가한다. 본문의 표·수치·문제 조건도 대조한다.",
+      "assets": [
+        {
+          "path": "apps/web/public/textbook-visuals/M18.04-concept.svg",
+          "sha256": "705db4e71708498a4354cf9f54d8c717705a93f427a8ecc13378aa58f5edb6bc",
+          "method": "original-svg",
+          "model": null,
+          "prompt": null,
+          "alt": "BT와 Action의 서로 다른 상태: Behavior Tree → Action 목표 → 미션 상태 → 실제 세계.",
+          "caption": "각 칸은 서로 다른 역할/근거다. 나란히 비교할 항목이며 위아래가 시간 순서를 뜻하지 않는다. 직접 제작한 개념도이며 본문의 조건과 함께 읽는다."
+        }
+      ],
+      "evidence": "doc/visual-review/units/M18.04.md"
+    },
+    "M18.05": {
+      "status": "reviewed",
+      "source": "ebook/curriculum/M18/M18.05.md",
+      "sourceSha256": "1e997bf5a720cc16a89dbb52b068b72d87f32580184734e70ded6ace6996f678",
+      "reason": "다중 로봇의 이름과 공간의 연결/구분은 글만으로 단계나 경계를 혼동하기 쉬워 설명 도식을 추가한다. 본문의 표·수치·문제 조건도 대조한다.",
+      "assets": [
+        {
+          "path": "apps/web/public/textbook-visuals/M18.05-concept.svg",
+          "sha256": "c12356e24838360179232c38e19c46556b5beb5455299f4b9e49faec9a421a3a",
+          "method": "original-svg",
+          "model": null,
+          "prompt": null,
+          "alt": "다중 로봇의 이름과 공간: Namespace → TF frame ID → 공통 지도 기준 → 통로/충돌 조정.",
+          "caption": "각 칸은 서로 다른 역할/근거다. 나란히 비교할 항목이며 위아래가 시간 순서를 뜻하지 않는다. 직접 제작한 개념도이며 본문의 조건과 함께 읽는다."
+        }
+      ],
+      "evidence": "doc/visual-review/units/M18.05.md"
+    },
+    "M18.06": {
+      "status": "reviewed",
+      "source": "ebook/curriculum/M18/M18.06.md",
+      "sourceSha256": "3c3a08527d346bc8698ff206624185e2a9f87aaa1ab7efb5cb90e35d09874c62",
+      "reason": "이동과 조작 사이의 인계의 연결/구분은 글만으로 단계나 경계를 혼동하기 쉬워 설명 도식을 추가한다. 본문의 표·수치·문제 조건도 대조한다.",
+      "assets": [
+        {
+          "path": "apps/web/public/textbook-visuals/M18.06-concept.svg",
+          "sha256": "e3fcee5c7ecfb43279beb35895ac3dcb6da71a435bf54b410246a5911b281266",
+          "method": "original-svg",
+          "model": null,
+          "prompt": null,
+          "alt": "이동과 조작 사이의 인계: 주행 → 정차 확인 → 조작 → 재출발.",
+          "caption": "각 칸은 서로 다른 역할/근거다. 아래 방향은 자료/처리의 연결이며 실제 성공을 자동으로 보장하지 않는다. 직접 제작한 개념도이며 본문의 조건과 함께 읽는다."
+        }
+      ],
+      "evidence": "doc/visual-review/units/M18.06.md"
+    },
+    "M19.01": {
+      "status": "reviewed",
+      "source": "ebook/curriculum/M19/M19.01.md",
+      "sourceSha256": "58c958ea9157fa8ba212d3f588369d768aa815a7e92ab7a36b293d2bda9a206f",
+      "reason": "관절 끝·도구 끝·물체를 구분의 연결/구분은 글만으로 단계나 경계를 혼동하기 쉬워 설명 도식을 추가한다. 본문의 표·수치·문제 조건도 대조한다.",
+      "assets": [
+        {
+          "path": "apps/web/public/textbook-visuals/M19.01-concept.svg",
+          "sha256": "e28b29ee6374ffbd7d74f387c0134aa3c75da91ef13f5d89c391ae65a8712435",
+          "method": "original-svg",
+          "model": null,
+          "prompt": null,
+          "alt": "관절 끝·도구 끝·물체를 구분: 마지막 링크 frame → Tool/TCP frame → Camera/Object frame → 변환 합성.",
+          "caption": "각 칸은 서로 다른 역할/근거다. 아래 방향은 자료/처리의 연결이며 실제 성공을 자동으로 보장하지 않는다. 직접 제작한 개념도이며 본문의 조건과 함께 읽는다."
+        }
+      ],
+      "evidence": "doc/visual-review/units/M19.01.md"
+    },
+    "M19.02": {
+      "status": "reviewed",
+      "source": "ebook/curriculum/M19/M19.02.md",
+      "sourceSha256": "e5d108d9192123b1016381ef57218837415052808bf830f73c9dd9a20d5a5105",
+      "reason": "계획 성공에서 실행 검증까지의 연결/구분은 글만으로 단계나 경계를 혼동하기 쉬워 설명 도식을 추가한다. 본문의 표·수치·문제 조건도 대조한다.",
+      "assets": [
+        {
+          "path": "apps/web/public/textbook-visuals/M19.02-concept.svg",
+          "sha256": "4286a43644cd5b405fa615042605570bc382997e07ef5f05eda1c139c0437a16",
+          "method": "original-svg",
+          "model": null,
+          "prompt": null,
+          "alt": "계획 성공에서 실행 검증까지: Planning Scene → IK/경로 계획 → 현재 실행 관문 → 실행/결과.",
+          "caption": "각 칸은 서로 다른 역할/근거다. 아래 방향은 자료/처리의 연결이며 실제 성공을 자동으로 보장하지 않는다. 직접 제작한 개념도이며 본문의 조건과 함께 읽는다."
+        }
+      ],
+      "evidence": "doc/visual-review/units/M19.02.md"
+    },
+    "M19.03": {
+      "status": "reviewed",
+      "source": "ebook/curriculum/M19/M19.03.md",
+      "sourceSha256": "01e3b0b76a388b84e4a9c36d3c5b89ea13d324c0f7ce8a8f1db8470d7a3cd5d1",
+      "reason": "집기에는 접근과 후퇴가 필요하다의 연결/구분은 글만으로 단계나 경계를 혼동하기 쉬워 설명 도식을 추가한다. 본문의 표·수치·문제 조건도 대조한다.",
+      "assets": [
+        {
+          "path": "apps/web/public/textbook-visuals/M19.03-concept.svg",
+          "sha256": "cc2f2b052d0a2d2d11ba7450ae1e91f8321151b93f96c7add7aba424fb08c970",
+          "method": "original-svg",
+          "model": null,
+          "prompt": null,
+          "alt": "집기에는 접근과 후퇴가 필요하다: 접근 waypoint → 집기 위치 → 파지 결과 확인 → 후퇴/이동.",
+          "caption": "각 칸은 서로 다른 역할/근거다. 아래 방향은 자료/처리의 연결이며 실제 성공을 자동으로 보장하지 않는다. 직접 제작한 개념도이며 본문의 조건과 함께 읽는다."
+        }
+      ],
+      "evidence": "doc/visual-review/units/M19.03.md"
+    },
+    "M19.04": {
+      "status": "reviewed",
+      "source": "ebook/curriculum/M19/M19.04.md",
+      "sourceSha256": "d160d0364f67b9888fcc18d8be2f522820f5ffbd20ed6b715e98518fbc5ebd8c",
+      "reason": "본문의 「같은 팔 그림에도 다른 모형이 들어갈 수 있다」부터 「비교 실험은 한 번에 한 질문으로 좁힌다」까지 시각 참조/입력 조건을 점검했다. 정의와 수치/판정 절차가 글 안에서 주어지고 특정 미제공 사진/그림의 식별에 의존하지 않아 이번에는 이미지를 추가하지 않는다. 공간 구조의 세부 설명은 연결된 선수 단위의 그림과 함께 읽는다.",
+      "assets": [],
+      "evidence": "doc/visual-review/units/M19.04.md"
+    },
+    "M19.05": {
+      "status": "reviewed",
+      "source": "ebook/curriculum/M19/M19.05.md",
+      "sourceSha256": "1357bb27042291d46422569ef547cee479703a2aafb9399e20448825227e5fc2",
+      "reason": "검출 점수에서 파지 성공까지의 연결/구분은 글만으로 단계나 경계를 혼동하기 쉬워 설명 도식을 추가한다. 본문의 표·수치·문제 조건도 대조한다.",
+      "assets": [
+        {
+          "path": "apps/web/public/textbook-visuals/M19.05-concept.svg",
+          "sha256": "38f43404881c8bf2cb5c1df8e4a63708dd89dfcaad1e2a6fea61b6cd90a5b3d6",
+          "method": "original-svg",
+          "model": null,
+          "prompt": null,
+          "alt": "검출 점수에서 파지 성공까지: 영상 후보 → 기하/파지 후보 → 접근/이동 경로 → 관측된 결과.",
+          "caption": "각 칸은 서로 다른 역할/근거다. 아래 방향은 자료/처리의 연결이며 실제 성공을 자동으로 보장하지 않는다. 직접 제작한 개념도이며 본문의 조건과 함께 읽는다."
+        }
+      ],
+      "evidence": "doc/visual-review/units/M19.05.md"
+    },
+    "M19.06": {
+      "status": "reviewed",
+      "source": "ebook/curriculum/M19/M19.06.md",
+      "sourceSha256": "9b3804490b343c1752627c36499ce88252c4f575e4d97f6dae41b2be776d284f",
+      "reason": "본문의 「구조 이름보다 과업의 요구 자유도를 먼저 본다」부터 「협동이라는 이름과 전체 응용의 검증을 분리한다」까지 시각 참조/입력 조건을 점검했다. 정의와 수치/판정 절차가 글 안에서 주어지고 특정 미제공 사진/그림의 식별에 의존하지 않아 이번에는 이미지를 추가하지 않는다. 공간 구조의 세부 설명은 연결된 선수 단위의 그림과 함께 읽는다.",
+      "assets": [],
+      "evidence": "doc/visual-review/units/M19.06.md"
+    },
+    "M20.01": {
+      "status": "reviewed",
+      "source": "ebook/curriculum/M20/M20.01.md",
+      "sourceSha256": "b136e9b04bf28f75c7aa6dedcbdb977154e4520e36a6f4bcb6f061579a5b3f70",
+      "reason": "Leader 명령과 Follower 관측의 연결/구분은 글만으로 단계나 경계를 혼동하기 쉬워 설명 도식을 추가한다. 본문의 표·수치·문제 조건도 대조한다.",
+      "assets": [
+        {
+          "path": "apps/web/public/textbook-visuals/M20.01-concept.svg",
+          "sha256": "23ecd9949d923bed90fb31157df30479b0466664dde348b9e4039453ef632a79",
+          "method": "original-svg",
+          "model": null,
+          "prompt": null,
+          "alt": "Leader 명령과 Follower 관측: Leader 관절 측정 → 매핑/클러치 → Follower 목표 → Follower 실제 상태.",
+          "caption": "각 칸은 서로 다른 역할/근거다. 아래 방향은 자료/처리의 연결이며 실제 성공을 자동으로 보장하지 않는다. 직접 제작한 개념도이며 본문의 조건과 함께 읽는다."
+        }
+      ],
+      "evidence": "doc/visual-review/units/M20.01.md"
+    },
+    "M20.02": {
+      "status": "reviewed",
+      "source": "ebook/curriculum/M20/M20.02.md",
+      "sourceSha256": "31ccea52c11c35d46f6cdddd9b8da6b43a45523b3022a36d0c2f306132d36372",
+      "reason": "본문의 「설치 성공과 과업 환경 완성을 구분한다」부터 「상태 재생은 영상 검토, 행동 재실행은 모형 검토에 가깝다」까지 시각 참조/입력 조건을 점검했다. 명시된 코드/설정·정의와 수치/판정 절차가 글 안에서 주어지고 특정 미제공 사진/그림의 식별에 의존하지 않아 이번에는 이미지를 추가하지 않는다. 공간 구조의 세부 설명은 연결된 선수 단위의 그림과 함께 읽는다.",
+      "assets": [],
+      "evidence": "doc/visual-review/units/M20.02.md"
+    },
+    "M20.03": {
+      "status": "reviewed",
+      "source": "ebook/curriculum/M20/M20.03.md",
+      "sourceSha256": "ff118e06d9c5599d6b0336c015ed18d02ccf38011fedd675e141945a91273508",
+      "reason": "에피소드 한 전이의 시간 관계의 연결/구분은 글만으로 단계나 경계를 혼동하기 쉬워 설명 도식을 추가한다. 본문의 표·수치·문제 조건도 대조한다.",
+      "assets": [
+        {
+          "path": "apps/web/public/textbook-visuals/M20.03-concept.svg",
+          "sha256": "938fd3305145cc1cfdfd31fd6248dfac267ec1d34c07100124dbf16f8bd59c4d",
+          "method": "original-svg",
+          "model": null,
+          "prompt": null,
+          "alt": "에피소드 한 전이의 시간 관계: 관측 o(t) → 행동 a(t) → 다음 관측 → 에피소드/종료.",
+          "caption": "각 칸은 서로 다른 역할/근거다. 아래 방향은 자료/처리의 연결이며 실제 성공을 자동으로 보장하지 않는다. 직접 제작한 개념도이며 본문의 조건과 함께 읽는다."
+        }
+      ],
+      "evidence": "doc/visual-review/units/M20.03.md"
+    },
+    "M20.04": {
+      "status": "reviewed",
+      "source": "ebook/curriculum/M20/M20.04.md",
+      "sourceSha256": "bdfb95512fda1f6d6b06f1f75f8f2fad3bd3c2cfc337c164f8b61f5bd7996a10",
+      "reason": "기록에서 학습 자료까지의 계약의 연결/구분은 글만으로 단계나 경계를 혼동하기 쉬워 설명 도식을 추가한다. 본문의 표·수치·문제 조건도 대조한다.",
+      "assets": [
+        {
+          "path": "apps/web/public/textbook-visuals/M20.04-concept.svg",
+          "sha256": "5682c1839cb8aa718a37a3650d8d26cea77f280a2398c91a1e91a20e60cc614e",
+          "method": "original-svg",
+          "model": null,
+          "prompt": null,
+          "alt": "기록에서 학습 자료까지의 계약: rosbag2/MCAP 원본 → 변환/정합 → 학습 스키마 → 검수/보존.",
+          "caption": "각 칸은 서로 다른 역할/근거다. 아래 방향은 자료/처리의 연결이며 실제 성공을 자동으로 보장하지 않는다. 직접 제작한 개념도이며 본문의 조건과 함께 읽는다."
+        }
+      ],
+      "evidence": "doc/visual-review/units/M20.04.md"
+    },
+    "M20.05": {
+      "status": "reviewed",
+      "source": "ebook/curriculum/M20/M20.05.md",
+      "sourceSha256": "f251bdd83b61738d722f8aabae0b5ce4913afd5d95702ba60a1865bda1094f59",
+      "reason": "본문의 「재생 도구가 검사 기준을 대신하지 않는다」부터 「격리 목록은 결함을 지우는 대신 설명한다」까지 시각 참조/입력 조건을 점검했다. 제공 표·정의와 수치/판정 절차가 글 안에서 주어지고 특정 미제공 사진/그림의 식별에 의존하지 않아 이번에는 이미지를 추가하지 않는다. 공간 구조의 세부 설명은 연결된 선수 단위의 그림과 함께 읽는다.",
+      "assets": [],
+      "evidence": "doc/visual-review/units/M20.05.md"
+    },
+    "M20.06": {
+      "status": "reviewed",
+      "source": "ebook/curriculum/M20/M20.06.md",
+      "sourceSha256": "715483f7fab5dfec981466d0a045a469ab401167f5ddf8f7950760919c3c6658",
+      "reason": "증강 뒤에도 의미를 보존한다의 연결/구분은 글만으로 단계나 경계를 혼동하기 쉬워 설명 도식을 추가한다. 본문의 표·수치·문제 조건도 대조한다.",
+      "assets": [
+        {
+          "path": "apps/web/public/textbook-visuals/M20.06-concept.svg",
+          "sha256": "ab34b7675a871d63c44f05c99abefbc36bc0b21a4621af9af4af34d1996515b1",
+          "method": "original-svg",
+          "model": null,
+          "prompt": null,
+          "alt": "증강 뒤에도 의미를 보존한다: 원본 그룹 분리 → 조명/배경 변형 → 위치/카메라 변형 → 보류/재검사.",
+          "caption": "각 칸은 서로 다른 역할/근거다. 아래 방향은 자료/처리의 연결이며 실제 성공을 자동으로 보장하지 않는다. 직접 제작한 개념도이며 본문의 조건과 함께 읽는다."
+        }
+      ],
+      "evidence": "doc/visual-review/units/M20.06.md"
+    },
+    "M21.01": {
+      "status": "reviewed",
+      "source": "ebook/curriculum/M21/M21.01.md",
+      "sourceSha256": "b38ca7ef9818411739d7d32cf785ac3b2246dbbb3215148bd6b16e3ed62542ff",
+      "reason": "시연 학습과 롤아웃의 분포 차이의 연결/구분은 글만으로 단계나 경계를 혼동하기 쉬워 설명 도식을 추가한다. 본문의 표·수치·문제 조건도 대조한다.",
+      "assets": [
+        {
+          "path": "apps/web/public/textbook-visuals/M21.01-concept.svg",
+          "sha256": "73769cfd624b0580be8f6de3e2199a6d97af0c79fab95ccdfc10672190fde5aa",
+          "method": "original-svg",
+          "model": null,
+          "prompt": null,
+          "alt": "시연 학습과 롤아웃의 분포 차이: 시연 상태 → Behavior Cloning → 정책 롤아웃 → 재수집/평가.",
+          "caption": "각 칸은 서로 다른 역할/근거다. 아래 방향은 자료/처리의 연결이며 실제 성공을 자동으로 보장하지 않는다. 직접 제작한 개념도이며 본문의 조건과 함께 읽는다."
+        }
+      ],
+      "evidence": "doc/visual-review/units/M21.01.md"
+    },
+    "M21.02": {
+      "status": "reviewed",
+      "source": "ebook/curriculum/M21/M21.02.md",
+      "sourceSha256": "27b4da68a1fdf5ea3437a78855a152112586fe2c6ee1cb0d7ef634d5dc557277",
+      "reason": "정책 입출력의 의미 계약의 연결/구분은 글만으로 단계나 경계를 혼동하기 쉬워 설명 도식을 추가한다. 본문의 표·수치·문제 조건도 대조한다.",
+      "assets": [
+        {
+          "path": "apps/web/public/textbook-visuals/M21.02-concept.svg",
+          "sha256": "b60a0c98fbee8fba8c41fee1bda64dc632fd17d9c966d2c6d261a818fe853cf3",
+          "method": "original-svg",
+          "model": null,
+          "prompt": null,
+          "alt": "정책 입출력의 의미 계약: 관측 묶음 → 전처리/정규화 → 정책 출력 → 실행 경계.",
+          "caption": "각 칸은 서로 다른 역할/근거다. 아래 방향은 자료/처리의 연결이며 실제 성공을 자동으로 보장하지 않는다. 직접 제작한 개념도이며 본문의 조건과 함께 읽는다."
+        }
+      ],
+      "evidence": "doc/visual-review/units/M21.02.md"
+    },
+    "M21.03": {
+      "status": "reviewed",
+      "source": "ebook/curriculum/M21/M21.03.md",
+      "sourceSha256": "0e7bf2668ecff314728f304c712ed8a0a7ed6b5bda172f2302d8574f6c8702f2",
+      "reason": "Action chunk의 겹치는 예측의 연결/구분은 글만으로 단계나 경계를 혼동하기 쉬워 설명 도식을 추가한다. 본문의 표·수치·문제 조건도 대조한다.",
+      "assets": [
+        {
+          "path": "apps/web/public/textbook-visuals/M21.03-concept.svg",
+          "sha256": "6a07498e50a8aedc982820af39bdbe68aa1285b37de0a6e40f53737f3eeeb448",
+          "method": "original-svg",
+          "model": null,
+          "prompt": null,
+          "alt": "Action chunk의 겹치는 예측: 한 번의 추론 → 다음 관측의 추론 → 같은 실행 시각끼리 결합 → 실행/관측.",
+          "caption": "각 칸은 서로 다른 역할/근거다. 아래 방향은 자료/처리의 연결이며 실제 성공을 자동으로 보장하지 않는다. 직접 제작한 개념도이며 본문의 조건과 함께 읽는다."
+        }
+      ],
+      "evidence": "doc/visual-review/units/M21.03.md"
+    },
+    "M21.04": {
+      "status": "reviewed",
+      "source": "ebook/curriculum/M21/M21.04.md",
+      "sourceSha256": "b894c92115150f11a7c7a093947817a299e8c4025d238873df4d88061785b86d",
+      "reason": "생성과 실행 가능성은 별개의 연결/구분은 글만으로 단계나 경계를 혼동하기 쉬워 설명 도식을 추가한다. 본문의 표·수치·문제 조건도 대조한다.",
+      "assets": [
+        {
+          "path": "apps/web/public/textbook-visuals/M21.04-concept.svg",
+          "sha256": "de60020b13ad21a60dc1c8bae10ffaa07a41a0a8bde5aa8f2bf036e48f9af21a",
+          "method": "original-svg",
+          "model": null,
+          "prompt": null,
+          "alt": "생성과 실행 가능성은 별개: 관측 조건 → 행동 시퀀스 생성 → 물리 계약으로 변환 → 제약/결과 검사.",
+          "caption": "각 칸은 서로 다른 역할/근거다. 아래 방향은 자료/처리의 연결이며 실제 성공을 자동으로 보장하지 않는다. 직접 제작한 개념도이며 본문의 조건과 함께 읽는다."
+        }
+      ],
+      "evidence": "doc/visual-review/units/M21.04.md"
+    },
+    "M21.05": {
+      "status": "reviewed",
+      "source": "ebook/curriculum/M21/M21.05.md",
+      "sourceSha256": "0a79ab2d1990785ffd156845453cdf3d1d951ca4db0c99961473db0e3cd16ab4",
+      "reason": "양팔과 베이스가 함께 바꾸는 형상의 연결/구분은 글만으로 단계나 경계를 혼동하기 쉬워 설명 도식을 추가한다. 본문의 표·수치·문제 조건도 대조한다.",
+      "assets": [
+        {
+          "path": "apps/web/public/textbook-visuals/M21.05-concept.svg",
+          "sha256": "61243114c2a34e8b623a1453cc302fed9225826495ce0691fef0635459c8264d",
+          "method": "original-svg",
+          "model": null,
+          "prompt": null,
+          "alt": "양팔과 베이스가 함께 바꾸는 형상: 이동 베이스 → 왼팔·오른팔 → 운반 물체 → 공통 검수.",
+          "caption": "각 칸은 서로 다른 역할/근거다. 나란히 비교할 항목이며 위아래가 시간 순서를 뜻하지 않는다. 직접 제작한 개념도이며 본문의 조건과 함께 읽는다."
+        }
+      ],
+      "evidence": "doc/visual-review/units/M21.05.md"
+    },
+    "M21.06": {
+      "status": "reviewed",
+      "source": "ebook/curriculum/M21/M21.06.md",
+      "sourceSha256": "ad57405e09515f0bf9fb83a1665867b10f893e068f0a0b0314456b323e836a5e",
+      "reason": "본문의 「학습·선택·시험의 역할을 먼저 고정한다」부터 「재수집은 데이터와 평가 계약을 함께 바꾼다」까지 시각 참조/입력 조건을 점검했다. 명시된 코드/설정·정의와 수치/판정 절차가 글 안에서 주어지고 특정 미제공 사진/그림의 식별에 의존하지 않아 이번에는 이미지를 추가하지 않는다. 공간 구조의 세부 설명은 연결된 선수 단위의 그림과 함께 읽는다.",
+      "assets": [],
+      "evidence": "doc/visual-review/units/M21.06.md"
+    },
+    "M22.01": {
+      "status": "reviewed",
+      "source": "ebook/curriculum/M22/M22.01.md",
+      "sourceSha256": "90e5ca8ae30f60c930db3345644e134c5dad85759e011bf4a86ff286af083b74",
+      "reason": "언어·시각·행동 모델의 출력의 연결/구분은 글만으로 단계나 경계를 혼동하기 쉬워 설명 도식을 추가한다. 본문의 표·수치·문제 조건도 대조한다.",
+      "assets": [
+        {
+          "path": "apps/web/public/textbook-visuals/M22.01-concept.svg",
+          "sha256": "9bf6da86d89ff59701ae69179ccf391e6d517ad307ee5e7cb4af811b98bde980",
+          "method": "original-svg",
+          "model": null,
+          "prompt": null,
+          "alt": "언어·시각·행동 모델의 출력: LLM 계획 → VLM 인지 → VLA 정책 → 실행 감독.",
+          "caption": "각 칸은 서로 다른 역할/근거다. 나란히 비교할 항목이며 위아래가 시간 순서를 뜻하지 않는다. 직접 제작한 개념도이며 본문의 조건과 함께 읽는다."
+        }
+      ],
+      "evidence": "doc/visual-review/units/M22.01.md"
+    },
+    "M22.02": {
+      "status": "reviewed",
+      "source": "ebook/curriculum/M22/M22.02.md",
+      "sourceSha256": "4dda2b750c2abaf4af1f543c6aaf0d8bd47c9e0e6443593d28e6e284c6886733",
+      "reason": "구조화 출력 뒤에도 검사가 남는다의 연결/구분은 글만으로 단계나 경계를 혼동하기 쉬워 설명 도식을 추가한다. 본문의 표·수치·문제 조건도 대조한다.",
+      "assets": [
+        {
+          "path": "apps/web/public/textbook-visuals/M22.02-concept.svg",
+          "sha256": "df8fbe7b953f8c6e2ecb1d757da03a7fbfcdfb0565440d5b03802fc38f871c18",
+          "method": "original-svg",
+          "model": null,
+          "prompt": null,
+          "alt": "구조화 출력 뒤에도 검사가 남는다: 모델의 후보 출력 → 스키마 검사 → 의미/권한/현재 상태 → Tool/ROS Action.",
+          "caption": "각 칸은 서로 다른 역할/근거다. 아래 방향은 자료/처리의 연결이며 실제 성공을 자동으로 보장하지 않는다. 직접 제작한 개념도이며 본문의 조건과 함께 읽는다."
+        }
+      ],
+      "evidence": "doc/visual-review/units/M22.02.md"
+    },
+    "M22.03": {
+      "status": "reviewed",
+      "source": "ebook/curriculum/M22/M22.03.md",
+      "sourceSha256": "8140a568eb21ba832031a929b47d1c7e0d24f2402c733f471cea57acf7250ee7",
+      "reason": "본문의 「로컬 실행은 위치에 관한 말이다」부터 「token/s는 전체 응답 지연이 아니다」까지 시각 참조/입력 조건을 점검했다. 정의와 수치/판정 절차가 글 안에서 주어지고 특정 미제공 사진/그림의 식별에 의존하지 않아 이번에는 이미지를 추가하지 않는다. 공간 구조의 세부 설명은 연결된 선수 단위의 그림과 함께 읽는다.",
+      "assets": [],
+      "evidence": "doc/visual-review/units/M22.03.md"
+    },
+    "M22.04": {
+      "status": "reviewed",
+      "source": "ebook/curriculum/M22/M22.04.md",
+      "sourceSha256": "190a2054a538cbfd22fff5acc9c4c5f3154eb5d7cdd23704469e2f40e93ae696",
+      "reason": "관측에서 행동 표현까지의 연결/구분은 글만으로 단계나 경계를 혼동하기 쉬워 설명 도식을 추가한다. 본문의 표·수치·문제 조건도 대조한다.",
+      "assets": [
+        {
+          "path": "apps/web/public/textbook-visuals/M22.04-concept.svg",
+          "sha256": "16f021242253faea9e2361c4e69ace1beeb07e50120fc2c548f86ccdaf5187f9",
+          "method": "original-svg",
+          "model": null,
+          "prompt": null,
+          "alt": "관측에서 행동 표현까지: 영상·언어·상태 → 멀티모달 표현 → 행동 표현/디코딩 → 실행 인터페이스.",
+          "caption": "각 칸은 서로 다른 역할/근거다. 아래 방향은 자료/처리의 연결이며 실제 성공을 자동으로 보장하지 않는다. 직접 제작한 개념도이며 본문의 조건과 함께 읽는다."
+        }
+      ],
+      "evidence": "doc/visual-review/units/M22.04.md"
+    },
+    "M22.05": {
+      "status": "reviewed",
+      "source": "ebook/curriculum/M22/M22.05.md",
+      "sourceSha256": "9c3617917fd1a77c0c8c8c32888a6c298006845439c12ba354885d3814b2dbb2",
+      "reason": "본문의 「장소 이름과 지도 좌표는 다른 자료다」부터 「주행에서 팔 동작으로 넘어가는 전제를 검사한다」까지 시각 참조/입력 조건을 점검했다. 제공 표·정의와 수치/판정 절차가 글 안에서 주어지고 특정 미제공 사진/그림의 식별에 의존하지 않아 이번에는 이미지를 추가하지 않는다. 공간 구조의 세부 설명은 연결된 선수 단위의 그림과 함께 읽는다.",
+      "assets": [],
+      "evidence": "doc/visual-review/units/M22.05.md"
+    },
+    "M22.06": {
+      "status": "reviewed",
+      "source": "ebook/curriculum/M22/M22.06.md",
+      "sourceSha256": "948f8c802ca04476821ce2c2597100e86d9bf33047ebdbe78fa8fd01af2449a0",
+      "reason": "모델 밖에서 닫는 실행 관문의 연결/구분은 글만으로 단계나 경계를 혼동하기 쉬워 설명 도식을 추가한다. 본문의 표·수치·문제 조건도 대조한다.",
+      "assets": [
+        {
+          "path": "apps/web/public/textbook-visuals/M22.06-concept.svg",
+          "sha256": "f9448bcbdcddcfeb252c5428888e15c6350a36b7d28bbecdc816b3584d10b21c",
+          "method": "original-svg",
+          "model": null,
+          "prompt": null,
+          "alt": "모델 밖에서 닫는 실행 관문: 작업 권한 → 현재 근거 검사 → 요청 확인/실행 → 중단/재개.",
+          "caption": "각 칸은 서로 다른 역할/근거다. 아래 방향은 자료/처리의 연결이며 실제 성공을 자동으로 보장하지 않는다. 직접 제작한 개념도이며 본문의 조건과 함께 읽는다."
+        }
+      ],
+      "evidence": "doc/visual-review/units/M22.06.md"
+    },
+    "M23.01": {
+      "status": "reviewed",
+      "source": "ebook/curriculum/M23/M23.01.md",
+      "sourceSha256": "4f98ae1e1a0c39d362468b55d60ec9e8db43b1b71e2cf4937ed0c497e00a075d",
+      "reason": "정책 행동 뒤에 붙는 결과의 연결/구분은 글만으로 단계나 경계를 혼동하기 쉬워 설명 도식을 추가한다. 본문의 표·수치·문제 조건도 대조한다.",
+      "assets": [
+        {
+          "path": "apps/web/public/textbook-visuals/M23.01-concept.svg",
+          "sha256": "1d5da033cc95ec3be3eeb861c21b41bfc80210da5f8c6e697de52ebd5ee7abe1",
+          "method": "original-svg",
+          "model": null,
+          "prompt": null,
+          "alt": "정책 행동 뒤에 붙는 결과: 관측/이력 → 정책이 행동 선택 → 환경의 다음 상태 → 평가.",
+          "caption": "각 칸은 서로 다른 역할/근거다. 아래 방향은 자료/처리의 연결이며 실제 성공을 자동으로 보장하지 않는다. 직접 제작한 개념도이며 본문의 조건과 함께 읽는다."
+        }
+      ],
+      "evidence": "doc/visual-review/units/M23.01.md"
+    },
+    "M23.02": {
+      "status": "reviewed",
+      "source": "ebook/curriculum/M23/M23.02.md",
+      "sourceSha256": "51c7bb6834c46139ced2499a5fe7dd8047b4ee6da02ecad5fa737ffe3956927f",
+      "reason": "Rollout과 정책 갱신의 연결/구분은 글만으로 단계나 경계를 혼동하기 쉬워 설명 도식을 추가한다. 본문의 표·수치·문제 조건도 대조한다.",
+      "assets": [
+        {
+          "path": "apps/web/public/textbook-visuals/M23.02-concept.svg",
+          "sha256": "d8856b58ce28db4c915b4b0f3d8264a6e2368095bd04e48270642e6ce1496046",
+          "method": "original-svg",
+          "model": null,
+          "prompt": null,
+          "alt": "Rollout과 정책 갱신: 환경에서 전이 수집 → 가치/Advantage 추정 → Actor-Critic 갱신 → 다음 평가.",
+          "caption": "각 칸은 서로 다른 역할/근거다. 아래 방향은 자료/처리의 연결이며 실제 성공을 자동으로 보장하지 않는다. 직접 제작한 개념도이며 본문의 조건과 함께 읽는다."
+        }
+      ],
+      "evidence": "doc/visual-review/units/M23.02.md"
+    },
+    "M23.03": {
+      "status": "reviewed",
+      "source": "ebook/curriculum/M23/M23.03.md",
+      "sourceSha256": "85a6673297e38fd0c32704609d03aa726e52ebf9ac704253161ea8e04bc9fef5",
+      "reason": "본문의 「정책에 보이는 것과 바꿀 수 있는 것을 명세한다」부터 「점수와 과제 수행을 별도 표에 남긴다」까지 시각 참조/입력 조건을 점검했다. 정의와 수치/판정 절차가 글 안에서 주어지고 특정 미제공 사진/그림의 식별에 의존하지 않아 이번에는 이미지를 추가하지 않는다. 공간 구조의 세부 설명은 연결된 선수 단위의 그림과 함께 읽는다.",
+      "assets": [],
+      "evidence": "doc/visual-review/units/M23.03.md"
+    },
+    "M23.04": {
+      "status": "reviewed",
+      "source": "ebook/curriculum/M23/M23.04.md",
+      "sourceSha256": "7e4f465f30d860aeee6bb62d7c0793e3e28e19513fcf4245e5399e74e6996283",
+      "reason": "병렬 환경과 시간의 두 규모의 연결/구분은 글만으로 단계나 경계를 혼동하기 쉬워 설명 도식을 추가한다. 본문의 표·수치·문제 조건도 대조한다.",
+      "assets": [
+        {
+          "path": "apps/web/public/textbook-visuals/M23.04-concept.svg",
+          "sha256": "d2e48673990973ac03e0d7d83550bedbef2cce350a218e7564597d4ea322b1e9",
+          "method": "original-svg",
+          "model": null,
+          "prompt": null,
+          "alt": "병렬 환경과 시간의 두 규모: 환경 수 N → 환경당 수집 길이 H → 배치 N × H → Physics/Policy step.",
+          "caption": "각 칸은 서로 다른 역할/근거다. 아래 방향은 자료/처리의 연결이며 실제 성공을 자동으로 보장하지 않는다. 직접 제작한 개념도이며 본문의 조건과 함께 읽는다."
+        }
+      ],
+      "evidence": "doc/visual-review/units/M23.04.md"
+    },
+    "M23.05": {
+      "status": "reviewed",
+      "source": "ebook/curriculum/M23/M23.05.md",
+      "sourceSha256": "32e5668de7a2ea363939fcc9ea5a6efff0a11f43209500dd4f29db45baa8d079",
+      "reason": "본문의 「학습 곡선 한 줄로 방법을 판단하지 않는다」부터 「재시작과 새 실험의 경계를 남긴다」까지 시각 참조/입력 조건을 점검했다. 정의와 수치/판정 절차가 글 안에서 주어지고 특정 미제공 사진/그림의 식별에 의존하지 않아 이번에는 이미지를 추가하지 않는다. 공간 구조의 세부 설명은 연결된 선수 단위의 그림과 함께 읽는다.",
+      "assets": [],
+      "evidence": "doc/visual-review/units/M23.05.md"
+    },
+    "M23.06": {
+      "status": "reviewed",
+      "source": "ebook/curriculum/M23/M23.06.md",
+      "sourceSha256": "0af8486eccbd76ff64fcd32b7f09587c2c772f25680ce7969dc3ac31e1d5fbbe",
+      "reason": "본문의 「simulator가 달라지면 같은 파일도 다른 시스템이 된다」부터 「내보낸 파일과 재현 패키지를 묶는다」까지 시각 참조/입력 조건을 점검했다. 정의와 수치/판정 절차가 글 안에서 주어지고 특정 미제공 사진/그림의 식별에 의존하지 않아 이번에는 이미지를 추가하지 않는다. 공간 구조의 세부 설명은 연결된 선수 단위의 그림과 함께 읽는다.",
+      "assets": [],
+      "evidence": "doc/visual-review/units/M23.06.md"
+    },
+    "M24.01": {
+      "status": "reviewed",
+      "source": "ebook/curriculum/M24/M24.01.md",
+      "sourceSha256": "748d1edc614e8ff4391061b1eadc60af9055fffa56dc19229158fc0ef3226777",
+      "reason": "전신 상태와 관측의 차이의 연결/구분은 글만으로 단계나 경계를 혼동하기 쉬워 설명 도식을 추가한다. 본문의 표·수치·문제 조건도 대조한다.",
+      "assets": [
+        {
+          "path": "apps/web/public/textbook-visuals/M24.01-concept.svg",
+          "sha256": "374bd041d264d43f30018fe9b7a35ce82c39cb98644612e17f3aac2f59421d04",
+          "method": "original-svg",
+          "model": null,
+          "prompt": null,
+          "alt": "전신 상태와 관측의 차이: 몸체/관절의 모형 상태 → 센서로 가용한 관측 → 정책 입력 → 남는 미상.",
+          "caption": "각 칸은 서로 다른 역할/근거다. 아래 방향은 자료/처리의 연결이며 실제 성공을 자동으로 보장하지 않는다. 직접 제작한 개념도이며 본문의 조건과 함께 읽는다."
+        }
+      ],
+      "evidence": "doc/visual-review/units/M24.01.md"
+    },
+    "M24.02": {
+      "status": "reviewed",
+      "source": "ebook/curriculum/M24/M24.02.md",
+      "sourceSha256": "e02ac7c4bbaed158f5e4a1c2eb3c5d6e20f5165339e34d83948749996d5a2a7c",
+      "reason": "정책 출력에서 관절 목표로의 연결/구분은 글만으로 단계나 경계를 혼동하기 쉬워 설명 도식을 추가한다. 본문의 표·수치·문제 조건도 대조한다.",
+      "assets": [
+        {
+          "path": "apps/web/public/textbook-visuals/M24.02-concept.svg",
+          "sha256": "2efdb342b59b3a0576015d937cdf8c75f80c94da1a28de80ab665bc61e30f624",
+          "method": "original-svg",
+          "model": null,
+          "prompt": null,
+          "alt": "정책 출력에서 관절 목표로: 속도 지령/관측 → 정책의 정규화 행동 → 기준 자세 + 스케일 → PD/구동 경계.",
+          "caption": "각 칸은 서로 다른 역할/근거다. 아래 방향은 자료/처리의 연결이며 실제 성공을 자동으로 보장하지 않는다. 직접 제작한 개념도이며 본문의 조건과 함께 읽는다."
+        }
+      ],
+      "evidence": "doc/visual-review/units/M24.02.md"
+    },
+    "M24.03": {
+      "status": "reviewed",
+      "source": "ebook/curriculum/M24/M24.03.md",
+      "sourceSha256": "6ae657c12d38c67f2f724b1f368f714313c4eca7755cb713f13144265f820b7e",
+      "reason": "본문의 「오래 서 있었다는 사실과 보행 성공을 나눈다」부터 「reset은 실패 기록을 지우는 기능이 아니다」까지 시각 참조/입력 조건을 점검했다. 정의와 수치/판정 절차가 글 안에서 주어지고 특정 미제공 사진/그림의 식별에 의존하지 않아 이번에는 이미지를 추가하지 않는다. 공간 구조의 세부 설명은 연결된 선수 단위의 그림과 함께 읽는다.",
+      "assets": [],
+      "evidence": "doc/visual-review/units/M24.03.md"
+    },
+    "M24.04": {
+      "status": "reviewed",
+      "source": "ebook/curriculum/M24/M24.04.md",
+      "sourceSha256": "9a75191b8c1be5b5a954d5a249bf5d942de7500d91060da03d585492bdf7e122",
+      "reason": "느린 정책과 빠른 PD 루프의 연결/구분은 글만으로 단계나 경계를 혼동하기 쉬워 설명 도식을 추가한다. 본문의 표·수치·문제 조건도 대조한다.",
+      "assets": [
+        {
+          "path": "apps/web/public/textbook-visuals/M24.04-concept.svg",
+          "sha256": "0caae3b59470d7337bd245336b7c9a40fc1b36e087af3e6ab7ef92b9b5bc51a3",
+          "method": "original-svg",
+          "model": null,
+          "prompt": null,
+          "alt": "느린 정책과 빠른 PD 루프: 정책 갱신 → 목표 유지/보간 → 빠른 PD 갱신 → 최종 제한/실행.",
+          "caption": "각 칸은 서로 다른 역할/근거다. 아래 방향은 자료/처리의 연결이며 실제 성공을 자동으로 보장하지 않는다. 직접 제작한 개념도이며 본문의 조건과 함께 읽는다."
+        }
+      ],
+      "evidence": "doc/visual-review/units/M24.04.md"
+    },
+    "M24.05": {
+      "status": "reviewed",
+      "source": "ebook/curriculum/M24/M24.05.md",
+      "sourceSha256": "9a0436eb2fe3d14bedb380806b5cde8153ea3ffa048a9479705790cefdbd3d57",
+      "reason": "본문의 「평균적인 평지 성공을 일반화로 부르지 않는다」부터 「적응과 평가 정보를 섞지 않는다」까지 시각 참조/입력 조건을 점검했다. 정의와 수치/판정 절차가 글 안에서 주어지고 특정 미제공 사진/그림의 식별에 의존하지 않아 이번에는 이미지를 추가하지 않는다. 공간 구조의 세부 설명은 연결된 선수 단위의 그림과 함께 읽는다.",
+      "assets": [],
+      "evidence": "doc/visual-review/units/M24.05.md"
+    },
+    "M24.06": {
+      "status": "reviewed",
+      "source": "ebook/curriculum/M24/M24.06.md",
+      "sourceSha256": "d274aef79f82741bd3c9d5e4fed248a17f0d09792119bfa59a5a6258e5e2c15e",
+      "reason": "Sim2Real 전 검증 범위를 나누기의 연결/구분은 글만으로 단계나 경계를 혼동하기 쉬워 설명 도식을 추가한다. 본문의 표·수치·문제 조건도 대조한다.",
+      "assets": [
+        {
+          "path": "apps/web/public/textbook-visuals/M24.06-concept.svg",
+          "sha256": "5139b7ed7914e50cf7a836735b40e93d11535362fc48deac573cf318a41d816a",
+          "method": "original-svg",
+          "model": null,
+          "prompt": null,
+          "alt": "Sim2Real 전 검증 범위를 나누기: 고정 입력 동등성 → 그림자 실행 → 제한 실행 전 관문 → 실물 검증.",
+          "caption": "각 칸은 서로 다른 역할/근거다. 아래 방향은 자료/처리의 연결이며 실제 성공을 자동으로 보장하지 않는다. 직접 제작한 개념도이며 본문의 조건과 함께 읽는다."
+        }
+      ],
+      "evidence": "doc/visual-review/units/M24.06.md"
+    },
+    "M25.01": {
+      "status": "reviewed",
+      "source": "ebook/curriculum/M25/M25.01.md",
+      "sourceSha256": "8cfc290a4edf19c85dc4a6bc90ea7f45857adfdc93e0072ec52c1dc4c04cde5e",
+      "reason": "보기 좋은 자산과 물리 자산의 연결/구분은 글만으로 단계나 경계를 혼동하기 쉬워 설명 도식을 추가한다. 본문의 표·수치·문제 조건도 대조한다.",
+      "assets": [
+        {
+          "path": "apps/web/public/textbook-visuals/M25.01-concept.svg",
+          "sha256": "5b88667421cd9007a2308064af07814e3a443a0bd219f49e609c69dee9d112f1",
+          "method": "original-svg",
+          "model": null,
+          "prompt": null,
+          "alt": "보기 좋은 자산과 물리 자산: 외형/재질 → 단위/계층 → 충돌/질량/관성 → 구동/센서.",
+          "caption": "각 칸은 서로 다른 역할/근거다. 나란히 비교할 항목이며 위아래가 시간 순서를 뜻하지 않는다. 직접 제작한 개념도이며 본문의 조건과 함께 읽는다."
+        }
+      ],
+      "evidence": "doc/visual-review/units/M25.01.md"
+    },
+    "M25.02": {
+      "status": "reviewed",
+      "source": "ebook/curriculum/M25/M25.02.md",
+      "sourceSha256": "aef690c25bad5d13310cc6af3659cb26354637fd95f1cc6c9b138ff1637b3e63",
+      "reason": "회전과 직선 이동의 관절의 연결/구분은 글만으로 단계나 경계를 혼동하기 쉬워 설명 도식을 추가한다. 본문의 표·수치·문제 조건도 대조한다.",
+      "assets": [
+        {
+          "path": "apps/web/public/textbook-visuals/M25.02-concept.svg",
+          "sha256": "3e68677639cc8b01a52955bad08ad0492853ef77050516cfed72447a8a61ce6e",
+          "method": "original-svg",
+          "model": null,
+          "prompt": null,
+          "alt": "회전과 직선 이동의 관절: Revolute → Prismatic → Articulation Root → 별도 고정/드라이브.",
+          "caption": "각 칸은 서로 다른 역할/근거다. 나란히 비교할 항목이며 위아래가 시간 순서를 뜻하지 않는다. 직접 제작한 개념도이며 본문의 조건과 함께 읽는다."
+        }
+      ],
+      "evidence": "doc/visual-review/units/M25.02.md"
+    },
+    "M25.03": {
+      "status": "reviewed",
+      "source": "ebook/curriculum/M25/M25.03.md",
+      "sourceSha256": "8690df6c2ed655e48222c920709ecaa44c87fdc59996b7ee6f2d9f8dcfa6d3fc",
+      "reason": "충돌 제외는 접촉을 지울 수 있다의 연결/구분은 글만으로 단계나 경계를 혼동하기 쉬워 설명 도식을 추가한다. 본문의 표·수치·문제 조건도 대조한다.",
+      "assets": [
+        {
+          "path": "apps/web/public/textbook-visuals/M25.03-concept.svg",
+          "sha256": "c5aa8a4a83980810bd35b897cf4fcfd554a2c59806895153e6d08752fc7c77f9",
+          "method": "original-svg",
+          "model": null,
+          "prompt": null,
+          "alt": "충돌 제외는 접촉을 지울 수 있다: Collider 활성/형상 → Group/Filter → 개별 pair 제외 → Physics Debug/관측.",
+          "caption": "각 칸은 서로 다른 역할/근거다. 아래 방향은 자료/처리의 연결이며 실제 성공을 자동으로 보장하지 않는다. 직접 제작한 개념도이며 본문의 조건과 함께 읽는다."
+        }
+      ],
+      "evidence": "doc/visual-review/units/M25.03.md"
+    },
+    "M25.04": {
+      "status": "reviewed",
+      "source": "ebook/curriculum/M25/M25.04.md",
+      "sourceSha256": "6055826a650b78d0f56e1e9048adff907c9591ea7b74daa297375105467bc3ac",
+      "reason": "본문의 「먼저 입력 오류를 고치고 물성을 비교한다」부터 「한 번에 무엇을 바꿨는지 남긴다」까지 시각 참조/입력 조건을 점검했다. 제공 표·정의와 수치/판정 절차가 글 안에서 주어지고 특정 미제공 사진/그림의 식별에 의존하지 않아 이번에는 이미지를 추가하지 않는다. 공간 구조의 세부 설명은 연결된 선수 단위의 그림과 함께 읽는다.",
+      "assets": [],
+      "evidence": "doc/visual-review/units/M25.04.md"
+    },
+    "M25.05": {
+      "status": "reviewed",
+      "source": "ebook/curriculum/M25/M25.05.md",
+      "sourceSha256": "663f071afa3598ef3f2fa80b54ce4547bfc385251dc678f7e924ba79ca7a0e94",
+      "reason": "합성 영상과 라벨을 같은 관측으로의 연결/구분은 글만으로 단계나 경계를 혼동하기 쉬워 설명 도식을 추가한다. 본문의 표·수치·문제 조건도 대조한다.",
+      "assets": [
+        {
+          "path": "apps/web/public/textbook-visuals/M25.05-concept.svg",
+          "sha256": "b1b01ef69aff11f27a94fa9b31dc64e12be32add6f9a8f159ba8b3e86f0a1183",
+          "method": "original-svg",
+          "model": null,
+          "prompt": null,
+          "alt": "합성 영상과 라벨을 같은 관측으로: 장면/랜덤 seed → Capture 시각 → 영상/깊이/라벨 → Writer/파일 검수.",
+          "caption": "각 칸은 서로 다른 역할/근거다. 아래 방향은 자료/처리의 연결이며 실제 성공을 자동으로 보장하지 않는다. 직접 제작한 개념도이며 본문의 조건과 함께 읽는다."
+        }
+      ],
+      "evidence": "doc/visual-review/units/M25.05.md"
+    },
+    "M25.06": {
+      "status": "reviewed",
+      "source": "ebook/curriculum/M25/M25.06.md",
+      "sourceSha256": "afb02b20d4a866739f38eacbbc5a8a996f031c88b155f8e0f389a5d43a540569",
+      "reason": "본문의 「키를 누른 의도와 실제 움직임은 다른 기록이다」부터 「접촉과 부분성과를 완료로 바꾸지 않는다」까지 시각 참조/입력 조건을 점검했다. 제공 표·정의와 수치/판정 절차가 글 안에서 주어지고 특정 미제공 사진/그림의 식별에 의존하지 않아 이번에는 이미지를 추가하지 않는다. 공간 구조의 세부 설명은 연결된 선수 단위의 그림과 함께 읽는다.",
+      "assets": [],
+      "evidence": "doc/visual-review/units/M25.06.md"
+    },
+    "M26.01": {
+      "status": "reviewed",
+      "source": "ebook/curriculum/M26/M26.01.md",
+      "sourceSha256": "766f77360115b6a0518568150221b20126fba62e96fd257a55a92b238e5e955a",
+      "reason": "요구에서 구현과 시험으로의 연결/구분은 글만으로 단계나 경계를 혼동하기 쉬워 설명 도식을 추가한다. 본문의 표·수치·문제 조건도 대조한다.",
+      "assets": [
+        {
+          "path": "apps/web/public/textbook-visuals/M26.01-concept.svg",
+          "sha256": "eb40302ce79d7c5ddde4a243b2580cc4f25c7f9e77f884d1d0b8dc1f42f9d5bd",
+          "method": "original-svg",
+          "model": null,
+          "prompt": null,
+          "alt": "요구에서 구현과 시험으로: 요구/허용 조건 → HSI → BSW/ASW → 시험/형상 관리.",
+          "caption": "각 칸은 서로 다른 역할/근거다. 아래 방향은 자료/처리의 연결이며 실제 성공을 자동으로 보장하지 않는다. 직접 제작한 개념도이며 본문의 조건과 함께 읽는다."
+        }
+      ],
+      "evidence": "doc/visual-review/units/M26.01.md"
+    },
+    "M26.02": {
+      "status": "reviewed",
+      "source": "ebook/curriculum/M26/M26.02.md",
+      "sourceSha256": "e915ccb2579489b3343aa160d8ab5784053e8b14a5dbf447d65516f52ba4317b",
+      "reason": "균형 제어의 측정과 구동 경계의 연결/구분은 글만으로 단계나 경계를 혼동하기 쉬워 설명 도식을 추가한다. 본문의 표·수치·문제 조건도 대조한다.",
+      "assets": [
+        {
+          "path": "apps/web/public/textbook-visuals/M26.02-concept.svg",
+          "sha256": "8070cbca0095fff787b66f175e81ced2faa5e8d6e8fc739005180959be29225a",
+          "method": "original-svg",
+          "model": null,
+          "prompt": null,
+          "alt": "균형 제어의 측정과 구동 경계: IMU 관측 → 자세 추정 → 제어 계산 → 모터 드라이버.",
+          "caption": "각 칸은 서로 다른 역할/근거다. 아래 방향은 자료/처리의 연결이며 실제 성공을 자동으로 보장하지 않는다. 직접 제작한 개념도이며 본문의 조건과 함께 읽는다."
+        }
+      ],
+      "evidence": "doc/visual-review/units/M26.02.md"
+    },
+    "M26.03": {
+      "status": "reviewed",
+      "source": "ebook/curriculum/M26/M26.03.md",
+      "sourceSha256": "8f7be2bc6ee5b0e80560f37bc891d1f1573aad4d891bac0cacc2c5fd5f8d4aa0",
+      "reason": "전원·논리·물리 핀을 나누기의 연결/구분은 글만으로 단계나 경계를 혼동하기 쉬워 설명 도식을 추가한다. 본문의 표·수치·문제 조건도 대조한다.",
+      "assets": [
+        {
+          "path": "apps/web/public/textbook-visuals/M26.03-concept.svg",
+          "sha256": "9bd7786893b0c489afc4f697f24443363b22e44d5e39534e70cb6a04b93d28e9",
+          "method": "original-svg",
+          "model": null,
+          "prompt": null,
+          "alt": "전원·논리·물리 핀을 나누기: 전원 영역 → 논리 신호 → 회로 symbol → footprint → 제작 전 검수.",
+          "caption": "실제 배선도가 아닌 검토 항목의 관계도다. 제공 가상 연결표의 결함을 분석하는 범위이며 이 그림으로 보드 제작·전원 인가를 승인하지 않는다. 직접 제작."
+        }
+      ],
+      "evidence": "doc/visual-review/units/M26.03.md"
+    },
+    "M26.04": {
+      "status": "reviewed",
+      "source": "ebook/curriculum/M26/M26.04.md",
+      "sourceSha256": "4960fd1b750e89f8afeac9266dac03769e0f4959768ed190511135b21eb946f6",
+      "reason": "조립 여유와 지지 영역는 공간/파형 관계를 직접 보아야 식의 기준과 적용 범위를 혼동하지 않으므로 도식을 추가한다. 제공된 식·본문 조건과 대조했다.",
+      "assets": [
+        {
+          "path": "apps/web/public/textbook-visuals/M26.04-concept.svg",
+          "sha256": "e7a8f705eb3d85fa86dfebf1eb2e2a0a79ee3c0b2191f740269df358a4d2817a",
+          "method": "original-svg",
+          "model": null,
+          "prompt": null,
+          "alt": "조립 여유와 지지 영역. 왼쪽은 보드/브래킷 단면, 오른쪽은 별도의 지지 영역 예시다. 축척·수치는 부여하지 않았다. 공차 통과와 COM 투영의 판단을 혼합하지 않으며 정적 투영만으로 동적 균형을 보장하지 않는다.",
+          "caption": "왼쪽은 보드/브래킷 단면, 오른쪽은 별도의 지지 영역 예시다. 축척·수치는 부여하지 않았다. 공차 통과와 COM 투영의 판단을 혼합하지 않으며 정적 투영만으로 동적 균형을 보장하지 않는다. 직접 제작."
+        }
+      ],
+      "evidence": "doc/visual-review/units/M26.04.md"
+    },
+    "M26.05": {
+      "status": "reviewed",
+      "source": "ebook/curriculum/M26/M26.05.md",
+      "sourceSha256": "0a7817a30ea49a2c35f4b6690f022124f017a7cf3e8d2f5e37e1d781f5ebe343",
+      "reason": "UI 숫자와 실제 장치 상태의 연결/구분은 글만으로 단계나 경계를 혼동하기 쉬워 설명 도식을 추가한다. 본문의 표·수치·문제 조건도 대조한다.",
+      "assets": [
+        {
+          "path": "apps/web/public/textbook-visuals/M26.05-concept.svg",
+          "sha256": "d3122d67627c380f6ae73434468f5c33395748c497d75c63a5dc0da986855823",
+          "method": "original-svg",
+          "model": null,
+          "prompt": null,
+          "alt": "UI 숫자와 실제 장치 상태: 입력 초안 → 전송 요청 → 응답/접수 → 장치 관측.",
+          "caption": "각 칸은 서로 다른 역할/근거다. 나란히 비교할 항목이며 위아래가 시간 순서를 뜻하지 않는다. 직접 제작한 개념도이며 본문의 조건과 함께 읽는다."
+        }
+      ],
+      "evidence": "doc/visual-review/units/M26.05.md"
+    },
+    "M26.06": {
+      "status": "reviewed",
+      "source": "ebook/curriculum/M26/M26.06.md",
+      "sourceSha256": "ede2c3ea746e72ec8a9abd564f660ecac77e47cb6222bc43c9d6203a5a93b4b6",
+      "reason": "본문의 「'통합 시험을 했다'보다 무엇을 비교했는지를 적는다」부터 「다음 전문화로 넘길 상태」까지 시각 참조/입력 조건을 점검했다. 제공 표·명시된 코드/설정·정의와 수치/판정 절차가 글 안에서 주어지고 특정 미제공 사진/그림의 식별에 의존하지 않아 이번에는 이미지를 추가하지 않는다. 공간 구조의 세부 설명은 연결된 선수 단위의 그림과 함께 읽는다.",
+      "assets": [],
+      "evidence": "doc/visual-review/units/M26.06.md"
+    },
+    "M27.01": {
+      "status": "reviewed",
+      "source": "ebook/curriculum/M27/M27.01.md",
+      "sourceSha256": "430c26530ca10915f640d729fea0c55600fc901d5eeab5b5b7c527733b3f251b",
+      "reason": "본문의 「엣지는 실행 장소이고 부품 이름은 역할의 전부가 아니다」부터 「짧은 추론 성공과 지속 운용을 구분한다」까지 시각 참조/입력 조건을 점검했다. 정의와 수치/판정 절차가 글 안에서 주어지고 특정 미제공 사진/그림의 식별에 의존하지 않아 이번에는 이미지를 추가하지 않는다. 공간 구조의 세부 설명은 연결된 선수 단위의 그림과 함께 읽는다.",
+      "assets": [],
+      "evidence": "doc/visual-review/units/M27.01.md"
+    },
+    "M27.02": {
+      "status": "reviewed",
+      "source": "ebook/curriculum/M27/M27.02.md",
+      "sourceSha256": "66c20f99e32064fb8be54d02f744a73916f358e28ab65fa5e8080baeadf6d792",
+      "reason": "본문의 「파라미터 수와 한 성분의 저장 크기를 곱한다」부터 「batch 처리량의 향상은 각 관측의 지연과 다르다」까지 시각 참조/입력 조건을 점검했다. 정의와 수치/판정 절차가 글 안에서 주어지고 특정 미제공 사진/그림의 식별에 의존하지 않아 이번에는 이미지를 추가하지 않는다. 공간 구조의 세부 설명은 연결된 선수 단위의 그림과 함께 읽는다.",
+      "assets": [],
+      "evidence": "doc/visual-review/units/M27.02.md"
+    },
+    "M27.03": {
+      "status": "reviewed",
+      "source": "ebook/curriculum/M27/M27.03.md",
+      "sourceSha256": "3b70a5abee7cfd3f5654c336e508ae45fe876ed0a0f903b20718d2ffc50136b2",
+      "reason": "한 표본의 지연 구간의 연결/구분은 글만으로 단계나 경계를 혼동하기 쉬워 설명 도식을 추가한다. 본문의 표·수치·문제 조건도 대조한다.",
+      "assets": [
+        {
+          "path": "apps/web/public/textbook-visuals/M27.03-concept.svg",
+          "sha256": "4d92b131030b1a6b22e29e4e0a1b3ce981045b8802b0ff5483215803ad3d1d0c",
+          "method": "original-svg",
+          "model": null,
+          "prompt": null,
+          "alt": "한 표본의 지연 구간: 센서 취득/전처리 → 추론 → 통신/큐/검사 → 명령 적용.",
+          "caption": "각 칸은 서로 다른 역할/근거다. 아래 방향은 자료/처리의 연결이며 실제 성공을 자동으로 보장하지 않는다. 직접 제작한 개념도이며 본문의 조건과 함께 읽는다."
+        }
+      ],
+      "evidence": "doc/visual-review/units/M27.03.md"
+    },
+    "M27.04": {
+      "status": "reviewed",
+      "source": "ebook/curriculum/M27/M27.04.md",
+      "sourceSha256": "58580e7b4d5f20b67e408249fa6eaa228151ac79ffe104d3129a089f117df8c5",
+      "reason": "FIFO와 최신 대기값 정책의 연결/구분은 글만으로 단계나 경계를 혼동하기 쉬워 설명 도식을 추가한다. 본문의 표·수치·문제 조건도 대조한다.",
+      "assets": [
+        {
+          "path": "apps/web/public/textbook-visuals/M27.04-concept.svg",
+          "sha256": "6cacf55a8666b3f843e48a05aa8b6fbb0026659790bcc1faaa7884de6d3d3be0",
+          "method": "original-svg",
+          "model": null,
+          "prompt": null,
+          "alt": "FIFO와 최신 대기값 정책: FIFO → 최신 대기값 → 공통 제약 → 백프레셔.",
+          "caption": "각 칸은 서로 다른 역할/근거다. 나란히 비교할 항목이며 위아래가 시간 순서를 뜻하지 않는다. 직접 제작한 개념도이며 본문의 조건과 함께 읽는다."
+        }
+      ],
+      "evidence": "doc/visual-review/units/M27.04.md"
+    },
+    "M27.05": {
+      "status": "reviewed",
+      "source": "ebook/curriculum/M27/M27.05.md",
+      "sourceSha256": "7895c9520b5d54c49b5009ac9fe3bcfcb9530bc98d45d77b2a22f6d722e32207",
+      "reason": "본문의 「모델을 멀리 두면 통신과 장애의 경계가 추가된다」부터 「서버의 모델 교체와 로봇의 전환은 다른 계약이다」까지 시각 참조/입력 조건을 점검했다. 정의와 수치/판정 절차가 글 안에서 주어지고 특정 미제공 사진/그림의 식별에 의존하지 않아 이번에는 이미지를 추가하지 않는다. 공간 구조의 세부 설명은 연결된 선수 단위의 그림과 함께 읽는다.",
+      "assets": [],
+      "evidence": "doc/visual-review/units/M27.05.md"
+    },
+    "M27.06": {
+      "status": "reviewed",
+      "source": "ebook/curriculum/M27/M27.06.md",
+      "sourceSha256": "9f0a7470e91d6448238843291af366d8cd356b6ec7af965f7eb0fa3612f6bd14",
+      "reason": "본문의 「속도를 재기 전에 같은 일을 비교하는지 확인한다」부터 「공동 기준은 숫자를 본 뒤 바꾸지 않는다」까지 시각 참조/입력 조건을 점검했다. 명시된 코드/설정·정의와 수치/판정 절차가 글 안에서 주어지고 특정 미제공 사진/그림의 식별에 의존하지 않아 이번에는 이미지를 추가하지 않는다. 공간 구조의 세부 설명은 연결된 선수 단위의 그림과 함께 읽는다.",
+      "assets": [],
+      "evidence": "doc/visual-review/units/M27.06.md"
+    },
+    "M28.01": {
+      "status": "reviewed",
+      "source": "ebook/curriculum/M28/M28.01.md",
+      "sourceSha256": "11efe34bee915acf2a629cd8cae02a9aecac7313ac88d3c1a872ffd31fc0f7b9",
+      "reason": "CAN의 층과 공통 버스의 연결/구분은 글만으로 단계나 경계를 혼동하기 쉬워 설명 도식을 추가한다. 본문의 표·수치·문제 조건도 대조한다.",
+      "assets": [
+        {
+          "path": "apps/web/public/textbook-visuals/M28.01-concept.svg",
+          "sha256": "c345794638d4f62e26df94d25aff5e544e534f2ecaffd0ece57c6048f5fe1204",
+          "method": "original-svg",
+          "model": null,
+          "prompt": null,
+          "alt": "CAN의 층과 공통 버스: 응용/메시지 계약 → CAN 제어기 → 트랜시버 → 버스/종단.",
+          "caption": "각 칸은 서로 다른 역할/근거다. 아래 방향은 자료/처리의 연결이며 실제 성공을 자동으로 보장하지 않는다. 직접 제작한 개념도이며 본문의 조건과 함께 읽는다."
+        }
+      ],
+      "evidence": "doc/visual-review/units/M28.01.md"
+    },
+    "M28.02": {
+      "status": "reviewed",
+      "source": "ebook/curriculum/M28/M28.02.md",
+      "sourceSha256": "c9200fcf56ac339ce4cb1d9b7a13671eed653e18ed256fb05811d08b7d8b1c79",
+      "reason": "한 비트 안의 샘플 지점의 연결/구분은 글만으로 단계나 경계를 혼동하기 쉬워 설명 도식을 추가한다. 본문의 표·수치·문제 조건도 대조한다.",
+      "assets": [
+        {
+          "path": "apps/web/public/textbook-visuals/M28.02-concept.svg",
+          "sha256": "87fb9182f53a8f1171443c0b30f05091a27834b977abec4d15f7f83bb5c565a6",
+          "method": "original-svg",
+          "model": null,
+          "prompt": null,
+          "alt": "한 비트 안의 샘플 지점: SYNC 1 TQ → TSEG1 → TSEG2 → SJW.",
+          "caption": "각 칸은 서로 다른 역할/근거다. 나란히 비교할 항목이며 위아래가 시간 순서를 뜻하지 않는다. 직접 제작한 개념도이며 본문의 조건과 함께 읽는다."
+        }
+      ],
+      "evidence": "doc/visual-review/units/M28.02.md"
+    },
+    "M28.03": {
+      "status": "reviewed",
+      "source": "ebook/curriculum/M28/M28.03.md",
+      "sourceSha256": "1826bbb284088938aefc4820de645eaffc11ce55e18ae7173760b0a3de23c5ae",
+      "reason": "CAN 프레임에서 진단 의미까지의 연결/구분은 글만으로 단계나 경계를 혼동하기 쉬워 설명 도식을 추가한다. 본문의 표·수치·문제 조건도 대조한다.",
+      "assets": [
+        {
+          "path": "apps/web/public/textbook-visuals/M28.03-concept.svg",
+          "sha256": "1fb151d041442edd00674452f2fb24d3c32102461d9d55c5b9a4cf171dc81d45",
+          "method": "original-svg",
+          "model": null,
+          "prompt": null,
+          "alt": "CAN 프레임에서 진단 의미까지: CAN 프레임 → ISO-TP 재조립 → UDS PDU → 진단 문맥.",
+          "caption": "각 칸은 서로 다른 역할/근거다. 아래 방향은 자료/처리의 연결이며 실제 성공을 자동으로 보장하지 않는다. 직접 제작한 개념도이며 본문의 조건과 함께 읽는다."
+        }
+      ],
+      "evidence": "doc/visual-review/units/M28.03.md"
+    },
+    "M28.04": {
+      "status": "reviewed",
+      "source": "ebook/curriculum/M28/M28.04.md",
+      "sourceSha256": "0dfc903f7d63aea21e9c1476386e359a2d19012f88d0e4388e7584d8a25e0b68",
+      "reason": "본문의 「고장 코드와 고장 원인을 같은 것으로 읽지 않는다」부터 「추적 보고서는 관찰·가설·변경·재검증을 분리한다」까지 시각 참조/입력 조건을 점검했다. 제공 표·정의와 수치/판정 절차가 글 안에서 주어지고 특정 미제공 사진/그림의 식별에 의존하지 않아 이번에는 이미지를 추가하지 않는다. 공간 구조의 세부 설명은 연결된 선수 단위의 그림과 함께 읽는다.",
+      "assets": [],
+      "evidence": "doc/visual-review/units/M28.04.md"
+    },
+    "M28.05": {
+      "status": "reviewed",
+      "source": "ebook/curriculum/M28/M28.05.md",
+      "sourceSha256": "8e40e4013ac7a2f72506af3f6d184e11b4593239765a05d61c5c5e5c1336b88e",
+      "reason": "전송 끝과 검증 끝은 다르다의 연결/구분은 글만으로 단계나 경계를 혼동하기 쉬워 설명 도식을 추가한다. 본문의 표·수치·문제 조건도 대조한다.",
+      "assets": [
+        {
+          "path": "apps/web/public/textbook-visuals/M28.05-concept.svg",
+          "sha256": "ffe74c598de67c30b9e4d26b98132e49b5de76523fc4744481520ddc62765e47",
+          "method": "original-svg",
+          "model": null,
+          "prompt": null,
+          "alt": "전송 끝과 검증 끝은 다르다: 사전 대상/권한 → 다운로드/블록 전송 → 종료/검증 → 활성화/리셋 뒤 확인.",
+          "caption": "각 칸은 서로 다른 역할/근거다. 아래 방향은 자료/처리의 연결이며 실제 성공을 자동으로 보장하지 않는다. 직접 제작한 개념도이며 본문의 조건과 함께 읽는다."
+        }
+      ],
+      "evidence": "doc/visual-review/units/M28.05.md"
+    },
+    "M28.06": {
+      "status": "reviewed",
+      "source": "ebook/curriculum/M28/M28.06.md",
+      "sourceSha256": "0a744fe290a407e2f3be6d52f4c0c2a40efb3552f705648a702d9a8a1170884c",
+      "reason": "메타데이터와 실제 계측 경로의 연결/구분은 글만으로 단계나 경계를 혼동하기 쉬워 설명 도식을 추가한다. 본문의 표·수치·문제 조건도 대조한다.",
+      "assets": [
+        {
+          "path": "apps/web/public/textbook-visuals/M28.06-concept.svg",
+          "sha256": "a2849cb6d05900a191c6bd38e3d516a6ab63e58b2bd4bb53cfe1365325bde394",
+          "method": "original-svg",
+          "model": null,
+          "prompt": null,
+          "alt": "메타데이터와 실제 계측 경로: A2L/빌드 계약 → 폴링 → DAQ → 해석/보존.",
+          "caption": "각 칸은 서로 다른 역할/근거다. 나란히 비교할 항목이며 위아래가 시간 순서를 뜻하지 않는다. 직접 제작한 개념도이며 본문의 조건과 함께 읽는다."
+        }
+      ],
+      "evidence": "doc/visual-review/units/M28.06.md"
+    },
+    "M29.01": {
+      "status": "reviewed",
+      "source": "ebook/curriculum/M29/M29.01.md",
+      "sourceSha256": "69af76681a2310f0e1a6748c1a8d8bdf7879fddaa0ca080f783f4b9492f1e7ea",
+      "reason": "인지에서 차량 운동의 결과까지의 연결/구분은 글만으로 단계나 경계를 혼동하기 쉬워 설명 도식을 추가한다. 본문의 표·수치·문제 조건도 대조한다.",
+      "assets": [
+        {
+          "path": "apps/web/public/textbook-visuals/M29.01-concept.svg",
+          "sha256": "70bf6aade4347173e3b883e86fe16580971b0160b3d250d2154f840815da56ed",
+          "method": "original-svg",
+          "model": null,
+          "prompt": null,
+          "alt": "인지에서 차량 운동의 결과까지: 인지/위치추정 → 의사결정/계획 → 조향/가감속 제어 → 새 관측/감독.",
+          "caption": "각 칸은 서로 다른 역할/근거다. 아래 방향은 자료/처리의 연결이며 실제 성공을 자동으로 보장하지 않는다. 직접 제작한 개념도이며 본문의 조건과 함께 읽는다."
+        }
+      ],
+      "evidence": "doc/visual-review/units/M29.01.md"
+    },
+    "M29.02": {
+      "status": "reviewed",
+      "source": "ebook/curriculum/M29/M29.02.md",
+      "sourceSha256": "f51a287d974540ff89324803a1d8cfbe36e109e7922615357fe5c65da408535a",
+      "reason": "본문의 「같은 영상에서도 서로 다른 질문을 푼다」부터 「시간 오차와 환경 변화를 따로 평가한다」까지 시각 참조/입력 조건을 점검했다. 정의와 수치/판정 절차가 글 안에서 주어지고 특정 미제공 사진/그림의 식별에 의존하지 않아 이번에는 이미지를 추가하지 않는다. 공간 구조의 세부 설명은 연결된 선수 단위의 그림과 함께 읽는다.",
+      "assets": [],
+      "evidence": "doc/visual-review/units/M29.02.md"
+    },
+    "M29.03": {
+      "status": "reviewed",
+      "source": "ebook/curriculum/M29/M29.03.md",
+      "sourceSha256": "2edb6c000bdb4dfb3d4b262c07b4d3cd85d6623a0d0829a731e4a54bb9e437c4",
+      "reason": "본문의 「장애물을 찾는 일과 차의 위치를 찾는 일은 다르다」부터 「map 보정과 odom 연속성을 구분한다」까지 시각 참조/입력 조건을 점검했다. 정의와 수치/판정 절차가 글 안에서 주어지고 특정 미제공 사진/그림의 식별에 의존하지 않아 이번에는 이미지를 추가하지 않는다. 공간 구조의 세부 설명은 연결된 선수 단위의 그림과 함께 읽는다.",
+      "assets": [],
+      "evidence": "doc/visual-review/units/M29.03.md"
+    },
+    "M29.04": {
+      "status": "reviewed",
+      "source": "ebook/curriculum/M29/M29.04.md",
+      "sourceSha256": "eddf3fe5e1c7f2a0751ae6aeb82fe725712da6c877c59114bce7d02ec1ba461f",
+      "reason": "현재 관측과 추적 예측을 구분의 연결/구분은 글만으로 단계나 경계를 혼동하기 쉬워 설명 도식을 추가한다. 본문의 표·수치·문제 조건도 대조한다.",
+      "assets": [
+        {
+          "path": "apps/web/public/textbook-visuals/M29.04-concept.svg",
+          "sha256": "2e0d9985621a954bf1308b2955fefabe71e59f92db0defcd4080ac68721da074",
+          "method": "original-svg",
+          "model": null,
+          "prompt": null,
+          "alt": "현재 관측과 추적 예측을 구분: 정렬한 센서 관측 → 검출/추정 후보 → 일대일 추적 대응 → 미래 예측.",
+          "caption": "각 칸은 서로 다른 역할/근거다. 아래 방향은 자료/처리의 연결이며 실제 성공을 자동으로 보장하지 않는다. 직접 제작한 개념도이며 본문의 조건과 함께 읽는다."
+        }
+      ],
+      "evidence": "doc/visual-review/units/M29.04.md"
+    },
+    "M29.05": {
+      "status": "reviewed",
+      "source": "ebook/curriculum/M29/M29.05.md",
+      "sourceSha256": "2e8a59541709b53ab7e116dbcc9cfd06b8d00010234e0bb1c2ada232fe25dce8",
+      "reason": "동적 장애물은 시간까지 비교의 연결/구분은 글만으로 단계나 경계를 혼동하기 쉬워 설명 도식을 추가한다. 본문의 표·수치·문제 조건도 대조한다.",
+      "assets": [
+        {
+          "path": "apps/web/public/textbook-visuals/M29.05-concept.svg",
+          "sha256": "1aab8c4be100414f38b497da6df7f8c0faf96e30fdca26cca362a1bbe4749195",
+          "method": "original-svg",
+          "model": null,
+          "prompt": null,
+          "alt": "동적 장애물은 시간까지 비교: 차량 후보 궤적 → 장애물 예측 → 시간을 맞춘 충돌 검사 → 제어/재계획.",
+          "caption": "각 칸은 서로 다른 역할/근거다. 아래 방향은 자료/처리의 연결이며 실제 성공을 자동으로 보장하지 않는다. 직접 제작한 개념도이며 본문의 조건과 함께 읽는다."
+        }
+      ],
+      "evidence": "doc/visual-review/units/M29.05.md"
+    },
+    "M29.06": {
+      "status": "reviewed",
+      "source": "ebook/curriculum/M29/M29.06.md",
+      "sourceSha256": "dd0ebf6ccd3b9e33895853f6d0ffaa4d4bab53ac4daf7643a4accb4f6280a0b0",
+      "reason": "주차 공간과 차체 전체의 여유는 공간/파형 관계를 직접 보아야 식의 기준과 적용 범위를 혼동하지 않으므로 도식을 추가한다. 제공된 식·본문 조건과 대조했다.",
+      "assets": [
+        {
+          "path": "apps/web/public/textbook-visuals/M29.06-concept.svg",
+          "sha256": "cc312defd7c04e958d92fb31970612d30e57c9c17a99d5d7cb0bf3c543502297",
+          "method": "original-svg",
+          "model": null,
+          "prompt": null,
+          "alt": "주차 공간과 차체 전체의 여유. 본문처럼 차체 중심/축이 공간과 일치할 때 앞뒤 0.5 m, 좌우 0.25 m의 기하 차이가 생긴다. 실제 진입 경로/조향·위치 오차·동적 장애물과 문 열림 조건을 포함한 주차 가능성 판단은 아니다.",
+          "caption": "본문처럼 차체 중심/축이 공간과 일치할 때 앞뒤 0.5 m, 좌우 0.25 m의 기하 차이가 생긴다. 실제 진입 경로/조향·위치 오차·동적 장애물과 문 열림 조건을 포함한 주차 가능성 판단은 아니다. 직접 제작."
+        }
+      ],
+      "evidence": "doc/visual-review/units/M29.06.md"
+    },
+    "M30.01": {
+      "status": "reviewed",
+      "source": "ebook/curriculum/M30/M30.01.md",
+      "sourceSha256": "2ae3f66af7a2faedea4389e8fc5c7c5518ac28ab738b078305d08520e0c971ed",
+      "reason": "Reality gap의 원인을 나누기의 연결/구분은 글만으로 단계나 경계를 혼동하기 쉬워 설명 도식을 추가한다. 본문의 표·수치·문제 조건도 대조한다.",
+      "assets": [
+        {
+          "path": "apps/web/public/textbook-visuals/M30.01-concept.svg",
+          "sha256": "17dd3175b7a8a42f5a9574fd7eb9e67635f607dfb96fce3e5c2a74546c3d1712",
+          "method": "original-svg",
+          "model": null,
+          "prompt": null,
+          "alt": "Reality gap의 원인을 나누기: 반전 때 빈 움직임 → 토크 잔차 → 일정 속도 위치 오차 → 추가 관측/분리 시험.",
+          "caption": "각 칸은 서로 다른 역할/근거다. 나란히 비교할 항목이며 위아래가 시간 순서를 뜻하지 않는다. 직접 제작한 개념도이며 본문의 조건과 함께 읽는다."
+        }
+      ],
+      "evidence": "doc/visual-review/units/M30.01.md"
+    },
+    "M30.02": {
+      "status": "reviewed",
+      "source": "ebook/curriculum/M30/M30.02.md",
+      "sourceSha256": "d51a71bec866fc416d4f3ce1725d71340128f86843696d1ef3d47bfc52d91ff0",
+      "reason": "본문의 「무엇을 알아내고 무엇을 넓힐지 구분한다」부터 「수집 계획에는 실패와 독립 그룹도 들어간다」까지 시각 참조/입력 조건을 점검했다. 명시된 코드/설정·정의와 수치/판정 절차가 글 안에서 주어지고 특정 미제공 사진/그림의 식별에 의존하지 않아 이번에는 이미지를 추가하지 않는다. 공간 구조의 세부 설명은 연결된 선수 단위의 그림과 함께 읽는다.",
+      "assets": [],
+      "evidence": "doc/visual-review/units/M30.02.md"
+    },
+    "M30.03": {
+      "status": "reviewed",
+      "source": "ebook/curriculum/M30/M30.03.md",
+      "sourceSha256": "73d2f50528f3b1078bbdb87e09b740d9610e62b5af442ad95561a7ac93104358",
+      "reason": "평균화 뒤에도 제약을 검사의 연결/구분은 글만으로 단계나 경계를 혼동하기 쉬워 설명 도식을 추가한다. 본문의 표·수치·문제 조건도 대조한다.",
+      "assets": [
+        {
+          "path": "apps/web/public/textbook-visuals/M30.03-concept.svg",
+          "sha256": "96edff5da5ff3bb5d9f3e3367a07285807e79196d2eeb764f34a1fc54af79bee",
+          "method": "original-svg",
+          "model": null,
+          "prompt": null,
+          "alt": "평균화 뒤에도 제약을 검사: EMA → Temporal ensembling → 물리 계약 복원 → 제약 재검사.",
+          "caption": "각 칸은 서로 다른 역할/근거다. 아래 방향은 자료/처리의 연결이며 실제 성공을 자동으로 보장하지 않는다. 직접 제작한 개념도이며 본문의 조건과 함께 읽는다."
+        }
+      ],
+      "evidence": "doc/visual-review/units/M30.03.md"
+    },
+    "M30.04": {
+      "status": "reviewed",
+      "source": "ebook/curriculum/M30/M30.04.md",
+      "sourceSha256": "4db1d7eb19ed336357a76f87da9552bf1965b65e07a814cbed3898a1ddc903f8",
+      "reason": "감독기의 세 종류 나이의 연결/구분은 글만으로 단계나 경계를 혼동하기 쉬워 설명 도식을 추가한다. 본문의 표·수치·문제 조건도 대조한다.",
+      "assets": [
+        {
+          "path": "apps/web/public/textbook-visuals/M30.04-concept.svg",
+          "sha256": "a6ac024b851938ff692a0cb17c117994aa7f9bfdfe91f341c6149f840f61d439",
+          "method": "original-svg",
+          "model": null,
+          "prompt": null,
+          "alt": "감독기의 세 종류 나이: 관측 나이 → 명령 나이/lease → heartbeat 나이 → 별도 상태/재개.",
+          "caption": "각 칸은 서로 다른 역할/근거다. 나란히 비교할 항목이며 위아래가 시간 순서를 뜻하지 않는다. 직접 제작한 개념도이며 본문의 조건과 함께 읽는다."
+        }
+      ],
+      "evidence": "doc/visual-review/units/M30.04.md"
+    },
+    "M30.05": {
+      "status": "reviewed",
+      "source": "ebook/curriculum/M30/M30.05.md",
+      "sourceSha256": "15a869b7f97870291040319875b4a1fada272f7634e8f40a37e1d73ab7a1d8ff",
+      "reason": "본문의 「시험 한 번과 성공을 먼저 고정한다」부터 「보고서에는 실패 원인과 범위를 함께 쓴다」까지 시각 참조/입력 조건을 점검했다. 제공 표·정의와 수치/판정 절차가 글 안에서 주어지고 특정 미제공 사진/그림의 식별에 의존하지 않아 이번에는 이미지를 추가하지 않는다. 공간 구조의 세부 설명은 연결된 선수 단위의 그림과 함께 읽는다.",
+      "assets": [],
+      "evidence": "doc/visual-review/units/M30.05.md"
+    },
+    "M30.06": {
+      "status": "reviewed",
+      "source": "ebook/curriculum/M30/M30.06.md",
+      "sourceSha256": "3d57a902a6ef9011b934d15872951ad851faf9f122d26c7213797a208d416656",
+      "reason": "본문의 「실행 결과를 만든 묶음과 근거를 추적한다」부터 「승격/롤백은 현재 세계에서 검증한다」까지 시각 참조/입력 조건을 점검했다. 제공 표·정의와 수치/판정 절차가 글 안에서 주어지고 특정 미제공 사진/그림의 식별에 의존하지 않아 이번에는 이미지를 추가하지 않는다. 공간 구조의 세부 설명은 연결된 선수 단위의 그림과 함께 읽는다.",
+      "assets": [],
+      "evidence": "doc/visual-review/units/M30.06.md"
+    },
+    "M31.01": {
+      "status": "reviewed",
+      "source": "ebook/curriculum/M31/M31.01.md",
+      "sourceSha256": "c9fd65b1a03488ad1b485fcd9bf8b77d2e191e9a9a25b4925e82690f1aa8e1c2",
+      "reason": "본문의 「요청을 실행 가능한 판정으로 바꾼다」부터 「빌드 성공·선택된 검사·완료는 서로 다르다」까지 시각 참조/입력 조건을 점검했다. 제공 표·정의와 수치/판정 절차가 글 안에서 주어지고 특정 미제공 사진/그림의 식별에 의존하지 않아 이번에는 이미지를 추가하지 않는다. 공간 구조의 세부 설명은 연결된 선수 단위의 그림과 함께 읽는다.",
+      "assets": [],
+      "evidence": "doc/visual-review/units/M31.01.md"
+    },
+    "M31.02": {
+      "status": "reviewed",
+      "source": "ebook/curriculum/M31/M31.02.md",
+      "sourceSha256": "e4c28a15e5df5a8376ee18bb0767bf0a2b47b349c14d24c5d24a1ecece1ac965",
+      "reason": "본문의 「도구 이름보다 제안과 실제 행위를 나눈다」부터 「사람 검토는 동의 버튼보다 구체적이다」까지 시각 참조/입력 조건을 점검했다. 제공 표·정의와 수치/판정 절차가 글 안에서 주어지고 특정 미제공 사진/그림의 식별에 의존하지 않아 이번에는 이미지를 추가하지 않는다. 공간 구조의 세부 설명은 연결된 선수 단위의 그림과 함께 읽는다.",
+      "assets": [],
+      "evidence": "doc/visual-review/units/M31.02.md"
+    },
+    "M31.03": {
+      "status": "reviewed",
+      "source": "ebook/curriculum/M31/M31.03.md",
+      "sourceSha256": "356ab21abf893d68ddb74ec2623b40a1f60822136a36f0808a48051bacca7ed0",
+      "reason": "본문의 「실패를 다시 본 것과 원인을 찾은 것은 다르다」부터 「AI 도구의 수정 제안도 검증 대상을 분리한다」까지 시각 참조/입력 조건을 점검했다. 제공 표·정의와 수치/판정 절차가 글 안에서 주어지고 특정 미제공 사진/그림의 식별에 의존하지 않아 이번에는 이미지를 추가하지 않는다. 공간 구조의 세부 설명은 연결된 선수 단위의 그림과 함께 읽는다.",
+      "assets": [],
+      "evidence": "doc/visual-review/units/M31.03.md"
+    },
+    "M31.04": {
+      "status": "reviewed",
+      "source": "ebook/curriculum/M31/M31.04.md",
+      "sourceSha256": "c357acc7e145e5950ea9489552d9f37d4b10ec397974d7a3c0be9b6eda679dca",
+      "reason": "본문의 「자동으로 많이 돌리는 것과 비교 가능한 실험은 다르다」부터 「재시도와 실행 불능을 숨기지 않는다」까지 시각 참조/입력 조건을 점검했다. 제공 표·정의와 수치/판정 절차가 글 안에서 주어지고 특정 미제공 사진/그림의 식별에 의존하지 않아 이번에는 이미지를 추가하지 않는다. 공간 구조의 세부 설명은 연결된 선수 단위의 그림과 함께 읽는다.",
+      "assets": [],
+      "evidence": "doc/visual-review/units/M31.04.md"
+    },
+    "M31.05": {
+      "status": "reviewed",
+      "source": "ebook/curriculum/M31/M31.05.md",
+      "sourceSha256": "2690ccdc540a45ac08ee39a9d181be44c4bf240449fc781d15c198c8babd4941",
+      "reason": "독립 작업과 의존 작업의 연결/구분은 글만으로 단계나 경계를 혼동하기 쉬워 설명 도식을 추가한다. 본문의 표·수치·문제 조건도 대조한다.",
+      "assets": [
+        {
+          "path": "apps/web/public/textbook-visuals/M31.05-concept.svg",
+          "sha256": "fb62b9d22d46988f7be14599230da04db5f30146c6c2365b9c04b0c62d477b08",
+          "method": "original-svg",
+          "model": null,
+          "prompt": null,
+          "alt": "독립 작업과 의존 작업: 작업 의존성 → 파일 소유 → 실행 환경/권한 → 인수 검수.",
+          "caption": "각 칸은 서로 다른 역할/근거다. 아래 방향은 자료/처리의 연결이며 실제 성공을 자동으로 보장하지 않는다. 직접 제작한 개념도이며 본문의 조건과 함께 읽는다."
+        }
+      ],
+      "evidence": "doc/visual-review/units/M31.05.md"
+    },
+    "M31.06": {
+      "status": "reviewed",
+      "source": "ebook/curriculum/M31/M31.06.md",
+      "sourceSha256": "bf09ded33ffa550f08a44930a063c44421fee3eb1ba49837d8f7655f1d7912f5",
+      "reason": "본문의 「연결할 수 있다는 것과 실제 명령 범위는 다르다」부터 「0명령·롤백과 실제 복구를 구분한다」까지 시각 참조/입력 조건을 점검했다. 제공 표·정의와 수치/판정 절차가 글 안에서 주어지고 특정 미제공 사진/그림의 식별에 의존하지 않아 이번에는 이미지를 추가하지 않는다. 공간 구조의 세부 설명은 연결된 선수 단위의 그림과 함께 읽는다.",
+      "assets": [],
+      "evidence": "doc/visual-review/units/M31.06.md"
+    },
+    "M32.01": {
+      "status": "reviewed",
+      "source": "ebook/curriculum/M32/M32.01.md",
+      "sourceSha256": "ab4f24c833847a7a23ff13f7e93bcd19ebeb16d046bf81a6f9396a5d2456d8b0",
+      "reason": "주행·정차·인계의 다른 조건의 연결/구분은 글만으로 단계나 경계를 혼동하기 쉬워 설명 도식을 추가한다. 본문의 표·수치·문제 조건도 대조한다.",
+      "assets": [
+        {
+          "path": "apps/web/public/textbook-visuals/M32.01-concept.svg",
+          "sha256": "38d8adc8441fbbdc8cc9154447d872a307e2ec0296add1696dc7adc4583fd2c1",
+          "method": "original-svg",
+          "model": null,
+          "prompt": null,
+          "alt": "주행·정차·인계의 다른 조건: 경로 후보 → 시간 궤적 → 정차/도착 → 배달 인계.",
+          "caption": "각 칸은 서로 다른 역할/근거다. 아래 방향은 자료/처리의 연결이며 실제 성공을 자동으로 보장하지 않는다. 직접 제작한 개념도이며 본문의 조건과 함께 읽는다."
+        }
+      ],
+      "evidence": "doc/visual-review/units/M32.01.md"
+    },
+    "M32.02": {
+      "status": "reviewed",
+      "source": "ebook/curriculum/M32/M32.02.md",
+      "sourceSha256": "040e0c50d2799bf6f5196df201cd22bf7a8a748f3698ff779682744e1322449b",
+      "reason": "시각 인지에서 물체 배치까지의 연결/구분은 글만으로 단계나 경계를 혼동하기 쉬워 설명 도식을 추가한다. 본문의 표·수치·문제 조건도 대조한다.",
+      "assets": [
+        {
+          "path": "apps/web/public/textbook-visuals/M32.02-concept.svg",
+          "sha256": "e395f824d26d78d8de56d463b35bc67185fe24c60dbb25b2f17c4bb5240f90a0",
+          "method": "original-svg",
+          "model": null,
+          "prompt": null,
+          "alt": "시각 인지에서 물체 배치까지: 영상/깊이 → 목표 변환/파지 후보 → 경로/실행 관문 → 결과 확인.",
+          "caption": "각 칸은 서로 다른 역할/근거다. 아래 방향은 자료/처리의 연결이며 실제 성공을 자동으로 보장하지 않는다. 직접 제작한 개념도이며 본문의 조건과 함께 읽는다."
+        }
+      ],
+      "evidence": "doc/visual-review/units/M32.02.md"
+    },
+    "M32.03": {
+      "status": "reviewed",
+      "source": "ebook/curriculum/M32/M32.03.md",
+      "sourceSha256": "d91f44477f5e859661328b36196edc524f3a7737d5f80e7b0509fd099767bd8f",
+      "reason": "양팔이 같은 물체를 다루는 기준의 연결/구분은 글만으로 단계나 경계를 혼동하기 쉬워 설명 도식을 추가한다. 본문의 표·수치·문제 조건도 대조한다.",
+      "assets": [
+        {
+          "path": "apps/web/public/textbook-visuals/M32.03-concept.svg",
+          "sha256": "80bf76db7fed4c1808d7b73b8ac22a2dec3c4f414b14cd80c49a8ea2c3fe2eb7",
+          "method": "original-svg",
+          "model": null,
+          "prompt": null,
+          "alt": "양팔이 같은 물체를 다루는 기준: 공통 World/Base → 좌/우 TCP → 물체 강체 관계 → 전체 검수.",
+          "caption": "각 칸은 서로 다른 역할/근거다. 아래 방향은 자료/처리의 연결이며 실제 성공을 자동으로 보장하지 않는다. 직접 제작한 개념도이며 본문의 조건과 함께 읽는다."
+        }
+      ],
+      "evidence": "doc/visual-review/units/M32.03.md"
+    },
+    "M32.04": {
+      "status": "reviewed",
+      "source": "ebook/curriculum/M32/M32.04.md",
+      "sourceSha256": "43ba40d8286fa57b0e610b52b20503269cfd5f2970b393bdca9e890f82e8b970",
+      "reason": "본문의 「서 있기와 보행에는 자세 외에 접촉/운동 상태가 있다」부터 「회복/실패의 기준과 추가 근거를 설계한다」까지 시각 참조/입력 조건을 점검했다. 명시된 코드/설정·정의와 수치/판정 절차가 글 안에서 주어지고 특정 미제공 사진/그림의 식별에 의존하지 않아 이번에는 이미지를 추가하지 않는다. 공간 구조의 세부 설명은 연결된 선수 단위의 그림과 함께 읽는다.",
+      "assets": [],
+      "evidence": "doc/visual-review/units/M32.04.md"
+    },
+    "M32.05": {
+      "status": "reviewed",
+      "source": "ebook/curriculum/M32/M32.05.md",
+      "sourceSha256": "6e9dd42c200311191fb3c6c51840d84c4be1d5d9afcaab31e03a14235fa86b63",
+      "reason": "본문의 「모호한 기대를 확인할 수 있는 요구로 바꾼다」부터 「재현 패키지는 남이 순서를 따라갈 수 있어야 한다」까지 시각 참조/입력 조건을 점검했다. 제공 표·정의와 수치/판정 절차가 글 안에서 주어지고 특정 미제공 사진/그림의 식별에 의존하지 않아 이번에는 이미지를 추가하지 않는다. 공간 구조의 세부 설명은 연결된 선수 단위의 그림과 함께 읽는다.",
+      "assets": [],
+      "evidence": "doc/visual-review/units/M32.05.md"
+    },
+    "M32.06": {
+      "status": "reviewed",
+      "source": "ebook/curriculum/M32/M32.06.md",
+      "sourceSha256": "77ffe2d34499ee04a6974934857c1d627c854d3d15cf613614aa6c8b89c12508",
+      "reason": "본문의 「데모는 무엇을 입증하는지 먼저 밝힌다」부터 「수정은 새 근거와 재평가로 닫는다」까지 시각 참조/입력 조건을 점검했다. 제공 표·정의와 수치/판정 절차가 글 안에서 주어지고 특정 미제공 사진/그림의 식별에 의존하지 않아 이번에는 이미지를 추가하지 않는다. 공간 구조의 세부 설명은 연결된 선수 단위의 그림과 함께 읽는다.",
+      "assets": [],
+      "evidence": "doc/visual-review/units/M32.06.md"
+    },
+    "M33.01": {
+      "status": "reviewed",
+      "source": "ebook/curriculum/M33/M33.01.md",
+      "sourceSha256": "1d7bc04f5a1afe0948eec85aae2aac32fd3827019fd9fd1dbad1eae401102539",
+      "reason": "화면 이벤트와 물리 피드백의 연결/구분은 글만으로 단계나 경계를 혼동하기 쉬워 설명 도식을 추가한다. 본문의 표·수치·문제 조건도 대조한다.",
+      "assets": [
+        {
+          "path": "apps/web/public/textbook-visuals/M33.01-concept.svg",
+          "sha256": "ef5ec51b5ad3c42573955927ddd6fda3d2f323330b12db4eb96ec00921fb5969",
+          "method": "original-svg",
+          "model": null,
+          "prompt": null,
+          "alt": "화면 이벤트와 물리 피드백: 입력/이벤트 → 처리/상태 → 출력 요청 → 실제 관측.",
+          "caption": "각 칸은 서로 다른 역할/근거다. 아래 방향은 자료/처리의 연결이며 실제 성공을 자동으로 보장하지 않는다. 직접 제작한 개념도이며 본문의 조건과 함께 읽는다."
+        }
+      ],
+      "evidence": "doc/visual-review/units/M33.01.md"
+    },
+    "M33.02": {
+      "status": "reviewed",
+      "source": "ebook/curriculum/M33/M33.02.md",
+      "sourceSha256": "9b4dc9aaa0bf0fe9bde1b5a915a54403e257afeb8b038d59058c3eab5d57e700",
+      "reason": "기체 자세와 카메라 시점을 나누기의 연결/구분은 글만으로 단계나 경계를 혼동하기 쉬워 설명 도식을 추가한다. 본문의 표·수치·문제 조건도 대조한다.",
+      "assets": [
+        {
+          "path": "apps/web/public/textbook-visuals/M33.02-concept.svg",
+          "sha256": "907048f54d8d5ca0034a66905e5fd8a5790a81db68f6d29baf73fcac51353b45",
+          "method": "original-svg",
+          "model": null,
+          "prompt": null,
+          "alt": "기체 자세와 카메라 시점을 나누기: Roll/Pitch/Yaw → 각도형 지령 → Rate형 지령 → 카메라 장착 각.",
+          "caption": "각 칸은 서로 다른 역할/근거다. 나란히 비교할 항목이며 위아래가 시간 순서를 뜻하지 않는다. 직접 제작한 개념도이며 본문의 조건과 함께 읽는다."
+        }
+      ],
+      "evidence": "doc/visual-review/units/M33.02.md"
+    },
+    "M33.03": {
+      "status": "reviewed",
+      "source": "ebook/curriculum/M33/M33.03.md",
+      "sourceSha256": "cb84a5387027f8e76b8bbf5d9e4a0cf1af1a44a8d6147ed97d26440c0eeb0e25",
+      "reason": "본문의 「시뮬레이터 연습과 실제 비행을 구별한다」부터 「촬영 연습은 항로 성공과 별도다」까지 시각 참조/입력 조건을 점검했다. 정의와 수치/판정 절차가 글 안에서 주어지고 특정 미제공 사진/그림의 식별에 의존하지 않아 이번에는 이미지를 추가하지 않는다. 공간 구조의 세부 설명은 연결된 선수 단위의 그림과 함께 읽는다.",
+      "assets": [],
+      "evidence": "doc/visual-review/units/M33.03.md"
+    },
+    "M33.04": {
+      "status": "reviewed",
+      "source": "ebook/curriculum/M33/M33.04.md",
+      "sourceSha256": "6555297e1f5746086342130d3dfc2e7bcf166b1942df7ce5384b24025a13bcce",
+      "reason": "본문의 「익숙한 언어보다 해결할 작업을 먼저 정한다」부터 「선택 이유를 기능 목록보다 구체적으로 쓴다」까지 시각 참조/입력 조건을 점검했다. 정의와 수치/판정 절차가 글 안에서 주어지고 특정 미제공 사진/그림의 식별에 의존하지 않아 이번에는 이미지를 추가하지 않는다. 공간 구조의 세부 설명은 연결된 선수 단위의 그림과 함께 읽는다.",
+      "assets": [],
+      "evidence": "doc/visual-review/units/M33.04.md"
+    },
+    "M33.05": {
+      "status": "reviewed",
+      "source": "ebook/curriculum/M33/M33.05.md",
+      "sourceSha256": "5d160f5c2928f2a0c6575bf122182e330c2ad937e68815de00b82bfcdea0b94c",
+      "reason": "본문의 「다른 계층의 도구를 한 대체 목록으로 섞지 않는다」부터 「산출물별로 대체 가능성을 판정한다」까지 시각 참조/입력 조건을 점검했다. 정의와 수치/판정 절차가 글 안에서 주어지고 특정 미제공 사진/그림의 식별에 의존하지 않아 이번에는 이미지를 추가하지 않는다. 공간 구조의 세부 설명은 연결된 선수 단위의 그림과 함께 읽는다.",
+      "assets": [],
+      "evidence": "doc/visual-review/units/M33.05.md"
+    },
+    "M33.06": {
+      "status": "reviewed",
+      "source": "ebook/curriculum/M33/M33.06.md",
+      "sourceSha256": "4a5357045e313febd03d19b2f68d55dda5758f0b651381aa19e493298848b15b",
+      "reason": "본문의 「멋진 데모에서 확인한 사실을 분리한다」부터 「실패가 설명되는 포트폴리오를 만든다」까지 시각 참조/입력 조건을 점검했다. 정의와 수치/판정 절차가 글 안에서 주어지고 특정 미제공 사진/그림의 식별에 의존하지 않아 이번에는 이미지를 추가하지 않는다. 공간 구조의 세부 설명은 연결된 선수 단위의 그림과 함께 읽는다.",
+      "assets": [],
+      "evidence": "doc/visual-review/units/M33.06.md"
+    },
+    "M34.01": {
+      "status": "reviewed",
+      "source": "ebook/curriculum/M34/M34.01.md",
+      "sourceSha256": "5889842420a321e2d06816ccb3c3dc68c1e85f8b3bcfde9a536a77e7b5240fd1",
+      "reason": "본문의 「화면에 값이 있다는 사실보다 출처와 시각이 먼저다」부터 「읽기 전용 표시를 실제 실행 권한과 구분한다」까지 시각 참조/입력 조건을 점검했다. 제공 표·정의와 수치/판정 절차가 글 안에서 주어지고 특정 미제공 사진/그림의 식별에 의존하지 않아 이번에는 이미지를 추가하지 않는다. 공간 구조의 세부 설명은 연결된 선수 단위의 그림과 함께 읽는다.",
+      "assets": [],
+      "evidence": "doc/visual-review/units/M34.01.md"
+    },
+    "M34.02": {
+      "status": "reviewed",
+      "source": "ebook/curriculum/M34/M34.02.md",
+      "sourceSha256": "abd1c86db0b00b6b8a34f7b9e46039460db0eddad9ce4fcb9c60626698838349",
+      "reason": "3D 장면의 한 스냅샷의 연결/구분은 글만으로 단계나 경계를 혼동하기 쉬워 설명 도식을 추가한다. 본문의 표·수치·문제 조건도 대조한다.",
+      "assets": [
+        {
+          "path": "apps/web/public/textbook-visuals/M34.02-concept.svg",
+          "sha256": "0de0b3f86b209736fac9e76fb6e16c85084dc54901d83754391e666fb249036c",
+          "method": "original-svg",
+          "model": null,
+          "prompt": null,
+          "alt": "3D 장면의 한 스냅샷: 상태/측정 묶음 → 관측 시각의 TF → 자산/계약 revision → 일괄 표시 전환.",
+          "caption": "각 칸은 서로 다른 역할/근거다. 아래 방향은 자료/처리의 연결이며 실제 성공을 자동으로 보장하지 않는다. 직접 제작한 개념도이며 본문의 조건과 함께 읽는다."
+        }
+      ],
+      "evidence": "doc/visual-review/units/M34.02.md"
+    },
+    "M34.03": {
+      "status": "reviewed",
+      "source": "ebook/curriculum/M34/M34.03.md",
+      "sourceSha256": "66705f31d835d1d1521f99d0a863c663379621989aabd3c38c18d850ad6fb431",
+      "reason": "본문의 「화면에서 보이는 것과 실행할 수 있는 것은 다르다」부터 「감사 기록은 결정과 관측의 연결을 보존한다」까지 시각 참조/입력 조건을 점검했다. 제공 표·정의와 수치/판정 절차가 글 안에서 주어지고 특정 미제공 사진/그림의 식별에 의존하지 않아 이번에는 이미지를 추가하지 않는다. 공간 구조의 세부 설명은 연결된 선수 단위의 그림과 함께 읽는다.",
+      "assets": [],
+      "evidence": "doc/visual-review/units/M34.03.md"
+    }
+  }
+}

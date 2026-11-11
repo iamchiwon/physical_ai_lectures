@@ -1,0 +1,173 @@
+{
+  "scope": "기존 교재 읽기 단위의 시각 참조·이미지 파일 연결 검사. 원본/실습·해설 유지.",
+  "decision": "기존 장별 좌표/기구/데이터/시간/배포 도식을 유지하며 현재 커리큘럼의 추가 도식으로 보충한다.",
+  "units": [
+    {
+      "slug": "01_physical_ai_isaac_ros2--chapter-1",
+      "title": "제1장 Physical AI와 Isaac Sim·OpenUSD·ROS 2 기반",
+      "source": "01_physical_ai_isaac_ros2/chapter.md",
+      "contentSha256": "0cdaba0378fe1eb330666a7e17a7dee200816f2931d709c16dcb99b28709b399",
+      "images": 0
+    },
+    {
+      "slug": "01_physical_ai_isaac_ros2--chapter-2",
+      "title": "장 개요",
+      "source": "01_physical_ai_isaac_ros2/chapter.md",
+      "contentSha256": "c6c1b20457632ddc5b965610014fe92abf34fd1c20d91ba87afd9b0ddf357a65",
+      "images": 1
+    },
+    {
+      "slug": "01_physical_ai_isaac_ros2--chapter-3",
+      "title": "학습 목표",
+      "source": "01_physical_ai_isaac_ros2/chapter.md",
+      "contentSha256": "6bd7f6ce2b883b2c28c478b73da5b36dc9f46307e4953e34ca13e0377d4000df",
+      "images": 0
+    },
+    {
+      "slug": "01_physical_ai_isaac_ros2--chapter-4",
+      "title": "선수 지식과 준비물",
+      "source": "01_physical_ai_isaac_ros2/chapter.md",
+      "contentSha256": "5a375458ce7be6bd576b1f75e212861db59e08d212659c344991f37627de06c3",
+      "images": 0
+    },
+    {
+      "slug": "01_physical_ai_isaac_ros2--chapter-5",
+      "title": "1.1 Physical AI의 문제 정의",
+      "source": "01_physical_ai_isaac_ros2/chapter.md",
+      "contentSha256": "7fb9338817c8a768d68363d7ab5ba0f9101ebdbed957600c1cf619891fab31ad",
+      "images": 0
+    },
+    {
+      "slug": "01_physical_ai_isaac_ros2--chapter-6",
+      "title": "1.2 NVIDIA Isaac Sim 런타임 이해",
+      "source": "01_physical_ai_isaac_ros2/chapter.md",
+      "contentSha256": "b311aa2abace37e4efbf172912e8086e0f16c5b06653bc6212524c597934c7b0",
+      "images": 1
+    },
+    {
+      "slug": "01_physical_ai_isaac_ros2--chapter-7",
+      "title": "1.3 OpenUSD 데이터 모델",
+      "source": "01_physical_ai_isaac_ros2/chapter.md",
+      "contentSha256": "26dd3e1abdd952e8e3725a3e82ee692812b79c48a5d76984e8fba0e54ecbc50c",
+      "images": 1
+    },
+    {
+      "slug": "01_physical_ai_isaac_ros2--chapter-8",
+      "title": "1.4 ROS 2 Jazzy 통신 모델",
+      "source": "01_physical_ai_isaac_ros2/chapter.md",
+      "contentSha256": "0218fe229d954b533f4fd3212de44d738455d268f10789e1850f8396ec7a41ab",
+      "images": 0
+    },
+    {
+      "slug": "01_physical_ai_isaac_ros2--chapter-9",
+      "title": "1.5 Isaac Sim-ROS 2 브리지 설계",
+      "source": "01_physical_ai_isaac_ros2/chapter.md",
+      "contentSha256": "e1e24f0954bd3510435a591c8b92b6d3a107017d705b33e83757689a64a59e42",
+      "images": 1
+    },
+    {
+      "slug": "01_physical_ai_isaac_ros2--chapter-10",
+      "title": "1.6 구현 예제 안내",
+      "source": "01_physical_ai_isaac_ros2/chapter.md",
+      "contentSha256": "dc5962d71849d2ead85b8610e423a4e618a21407e923a802cdbe01f7998cded0",
+      "images": 0
+    },
+    {
+      "slug": "01_physical_ai_isaac_ros2--chapter-11",
+      "title": "1.7 단계별 실습",
+      "source": "01_physical_ai_isaac_ros2/chapter.md",
+      "contentSha256": "c1873b3e001d59aeca45c621c3fd04bafb30a73dba2087304a1ccbacb54009f4",
+      "images": 0
+    },
+    {
+      "slug": "01_physical_ai_isaac_ros2--chapter-12",
+      "title": "1.8 트러블슈팅",
+      "source": "01_physical_ai_isaac_ros2/chapter.md",
+      "contentSha256": "abc57c99a04fa38dea55a4ea12d6082773accd72c8c137bb63b8d398fa30ca29",
+      "images": 0
+    },
+    {
+      "slug": "01_physical_ai_isaac_ros2--chapter-13",
+      "title": "1.9 요약",
+      "source": "01_physical_ai_isaac_ros2/chapter.md",
+      "contentSha256": "c6428bf0f6ebbe3129369533b3748c597cdd00ec219232d5a6b511fc29a58809",
+      "images": 0
+    },
+    {
+      "slug": "01_physical_ai_isaac_ros2--chapter-14",
+      "title": "1.10 확인문제",
+      "source": "01_physical_ai_isaac_ros2/chapter.md",
+      "contentSha256": "77855b60feabc4bbffdc2c142f67fd6819a9152da93400b9166a1829372f0f5d",
+      "images": 0
+    },
+    {
+      "slug": "01_physical_ai_isaac_ros2--chapter-15",
+      "title": "1.11 프로젝트 과제",
+      "source": "01_physical_ai_isaac_ros2/chapter.md",
+      "contentSha256": "8f6adc8fae33c5db14d9fd5a96f22ff64b77488b149b5d6fc5fabf7c1571350c",
+      "images": 0
+    },
+    {
+      "slug": "01_physical_ai_isaac_ros2--chapter-16",
+      "title": "1.12 실습·평가·참고자료",
+      "source": "01_physical_ai_isaac_ros2/chapter.md",
+      "contentSha256": "eb1e6f118fedbe1b8a28b41fd3d54f53a4d13e1404bf7f079061291ef4df69bc",
+      "images": 0
+    },
+    {
+      "slug": "01_physical_ai_isaac_ros2--labs--lab01_latency_budget-1",
+      "title": "[SIM] 실습 1-1: Physical AI 지연 예산",
+      "source": "01_physical_ai_isaac_ros2/labs/lab01_latency_budget.md",
+      "contentSha256": "29c3b4405e67f3cb6dfed6e3f322083cccead16d2b90bd74ff72c33a71924f04",
+      "images": 0
+    },
+    {
+      "slug": "01_physical_ai_isaac_ros2--labs--lab02_openusd_scene-1",
+      "title": "[SIM] 실습 1-2: OpenUSD 장면과 비파괴 Override",
+      "source": "01_physical_ai_isaac_ros2/labs/lab02_openusd_scene.md",
+      "contentSha256": "cee405bc2e4918bbe31922165c663d3068e2f148b552f067849d6d5e014fafd3",
+      "images": 0
+    },
+    {
+      "slug": "01_physical_ai_isaac_ros2--labs--lab03_ros2_interfaces-1",
+      "title": "[SIM] 실습 1-3: ROS 2 인터페이스와 QoS",
+      "source": "01_physical_ai_isaac_ros2/labs/lab03_ros2_interfaces.md",
+      "contentSha256": "aadb8d19526914932a444f8228c87590da53cf78b0f521196594304e2c7c4a1a",
+      "images": 0
+    },
+    {
+      "slug": "01_physical_ai_isaac_ros2--labs--lab04_bridge_contract-1",
+      "title": "[SIM→HW] [SAFETY] 실습 1-4: 시뮬레이터-ROS 2 브리지 계약",
+      "source": "01_physical_ai_isaac_ros2/labs/lab04_bridge_contract.md",
+      "contentSha256": "8e2b52908528ffcdd08a27643df378b3f9a0e1e23ece7cabc752e0bbef75f164",
+      "images": 0
+    }
+  ],
+  "images": [
+    {
+      "unit": "01_physical_ai_isaac_ros2--chapter-2",
+      "alt": "Physical AI 폐루프 구조",
+      "source": "ebook/book/01_physical_ai_isaac_ros2/images/physical_ai_loop.svg",
+      "exists": true
+    },
+    {
+      "unit": "01_physical_ai_isaac_ros2--chapter-6",
+      "alt": "Isaac Sim 계층",
+      "source": "ebook/book/01_physical_ai_isaac_ros2/images/isaac_stack.svg",
+      "exists": true
+    },
+    {
+      "unit": "01_physical_ai_isaac_ros2--chapter-7",
+      "alt": "OpenUSD 합성",
+      "source": "ebook/book/01_physical_ai_isaac_ros2/images/usd_composition.svg",
+      "exists": true
+    },
+    {
+      "unit": "01_physical_ai_isaac_ros2--chapter-9",
+      "alt": "ROS 2 브리지 데이터 흐름",
+      "source": "ebook/book/01_physical_ai_isaac_ros2/images/ros2_bridge.svg",
+      "exists": true
+    }
+  ],
+  "missing": []
+}

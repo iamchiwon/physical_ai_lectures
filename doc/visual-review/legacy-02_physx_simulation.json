@@ -1,0 +1,201 @@
+{
+  "scope": "기존 교재 읽기 단위의 시각 참조·이미지 파일 연결 검사. 원본/실습·해설 유지.",
+  "decision": "기존 장별 좌표/기구/데이터/시간/배포 도식을 유지하며 현재 커리큘럼의 추가 도식으로 보충한다.",
+  "units": [
+    {
+      "slug": "02_physx_simulation--chapter-1",
+      "title": "제2장 Isaac Sim 환경 구축과 PhysX 강체 물리 시뮬레이션",
+      "source": "02_physx_simulation/chapter.md",
+      "contentSha256": "f69dfce87f6c46eedce1dd29b9d700f15159a16ff97e1bfd8628c75ab535efa1",
+      "images": 0
+    },
+    {
+      "slug": "02_physx_simulation--chapter-2",
+      "title": "장 개요",
+      "source": "02_physx_simulation/chapter.md",
+      "contentSha256": "5f94c333d6bebdd272f1f2d8b97101a1f93450538091fcfe1c5afea275d2d66f",
+      "images": 1
+    },
+    {
+      "slug": "02_physx_simulation--chapter-3",
+      "title": "학습 목표",
+      "source": "02_physx_simulation/chapter.md",
+      "contentSha256": "dad9fc2e0971db70971aef644227c9cefa2d1143816b3004a7dcec2259bd30c2",
+      "images": 0
+    },
+    {
+      "slug": "02_physx_simulation--chapter-4",
+      "title": "선수 지식과 준비물",
+      "source": "02_physx_simulation/chapter.md",
+      "contentSha256": "bc618f1d2113598de0616e26ddbdab8f890314d0e613d0dafa6e2c181ce6c9f0",
+      "images": 0
+    },
+    {
+      "slug": "02_physx_simulation--chapter-5",
+      "title": "2.1 Isaac Sim 작업 환경 이해하기",
+      "source": "02_physx_simulation/chapter.md",
+      "contentSha256": "7365851fbc0c05cec42431e39a909ea670da9d3b82904d462c8e19d1a653679d",
+      "images": 0
+    },
+    {
+      "slug": "02_physx_simulation--chapter-6",
+      "title": "2.2 좌표계와 4×4 동차 변환",
+      "source": "02_physx_simulation/chapter.md",
+      "contentSha256": "ed51fc56434022e057f039c305791abc73bfd87f80f3a12650e5d0292d635989",
+      "images": 1
+    },
+    {
+      "slug": "02_physx_simulation--chapter-7",
+      "title": "2.3 강체 역학과 시뮬레이션 시간",
+      "source": "02_physx_simulation/chapter.md",
+      "contentSha256": "9b4e5e2b84e8f0e3292d114d76070b350fc6d62c36874654c68f7c152872065b",
+      "images": 0
+    },
+    {
+      "slug": "02_physx_simulation--chapter-8",
+      "title": "2.4 충돌 형상 설계",
+      "source": "02_physx_simulation/chapter.md",
+      "contentSha256": "df5183cd1bbc2443c8b0af3708dc9ffba47c03f8ea1505acde65e569a11246be",
+      "images": 1
+    },
+    {
+      "slug": "02_physx_simulation--chapter-9",
+      "title": "2.5 Tunneling과 CCD",
+      "source": "02_physx_simulation/chapter.md",
+      "contentSha256": "772610af14da203c60cd5a0fd50b205e3918b35111d096f9deafc7076416439e",
+      "images": 0
+    },
+    {
+      "slug": "02_physx_simulation--chapter-10",
+      "title": "2.6 물리 재질과 접촉 역학",
+      "source": "02_physx_simulation/chapter.md",
+      "contentSha256": "b01d369640ee881a5722bcb78a6325577baf37a08d0a56c1b47f04fe46e82603",
+      "images": 0
+    },
+    {
+      "slug": "02_physx_simulation--chapter-11",
+      "title": "2.7 질량, 무게중심, 관성 텐서",
+      "source": "02_physx_simulation/chapter.md",
+      "contentSha256": "2469c1a2eb187b784d6ebafc54574be6fd87c5a3d137b142f183c2ca8a53182a",
+      "images": 0
+    },
+    {
+      "slug": "02_physx_simulation--chapter-12",
+      "title": "2.8 PBR 재질과 조명",
+      "source": "02_physx_simulation/chapter.md",
+      "contentSha256": "5595eeaf7e72055467ab8e641e58fdca891acbcdecfb71d215d9854c130ce413",
+      "images": 0
+    },
+    {
+      "slug": "02_physx_simulation--chapter-13",
+      "title": "2.9 물리 파라미터 튜닝 절차",
+      "source": "02_physx_simulation/chapter.md",
+      "contentSha256": "917df87b6919b7f93377a2e75e24aabef9e4c9cc124f7305289737962639703c",
+      "images": 1
+    },
+    {
+      "slug": "02_physx_simulation--chapter-14",
+      "title": "2.10 단계별 통합 실습",
+      "source": "02_physx_simulation/chapter.md",
+      "contentSha256": "6ecee28829e8853eaf36b1ba15cfd6169c5e33b32ac6bc6ebd5bf0a2d3261bbf",
+      "images": 0
+    },
+    {
+      "slug": "02_physx_simulation--chapter-15",
+      "title": "2.11 예상 출력 예시",
+      "source": "02_physx_simulation/chapter.md",
+      "contentSha256": "5a8d131b795669135b8b91d987f868198f8a4a8d0b46a80833452126881b0c8b",
+      "images": 0
+    },
+    {
+      "slug": "02_physx_simulation--chapter-16",
+      "title": "2.12 트러블슈팅",
+      "source": "02_physx_simulation/chapter.md",
+      "contentSha256": "c81db14c9658f9009819cfc6e1d30a19d49f3c4cbbd62363fab16b1d6a07e850",
+      "images": 0
+    },
+    {
+      "slug": "02_physx_simulation--chapter-17",
+      "title": "2.13 요약",
+      "source": "02_physx_simulation/chapter.md",
+      "contentSha256": "da56c9d03cc549c74469fdd61eb53339d5f89fe766cbeb1cdf70d12cae97baf8",
+      "images": 0
+    },
+    {
+      "slug": "02_physx_simulation--chapter-18",
+      "title": "2.14 확인문제",
+      "source": "02_physx_simulation/chapter.md",
+      "contentSha256": "0a4712d830e77950d04f26a8fceacd19408cb9fd7fca858143f69e4f6377ad47",
+      "images": 0
+    },
+    {
+      "slug": "02_physx_simulation--chapter-19",
+      "title": "2.15 프로젝트 과제",
+      "source": "02_physx_simulation/chapter.md",
+      "contentSha256": "84686b787ccc92f4aa73791724e115c1f02f2c92ab47a60aa7a55bd87da47ff1",
+      "images": 0
+    },
+    {
+      "slug": "02_physx_simulation--chapter-20",
+      "title": "2.16 실습·평가·참고자료",
+      "source": "02_physx_simulation/chapter.md",
+      "contentSha256": "76b58a61ef971fe1077d19a0534251d4ea733b6d25e274a7f50513f8d669cb3e",
+      "images": 0
+    },
+    {
+      "slug": "02_physx_simulation--labs--lab01_transforms-1",
+      "title": "실습 2-A: 좌표 변환 체인과 쿼터니언",
+      "source": "02_physx_simulation/labs/lab01_transforms.md",
+      "contentSha256": "5b6ca0b3650055e4ef35285da2f14180768e7f203dde030bbf328411b84ca30e",
+      "images": 0
+    },
+    {
+      "slug": "02_physx_simulation--labs--lab02_collision_ccd-1",
+      "title": "실습 2-B: 충돌 근사와 CCD 비용-효과 분석",
+      "source": "02_physx_simulation/labs/lab02_collision_ccd.md",
+      "contentSha256": "a7875df9c4a79468d689fec103db194f38d5365cb910310e26356ea18afaf091",
+      "images": 0
+    },
+    {
+      "slug": "02_physx_simulation--labs--lab03_material_tuning-1",
+      "title": "실습 2-C: 마찰·반발·질량 파라미터 보정",
+      "source": "02_physx_simulation/labs/lab03_material_tuning.md",
+      "contentSha256": "5eb7f2e173f2930105c18ac0cacac2bbd86cbc221a889af4d70c43a27ef8e1d7",
+      "images": 0
+    },
+    {
+      "slug": "02_physx_simulation--exercises--problem_set-1",
+      "title": "제2장 연습문제 및 해설 지침",
+      "source": "02_physx_simulation/exercises/problem_set.md",
+      "contentSha256": "bac38bbb577adc746684d3e722668da649f794bf73ea0933538a2269f9566e8f",
+      "images": 0
+    }
+  ],
+  "images": [
+    {
+      "unit": "02_physx_simulation--chapter-2",
+      "alt": "작업 셀의 좌표계 관계",
+      "source": "ebook/book/02_physx_simulation/images/transform_frames.svg",
+      "exists": true
+    },
+    {
+      "unit": "02_physx_simulation--chapter-6",
+      "alt": "변환식을 오른쪽부터 읽는 방법",
+      "source": "ebook/book/02_physx_simulation/images/transform_composition_reading.svg",
+      "exists": true
+    },
+    {
+      "unit": "02_physx_simulation--chapter-8",
+      "alt": "충돌 처리 파이프라인",
+      "source": "ebook/book/02_physx_simulation/images/collision_pipeline.svg",
+      "exists": true
+    },
+    {
+      "unit": "02_physx_simulation--chapter-13",
+      "alt": "물리 파라미터 튜닝 루프",
+      "source": "ebook/book/02_physx_simulation/images/material_tuning_loop.svg",
+      "exists": true
+    }
+  ],
+  "missing": []
+}

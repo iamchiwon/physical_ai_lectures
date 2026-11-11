@@ -1,0 +1,167 @@
+[
+  {
+    "topic": "M03.01",
+    "reason": "백래시의 국소 접촉 개념는 공간/파형 관계를 직접 보아야 식의 기준과 적용 범위를 혼동하지 않으므로 도식을 추가한다. 제공된 식·본문 조건과 대조했다.",
+    "images": [
+      {
+        "name": "spatial",
+        "title": "백래시의 국소 접촉 개념",
+        "after": "특히 엔코더가 모터 쪽에 있으면 기어 뒤에서 생긴 작은 움직임 차이를 직접 관측하지 못할 수 있다. 촘촘한 count 눈금은 분해능(resolution)의 한 요소지만 정확도(accuracy)·반복성·부하에서의 출력 위치 오차와 같지 않다. 환산한 목표각만으로 실제 물체 위치를 확정하지 않고, 측정 위치와 가정·검증된 범위를 명시한다. 실제 장비의 유격을 확인하려고 손을 가동부에 넣거나 전원을 인가하는 활동은 여기서 하지 않는다.",
+        "alt": "백래시의 국소 접촉 개념. 맞물린 치면 사이를 펼쳐 그린 개념도다. 방향 반전 때 접촉이 바뀌기 전의 틈은 모터 축 회전과 실제 출력 변화를 다르게 만든다. 기어의 실제 형상/간격이나 모든 백래시 원인을 그린 도면은 아니다.",
+        "caption": "맞물린 치면 사이를 펼쳐 그린 개념도다. 방향 반전 때 접촉이 바뀌기 전의 틈은 모터 축 회전과 실제 출력 변화를 다르게 만든다. 기어의 실제 형상/간격이나 모든 백래시 원인을 그린 도면은 아니다. 직접 제작.",
+        "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"640\" height=\"480\" viewBox=\"0 0 640 480\" role=\"img\" aria-labelledby=\"title desc\"><title id=\"title\">반전 때의 틈과 출력 지연</title><desc id=\"desc\">치면 사이 틈 때문에입력반전이즉시출력운동이되지않는 국소개념도.</desc><defs><marker id=\"a\" markerWidth=\"8\" markerHeight=\"8\" refX=\"7\" refY=\"4\" orient=\"auto\"><path d=\"M0 0L8 4L0 8Z\" fill=\"#52647b\"/></marker></defs><rect width=\"640\" height=\"480\" rx=\"20\" fill=\"#f5f8fc\"/><g font-family=\"sans-serif\" font-size=\"21\" fill=\"#17283e\"><text x=\"26\" y=\"40\" font-size=\"25\" font-weight=\"bold\">반전 때의 틈과 출력 지연</text><rect x=\"60\" y=\"220\" width=\"210\" height=\"95\" fill=\"#dbeafe\" stroke=\"#52647b\" stroke-width=\"2\"/><rect x=\"355\" y=\"220\" width=\"210\" height=\"95\" fill=\"#ffe6b6\" stroke=\"#52647b\" stroke-width=\"2\"/><line x1=\"270\" y1=\"255\" x2=\"350\" y2=\"255\" stroke=\"#d97706\" stroke-width=\"3\" marker-end=\"url(#a)\"/><text x=\"280\" y=\"215\" font-size=\"21\">틈</text><text x=\"90\" y=\"350\" font-size=\"21\">입력 쪽 치면</text><text x=\"385\" y=\"350\" font-size=\"21\">출력 쪽 치면</text><line x1=\"80\" y1=\"160\" x2=\"235\" y2=\"160\" stroke=\"#2563eb\" stroke-width=\"3\" marker-end=\"url(#a)\"/><text x=\"65\" y=\"120\" font-size=\"21\">방향 반전 뒤 틈을 건너는 구간</text><text x=\"45\" y=\"430\" font-size=\"21\">입력 축 변화 ≠ 즉시 출력 축 변화</text></g></svg>"
+      }
+    ],
+    "append": true
+  },
+  {
+    "topic": "M08.01",
+    "reason": "한 링크의 세 기준는 공간/파형 관계를 직접 보아야 식의 기준과 적용 범위를 혼동하지 않으므로 도식을 추가한다. 제공된 식·본문 조건과 대조했다.",
+    "images": [
+      {
+        "name": "spatial",
+        "title": "한 링크의 세 기준",
+        "after": "hinge는 +z 회전이며 q=0에서 두 링크 프레임이 일치한다. 위치 범위는 [−1,1] rad, 기록된 effort는 회전 토크 N·m, velocity는 rad/s다. 이 선언이 실제 제어기와 물리 엔진에서 자동으로 모든 한계를 집행한다는 뜻은 아니다. 적용하는 도구와 구동 계층의 동작을 확인한다. q=0.5 rad라면 상자 중심의 base 좌표는 (0.1 cos0.5,0.1 sin0.5,0)≈(0.087758,0.047943,0) m다. visual 중심과 질량중심이 같은 이유는 이번 균질 가정이지 모든 모델의 기본 규칙이 아니다.",
+        "alt": "한 링크의 세 기준. 회색 표시 형상과 파란 충돌 근사 상자, 주황 질량중심은 역할이 다르다. link 원점을 형상의 중앙/COM과 자동으로 같다고 놓지 않는다. 축척이나 실제 관성값이 없는 개념도다.",
+        "caption": "회색 표시 형상과 파란 충돌 근사 상자, 주황 질량중심은 역할이 다르다. link 원점을 형상의 중앙/COM과 자동으로 같다고 놓지 않는다. 축척이나 실제 관성값이 없는 개념도다. 직접 제작.",
+        "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"640\" height=\"480\" viewBox=\"0 0 640 480\" role=\"img\" aria-labelledby=\"title desc\"><title id=\"title\">외형·충돌 형상·COM은 별개다</title><desc id=\"desc\">복잡한 표시 형상 주위의 단순충돌상자,link원점과다른COM점.</desc><defs><marker id=\"a\" markerWidth=\"8\" markerHeight=\"8\" refX=\"7\" refY=\"4\" orient=\"auto\"><path d=\"M0 0L8 4L0 8Z\" fill=\"#52647b\"/></marker></defs><rect width=\"640\" height=\"480\" rx=\"20\" fill=\"#f5f8fc\"/><g font-family=\"sans-serif\" font-size=\"21\" fill=\"#17283e\"><text x=\"26\" y=\"40\" font-size=\"25\" font-weight=\"bold\">외형·충돌 형상·COM은 별개다</text><rect x=\"165\" y=\"145\" width=\"300\" height=\"235\" fill=\"#dceaff\" stroke=\"#52647b\" stroke-width=\"2\"/><path d=\"M210 180H410V255H360V340H250V255H210Z\" fill=\"#a5b4c8\" stroke=\"#52647b\" stroke-width=\"3\"/><circle cx=\"320\" cy=\"245\" r=\"10\" fill=\"#d97706\" fill-opacity=\"1\" stroke=\"#d97706\"/><line x1=\"165\" y1=\"380\" x2=\"245\" y2=\"380\" stroke=\"#52647b\" stroke-width=\"3\" marker-end=\"url(#a)\"/><line x1=\"165\" y1=\"380\" x2=\"165\" y2=\"300\" stroke=\"#52647b\" stroke-width=\"3\" marker-end=\"url(#a)\"/><text x=\"55\" y=\"418\" font-size=\"21\">link 원점</text><line x1=\"400\" y1=\"245\" x2=\"335\" y2=\"245\" stroke=\"#d97706\" stroke-width=\"3\"/><text x=\"408\" y=\"250\" font-size=\"21\">COM</text><text x=\"170\" y=\"112\" font-size=\"21\">상자: collision 근사</text><text x=\"225\" y=\"360\" font-size=\"21\">회색: visual</text></g></svg>"
+      }
+    ],
+    "append": true
+  },
+  {
+    "topic": "M12.06",
+    "reason": "상자 IoU의 교집합/합집합는 공간/파형 관계를 직접 보아야 식의 기준과 적용 범위를 혼동하지 않으므로 도식을 추가한다. 제공된 식·본문 조건과 대조했다.",
+    "images": [
+      {
+        "name": "spatial",
+        "title": "상자 IoU의 교집합/합집합",
+        "after": "score를 0.85로 높이면 D1만 남아 TP1/FP=0/FN=1, P=1/R=0.5다. 정밀도 1은 ‘모든 물체를 찾았다’는 뜻이 아니다. 반대로 score=0.5를 유지하고 IoU 기준을 0.9로 높이면 D1만 공간 기준을 만족한다. D2/D3는 FP이고 G2는 FN이어서 TP1/FP=2/FN=1, P=1/3/R=0.5다. 위치 정밀도를 더 엄격히 보았기 때문에 결과가 달라진 것이다.",
+        "alt": "상자 IoU의 교집합/합집합. 보라색은 두 상자의 교집합이고 합집합은 두 영역을 중복 없이 합친 전체다. 별도 개념 상자이며 본문의 TP/FP 매칭 입력값을 대체하지 않는다. IoU 하나와 전체 검출 지표도 구별한다.",
+        "caption": "보라색은 두 상자의 교집합이고 합집합은 두 영역을 중복 없이 합친 전체다. 별도 개념 상자이며 본문의 TP/FP 매칭 입력값을 대체하지 않는다. IoU 하나와 전체 검출 지표도 구별한다. 직접 제작.",
+        "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"640\" height=\"480\" viewBox=\"0 0 640 480\" role=\"img\" aria-labelledby=\"title desc\"><title id=\"title\">IoU는 두 영역의 겹침 비율이다</title><desc id=\"desc\">두예측/정답상자의교집합과합집합을 구분한별도개념도.</desc><defs><marker id=\"a\" markerWidth=\"8\" markerHeight=\"8\" refX=\"7\" refY=\"4\" orient=\"auto\"><path d=\"M0 0L8 4L0 8Z\" fill=\"#52647b\"/></marker></defs><rect width=\"640\" height=\"480\" rx=\"20\" fill=\"#f5f8fc\"/><g font-family=\"sans-serif\" font-size=\"21\" fill=\"#17283e\"><text x=\"26\" y=\"40\" font-size=\"25\" font-weight=\"bold\">IoU는 두 영역의 겹침 비율이다</text><rect x=\"90\" y=\"130\" width=\"270\" height=\"220\" fill=\"#dbeafe\" stroke=\"#2563eb\" stroke-width=\"2\"/><rect x=\"230\" y=\"210\" width=\"270\" height=\"220\" fill=\"#ffedd5\" stroke=\"#d97706\" stroke-width=\"2\"/><rect x=\"230\" y=\"210\" width=\"130\" height=\"140\" fill=\"#c4b5fd\" stroke=\"#7c3aed\" stroke-width=\"2\"/><text x=\"108\" y=\"116\" font-size=\"21\">정답 영역 A</text><text x=\"365\" y=\"198\" font-size=\"21\">예측 영역 B</text><text x=\"244\" y=\"286\" font-size=\"21\">교집합</text><text x=\"50\" y=\"467\" font-size=\"21\">IoU = 교집합 면적 / 합집합 면적</text></g></svg>"
+      }
+    ],
+    "append": true
+  },
+  {
+    "topic": "M13.01",
+    "reason": "Voxel 안의 입력 점과 대표점는 공간/파형 관계를 직접 보아야 식의 기준과 적용 범위를 혼동하지 않으므로 도식을 추가한다. 제공된 식·본문 조건과 대조했다.",
+    "images": [
+      {
+        "name": "spatial",
+        "title": "Voxel 안의 입력 점과 대표점",
+        "after": "여기서는 모든 y/z key가0, 대표 y/z도0.02m다. ROI8점이6개 대표점으로 줄었다. 대표점은 두 관측의 요약일 수 있으며 새로 측정한 표면점이라고 단정하지 않는다. 한 셀에 서로 다른 표면이 들어오면 그 사이에 원래 없던 평균점이 생길 수도 있다. 다운샘플링은 계산량을 줄이지만 얇은 물체·경계·표본 수 정보를 잃을 수 있다.",
+        "alt": "Voxel 안의 입력 점과 대표점. 3D voxel의 아이디어를 보여 주는 별도 xy 단면도다. 파란 점들을 같은 셀끼리 묶어 주황 평균점으로 요약했다. 대표점은 센서가 그 위치를 직접 측정했다는 뜻이 아니며 본문 계산 표의 원본 점 집합과는 별개다.",
+        "caption": "3D voxel의 아이디어를 보여 주는 별도 xy 단면도다. 파란 점들을 같은 셀끼리 묶어 주황 평균점으로 요약했다. 대표점은 센서가 그 위치를 직접 측정했다는 뜻이 아니며 본문 계산 표의 원본 점 집합과는 별개다. 직접 제작.",
+        "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"640\" height=\"480\" viewBox=\"0 0 640 480\" role=\"img\" aria-labelledby=\"title desc\"><title id=\"title\">Voxel 대표점은 관측의 요약이다</title><desc id=\"desc\">2차원단면격자에 여러점과그중심요약점을표시.</desc><defs><marker id=\"a\" markerWidth=\"8\" markerHeight=\"8\" refX=\"7\" refY=\"4\" orient=\"auto\"><path d=\"M0 0L8 4L0 8Z\" fill=\"#52647b\"/></marker></defs><rect width=\"640\" height=\"480\" rx=\"20\" fill=\"#f5f8fc\"/><g font-family=\"sans-serif\" font-size=\"21\" fill=\"#17283e\"><text x=\"26\" y=\"40\" font-size=\"25\" font-weight=\"bold\">Voxel 대표점은 관측의 요약이다</text><line x1=\"100\" y1=\"100\" x2=\"100\" y2=\"400\" stroke=\"#bdcbdc\" stroke-width=\"3\"/><line x1=\"200\" y1=\"100\" x2=\"200\" y2=\"400\" stroke=\"#bdcbdc\" stroke-width=\"3\"/><line x1=\"300\" y1=\"100\" x2=\"300\" y2=\"400\" stroke=\"#bdcbdc\" stroke-width=\"3\"/><line x1=\"400\" y1=\"100\" x2=\"400\" y2=\"400\" stroke=\"#bdcbdc\" stroke-width=\"3\"/><line x1=\"500\" y1=\"100\" x2=\"500\" y2=\"400\" stroke=\"#bdcbdc\" stroke-width=\"3\"/><line x1=\"100\" y1=\"100\" x2=\"500\" y2=\"100\" stroke=\"#bdcbdc\" stroke-width=\"3\"/><line x1=\"100\" y1=\"200\" x2=\"500\" y2=\"200\" stroke=\"#bdcbdc\" stroke-width=\"3\"/><line x1=\"100\" y1=\"300\" x2=\"500\" y2=\"300\" stroke=\"#bdcbdc\" stroke-width=\"3\"/><line x1=\"100\" y1=\"400\" x2=\"500\" y2=\"400\" stroke=\"#bdcbdc\" stroke-width=\"3\"/><circle cx=\"130\" cy=\"330\" r=\"6\" fill=\"#2563eb\" fill-opacity=\"1\" stroke=\"#2563eb\"/><circle cx=\"170\" cy=\"320\" r=\"6\" fill=\"#2563eb\" fill-opacity=\"1\" stroke=\"#2563eb\"/><circle cx=\"155\" cy=\"370\" r=\"6\" fill=\"#2563eb\" fill-opacity=\"1\" stroke=\"#2563eb\"/><circle cx=\"225\" cy=\"250\" r=\"6\" fill=\"#2563eb\" fill-opacity=\"1\" stroke=\"#2563eb\"/><circle cx=\"260\" cy=\"240\" r=\"6\" fill=\"#2563eb\" fill-opacity=\"1\" stroke=\"#2563eb\"/><circle cx=\"445\" cy=\"145\" r=\"6\" fill=\"#2563eb\" fill-opacity=\"1\" stroke=\"#2563eb\"/><circle cx=\"465\" cy=\"170\" r=\"6\" fill=\"#2563eb\" fill-opacity=\"1\" stroke=\"#2563eb\"/><line x1=\"141.67\" y1=\"340\" x2=\"161.67\" y2=\"340\" stroke=\"#d97706\" stroke-width=\"4\"/><line x1=\"151.67\" y1=\"330\" x2=\"151.67\" y2=\"350\" stroke=\"#d97706\" stroke-width=\"4\"/><line x1=\"232.5\" y1=\"245\" x2=\"252.5\" y2=\"245\" stroke=\"#d97706\" stroke-width=\"4\"/><line x1=\"242.5\" y1=\"235\" x2=\"242.5\" y2=\"255\" stroke=\"#d97706\" stroke-width=\"4\"/><line x1=\"445\" y1=\"157.5\" x2=\"465\" y2=\"157.5\" stroke=\"#d97706\" stroke-width=\"4\"/><line x1=\"455\" y1=\"147.5\" x2=\"455\" y2=\"167.5\" stroke=\"#d97706\" stroke-width=\"4\"/><text x=\"85\" y=\"448\" font-size=\"20\">파랑: 입력 점 / 주황 +: 셀별 평균 대표점</text></g></svg>"
+      }
+    ],
+    "append": true
+  },
+  {
+    "topic": "M13.02",
+    "reason": "ICP의 대응점과 변환는 공간/파형 관계를 직접 보아야 식의 기준과 적용 범위를 혼동하지 않으므로 도식을 추가한다. 제공된 식·본문 조건과 대조했다.",
+    "images": [
+      {
+        "name": "spatial",
+        "title": "ICP의 대응점과 변환",
+        "after": "일반3D에서는 회전도 함께 추정한다. 다음 손계산은 과정을 보이기 위해 R=I로 고정하고 x이동 t만 찾는다. 모든 y/z는0m다. 이미 적용한 점을 다시 원본으로 착각하지 않도록 t는 항상 **원래 source에 적용하는 누적 이동**으로 적는다. 증분 이동으로 푸는 경우에는 현재 변환과 합성하는 규약을 따로 관리해야 한다.",
+        "alt": "ICP의 대응점과 변환. 동일한 모양을 평행 이동한 별도 2D 개념 점군이다. 현재 대응으로 변환을 갱신한 뒤 다시 대응을 찾는다. 점 번호의 일치·대응의 정확성이나 전역 수렴을 그림만으로 보장하지 않는다.",
+        "caption": "동일한 모양을 평행 이동한 별도 2D 개념 점군이다. 현재 대응으로 변환을 갱신한 뒤 다시 대응을 찾는다. 점 번호의 일치·대응의 정확성이나 전역 수렴을 그림만으로 보장하지 않는다. 직접 제작.",
+        "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"640\" height=\"480\" viewBox=\"0 0 640 480\" role=\"img\" aria-labelledby=\"title desc\"><title id=\"title\">대응과 변환 갱신은 다른 단계</title><desc id=\"desc\">서로이동된두점집합과현재최근접대응후보의점선.</desc><defs><marker id=\"a\" markerWidth=\"8\" markerHeight=\"8\" refX=\"7\" refY=\"4\" orient=\"auto\"><path d=\"M0 0L8 4L0 8Z\" fill=\"#52647b\"/></marker></defs><rect width=\"640\" height=\"480\" rx=\"20\" fill=\"#f5f8fc\"/><g font-family=\"sans-serif\" font-size=\"21\" fill=\"#17283e\"><text x=\"26\" y=\"40\" font-size=\"25\" font-weight=\"bold\">대응과 변환 갱신은 다른 단계</text><line x1=\"130\" y1=\"175\" x2=\"225\" y2=\"130\" stroke=\"#52647b\" stroke-width=\"3\" stroke-dasharray=\"7 6\"/><circle cx=\"130\" cy=\"175\" r=\"7\" fill=\"#2563eb\" fill-opacity=\"1\" stroke=\"#2563eb\"/><rect x=\"219\" y=\"124\" width=\"12\" height=\"12\" fill=\"#d97706\" stroke=\"#52647b\" stroke-width=\"2\"/><line x1=\"180\" y1=\"275\" x2=\"275\" y2=\"230\" stroke=\"#52647b\" stroke-width=\"3\" stroke-dasharray=\"7 6\"/><circle cx=\"180\" cy=\"275\" r=\"7\" fill=\"#2563eb\" fill-opacity=\"1\" stroke=\"#2563eb\"/><rect x=\"269\" y=\"224\" width=\"12\" height=\"12\" fill=\"#d97706\" stroke=\"#52647b\" stroke-width=\"2\"/><line x1=\"270\" y1=\"325\" x2=\"365\" y2=\"280\" stroke=\"#52647b\" stroke-width=\"3\" stroke-dasharray=\"7 6\"/><circle cx=\"270\" cy=\"325\" r=\"7\" fill=\"#2563eb\" fill-opacity=\"1\" stroke=\"#2563eb\"/><rect x=\"359\" y=\"274\" width=\"12\" height=\"12\" fill=\"#d97706\" stroke=\"#52647b\" stroke-width=\"2\"/><line x1=\"360\" y1=\"240\" x2=\"455\" y2=\"195\" stroke=\"#52647b\" stroke-width=\"3\" stroke-dasharray=\"7 6\"/><circle cx=\"360\" cy=\"240\" r=\"7\" fill=\"#2563eb\" fill-opacity=\"1\" stroke=\"#2563eb\"/><rect x=\"449\" y=\"189\" width=\"12\" height=\"12\" fill=\"#d97706\" stroke=\"#52647b\" stroke-width=\"2\"/><line x1=\"230\" y1=\"370\" x2=\"325\" y2=\"325\" stroke=\"#059669\" stroke-width=\"4\" marker-end=\"url(#a)\"/><text x=\"90\" y=\"100\" font-size=\"21\">파랑 원: source / 주황 사각: target</text><text x=\"60\" y=\"430\" font-size=\"19\">점선은 대응 후보: 같은 실제 표면의 증명은 아님</text></g></svg>"
+      }
+    ],
+    "append": true
+  },
+  {
+    "topic": "M13.04",
+    "reason": "3D 검출 상자의 기하는 공간/파형 관계를 직접 보아야 식의 기준과 적용 범위를 혼동하지 않으므로 도식을 추가한다. 제공된 식·본문 조건과 대조했다.",
+    "images": [
+      {
+        "name": "spatial",
+        "title": "3D 검출 상자의 기하",
+        "after": "Semantic Segmentation은 각 유효점에 도로·차량 등 의미 클래스를 붙인다. Instance Segmentation은 같은 차량 클래스 안에서도 서로 다른 차량을 구분한다. 점 A/B가 둘 다 차량이라는 출력만으로 서로 다른 두 차량의 ID를 알 수 없다. 검출 상자 하나에 배경 점이 들어갈 수 있고, 가려진 물체의 전체 크기는 관측된 점의 외곽보다 클 수 있다. 상자·표면 점·물체 실체를 구분한다.",
+        "alt": "3D 검출 상자의 기하. 별도 직육면체 개념도다. 점별 분할 라벨과 물체 단위의 중심·세 크기·방향을 구별한다. 원근 투영된 그림의 픽셀 길이로 실제 3D 크기/IoU를 계산하지 않는다.",
+        "caption": "별도 직육면체 개념도다. 점별 분할 라벨과 물체 단위의 중심·세 크기·방향을 구별한다. 원근 투영된 그림의 픽셀 길이로 실제 3D 크기/IoU를 계산하지 않는다. 직접 제작.",
+        "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"640\" height=\"480\" viewBox=\"0 0 640 480\" role=\"img\" aria-labelledby=\"title desc\"><title id=\"title\">3D 상자는 중심·크기·방향을 갖는다</title><desc id=\"desc\">같은기준에서보는3D상자의세축과앞뒤면.</desc><defs><marker id=\"a\" markerWidth=\"8\" markerHeight=\"8\" refX=\"7\" refY=\"4\" orient=\"auto\"><path d=\"M0 0L8 4L0 8Z\" fill=\"#52647b\"/></marker></defs><rect width=\"640\" height=\"480\" rx=\"20\" fill=\"#f5f8fc\"/><g font-family=\"sans-serif\" font-size=\"21\" fill=\"#17283e\"><text x=\"26\" y=\"40\" font-size=\"25\" font-weight=\"bold\">3D 상자는 중심·크기·방향을 갖는다</text><line x1=\"255\" y1=\"125\" x2=\"455\" y2=\"125\" stroke=\"#a5b4c8\" stroke-width=\"3\"/><line x1=\"455\" y1=\"125\" x2=\"455\" y2=\"285\" stroke=\"#a5b4c8\" stroke-width=\"3\"/><line x1=\"455\" y1=\"285\" x2=\"255\" y2=\"285\" stroke=\"#a5b4c8\" stroke-width=\"3\"/><line x1=\"255\" y1=\"285\" x2=\"255\" y2=\"125\" stroke=\"#a5b4c8\" stroke-width=\"3\"/><line x1=\"155\" y1=\"225\" x2=\"355\" y2=\"225\" stroke=\"#2563eb\" stroke-width=\"3\"/><line x1=\"355\" y1=\"225\" x2=\"355\" y2=\"385\" stroke=\"#2563eb\" stroke-width=\"3\"/><line x1=\"355\" y1=\"385\" x2=\"155\" y2=\"385\" stroke=\"#2563eb\" stroke-width=\"3\"/><line x1=\"155\" y1=\"385\" x2=\"155\" y2=\"225\" stroke=\"#2563eb\" stroke-width=\"3\"/><line x1=\"155\" y1=\"225\" x2=\"255\" y2=\"125\" stroke=\"#52647b\" stroke-width=\"3\"/><line x1=\"355\" y1=\"225\" x2=\"455\" y2=\"125\" stroke=\"#52647b\" stroke-width=\"3\"/><line x1=\"355\" y1=\"385\" x2=\"455\" y2=\"285\" stroke=\"#52647b\" stroke-width=\"3\"/><line x1=\"155\" y1=\"385\" x2=\"255\" y2=\"285\" stroke=\"#52647b\" stroke-width=\"3\"/><circle cx=\"305\" cy=\"255\" r=\"7\" fill=\"#d97706\" fill-opacity=\"1\" stroke=\"#d97706\"/><line x1=\"305\" y1=\"255\" x2=\"400\" y2=\"255\" stroke=\"#52647b\" stroke-width=\"3\" marker-end=\"url(#a)\"/><line x1=\"305\" y1=\"255\" x2=\"305\" y2=\"165\" stroke=\"#52647b\" stroke-width=\"3\" marker-end=\"url(#a)\"/><line x1=\"305\" y1=\"255\" x2=\"365\" y2=\"195\" stroke=\"#52647b\" stroke-width=\"3\" marker-end=\"url(#a)\"/><text x=\"412\" y=\"260\" font-size=\"21\">길이</text><text x=\"270\" y=\"150\" font-size=\"21\">높이</text><text x=\"375\" y=\"183\" font-size=\"21\">너비</text><text x=\"70\" y=\"439\" font-size=\"21\">원점·축·방향 규약을 고정한 뒤 상자 수치를 해석</text></g></svg>"
+      }
+    ],
+    "append": true
+  },
+  {
+    "topic": "M15.04",
+    "reason": "포즈 그래프의 루프 연결는 공간/파형 관계를 직접 보아야 식의 기준과 적용 범위를 혼동하지 않으므로 도식을 추가한다. 제공된 식·본문 조건과 대조했다.",
+    "images": [
+      {
+        "name": "spatial",
+        "title": "포즈 그래프의 루프 연결",
+        "after": "이를 식으로 쓰면 S(x_1)=(x_1−1)²+(0.8−x_1)²=2(x_1−0.9)²+0.02이므로 최소는 x_1=0.9 m다. 이 식은 좌표를 m 단위 수치로 넣은 표현이다. 수정 이동은 +0.9 m와 −0.9 m이고 끝점은 0이다. 모든 pose에 같은 −0.2 m를 더하는 것과 다르다. 전체를 평행 이동하면 시작도 −0.2 m로 바뀌고, 처음과 끝 사이의 0.2 m 차이는 여전히 남는다.",
+        "alt": "포즈 그래프의 루프 연결. 숫자는 시간 순서의 pose 노드다. 주황 점선은 마지막 관측과 과거 장소 사이에서 검증한 추가 제약을 뜻한다. 그림은 참 궤적/최적화 결과가 아니며 잘못된 루프도 생길 수 있다.",
+        "caption": "숫자는 시간 순서의 pose 노드다. 주황 점선은 마지막 관측과 과거 장소 사이에서 검증한 추가 제약을 뜻한다. 그림은 참 궤적/최적화 결과가 아니며 잘못된 루프도 생길 수 있다. 직접 제작.",
+        "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"640\" height=\"480\" viewBox=\"0 0 640 480\" role=\"img\" aria-labelledby=\"title desc\"><title id=\"title\">루프 폐쇄는 과거 pose와의 연결</title><desc id=\"desc\">순서대로이동한pose의연속간선과과거pose로가는추가루프제약.</desc><defs><marker id=\"a\" markerWidth=\"8\" markerHeight=\"8\" refX=\"7\" refY=\"4\" orient=\"auto\"><path d=\"M0 0L8 4L0 8Z\" fill=\"#52647b\"/></marker></defs><rect width=\"640\" height=\"480\" rx=\"20\" fill=\"#f5f8fc\"/><g font-family=\"sans-serif\" font-size=\"21\" fill=\"#17283e\"><text x=\"26\" y=\"40\" font-size=\"25\" font-weight=\"bold\">루프 폐쇄는 과거 pose와의 연결</text><line x1=\"130\" y1=\"330\" x2=\"300\" y2=\"375\" stroke=\"#52647b\" stroke-width=\"3\" marker-end=\"url(#a)\"/><line x1=\"300\" y1=\"375\" x2=\"495\" y2=\"290\" stroke=\"#52647b\" stroke-width=\"3\" marker-end=\"url(#a)\"/><line x1=\"495\" y1=\"290\" x2=\"465\" y2=\"140\" stroke=\"#52647b\" stroke-width=\"3\" marker-end=\"url(#a)\"/><line x1=\"465\" y1=\"140\" x2=\"265\" y2=\"110\" stroke=\"#52647b\" stroke-width=\"3\" marker-end=\"url(#a)\"/><line x1=\"265\" y1=\"110\" x2=\"155\" y2=\"195\" stroke=\"#52647b\" stroke-width=\"3\" marker-end=\"url(#a)\"/><line x1=\"155\" y1=\"195\" x2=\"130\" y2=\"330\" stroke=\"#d97706\" stroke-width=\"3\" marker-end=\"url(#a)\" stroke-dasharray=\"7 6\"/><circle cx=\"130\" cy=\"330\" r=\"17\" fill=\"#2563eb\" fill-opacity=\"1\" stroke=\"#2563eb\"/><text x=\"123\" y=\"337\" font-size=\"19\">0</text><circle cx=\"300\" cy=\"375\" r=\"17\" fill=\"#2563eb\" fill-opacity=\"1\" stroke=\"#2563eb\"/><text x=\"293\" y=\"382\" font-size=\"19\">1</text><circle cx=\"495\" cy=\"290\" r=\"17\" fill=\"#2563eb\" fill-opacity=\"1\" stroke=\"#2563eb\"/><text x=\"488\" y=\"297\" font-size=\"19\">2</text><circle cx=\"465\" cy=\"140\" r=\"17\" fill=\"#2563eb\" fill-opacity=\"1\" stroke=\"#2563eb\"/><text x=\"458\" y=\"147\" font-size=\"19\">3</text><circle cx=\"265\" cy=\"110\" r=\"17\" fill=\"#2563eb\" fill-opacity=\"1\" stroke=\"#2563eb\"/><text x=\"258\" y=\"117\" font-size=\"19\">4</text><circle cx=\"155\" cy=\"195\" r=\"17\" fill=\"#2563eb\" fill-opacity=\"1\" stroke=\"#2563eb\"/><text x=\"148\" y=\"202\" font-size=\"19\">5</text><text x=\"58\" y=\"435\" font-size=\"19\">파랑 간선: 연속 이동 / 주황 점선: 추가 루프 제약</text></g></svg>"
+      }
+    ],
+    "append": true
+  },
+  {
+    "topic": "M16.04",
+    "reason": "Factor graph의 변수와 제약는 공간/파형 관계를 직접 보아야 식의 기준과 적용 범위를 혼동하지 않으므로 도식을 추가한다. 제공된 식·본문 조건과 대조했다.",
+    "images": [
+      {
+        "name": "spatial",
+        "title": "Factor graph의 변수와 제약",
+        "after": "Pose Graph는 주로 시점별 pose를 변수로 두고 상대 이동·재방문 제약으로 묶는다. Bundle Adjustment(BA)는 카메라 pose와 3D 랜드마크 등을 함께 조정해 재투영 잔차를 줄인다. 관측 변수와 잔차가 다르므로 두 이름을 같은 알고리즘으로 읽지 않는다. 실제 시스템에는 관성·GPS·접촉 등 다른 factor도 들어갈 수 있다. 어떤 변수가 최적화되고 어떤 값이 고정됐는지 표로 적으면 구조를 읽기 쉽다.",
+        "alt": "Factor graph의 변수와 제약. 원은 추정 변수, 사각형은 연결한 변수에 대한 잔차/불확실성 factor다. 첫 변수의 prior는 좌표 기준을 고정하는 한 예다. 실제 pose/랜드마크·bias 그래프는 사용 모형에 따라 다르다.",
+        "caption": "원은 추정 변수, 사각형은 연결한 변수에 대한 잔차/불확실성 factor다. 첫 변수의 prior는 좌표 기준을 고정하는 한 예다. 실제 pose/랜드마크·bias 그래프는 사용 모형에 따라 다르다. 직접 제작.",
+        "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"640\" height=\"480\" viewBox=\"0 0 640 480\" role=\"img\" aria-labelledby=\"title desc\"><title id=\"title\">변수 노드와 factor의 연결</title><desc id=\"desc\">세pose변수원과중간의제약사각형,첫pose에대한prior.</desc><defs><marker id=\"a\" markerWidth=\"8\" markerHeight=\"8\" refX=\"7\" refY=\"4\" orient=\"auto\"><path d=\"M0 0L8 4L0 8Z\" fill=\"#52647b\"/></marker></defs><rect width=\"640\" height=\"480\" rx=\"20\" fill=\"#f5f8fc\"/><g font-family=\"sans-serif\" font-size=\"21\" fill=\"#17283e\"><text x=\"26\" y=\"40\" font-size=\"25\" font-weight=\"bold\">변수 노드와 factor의 연결</text><circle cx=\"110\" cy=\"255\" r=\"27\" fill=\"#dbeafe\" fill-opacity=\"1\" stroke=\"#dbeafe\"/><text x=\"93\" y=\"262\" font-size=\"21\">x1</text><circle cx=\"320\" cy=\"255\" r=\"27\" fill=\"#dbeafe\" fill-opacity=\"1\" stroke=\"#dbeafe\"/><text x=\"303\" y=\"262\" font-size=\"21\">x2</text><circle cx=\"530\" cy=\"255\" r=\"27\" fill=\"#dbeafe\" fill-opacity=\"1\" stroke=\"#dbeafe\"/><text x=\"513\" y=\"262\" font-size=\"21\">x3</text><line x1=\"137\" y1=\"255\" x2=\"200\" y2=\"255\" stroke=\"#52647b\" stroke-width=\"3\"/><line x1=\"230\" y1=\"255\" x2=\"293\" y2=\"255\" stroke=\"#52647b\" stroke-width=\"3\"/><rect x=\"200\" y=\"240\" width=\"30\" height=\"30\" fill=\"#fde68a\" stroke=\"#52647b\" stroke-width=\"2\"/><text x=\"195\" y=\"306\" font-size=\"21\">f1</text><line x1=\"347\" y1=\"255\" x2=\"410\" y2=\"255\" stroke=\"#52647b\" stroke-width=\"3\"/><line x1=\"440\" y1=\"255\" x2=\"503\" y2=\"255\" stroke=\"#52647b\" stroke-width=\"3\"/><rect x=\"410\" y=\"240\" width=\"30\" height=\"30\" fill=\"#fde68a\" stroke=\"#52647b\" stroke-width=\"2\"/><text x=\"405\" y=\"306\" font-size=\"21\">f2</text><rect x=\"95\" y=\"125\" width=\"30\" height=\"30\" fill=\"#fde68a\" stroke=\"#52647b\" stroke-width=\"2\"/><line x1=\"110\" y1=\"155\" x2=\"110\" y2=\"227\" stroke=\"#52647b\" stroke-width=\"3\"/><text x=\"132\" y=\"150\" font-size=\"21\">prior</text><text x=\"60\" y=\"405\" font-size=\"21\">원: 추정 변수 / 사각형: 잔차·불확실성의 제약</text><text x=\"60\" y=\"446\" font-size=\"19\">prior는 기준 고정의 한 예: 실제 변수/인자는 모형별</text></g></svg>"
+      }
+    ],
+    "append": true
+  },
+  {
+    "topic": "M17.03",
+    "reason": "로드맵의 점과 간선는 공간/파형 관계를 직접 보아야 식의 기준과 적용 범위를 혼동하지 않으므로 도식을 추가한다. 제공된 식·본문 조건과 대조했다.",
+    "images": [
+      {
+        "name": "spatial",
+        "title": "로드맵의 점과 간선",
+        "after": "샘플이 모두 자유 공간에 있어도 ρ=1.5 m로 줄이면 A-B가 너무 멀어 후보에서 빠진다. S-A와 B-G 두 조각만 남아 그래프가 끊긴다. 공간에 우회가 없어진 것이 아니라 연결 규칙과 현재 샘플로 그 우회를 표현하지 못한 것이다. 'PRM 실패'를 실제 경로 부재의 증명으로 쓰면 안 되는 이유다.",
+        "alt": "로드맵의 점과 간선. 별도 평면 점 configuration 개념도다. 자유 노드라도 그 사이 간선이 장애물과 충돌할 수 있다. 회색은 이미 로봇 크기를 반영했다고 가정한 금지 영역이며 본문 수치 입력을 대체하지 않는다.",
+        "caption": "별도 평면 점 configuration 개념도다. 자유 노드라도 그 사이 간선이 장애물과 충돌할 수 있다. 회색은 이미 로봇 크기를 반영했다고 가정한 금지 영역이며 본문 수치 입력을 대체하지 않는다. 직접 제작.",
+        "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"640\" height=\"480\" viewBox=\"0 0 640 480\" role=\"img\" aria-labelledby=\"title desc\"><title id=\"title\">PRM의 노드와 검증된 간선</title><desc id=\"desc\">장애물바깥샘플과검증된연결을표시한평면개념도.</desc><defs><marker id=\"a\" markerWidth=\"8\" markerHeight=\"8\" refX=\"7\" refY=\"4\" orient=\"auto\"><path d=\"M0 0L8 4L0 8Z\" fill=\"#52647b\"/></marker></defs><rect width=\"640\" height=\"480\" rx=\"20\" fill=\"#f5f8fc\"/><g font-family=\"sans-serif\" font-size=\"21\" fill=\"#17283e\"><text x=\"26\" y=\"40\" font-size=\"25\" font-weight=\"bold\">PRM의 노드와 검증된 간선</text><rect x=\"270\" y=\"160\" width=\"110\" height=\"185\" fill=\"#cbd5e1\" stroke=\"#52647b\" stroke-width=\"2\"/><line x1=\"90\" y1=\"330\" x2=\"130\" y2=\"160\" stroke=\"#2563eb\" stroke-width=\"3\"/><line x1=\"130\" y1=\"160\" x2=\"230\" y2=\"100\" stroke=\"#2563eb\" stroke-width=\"3\"/><line x1=\"230\" y1=\"100\" x2=\"450\" y2=\"105\" stroke=\"#2563eb\" stroke-width=\"3\"/><line x1=\"450\" y1=\"105\" x2=\"545\" y2=\"235\" stroke=\"#2563eb\" stroke-width=\"3\"/><line x1=\"545\" y1=\"235\" x2=\"480\" y2=\"390\" stroke=\"#2563eb\" stroke-width=\"3\"/><line x1=\"90\" y1=\"330\" x2=\"230\" y2=\"405\" stroke=\"#2563eb\" stroke-width=\"3\"/><line x1=\"230\" y1=\"405\" x2=\"480\" y2=\"390\" stroke=\"#2563eb\" stroke-width=\"3\"/><circle cx=\"90\" cy=\"330\" r=\"9\" fill=\"#059669\" fill-opacity=\"1\" stroke=\"#059669\"/><circle cx=\"130\" cy=\"160\" r=\"9\" fill=\"#2563eb\" fill-opacity=\"1\" stroke=\"#2563eb\"/><circle cx=\"230\" cy=\"100\" r=\"9\" fill=\"#2563eb\" fill-opacity=\"1\" stroke=\"#2563eb\"/><circle cx=\"450\" cy=\"105\" r=\"9\" fill=\"#2563eb\" fill-opacity=\"1\" stroke=\"#2563eb\"/><circle cx=\"545\" cy=\"235\" r=\"9\" fill=\"#2563eb\" fill-opacity=\"1\" stroke=\"#2563eb\"/><circle cx=\"480\" cy=\"390\" r=\"9\" fill=\"#2563eb\" fill-opacity=\"1\" stroke=\"#2563eb\"/><circle cx=\"230\" cy=\"405\" r=\"9\" fill=\"#2563eb\" fill-opacity=\"1\" stroke=\"#2563eb\"/><line x1=\"90\" y1=\"330\" x2=\"545\" y2=\"235\" stroke=\"#dc2626\" stroke-width=\"3\" stroke-dasharray=\"7 6\"/><text x=\"45\" y=\"450\" font-size=\"20\">빨강 점선: 장애물과 만나 제외할 연결</text></g></svg>"
+      }
+    ],
+    "append": true
+  },
+  {
+    "topic": "M17.04",
+    "reason": "RRT의 트리 확장는 공간/파형 관계를 직접 보아야 식의 기준과 적용 범위를 혼동하지 않으므로 도식을 추가한다. 제공된 식·본문 조건과 대조했다.",
+    "images": [
+      {
+        "name": "spatial",
+        "title": "RRT의 트리 확장",
+        "after": "한 확장 거부는 전체 경로 부재가 아니다. 다른 표본을 통해 장애물 둘레로 자랄 수 있다. 반대로 자유 끝점이 많더라도 국소 연결이 계속 충돌하거나 유효한 좁은 통로를 샘플링하지 못하면 제한 시간 내에 해를 찾지 못할 수 있다. 예산 초과·충돌 거부·잘못된 시작과 목표를 별도 상태로 기록한다.",
+        "alt": "RRT의 트리 확장. 시작점에서 이미 연결된 트리를 확장하는 별도 점 모델 개념도다. 주황 확장 후보도 연결 구간 검사를 거쳐야 한다. 일반 차량의 조향/동역학을 직선 연결로 대체한 모델은 아니다.",
+        "caption": "시작점에서 이미 연결된 트리를 확장하는 별도 점 모델 개념도다. 주황 확장 후보도 연결 구간 검사를 거쳐야 한다. 일반 차량의 조향/동역학을 직선 연결로 대체한 모델은 아니다. 직접 제작.",
+        "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"640\" height=\"480\" viewBox=\"0 0 640 480\" role=\"img\" aria-labelledby=\"title desc\"><title id=\"title\">RRT의 연결된 확장</title><desc id=\"desc\">장애물바깥샘플과검증된연결을표시한평면개념도.</desc><defs><marker id=\"a\" markerWidth=\"8\" markerHeight=\"8\" refX=\"7\" refY=\"4\" orient=\"auto\"><path d=\"M0 0L8 4L0 8Z\" fill=\"#52647b\"/></marker></defs><rect width=\"640\" height=\"480\" rx=\"20\" fill=\"#f5f8fc\"/><g font-family=\"sans-serif\" font-size=\"21\" fill=\"#17283e\"><text x=\"26\" y=\"40\" font-size=\"25\" font-weight=\"bold\">RRT의 연결된 확장</text><rect x=\"270\" y=\"160\" width=\"110\" height=\"185\" fill=\"#cbd5e1\" stroke=\"#52647b\" stroke-width=\"2\"/><line x1=\"90\" y1=\"330\" x2=\"130\" y2=\"160\" stroke=\"#2563eb\" stroke-width=\"3\" marker-end=\"url(#a)\"/><line x1=\"130\" y1=\"160\" x2=\"230\" y2=\"100\" stroke=\"#2563eb\" stroke-width=\"3\" marker-end=\"url(#a)\"/><line x1=\"230\" y1=\"100\" x2=\"450\" y2=\"105\" stroke=\"#2563eb\" stroke-width=\"3\" marker-end=\"url(#a)\"/><line x1=\"450\" y1=\"105\" x2=\"545\" y2=\"235\" stroke=\"#2563eb\" stroke-width=\"3\" marker-end=\"url(#a)\"/><line x1=\"90\" y1=\"330\" x2=\"230\" y2=\"405\" stroke=\"#2563eb\" stroke-width=\"3\" marker-end=\"url(#a)\"/><circle cx=\"90\" cy=\"330\" r=\"9\" fill=\"#059669\" fill-opacity=\"1\" stroke=\"#059669\"/><circle cx=\"130\" cy=\"160\" r=\"9\" fill=\"#2563eb\" fill-opacity=\"1\" stroke=\"#2563eb\"/><circle cx=\"230\" cy=\"100\" r=\"9\" fill=\"#2563eb\" fill-opacity=\"1\" stroke=\"#2563eb\"/><circle cx=\"450\" cy=\"105\" r=\"9\" fill=\"#2563eb\" fill-opacity=\"1\" stroke=\"#2563eb\"/><circle cx=\"545\" cy=\"235\" r=\"9\" fill=\"#2563eb\" fill-opacity=\"1\" stroke=\"#2563eb\"/><circle cx=\"480\" cy=\"390\" r=\"9\" fill=\"#2563eb\" fill-opacity=\"1\" stroke=\"#2563eb\"/><circle cx=\"230\" cy=\"405\" r=\"9\" fill=\"#2563eb\" fill-opacity=\"1\" stroke=\"#2563eb\"/><circle cx=\"480\" cy=\"390\" r=\"11\" fill=\"#d97706\" fill-opacity=\"1\" stroke=\"#d97706\"/><line x1=\"545\" y1=\"235\" x2=\"510\" y2=\"320\" stroke=\"#d97706\" stroke-width=\"3\" marker-end=\"url(#a)\"/><text x=\"392\" y=\"445\" font-size=\"21\">주황: 확장 후보</text></g></svg>"
+      }
+    ],
+    "append": true
+  },
+  {
+    "topic": "M06.06",
+    "reason": "직렬 사슬과 달라지는 병렬 연결는 공간/파형 관계를 직접 보아야 식의 기준과 적용 범위를 혼동하지 않으므로 도식을 추가한다. 제공된 식·본문 조건과 대조했다.",
+    "images": [
+      {
+        "name": "spatial",
+        "title": "직렬 사슬과 달라지는 병렬 연결",
+        "after": "합성 후보에서 p=(0,0,−0.2) m, b_j=0, a_j=(0.1,0,0) m, L_j=0.2 m라면 왼쪽은 0.1²+0.2²=0.05 m², 오른쪽은 0.04 m²다. 이 다리의 거리 조건부터 어겨 후보를 제외한다. 플랫폼 중심이 그럴듯해 보인다는 이유로 다른 연결을 무시할 수 없다. 한 조건을 만족해도 나머지 다리와 수동 관절·플랫폼 자세·특이점·충돌 조건이 남는다. 이 축약식은 실제 델타 전체의 해석 모델을 대체하지 않는다.",
+        "alt": "직렬 사슬과 달라지는 병렬 연결. 직렬 팔은 베이스에서 말단으로 하나의 사슬을 따른다. 이 델타 연결 개념도는 세 다리가 같은 플랫폼을 함께 제약하는 차이를 보인다. 초록 이중선은 평행한 하부 링크 쌍의 역할을 나타내며 실제 3D 배치/관절 축/치수·운동 해를 정하는 도면은 아니다.",
+        "caption": "직렬 팔은 베이스에서 말단으로 하나의 사슬을 따른다. 이 델타 연결 개념도는 세 다리가 같은 플랫폼을 함께 제약하는 차이를 보인다. 초록 이중선은 평행한 하부 링크 쌍의 역할을 나타내며 실제 3D 배치/관절 축/치수·운동 해를 정하는 도면은 아니다. 직접 제작.",
+        "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"640\" height=\"480\" viewBox=\"0 0 640 480\" role=\"img\" aria-labelledby=\"title desc\"><title id=\"title\">세 다리가 같은 플랫폼을 연결</title><desc id=\"desc\">위상만보는델타병렬연결도.세베이스점에서세다리가작은플랫폼을연결.</desc><defs><marker id=\"a\" markerWidth=\"8\" markerHeight=\"8\" refX=\"7\" refY=\"4\" orient=\"auto\"><path d=\"M0 0L8 4L0 8Z\" fill=\"#52647b\"/></marker></defs><rect width=\"640\" height=\"480\" rx=\"20\" fill=\"#f5f8fc\"/><g font-family=\"sans-serif\" font-size=\"21\" fill=\"#17283e\"><text x=\"26\" y=\"40\" font-size=\"25\" font-weight=\"bold\">세 다리가 같은 플랫폼을 연결</text><line x1=\"120\" y1=\"120\" x2=\"520\" y2=\"120\" stroke=\"#17283e\" stroke-width=\"12\"/><circle cx=\"160\" cy=\"120\" r=\"11\" fill=\"#17283e\" fill-opacity=\"1\" stroke=\"#17283e\"/><line x1=\"160\" y1=\"120\" x2=\"140\" y2=\"235\" stroke=\"#2563eb\" stroke-width=\"7\"/><circle cx=\"140\" cy=\"235\" r=\"8\" fill=\"#17283e\" fill-opacity=\"1\" stroke=\"#17283e\"/><line x1=\"135\" y1=\"235\" x2=\"270\" y2=\"360\" stroke=\"#059669\" stroke-width=\"3\"/><line x1=\"145\" y1=\"235\" x2=\"280\" y2=\"360\" stroke=\"#059669\" stroke-width=\"3\"/><circle cx=\"320\" cy=\"120\" r=\"11\" fill=\"#17283e\" fill-opacity=\"1\" stroke=\"#17283e\"/><line x1=\"320\" y1=\"120\" x2=\"320\" y2=\"220\" stroke=\"#2563eb\" stroke-width=\"7\"/><circle cx=\"320\" cy=\"220\" r=\"8\" fill=\"#17283e\" fill-opacity=\"1\" stroke=\"#17283e\"/><line x1=\"315\" y1=\"220\" x2=\"315\" y2=\"340\" stroke=\"#059669\" stroke-width=\"3\"/><line x1=\"325\" y1=\"220\" x2=\"325\" y2=\"340\" stroke=\"#059669\" stroke-width=\"3\"/><circle cx=\"480\" cy=\"120\" r=\"11\" fill=\"#17283e\" fill-opacity=\"1\" stroke=\"#17283e\"/><line x1=\"480\" y1=\"120\" x2=\"500\" y2=\"235\" stroke=\"#2563eb\" stroke-width=\"7\"/><circle cx=\"500\" cy=\"235\" r=\"8\" fill=\"#17283e\" fill-opacity=\"1\" stroke=\"#17283e\"/><line x1=\"495\" y1=\"235\" x2=\"360\" y2=\"360\" stroke=\"#059669\" stroke-width=\"3\"/><line x1=\"505\" y1=\"235\" x2=\"370\" y2=\"360\" stroke=\"#059669\" stroke-width=\"3\"/><path d=\"M275 360 L320 340 L365 360 L320 380Z\" fill=\"#dbeafe\" stroke=\"#2563eb\" stroke-width=\"3\"/><text x=\"230\" y=\"92\" font-size=\"21\">공통 고정 베이스</text><text x=\"350\" y=\"407\" font-size=\"21\">움직이는 플랫폼</text><text x=\"52\" y=\"453\" font-size=\"19\">연결 위상만 표현: 축·길이·원근·운동학은 미표시</text></g></svg>"
+      }
+    ],
+    "append": true
+  }
+]

@@ -2,23 +2,23 @@
   "schemaVersion": 1,
   "topics": {
     "M26.01": {
-      "sourceSha256": "fdb0154066c6f009d8b340e607ec632a38d70ab05413a7529b92422da8769ada",
+      "sourceSha256": "766f77360115b6a0518568150221b20126fba62e96fd257a55a92b238e5e955a",
       "evidenceRef": "doc/v2/work_items/M26.01.md"
     },
     "M26.02": {
-      "sourceSha256": "23074e8eb53fbe5aabcf97ac9eaaa56510fb190cb3bb456adb38c96dbc8e423a",
+      "sourceSha256": "e915ccb2579489b3343aa160d8ab5784053e8b14a5dbf447d65516f52ba4317b",
       "evidenceRef": "doc/v2/work_items/M26.02.md"
     },
     "M26.03": {
-      "sourceSha256": "04f8a34e2b678faabd22b1882e77cd0191fd4b963ecc7be88c3411a4de080c46",
+      "sourceSha256": "8f7be2bc6ee5b0e80560f37bc891d1f1573aad4d891bac0cacc2c5fd5f8d4aa0",
       "evidenceRef": "doc/v2/work_items/M26.03.md"
     },
     "M26.04": {
-      "sourceSha256": "482638a24852a6398321148eceed94a60f408884a8430d877c3a43490ff10621",
+      "sourceSha256": "4960fd1b750e89f8afeac9266dac03769e0f4959768ed190511135b21eb946f6",
       "evidenceRef": "doc/v2/work_items/M26.04.md"
     },
     "M26.05": {
-      "sourceSha256": "c449eeb1f861c42cb8ac4462662d02eee056123d8deb697e0bdcebe1caba31e1",
+      "sourceSha256": "0a7817a30ea49a2c35f4b6690f022124f017a7cf3e8d2f5e37e1d781f5ebe343",
       "evidenceRef": "doc/v2/work_items/M26.05.md"
     },
     "M26.06": {
