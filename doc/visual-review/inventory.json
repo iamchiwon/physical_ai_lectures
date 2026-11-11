@@ -906,8 +906,12 @@
       "evidence": "doc/visual-review/units/M09.04.md"
     },
     "M09.05": {
-      "status": "pending",
-      "source": "ebook/curriculum/M09/M09.05.md"
+      "status": "reviewed",
+      "source": "ebook/curriculum/M09/M09.05.md",
+      "sourceSha256": "4468cbdf9c4c785bfec1ebdf0c7336be3f74d7f86d271807aa5941d8695a7ab3",
+      "reason": "본문의 「명령과 적용·이동을 다른 기록으로 남긴다」부터 「bag에 무엇을 담았는지 확인한다」까지 시각 참조/입력 조건을 점검했다. 제공 표·명시된 코드/설정·정의와 수치/판정 절차가 글 안에서 주어지고 특정 미제공 사진/그림의 식별에 의존하지 않아 이번에는 이미지를 추가하지 않는다. 공간 구조의 세부 설명은 연결된 선수 단위의 그림과 함께 읽는다.",
+      "assets": [],
+      "evidence": "doc/visual-review/units/M09.05.md"
     },
     "M09.06": {
       "status": "pending",
