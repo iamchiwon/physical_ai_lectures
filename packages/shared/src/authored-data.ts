@@ -2363,7 +2363,7 @@ export const authoredMetadata: AuthoredMetadata[] = [
       "거리/가림·매칭/문턱에 따른 실패를 진단한다."
     ],
     "prerequisiteNote": "M13.03의 개념을 사용한다. 필요한 새 용어·기호는 본문에서 정의한다. 일반 코딩 문법/실제 장비 설치를 요구하지 않으며 합성 자료로 기본 경로를 수행한다.",
-    "sha256": "f7a646dbaf4ed15b544b7ac4f97db6136bcbf8e68b350e19ba697a74a32e490f",
+    "sha256": "ca17e46f21ab26f12a42027fcc4501b3b365a87c2e406dcf8040f8412311b7e7",
     "reviewed": true,
     "evidenceRef": "doc/v2/work_items/M13.04.md"
   },
