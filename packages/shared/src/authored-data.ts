@@ -725,7 +725,7 @@ export const authoredMetadata: AuthoredMetadata[] = [
       "수렴·작은 잔차와 올바른 정합을 구분하고 반복 무늬·기하 제약·중첩을 함께 평가한다."
     ],
     "prerequisiteNote": "M13.01의 프레임·단위·전처리와 그 선수 좌표/최소제곱을 사용한다. 회전 기호와 역변환은 본문에서 보충한다. 일반 코딩·문법, PCL/Open3D 설치나 실제 SLAM 실행은 요구하지 않으며 작은 합성 좌표를 계산한다.",
-    "sha256": "9030007651d4ad13e01186a18c336cb5b84a264909e9b606bf268c3d76effa8b",
+    "sha256": "162cdd47238154aaa42c037865fffa86d828b736b8eb3cd9a0595191cbae89ce",
     "reviewed": true,
     "evidenceRef": "doc/v2/work_items/M13.02.md"
   },

@@ -1214,8 +1214,22 @@
       "evidence": "doc/visual-review/units/M13.01.md"
     },
     "M13.02": {
-      "status": "pending",
-      "source": "ebook/curriculum/M13/M13.02.md"
+      "status": "reviewed",
+      "source": "ebook/curriculum/M13/M13.02.md",
+      "sourceSha256": "162cdd47238154aaa42c037865fffa86d828b736b8eb3cd9a0595191cbae89ce",
+      "reason": "ICP의 두 가지 반복의 연결/구분은 글만으로 단계나 경계를 혼동하기 쉬워 설명 도식을 추가한다. 본문의 표·수치·문제 조건도 대조한다.",
+      "assets": [
+        {
+          "path": "apps/web/public/textbook-visuals/M13.02-concept.svg",
+          "sha256": "15b5469643bd2be4886500473408e97c2fe00b39722108af8be1a929a7dfc73b",
+          "method": "original-svg",
+          "model": null,
+          "prompt": null,
+          "alt": "ICP의 두 가지 반복: 현재 변환으로 원본 정렬 → 대응 후보 선택 → 변환/잔차 갱신 → 다음 반복/판정.",
+          "caption": "반복의 마지막 결과로 원본 점을 다시 변환하여 대응을 새로 찾는다. 도식의 되돌림은 새 센서 취득이 아니라 같은 입력 점군에 대한 계산 반복이다. 낮은 잔차만으로 올바른 정합을 보장하지 않는다. 직접 제작."
+        }
+      ],
+      "evidence": "doc/visual-review/units/M13.02.md"
     },
     "M13.03": {
       "status": "pending",
