@@ -2014,8 +2014,22 @@
       "evidence": "doc/visual-review/units/M21.03.md"
     },
     "M21.04": {
-      "status": "pending",
-      "source": "ebook/curriculum/M21/M21.04.md"
+      "status": "reviewed",
+      "source": "ebook/curriculum/M21/M21.04.md",
+      "sourceSha256": "b894c92115150f11a7c7a093947817a299e8c4025d238873df4d88061785b86d",
+      "reason": "생성과 실행 가능성은 별개의 연결/구분은 글만으로 단계나 경계를 혼동하기 쉬워 설명 도식을 추가한다. 본문의 표·수치·문제 조건도 대조한다.",
+      "assets": [
+        {
+          "path": "apps/web/public/textbook-visuals/M21.04-concept.svg",
+          "sha256": "de60020b13ad21a60dc1c8bae10ffaa07a41a0a8bde5aa8f2bf036e48f9af21a",
+          "method": "original-svg",
+          "model": null,
+          "prompt": null,
+          "alt": "생성과 실행 가능성은 별개: 관측 조건 → 행동 시퀀스 생성 → 물리 계약으로 변환 → 제약/결과 검사.",
+          "caption": "각 칸은 서로 다른 역할/근거다. 아래 방향은 자료/처리의 연결이며 실제 성공을 자동으로 보장하지 않는다. 직접 제작한 개념도이며 본문의 조건과 함께 읽는다."
+        }
+      ],
+      "evidence": "doc/visual-review/units/M21.04.md"
     },
     "M21.05": {
       "status": "pending",

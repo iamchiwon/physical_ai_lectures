@@ -2531,7 +2531,7 @@ export const authoredMetadata: AuthoredMetadata[] = [
       "Motion Manifold Primitives의 경로 집합/잠재·대칭 개념을 설명하고 경로 보간·실행 제약의 반례를 계산한다."
     ],
     "prerequisiteNote": "M11의 신경망/확률과 M21.01~03의 다중 행동 모드·표현/정규화·chunk가 선수다. 생성 반복·경로 family/다양체 개념은 본문에서 보충한다. 기본은 합성 스칼라/곡선·시간 계산이며 Diffusion/EMMP 모델 학습·추론이나 GPU/로봇을 실행하지 않는다.",
-    "sha256": "1c0f0e9a1172b81bc03744b2ad0c18812dcc2572e391b71ac7328be6480e21a4",
+    "sha256": "b894c92115150f11a7c7a093947817a299e8c4025d238873df4d88061785b86d",
     "reviewed": true,
     "evidenceRef": "doc/v2/work_items/M21.04.md"
   },
