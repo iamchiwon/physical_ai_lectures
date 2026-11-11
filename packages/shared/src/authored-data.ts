@@ -1061,7 +1061,7 @@ export const authoredMetadata: AuthoredMetadata[] = [
       "전제 재확인·중단·재시도와 waypoint 작업의 실제 성과에 필요한 근거를 설계한다."
     ],
     "prerequisiteNote": "M05의 Action과 M18의 서버·복구를 연결한다. BT 실행 상태, leaf, blackboard, waypoint 작업과 목표 ID를 본문에서 보충한다. 기본은 완전한 합성 사건표이며 실제 BT·Action·ROS·장비 실행은 없다.",
-    "sha256": "33ffae8b4acab542a19d9b3c51a5c347eba78faaee43d657aa61093c6b275bee",
+    "sha256": "0a8a15e722f5b4bc0b2a354b7ec8e39a7ab26544bdaa938d0810c6b8a4e28624",
     "reviewed": true,
     "evidenceRef": "doc/v2/work_items/M18.04.md"
   },
