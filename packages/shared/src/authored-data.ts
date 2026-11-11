@@ -1019,7 +1019,7 @@ export const authoredMetadata: AuthoredMetadata[] = [
       "합성 상태·시각·TF 로그로 준비 실패와 실행·도착 미상을 구분한다."
     ],
     "prerequisiteNote": "M05의 통신·Lifecycle, M09의 구동·시간, M15의 위치·지도와 M17의 계획을 연결한다. 서버·plugin·costmap·BT의 역할을 본문에서 보충한다. 기준은 Jazzy/Ubuntu 24.04이며 기본은 합성 로그 분석이다. 실제 Nav2·ROS·로봇 실행은 없다.",
-    "sha256": "1d0b2e4b75d89efd853b8732bb601763606221685a0ca99d16af532f9a9690ce",
+    "sha256": "7d45098853105caa09025e72d122219a1abd4bea06cee49ce418962f8d26d921",
     "reviewed": true,
     "evidenceRef": "doc/v2/work_items/M18.01.md"
   },

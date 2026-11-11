@@ -1686,8 +1686,22 @@
       "evidence": "doc/visual-review/units/M17.06.md"
     },
     "M18.01": {
-      "status": "pending",
-      "source": "ebook/curriculum/M18/M18.01.md"
+      "status": "reviewed",
+      "source": "ebook/curriculum/M18/M18.01.md",
+      "sourceSha256": "7d45098853105caa09025e72d122219a1abd4bea06cee49ce418962f8d26d921",
+      "reason": "Nav2의 역할을 연결해 읽기의 연결/구분은 글만으로 단계나 경계를 혼동하기 쉬워 설명 도식을 추가한다. 본문의 표·수치·문제 조건도 대조한다.",
+      "assets": [
+        {
+          "path": "apps/web/public/textbook-visuals/M18.01-concept.svg",
+          "sha256": "748337fb0437538787863f119e9dfa6a619bec0a3b7599599c08fd43bd15a8e8",
+          "method": "original-svg",
+          "model": null,
+          "prompt": null,
+          "alt": "Nav2의 역할을 연결해 읽기: 위치/지도·관측 → Planner Server → Controller Server → Lifecycle/감독.",
+          "caption": "각 칸은 서로 다른 역할/근거다. 아래 방향은 자료/처리의 연결이며 실제 성공을 자동으로 보장하지 않는다. 직접 제작한 개념도이며 본문의 조건과 함께 읽는다."
+        }
+      ],
+      "evidence": "doc/visual-review/units/M18.01.md"
     },
     "M18.02": {
       "status": "pending",
