@@ -1934,8 +1934,12 @@
       "evidence": "doc/visual-review/units/M20.04.md"
     },
     "M20.05": {
-      "status": "pending",
-      "source": "ebook/curriculum/M20/M20.05.md"
+      "status": "reviewed",
+      "source": "ebook/curriculum/M20/M20.05.md",
+      "sourceSha256": "f251bdd83b61738d722f8aabae0b5ce4913afd5d95702ba60a1865bda1094f59",
+      "reason": "본문의 「재생 도구가 검사 기준을 대신하지 않는다」부터 「격리 목록은 결함을 지우는 대신 설명한다」까지 시각 참조/입력 조건을 점검했다. 제공 표·정의와 수치/판정 절차가 글 안에서 주어지고 특정 미제공 사진/그림의 식별에 의존하지 않아 이번에는 이미지를 추가하지 않는다. 공간 구조의 세부 설명은 연결된 선수 단위의 그림과 함께 읽는다.",
+      "assets": [],
+      "evidence": "doc/visual-review/units/M20.05.md"
     },
     "M20.06": {
       "status": "pending",
