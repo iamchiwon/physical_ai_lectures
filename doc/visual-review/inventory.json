@@ -1766,8 +1766,22 @@
       "evidence": "doc/visual-review/units/M18.05.md"
     },
     "M18.06": {
-      "status": "pending",
-      "source": "ebook/curriculum/M18/M18.06.md"
+      "status": "reviewed",
+      "source": "ebook/curriculum/M18/M18.06.md",
+      "sourceSha256": "3c3a08527d346bc8698ff206624185e2a9f87aaa1ab7efb5cb90e35d09874c62",
+      "reason": "이동과 조작 사이의 인계의 연결/구분은 글만으로 단계나 경계를 혼동하기 쉬워 설명 도식을 추가한다. 본문의 표·수치·문제 조건도 대조한다.",
+      "assets": [
+        {
+          "path": "apps/web/public/textbook-visuals/M18.06-concept.svg",
+          "sha256": "e3fcee5c7ecfb43279beb35895ac3dcb6da71a435bf54b410246a5911b281266",
+          "method": "original-svg",
+          "model": null,
+          "prompt": null,
+          "alt": "이동과 조작 사이의 인계: 주행 → 정차 확인 → 조작 → 재출발.",
+          "caption": "각 칸은 서로 다른 역할/근거다. 아래 방향은 자료/처리의 연결이며 실제 성공을 자동으로 보장하지 않는다. 직접 제작한 개념도이며 본문의 조건과 함께 읽는다."
+        }
+      ],
+      "evidence": "doc/visual-review/units/M18.06.md"
     },
     "M19.01": {
       "status": "pending",

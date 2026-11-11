@@ -1663,7 +1663,7 @@ export const authoredMetadata: AuthoredMetadata[] = [
       "합성 미션 기록의 부분 성공·보류·실패를 구분하고 복구·전체 완료 근거를 제안한다."
     ],
     "prerequisiteNote": "M06의 팔 기구학, M15의 좌표와 M17~18의 계획·과업 상태를 연결한다. base와 arm 원점의 차이, TCP 점과 자세, 미션 관문을 본문에서 보충한다. 기본은 합성 변환·시간·상태표이며 실제 주행·팔·물체·ROS 실행은 없다.",
-    "sha256": "230cabdaf5edbdca4b036728f6cc475ad2f4fb0d1c8c2c518b9a65f099a726d1",
+    "sha256": "3c3a08527d346bc8698ff206624185e2a9f87aaa1ab7efb5cb90e35d09874c62",
     "reviewed": true,
     "evidenceRef": "doc/v2/work_items/publication-source-privacy.md"
   },
