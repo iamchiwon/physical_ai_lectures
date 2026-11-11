@@ -10,7 +10,7 @@
     "dev": "concurrently -n web,api -c blue,cyan \"npm run dev:web\" \"npm run dev:api\"",
     "dev:web": "npm run dev --workspace @physical-ai/web",
     "dev:api": "npm run dev --workspace @physical-ai/api",
-    "build": "npm run build:shared && npm run build:web && npm run build:api && npm run check:publication",
+    "build": "npm run build:shared && npm run build:web && npm run build:api && npm run check:publication && npm run check:visuals",
     "build:shared": "npm run build --workspace @physical-ai/shared",
     "build:web": "npm run build --workspace @physical-ai/web",
     "build:api": "npm run build --workspace @physical-ai/api",
@@ -29,7 +29,8 @@
     "pretest": "npm run prepare:authored && npm run prepare:projects",
     "precheck": "npm run prepare:authored",
     "prepare:projects": "node scripts/prepare-projects.mjs",
-    "check:publication": "node scripts/check-publication.mjs"
+    "check:publication": "node scripts/check-publication.mjs",
+    "check:visuals": "node scripts/check-visuals.mjs"
   },
   "devDependencies": {
     "concurrently": "^9.2.1",

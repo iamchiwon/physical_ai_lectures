@@ -28,8 +28,10 @@ def svg(spec):
 
 def apply(plan):
     topic=plan['topic'];source=ROOT/f'ebook/curriculum/{topic[:3]}/{topic}.md';raw=source.read_text();before=sha(source)
-    images=plan.get('images',[]);assets=[]
-    for i,spec in enumerate(images):
+    state=ROOT/'doc/visual-review/inventory.json';prior=json.loads(state.read_text())['units'][topic]
+    existing=prior.get('assets',[]) if plan.get('append') else []
+    images=plan.get('images',[]);assets=list(existing)
+    for i,spec in enumerate(images,len(existing)):
         name=f'{topic}-{spec.get("name",str(i+1))}';ext=spec.get('extension','svg');dest=ROOT/f'apps/web/public/textbook-visuals/{name}.{ext}'
         if 'rows'in spec: dest.write_text(svg(spec))
         elif 'svg'in spec: dest.write_text(spec['svg'])
@@ -44,7 +46,7 @@ def apply(plan):
         assets.append({'path':str(dest.relative_to(ROOT)),'sha256':sha(dest),'method':spec.get('method','original-svg'),'model':spec.get('model'), 'prompt':spec.get('prompt'), 'alt':spec['alt'],'caption':caption})
     source.write_text(raw)
     evidence=f'doc/visual-review/units/{topic}.md'
-    note=f'# {topic} 본문 시각자료 검토\n\n- 검토: 2026-11-11, 작성자 자기검수\n- 판단: {plan["reason"]}\n- 조치: '+('그림 '+str(len(images))+'개 추가.' if images else '추가 이미지 없음.')+'\n- 원고 지문: `'+sha(source)+'`\n\n'
+    note=f'# {topic} 본문 시각자료 검토\n\n- 검토: 2026-11-11, 작성자 자기검수\n- 판단: {plan["reason"]}\n- 조치: '+('그림 '+str(len(assets))+'개 제공.' if assets else '추가 이미지 없음.')+'\n- 원고 지문: `'+sha(source)+'`\n\n'
     for a in assets:note+=f'- [{Path(a["path"]).name}](../../../{a["path"]}): {a["caption"]} 제작: {a["method"]}'+(f' / {a["model"]}'if a['model']else'')+'.\n'
     note+='\n그림과 본문의 용어/방향/가정·대체 텍스트·파일 연결을 대조했다. 생성 장면은 실물/측정 결과가 아니다. 기존 목표·실습·해설의 계산/학습 범위는 유지한다.\n'
     (ROOT/evidence).write_text(note)
@@ -56,7 +58,7 @@ def apply(plan):
             old=ROOT/d['topics'][topic]['evidenceRef'];s=old.read_text();link=f'\n\n2026-11-11 시각자료 후속 검토: [{topic}](../../visual-review/units/{topic}.md). 현재 원고 지문은 단위별 후속 근거에 기록한다.\n'
             if link not in s:old.write_text(s+link)
             registry.write_text(json.dumps(d,ensure_ascii=False,indent=2)+'\n');break
-    state=ROOT/'doc/visual-review/inventory.json';d=json.loads(state.read_text());d['units'][topic]={'status':'reviewed','source':str(source.relative_to(ROOT)),'sourceSha256':sha(source),'reason':plan['reason'],'assets':assets,'evidence':evidence};state.write_text(json.dumps(d,ensure_ascii=False,indent=2)+'\n')
+    d=json.loads(state.read_text());d['units'][topic]={'status':'reviewed','source':str(source.relative_to(ROOT)),'sourceSha256':sha(source),'reason':plan['reason'],'assets':assets,'evidence':evidence};state.write_text(json.dumps(d,ensure_ascii=False,indent=2)+'\n')
     return topic
 if __name__=='__main__':
     p=argparse.ArgumentParser();p.add_argument('plan');p.add_argument('--topic');p.add_argument('--commit',action='store_true');a=p.parse_args();plans=json.loads(Path(a.plan).read_text());plans=plans if isinstance(plans,list)else[plans]
