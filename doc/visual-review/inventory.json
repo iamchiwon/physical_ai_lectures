@@ -260,8 +260,22 @@
       "evidence": "doc/visual-review/units/M02.04.md"
     },
     "M02.05": {
-      "status": "pending",
-      "source": "ebook/curriculum/M02/M02.05.md"
+      "status": "reviewed",
+      "source": "ebook/curriculum/M02/M02.05.md",
+      "sourceSha256": "15567d266039e21da45ce12e1c9cd317d2c99c7b9ac65f6c1849032df11d94fd",
+      "reason": "최소제곱은 잔차 제곱의 절충는 공간/파형 관계를 직접 보아야 식의 기준과 적용 범위를 혼동하지 않으므로 도식을 추가한다. 제공된 식·본문 조건과 대조했다.",
+      "assets": [
+        {
+          "path": "apps/web/public/textbook-visuals/M02.05-concept.svg",
+          "sha256": "55206a75b92f079712988fc513d71e155d2a2b231e56bfb8140b68d606a72755",
+          "method": "original-svg",
+          "model": null,
+          "prompt": null,
+          "alt": "최소제곱은 잔차 제곱의 절충. 본문의 측정 2 m와 4 m에 대해 잔차는 x−2와 x−4다. F의 최소 위치 3 m는 이 목적함수의 절충이며 실제 위치가 반드시 3 m라는 증거는 아니다.",
+          "caption": "본문의 측정 2 m와 4 m에 대해 잔차는 x−2와 x−4다. F의 최소 위치 3 m는 이 목적함수의 절충이며 실제 위치가 반드시 3 m라는 증거는 아니다. 직접 제작."
+        }
+      ],
+      "evidence": "doc/visual-review/units/M02.05.md"
     },
     "M02.06": {
       "status": "pending",

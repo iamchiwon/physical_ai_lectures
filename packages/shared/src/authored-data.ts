@@ -613,7 +613,7 @@ export const authoredMetadata: AuthoredMetadata[] = [
       "비선형 문제의 초기값·정지점·잔차 스케일을 검토하고 국소 결과를 전역 정답이나 안전 보장으로 과장하지 않는다."
     ],
     "prerequisiteNote": "M02.01의 선형계, M02.03의 미분·Jacobian과 M02.04의 오차/단위를 사용한다. 모든 계산은 종이로 가능하며 NumPy·SciPy 설치나 장비 실행은 필요 없다.",
-    "sha256": "eb632f5ea31bda016052acf0a2668791c32c57f95e36715b247eb2c5948ee066",
+    "sha256": "15567d266039e21da45ce12e1c9cd317d2c99c7b9ac65f6c1849032df11d94fd",
     "reviewed": true,
     "evidenceRef": "doc/v2/work_items/M02.05.md"
   },
