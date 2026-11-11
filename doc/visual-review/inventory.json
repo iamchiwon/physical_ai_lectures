@@ -2984,8 +2984,22 @@
       "evidence": "doc/visual-review/units/M33.01.md"
     },
     "M33.02": {
-      "status": "pending",
-      "source": "ebook/curriculum/M33/M33.02.md"
+      "status": "reviewed",
+      "source": "ebook/curriculum/M33/M33.02.md",
+      "sourceSha256": "9b4dc9aaa0bf0fe9bde1b5a915a54403e257afeb8b038d59058c3eab5d57e700",
+      "reason": "기체 자세와 카메라 시점을 나누기의 연결/구분은 글만으로 단계나 경계를 혼동하기 쉬워 설명 도식을 추가한다. 본문의 표·수치·문제 조건도 대조한다.",
+      "assets": [
+        {
+          "path": "apps/web/public/textbook-visuals/M33.02-concept.svg",
+          "sha256": "907048f54d8d5ca0034a66905e5fd8a5790a81db68f6d29baf73fcac51353b45",
+          "method": "original-svg",
+          "model": null,
+          "prompt": null,
+          "alt": "기체 자세와 카메라 시점을 나누기: Roll/Pitch/Yaw → 각도형 지령 → Rate형 지령 → 카메라 장착 각.",
+          "caption": "각 칸은 서로 다른 역할/근거다. 나란히 비교할 항목이며 위아래가 시간 순서를 뜻하지 않는다. 직접 제작한 개념도이며 본문의 조건과 함께 읽는다."
+        }
+      ],
+      "evidence": "doc/visual-review/units/M33.02.md"
     },
     "M33.03": {
       "status": "pending",
