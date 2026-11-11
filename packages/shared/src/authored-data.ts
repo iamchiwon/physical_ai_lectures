@@ -697,7 +697,7 @@ export const authoredMetadata: AuthoredMetadata[] = [
       "검출 지표와 실제 작업 성공의 조건을 분리하여 가상 판정표의 성공률과 필요한 추가 증거를 설명한다."
     ],
     "prerequisiteNote": "M11.03/05의 분할/지표와 M12.02~05의 공간·검출·추적 한계가 선수다. 기본은 합성 상자/score와 작업 판정표의 종이 계산이다. 얼굴 부분은 선택 개념 비교이며 실제 검출/식별이나 로봇 작업을 실행하지 않는다.",
-    "sha256": "60098e75cc6900f1814b1dada1b45fccd295404330bc91691c358421a333e125",
+    "sha256": "cb24c551003cd5840c583be52abaf4cc65ef4b64df2210b2409c2167b9fe6bf2",
     "reviewed": true,
     "evidenceRef": "doc/v2/work_items/M12.06.md"
   },

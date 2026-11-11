@@ -1208,9 +1208,19 @@
     "M12.06": {
       "status": "reviewed",
       "source": "ebook/curriculum/M12/M12.06.md",
-      "sourceSha256": "60098e75cc6900f1814b1dada1b45fccd295404330bc91691c358421a333e125",
-      "reason": "본문의 「상자 몇 개를 맞췄다고 셀 것인가」부터 「선택 비교: 얼굴 검출과 인식 평가」까지 시각 참조/입력 조건을 점검했다. 정의와 수치/판정 절차가 글 안에서 주어지고 특정 미제공 사진/그림의 식별에 의존하지 않아 이번에는 이미지를 추가하지 않는다. 공간 구조의 세부 설명은 연결된 선수 단위의 그림과 함께 읽는다.",
-      "assets": [],
+      "sourceSha256": "cb24c551003cd5840c583be52abaf4cc65ef4b64df2210b2409c2167b9fe6bf2",
+      "reason": "상자 IoU의 교집합/합집합는 공간/파형 관계를 직접 보아야 식의 기준과 적용 범위를 혼동하지 않으므로 도식을 추가한다. 제공된 식·본문 조건과 대조했다.",
+      "assets": [
+        {
+          "path": "apps/web/public/textbook-visuals/M12.06-spatial.svg",
+          "sha256": "6348cded3e090e742d71f0cdd26fedb95340ea7da1008299766a52a962ad4c0f",
+          "method": "original-svg",
+          "model": null,
+          "prompt": null,
+          "alt": "상자 IoU의 교집합/합집합. 보라색은 두 상자의 교집합이고 합집합은 두 영역을 중복 없이 합친 전체다. 별도 개념 상자이며 본문의 TP/FP 매칭 입력값을 대체하지 않는다. IoU 하나와 전체 검출 지표도 구별한다.",
+          "caption": "보라색은 두 상자의 교집합이고 합집합은 두 영역을 중복 없이 합친 전체다. 별도 개념 상자이며 본문의 TP/FP 매칭 입력값을 대체하지 않는다. IoU 하나와 전체 검출 지표도 구별한다. 직접 제작."
+        }
+      ],
       "evidence": "doc/visual-review/units/M12.06.md"
     },
     "M13.01": {
