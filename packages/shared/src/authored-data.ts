@@ -305,7 +305,7 @@ export const authoredMetadata: AuthoredMetadata[] = [
       "가상 반전 기록에서 백래시 가능성과 측정 위치의 한계를 설명하고 분해능을 정확도로 과장하지 않는다."
     ],
     "prerequisiteNote": "M02의 단위·벡터 기초를 사용한다. 실제 로봇·모터·분해 도구 없이 구조 설명과 합성 수치로 수행한다. 모든 정격 수치는 가상 예제다.",
-    "sha256": "52ba56c8f78a0bcb4f355b85fbbee37e8fd91c453a265c98201986f1ea9f281b",
+    "sha256": "150053c273e9c0722c5765da878073a7768b6c0a4dfa50374ce31c7ca4b92c9e",
     "reviewed": true,
     "evidenceRef": "doc/v2/work_items/publication-source-privacy.md"
   },
