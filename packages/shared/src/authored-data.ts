@@ -683,7 +683,7 @@ export const authoredMetadata: AuthoredMetadata[] = [
       "가림·미검출·오검출·track 수명 정책을 해석하고 장비 없는 인지 프로젝트의 평가/실패 기록을 설계한다."
     ],
     "prerequisiteNote": "M12.01의 픽셀/영역과 M02.04의 불확실성 기초를 연결한다. 제공된 검출 좌표·ID 기록으로 연관·상실·재등장과 시간/자료 분리 기준을 본문에서 보충한다. 검출·분할 신경망 학습을 먼저 수행하지 않아도 기본 활동을 완료할 수 있다. 학습 모델을 바꾸는 확장은 M11.03/06·M12.03/04와 연결한다. 실제 영상 추적이나 Kalman/EKF 구현은 하지 않는다.",
-    "sha256": "a36cc1722b0d3ca3a44b5bc8cca832ca828a2508e3e78c521b0759f54b80f21e",
+    "sha256": "906e0ae052a6d54e4f16a45ec5cbaabd3d9256a05ca4424cd84f446b0557409f",
     "reviewed": true,
     "evidenceRef": "doc/v2/work_items/M12.05.md"
   },
