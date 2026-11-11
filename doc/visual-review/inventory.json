@@ -1493,8 +1493,8 @@
     "M15.04": {
       "status": "reviewed",
       "source": "ebook/curriculum/M15/M15.04.md",
-      "sourceSha256": "9c3c5592f316ca52ebb0e06d6cda846f3f09ce77159c9af2fc1fde128f0bdc10",
-      "reason": "루프 폐쇄는 새 제약이다의 연결/구분은 글만으로 단계나 경계를 혼동하기 쉬워 설명 도식을 추가한다. 본문의 표·수치·문제 조건도 대조한다.",
+      "sourceSha256": "c0c98c1e70b2908f92f4a100d7db3e7d7a0f5339dbfa830d0aa732457e62f7c8",
+      "reason": "포즈 그래프의 루프 연결는 공간/파형 관계를 직접 보아야 식의 기준과 적용 범위를 혼동하지 않으므로 도식을 추가한다. 제공된 식·본문 조건과 대조했다.",
       "assets": [
         {
           "path": "apps/web/public/textbook-visuals/M15.04-concept.svg",
@@ -1504,6 +1504,15 @@
           "prompt": null,
           "alt": "루프 폐쇄는 새 제약이다: 연속 이동 제약 → 누적된 궤적 → 과거 장소 재관측 → 추가 제약/최적화.",
           "caption": "각 칸은 서로 다른 역할/근거다. 아래 방향은 자료/처리의 연결이며 실제 성공을 자동으로 보장하지 않는다. 직접 제작한 개념도이며 본문의 조건과 함께 읽는다."
+        },
+        {
+          "path": "apps/web/public/textbook-visuals/M15.04-spatial.svg",
+          "sha256": "6bbbd8dc36e0d2789b7f9f94208f3a1d33ff8e21d48aaf805380fd24de98f4a4",
+          "method": "original-svg",
+          "model": null,
+          "prompt": null,
+          "alt": "포즈 그래프의 루프 연결. 숫자는 시간 순서의 pose 노드다. 주황 점선은 마지막 관측과 과거 장소 사이에서 검증한 추가 제약을 뜻한다. 그림은 참 궤적/최적화 결과가 아니며 잘못된 루프도 생길 수 있다.",
+          "caption": "숫자는 시간 순서의 pose 노드다. 주황 점선은 마지막 관측과 과거 장소 사이에서 검증한 추가 제약을 뜻한다. 그림은 참 궤적/최적화 결과가 아니며 잘못된 루프도 생길 수 있다. 직접 제작."
         }
       ],
       "evidence": "doc/visual-review/units/M15.04.md"
