@@ -1257,7 +1257,7 @@ export const authoredMetadata: AuthoredMetadata[] = [
       "주어진 궤적의 구간 속도·시작 상태를 검사하고 계획/실행/작업 성공을 분리해 판정한다."
     ],
     "prerequisiteNote": "M06의 IK/관절 범위, M08의 모델/TF, M19.01의 TCP가 선수다. 경로/상태 공간과 샘플 검사 개념은 본문에서 보충하며 M17.01의 충돌 검사와 M17.06의 시간 궤적으로 연결한다. 합성 표만으로 활동을 완료하며 ROS/MoveIt 실행은 하지 않는다.",
-    "sha256": "f13af43c8d72c7f06cdfaefc74bc42590de613440ab71cbe35ee5ee894fc0a55",
+    "sha256": "e5d108d9192123b1016381ef57218837415052808bf830f73c9dd9a20d5a5105",
     "reviewed": true,
     "evidenceRef": "doc/v2/work_items/M19.02.md"
   },
