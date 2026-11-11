@@ -2713,7 +2713,7 @@ export const authoredMetadata: AuthoredMetadata[] = [
       "Sim2Real 전 단계 판정과 재현/롤백 근거를 작성한다."
     ],
     "prerequisiteNote": "M24.05의 개념을 사용한다. 필요한 새 용어·기호는 본문에서 정의한다. 일반 코딩 문법/실제 장비 설치를 요구하지 않으며 합성 자료로 기본 경로를 수행한다.",
-    "sha256": "7d6b08625b5f7c09bf1c3084267f753b779b980a1d6fd35312488c2deb76edf8",
+    "sha256": "d274aef79f82741bd3c9d5e4fed248a17f0d09792119bfa59a5a6258e5e2c15e",
     "reviewed": true,
     "evidenceRef": "doc/v2/work_items/M24.06.md"
   },
