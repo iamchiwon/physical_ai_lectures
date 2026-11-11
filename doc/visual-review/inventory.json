@@ -2400,8 +2400,22 @@
       "evidence": "doc/visual-review/units/M25.06.md"
     },
     "M26.01": {
-      "status": "pending",
-      "source": "ebook/curriculum/M26/M26.01.md"
+      "status": "reviewed",
+      "source": "ebook/curriculum/M26/M26.01.md",
+      "sourceSha256": "766f77360115b6a0518568150221b20126fba62e96fd257a55a92b238e5e955a",
+      "reason": "요구에서 구현과 시험으로의 연결/구분은 글만으로 단계나 경계를 혼동하기 쉬워 설명 도식을 추가한다. 본문의 표·수치·문제 조건도 대조한다.",
+      "assets": [
+        {
+          "path": "apps/web/public/textbook-visuals/M26.01-concept.svg",
+          "sha256": "eb40302ce79d7c5ddde4a243b2580cc4f25c7f9e77f884d1d0b8dc1f42f9d5bd",
+          "method": "original-svg",
+          "model": null,
+          "prompt": null,
+          "alt": "요구에서 구현과 시험으로: 요구/허용 조건 → HSI → BSW/ASW → 시험/형상 관리.",
+          "caption": "각 칸은 서로 다른 역할/근거다. 아래 방향은 자료/처리의 연결이며 실제 성공을 자동으로 보장하지 않는다. 직접 제작한 개념도이며 본문의 조건과 함께 읽는다."
+        }
+      ],
+      "evidence": "doc/visual-review/units/M26.01.md"
     },
     "M26.02": {
       "status": "pending",

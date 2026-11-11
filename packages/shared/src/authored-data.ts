@@ -2167,7 +2167,7 @@ export const authoredMetadata: AuthoredMetadata[] = [
       "형상 묶음과 변경 영향을 추적해 재검증 대상·미확인 범위를 설명한다."
     ],
     "prerequisiteNote": "M04.06의 단위/오류·clock 계약과 M07.03의 샘플링/포화가 필수 선수다. 학습 순서상 M07.04의 지연/주파수 해석을 거쳐 진입한다. 일반 코딩 가능자를 대상으로 언어/문법 없이 가상 요구·기록을 분석하며 실제 보드/펌웨어·모터/RTOS·AUTOSAR 실행/인증을 수행하지 않는다.",
-    "sha256": "fdb0154066c6f009d8b340e607ec632a38d70ab05413a7529b92422da8769ada",
+    "sha256": "766f77360115b6a0518568150221b20126fba62e96fd257a55a92b238e5e955a",
     "reviewed": true,
     "evidenceRef": "doc/v2/work_items/M26.01.md"
   },
