@@ -1960,8 +1960,22 @@
       "evidence": "doc/visual-review/units/M20.06.md"
     },
     "M21.01": {
-      "status": "pending",
-      "source": "ebook/curriculum/M21/M21.01.md"
+      "status": "reviewed",
+      "source": "ebook/curriculum/M21/M21.01.md",
+      "sourceSha256": "b38ca7ef9818411739d7d32cf785ac3b2246dbbb3215148bd6b16e3ed62542ff",
+      "reason": "시연 학습과 롤아웃의 분포 차이의 연결/구분은 글만으로 단계나 경계를 혼동하기 쉬워 설명 도식을 추가한다. 본문의 표·수치·문제 조건도 대조한다.",
+      "assets": [
+        {
+          "path": "apps/web/public/textbook-visuals/M21.01-concept.svg",
+          "sha256": "73769cfd624b0580be8f6de3e2199a6d97af0c79fab95ccdfc10672190fde5aa",
+          "method": "original-svg",
+          "model": null,
+          "prompt": null,
+          "alt": "시연 학습과 롤아웃의 분포 차이: 시연 상태 → Behavior Cloning → 정책 롤아웃 → 재수집/평가.",
+          "caption": "각 칸은 서로 다른 역할/근거다. 아래 방향은 자료/처리의 연결이며 실제 성공을 자동으로 보장하지 않는다. 직접 제작한 개념도이며 본문의 조건과 함께 읽는다."
+        }
+      ],
+      "evidence": "doc/visual-review/units/M21.01.md"
     },
     "M21.02": {
       "status": "pending",

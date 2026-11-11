@@ -1509,7 +1509,7 @@ export const authoredMetadata: AuthoredMetadata[] = [
       "다중 시연 행동/평균의 실패와 시연 품질·개입/분할 조건을 진단하고 평가 근거를 설계한다."
     ],
     "prerequisiteNote": "M11의 손실/학습, M19의 과업/실행과 M20의 시연/분할이 선수다. 상태 분포와 폐루프를 본문에서 보충한다. 기본은 합성 행동/오차 계산이며 정책 학습이나 실제 로봇 실행은 하지 않는다.",
-    "sha256": "f37c2750392ca13f0faa9b04c2834bf577578ac2303f7ff190dae7d466573442",
+    "sha256": "b38ca7ef9818411739d7d32cf785ac3b2246dbbb3215148bd6b16e3ed62542ff",
     "reviewed": true,
     "evidenceRef": "doc/v2/work_items/publication-source-privacy.md"
   },
