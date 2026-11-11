@@ -2657,7 +2657,7 @@ export const authoredMetadata: AuthoredMetadata[] = [
       "순서/프레임/정규화·지연 불일치를 진단한다."
     ],
     "prerequisiteNote": "M24.01의 개념을 사용한다. 필요한 새 용어·기호는 본문에서 정의한다. 일반 코딩 문법/실제 장비 설치를 요구하지 않으며 합성 자료로 기본 경로를 수행한다.",
-    "sha256": "c42d1d7b6a8091008c096766767feb886f788018414de39d27ce652ab3ee8b21",
+    "sha256": "e02ac7c4bbaed158f5e4a1c2eb3c5d6e20f5165339e34d83948749996d5a2a7c",
     "reviewed": true,
     "evidenceRef": "doc/v2/work_items/M24.02.md"
   },

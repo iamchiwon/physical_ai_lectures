@@ -2242,8 +2242,22 @@
       "evidence": "doc/visual-review/units/M24.01.md"
     },
     "M24.02": {
-      "status": "pending",
-      "source": "ebook/curriculum/M24/M24.02.md"
+      "status": "reviewed",
+      "source": "ebook/curriculum/M24/M24.02.md",
+      "sourceSha256": "e02ac7c4bbaed158f5e4a1c2eb3c5d6e20f5165339e34d83948749996d5a2a7c",
+      "reason": "정책 출력에서 관절 목표로의 연결/구분은 글만으로 단계나 경계를 혼동하기 쉬워 설명 도식을 추가한다. 본문의 표·수치·문제 조건도 대조한다.",
+      "assets": [
+        {
+          "path": "apps/web/public/textbook-visuals/M24.02-concept.svg",
+          "sha256": "2efdb342b59b3a0576015d937cdf8c75f80c94da1a28de80ab665bc61e30f624",
+          "method": "original-svg",
+          "model": null,
+          "prompt": null,
+          "alt": "정책 출력에서 관절 목표로: 속도 지령/관측 → 정책의 정규화 행동 → 기준 자세 + 스케일 → PD/구동 경계.",
+          "caption": "각 칸은 서로 다른 역할/근거다. 아래 방향은 자료/처리의 연결이며 실제 성공을 자동으로 보장하지 않는다. 직접 제작한 개념도이며 본문의 조건과 함께 읽는다."
+        }
+      ],
+      "evidence": "doc/visual-review/units/M24.02.md"
     },
     "M24.03": {
       "status": "pending",
