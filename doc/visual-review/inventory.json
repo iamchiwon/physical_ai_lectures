@@ -570,8 +570,22 @@
       "evidence": "doc/visual-review/units/M05.06.md"
     },
     "M06.01": {
-      "status": "pending",
-      "source": "ebook/curriculum/M06/M06.01.md"
+      "status": "reviewed",
+      "source": "ebook/curriculum/M06/M06.01.md",
+      "sourceSha256": "4268a0c95269b1486fa8eb7127378dbda7908c65ae8b21cf8b9b8d498f47d7d7",
+      "reason": "같은 점, 서로 다른 프레임는 공간/파형 관계를 직접 보아야 식의 기준과 적용 범위를 혼동하지 않으므로 도식을 추가한다. 제공된 식·본문 조건과 대조했다.",
+      "assets": [
+        {
+          "path": "apps/web/public/textbook-visuals/M06.01-concept.svg",
+          "sha256": "8d422212f9f865a9ccc2de5e1e77d35221afc81de1a430988a961ce5511625c3",
+          "method": "original-svg",
+          "model": null,
+          "prompt": null,
+          "alt": "같은 점, 서로 다른 프레임. 프레임은 원점과 축의 묶음이다. 같은 점 P의 좌표를 B에서 A로 바꾸는 것과 점을 실제로 이동시키는 것은 다르다. +z 쪽에서 xy 평면을 본 개념도이며 수치 예제와는 별개다.",
+          "caption": "프레임은 원점과 축의 묶음이다. 같은 점 P의 좌표를 B에서 A로 바꾸는 것과 점을 실제로 이동시키는 것은 다르다. +z 쪽에서 xy 평면을 본 개념도이며 수치 예제와는 별개다. 직접 제작."
+        }
+      ],
+      "evidence": "doc/visual-review/units/M06.01.md"
     },
     "M06.02": {
       "status": "pending",

@@ -389,7 +389,7 @@ export const authoredMetadata: AuthoredMetadata[] = [
       "센서/도구 오프셋과 변환 순서 오류를 수치 반례로 찾아 모델 검증에 필요한 기록을 제안한다."
     ],
     "prerequisiteNote": "M02.01~02의 행렬·회전·동차변환, M03의 링크와 센서가 선수다. 기호가 낯설면 M02.02로 돌아간다. 본 단위는 기구학 모델의 프레임 계약과 오류 진단을 보강하며 종이 계산만으로 수행한다.",
-    "sha256": "fa8b6c6f4ecd901e632a7ca9d95dbc55efe7c3c4c2a8fd5881924aa837dbb2b5",
+    "sha256": "4268a0c95269b1486fa8eb7127378dbda7908c65ae8b21cf8b9b8d498f47d7d7",
     "reviewed": true,
     "evidenceRef": "doc/v2/work_items/publication-source-privacy.md"
   },
