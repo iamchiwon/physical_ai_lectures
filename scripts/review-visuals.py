@@ -5,18 +5,27 @@ ROOT=Path(__file__).resolve().parents[1]
 def sha(p): return hashlib.sha256(p.read_bytes()).hexdigest()
 def esc(t): return html.escape(t,quote=True)
 def svg(spec):
-    title=spec['title'];kind=spec.get('kind','flow');rows=spec['rows'];w=960
-    # Vertical rows keep each label readable on narrow screens; fixed, bounded labels.
-    h=126+len(rows)*112+(50 if kind=='loop' else 0)
-    out=[f'<svg xmlns="http://www.w3.org/2000/svg" width="{w}" height="{h}" viewBox="0 0 {w} {h}" role="img" aria-labelledby="title desc"><title id="title">{esc(title)}</title><desc id="desc">{esc(spec["alt"])}</desc><defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0L8 4L0 8Z" fill="#52647b"/></marker></defs><rect width="960" height="{h}" rx="24" fill="#f4f7fb"/><g font-family="sans-serif" fill="#17283e"><text x="48" y="54" font-size="29" font-weight="700">{esc(title)}</text>']
-    for i,row in enumerate(rows):
-        label,detail=row
-        assert len(label)<=37 and len(detail)<=55,(label,detail)
-        y=86+i*112;fill=['#e4efff','#e4f4ee','#fff1dc','#eeeafa'][i%4]
-        out += [f'<rect x="70" y="{y}" width="820" height="84" rx="14" fill="{fill}" stroke="#bdcbdc"/><text x="94" y="{y+33}" font-size="25" font-weight="700">{esc(label)}</text><text x="94" y="{y+63}" font-size="21">{esc(detail)}</text>']
-        if i<len(rows)-1 and kind!='compare':out += [f'<path d="M480 {y+86}v22" stroke="#52647b" stroke-width="3" marker-end="url(#arrow)"/>']
-    if kind=='loop':out += [f'<path d="M890 {y+44}h36V128h-32" fill="none" stroke="#52647b" stroke-width="3" marker-end="url(#arrow)"/><text x="94" y="{h-26}" font-size="21">결과의 새 관측을 다음 판단에 되돌린다</text>']
-    out+=['</g></svg>'];return ''.join(out)
+    import textwrap
+    title=spec['title'];kind=spec.get('kind','flow');rows=spec['rows'];w=640
+    def lines(t,n): return textwrap.wrap(t,n,break_long_words=True,break_on_hyphens=False) or ['']
+    titlelines=lines(title,22);top=46+len(titlelines)*34
+    heights=[65+len(lines(detail,23))*29+max(0,len(lines(label,21))-1)*29 for label,detail in rows]
+    h=top+sum(heights)+30*(len(rows)-1)+42+(45 if kind=='loop' else 0)
+    out=[f'<svg xmlns="http://www.w3.org/2000/svg" width="{w}" height="{h}" viewBox="0 0 {w} {h}" role="img" aria-labelledby="title desc"><title id="title">{esc(title)}</title><desc id="desc">{esc(spec["alt"])}</desc><defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0L8 4L0 8Z" fill="#52647b"/></marker></defs><rect width="640" height="{h}" rx="20" fill="#f4f7fb"/><g font-family="sans-serif" fill="#17283e">']
+    for j,line in enumerate(titlelines):out+=[f'<text x="28" y="{42+j*34}" font-size="26" font-weight="700">{esc(line)}</text>']
+    y=top
+    for i,((label,detail),height) in enumerate(zip(rows,heights)):
+        fill=['#e4efff','#e4f4ee','#fff1dc','#eeeafa'][i%4]
+        out+=[f'<rect x="34" y="{y}" width="558" height="{height}" rx="12" fill="{fill}" stroke="#a5b6cc"/>']
+        label_lines=lines(label,21)
+        for j,line in enumerate(label_lines):out+=[f'<text x="52" y="{y+33+j*29}" font-size="24" font-weight="700">{esc(line)}</text>']
+        for j,line in enumerate(lines(detail,23)):out+=[f'<text x="52" y="{y+35+len(label_lines)*29+j*29}" font-size="22">{esc(line)}</text>']
+        y+=height
+        if i<len(rows)-1 and kind!='compare':out+=[f'<path d="M314 {y+2}v24" stroke="#52647b" stroke-width="3" marker-end="url(#arrow)"/>']
+        y+=30
+    if kind=='loop':out+=[f'<path d="M592 {y-75}h25V{top+43}h-22" fill="none" stroke="#52647b" stroke-width="3" marker-end="url(#arrow)"/><text x="34" y="{h-22}" font-size="20">새 관측을 다음 판단으로 되돌림</text>']
+    return ''.join(out+['</g></svg>'])
+
 def apply(plan):
     topic=plan['topic'];source=ROOT/f'ebook/curriculum/{topic[:3]}/{topic}.md';raw=source.read_text();before=sha(source)
     images=plan.get('images',[]);assets=[]
@@ -28,7 +37,7 @@ def apply(plan):
             original=ROOT/spec['source'];dest.write_bytes(original.read_bytes())
         assert dest.stat().st_size>0
         url=f'/textbook-visuals/{dest.name}'
-        caption=spec['caption'];block=f'\n\n![{spec["alt"]}]({url})\n\n*그림 {topic}-{i+1}. {caption}*\n'
+        caption=spec['caption'];block=f'\n\n[![{spec["alt"]}]({url})]({url})\n\n*그림 {topic}-{i+1}. {caption}*\n'
         # Insert immediately after the specified paragraph/section, never in the solution.
         anchor=spec['after'];assert anchor in raw.split('\n## 실습')[0],(topic,anchor)
         raw=raw.replace(anchor,anchor+block,1)
