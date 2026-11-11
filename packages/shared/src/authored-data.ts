@@ -2573,7 +2573,7 @@ export const authoredMetadata: AuthoredMetadata[] = [
       "종료/마스크·과도한 업데이트·학습안정성 기록을 진단한다."
     ],
     "prerequisiteNote": "M23.01의 개념을 사용한다. 필요한 새 용어·기호는 본문에서 정의한다. 일반 코딩 문법/실제 장비 설치를 요구하지 않으며 합성 자료로 기본 경로를 수행한다.",
-    "sha256": "fefa4f60e31188908c21f32dc0f06dc565b4e3a6a2f7581dd46225d58bc8203e",
+    "sha256": "51c7bb6834c46139ced2499a5fe7dd8047b4ee6da02ecad5fa737ffe3956927f",
     "reviewed": true,
     "evidenceRef": "doc/v2/work_items/M23.02.md"
   },

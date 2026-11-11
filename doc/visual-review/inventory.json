@@ -2164,8 +2164,22 @@
       "evidence": "doc/visual-review/units/M23.01.md"
     },
     "M23.02": {
-      "status": "pending",
-      "source": "ebook/curriculum/M23/M23.02.md"
+      "status": "reviewed",
+      "source": "ebook/curriculum/M23/M23.02.md",
+      "sourceSha256": "51c7bb6834c46139ced2499a5fe7dd8047b4ee6da02ecad5fa737ffe3956927f",
+      "reason": "Rollout과 정책 갱신의 연결/구분은 글만으로 단계나 경계를 혼동하기 쉬워 설명 도식을 추가한다. 본문의 표·수치·문제 조건도 대조한다.",
+      "assets": [
+        {
+          "path": "apps/web/public/textbook-visuals/M23.02-concept.svg",
+          "sha256": "d8856b58ce28db4c915b4b0f3d8264a6e2368095bd04e48270642e6ce1496046",
+          "method": "original-svg",
+          "model": null,
+          "prompt": null,
+          "alt": "Rollout과 정책 갱신: 환경에서 전이 수집 → 가치/Advantage 추정 → Actor-Critic 갱신 → 다음 평가.",
+          "caption": "각 칸은 서로 다른 역할/근거다. 아래 방향은 자료/처리의 연결이며 실제 성공을 자동으로 보장하지 않는다. 직접 제작한 개념도이며 본문의 조건과 함께 읽는다."
+        }
+      ],
+      "evidence": "doc/visual-review/units/M23.02.md"
     },
     "M23.03": {
       "status": "pending",
