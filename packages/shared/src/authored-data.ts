@@ -1887,7 +1887,7 @@ export const authoredMetadata: AuthoredMetadata[] = [
       "승격/중단·복구의 증거와 독립 감독/물리 상태 확인·감사 기록을 설계한다."
     ],
     "prerequisiteNote": "M05의 lifecycle/시간, M22의 실행 감독과 M27의 큐/버전·M30.03의 제한을 사용한다. watchdog/TTL·shadow/상태 승격을 본문에서 보충한다. 기본은 종이 상태표이며 실제 ROS/장비 명령이나 안전 인증은 수행하지 않는다.",
-    "sha256": "4c5c98ca994a1f003d15ac5f88cd577675936aa8eaf4aac6aa23abf2d4c02797",
+    "sha256": "4db1d7eb19ed336357a76f87da9552bf1965b65e07a814cbed3898a1ddc903f8",
     "reviewed": true,
     "evidenceRef": "doc/v2/work_items/M30.04.md"
   },
