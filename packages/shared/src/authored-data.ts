@@ -165,7 +165,7 @@ export const authoredMetadata: AuthoredMetadata[] = [
       "입력 배열·소유권 및 절대/증분 명령의 의미를 반영해 데이터·최신성·순서·실패 대응 계약을 작성한다."
     ],
     "prerequisiteNote": "일반 코딩 경험과 M00.04의 주기/지연, M01.02~05의 배열·수명·환경 기록을 사용한다. 언어 문법 수업은 없다. 실제 GPU·제어기·스레드·ROS·로봇을 실행하지 않고 합성 시간표와 데이터 계약으로 설계한다.",
-    "sha256": "801319e43d807a72232686869572f8d1159714c4ada9bae5632195af1649aab2",
+    "sha256": "468d0f13670e71aa252db049e06e43ece517003fd474cd155afa5d905ff86833",
     "reviewed": true,
     "evidenceRef": "doc/v2/work_items/M01.06.md"
   },

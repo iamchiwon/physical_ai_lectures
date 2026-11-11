@@ -170,8 +170,22 @@
       "evidence": "doc/visual-review/units/M01.05.md"
     },
     "M01.06": {
-      "status": "pending",
-      "source": "ebook/curriculum/M01/M01.06.md"
+      "status": "reviewed",
+      "source": "ebook/curriculum/M01/M01.06.md",
+      "sourceSha256": "468d0f13670e71aa252db049e06e43ece517003fd474cd155afa5d905ff86833",
+      "reason": "호출 반환과 장치 완료는 다르다의 연결/구분은 글만으로 단계나 경계를 혼동하기 쉬워 설명 도식을 추가한다. 본문의 표·수치·문제 조건도 대조한다.",
+      "assets": [
+        {
+          "path": "apps/web/public/textbook-visuals/M01.06-concept.svg",
+          "sha256": "b717c3a6dfd6151da6ceeae9caf9e9ae43df032827182faab9ee083f65b58cf7",
+          "method": "original-svg",
+          "model": null,
+          "prompt": null,
+          "alt": "호출 반환과 장치 완료는 다르다: 호스트가 작업 제출 → 호출 반환 → 장치 완료/동기화 → 후속 명령 적용.",
+          "caption": "각 칸은 서로 다른 역할/근거다. 아래 방향은 자료/처리의 연결이며 실제 성공을 자동으로 보장하지 않는다. 직접 제작한 개념도이며 본문의 조건과 함께 읽는다."
+        }
+      ],
+      "evidence": "doc/visual-review/units/M01.06.md"
     },
     "M02.01": {
       "status": "pending",
