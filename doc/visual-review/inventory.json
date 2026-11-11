@@ -1916,8 +1916,22 @@
       "evidence": "doc/visual-review/units/M20.03.md"
     },
     "M20.04": {
-      "status": "pending",
-      "source": "ebook/curriculum/M20/M20.04.md"
+      "status": "reviewed",
+      "source": "ebook/curriculum/M20/M20.04.md",
+      "sourceSha256": "bdfb95512fda1f6d6b06f1f75f8f2fad3bd3c2cfc337c164f8b61f5bd7996a10",
+      "reason": "기록에서 학습 자료까지의 계약의 연결/구분은 글만으로 단계나 경계를 혼동하기 쉬워 설명 도식을 추가한다. 본문의 표·수치·문제 조건도 대조한다.",
+      "assets": [
+        {
+          "path": "apps/web/public/textbook-visuals/M20.04-concept.svg",
+          "sha256": "5682c1839cb8aa718a37a3650d8d26cea77f280a2398c91a1e91a20e60cc614e",
+          "method": "original-svg",
+          "model": null,
+          "prompt": null,
+          "alt": "기록에서 학습 자료까지의 계약: rosbag2/MCAP 원본 → 변환/정합 → 학습 스키마 → 검수/보존.",
+          "caption": "각 칸은 서로 다른 역할/근거다. 아래 방향은 자료/처리의 연결이며 실제 성공을 자동으로 보장하지 않는다. 직접 제작한 개념도이며 본문의 조건과 함께 읽는다."
+        }
+      ],
+      "evidence": "doc/visual-review/units/M20.04.md"
     },
     "M20.05": {
       "status": "pending",

@@ -1467,7 +1467,7 @@ export const authoredMetadata: AuthoredMetadata[] = [
       "변환 전후의 메시지/의미 보존과 버전·누락/재로딩 검증 근거를 설계한다."
     ],
     "prerequisiteNote": "M05의 메시지/QoS, M14.03의 시각과 M20.03의 데이터 계약을 연결한다. 컨테이너/직렬화·압축의 의미는 본문에서 설명한다. 기본은 합성 파일 명세/수치의 분석이며 실제 rosbag2 수집·재생이나 Dataset 변환을 실행하지 않는다.",
-    "sha256": "ca95b8b6a1c805372776e769fe70925655de43d6dffca031a7531acfe2ec858f",
+    "sha256": "bdfb95512fda1f6d6b06f1f75f8f2fad3bd3c2cfc337c164f8b61f5bd7996a10",
     "reviewed": true,
     "evidenceRef": "doc/v2/work_items/M20.04.md"
   },
