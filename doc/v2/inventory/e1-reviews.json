@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "topics": {
     "M00.01": {
-      "sourceSha256": "f6e244a133a11ea8aab6651dd15d0ce65af56c8c05f322a46e66e37e315059d1",
+      "sourceSha256": "c1b067943a3c9955b9881d8ce282d89c31e53a404d0ab443a7119b3dac6fc86c",
       "evidenceRef": "doc/v2/work_items/M00.01.md"
     },
     "M00.02": {

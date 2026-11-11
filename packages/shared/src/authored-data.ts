@@ -11,7 +11,7 @@ export const authoredMetadata: AuthoredMetadata[] = [
       "단순 폐루프 모형을 계산하고 지연·가림 때문에 생긴 실패와 모형의 한계를 구분한다."
     ],
     "prerequisiteNote": "선수 없음. 표의 행을 시간 순서대로 읽고 덧셈·뺄셈을 할 수 있으면 된다. 기호는 본문에서 정의한다.",
-    "sha256": "f6e244a133a11ea8aab6651dd15d0ce65af56c8c05f322a46e66e37e315059d1",
+    "sha256": "c1b067943a3c9955b9881d8ce282d89c31e53a404d0ab443a7119b3dac6fc86c",
     "reviewed": true,
     "evidenceRef": "doc/v2/work_items/M00.01.md"
   },
