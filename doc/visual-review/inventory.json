@@ -958,8 +958,22 @@
       "evidence": "doc/visual-review/units/M10.02.md"
     },
     "M10.03": {
-      "status": "pending",
-      "source": "ebook/curriculum/M10/M10.03.md"
+      "status": "reviewed",
+      "source": "ebook/curriculum/M10/M10.03.md",
+      "sourceSha256": "aa66bb8d07e7c9efcf483b325b41f37c42886dfd1ca44ac4d09c86f68c7754bb",
+      "reason": "얇은 벽과 이산 위치 검사는 공간/파형 관계를 직접 보아야 식의 기준과 적용 범위를 혼동하지 않으므로 도식을 추가한다. 제공된 식·본문 조건과 대조했다.",
+      "assets": [
+        {
+          "path": "apps/web/public/textbook-visuals/M10.03-concept.svg",
+          "sha256": "01d3d711d3dbab08e26d3a63f7d34cb6e9b51ed6e2cd866c1ac8677abb7f8644",
+          "method": "original-svg",
+          "model": null,
+          "prompt": null,
+          "alt": "얇은 벽과 이산 위치 검사. 개념도에서 두 표본 위치는 벽과 겹치지 않지만 이동 구간은 벽을 지난다. CCD/스텝 설정의 필요성을 보여 주며 특정 엔진의 CCD 보장을 뜻하지 않는다.",
+          "caption": "개념도에서 두 표본 위치는 벽과 겹치지 않지만 이동 구간은 벽을 지난다. CCD/스텝 설정의 필요성을 보여 주며 특정 엔진의 CCD 보장을 뜻하지 않는다. 직접 제작."
+        }
+      ],
+      "evidence": "doc/visual-review/units/M10.03.md"
     },
     "M10.04": {
       "status": "pending",

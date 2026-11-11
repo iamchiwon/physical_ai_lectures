@@ -1187,7 +1187,7 @@ export const authoredMetadata: AuthoredMetadata[] = [
       "단순 정/동마찰 모델의 힘을 계산하고 접촉/마찰 문제에서 먼저 확인할 증거를 제안한다."
     ],
     "prerequisiteNote": "M07.01의 힘/질량과 M08의 visual/collision/물리 속성이 선수다. PhysX 경로의 개념을 Isaac Sim 6.2 자료와 연결하며, 기본 실습은 합성 기록과 종이 계산이다. 실제 엔진·GPU·물체를 실행하지 않는다.",
-    "sha256": "6ae2b4125bb54f4a522de1ccbbc34338de2ac33c1dcf43d50067c2d55c5ff50b",
+    "sha256": "aa66bb8d07e7c9efcf483b325b41f37c42886dfd1ca44ac4d09c86f68c7754bb",
     "reviewed": true,
     "evidenceRef": "doc/v2/work_items/M10.03.md"
   },
