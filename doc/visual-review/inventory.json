@@ -5,7 +5,7 @@
     "M00.01": {
       "status": "reviewed",
       "source": "ebook/curriculum/M00/M00.01.md",
-      "sourceSha256": "c1b067943a3c9955b9881d8ce282d89c31e53a404d0ab443a7119b3dac6fc86c",
+      "sourceSha256": "438291cb108eb3c775f925962c04fa27809caf1a767f8a49780abf0e89685279",
       "reason": "첫 문단이 사진 속 컵을 지칭하지만 사진이 없어 대상을 특정할 수 없었다. 컵의 보이는 색과 관측되지 않은 뒷면/접촉을 구분하는 생성 사진, 결과를 되돌리는 폐루프 도식이 필요하다.",
       "assets": [
         {
@@ -19,7 +19,7 @@
         },
         {
           "path": "apps/web/public/textbook-visuals/M00.01-closed-loop.svg",
-          "sha256": "6359eebaa882c15ab5c79aa65841797469f2250ce9a034f39a8ddab5fcc15468",
+          "sha256": "5628c2a65547c5fdb40ddcf738b81ea5ffef56071dbc894a33193d08ec2e1cbe",
           "method": "original-svg",
           "model": null,
           "prompt": null,
