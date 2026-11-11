@@ -249,7 +249,7 @@ export const authoredMetadata: AuthoredMetadata[] = [
       "중복된 방정식의 정보 부족과 모순을 구분하고 역행렬을 무조건 적용하면 안 되는 이유를 설명한다."
     ],
     "prerequisiteNote": "M00의 단위와 M01의 자료 축 구분을 사용한다. 사칙연산부터 시작하며 행렬·내적·외적 기호는 아래에서 정의한다. NumPy 설치 없이 종이로 계산한다.",
-    "sha256": "f7cacdbe4007672a30233ae6762fca8c8896f1044c07c3a646e4c2f6611ff62d",
+    "sha256": "8394d1d2bfd7b392b04db71b1d6c197a3a07be0b9440cf91e3e7846401f67a4a",
     "reviewed": true,
     "evidenceRef": "doc/v2/work_items/publication-source-privacy.md"
   },
