@@ -1,3 +1,5 @@
+import { pageMetadata } from "@/lib/seo";
+import { pageForPath } from "@/lib/seo-content";
 import Link from "next/link";
 import { CourseShell } from "@/components/course-shell";
 import { ReadinessBadge } from "@/components/curriculum-parts";
@@ -6,7 +8,7 @@ import { glossary } from "@/lib/textbook";
 import { buildTextbookIndex } from "@/lib/textbook-index";
 import { GlossaryPractice } from "@/components/glossary-practice";
 
-export const metadata = { title: "교재 본문·실습·확인 문제 | Physical AI 로봇 제어 실무" };
+export const metadata = pageMetadata(pageForPath("/textbook/"));
 
 export default function TextbookIndex() {
   const index = buildTextbookIndex();

@@ -1,3 +1,5 @@
+import { pageMetadata } from "@/lib/seo";
+import { pageForPath } from "@/lib/seo-content";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { AuthoredResponse } from "@/components/authored-response";
@@ -8,7 +10,11 @@ import { learningProjects } from "@/lib/learning-projects";
 import { projectExecutionGuides } from "@/lib/project-execution";
 
 export function generateStaticParams() { return learningProjects.map(project => ({ projectId: project.id })); }
-export async function generateMetadata({ params }: { params: Promise<{ projectId: string }> }) { const { projectId } = await params; return { title: learningProjects.find(project => project.id === projectId)?.title ?? "프로젝트 없음" }; }
+export async function generateMetadata({ params }: { params: Promise<{ projectId: string }> }) {
+  const { projectId } = await params;
+  if (!learningProjects.some(project => project.id === projectId)) notFound();
+  return pageMetadata(pageForPath(`/projects/${projectId}/`));
+}
 export default async function ProjectPage({ params }: { params: Promise<{ projectId: string }> }) {
   const { projectId } = await params; const project = learningProjects.find(project => project.id === projectId); if (!project) notFound();
   const execution = projectExecutionGuides[project.id];
@@ -17,7 +23,7 @@ export default async function ProjectPage({ params }: { params: Promise<{ projec
   const units = project.topics.flatMap(id => topicIndex.get(id)!.unitIds.map(unitLink));
   return <CourseShell title={`${project.id} · ${project.title}`} description={project.goal}>
     <main className="mx-auto max-w-4xl space-y-6 px-4 py-8 sm:px-6">
-      <Breadcrumbs items={[{ title: "학습 홈", href: "/" }, { title: "학습 순서", href: `/curriculum/#stage-${project.stageId}` }, { title: project.id }]} />
+      <Breadcrumbs currentHref={`/projects/${projectId}/`} items={[{ title: "학습 홈", href: "/" }, { title: "학습 순서", href: `/curriculum/#stage-${project.stageId}` }, { title: project.id }]} />
       {project.starter && execution ? <section aria-labelledby="starter-title" className="rounded-2xl border border-blue-200 bg-blue-50 p-5">
         <h2 id="starter-title" className="text-lg font-bold">실행 패키지 · 장비 없는 기본 경로</h2>
         <p className="mt-3 text-sm leading-7">{execution.description}</p>

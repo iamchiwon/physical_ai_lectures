@@ -67,3 +67,7 @@ V2 공유 카탈로그의 기준선은 [B01 안내](doc/v2/runtime_catalog.md), 
 산출물은 `ebook/output/` 아래에 생성됩니다. 출판 입력은 E1·E2·E3·E4·E5 registry에서 현재 지문으로 승인된 상세 원고와 기존 여섯 장을 지원하며, 웹과 같은 원본을 사용합니다. PDF/EPUB 생성은 별도 요청이 있을 때만 수행하며, 원고 집필·웹 빌드 과정에서는 생성하지 않습니다.
 
 프로젝트 자료는 `npm run prepare:projects`로 정적 ZIP/파일지문을 생성합니다. `doc/v2/inventory/project-reviews.json`의 정확한 승인 bundle SHA/evidence와 일치해야 생성하며 source 변경은 재검수·지문 등록 전까지 실패합니다. 앱의 predev/prebuild와 전체 pretest에 연결했습니다. 프로젝트 수행근거는 project:P1:* / project:P2:*의 별도 activity record로 저장해 단원 완료와 구분합니다. `node scripts/prepare-projects.mjs --inspect P2`는 파일을 게시하지 않고 검수할 현재 ZIP 지문을 출력합니다.
+
+## 검색 최적화 검증
+
+`npm run check:seo`는 빌드된 공개 HTML·canonical·사이트맵·이미지·메타데이터·구조화 데이터를 검사합니다. 웹 빌드 뒤 자동 실행되며, 대표 주소/미리보기 색인 정책과 배포 후 등록 절차는 [SEO 점검 기록](docs/SEO_REVIEW.md)을 참고하세요.

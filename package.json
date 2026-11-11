@@ -30,7 +30,8 @@
     "precheck": "npm run prepare:authored",
     "prepare:projects": "node scripts/prepare-projects.mjs",
     "check:publication": "node scripts/check-publication.mjs",
-    "check:visuals": "node scripts/check-visuals.mjs"
+    "check:visuals": "node scripts/check-visuals.mjs",
+    "check:seo": "node scripts/check-seo.mjs"
   },
   "devDependencies": {
     "concurrently": "^9.2.1",

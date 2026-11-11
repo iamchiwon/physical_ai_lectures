@@ -1,3 +1,5 @@
+import { pageMetadata } from "@/lib/seo";
+import { pageForPath } from "@/lib/seo-content";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { CourseShell } from "@/components/course-shell";
@@ -6,13 +8,15 @@ import { catalog, curriculumIndex, curriculumReadiness, trackIndex, unitLink } f
 
 export function generateStaticParams() { return catalog.tracks.map(({ id }) => ({ trackId: id })); }
 export async function generateMetadata({ params }: { params: Promise<{ trackId: string }> }) {
-  const { trackId } = await params; return { title: trackIndex.get(trackId)?.title ?? "경로 없음" };
+  const { trackId } = await params;
+  if (!trackIndex.has(trackId)) notFound();
+  return pageMetadata(pageForPath(`/tracks/${trackId}/`));
 }
 export default async function TrackPage({ params }: { params: Promise<{ trackId: string }> }) {
   const { trackId } = await params; const track = trackIndex.get(trackId); if (!track) notFound();
   return <CourseShell title={track.title} description="권장 선수 순서에 따라 기초에서 전문 분야로 이동하는 추천 경로입니다. 준비중인 항목도 전체 계획에 표시합니다.">
     <main className="curriculum-content mx-auto max-w-5xl px-4 py-8 sm:px-6">
-      <Breadcrumbs items={[{ title: "학습 홈", href: "/" }, { title: "추천 경로", href: "/curriculum/#tracks" }, { title: track.title }]} />
+      <Breadcrumbs currentHref={`/tracks/${trackId}/`} items={[{ title: "학습 홈", href: "/" }, { title: "추천 경로", href: "/curriculum/#tracks" }, { title: track.title }]} />
       <section className="mb-6 rounded-2xl border border-blue-100 bg-blue-50 p-5"><ReadinessCounts counts={curriculumReadiness.tracks[trackId]!.counts} /><p className="mt-3 text-sm leading-7 text-slate-600">필수 {track.steps.filter((step) => step.required).length}단위 · 선택 {track.steps.filter((step) => !step.required).length}단위. 집계는 중복을 제거한 필수 단위 기준입니다. 이미 아는 선수는 직접 넘어갈 수 있으며 방문을 완료·숙달로 기록하지 않습니다.</p><p className="mt-2 text-sm leading-7 text-slate-600">{track.description}</p><a href="#optional" className="mt-3 inline-block text-sm font-semibold text-blue-700">선택 심화 확인 ↓</a></section>
       {trackId === "track-main" ? <p className="mb-6 rounded-xl bg-white p-5 text-sm leading-7">M32.01/.02/.03은 선택 과제입니다. <Link href="/curriculum/#learning-sequence" className="text-blue-700 underline">단계별 프로젝트와 전체 학습 흐름</Link>을 함께 확인하세요. 실행 자료와 기본 패키지의 수행 범위는 프로젝트 안내에서 확인하고 단원 자기검토와 별도로 수행합니다.</p> : null}
       {[true, false].map((required) => <section key={String(required)} id={required ? "required" : "optional"} aria-labelledby={`${required}-title`} className="mb-10"><h2 id={`${required}-title`} className="mb-4 text-2xl font-bold">{required ? "기본 추천 순서" : "선택 과제·심화"}</h2>

@@ -1,0 +1,52 @@
+[
+  {
+    "path": "/",
+    "status": "200",
+    "title": [
+      "통합 학습 과정"
+    ],
+    "canonical": [],
+    "descriptions": 1,
+    "sample": ""
+  },
+  {
+    "path": "/robots.txt",
+    "status": "200",
+    "title": [],
+    "canonical": [],
+    "descriptions": 0,
+    "sample": "# As a condition of accessing this website, you agree to abide by the following\n# content signals:\n\n# (a)  If "
+  },
+  {
+    "path": "/sitemap.xml",
+    "status": "404",
+    "title": [
+      "Physical AI 로봇 제어 실무 | 자습실"
+    ],
+    "canonical": [],
+    "descriptions": 1,
+    "sample": "<!DOCTYPE html><html lang=\"ko\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width,"
+  },
+  {
+    "path": "/study/unit-m00-01-a/",
+    "status": "200",
+    "title": [
+      "M00.01 · Software AI와 Physical AI, 폐루프와 POMDP | Physical AI 자습실"
+    ],
+    "canonical": [
+      "<link rel=\"canonical\" href=\"/study/unit-m00-01-a/\"/>"
+    ],
+    "descriptions": 1,
+    "sample": ""
+  },
+  {
+    "path": "/seo-missing-page-probe/",
+    "status": "404",
+    "title": [
+      "Physical AI 로봇 제어 실무 | 자습실"
+    ],
+    "canonical": [],
+    "descriptions": 1,
+    "sample": ""
+  }
+]

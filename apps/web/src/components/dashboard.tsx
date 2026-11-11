@@ -23,7 +23,7 @@ export function Dashboard({ lessons }: DashboardProps) {
       <section className="border-b border-blue-100 bg-gradient-to-br from-white via-blue-50/60 to-sky-100/70">
         <div className="mx-auto grid max-w-7xl items-center gap-10 px-4 py-12 sm:px-6 lg:grid-cols-[1.2fr_.8fr] lg:px-8 lg:py-18">
           <div>
-            <p className="text-xs font-bold tracking-[.16em] text-blue-700">PHYSICAL AI · 한국어 자습 과정</p>
+            <p className="text-xs font-bold tracking-[.16em] text-blue-700">피지컬 AI · 한국어 자습 과정</p>
             <h1 className="mt-5 max-w-3xl text-balance text-4xl font-bold leading-tight tracking-tight sm:text-5xl lg:text-6xl">코딩 경험에서,<br /><span className="text-blue-600">로봇 시스템 구현으로</span> 이어갑니다.</h1>
             <p className="mt-6 max-w-xl text-base leading-8 text-slate-600 sm:text-lg">실행 환경과 도구에서 인지·제어·학습·통합까지.<br className="hidden sm:block" /> 공통 학습 순서로 시작하고 목표에 맞는 전문 분야로 확장하세요.</p>
             <div className="mt-7 flex flex-wrap gap-3">

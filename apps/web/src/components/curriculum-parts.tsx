@@ -1,3 +1,5 @@
+import { JsonLd } from "@/components/structured-data";
+import { absoluteUrl } from "@/lib/seo";
 import Link from "next/link";
 import { stateLabels, prerequisiteLinks } from "@/lib/curriculum";
 import type { CatalogUnit, Readiness } from "@physical-ai/shared/catalog";
@@ -22,6 +24,6 @@ export function Prerequisites({ unit }: { unit: CatalogUnit }) {
     <p className="mt-2 text-xs leading-6">{unit.prerequisites.reason} 이미 알고 있다면 직접 열어볼 수 있습니다.</p>
   </div>;
 }
-export function Breadcrumbs({ items }: { items: { title: string; href?: string }[] }) {
-  return <nav aria-label="현재 위치" className="mb-6"><ol className="flex flex-wrap gap-x-2 gap-y-1 text-sm leading-6 text-slate-500">{items.map((item, i) => <li key={`${i}-${item.title}`} className="flex gap-2">{i ? <span aria-hidden="true">/</span> : null}{item.href ? <Link className="text-blue-700" href={item.href}>{item.title}</Link> : <span aria-current="page" className="font-semibold text-slate-800">{item.title}</span>}</li>)}</ol></nav>;
+export function Breadcrumbs({ items, currentHref }: { items: { title: string; href?: string }[]; currentHref?: string }) {
+  return <>{currentHref && items.length >= 2 ? <JsonLd data={{ "@context": "https://schema.org", "@type": "BreadcrumbList", itemListElement: items.map((item, index) => ({ "@type": "ListItem", position: index + 1, name: item.title, item: absoluteUrl(item.href ?? currentHref) })) }} /> : null}<nav aria-label="현재 위치" className="mb-6"><ol className="flex flex-wrap gap-x-2 gap-y-1 text-sm leading-6 text-slate-500">{items.map((item, i) => <li key={`${i}-${item.title}`} className="flex gap-2">{i ? <span aria-hidden="true">/</span> : null}{item.href ? <Link className="text-blue-700" href={item.href}>{item.title}</Link> : <span aria-current="page" className="font-semibold text-slate-800">{item.title}</span>}</li>)}</ol></nav></>;
 }

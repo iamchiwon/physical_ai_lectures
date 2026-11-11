@@ -20,7 +20,25 @@ function prepareMarkdown(content: string) {
     });
 }
 
-export function TextbookMarkdown({ unit }: { unit: TextbookUnit }) {
+function promotePageHeading(content: string, title: string) {
+  const lines = content.split("\n");
+  let fence: string | null = null;
+  for (let i = 0; i < lines.length; i++) {
+    const marker = lines[i]!.match(/^\s*(`{3,}|~{3,})/);
+    if (marker) {
+      if (!fence) fence = marker[1]!;
+      else if (marker[1]![0] === fence[0] && marker[1]!.length >= fence.length) fence = null;
+    }
+    if (!fence && /^#{1,6} /.test(lines[i]!)) {
+      lines[i] = lines[i]!.replace(/^#{1,6} /, "# ");
+      return lines.join("\n");
+    }
+  }
+  return `# ${title}\n\n${content}`;
+}
+
+export function TextbookMarkdown({ unit, pageHeading = false }: { unit: TextbookUnit; pageHeading?: boolean }) {
+  const prepared = prepareMarkdown(unit.content.replace(/^---\n[\s\S]*?\n---\n/, ""));
   const heading = (children: ReactNode) => {
     const parts = Children.toArray(children);
     const text = parts.filter((part) => typeof part === "string").join("");
@@ -36,12 +54,12 @@ export function TextbookMarkdown({ unit }: { unit: TextbookUnit }) {
         rehypePlugins={[[rehypeKatex, { strict: false, throwOnError: false, trust: false }]]}
         urlTransform={(url) => textbookLink(url, unit)}
         components={{
-          h1: ({ children }) => <h1 {...heading(children)} />,
+          h1: ({ children }) => pageHeading ? <h1 {...heading(children)} /> : <h2 {...heading(children)} />,
           h2: ({ children }) => <h2 {...heading(children)} />,
           h3: ({ children }) => <h3 {...heading(children)} />,
           a: ({ children, href }) => <a href={href} {...(href?.startsWith("http") ? { target: "_blank", rel: "noreferrer" } : {})}>{children}</a>,
         }}
-      >{prepareMarkdown(unit.content.replace(/^---\n[\s\S]*?\n---\n/, ""))}</ReactMarkdown>
+      >{pageHeading ? promotePageHeading(prepared, unit.title) : prepared}</ReactMarkdown>
     </div>
   );
 }

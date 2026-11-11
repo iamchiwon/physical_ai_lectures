@@ -1,3 +1,5 @@
+import { pageMetadata } from "@/lib/seo";
+import { pageForPath } from "@/lib/seo-content";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { CourseShell } from "@/components/course-shell";
@@ -7,14 +9,16 @@ import { unitReadiness } from "@physical-ai/shared/catalog";
 
 export function generateStaticParams() { return catalog.modules.map(({ id }) => ({ moduleId: id })); }
 export async function generateMetadata({ params }: { params: Promise<{ moduleId: string }> }) {
-  const { moduleId } = await params; return { title: moduleIndex.get(moduleId)?.title ?? "모듈 없음" };
+  const { moduleId } = await params;
+  if (!moduleIndex.has(moduleId)) notFound();
+  return pageMetadata(pageForPath(`/modules/${moduleId}/`));
 }
 export default async function ModulePage({ params }: { params: Promise<{ moduleId: string }> }) {
   const { moduleId } = await params; const courseModule = moduleIndex.get(moduleId); if (!courseModule) notFound();
   const area = catalog.areas.find((area) => area.id === courseModule.areaId)!;
   return <CourseShell title={`${courseModule.id} · ${courseModule.title}`} description="모듈 목표와 소주제별 준비 상태·권장 선수를 확인하세요.">
     <main className="curriculum-content mx-auto max-w-5xl px-4 py-8 sm:px-6">
-      <Breadcrumbs items={[{ title: "학습 홈", href: "/" }, { title: "전체 목차", href: "/curriculum/" }, { title: area.title, href: `/curriculum/#${area.id}` }, { title: courseModule.id }]} />
+      <Breadcrumbs currentHref={`/modules/${moduleId}/`} items={[{ title: "학습 홈", href: "/" }, { title: "전체 목차", href: "/curriculum/" }, { title: area.title, href: `/curriculum/#${area.id}` }, { title: courseModule.id }]} />
       <section className="rounded-2xl border bg-white p-6"><ReadinessCounts counts={curriculumReadiness.modules[moduleId]!.counts} /><h2 className="mt-5 text-xl font-bold">모듈 목표</h2><ul className="mt-3 space-y-2 text-sm leading-7 text-slate-700">{courseModule.objectives.map((goal) => <li key={goal.id}>{goal.description}</li>)}</ul><p className="mt-4 text-sm leading-7 text-slate-600">원안의 선수 안내: {courseModule.prerequisiteNote}. 실제 보충은 아래 소주제별 권장 선수를 참고하세요.</p></section>
       <nav aria-label="이 모듈의 소주제" className="my-6 flex flex-wrap gap-2">{courseModule.topicIds.map((id) => <a key={id} href={`#${topicAnchor(id)}`} className="rounded-lg border bg-white px-3 py-2 text-sm text-blue-700">{id}</a>)}</nav>
       <div className="space-y-5">{moduleUnits(moduleId).map((unit) => {

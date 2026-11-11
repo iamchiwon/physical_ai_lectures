@@ -1,3 +1,6 @@
+import { pageMetadata, plainDescription } from "@/lib/seo";
+import { textbookSeo } from "@/lib/seo-content";
+import { LearningResourceData } from "@/components/structured-data";
 import Link from "next/link";
 import { LegacyStudyNavigation, LegacyContextLink } from "@/components/legacy-study-navigation";
 import { legacyStudyContextsFor } from "@/lib/legacy-study-context-server";
@@ -13,7 +16,8 @@ import { TextbookLab } from "@/components/textbook-lab";
 export async function generateMetadata({ params }: { params: Promise<{ unitId: string }> }) {
   const { unitId } = await params;
   const unit = textbookUnits.find((item) => item.slug === unitId);
-  return { title: unit ? `${unit.title} | 교재 본문` : "교재 본문" };
+  if (!unit) notFound();
+  return pageMetadata(textbookSeo(unit));
 }
 
 export function generateStaticParams() {
@@ -33,9 +37,10 @@ export default async function TextbookPage({ params }: { params: Promise<{ unitI
   return (
     <CourseShell>
       <main className="mx-auto max-w-5xl px-4 py-8 sm:px-6">
+        <LearningResourceData path={`/textbook/${unitId}/`} title={unit.title} description={plainDescription(textbookSeo(unit).description)} />
         <LegacyStudyNavigation contexts={legacyStudyContextsFor(`/textbook/${unit.slug}/`)} />
         <nav className="mb-5 flex flex-wrap gap-4 text-sm text-blue-700"><Link href="/textbook/">교재 전체 목차</Link><span>{unit.group}</span><a href={`/textbook-assets/${unit.source}`} download>원고 다운로드</a></nav>
-        {exercises.length && !exercises[0]!.id.endsWith("-report") ? <><h1 className="mb-5 text-3xl font-bold">{unit.title}</h1><details className="rounded-xl border bg-white p-5"><summary className="cursor-pointer font-semibold">문제 전체와 원문 안내 보기</summary><TextbookMarkdown unit={unit} /></details></> : <article className="min-w-0 rounded-2xl border border-slate-200 bg-white p-5 sm:p-10"><TextbookMarkdown unit={unit} /></article>}
+        {exercises.length && !exercises[0]!.id.endsWith("-report") ? <><h1 className="mb-5 text-3xl font-bold">{unit.title}</h1><details className="rounded-xl border bg-white p-5"><summary className="cursor-pointer font-semibold">문제 전체와 원문 안내 보기</summary><TextbookMarkdown unit={unit} /></details></> : <article className="min-w-0 rounded-2xl border border-slate-200 bg-white p-5 sm:p-10"><TextbookMarkdown unit={unit} pageHeading /></article>}
         {unit.source.includes("/labs/") ? <div id="virtual-lab" className="scroll-mt-24"><TextbookLab source={unit.source} chapter={unit.chapter} /></div> : null}
         {exercises.length ? <WrittenExercises exercises={exercises} /> : null}
         {examples.length ? <details className="mt-6 rounded-xl border bg-white p-4"><summary className="cursor-pointer font-bold">이 장의 예제 코드·설정 파일 ({examples.length})</summary><ul className="mt-3 space-y-2 text-sm">{examples.map((file) => <li key={file}><a className="break-all text-blue-700 underline" href={`/textbook-assets/${file}`} download>{file.split("/code/")[1]}</a></li>)}</ul></details> : null}

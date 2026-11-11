@@ -6,3 +6,15 @@
   Referrer-Policy: strict-origin-when-cross-origin
   X-Frame-Options: DENY
   Permissions-Policy: camera=(), geolocation=(), microphone=(self), payment=()
+
+/tutor-study/*
+  X-Robots-Tag: noindex, follow
+
+/tutor-content/*
+  X-Robots-Tag: noindex, follow
+
+/project-starters/*
+  X-Robots-Tag: noindex, follow
+
+/textbook-assets/*.md
+  X-Robots-Tag: noindex, follow

@@ -1,0 +1,85 @@
+{
+  "date": "2026-11-11",
+  "branch": "seo/search-discovery",
+  "baseCommit": "f441748",
+  "canonicalOrigin": "https://physical-ai-learning-web.pages.dev",
+  "canonicalHtmlPages": 412,
+  "sitemapUrls": 412,
+  "uniqueTitles": 412,
+  "learningResourceJsonLd": 362,
+  "breadcrumbJsonLd": 255,
+  "uniqueSitemapImages": 175,
+  "primaryHeadingPerPublicPage": 1,
+  "rawMathInDescriptions": 0,
+  "tests": {
+    "passed": 196,
+    "failed": 0
+  },
+  "types": "passed",
+  "lint": "passed",
+  "build": "passed",
+  "publicationAudit": {
+    "textFiles": 3100,
+    "archiveEntries": 43
+  },
+  "staticAudit": {
+    "htmlFiles": 415,
+    "links": 14296,
+    "assets": 7259,
+    "errors": [],
+    "corpus": 207
+  },
+  "browser": {
+    "javascriptDisabled": true,
+    "pages": [
+      {
+        "path": "/",
+        "title": "피지컬 AI 로봇 교육·한국어 교재",
+        "h1": [
+          "코딩 경험에서,로봇 시스템 구현으로 이어갑니다."
+        ],
+        "canonical": "https://physical-ai-learning-web.pages.dev/",
+        "jsonLd": [
+          "WebSite"
+        ],
+        "bodyCharacters": 12843,
+        "images": true
+      },
+      {
+        "path": "/study/unit-m00-01-a/",
+        "title": "M00.01 · Software AI와 Physical AI, 폐루프와 POMDP | Physical AI 자습실",
+        "h1": [
+          "M00.01 · Software AI와 Physical AI, 폐루프와 POMDP"
+        ],
+        "canonical": "https://physical-ai-learning-web.pages.dev/study/unit-m00-01-a/",
+        "jsonLd": [
+          "WebSite",
+          "LearningResource",
+          "BreadcrumbList"
+        ],
+        "bodyCharacters": 7030,
+        "images": true
+      },
+      {
+        "path": "/textbook/02_physx_simulation--chapter-6/",
+        "title": "제2장 Isaac Sim 환경 구축과 PhysX 강체 물리 시뮬레이션 · 2.2 좌표계와 4×4 동차 변환 | Physical AI 자습실",
+        "h1": [
+          "2.2 좌표계와 4×4 동차 변환"
+        ],
+        "canonical": "https://physical-ai-learning-web.pages.dev/textbook/02_physx_simulation--chapter-6/",
+        "jsonLd": [
+          "WebSite",
+          "LearningResource"
+        ],
+        "bodyCharacters": 3858,
+        "images": true
+      }
+    ],
+    "mathMarkupRemoved": true
+  },
+  "browserStorageRestored": true,
+  "sourceTextbooksUnchanged": true,
+  "deployed": false,
+  "searchConsoleOrNaverSubmissionPerformed": false,
+  "fieldCoreWebVitalsMeasured": false
+}

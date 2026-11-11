@@ -107,3 +107,9 @@ NEXT_PUBLIC_API_BASE_URL=http://localhost:8787
 저장소 루트에서 `npm test`, `npm run check`, `npm run lint`, `npm run build`를 수행합니다. `build`의 Worker 단계는 `wrangler deploy --dry-run`이며 실제 배포하지 않습니다. Pages에서는 `apps/web/out`만 업로드하고 `.env.local`, `.dev.vars`, Worker dist 및 저장소 전체를 정적 루트로 업로드하지 않습니다. `NEXT_PUBLIC_API_BASE_URL`은 공개 API 주소이며 빌드 시 고정되므로 변경하면 Pages를 다시 빌드합니다.
 
 로컬 파일·HTTP 검수는 운영 도메인의 CORS·캐시·배포 라우팅까지 확인했다는 뜻은 아닙니다. 실제 배포 시 위 URL·health·허용 origin 조합을 다시 확인합니다.
+
+## 검색 노출 설정
+
+대표 주소는 `NEXT_PUBLIC_SITE_URL`로 고정합니다(기본 `https://physical-ai-learning-web.pages.dev`). `SEO_PRODUCTION_BRANCH`는 main이 기본이며 다른 브랜치의 CF Pages 빌드는 noindex 처리됩니다. 소유확인 태그는 발급된 `NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION`, `NEXT_PUBLIC_NAVER_SITE_VERIFICATION`의 content 값으로 설정할 수 있습니다. 값 변경은 재빌드가 필요합니다.
+
+`npm run build:web`은 canonical·사이트맵·메타데이터·H1·JSON-LD 전수 검사를 포함합니다. 배포 후 사이트맵 제출과 실제 HTTP 헤더/봇 접근 검증은 [SEO 점검 기록](SEO_REVIEW.md)의 절차를 따릅니다.

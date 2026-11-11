@@ -1,3 +1,6 @@
+import { pageMetadata, plainDescription } from "@/lib/seo";
+import { studySeo } from "@/lib/seo-content";
+import { LearningResourceData } from "@/components/structured-data";
 import { TelemetryConceptLab } from "@/components/telemetry-concept-lab";
 import { ControlConceptLab } from "@/components/control-concept-lab";
 import { WheelConceptLab } from "@/components/wheel-concept-lab";
@@ -22,7 +25,8 @@ import { catalogSlotNames, unitReadiness } from "@physical-ai/shared/catalog";
 export function generateStaticParams() { return catalog.units.map(({ id }) => ({ unitId: id })); }
 export async function generateMetadata({ params }: { params: Promise<{ unitId: string }> }) {
   const { unitId } = await params; const unit = curriculumIndex.units.get(unitId);
-  return { title: unit ? `${unit.topicId} · ${unit.title}` : "학습 단위 없음", alternates: { canonical: `/study/${unitId}/` } };
+  if (!unit) notFound();
+  return pageMetadata(studySeo(unit));
 }
 const slotLabels = { explanation: "설명", practice: "실습", assessment: "평가·해설" };
 const requirementLabels = { required: "필수", optional: "선택", not_applicable: "해당 없음" };
@@ -38,7 +42,8 @@ export default async function StudyPage({ params }: { params: Promise<{ unitId: 
   const readiness = unitReadiness(unit, curriculumIndex); const { base, contexts } = studyNavigationFor(unitId);
   return <CourseShell title={`${unit.topicId} · ${unit.title}`} description="단위별 목표·권장 선수와 자료 준비 상태를 확인하고, 공개된 본문과 활동을 읽고 준비 상태를 확인할 수 있습니다.">
     <main className="curriculum-content mx-auto max-w-5xl px-4 py-8 sm:px-6">
-      <Breadcrumbs items={[{ title: "학습 홈", href: "/" }, { title: "전체 목차", href: "/curriculum/" }, { title: courseModule.id, href: `/modules/${courseModule.id}/#${topicAnchor(topic.id)}` }, { title: unit.topicId }]} />
+      <LearningResourceData path={`/study/${unitId}/`} title={unit.title} description={plainDescription(studySeo(unit).description)} teaches={unit.objectives.map(goal => goal.description)} />
+      <Breadcrumbs currentHref={`/study/${unitId}/`} items={[{ title: "학습 홈", href: "/" }, { title: "전체 목차", href: "/curriculum/" }, { title: courseModule.id, href: `/modules/${courseModule.id}/#${topicAnchor(topic.id)}` }, { title: unit.topicId }]} />
       <section aria-labelledby="unit-status-title" className={`rounded-2xl border p-6 ${readiness.state === "tbd" ? "border-slate-200 bg-slate-100" : "border-blue-100 bg-blue-50"}`}>
         <ReadinessBadge state={readiness.state} /><h2 id="unit-status-title" className="mt-4 text-xl font-bold">{readiness.state === "tbd" ? "이 단위는 준비중입니다" : readiness.state === "partial" ? "관련 기존 자료부터 읽을 수 있습니다" : "학습 안내"}</h2>
         <p className="mt-3 text-sm leading-7 text-slate-600">{readiness.state === "tbd" ? "신규 목표를 가르치는 핵심 설명·활동은 아직 준비되지 않았습니다. 아래 목표·선수와 집필 예정 범위를 확인하세요. 참고 자료만 있어도 학습 준비 상태는 올라가지 않습니다." : readiness.state === "partial" ? "기존 공개 자료가 있으나 신규 목표·실습·평가 전체를 충족한 상태는 아닙니다. 연결된 원문과 부족한 범위를 함께 확인하세요." : "본문을 읽고 장비 없는 기본 실습·세 확인 문제와 해설로 이해를 확인하세요."}</p>

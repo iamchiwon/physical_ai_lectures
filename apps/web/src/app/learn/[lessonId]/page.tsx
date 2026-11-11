@@ -1,3 +1,6 @@
+import { pageMetadata } from "@/lib/seo";
+import { pageForPath } from "@/lib/seo-content";
+import { LearningResourceData } from "@/components/structured-data";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { CourseShell } from "@/components/course-shell";
@@ -15,7 +18,7 @@ export function generateStaticParams() {
 export async function generateMetadata({ params }: LessonPageProps): Promise<Metadata> {
   const { lessonId } = await params;
   const lesson = getLessonById(lessonId);
-  return lesson ? { title: `${lesson.title} | Physical AI 클래스룸`, description: lesson.summary } : {};
+  return lesson ? pageMetadata(pageForPath(`/learn/${lessonId}/`)) : {};
 }
 
 export default async function LessonPage({ params }: LessonPageProps) {
@@ -30,6 +33,7 @@ export default async function LessonPage({ params }: LessonPageProps) {
 
   return (
     <CourseShell>
+      <LearningResourceData path={`/learn/${lessonId}/`} title={lesson.title} description={lesson.summary} teaches={lesson.objectives} />
       <LessonView lesson={lesson} module={courseModule} modules={courseModules} previous={previous} next={next} />
     </CourseShell>
   );
