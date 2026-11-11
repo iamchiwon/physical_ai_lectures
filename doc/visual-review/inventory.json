@@ -2094,8 +2094,12 @@
       "evidence": "doc/visual-review/units/M22.02.md"
     },
     "M22.03": {
-      "status": "pending",
-      "source": "ebook/curriculum/M22/M22.03.md"
+      "status": "reviewed",
+      "source": "ebook/curriculum/M22/M22.03.md",
+      "sourceSha256": "8140a568eb21ba832031a929b47d1c7e0d24f2402c733f471cea57acf7250ee7",
+      "reason": "본문의 「로컬 실행은 위치에 관한 말이다」부터 「token/s는 전체 응답 지연이 아니다」까지 시각 참조/입력 조건을 점검했다. 정의와 수치/판정 절차가 글 안에서 주어지고 특정 미제공 사진/그림의 식별에 의존하지 않아 이번에는 이미지를 추가하지 않는다. 공간 구조의 세부 설명은 연결된 선수 단위의 그림과 함께 읽는다.",
+      "assets": [],
+      "evidence": "doc/visual-review/units/M22.03.md"
     },
     "M22.04": {
       "status": "pending",
