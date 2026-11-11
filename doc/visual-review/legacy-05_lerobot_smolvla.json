@@ -1,0 +1,223 @@
+{
+  "scope": "기존 교재 읽기 단위의 시각 참조·이미지 파일 연결 검사. 원본/실습·해설 유지.",
+  "decision": "기존 장별 좌표/기구/데이터/시간/배포 도식을 유지하며 현재 커리큘럼의 추가 도식으로 보충한다.",
+  "units": [
+    {
+      "slug": "05_lerobot_smolvla--chapter-1",
+      "title": "제5장 LeRobot Dataset과 SmolVLA 파인튜닝",
+      "source": "05_lerobot_smolvla/chapter.md",
+      "contentSha256": "36a5d82e65f5955c779f1441a32774f3cc6c96ff0aa96552cf0c613fe6430996",
+      "images": 0
+    },
+    {
+      "slug": "05_lerobot_smolvla--chapter-2",
+      "title": "장 개요",
+      "source": "05_lerobot_smolvla/chapter.md",
+      "contentSha256": "6608dbf58ab5ae99b313040fa3b33ff2925c0c2296f55da2e4727916fe479376",
+      "images": 1
+    },
+    {
+      "slug": "05_lerobot_smolvla--chapter-3",
+      "title": "학습 목표",
+      "source": "05_lerobot_smolvla/chapter.md",
+      "contentSha256": "81371ca0b3d6a918ffd10190a46ca795c37508236f9a815f29970417c60ab7cb",
+      "images": 0
+    },
+    {
+      "slug": "05_lerobot_smolvla--chapter-4",
+      "title": "선수 지식과 준비물",
+      "source": "05_lerobot_smolvla/chapter.md",
+      "contentSha256": "318b416607d7f8797a98461a762816745331f30dd4abff220e5e01fc4a59d874",
+      "images": 0
+    },
+    {
+      "slug": "05_lerobot_smolvla--chapter-5",
+      "title": "5.1 모방학습과 행동 복제",
+      "source": "05_lerobot_smolvla/chapter.md",
+      "contentSha256": "0f81d1a4a679d468ab33efe91ceed7a91270beb2755b5bf26a926c0a3a7a77ca",
+      "images": 0
+    },
+    {
+      "slug": "05_lerobot_smolvla--chapter-6",
+      "title": "5.2 행동 정책의 계보",
+      "source": "05_lerobot_smolvla/chapter.md",
+      "contentSha256": "1557061a828ee5c389d35dc1fdcad8ddb62bd53ee9a02a2f944598e0d374606f",
+      "images": 0
+    },
+    {
+      "slug": "05_lerobot_smolvla--chapter-7",
+      "title": "5.3 LeRobotDataset v3 설계",
+      "source": "05_lerobot_smolvla/chapter.md",
+      "contentSha256": "7c9710589501bbd6df5cb9998322ef62d779b93b888f8b6813c273cbbd95355c",
+      "images": 0
+    },
+    {
+      "slug": "05_lerobot_smolvla--chapter-8",
+      "title": "5.4 데이터 수집과 품질 관리",
+      "source": "05_lerobot_smolvla/chapter.md",
+      "contentSha256": "240cfbec61772e14becccc31288035c6a50abfb5ff9554c1678e3d399fbc5ae1",
+      "images": 0
+    },
+    {
+      "slug": "05_lerobot_smolvla--chapter-9",
+      "title": "5.5 정규화와 통계",
+      "source": "05_lerobot_smolvla/chapter.md",
+      "contentSha256": "36407c272004d7406e55beec92e327f59a40752cc590ebd84362a37840bd5db0",
+      "images": 0
+    },
+    {
+      "slug": "05_lerobot_smolvla--chapter-10",
+      "title": "5.6 SmolVLA 구조",
+      "source": "05_lerobot_smolvla/chapter.md",
+      "contentSha256": "ef800e542057657c793b363102f84a5bf5deaab04abbd0274b2046f1f2015697",
+      "images": 1
+    },
+    {
+      "slug": "05_lerobot_smolvla--chapter-11",
+      "title": "5.7 LoRA 기반 파인튜닝",
+      "source": "05_lerobot_smolvla/chapter.md",
+      "contentSha256": "4775ffbed6fa6f7f0ae3c2ad4383f4c026a2eb567de6ad2cf29ecd870f257bc7",
+      "images": 0
+    },
+    {
+      "slug": "05_lerobot_smolvla--chapter-12",
+      "title": "5.8 학습 파이프라인",
+      "source": "05_lerobot_smolvla/chapter.md",
+      "contentSha256": "35652c43b56dd241995591a3ed206ca1bdfc749dbdccefac33814a2b6f8c01b0",
+      "images": 0
+    },
+    {
+      "slug": "05_lerobot_smolvla--chapter-13",
+      "title": "5.9 20 Hz 폐루프 추론",
+      "source": "05_lerobot_smolvla/chapter.md",
+      "contentSha256": "7955b7cea4999dcf6062db83e140385a45ff0b42304571a91c1403c92b00a823",
+      "images": 1
+    },
+    {
+      "slug": "05_lerobot_smolvla--chapter-14",
+      "title": "5.10 평가 설계",
+      "source": "05_lerobot_smolvla/chapter.md",
+      "contentSha256": "ab40043a5890370fe66afb6be822fa40f1d0a7b5ca86635312b89b224d017957",
+      "images": 0
+    },
+    {
+      "slug": "05_lerobot_smolvla--chapter-15",
+      "title": "5.11 데이터 라이선스, 개인정보, 보안",
+      "source": "05_lerobot_smolvla/chapter.md",
+      "contentSha256": "c5b2e3d151c4a5d98f84aa9e09bd97f84a1fa31c2a8331c21bb3b2b41db08613",
+      "images": 0
+    },
+    {
+      "slug": "05_lerobot_smolvla--chapter-16",
+      "title": "5.12 재현성 체크리스트",
+      "source": "05_lerobot_smolvla/chapter.md",
+      "contentSha256": "cf93fee8b70a2a570c9758cdf9066d000213ce4baff77c59aed39f31227aaf1e",
+      "images": 0
+    },
+    {
+      "slug": "05_lerobot_smolvla--chapter-17",
+      "title": "5.13 단계별 실습",
+      "source": "05_lerobot_smolvla/chapter.md",
+      "contentSha256": "f74561b96feca5dea0bb071959de3ba2e3d08655bd09b6873627ad55515e6bec",
+      "images": 0
+    },
+    {
+      "slug": "05_lerobot_smolvla--chapter-18",
+      "title": "5.14 예상 출력 예시",
+      "source": "05_lerobot_smolvla/chapter.md",
+      "contentSha256": "5800f1d20d067129cdf44cd2d020510f6cee40e491bbbbd0f667ec9394ad04fc",
+      "images": 0
+    },
+    {
+      "slug": "05_lerobot_smolvla--chapter-19",
+      "title": "5.15 트러블슈팅",
+      "source": "05_lerobot_smolvla/chapter.md",
+      "contentSha256": "c898ac3d6a082b6b4863e1e2d66821a415ee03f9e0e1704ad07d5cf1e667a9a6",
+      "images": 0
+    },
+    {
+      "slug": "05_lerobot_smolvla--chapter-20",
+      "title": "5.16 요약",
+      "source": "05_lerobot_smolvla/chapter.md",
+      "contentSha256": "b28c5b4ee48c4354dd258c7e041838ea691169bf9c64f294ca82b82dd73bc7a2",
+      "images": 0
+    },
+    {
+      "slug": "05_lerobot_smolvla--chapter-21",
+      "title": "5.17 확인문제",
+      "source": "05_lerobot_smolvla/chapter.md",
+      "contentSha256": "3695de48a85966ec736c2c56608021b57096aadb319354e17c76f7a3da757fbd",
+      "images": 0
+    },
+    {
+      "slug": "05_lerobot_smolvla--chapter-22",
+      "title": "5.18 프로젝트 과제",
+      "source": "05_lerobot_smolvla/chapter.md",
+      "contentSha256": "b596180a44c3d32e613c103de69f95b66a5f2fc4d117ddb1de21ca0c008036cd",
+      "images": 0
+    },
+    {
+      "slug": "05_lerobot_smolvla--chapter-23",
+      "title": "5.19 실습·평가·참고자료",
+      "source": "05_lerobot_smolvla/chapter.md",
+      "contentSha256": "696156998b1c6d3212bfc1349ac348f5a89132b2fb7be6473162f50677daaf75",
+      "images": 0
+    },
+    {
+      "slug": "05_lerobot_smolvla--labs--lab01_dataset_audit-1",
+      "title": "실습 5-A: LeRobotDataset v3 무결성 감사",
+      "source": "05_lerobot_smolvla/labs/lab01_dataset_audit.md",
+      "contentSha256": "654b91ebf8b31d8c636af8e46c26bf10ef6d7c3ca6d5568056b7c99c35b20718",
+      "images": 0
+    },
+    {
+      "slug": "05_lerobot_smolvla--labs--lab02_normalization-1",
+      "title": "실습 5-B: Episode split과 정규화 누출",
+      "source": "05_lerobot_smolvla/labs/lab02_normalization.md",
+      "contentSha256": "b2d36e73f08c4c26f53eb1667761092c87f121edfff80fa1c179908bcd4bd9db",
+      "images": 0
+    },
+    {
+      "slug": "05_lerobot_smolvla--labs--lab03_smolvla_lora-1",
+      "title": "실습 5-C: SmolVLA LoRA 학습 설계",
+      "source": "05_lerobot_smolvla/labs/lab03_smolvla_lora.md",
+      "contentSha256": "f146748af36ccc37284d538db5b7604d849525baa7c6df0bd62666f824db9d73",
+      "images": 0
+    },
+    {
+      "slug": "05_lerobot_smolvla--labs--lab04_closed_loop-1",
+      "title": "실습 5-D: 20 Hz Action Chunk 폐루프",
+      "source": "05_lerobot_smolvla/labs/lab04_closed_loop.md",
+      "contentSha256": "ac2309920dc5f06789d7079e48566a89cdcb40bc4c95ae14719d707f09b2e36c",
+      "images": 0
+    },
+    {
+      "slug": "05_lerobot_smolvla--exercises--problem_set-1",
+      "title": "제5장 연습문제 및 구현 과제",
+      "source": "05_lerobot_smolvla/exercises/problem_set.md",
+      "contentSha256": "361fbe74698b558c03bba980d94c1cb3dcb8087bdb0a303bf7b1735131d6eac6",
+      "images": 0
+    }
+  ],
+  "images": [
+    {
+      "unit": "05_lerobot_smolvla--chapter-2",
+      "alt": "LeRobotDataset v3 구조",
+      "source": "ebook/book/05_lerobot_smolvla/images/dataset_v3.svg",
+      "exists": true
+    },
+    {
+      "unit": "05_lerobot_smolvla--chapter-10",
+      "alt": "SmolVLA 개념 구조",
+      "source": "ebook/book/05_lerobot_smolvla/images/smolvla_architecture.svg",
+      "exists": true
+    },
+    {
+      "unit": "05_lerobot_smolvla--chapter-13",
+      "alt": "20 Hz 폐루프와 비동기 추론",
+      "source": "ebook/book/05_lerobot_smolvla/images/closed_loop.svg",
+      "exists": true
+    }
+  ],
+  "missing": []
+}
