@@ -862,8 +862,22 @@
       "evidence": "doc/visual-review/units/M09.01.md"
     },
     "M09.02": {
-      "status": "pending",
-      "source": "ebook/curriculum/M09/M09.02.md"
+      "status": "reviewed",
+      "source": "ebook/curriculum/M09/M09.02.md",
+      "sourceSha256": "e34ea0ebc4535d159b9b64b2354f527f434632159d385aa74007fb2a342fee7b",
+      "reason": "주행 명령부터 관측까지의 연결/구분은 글만으로 단계나 경계를 혼동하기 쉬워 설명 도식을 추가한다. 본문의 표·수치·문제 조건도 대조한다.",
+      "assets": [
+        {
+          "path": "apps/web/public/textbook-visuals/M09.02-concept.svg",
+          "sha256": "56bd740c6e82df69b668bd1800f25b7f11185493a6146d63f01a08193ebc0ea8",
+          "method": "original-svg",
+          "model": null,
+          "prompt": null,
+          "alt": "주행 명령부터 관측까지: ROS 속도 명령 → Bridge/플러그인 → 바퀴/모형 운동 → Odometry/관측.",
+          "caption": "각 칸은 서로 다른 역할/근거다. 아래 방향은 자료/처리의 연결이며 실제 성공을 자동으로 보장하지 않는다. 직접 제작한 개념도이며 본문의 조건과 함께 읽는다."
+        }
+      ],
+      "evidence": "doc/visual-review/units/M09.02.md"
     },
     "M09.03": {
       "status": "pending",

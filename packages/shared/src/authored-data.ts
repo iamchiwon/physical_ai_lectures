@@ -823,7 +823,7 @@ export const authoredMetadata: AuthoredMetadata[] = [
       "합성 토픽/형식·방향/상태 로그로 명령 경로를 진단하고 실제 이동/추정의 미상을 판정한다."
     ],
     "prerequisiteNote": "M03 구동, M05 ROS, M06 차동 기구학과 M08 모델·M09.01 월드를 사용한다. 차동 공식/양의 방향·위치/속도 구동과 Transport/ROS 형식 변환을 본문에서 보충한다. 기준은 Jazzy/Harmonic이며 기본은 합성 설정/로그·종이 계산이다. 실제 ROS/Gazebo·장비 명령은 보내지 않는다.",
-    "sha256": "711579c59316bf5e92db0998d694d866a0e887f3813a1d2167a81751ecc5475e",
+    "sha256": "e34ea0ebc4535d159b9b64b2354f527f434632159d385aa74007fb2a342fee7b",
     "reviewed": true,
     "evidenceRef": "doc/v2/work_items/M09.02.md"
   },
