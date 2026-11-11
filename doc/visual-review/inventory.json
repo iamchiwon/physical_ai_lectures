@@ -1134,8 +1134,22 @@
       "evidence": "doc/visual-review/units/M12.02.md"
     },
     "M12.03": {
-      "status": "pending",
-      "source": "ebook/curriculum/M12/M12.03.md"
+      "status": "reviewed",
+      "source": "ebook/curriculum/M12/M12.03.md",
+      "sourceSha256": "74b0d63a33ebe51c97e90c45a603bb7ee71b3d92f4715063427b3c133176fc0a",
+      "reason": "상자와 영상은 함께 변환한다의 연결/구분은 글만으로 단계나 경계를 혼동하기 쉬워 설명 도식을 추가한다. 본문의 표·수치·문제 조건도 대조한다.",
+      "assets": [
+        {
+          "path": "apps/web/public/textbook-visuals/M12.03-concept.svg",
+          "sha256": "386fd1fd127b40acbeee1522555109b8b71f37da5c74961cd555b8b26633d60e",
+          "method": "original-svg",
+          "model": null,
+          "prompt": null,
+          "alt": "상자와 영상은 함께 변환한다: 원본 영상/라벨 → Resize/Crop/Letterbox → 같은 변환을 정답에도 → 학습/평가.",
+          "caption": "각 칸은 서로 다른 역할/근거다. 아래 방향은 자료/처리의 연결이며 실제 성공을 자동으로 보장하지 않는다. 직접 제작한 개념도이며 본문의 조건과 함께 읽는다."
+        }
+      ],
+      "evidence": "doc/visual-review/units/M12.03.md"
     },
     "M12.04": {
       "status": "pending",

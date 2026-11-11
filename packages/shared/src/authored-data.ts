@@ -1397,7 +1397,7 @@ export const authoredMetadata: AuthoredMetadata[] = [
       "YOLO 계열의 가상 학습 계획에 모델/API·자료·권리·평가 조건을 기록하고 실제 검증 전의 주장 범위를 판정한다."
     ],
     "prerequisiteNote": "M11의 학습/분할/지표와 M12.01~02의 영상/좌표 변환이 선수다. 기본은 가상 라벨과 학습 명세의 종이 검사다. ultralytics는 로컬에 없으며 설치/가중치 다운로드·실제 학습/탐지를 수행하지 않는다.",
-    "sha256": "ad5e3160942598067d6a2fd7c44a02e45ca743d43ad7e9e01a3e88c94acac10b",
+    "sha256": "74b0d63a33ebe51c97e90c45a603bb7ee71b3d92f4715063427b3c133176fc0a",
     "reviewed": true,
     "evidenceRef": "doc/v2/work_items/M12.03.md"
   },
