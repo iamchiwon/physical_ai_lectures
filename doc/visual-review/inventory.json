@@ -2602,8 +2602,22 @@
       "evidence": "doc/visual-review/units/M28.02.md"
     },
     "M28.03": {
-      "status": "pending",
-      "source": "ebook/curriculum/M28/M28.03.md"
+      "status": "reviewed",
+      "source": "ebook/curriculum/M28/M28.03.md",
+      "sourceSha256": "1826bbb284088938aefc4820de645eaffc11ce55e18ae7173760b0a3de23c5ae",
+      "reason": "CAN 프레임에서 진단 의미까지의 연결/구분은 글만으로 단계나 경계를 혼동하기 쉬워 설명 도식을 추가한다. 본문의 표·수치·문제 조건도 대조한다.",
+      "assets": [
+        {
+          "path": "apps/web/public/textbook-visuals/M28.03-concept.svg",
+          "sha256": "1fb151d041442edd00674452f2fb24d3c32102461d9d55c5b9a4cf171dc81d45",
+          "method": "original-svg",
+          "model": null,
+          "prompt": null,
+          "alt": "CAN 프레임에서 진단 의미까지: CAN 프레임 → ISO-TP 재조립 → UDS PDU → 진단 문맥.",
+          "caption": "각 칸은 서로 다른 역할/근거다. 아래 방향은 자료/처리의 연결이며 실제 성공을 자동으로 보장하지 않는다. 직접 제작한 개념도이며 본문의 조건과 함께 읽는다."
+        }
+      ],
+      "evidence": "doc/visual-review/units/M28.03.md"
     },
     "M28.04": {
       "status": "pending",

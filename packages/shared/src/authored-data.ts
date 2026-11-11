@@ -2279,7 +2279,7 @@ export const authoredMetadata: AuthoredMetadata[] = [
       "진단 응답·세션/권한·시간 대기와 실제 작업 결과의 근거를 분리한다."
     ],
     "prerequisiteNote": "M28.02까지의 Classical/FD·타이밍/오류·신호 해석을 연결한다. 자체 가상 Classical11bit/8B·normal addressing·단일요청 기록을 분석하며 실제 차량/장비 진단·송수신·세션 변경은 수행하지 않는다. 일반 언어 문법이나 실제 인터페이스 설정을 추가하지 않는다.",
-    "sha256": "e01eca11f96492dfe40e75758b63a615716228e9f37920a6fc4373975c4c9551",
+    "sha256": "1826bbb284088938aefc4820de645eaffc11ce55e18ae7173760b0a3de23c5ae",
     "reviewed": true,
     "evidenceRef": "doc/v2/work_items/publication-source-privacy.md"
   },
