@@ -976,8 +976,22 @@
       "evidence": "doc/visual-review/units/M10.03.md"
     },
     "M10.04": {
-      "status": "pending",
-      "source": "ebook/curriculum/M10/M10.04.md"
+      "status": "reviewed",
+      "source": "ebook/curriculum/M10/M10.04.md",
+      "sourceSha256": "f58cbf03947bd39f476603992bc75b695b18c49ffc18056311d997c905172cf4",
+      "reason": "질량중심과 관성의 기준의 연결/구분은 글만으로 단계나 경계를 혼동하기 쉬워 설명 도식을 추가한다. 본문의 표·수치·문제 조건도 대조한다.",
+      "assets": [
+        {
+          "path": "apps/web/public/textbook-visuals/M10.04-concept.svg",
+          "sha256": "e59b4c41e7575ed0d2d248ad5748acab5e15994f5ab77e3acfcadf7ccae430d9",
+          "method": "original-svg",
+          "model": null,
+          "prompt": null,
+          "alt": "질량중심과 관성의 기준: 각 링크 질량/COM → 관성 텐서 → 회전/평행축 변환 → Articulation.",
+          "caption": "각 칸은 서로 다른 역할/근거다. 아래 방향은 자료/처리의 연결이며 실제 성공을 자동으로 보장하지 않는다. 직접 제작한 개념도이며 본문의 조건과 함께 읽는다."
+        }
+      ],
+      "evidence": "doc/visual-review/units/M10.04.md"
     },
     "M10.05": {
       "status": "pending",

@@ -1201,7 +1201,7 @@ export const authoredMetadata: AuthoredMetadata[] = [
       "단일 강체와 articulation을 구분하고 베이스·관절 제약에 따른 자유도와 모델 검증 범위를 설명한다."
     ],
     "prerequisiteNote": "M07.01의 힘/토크와 M08.04의 관성/평행축, M10.02의 변환 기록이 선수다. 종이 수치와 가상 구성표를 사용하며 Isaac Sim·GPU·실물 실행이 필요하지 않다.",
-    "sha256": "688f9fa07fb97beebdab5b505e61a46832c7ccc22cf7bc3900a9311a824fde95",
+    "sha256": "f58cbf03947bd39f476603992bc75b695b18c49ffc18056311d997c905172cf4",
     "reviewed": true,
     "evidenceRef": "doc/v2/work_items/publication-source-privacy.md"
   },
