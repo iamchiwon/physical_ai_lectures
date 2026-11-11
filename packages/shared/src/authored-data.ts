@@ -1453,7 +1453,7 @@ export const authoredMetadata: AuthoredMetadata[] = [
       "LeRobotDataset v3의 공유 파일/메타데이터 관계와 마감·재로딩 확인 근거를 설명한다."
     ],
     "prerequisiteNote": "M20.01의 관측/목표 기록, M14.03의 같은 시계·시각, M11.02의 shape가 선수다. 모델 학습이나 Dataset API 설치 없이 합성 스키마/행 표를 분석한다. 아래 형식은 v3 개념을 설명하는 단순 논리 표이며 그대로 공식 파일 스키마라고 가정하지 않는다.",
-    "sha256": "4abbce3b101a29df27aea4c636e3d1c802daee17886c437c5eb44d4332cf1c56",
+    "sha256": "ff118e06d9c5599d6b0336c015ed18d02ccf38011fedd675e141945a91273508",
     "reviewed": true,
     "evidenceRef": "doc/v2/work_items/M20.03.md"
   },

@@ -1898,8 +1898,22 @@
       "evidence": "doc/visual-review/units/M20.02.md"
     },
     "M20.03": {
-      "status": "pending",
-      "source": "ebook/curriculum/M20/M20.03.md"
+      "status": "reviewed",
+      "source": "ebook/curriculum/M20/M20.03.md",
+      "sourceSha256": "ff118e06d9c5599d6b0336c015ed18d02ccf38011fedd675e141945a91273508",
+      "reason": "에피소드 한 전이의 시간 관계의 연결/구분은 글만으로 단계나 경계를 혼동하기 쉬워 설명 도식을 추가한다. 본문의 표·수치·문제 조건도 대조한다.",
+      "assets": [
+        {
+          "path": "apps/web/public/textbook-visuals/M20.03-concept.svg",
+          "sha256": "938fd3305145cc1cfdfd31fd6248dfac267ec1d34c07100124dbf16f8bd59c4d",
+          "method": "original-svg",
+          "model": null,
+          "prompt": null,
+          "alt": "에피소드 한 전이의 시간 관계: 관측 o(t) → 행동 a(t) → 다음 관측 → 에피소드/종료.",
+          "caption": "각 칸은 서로 다른 역할/근거다. 아래 방향은 자료/처리의 연결이며 실제 성공을 자동으로 보장하지 않는다. 직접 제작한 개념도이며 본문의 조건과 함께 읽는다."
+        }
+      ],
+      "evidence": "doc/visual-review/units/M20.03.md"
     },
     "M20.04": {
       "status": "pending",
