@@ -1495,7 +1495,7 @@ export const authoredMetadata: AuthoredMetadata[] = [
       "도메인 랜덤화의 의미 보존·파라미터 범위/평가 조건을 설계하고 분포 밖/라벨 오류를 판정한다."
     ],
     "prerequisiteNote": "M11.03의 분할/통계와 M20.03~05의 episode·스키마/검사가 선수다. 관측→행동을 따라 배우는 BC의 의미는 본문에서 보충한다. 기본은 합성 시도/그룹 표와 분포 계산이며 정책 학습·실물 수집·시뮬레이터 실행을 요구하지 않는다.",
-    "sha256": "670928df2226b312ddb9af0db1e9da646b1841af02ed121e173df4ca310fc48c",
+    "sha256": "715483f7fab5dfec981466d0a045a469ab401167f5ddf8f7950760919c3c6658",
     "reviewed": true,
     "evidenceRef": "doc/v2/work_items/M20.06.md"
   },

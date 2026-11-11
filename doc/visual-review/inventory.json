@@ -1942,8 +1942,22 @@
       "evidence": "doc/visual-review/units/M20.05.md"
     },
     "M20.06": {
-      "status": "pending",
-      "source": "ebook/curriculum/M20/M20.06.md"
+      "status": "reviewed",
+      "source": "ebook/curriculum/M20/M20.06.md",
+      "sourceSha256": "715483f7fab5dfec981466d0a045a469ab401167f5ddf8f7950760919c3c6658",
+      "reason": "증강 뒤에도 의미를 보존한다의 연결/구분은 글만으로 단계나 경계를 혼동하기 쉬워 설명 도식을 추가한다. 본문의 표·수치·문제 조건도 대조한다.",
+      "assets": [
+        {
+          "path": "apps/web/public/textbook-visuals/M20.06-concept.svg",
+          "sha256": "ab34b7675a871d63c44f05c99abefbc36bc0b21a4621af9af4af34d1996515b1",
+          "method": "original-svg",
+          "model": null,
+          "prompt": null,
+          "alt": "증강 뒤에도 의미를 보존한다: 원본 그룹 분리 → 조명/배경 변형 → 위치/카메라 변형 → 보류/재검사.",
+          "caption": "각 칸은 서로 다른 역할/근거다. 아래 방향은 자료/처리의 연결이며 실제 성공을 자동으로 보장하지 않는다. 직접 제작한 개념도이며 본문의 조건과 함께 읽는다."
+        }
+      ],
+      "evidence": "doc/visual-review/units/M20.06.md"
     },
     "M21.01": {
       "status": "pending",
