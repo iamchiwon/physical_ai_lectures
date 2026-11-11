@@ -1621,7 +1621,7 @@ export const authoredMetadata: AuthoredMetadata[] = [
       "실행/중단의 요청·수락·실제 결과를 구분하고 미상/재개 조건과 감사 기록을 설계한다."
     ],
     "prerequisiteNote": "M22.02의 명령 계약/Action과 M22.05의 단계별 전제를 사용한다. 신뢰 경계/최소 권한·감독 상태를 본문에서 보충한다. 기본은 종이 허가표/합성 로그이며 실제 명령 전송·안전 인증을 하지 않는다.",
-    "sha256": "a5ca679923f57721bf3642fd24870cbba92d119cbbc108971ba8a2ebe9f27313",
+    "sha256": "948f8c802ca04476821ce2c2597100e86d9bf33047ebdbe78fa8fd01af2449a0",
     "reviewed": true,
     "evidenceRef": "doc/v2/work_items/M22.06.md"
   },

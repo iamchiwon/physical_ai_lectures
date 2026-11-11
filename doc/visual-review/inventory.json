@@ -2128,8 +2128,22 @@
       "evidence": "doc/visual-review/units/M22.05.md"
     },
     "M22.06": {
-      "status": "pending",
-      "source": "ebook/curriculum/M22/M22.06.md"
+      "status": "reviewed",
+      "source": "ebook/curriculum/M22/M22.06.md",
+      "sourceSha256": "948f8c802ca04476821ce2c2597100e86d9bf33047ebdbe78fa8fd01af2449a0",
+      "reason": "모델 밖에서 닫는 실행 관문의 연결/구분은 글만으로 단계나 경계를 혼동하기 쉬워 설명 도식을 추가한다. 본문의 표·수치·문제 조건도 대조한다.",
+      "assets": [
+        {
+          "path": "apps/web/public/textbook-visuals/M22.06-concept.svg",
+          "sha256": "f9448bcbdcddcfeb252c5428888e15c6350a36b7d28bbecdc816b3584d10b21c",
+          "method": "original-svg",
+          "model": null,
+          "prompt": null,
+          "alt": "모델 밖에서 닫는 실행 관문: 작업 권한 → 현재 근거 검사 → 요청 확인/실행 → 중단/재개.",
+          "caption": "각 칸은 서로 다른 역할/근거다. 아래 방향은 자료/처리의 연결이며 실제 성공을 자동으로 보장하지 않는다. 직접 제작한 개념도이며 본문의 조건과 함께 읽는다."
+        }
+      ],
+      "evidence": "doc/visual-review/units/M22.06.md"
     },
     "M23.01": {
       "status": "pending",
