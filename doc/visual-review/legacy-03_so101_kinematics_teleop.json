@@ -1,0 +1,166 @@
+{
+  "scope": "기존 교재 읽기 단위의 시각 참조·이미지 파일 연결 검사. 원본/실습·해설 유지.",
+  "decision": "기존 장별 좌표/기구/데이터/시간/배포 도식을 유지하며 현재 커리큘럼의 추가 도식으로 보충한다.",
+  "units": [
+    {
+      "slug": "03_so101_kinematics_teleop--chapter-1",
+      "title": "제3장 SO-101 기구학과 ROS 2 기반 하드웨어 텔레오퍼레이션",
+      "source": "03_so101_kinematics_teleop/chapter.md",
+      "contentSha256": "e1787b8ca338513120ebf0481634b8f34d6153d09b3dfa2441d30c2c1a1e5b77",
+      "images": 0
+    },
+    {
+      "slug": "03_so101_kinematics_teleop--chapter-2",
+      "title": "장 개요",
+      "source": "03_so101_kinematics_teleop/chapter.md",
+      "contentSha256": "124092347162ac11c6e2cab04ef22936fd3f51679df8f7d012f410dd0986da6c",
+      "images": 1
+    },
+    {
+      "slug": "03_so101_kinematics_teleop--chapter-3",
+      "title": "학습 목표",
+      "source": "03_so101_kinematics_teleop/chapter.md",
+      "contentSha256": "128b4bb5f0fe85b7ebc64ef221524f5bda564f9f18f5ba726e67403745c18b1a",
+      "images": 0
+    },
+    {
+      "slug": "03_so101_kinematics_teleop--chapter-4",
+      "title": "선수 지식과 준비물",
+      "source": "03_so101_kinematics_teleop/chapter.md",
+      "contentSha256": "6d773d3a934acee1e8e2e8e90f0b1072dd7e6ce0d64db282bf8b86a3478102aa",
+      "images": 0
+    },
+    {
+      "slug": "03_so101_kinematics_teleop--chapter-5",
+      "title": "3.1 SO-101 기구학 모델",
+      "source": "03_so101_kinematics_teleop/chapter.md",
+      "contentSha256": "14679032ac9162e0b43717c3e47de877265a02a4550ce1fc07f346f86dda0682",
+      "images": 1
+    },
+    {
+      "slug": "03_so101_kinematics_teleop--chapter-6",
+      "title": "3.2 순기구학",
+      "source": "03_so101_kinematics_teleop/chapter.md",
+      "contentSha256": "e495d32b043513b6bf3a73fbd128fb6b166ec91750f9e8a5b46f0d71c6f41122",
+      "images": 0
+    },
+    {
+      "slug": "03_so101_kinematics_teleop--chapter-7",
+      "title": "3.3 DLS 역기구학",
+      "source": "03_so101_kinematics_teleop/chapter.md",
+      "contentSha256": "5ad9901e51c2a179848fce07737fd098342a8df7afcdcf16c32bf7fb2449301d",
+      "images": 0
+    },
+    {
+      "slug": "03_so101_kinematics_teleop--chapter-8",
+      "title": "3.4 Leader-Follower 캘리브레이션",
+      "source": "03_so101_kinematics_teleop/chapter.md",
+      "contentSha256": "311351ff59681e88a695cf73939e00b60df4c8fc6a43adee82c85c4ebac0d6c8",
+      "images": 0
+    },
+    {
+      "slug": "03_so101_kinematics_teleop--chapter-9",
+      "title": "3.5 안전한 텔레오퍼레이션 루프",
+      "source": "03_so101_kinematics_teleop/chapter.md",
+      "contentSha256": "27df6f1c6028bf472c041f9b8ebf26ea4667d29d69c7e725fc19fbc3510fc359",
+      "images": 1
+    },
+    {
+      "slug": "03_so101_kinematics_teleop--chapter-10",
+      "title": "3.6 ROS 2 JointState 브리지",
+      "source": "03_so101_kinematics_teleop/chapter.md",
+      "contentSha256": "cbe37997b62dd81bb6984dfb0374b35429a09e7fad50ac590b436dc0399842d6",
+      "images": 1
+    },
+    {
+      "slug": "03_so101_kinematics_teleop--chapter-11",
+      "title": "3.7 단계별 실습",
+      "source": "03_so101_kinematics_teleop/chapter.md",
+      "contentSha256": "f809fa6a1b960ff679aa970f9ca3dfcd452cb1607f51330d0623d1fb0b14045e",
+      "images": 0
+    },
+    {
+      "slug": "03_so101_kinematics_teleop--chapter-12",
+      "title": "3.8 트러블슈팅",
+      "source": "03_so101_kinematics_teleop/chapter.md",
+      "contentSha256": "00372c73ba7a4979566db48a3d271b7574e708ac1060cc0f58e19eacc8b27a04",
+      "images": 0
+    },
+    {
+      "slug": "03_so101_kinematics_teleop--chapter-13",
+      "title": "3.9 요약",
+      "source": "03_so101_kinematics_teleop/chapter.md",
+      "contentSha256": "b2baffd012192441d3b09093c4a912f35b54e9d45ee5844410efa77d3b88cd48",
+      "images": 0
+    },
+    {
+      "slug": "03_so101_kinematics_teleop--chapter-14",
+      "title": "3.10 확인문제",
+      "source": "03_so101_kinematics_teleop/chapter.md",
+      "contentSha256": "4e779cd4664c3b8b8adccf0002fbe3d5f02d4f48e9caca6c86bb841da6512a1e",
+      "images": 0
+    },
+    {
+      "slug": "03_so101_kinematics_teleop--chapter-15",
+      "title": "3.11 프로젝트 과제",
+      "source": "03_so101_kinematics_teleop/chapter.md",
+      "contentSha256": "b25ef7991e4831ed57d30537497f2d562565e9225c36d72f696f54bc97acbf62",
+      "images": 0
+    },
+    {
+      "slug": "03_so101_kinematics_teleop--chapter-16",
+      "title": "3.12 실습·평가·참고자료",
+      "source": "03_so101_kinematics_teleop/chapter.md",
+      "contentSha256": "ce59483fd10a339421715a2d1473d721ce1c366b0defe71ae6a0cb12db73566a",
+      "images": 0
+    },
+    {
+      "slug": "03_so101_kinematics_teleop--labs--lab_3_1_fk_ik-1",
+      "title": "[SIM] 실습 3-1: FK와 DLS IK",
+      "source": "03_so101_kinematics_teleop/labs/lab_3_1_fk_ik.md",
+      "contentSha256": "62da35d95970a421eb1c74ad888f55e3908fa3b6094b20670d1923c5d2ac43de",
+      "images": 0
+    },
+    {
+      "slug": "03_so101_kinematics_teleop--labs--lab_3_2_safe_teleop-1",
+      "title": "[SIM] [SAFETY] 실습 3-2: Leader-Follower 안전 필터",
+      "source": "03_so101_kinematics_teleop/labs/lab_3_2_safe_teleop.md",
+      "contentSha256": "f2096a879a723a6d112455fae362652eb83d497b39667f5d6f5448d4b47f15ab",
+      "images": 0
+    },
+    {
+      "slug": "03_so101_kinematics_teleop--labs--lab_3_3_ros2_bridge-1",
+      "title": "[SIM→HW] [SAFETY] 실습 3-3: ROS 2 JointState 안전 브리지",
+      "source": "03_so101_kinematics_teleop/labs/lab_3_3_ros2_bridge.md",
+      "contentSha256": "812d8c68f5dbaec92e2e12ce4931688c7f056996032ce76d2ba5db5015083216",
+      "images": 0
+    }
+  ],
+  "images": [
+    {
+      "unit": "03_so101_kinematics_teleop--chapter-2",
+      "alt": "그림 3-1. SO-101의 5개 팔 관절과 그리퍼 구동기",
+      "source": "ebook/book/03_so101_kinematics_teleop/images/so101_kinematic_chain.svg",
+      "exists": true
+    },
+    {
+      "unit": "03_so101_kinematics_teleop--chapter-5",
+      "alt": "그림 3-2. URDF에서 USD articulation으로 보존해야 할 정보",
+      "source": "ebook/book/03_so101_kinematics_teleop/images/urdf_to_usd.svg",
+      "exists": true
+    },
+    {
+      "unit": "03_so101_kinematics_teleop--chapter-9",
+      "alt": "그림 3-3. 안전 계층을 포함한 Leader-Follower 제어 루프",
+      "source": "ebook/book/03_so101_kinematics_teleop/images/safe_teleop_pipeline.svg",
+      "exists": true
+    },
+    {
+      "unit": "03_so101_kinematics_teleop--chapter-10",
+      "alt": "그림 3-4. ROS 2를 통한 실물-시뮬레이터 상태 동기화",
+      "source": "ebook/book/03_so101_kinematics_teleop/images/ros2_digital_twin.svg",
+      "exists": true
+    }
+  ],
+  "missing": []
+}
