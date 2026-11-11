@@ -2436,8 +2436,22 @@
       "evidence": "doc/visual-review/units/M26.02.md"
     },
     "M26.03": {
-      "status": "pending",
-      "source": "ebook/curriculum/M26/M26.03.md"
+      "status": "reviewed",
+      "source": "ebook/curriculum/M26/M26.03.md",
+      "sourceSha256": "8f7be2bc6ee5b0e80560f37bc891d1f1573aad4d891bac0cacc2c5fd5f8d4aa0",
+      "reason": "전원·논리·물리 핀을 나누기의 연결/구분은 글만으로 단계나 경계를 혼동하기 쉬워 설명 도식을 추가한다. 본문의 표·수치·문제 조건도 대조한다.",
+      "assets": [
+        {
+          "path": "apps/web/public/textbook-visuals/M26.03-concept.svg",
+          "sha256": "9bd7786893b0c489afc4f697f24443363b22e44d5e39534e70cb6a04b93d28e9",
+          "method": "original-svg",
+          "model": null,
+          "prompt": null,
+          "alt": "전원·논리·물리 핀을 나누기: 전원 영역 → 논리 신호 → 회로 symbol → footprint → 제작 전 검수.",
+          "caption": "실제 배선도가 아닌 검토 항목의 관계도다. 제공 가상 연결표의 결함을 분석하는 범위이며 이 그림으로 보드 제작·전원 인가를 승인하지 않는다. 직접 제작."
+        }
+      ],
+      "evidence": "doc/visual-review/units/M26.03.md"
     },
     "M26.04": {
       "status": "pending",

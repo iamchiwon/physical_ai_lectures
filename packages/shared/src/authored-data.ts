@@ -2195,7 +2195,7 @@ export const authoredMetadata: AuthoredMetadata[] = [
       "ERC/DRC의 범위·원본/형상과 남은 결함을 구분해 보드 검토 판정을 기록한다."
     ],
     "prerequisiteNote": "M26.02의 센서/driver·전력/현재 상태 구분이 선수다. 일반 코딩 가능자를 대상으로 회로/PCB 용어와 도구 경계를 보충하고 제공 연결표를 종이로 검토한다. 기본 학습에 설치/장비는 필요 없다. 실제 KiCad/회로/PCB·ERC/DRC 실행, 제조/전원 인가·모터/계측·열/안전 실증은 수행하지 않는다.",
-    "sha256": "04f8a34e2b678faabd22b1882e77cd0191fd4b963ecc7be88c3411a4de080c46",
+    "sha256": "8f7be2bc6ee5b0e80560f37bc891d1f1573aad4d891bac0cacc2c5fd5f8d4aa0",
     "reviewed": true,
     "evidenceRef": "doc/v2/work_items/M26.03.md"
   },
