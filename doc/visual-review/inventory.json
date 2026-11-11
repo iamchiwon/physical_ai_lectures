@@ -2208,8 +2208,12 @@
       "evidence": "doc/visual-review/units/M23.04.md"
     },
     "M23.05": {
-      "status": "pending",
-      "source": "ebook/curriculum/M23/M23.05.md"
+      "status": "reviewed",
+      "source": "ebook/curriculum/M23/M23.05.md",
+      "sourceSha256": "32e5668de7a2ea363939fcc9ea5a6efff0a11f43209500dd4f29db45baa8d079",
+      "reason": "본문의 「학습 곡선 한 줄로 방법을 판단하지 않는다」부터 「재시작과 새 실험의 경계를 남긴다」까지 시각 참조/입력 조건을 점검했다. 정의와 수치/판정 절차가 글 안에서 주어지고 특정 미제공 사진/그림의 식별에 의존하지 않아 이번에는 이미지를 추가하지 않는다. 공간 구조의 세부 설명은 연결된 선수 단위의 그림과 함께 읽는다.",
+      "assets": [],
+      "evidence": "doc/visual-review/units/M23.05.md"
     },
     "M23.06": {
       "status": "pending",
