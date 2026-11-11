@@ -3060,8 +3060,12 @@
       "evidence": "doc/visual-review/units/M34.02.md"
     },
     "M34.03": {
-      "status": "pending",
-      "source": "ebook/curriculum/M34/M34.03.md"
+      "status": "reviewed",
+      "source": "ebook/curriculum/M34/M34.03.md",
+      "sourceSha256": "66705f31d835d1d1521f99d0a863c663379621989aabd3c38c18d850ad6fb431",
+      "reason": "본문의 「화면에서 보이는 것과 실행할 수 있는 것은 다르다」부터 「감사 기록은 결정과 관측의 연결을 보존한다」까지 시각 참조/입력 조건을 점검했다. 제공 표·정의와 수치/판정 절차가 글 안에서 주어지고 특정 미제공 사진/그림의 식별에 의존하지 않아 이번에는 이미지를 추가하지 않는다. 공간 구조의 세부 설명은 연결된 선수 단위의 그림과 함께 읽는다.",
+      "assets": [],
+      "evidence": "doc/visual-review/units/M34.03.md"
     }
   }
 }
