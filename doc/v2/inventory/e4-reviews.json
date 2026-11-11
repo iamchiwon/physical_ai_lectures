@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "topics": {
     "M19.01": {
-      "sourceSha256": "ff8552b6bb2cd0a4ac7dd342a76d70bf721ed42826e98d049a84b6741f9586ba",
+      "sourceSha256": "58c958ea9157fa8ba212d3f588369d768aa815a7e92ab7a36b293d2bda9a206f",
       "evidenceRef": "doc/v2/work_items/publication-source-privacy.md"
     },
     "M19.02": {

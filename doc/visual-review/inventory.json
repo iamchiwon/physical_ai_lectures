@@ -1784,8 +1784,22 @@
       "evidence": "doc/visual-review/units/M18.06.md"
     },
     "M19.01": {
-      "status": "pending",
-      "source": "ebook/curriculum/M19/M19.01.md"
+      "status": "reviewed",
+      "source": "ebook/curriculum/M19/M19.01.md",
+      "sourceSha256": "58c958ea9157fa8ba212d3f588369d768aa815a7e92ab7a36b293d2bda9a206f",
+      "reason": "관절 끝·도구 끝·물체를 구분의 연결/구분은 글만으로 단계나 경계를 혼동하기 쉬워 설명 도식을 추가한다. 본문의 표·수치·문제 조건도 대조한다.",
+      "assets": [
+        {
+          "path": "apps/web/public/textbook-visuals/M19.01-concept.svg",
+          "sha256": "e28b29ee6374ffbd7d74f387c0134aa3c75da91ef13f5d89c391ae65a8712435",
+          "method": "original-svg",
+          "model": null,
+          "prompt": null,
+          "alt": "관절 끝·도구 끝·물체를 구분: 마지막 링크 frame → Tool/TCP frame → Camera/Object frame → 변환 합성.",
+          "caption": "각 칸은 서로 다른 역할/근거다. 아래 방향은 자료/처리의 연결이며 실제 성공을 자동으로 보장하지 않는다. 직접 제작한 개념도이며 본문의 조건과 함께 읽는다."
+        }
+      ],
+      "evidence": "doc/visual-review/units/M19.01.md"
     },
     "M19.02": {
       "status": "pending",

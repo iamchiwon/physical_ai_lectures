@@ -1243,7 +1243,7 @@ export const authoredMetadata: AuthoredMetadata[] = [
       "카메라 장착 방식에 따른 핸드아이 변환 방향과 필요한 관측/검증 조건을 판정한다."
     ],
     "prerequisiteNote": "M06의 좌표 변환과 M14.01/03/06의 카메라 프레임·시간·잔차가 선수다. 목표 자세와 경로의 차이는 본문에서 보충하며 M17.01의 구성 공간·충돌과 이어 읽는다. 기본은 합성 좌표와 보정 기록의 종이 계산이다.",
-    "sha256": "ff8552b6bb2cd0a4ac7dd342a76d70bf721ed42826e98d049a84b6741f9586ba",
+    "sha256": "58c958ea9157fa8ba212d3f588369d768aa815a7e92ab7a36b293d2bda9a206f",
     "reviewed": true,
     "evidenceRef": "doc/v2/work_items/publication-source-privacy.md"
   },
