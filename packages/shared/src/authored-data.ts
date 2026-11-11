@@ -221,7 +221,7 @@ export const authoredMetadata: AuthoredMetadata[] = [
       "응답 시간초과·취소 요청·파라미터 변경 기록에서 보장되지 않은 결론과 추가 증거를 설명한다."
     ],
     "prerequisiteNote": "M05.01의 노드·Executor·콜백과 M01의 자료형, M02의 단위를 사용한다. ROS 2 Jazzy 문서 기준의 종이 인터페이스 설계이며 실제 서비스 호출·Action 송신·로봇 동작은 수행하지 않는다.",
-    "sha256": "6a00e903e53631fac7bb03317aa5dfada6e4e13709018e031f51f3dc996eb8d1",
+    "sha256": "790c876130ed6eb3aee1f89258aa9bb47227817928c4e8f74072e5179a3363c8",
     "reviewed": true,
     "evidenceRef": "doc/v2/work_items/M05.02.md"
   },
