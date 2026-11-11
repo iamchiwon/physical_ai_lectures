@@ -784,8 +784,12 @@
       "evidence": "doc/visual-review/units/M08.01.md"
     },
     "M08.02": {
-      "status": "pending",
-      "source": "ebook/curriculum/M08/M08.02.md"
+      "status": "reviewed",
+      "source": "ebook/curriculum/M08/M08.02.md",
+      "sourceSha256": "82024f1b63360438b2f58acbde4564f1f96fbce4a0370f6dd57ca8bcc7a3fa99",
+      "reason": "본문의 「반복을 줄이는 언어와 최종 모델」부터 「생성 성공 뒤에도 검토할 것이 남는다」까지 시각 참조/입력 조건을 점검했다. 명시된 코드/설정·정의와 수치/판정 절차가 글 안에서 주어지고 특정 미제공 사진/그림의 식별에 의존하지 않아 이번에는 이미지를 추가하지 않는다. 공간 구조의 세부 설명은 연결된 선수 단위의 그림과 함께 읽는다.",
+      "assets": [],
+      "evidence": "doc/visual-review/units/M08.02.md"
     },
     "M08.03": {
       "status": "pending",
