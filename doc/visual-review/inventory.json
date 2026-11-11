@@ -1454,8 +1454,22 @@
       "evidence": "doc/visual-review/units/M15.04.md"
     },
     "M15.05": {
-      "status": "pending",
-      "source": "ebook/curriculum/M15/M15.05.md"
+      "status": "reviewed",
+      "source": "ebook/curriculum/M15/M15.05.md",
+      "sourceSha256": "6872f1064f14a4e43dc56d020ac50e4605a576902aaed7fd092c089fc38c4e46",
+      "reason": "추정이 끊긴 뒤의 복구 근거의 연결/구분은 글만으로 단계나 경계를 혼동하기 쉬워 설명 도식을 추가한다. 본문의 표·수치·문제 조건도 대조한다.",
+      "assets": [
+        {
+          "path": "apps/web/public/textbook-visuals/M15.05-concept.svg",
+          "sha256": "1b430ef7005865d771923c5e2c91c0c0ebdb0815d9068db0cbf62fa045bbd016",
+          "method": "original-svg",
+          "model": null,
+          "prompt": null,
+          "alt": "추정이 끊긴 뒤의 복구 근거: IMU/운동 예측 → 외부 관측 → 추적 손실 → 재위치추정.",
+          "caption": "각 칸은 서로 다른 역할/근거다. 아래 방향은 자료/처리의 연결이며 실제 성공을 자동으로 보장하지 않는다. 직접 제작한 개념도이며 본문의 조건과 함께 읽는다."
+        }
+      ],
+      "evidence": "doc/visual-review/units/M15.05.md"
     },
     "M15.06": {
       "status": "pending",

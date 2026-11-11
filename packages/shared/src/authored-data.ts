@@ -949,7 +949,7 @@ export const authoredMetadata: AuthoredMetadata[] = [
       "대칭 환경의 위치 모호성과 재위치추정에 필요한 지도·관측·검증 근거를 판정한다."
     ],
     "prerequisiteNote": "M03/M09의 IMU와 M15의 위치·지도 기초를 연결한다. 바이어스, 분산, 예측과 관측 보정 및 재위치추정의 뜻을 본문에서 보충한다. Kalman/EKF 심화를 요구하지 않으며 단순 스칼라 가중식을 실제 필터 구현과 동일시하지 않는다. 기본은 합성 기록 계산이다.",
-    "sha256": "67acde3701e250e5849af011435e1c93f4215c9bdfcc851c208818511b925eba",
+    "sha256": "6872f1064f14a4e43dc56d020ac50e4605a576902aaed7fd092c089fc38c4e46",
     "reviewed": true,
     "evidenceRef": "doc/v2/work_items/M15.05.md"
   },
