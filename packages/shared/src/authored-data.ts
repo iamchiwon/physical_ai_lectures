@@ -1551,7 +1551,7 @@ export const authoredMetadata: AuthoredMetadata[] = [
       "합성 skill의 유용성/가능성 점수를 계산하고 선택·명령/실제 완료의 검증 근거를 구분한다."
     ],
     "prerequisiteNote": "M12의 영상 관측, M19의 계획/실행과 M20·M21.01의 데이터/BC 기초를 연결한다. ACT 등 특정 정책 전체를 모델 역할 구분의 필수 선수로 요구하지 않는다. LLM/VLM/VLA와 skill·접지는 본문에서 보충하며 M18.04의 Action·작업 상태와 이어 읽는다. 기본은 합성 장면/점수 표 분석이고 모델/API·ROS/로봇 실행은 없다.",
-    "sha256": "bec2f9645a3b7d67395fa04b377fe95cba27c7167d9dedb3a8719b4cee4a4c3e",
+    "sha256": "90e5ca8ae30f60c930db3345644e134c5dad85759e011bf4a86ff286af083b74",
     "reviewed": true,
     "evidenceRef": "doc/v2/work_items/M22.01.md"
   },

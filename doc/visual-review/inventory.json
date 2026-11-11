@@ -2058,8 +2058,22 @@
       "evidence": "doc/visual-review/units/M21.06.md"
     },
     "M22.01": {
-      "status": "pending",
-      "source": "ebook/curriculum/M22/M22.01.md"
+      "status": "reviewed",
+      "source": "ebook/curriculum/M22/M22.01.md",
+      "sourceSha256": "90e5ca8ae30f60c930db3345644e134c5dad85759e011bf4a86ff286af083b74",
+      "reason": "언어·시각·행동 모델의 출력의 연결/구분은 글만으로 단계나 경계를 혼동하기 쉬워 설명 도식을 추가한다. 본문의 표·수치·문제 조건도 대조한다.",
+      "assets": [
+        {
+          "path": "apps/web/public/textbook-visuals/M22.01-concept.svg",
+          "sha256": "9bf6da86d89ff59701ae69179ccf391e6d517ad307ee5e7cb4af811b98bde980",
+          "method": "original-svg",
+          "model": null,
+          "prompt": null,
+          "alt": "언어·시각·행동 모델의 출력: LLM 계획 → VLM 인지 → VLA 정책 → 실행 감독.",
+          "caption": "각 칸은 서로 다른 역할/근거다. 나란히 비교할 항목이며 위아래가 시간 순서를 뜻하지 않는다. 직접 제작한 개념도이며 본문의 조건과 함께 읽는다."
+        }
+      ],
+      "evidence": "doc/visual-review/units/M22.01.md"
     },
     "M22.02": {
       "status": "pending",
