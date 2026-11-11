@@ -1374,8 +1374,12 @@
       "evidence": "doc/visual-review/units/M14.05.md"
     },
     "M14.06": {
-      "status": "pending",
-      "source": "ebook/curriculum/M14/M14.06.md"
+      "status": "reviewed",
+      "source": "ebook/curriculum/M14/M14.06.md",
+      "sourceSha256": "957ff8b7946845f800ef9112a4b3998bb142f24c38666c1f1b35861dc948de70",
+      "reason": "본문의 「작은 잔차를 보기 전에 비교 조건을 맞춘다」부터 「수치와 함께 다시 판단할 근거를 남긴다」까지 시각 참조/입력 조건을 점검했다. 정의와 수치/판정 절차가 글 안에서 주어지고 특정 미제공 사진/그림의 식별에 의존하지 않아 이번에는 이미지를 추가하지 않는다. 공간 구조의 세부 설명은 연결된 선수 단위의 그림과 함께 읽는다.",
+      "assets": [],
+      "evidence": "doc/visual-review/units/M14.06.md"
     },
     "M15.01": {
       "status": "pending",
