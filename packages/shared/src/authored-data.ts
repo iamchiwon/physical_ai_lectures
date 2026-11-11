@@ -277,7 +277,7 @@ export const authoredMetadata: AuthoredMetadata[] = [
       "수치 미분 간격과 선형화 변화량의 영향을 비교해 작은 간격·큰 이동의 한계를 설명한다."
     ],
     "prerequisiteNote": "M02.01의 행렬 곱과 M02.02의 단위·프레임 구분을 사용한다. 사칙연산·제곱부터 예를 전개하며 기호를 외워 온 것으로 가정하지 않는다. 종이 계산이 기본이다.",
-    "sha256": "28520eecad4e6c99f1891a65c8786ddabe9fdf5df8312cb447cdc5a50ef30cbc",
+    "sha256": "f6e4ecd8ed405573bb4267cfd603c4695a2c59c0d5bae808391acfd85116179b",
     "reviewed": true,
     "evidenceRef": "doc/v2/work_items/publication-source-privacy.md"
   },

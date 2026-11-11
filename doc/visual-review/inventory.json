@@ -224,8 +224,22 @@
       "evidence": "doc/visual-review/units/M02.02.md"
     },
     "M02.03": {
-      "status": "pending",
-      "source": "ebook/curriculum/M02/M02.03.md"
+      "status": "reviewed",
+      "source": "ebook/curriculum/M02/M02.03.md",
+      "sourceSha256": "f6e4ecd8ed405573bb4267cfd603c4695a2c59c0d5bae808391acfd85116179b",
+      "reason": "평균 변화율과 순간 변화율는 공간/파형 관계를 직접 보아야 식의 기준과 적용 범위를 혼동하지 않으므로 도식을 추가한다. 제공된 식·본문 조건과 대조했다.",
+      "assets": [
+        {
+          "path": "apps/web/public/textbook-visuals/M02.03-concept.svg",
+          "sha256": "d39f2cfc02cb6c2cffbfe289f207dedcddc2d888c838677e25cbf68e85e32465",
+          "method": "original-svg",
+          "model": null,
+          "prompt": null,
+          "alt": "평균 변화율과 순간 변화율. x=t²인 본문의 예에서 t=1~2의 평균 속도는 할선의 기울기 3 m/s다. t=1의 순간 속도 2 m/s는 접선의 기울기이며 구간 전체의 속도와 다르다.",
+          "caption": "x=t²인 본문의 예에서 t=1~2의 평균 속도는 할선의 기울기 3 m/s다. t=1의 순간 속도 2 m/s는 접선의 기울기이며 구간 전체의 속도와 다르다. 직접 제작."
+        }
+      ],
+      "evidence": "doc/visual-review/units/M02.03.md"
     },
     "M02.04": {
       "status": "pending",
