@@ -2825,7 +2825,7 @@ export const authoredMetadata: AuthoredMetadata[] = [
       "ODD·의사결정 상태와 관측 부족/중단을 명세한다."
     ],
     "prerequisiteNote": "M07.05, M12.05, M13.04, M14.04, M15.06, M17.06의 개념을 사용한다. 필요한 새 용어·기호는 본문에서 정의한다. 일반 코딩 문법/실제 장비 설치를 요구하지 않으며 합성 자료로 기본 경로를 수행한다.",
-    "sha256": "ebdd462c687fb3f658c438adb6082fbd45cde850600741f62aefc468f582ae3a",
+    "sha256": "69af76681a2310f0e1a6748c1a8d8bdf7879fddaa0ca080f783f4b9492f1e7ea",
     "reviewed": true,
     "evidenceRef": "doc/v2/work_items/M29.01.md"
   },
