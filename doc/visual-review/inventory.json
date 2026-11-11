@@ -1188,8 +1188,12 @@
       "evidence": "doc/visual-review/units/M12.05.md"
     },
     "M12.06": {
-      "status": "pending",
-      "source": "ebook/curriculum/M12/M12.06.md"
+      "status": "reviewed",
+      "source": "ebook/curriculum/M12/M12.06.md",
+      "sourceSha256": "60098e75cc6900f1814b1dada1b45fccd295404330bc91691c358421a333e125",
+      "reason": "본문의 「상자 몇 개를 맞췄다고 셀 것인가」부터 「선택 비교: 얼굴 검출과 인식 평가」까지 시각 참조/입력 조건을 점검했다. 정의와 수치/판정 절차가 글 안에서 주어지고 특정 미제공 사진/그림의 식별에 의존하지 않아 이번에는 이미지를 추가하지 않는다. 공간 구조의 세부 설명은 연결된 선수 단위의 그림과 함께 읽는다.",
+      "assets": [],
+      "evidence": "doc/visual-review/units/M12.06.md"
     },
     "M13.01": {
       "status": "pending",
