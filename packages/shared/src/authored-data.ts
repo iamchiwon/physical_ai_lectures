@@ -781,7 +781,7 @@ export const authoredMetadata: AuthoredMetadata[] = [
       "EKF의 관측 함수와 Jacobian을 작은 거리 예제로 해석하고 선형화·초기값·모호성 및 확신의 한계를 설명한다."
     ],
     "prerequisiteNote": "M14.03의 시각/관측 계약과 M02.04의 분산·공분산을 사용한다. 미분/Jacobian은 예제에서 풀이한다. M14.02의 센서별 입력 계약은 보충으로 연결한다. 일반 코딩·문법·FilterPy/ROS 설치나 실제 필터 실행은 필요 없으며 합성 모델을 손계산한다.",
-    "sha256": "02d355da05fadf12eb34005e3a30e4c282ceea18835e3af59fc446c974909fec",
+    "sha256": "0b1d7775ca1e6f023e8455b19cb213833421758b993b634a87385ed8824b29d9",
     "reviewed": true,
     "evidenceRef": "doc/v2/work_items/M14.04.md"
   },

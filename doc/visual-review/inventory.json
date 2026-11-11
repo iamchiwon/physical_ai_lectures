@@ -1338,8 +1338,22 @@
       "evidence": "doc/visual-review/units/M14.03.md"
     },
     "M14.04": {
-      "status": "pending",
-      "source": "ebook/curriculum/M14/M14.04.md"
+      "status": "reviewed",
+      "source": "ebook/curriculum/M14/M14.04.md",
+      "sourceSha256": "0b1d7775ca1e6f023e8455b19cb213833421758b993b634a87385ed8824b29d9",
+      "reason": "칼만 필터의 예측과 갱신의 연결/구분은 글만으로 단계나 경계를 혼동하기 쉬워 설명 도식을 추가한다. 본문의 표·수치·문제 조건도 대조한다.",
+      "assets": [
+        {
+          "path": "apps/web/public/textbook-visuals/M14.04-concept.svg",
+          "sha256": "854d72ba29b053d6aacfc571a6618fbc5993833f4d4f63089705b90bebf951c4",
+          "method": "original-svg",
+          "model": null,
+          "prompt": null,
+          "alt": "칼만 필터의 예측과 갱신: 이전 추정/공분산 → 모형 예측 → 관측 비교/갱신 → 새 추정.",
+          "caption": "각 칸은 서로 다른 역할/근거다. 아래 방향은 자료/처리의 연결이며 실제 성공을 자동으로 보장하지 않는다. 직접 제작한 개념도이며 본문의 조건과 함께 읽는다."
+        }
+      ],
+      "evidence": "doc/visual-review/units/M14.04.md"
     },
     "M14.05": {
       "status": "pending",
