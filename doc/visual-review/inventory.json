@@ -2076,8 +2076,22 @@
       "evidence": "doc/visual-review/units/M22.01.md"
     },
     "M22.02": {
-      "status": "pending",
-      "source": "ebook/curriculum/M22/M22.02.md"
+      "status": "reviewed",
+      "source": "ebook/curriculum/M22/M22.02.md",
+      "sourceSha256": "4dda2b750c2abaf4af1f543c6aaf0d8bd47c9e0e6443593d28e6e284c6886733",
+      "reason": "구조화 출력 뒤에도 검사가 남는다의 연결/구분은 글만으로 단계나 경계를 혼동하기 쉬워 설명 도식을 추가한다. 본문의 표·수치·문제 조건도 대조한다.",
+      "assets": [
+        {
+          "path": "apps/web/public/textbook-visuals/M22.02-concept.svg",
+          "sha256": "df8fbe7b953f8c6e2ecb1d757da03a7fbfcdfb0565440d5b03802fc38f871c18",
+          "method": "original-svg",
+          "model": null,
+          "prompt": null,
+          "alt": "구조화 출력 뒤에도 검사가 남는다: 모델의 후보 출력 → 스키마 검사 → 의미/권한/현재 상태 → Tool/ROS Action.",
+          "caption": "각 칸은 서로 다른 역할/근거다. 아래 방향은 자료/처리의 연결이며 실제 성공을 자동으로 보장하지 않는다. 직접 제작한 개념도이며 본문의 조건과 함께 읽는다."
+        }
+      ],
+      "evidence": "doc/visual-review/units/M22.02.md"
     },
     "M22.03": {
       "status": "pending",

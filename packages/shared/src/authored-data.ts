@@ -1565,7 +1565,7 @@ export const authoredMetadata: AuthoredMetadata[] = [
       "ROS Action의 수락/진행/최종 결과·취소/timeout과 중복 요청 상태를 해석하고 완료 근거를 설계한다."
     ],
     "prerequisiteNote": "M05.02의 Action, M19.02의 계획/실행과 M22.01의 모델 역할/접지가 선수다. JSON 구조와 현재 상태 검증을 본문에서 보충한다. 기본은 합성 제안/상태 기록이며 선택 Python은 파싱만 수행하고 실제 도구/ROS 메시지는 보내지 않는다.",
-    "sha256": "5c6483b5b6eae40b7ff32d9414f295bd5774accace880fffb3555dc33aef4da9",
+    "sha256": "4dda2b750c2abaf4af1f543c6aaf0d8bd47c9e0e6443593d28e6e284c6886733",
     "reviewed": true,
     "evidenceRef": "doc/v2/work_items/M22.02.md"
   },
