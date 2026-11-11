@@ -474,8 +474,12 @@
       "evidence": "doc/visual-review/units/M04.05.md"
     },
     "M04.06": {
-      "status": "pending",
-      "source": "ebook/curriculum/M04/M04.06.md"
+      "status": "reviewed",
+      "source": "ebook/curriculum/M04/M04.06.md",
+      "sourceSha256": "52f0eefb31c0053cb8e381bbd6c8617513749961ede612d7e10c42c6e418e07d",
+      "reason": "본문의 「드라이버가 숫자 하나만 반환하면 무엇이 사라지는가」부터 「센서에서 호스트/제어기로 넘길 계약을 완성한다」까지 시각 참조/입력 조건을 점검했다. 제공 표·정의와 수치/판정 절차가 글 안에서 주어지고 특정 미제공 사진/그림의 식별에 의존하지 않아 이번에는 이미지를 추가하지 않는다. 공간 구조의 세부 설명은 연결된 선수 단위의 그림과 함께 읽는다.",
+      "assets": [],
+      "evidence": "doc/visual-review/units/M04.06.md"
     },
     "M05.01": {
       "status": "pending",
