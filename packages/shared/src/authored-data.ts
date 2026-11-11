@@ -347,7 +347,7 @@ export const authoredMetadata: AuthoredMetadata[] = [
       "공통 기준과 노이즈 관련 가상 기록을 해석하고 계산만으로 보장할 수 없는 조건을 설명한다."
     ],
     "prerequisiteNote": "M03.02의 드라이버/논리 명령/모터 전원 구분과 단위 계산을 사용한다. 모든 값은 합성 설계값이며 구매·실배선·전원 인가·멀티미터 측정을 요구하지 않는다.",
-    "sha256": "fe38b749d0f253cde884882c08b8c5ad1521985463df801321c7122fa7350aaa",
+    "sha256": "5c0971ce40348b0e7f331ad147b010d8f3fec13815c667bab7e5d8f2a80bde3b",
     "reviewed": true,
     "evidenceRef": "doc/v2/work_items/M03.04.md"
   },
