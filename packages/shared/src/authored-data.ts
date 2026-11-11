@@ -473,7 +473,7 @@ export const authoredMetadata: AuthoredMetadata[] = [
       "시각 표시·충돌·동역학·구동의 검증 단계를 구분하여 누락 요소와 추가 증거를 판정한다."
     ],
     "prerequisiteNote": "M06의 프레임·관절과 M07.01의 질량·회전 관성이 선수다. ROS 2 Jazzy 문서 기준의 종이 모델 읽기와 XML 예제다. 실제 ROS·시뮬레이터·로봇 구동은 필요 없다.",
-    "sha256": "0e32011761b24036c6c4fe18c3f6e46da8ba04667839f96175f434e65d07f949",
+    "sha256": "8e8c7e40e5f7c49e73d4d20ff60eb8c2e48c86f6b22dd445b3a1abefd068afd4",
     "reviewed": true,
     "evidenceRef": "doc/v2/work_items/M08.01.md"
   },
