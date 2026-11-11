@@ -420,8 +420,22 @@
       "evidence": "doc/visual-review/units/M04.02.md"
     },
     "M04.03": {
-      "status": "pending",
-      "source": "ebook/curriculum/M04/M04.03.md"
+      "status": "reviewed",
+      "source": "ebook/curriculum/M04/M04.03.md",
+      "sourceSha256": "d3edc86e0975cbfe26eb74456239906d898782f5224defdbe207afff8ab85a29",
+      "reason": "PWM 25%와 평균 전압는 공간/파형 관계를 직접 보아야 식의 기준과 적용 범위를 혼동하지 않으므로 도식을 추가한다. 제공된 식·본문 조건과 대조했다.",
+      "assets": [
+        {
+          "path": "apps/web/public/textbook-visuals/M04.03-concept.svg",
+          "sha256": "a1f1aa9af38b0afdee718e7bdab57bb4daa85d555b66fa8c29012f006102931c",
+          "method": "original-svg",
+          "model": null,
+          "prompt": null,
+          "alt": "PWM 25%와 평균 전압. 본문의 이상 0/12 V 전력단에서 duty 25%를 그렸다. 점선 평균 3 V와 계속 3 V인 선로는 다르다. 모터 속도/토크가 최대의 25%라는 결론도 아니다.",
+          "caption": "본문의 이상 0/12 V 전력단에서 duty 25%를 그렸다. 점선 평균 3 V와 계속 3 V인 선로는 다르다. 모터 속도/토크가 최대의 25%라는 결론도 아니다. 직접 제작."
+        }
+      ],
+      "evidence": "doc/visual-review/units/M04.03.md"
     },
     "M04.04": {
       "status": "pending",

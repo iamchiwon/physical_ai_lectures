@@ -2097,7 +2097,7 @@ export const authoredMetadata: AuthoredMetadata[] = [
       "PWM 파형의 주파수/duty·이상 평균 전압을 계산하고 driver 명령과 실제 모터 상태/미확인을 구분한다."
     ],
     "prerequisiteNote": "M04.02의 실제 clock·주기/대역·이벤트/ISR 구분이 선수다. 제공 raw/파형·샘플열과 ATmega328P의 명시한 모드를 종이로 분석한다. C/C++ 문법·레지스터 쓰기/배선·전압 인가/모터/장비/펌웨어 실행은 하지 않는다. 식의 결과를 실제 측정·안전/운전 허가로 취급하지 않는다.",
-    "sha256": "56d42cea008edf51342e37ace52f10417c6c316a571efd1bee4b4afd83b7cd05",
+    "sha256": "d3edc86e0975cbfe26eb74456239906d898782f5224defdbe207afff8ab85a29",
     "reviewed": true,
     "evidenceRef": "doc/v2/work_items/M04.03.md"
   },
