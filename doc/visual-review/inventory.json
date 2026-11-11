@@ -2942,8 +2942,12 @@
       "evidence": "doc/visual-review/units/M32.03.md"
     },
     "M32.04": {
-      "status": "pending",
-      "source": "ebook/curriculum/M32/M32.04.md"
+      "status": "reviewed",
+      "source": "ebook/curriculum/M32/M32.04.md",
+      "sourceSha256": "43ba40d8286fa57b0e610b52b20503269cfd5f2970b393bdca9e890f82e8b970",
+      "reason": "본문의 「서 있기와 보행에는 자세 외에 접촉/운동 상태가 있다」부터 「회복/실패의 기준과 추가 근거를 설계한다」까지 시각 참조/입력 조건을 점검했다. 명시된 코드/설정·정의와 수치/판정 절차가 글 안에서 주어지고 특정 미제공 사진/그림의 식별에 의존하지 않아 이번에는 이미지를 추가하지 않는다. 공간 구조의 세부 설명은 연결된 선수 단위의 그림과 함께 읽는다.",
+      "assets": [],
+      "evidence": "doc/visual-review/units/M32.04.md"
     },
     "M32.05": {
       "status": "pending",
