@@ -836,8 +836,12 @@
       "evidence": "doc/visual-review/units/M08.05.md"
     },
     "M08.06": {
-      "status": "pending",
-      "source": "ebook/curriculum/M08/M08.06.md"
+      "status": "reviewed",
+      "source": "ebook/curriculum/M08/M08.06.md",
+      "sourceSha256": "e7a0a0c30910c70719a5e7f7a2f4cce06f922abfeb55f00e5e28bc1e87342600",
+      "reason": "본문의 「같은 position이라도 명령과 상태는 다르다」부터 「표시·기구학·물리·제어를 따로 판정한다」까지 시각 참조/입력 조건을 점검했다. 정의와 수치/판정 절차가 글 안에서 주어지고 특정 미제공 사진/그림의 식별에 의존하지 않아 이번에는 이미지를 추가하지 않는다. 공간 구조의 세부 설명은 연결된 선수 단위의 그림과 함께 읽는다.",
+      "assets": [],
+      "evidence": "doc/visual-review/units/M08.06.md"
     },
     "M09.01": {
       "status": "pending",
