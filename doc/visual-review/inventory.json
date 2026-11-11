@@ -777,8 +777,8 @@
     "M08.01": {
       "status": "reviewed",
       "source": "ebook/curriculum/M08/M08.01.md",
-      "sourceSha256": "8e8c7e40e5f7c49e73d4d20ff60eb8c2e48c86f6b22dd445b3a1abefd068afd4",
-      "reason": "한 링크에 붙는 세 가지 모델의 연결/구분은 글만으로 단계나 경계를 혼동하기 쉬워 설명 도식을 추가한다. 본문의 표·수치·문제 조건도 대조한다.",
+      "sourceSha256": "84a28bc6c8ad09aaaab50831ee0c1337c8fe4cb499f87e43c6290a99d4b1c9f8",
+      "reason": "한 링크의 세 기준는 공간/파형 관계를 직접 보아야 식의 기준과 적용 범위를 혼동하지 않으므로 도식을 추가한다. 제공된 식·본문 조건과 대조했다.",
       "assets": [
         {
           "path": "apps/web/public/textbook-visuals/M08.01-concept.svg",
@@ -788,6 +788,15 @@
           "prompt": null,
           "alt": "한 링크에 붙는 세 가지 모델: visual → collision → inertial → 공통 링크 프레임.",
           "caption": "각 칸은 서로 다른 역할/근거다. 나란히 비교할 항목이며 위아래가 시간 순서를 뜻하지 않는다. 직접 제작한 개념도이며 본문의 조건과 함께 읽는다."
+        },
+        {
+          "path": "apps/web/public/textbook-visuals/M08.01-spatial.svg",
+          "sha256": "d3e9d8c2f741c0ba4103940fa0cea86648c7544ab1b873961d54c436bde6dead",
+          "method": "original-svg",
+          "model": null,
+          "prompt": null,
+          "alt": "한 링크의 세 기준. 회색 표시 형상과 파란 충돌 근사 상자, 주황 질량중심은 역할이 다르다. link 원점을 형상의 중앙/COM과 자동으로 같다고 놓지 않는다. 축척이나 실제 관성값이 없는 개념도다.",
+          "caption": "회색 표시 형상과 파란 충돌 근사 상자, 주황 질량중심은 역할이 다르다. link 원점을 형상의 중앙/COM과 자동으로 같다고 놓지 않는다. 축척이나 실제 관성값이 없는 개념도다. 직접 제작."
         }
       ],
       "evidence": "doc/visual-review/units/M08.01.md"
