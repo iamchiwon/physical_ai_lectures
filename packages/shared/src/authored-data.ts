@@ -1845,7 +1845,7 @@ export const authoredMetadata: AuthoredMetadata[] = [
       "같은 잔차의 대안 원인을 구분할 기준 관측/통제 비교와 수정 후 검증을 설계한다."
     ],
     "prerequisiteNote": "M03의 기어/센서, M07의 동역학, M14의 프레임/시간과 M27의 지연을 사용한다. 백래시/마찰과 잔차/인과를 본문에서 보충한다. 기본은 합성 기록 진단이며 실제 장비를 움직이거나 원인을 확정하지 않는다.",
-    "sha256": "ae05a23cf3c8279dfe92e148bd11287acaba62bd1bac7dbe306657e0dfb19c1d",
+    "sha256": "2ae3f66af7a2faedea4389e8fc5c7c5518ac28ab738b078305d08520e0c971ed",
     "reviewed": true,
     "evidenceRef": "doc/v2/work_items/publication-source-privacy.md"
   },
