@@ -53,7 +53,7 @@ export const authoredMetadata: AuthoredMetadata[] = [
       "합성 기록의 조건 위반을 판정하고 작업 성능과 독립 안전 조건을 구분한다."
     ],
     "prerequisiteNote": "M00.01~03의 폐루프·관측/명령·구성 차이를 이용한다. 1초=1000밀리초(ms), 나눗셈과 뺄셈을 사용한다.",
-    "sha256": "af38da789a2abf5dff189d623d992031ffdd7684c40490a263eb46c79d66522d",
+    "sha256": "0888767f4aff83ea1936fa19ded3d507ed995a77ea8f118ed1b2241b234bbac5",
     "reviewed": true,
     "evidenceRef": "doc/v2/work_items/M00.04.md"
   },

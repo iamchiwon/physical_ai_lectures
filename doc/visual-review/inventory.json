@@ -66,8 +66,22 @@
       "evidence": "doc/visual-review/units/M00.03.md"
     },
     "M00.04": {
-      "status": "pending",
-      "source": "ebook/curriculum/M00/M00.04.md"
+      "status": "reviewed",
+      "source": "ebook/curriculum/M00/M00.04.md",
+      "sourceSha256": "0888767f4aff83ea1936fa19ded3d507ed995a77ea8f118ed1b2241b234bbac5",
+      "reason": "주기와 한 표본의 지연을 나누기의 연결/구분은 글만으로 단계나 경계를 혼동하기 쉬워 설명 도식을 추가한다. 본문의 표·수치·문제 조건도 대조한다.",
+      "assets": [
+        {
+          "path": "apps/web/public/textbook-visuals/M00.04-concept.svg",
+          "sha256": "3da5c8330b67c78af2e80f7369041ed0dc87f64357285d075f828e07f5ab36a3",
+          "method": "original-svg",
+          "model": null,
+          "prompt": null,
+          "alt": "주기와 한 표본의 지연을 나누기: 시작 간격 P → 표본의 직렬 처리 L → 마감 여유.",
+          "caption": "P는 연속 시작 사이의 간격, L은 한 표본을 처리하는 지연이다. 이 예제는 직렬 합산 조건이다. 겹쳐 처리하는 시스템에서는 P와 L을 같다고 놓지 않는다. 직접 제작."
+        }
+      ],
+      "evidence": "doc/visual-review/units/M00.04.md"
     },
     "M00.05": {
       "status": "pending",
