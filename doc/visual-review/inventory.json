@@ -1253,8 +1253,8 @@
     "M13.02": {
       "status": "reviewed",
       "source": "ebook/curriculum/M13/M13.02.md",
-      "sourceSha256": "162cdd47238154aaa42c037865fffa86d828b736b8eb3cd9a0595191cbae89ce",
-      "reason": "ICP의 두 가지 반복의 연결/구분은 글만으로 단계나 경계를 혼동하기 쉬워 설명 도식을 추가한다. 본문의 표·수치·문제 조건도 대조한다.",
+      "sourceSha256": "d5d424f84599931708f7baf7612d8bb44b94561db6d73b654cb1bba575946f4a",
+      "reason": "ICP의 대응점과 변환는 공간/파형 관계를 직접 보아야 식의 기준과 적용 범위를 혼동하지 않으므로 도식을 추가한다. 제공된 식·본문 조건과 대조했다.",
       "assets": [
         {
           "path": "apps/web/public/textbook-visuals/M13.02-concept.svg",
@@ -1264,6 +1264,15 @@
           "prompt": null,
           "alt": "ICP의 두 가지 반복: 현재 변환으로 원본 정렬 → 대응 후보 선택 → 변환/잔차 갱신 → 다음 반복/판정.",
           "caption": "반복의 마지막 결과로 원본 점을 다시 변환하여 대응을 새로 찾는다. 도식의 되돌림은 새 센서 취득이 아니라 같은 입력 점군에 대한 계산 반복이다. 낮은 잔차만으로 올바른 정합을 보장하지 않는다. 직접 제작."
+        },
+        {
+          "path": "apps/web/public/textbook-visuals/M13.02-spatial.svg",
+          "sha256": "adc3ac9fe5432747733638e30c4e79dc11ddddca3af648887ef270aa3555e12d",
+          "method": "original-svg",
+          "model": null,
+          "prompt": null,
+          "alt": "ICP의 대응점과 변환. 동일한 모양을 평행 이동한 별도 2D 개념 점군이다. 현재 대응으로 변환을 갱신한 뒤 다시 대응을 찾는다. 점 번호의 일치·대응의 정확성이나 전역 수렴을 그림만으로 보장하지 않는다.",
+          "caption": "동일한 모양을 평행 이동한 별도 2D 개념 점군이다. 현재 대응으로 변환을 갱신한 뒤 다시 대응을 찾는다. 점 번호의 일치·대응의 정확성이나 전역 수렴을 그림만으로 보장하지 않는다. 직접 제작."
         }
       ],
       "evidence": "doc/visual-review/units/M13.02.md"
