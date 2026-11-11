@@ -2770,8 +2770,12 @@
       "evidence": "doc/visual-review/units/M30.01.md"
     },
     "M30.02": {
-      "status": "pending",
-      "source": "ebook/curriculum/M30/M30.02.md"
+      "status": "reviewed",
+      "source": "ebook/curriculum/M30/M30.02.md",
+      "sourceSha256": "d51a71bec866fc416d4f3ce1725d71340128f86843696d1ef3d47bfc52d91ff0",
+      "reason": "본문의 「무엇을 알아내고 무엇을 넓힐지 구분한다」부터 「수집 계획에는 실패와 독립 그룹도 들어간다」까지 시각 참조/입력 조건을 점검했다. 명시된 코드/설정·정의와 수치/판정 절차가 글 안에서 주어지고 특정 미제공 사진/그림의 식별에 의존하지 않아 이번에는 이미지를 추가하지 않는다. 공간 구조의 세부 설명은 연결된 선수 단위의 그림과 함께 읽는다.",
+      "assets": [],
+      "evidence": "doc/visual-review/units/M30.02.md"
     },
     "M30.03": {
       "status": "pending",
