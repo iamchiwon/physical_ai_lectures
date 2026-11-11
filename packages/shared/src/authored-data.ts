@@ -2391,7 +2391,7 @@ export const authoredMetadata: AuthoredMetadata[] = [
       "저텍스처·조명·동적 장면의 실패를 진단한다."
     ],
     "prerequisiteNote": "M02.05, M13.02, M14.04, M15.04의 개념을 사용한다. 필요한 새 용어·기호는 본문에서 정의한다. 일반 코딩 문법/실제 장비 설치를 요구하지 않으며 합성 자료로 기본 경로를 수행한다.",
-    "sha256": "ef4a3edc5bf81031339e75fa949941fb2495cab3b75c6f4bd3f927dc35467a74",
+    "sha256": "238ed56602e4d9b50d77a6718feb49c135fd429f722a91e082f84bac3c24f0ed",
     "reviewed": true,
     "evidenceRef": "doc/v2/work_items/M16.01.md"
   },
