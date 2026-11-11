@@ -314,8 +314,22 @@
       "evidence": "doc/visual-review/units/M03.01.md"
     },
     "M03.02": {
-      "status": "pending",
-      "source": "ebook/curriculum/M03/M03.02.md"
+      "status": "reviewed",
+      "source": "ebook/curriculum/M03/M03.02.md",
+      "sourceSha256": "ed2d9dd882260b164910949ac17dbfb30cbbe6e00fe25ef8e1b82b9cdb3e26ff",
+      "reason": "제어 신호와 동력 경로의 연결/구분은 글만으로 단계나 경계를 혼동하기 쉬워 설명 도식을 추가한다. 본문의 표·수치·문제 조건도 대조한다.",
+      "assets": [
+        {
+          "path": "apps/web/public/textbook-visuals/M03.02-concept.svg",
+          "sha256": "4ef38a038444daf53eca0015a151c18d3f7fe2cca003eb694ecd95db525ece5b",
+          "method": "original-svg",
+          "model": null,
+          "prompt": null,
+          "alt": "제어 신호와 동력 경로: 제어기 → 드라이버 → 모터·기구 → 엔코더 피드백.",
+          "caption": "각 칸은 서로 다른 역할/근거다. 아래 방향은 자료/처리의 연결이며 실제 성공을 자동으로 보장하지 않는다. 직접 제작한 개념도이며 본문의 조건과 함께 읽는다."
+        }
+      ],
+      "evidence": "doc/visual-review/units/M03.02.md"
     },
     "M03.03": {
       "status": "pending",

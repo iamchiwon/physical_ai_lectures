@@ -319,7 +319,7 @@ export const authoredMetadata: AuthoredMetadata[] = [
       "명령 수신과 실제 운동의 차이를 가상 로그에서 판정하고 원인 구분에 필요한 추가 기록을 제안한다."
     ],
     "prerequisiteNote": "M03.01의 기어비 i=모터 속도/출력 속도와 분해능 개념을 사용한다. 모든 부품 수치와 로그는 교육용 가상 자료이며 실제 배선·전원 인가·모터 실행은 하지 않는다.",
-    "sha256": "1513e468f650a7ae7952046823326d997e42cdbdd99345ab7d2da075f3856056",
+    "sha256": "ed2d9dd882260b164910949ac17dbfb30cbbe6e00fe25ef8e1b82b9cdb3e26ff",
     "reviewed": true,
     "evidenceRef": "doc/v2/work_items/M03.02.md"
   },
