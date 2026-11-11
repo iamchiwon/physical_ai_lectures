@@ -296,8 +296,22 @@
       "evidence": "doc/visual-review/units/M02.06.md"
     },
     "M03.01": {
-      "status": "pending",
-      "source": "ebook/curriculum/M03/M03.01.md"
+      "status": "reviewed",
+      "source": "ebook/curriculum/M03/M03.01.md",
+      "sourceSha256": "52ba56c8f78a0bcb4f355b85fbbee37e8fd91c453a265c98201986f1ea9f281b",
+      "reason": "관절·기어·엔코더의 연결의 연결/구분은 글만으로 단계나 경계를 혼동하기 쉬워 설명 도식을 추가한다. 본문의 표·수치·문제 조건도 대조한다.",
+      "assets": [
+        {
+          "path": "apps/web/public/textbook-visuals/M03.01-concept.svg",
+          "sha256": "cd39111d4ca028fcede6378e9b3f8c7862590fde7af5d2f8fad86c4ccb666954",
+          "method": "original-svg",
+          "model": null,
+          "prompt": null,
+          "alt": "관절·기어·엔코더의 연결: 모터 축 → 기어 전달 → 출력 관절 → 물체/말단.",
+          "caption": "각 칸은 서로 다른 역할/근거다. 아래 방향은 자료/처리의 연결이며 실제 성공을 자동으로 보장하지 않는다. 직접 제작한 개념도이며 본문의 조건과 함께 읽는다."
+        }
+      ],
+      "evidence": "doc/visual-review/units/M03.01.md"
     },
     "M03.02": {
       "status": "pending",
