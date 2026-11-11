@@ -2182,8 +2182,12 @@
       "evidence": "doc/visual-review/units/M23.02.md"
     },
     "M23.03": {
-      "status": "pending",
-      "source": "ebook/curriculum/M23/M23.03.md"
+      "status": "reviewed",
+      "source": "ebook/curriculum/M23/M23.03.md",
+      "sourceSha256": "85a6673297e38fd0c32704609d03aa726e52ebf9ac704253161ea8e04bc9fef5",
+      "reason": "본문의 「정책에 보이는 것과 바꿀 수 있는 것을 명세한다」부터 「점수와 과제 수행을 별도 표에 남긴다」까지 시각 참조/입력 조건을 점검했다. 정의와 수치/판정 절차가 글 안에서 주어지고 특정 미제공 사진/그림의 식별에 의존하지 않아 이번에는 이미지를 추가하지 않는다. 공간 구조의 세부 설명은 연결된 선수 단위의 그림과 함께 읽는다.",
+      "assets": [],
+      "evidence": "doc/visual-review/units/M23.03.md"
     },
     "M23.04": {
       "status": "pending",
