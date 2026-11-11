@@ -2830,8 +2830,12 @@
       "evidence": "doc/visual-review/units/M30.06.md"
     },
     "M31.01": {
-      "status": "pending",
-      "source": "ebook/curriculum/M31/M31.01.md"
+      "status": "reviewed",
+      "source": "ebook/curriculum/M31/M31.01.md",
+      "sourceSha256": "c9fd65b1a03488ad1b485fcd9bf8b77d2e191e9a9a25b4925e82690f1aa8e1c2",
+      "reason": "본문의 「요청을 실행 가능한 판정으로 바꾼다」부터 「빌드 성공·선택된 검사·완료는 서로 다르다」까지 시각 참조/입력 조건을 점검했다. 제공 표·정의와 수치/판정 절차가 글 안에서 주어지고 특정 미제공 사진/그림의 식별에 의존하지 않아 이번에는 이미지를 추가하지 않는다. 공간 구조의 세부 설명은 연결된 선수 단위의 그림과 함께 읽는다.",
+      "assets": [],
+      "evidence": "doc/visual-review/units/M31.01.md"
     },
     "M31.02": {
       "status": "pending",
