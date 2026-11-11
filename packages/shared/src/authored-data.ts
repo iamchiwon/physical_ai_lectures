@@ -2181,7 +2181,7 @@ export const authoredMetadata: AuthoredMetadata[] = [
       "센서 유효성·driver/출력 제한·차단 정책과 실제 물리 결과를 나눈 계약을 작성한다."
     ],
     "prerequisiteNote": "M26.01의 요구/HSI·주기/마감, M07의 샘플링/피드백과 M04의 단위/오류 계약을 연결한다. 일반 언어 문법 없이 가상 필터/국소 모형을 종이로 계산한다. 실제 IMU/모터·펌웨어/시뮬레이터 실행, 2륜 동역학·균형 유지/안전 실증은 수행하지 않는다.",
-    "sha256": "23074e8eb53fbe5aabcf97ac9eaaa56510fb190cb3bb456adb38c96dbc8e423a",
+    "sha256": "e915ccb2579489b3343aa160d8ab5784053e8b14a5dbf447d65516f52ba4317b",
     "reviewed": true,
     "evidenceRef": "doc/v2/work_items/M26.02.md"
   },
