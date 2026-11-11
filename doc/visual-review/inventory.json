@@ -1196,8 +1196,22 @@
       "evidence": "doc/visual-review/units/M12.06.md"
     },
     "M13.01": {
-      "status": "pending",
-      "source": "ebook/curriculum/M13/M13.01.md"
+      "status": "reviewed",
+      "source": "ebook/curriculum/M13/M13.01.md",
+      "sourceSha256": "4622029e1817b54a4b15386169c35e7afafc45affd8fa928ebad5ef22392faa8",
+      "reason": "점군 처리 단계가 만드는 다른 집합의 연결/구분은 글만으로 단계나 경계를 혼동하기 쉬워 설명 도식을 추가한다. 본문의 표·수치·문제 조건도 대조한다.",
+      "assets": [
+        {
+          "path": "apps/web/public/textbook-visuals/M13.01-concept.svg",
+          "sha256": "cb8b16170f8166d24cb35dfd01d5399a31735d1f0ef7beed00e6dc676d1a7839",
+          "method": "original-svg",
+          "model": null,
+          "prompt": null,
+          "alt": "점군 처리 단계가 만드는 다른 집합: 원본 점/계약 → 유효값/관심영역 필터 → Voxel 대표점 → 이웃/군집.",
+          "caption": "각 칸은 서로 다른 역할/근거다. 아래 방향은 자료/처리의 연결이며 실제 성공을 자동으로 보장하지 않는다. 직접 제작한 개념도이며 본문의 조건과 함께 읽는다."
+        }
+      ],
+      "evidence": "doc/visual-review/units/M13.01.md"
     },
     "M13.02": {
       "status": "pending",
