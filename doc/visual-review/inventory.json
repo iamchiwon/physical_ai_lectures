@@ -2550,8 +2550,12 @@
       "evidence": "doc/visual-review/units/M27.04.md"
     },
     "M27.05": {
-      "status": "pending",
-      "source": "ebook/curriculum/M27/M27.05.md"
+      "status": "reviewed",
+      "source": "ebook/curriculum/M27/M27.05.md",
+      "sourceSha256": "7895c9520b5d54c49b5009ac9fe3bcfcb9530bc98d45d77b2a22f6d722e32207",
+      "reason": "본문의 「모델을 멀리 두면 통신과 장애의 경계가 추가된다」부터 「서버의 모델 교체와 로봇의 전환은 다른 계약이다」까지 시각 참조/입력 조건을 점검했다. 정의와 수치/판정 절차가 글 안에서 주어지고 특정 미제공 사진/그림의 식별에 의존하지 않아 이번에는 이미지를 추가하지 않는다. 공간 구조의 세부 설명은 연결된 선수 단위의 그림과 함께 읽는다.",
+      "assets": [],
+      "evidence": "doc/visual-review/units/M27.05.md"
     },
     "M27.06": {
       "status": "pending",
