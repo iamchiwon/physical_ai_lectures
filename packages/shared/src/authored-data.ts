@@ -2209,7 +2209,7 @@ export const authoredMetadata: AuthoredMetadata[] = [
       "치수 공차의 총유격 구간·변형과 변경 영향을 계산해 조립/검증의 미확인을 기록한다."
     ],
     "prerequisiteNote": "M26.03의 보드/핀·형상/미확인 검토가 선수다. 기존2.7 COM/관성을 연결하되 CAD/조립/공차의 제공 자료 분석을 보충한다. 언어 문법 없이 종이 계산/개념도를 사용한다. 실제 CAD/구조해석·제조/조립/계측·동적 균형/장비 실증은 수행하지 않는다.",
-    "sha256": "482638a24852a6398321148eceed94a60f408884a8430d877c3a43490ff10621",
+    "sha256": "4960fd1b750e89f8afeac9266dac03769e0f4959768ed190511135b21eb946f6",
     "reviewed": true,
     "evidenceRef": "doc/v2/work_items/M26.04.md"
   },

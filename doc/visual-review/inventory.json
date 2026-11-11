@@ -2454,8 +2454,22 @@
       "evidence": "doc/visual-review/units/M26.03.md"
     },
     "M26.04": {
-      "status": "pending",
-      "source": "ebook/curriculum/M26/M26.04.md"
+      "status": "reviewed",
+      "source": "ebook/curriculum/M26/M26.04.md",
+      "sourceSha256": "4960fd1b750e89f8afeac9266dac03769e0f4959768ed190511135b21eb946f6",
+      "reason": "조립 여유와 지지 영역는 공간/파형 관계를 직접 보아야 식의 기준과 적용 범위를 혼동하지 않으므로 도식을 추가한다. 제공된 식·본문 조건과 대조했다.",
+      "assets": [
+        {
+          "path": "apps/web/public/textbook-visuals/M26.04-concept.svg",
+          "sha256": "e7a8f705eb3d85fa86dfebf1eb2e2a0a79ee3c0b2191f740269df358a4d2817a",
+          "method": "original-svg",
+          "model": null,
+          "prompt": null,
+          "alt": "조립 여유와 지지 영역. 왼쪽은 보드/브래킷 단면, 오른쪽은 별도의 지지 영역 예시다. 축척·수치는 부여하지 않았다. 공차 통과와 COM 투영의 판단을 혼합하지 않으며 정적 투영만으로 동적 균형을 보장하지 않는다.",
+          "caption": "왼쪽은 보드/브래킷 단면, 오른쪽은 별도의 지지 영역 예시다. 축척·수치는 부여하지 않았다. 공차 통과와 COM 투영의 판단을 혼합하지 않으며 정적 투영만으로 동적 균형을 보장하지 않는다. 직접 제작."
+        }
+      ],
+      "evidence": "doc/visual-review/units/M26.04.md"
     },
     "M26.05": {
       "status": "pending",
