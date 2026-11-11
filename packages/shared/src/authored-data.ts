@@ -417,7 +417,7 @@ export const authoredMetadata: AuthoredMetadata[] = [
       "로그 수준·진단 상태·기록 시각을 대조하여 오류 부재를 과장하지 않고 추가 증거와 복구 조건을 제안한다."
     ],
     "prerequisiteNote": "M05.01~03의 프로세스·Parameter·네임스페이스를 사용한다. Ubuntu 24.04/ROS 2 Jazzy 문서 기준의 합성 설정·로그 해석이며 실제 Launch 실행이나 하드웨어 활성화는 하지 않는다.",
-    "sha256": "1d41331a549db8f8d3cbb2009c55beebd19510e0e51391258beda13aee7388a5",
+    "sha256": "dea7096b3020b2a4b296e171f8a998b10a9d50066386d9cda8e3a5fdcdb26fba",
     "reviewed": true,
     "evidenceRef": "doc/v2/work_items/M05.04.md"
   },

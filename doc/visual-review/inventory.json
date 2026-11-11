@@ -526,8 +526,22 @@
       "evidence": "doc/visual-review/units/M05.03.md"
     },
     "M05.04": {
-      "status": "pending",
-      "source": "ebook/curriculum/M05/M05.04.md"
+      "status": "reviewed",
+      "source": "ebook/curriculum/M05/M05.04.md",
+      "sourceSha256": "dea7096b3020b2a4b296e171f8a998b10a9d50066386d9cda8e3a5fdcdb26fba",
+      "reason": "Lifecycle은 준비 절차를 드러낸다의 연결/구분은 글만으로 단계나 경계를 혼동하기 쉬워 설명 도식을 추가한다. 본문의 표·수치·문제 조건도 대조한다.",
+      "assets": [
+        {
+          "path": "apps/web/public/textbook-visuals/M05.04-concept.svg",
+          "sha256": "bab14ac07f38349442ef15e47b824f5f8ab144fc7972c4b4a0556b6450be2885",
+          "method": "original-svg",
+          "model": null,
+          "prompt": null,
+          "alt": "Lifecycle은 준비 절차를 드러낸다: Unconfigured → Inactive → Active → Error/Shutdown.",
+          "caption": "Lifecycle의 주요 상태/절차를 간추린 개념도다. 가능한 모든 전이를 그린 상태전이도나 장비 안전 인증이 아니다. 활성 상태만으로 센서 최신성·실제 동작을 보장하지 않는다. 직접 제작."
+        }
+      ],
+      "evidence": "doc/visual-review/units/M05.04.md"
     },
     "M05.05": {
       "status": "pending",
