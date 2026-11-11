@@ -2125,7 +2125,7 @@ export const authoredMetadata: AuthoredMetadata[] = [
       "접수/실행/관측·중복/재시도/늦은 응답을 나누어 미확인 결과를 기록한다."
     ],
     "prerequisiteNote": "M04.04의 버스 응답/설정 유효성 구분이 선수다. 일반 코딩 가능을 전제로 언어 문법 없이 제공 사건표를 분석한다. 실제 포트/펌웨어·모터·ROS/장비 실행이나 물리 정지 검증은 수행하지 않는다.",
-    "sha256": "02cd1cc5f8b0efeca734583e4e546aaa5626240e0dbd1bb56629ddbc6a785b2e",
+    "sha256": "1972def25ea9cdde18a6d6dab3063a75ab3142eef4049de0af4a7b56e5fed075",
     "reviewed": true,
     "evidenceRef": "doc/v2/work_items/M04.05.md"
   },
