@@ -921,7 +921,7 @@ export const authoredMetadata: AuthoredMetadata[] = [
       "센서·환경·시간 조건에 따른 실패 단계를 구분하고 필요한 추가 근거를 제안한다."
     ],
     "prerequisiteNote": "M15.01~02의 지도·위치 추정과 좌표를 연결한다. 특징, 시차, 전방 추정과 후방 수정의 뜻을 본문에서 보충한다. 실제 SLAM·특징 추출을 실행하지 않고 합성 점과 보정된 카메라 수치로 계산한다.",
-    "sha256": "47cc3801140824ec9d7b51852e444cb9692af61e5ae5a726f5b537fb6171fb82",
+    "sha256": "46221c6d2df0e7f010dacd5cfa30f39b7964635e3cceb81a8585ca987d0ddac6",
     "reviewed": true,
     "evidenceRef": "doc/v2/work_items/M15.03.md"
   },

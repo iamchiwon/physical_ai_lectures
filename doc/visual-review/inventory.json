@@ -1418,8 +1418,22 @@
       "evidence": "doc/visual-review/units/M15.02.md"
     },
     "M15.03": {
-      "status": "pending",
-      "source": "ebook/curriculum/M15/M15.03.md"
+      "status": "reviewed",
+      "source": "ebook/curriculum/M15/M15.03.md",
+      "sourceSha256": "46221c6d2df0e7f010dacd5cfa30f39b7964635e3cceb81a8585ca987d0ddac6",
+      "reason": "로컬 추정과 전역 일관성의 연결/구분은 글만으로 단계나 경계를 혼동하기 쉬워 설명 도식을 추가한다. 본문의 표·수치·문제 조건도 대조한다.",
+      "assets": [
+        {
+          "path": "apps/web/public/textbook-visuals/M15.03-concept.svg",
+          "sha256": "c141b5c9d37a1cf8e1997a319acb684d9577545281e539f7d7dc153eec77ae5f",
+          "method": "original-svg",
+          "model": null,
+          "prompt": null,
+          "alt": "로컬 추정과 전역 일관성: 관측/전처리 → 프런트엔드 → 백엔드 → 재관측/루프.",
+          "caption": "각 칸은 서로 다른 역할/근거다. 아래 방향은 자료/처리의 연결이며 실제 성공을 자동으로 보장하지 않는다. 직접 제작한 개념도이며 본문의 조건과 함께 읽는다."
+        }
+      ],
+      "evidence": "doc/visual-review/units/M15.03.md"
     },
     "M15.04": {
       "status": "pending",
