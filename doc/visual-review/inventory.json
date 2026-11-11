@@ -1090,8 +1090,12 @@
       "evidence": "doc/visual-review/units/M11.05.md"
     },
     "M11.06": {
-      "status": "pending",
-      "source": "ebook/curriculum/M11/M11.06.md"
+      "status": "reviewed",
+      "source": "ebook/curriculum/M11/M11.06.md",
+      "sourceSha256": "0b17dfd0391a62a6bb4e4755dd129b2f9bec937313e245b0d8464506a3cf723a",
+      "reason": "본문의 「모델 호출보다 오래된 관측」부터 「실험 기록은 결과를 설명하는 입력이다」까지 시각 참조/입력 조건을 점검했다. 정의와 수치/판정 절차가 글 안에서 주어지고 특정 미제공 사진/그림의 식별에 의존하지 않아 이번에는 이미지를 추가하지 않는다. 공간 구조의 세부 설명은 연결된 선수 단위의 그림과 함께 읽는다.",
+      "assets": [],
+      "evidence": "doc/visual-review/units/M11.06.md"
     },
     "M12.01": {
       "status": "pending",
