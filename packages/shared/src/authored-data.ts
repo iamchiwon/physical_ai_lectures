@@ -2069,7 +2069,7 @@ export const authoredMetadata: AuthoredMetadata[] = [
       "공유 RAM 사건표의 갱신 유실과 특수 레지스터 접근 오류를 진단하고 필요한 재현/검증 근거를 기록한다."
     ],
     "prerequisiteNote": "M01.03의 native/ABI·버퍼 계약과 M03.04의 전기적 명세가 선수다. 일반 코딩 경험을 전제로 C/C++ 문법·포인터/비트 연산 입문은 반복하지 않는다. ATmega328P의 명시한 자료와 가상 메모리/사건표를 읽는 종이 활동이며 컴파일·펌웨어/퓨즈/레지스터 쓰기나 실제 장비 연결은 하지 않는다.",
-    "sha256": "adf4fe853b582db6e483106f733951d85b0789b05ddf91c4465bfad834c67e1a",
+    "sha256": "4c8ca2cd4ce0ea912b46bbc283bf518fd3a2fe6ca4ba074b9f3629ac80f06a82",
     "reviewed": true,
     "evidenceRef": "doc/v2/work_items/M04.02.md"
   },
