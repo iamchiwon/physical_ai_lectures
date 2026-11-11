@@ -557,7 +557,7 @@ export const authoredMetadata: AuthoredMetadata[] = [
       "알려진 깊이의 역투영을 계산하고 깊이Z/거리range 및 한 픽셀의 깊이 모호성을 구분한다."
     ],
     "prerequisiteNote": "M02의 벡터/좌표, M12.01의 영상 축과 M08.05의 optical frame이 선수다. 기본은 주어진 보정값의 종이 투영이다. 실제 보정 추정/OpenCV·센서 실행이나 GPU가 필요하지 않다.",
-    "sha256": "8f605d0865dd2f215fda96a48be34deb638a4d423f9606dae81e4294e8e44824",
+    "sha256": "56c62f3ddea6691b0869e62765b6e4c9b1fcbd54fdbe48974338806c7396d2c9",
     "reviewed": true,
     "evidenceRef": "doc/v2/work_items/M12.02.md"
   },

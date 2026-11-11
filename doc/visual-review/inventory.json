@@ -1116,8 +1116,22 @@
       "evidence": "doc/visual-review/units/M12.01.md"
     },
     "M12.02": {
-      "status": "pending",
-      "source": "ebook/curriculum/M12/M12.02.md"
+      "status": "reviewed",
+      "source": "ebook/curriculum/M12/M12.02.md",
+      "sourceSha256": "56c62f3ddea6691b0869e62765b6e4c9b1fcbd54fdbe48974338806c7396d2c9",
+      "reason": "한 픽셀의 깊이 모호성는 공간/파형 관계를 직접 보아야 식의 기준과 적용 범위를 혼동하지 않으므로 도식을 추가한다. 제공된 식·본문 조건과 대조했다.",
+      "assets": [
+        {
+          "path": "apps/web/public/textbook-visuals/M12.02-concept.svg",
+          "sha256": "343b161373b41bd582a8934a62df5873bfb2898c052a803e2f2894667c2a97df",
+          "method": "original-svg",
+          "model": null,
+          "prompt": null,
+          "alt": "한 픽셀의 깊이 모호성. 왜곡 없는 pinhole 모델의 X/Z 단면이다. 앞쪽 가상 영상면에서 같은 광선 위 P와 2P는 같은 픽셀에 투영된다. 이 그림은 깊이 Z와 광선 거리의 차이, 한 영상만으로 깊이가 정해지지 않는 이유를 보여 준다.",
+          "caption": "왜곡 없는 pinhole 모델의 X/Z 단면이다. 앞쪽 가상 영상면에서 같은 광선 위 P와 2P는 같은 픽셀에 투영된다. 이 그림은 깊이 Z와 광선 거리의 차이, 한 영상만으로 깊이가 정해지지 않는 이유를 보여 준다. 직접 제작."
+        }
+      ],
+      "evidence": "doc/visual-review/units/M12.02.md"
     },
     "M12.03": {
       "status": "pending",
