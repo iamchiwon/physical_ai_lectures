@@ -704,8 +704,22 @@
       "evidence": "doc/visual-review/units/M07.02.md"
     },
     "M07.03": {
-      "status": "pending",
-      "source": "ebook/curriculum/M07/M07.03.md"
+      "status": "reviewed",
+      "source": "ebook/curriculum/M07/M07.03.md",
+      "sourceSha256": "1f567d8c8d3be76111b17d02776859d9a6bad68510d4f3de8f912d861e866d3e",
+      "reason": "PID와 포화 후 적분 처리의 연결/구분은 글만으로 단계나 경계를 혼동하기 쉬워 설명 도식을 추가한다. 본문의 표·수치·문제 조건도 대조한다.",
+      "assets": [
+        {
+          "path": "apps/web/public/textbook-visuals/M07.03-concept.svg",
+          "sha256": "27c6c836a7b07848e285c971915c2bd68f8248a04a337ea82d31adf894be6bb4",
+          "method": "original-svg",
+          "model": null,
+          "prompt": null,
+          "alt": "PID와 포화 후 적분 처리: 목표/측정의 오차 → P·I·D 항 계산 → 출력 범위 제한 → 적분 상태 갱신.",
+          "caption": "각 칸은 서로 다른 역할/근거다. 아래 방향은 자료/처리의 연결이며 실제 성공을 자동으로 보장하지 않는다. 직접 제작한 개념도이며 본문의 조건과 함께 읽는다."
+        }
+      ],
+      "evidence": "doc/visual-review/units/M07.03.md"
     },
     "M07.04": {
       "status": "pending",

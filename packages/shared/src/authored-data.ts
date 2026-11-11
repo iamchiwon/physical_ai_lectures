@@ -641,7 +641,7 @@ export const authoredMetadata: AuthoredMetadata[] = [
       "미분 잡음·샘플 간격·포화 기록을 해석하여 튜닝 주장의 검증 조건과 모형의 한계를 설명한다."
     ],
     "prerequisiteNote": "M02의 미분/적분, M05.06의 샘플 간격, M07.02의 응답과 안정성이 선수다. 본문의 정규화 로그를 종이로 계산한다. 실제 PID 튜닝·토크 인가·모터 동작은 수행하지 않는다.",
-    "sha256": "ee09bcb415368e57eaf2186b1764912b370722c984beec0dd701bd24bfb1a095",
+    "sha256": "1f567d8c8d3be76111b17d02776859d9a6bad68510d4f3de8f912d861e866d3e",
     "reviewed": true,
     "evidenceRef": "doc/v2/work_items/publication-source-privacy.md"
   },
