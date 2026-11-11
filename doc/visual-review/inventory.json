@@ -722,8 +722,22 @@
       "evidence": "doc/visual-review/units/M07.03.md"
     },
     "M07.04": {
-      "status": "pending",
-      "source": "ebook/curriculum/M07/M07.04.md"
+      "status": "reviewed",
+      "source": "ebook/curriculum/M07/M07.04.md",
+      "sourceSha256": "3c8d7f10db6eb4904c1e59210ff006d054da8777a0517857a3b7c8d6ec850c6f",
+      "reason": "주파수 1 rad/s에서의 위상 지연는 공간/파형 관계를 직접 보아야 식의 기준과 적용 범위를 혼동하지 않으므로 도식을 추가한다. 제공된 식·본문 조건과 대조했다.",
+      "assets": [
+        {
+          "path": "apps/web/public/textbook-visuals/M07.04-concept.svg",
+          "sha256": "1d538a8bac0cdcd04d89fd076ed498ca7a3cde52a45c87b400618017443fba2d",
+          "method": "original-svg",
+          "model": null,
+          "prompt": null,
+          "alt": "주파수 1 rad/s에서의 위상 지연. G(s)=1/(s+1), ω=1 rad/s인 본문 모델의 정상 정현파 응답이다. 초기 과도응답은 제외했다. 주파수가 달라지면 진폭과 위상도 달라진다.",
+          "caption": "G(s)=1/(s+1), ω=1 rad/s인 본문 모델의 정상 정현파 응답이다. 초기 과도응답은 제외했다. 주파수가 달라지면 진폭과 위상도 달라진다. 직접 제작."
+        }
+      ],
+      "evidence": "doc/visual-review/units/M07.04.md"
     },
     "M07.05": {
       "status": "pending",

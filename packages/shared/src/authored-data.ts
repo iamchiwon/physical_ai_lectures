@@ -2153,7 +2153,7 @@ export const authoredMetadata: AuthoredMetadata[] = [
       "가상 지연이 위상 여유에 주는 영향을 계산하고 주파수 지표만으로 보장할 수 없는 조건을 설명한다."
     ],
     "prerequisiteNote": "M07.02의 전달함수·극·연속 안정성, M02의 복소수와 삼각함수, M07.03의 이득 개념을 사용한다. 시간은 s, 입출력은 정규화값인 가상 모델이다. 실제 로봇 주파수 시험이나 MATLAB 설치는 필요 없다.",
-    "sha256": "2072cc3fc7c2e90cb585dc6b7109f5ebc4d1be33b345dfe5126f862f037c3143",
+    "sha256": "3c8d7f10db6eb4904c1e59210ff006d054da8777a0517857a3b7c8d6ec850c6f",
     "reviewed": true,
     "evidenceRef": "doc/v2/work_items/publication-source-privacy.md"
   },
