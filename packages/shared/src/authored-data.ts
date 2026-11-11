@@ -529,7 +529,7 @@ export const authoredMetadata: AuthoredMetadata[] = [
       "namespace·프레임 접두사·발행자·시간 범위의 증거를 이용하여 tf 연결 실패의 원인과 추가 확인을 제안한다."
     ],
     "prerequisiteNote": "M05.05~06의 tf/시간과 M06.01의 열벡터 좌표 합성, M08.01~03의 URDF 트리가 선수다. 기본 활동은 합성 메시지와 종이 좌표 계산이며 ROS 설치나 실제 관절 동작이 필요하지 않다.",
-    "sha256": "3a7712fbbac39b4c69401e29690a4049863b809e0c1ec5708195a90e8afd8d79",
+    "sha256": "8fc794a41c50ee610d2a6a54371cc396b4c1113f5f907283aec3b6c0a5f0fb23",
     "reviewed": true,
     "evidenceRef": "doc/v2/work_items/M08.05.md"
   },

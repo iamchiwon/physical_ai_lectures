@@ -818,8 +818,22 @@
       "evidence": "doc/visual-review/units/M08.04.md"
     },
     "M08.05": {
-      "status": "pending",
-      "source": "ebook/curriculum/M08/M08.05.md"
+      "status": "reviewed",
+      "source": "ebook/curriculum/M08/M08.05.md",
+      "sourceSha256": "8fc794a41c50ee610d2a6a54371cc396b4c1113f5f907283aec3b6c0a5f0fb23",
+      "reason": "관절 상태가 TF가 되는 경로의 연결/구분은 글만으로 단계나 경계를 혼동하기 쉬워 설명 도식을 추가한다. 본문의 표·수치·문제 조건도 대조한다.",
+      "assets": [
+        {
+          "path": "apps/web/public/textbook-visuals/M08.05-concept.svg",
+          "sha256": "e3abdf21991189f26d46a4a2b03e03b42c46096cabe65ba096b6ce654ee666c5",
+          "method": "original-svg",
+          "model": null,
+          "prompt": null,
+          "alt": "관절 상태가 TF가 되는 경로: JointState → robot_state_publisher → TF 변환 → 소비자/RViz.",
+          "caption": "각 칸은 서로 다른 역할/근거다. 아래 방향은 자료/처리의 연결이며 실제 성공을 자동으로 보장하지 않는다. 직접 제작한 개념도이며 본문의 조건과 함께 읽는다."
+        }
+      ],
+      "evidence": "doc/visual-review/units/M08.05.md"
     },
     "M08.06": {
       "status": "pending",
