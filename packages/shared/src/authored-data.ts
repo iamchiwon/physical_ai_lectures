@@ -1355,7 +1355,7 @@ export const authoredMetadata: AuthoredMetadata[] = [
       "표현·task head·사전학습/전이의 역할을 구분하고 로봇 과제에 필요한 별도 검증을 제안한다."
     ],
     "prerequisiteNote": "M11.01~03의 학습·텐서·분리와 M02.01의 내적이 선수다. 기본 활동은 합성 벡터의 종이 계산이다. 선택 CPU 코드의 가중치는 손으로 정하며 실제 영상 학습이나 대형 모델 성능을 실증하지 않는다.",
-    "sha256": "feff450ee3a3d0593139399939500f0114db2e69dcf456820dfae71afcd92068",
+    "sha256": "d636272571debf1d6ebf0d9657e340b18afe8b58fa250c73212ddfac28f0bc02",
     "reviewed": true,
     "evidenceRef": "doc/v2/work_items/M11.04.md"
   },
