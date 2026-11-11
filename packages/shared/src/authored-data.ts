@@ -893,7 +893,7 @@ export const authoredMetadata: AuthoredMetadata[] = [
       "과업과 지도 상태에 맞는 문제를 선택하고 평가·실패·미상의 근거를 제시한다."
     ],
     "prerequisiteNote": "M09의 구동/센서·odom/map/clock과 M02/M14의 좌표 기초를 연결한다. 랜드마크/상대 관측·전역 기준과 모호성을 본문에서 보충한다. 기본은 합성 표/종이 계산이며 실제 SLAM/localization·ROS/장비를 실행하지 않는다.",
-    "sha256": "a26b8fda99fca0a44b73bff7e69f6a2921447241d3281527824a9a098040cd01",
+    "sha256": "c8ccd4c364e823f1afc9f86b90a282dba8a79873138aabb1073abd209f09e775",
     "reviewed": true,
     "evidenceRef": "doc/v2/work_items/M15.01.md"
   },
