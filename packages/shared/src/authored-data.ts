@@ -2685,7 +2685,7 @@ export const authoredMetadata: AuthoredMetadata[] = [
       "주기/지연·gain/관절 매핑 불일치를 진단한다."
     ],
     "prerequisiteNote": "M24.03의 개념을 사용한다. 필요한 새 용어·기호는 본문에서 정의한다. 일반 코딩 문법/실제 장비 설치를 요구하지 않으며 합성 자료로 기본 경로를 수행한다.",
-    "sha256": "06287f9dc50b27e891a1a86329d4fe323be4c4c95689450942647bbc279b6fe5",
+    "sha256": "9a75191b8c1be5b5a954d5a249bf5d942de7500d91060da03d585492bdf7e122",
     "reviewed": true,
     "evidenceRef": "doc/v2/work_items/M24.04.md"
   },

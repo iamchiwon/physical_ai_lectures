@@ -2268,8 +2268,22 @@
       "evidence": "doc/visual-review/units/M24.03.md"
     },
     "M24.04": {
-      "status": "pending",
-      "source": "ebook/curriculum/M24/M24.04.md"
+      "status": "reviewed",
+      "source": "ebook/curriculum/M24/M24.04.md",
+      "sourceSha256": "9a75191b8c1be5b5a954d5a249bf5d942de7500d91060da03d585492bdf7e122",
+      "reason": "느린 정책과 빠른 PD 루프의 연결/구분은 글만으로 단계나 경계를 혼동하기 쉬워 설명 도식을 추가한다. 본문의 표·수치·문제 조건도 대조한다.",
+      "assets": [
+        {
+          "path": "apps/web/public/textbook-visuals/M24.04-concept.svg",
+          "sha256": "0caae3b59470d7337bd245336b7c9a40fc1b36e087af3e6ab7ef92b9b5bc51a3",
+          "method": "original-svg",
+          "model": null,
+          "prompt": null,
+          "alt": "느린 정책과 빠른 PD 루프: 정책 갱신 → 목표 유지/보간 → 빠른 PD 갱신 → 최종 제한/실행.",
+          "caption": "각 칸은 서로 다른 역할/근거다. 아래 방향은 자료/처리의 연결이며 실제 성공을 자동으로 보장하지 않는다. 직접 제작한 개념도이며 본문의 조건과 함께 읽는다."
+        }
+      ],
+      "evidence": "doc/visual-review/units/M24.04.md"
     },
     "M24.05": {
       "status": "pending",
