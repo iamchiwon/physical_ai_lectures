@@ -851,7 +851,7 @@ export const authoredMetadata: AuthoredMetadata[] = [
       "TF/clock 혼용·중복 소유/reset 기록에서 미상과 필요한 정합/재검증 근거를 진단한다."
     ],
     "prerequisiteNote": "M05의 TF/clock, M02의 변환과 M08·M09.01~03의 모델/구동/센서를 연결한다. REP105의 frame 역할과 map→odom→base_link 체인을 본문에서 보충한다. 기준은 Jazzy/Harmonic이고 기본은 합성 변환/로그다. 실제 localization/SLAM이나 ROS/Gazebo는 실행하지 않는다.",
-    "sha256": "9ee3b2612b810f3bb64b98b825bb7261a2b89a3a4eb5e88cbf422874aab5aa19",
+    "sha256": "b0f10c875dfa8b4f4112b88b8e99dd4bb04152baad446c767dba5f1085e46c04",
     "reviewed": true,
     "evidenceRef": "doc/v2/work_items/M09.04.md"
   },
