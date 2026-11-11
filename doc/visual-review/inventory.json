@@ -2814,8 +2814,12 @@
       "evidence": "doc/visual-review/units/M30.04.md"
     },
     "M30.05": {
-      "status": "pending",
-      "source": "ebook/curriculum/M30/M30.05.md"
+      "status": "reviewed",
+      "source": "ebook/curriculum/M30/M30.05.md",
+      "sourceSha256": "15a869b7f97870291040319875b4a1fada272f7634e8f40a37e1d73ab7a1d8ff",
+      "reason": "본문의 「시험 한 번과 성공을 먼저 고정한다」부터 「보고서에는 실패 원인과 범위를 함께 쓴다」까지 시각 참조/입력 조건을 점검했다. 제공 표·정의와 수치/판정 절차가 글 안에서 주어지고 특정 미제공 사진/그림의 식별에 의존하지 않아 이번에는 이미지를 추가하지 않는다. 공간 구조의 세부 설명은 연결된 선수 단위의 그림과 함께 읽는다.",
+      "assets": [],
+      "evidence": "doc/visual-review/units/M30.05.md"
     },
     "M30.06": {
       "status": "pending",
