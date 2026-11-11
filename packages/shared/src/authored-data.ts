@@ -1523,7 +1523,7 @@ export const authoredMetadata: AuthoredMetadata[] = [
       "train 행동 통계의 정규화/역변환과 유효 mask 평균을 계산하고 배포/경계 처리 오류를 설명한다."
     ],
     "prerequisiteNote": "M11의 shape/손실, M19의 프레임/IK, M20의 스키마/시각과 M21.01의 BC가 선수다. 기본은 작은 tensor 모양/시간표와 종이 계산이며 선택 코드는 표준 Python 산술만 사용한다. 정책 학습이나 실제 로봇 실행은 요구하지 않는다.",
-    "sha256": "1ef9b17b7f404c8d5e942c6758717c06700b6096e0a9161a87d3e1958385c16a",
+    "sha256": "27b4da68a1fdf5ea3437a78855a152112586fe2c6ee1cb0d7ef634d5dc557277",
     "reviewed": true,
     "evidenceRef": "doc/v2/work_items/M21.02.md"
   },
