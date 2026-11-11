@@ -991,7 +991,7 @@ export const authoredMetadata: AuthoredMetadata[] = [
       "비용 정의와 변경에 따른 경로 선택을 설명하고 그래프 최적성의 적용 범위를 보고한다."
     ],
     "prerequisiteNote": "M17.01의 node·간선·연결성을 연결한다. 우선순위, 비용 완화, heuristic과 최적성의 조건을 본문에서 정의한다. 작은 완전 입력 그래프를 종이로 탐색하며 실제 플래너나 로봇 실행은 필요하지 않다.",
-    "sha256": "971d22f9fe3d509fd49a0f77cb8dd5bb8f953a1bd3946c13e78266e3e53c2005",
+    "sha256": "6963d0bcd8818cbed6cfddf6901a4b9a5439c9523ea47a656254100a2415cb39",
     "reviewed": true,
     "evidenceRef": "doc/v2/work_items/publication-source-privacy.md"
   },

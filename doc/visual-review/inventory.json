@@ -1596,8 +1596,22 @@
       "evidence": "doc/visual-review/units/M17.01.md"
     },
     "M17.02": {
-      "status": "pending",
-      "source": "ebook/curriculum/M17/M17.02.md"
+      "status": "reviewed",
+      "source": "ebook/curriculum/M17/M17.02.md",
+      "sourceSha256": "6963d0bcd8818cbed6cfddf6901a4b9a5439c9523ea47a656254100a2415cb39",
+      "reason": "경로 탐색의 비용과 추정의 연결/구분은 글만으로 단계나 경계를 혼동하기 쉬워 설명 도식을 추가한다. 본문의 표·수치·문제 조건도 대조한다.",
+      "assets": [
+        {
+          "path": "apps/web/public/textbook-visuals/M17.02-concept.svg",
+          "sha256": "04d35ad4b6d97912725d52f5dd3aaa8cbf5eec9fa2ff17023f8d38789cea135a",
+          "method": "original-svg",
+          "model": null,
+          "prompt": null,
+          "alt": "경로 탐색의 비용과 추정: 지금까지 비용 g → 남은 비용 추정 h → A* 우선순위 f = g + h → 결과 경로.",
+          "caption": "각 칸은 서로 다른 역할/근거다. 아래 방향은 자료/처리의 연결이며 실제 성공을 자동으로 보장하지 않는다. 직접 제작한 개념도이며 본문의 조건과 함께 읽는다."
+        }
+      ],
+      "evidence": "doc/visual-review/units/M17.02.md"
     },
     "M17.03": {
       "status": "pending",
