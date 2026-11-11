@@ -144,8 +144,22 @@
       "evidence": "doc/visual-review/units/M01.03.md"
     },
     "M01.04": {
-      "status": "pending",
-      "source": "ebook/curriculum/M01/M01.04.md"
+      "status": "reviewed",
+      "source": "ebook/curriculum/M01/M01.04.md",
+      "sourceSha256": "a32b88201fdd1e221d8e76e014ae2028a076dbb39a1df3be5ae404cc65321d95",
+      "reason": "구성에서 실행까지의 경계의 연결/구분은 글만으로 단계나 경계를 혼동하기 쉬워 설명 도식을 추가한다. 본문의 표·수치·문제 조건도 대조한다.",
+      "assets": [
+        {
+          "path": "apps/web/public/textbook-visuals/M01.04-concept.svg",
+          "sha256": "8a70450d24d87a2608ceb8a1b071dfc92d57e0ddb72171134e06064b8bb012a7",
+          "method": "original-svg",
+          "model": null,
+          "prompt": null,
+          "alt": "구성에서 실행까지의 경계: Configure → Build → Install → 실행 검색 환경.",
+          "caption": "각 칸은 서로 다른 역할/근거다. 아래 방향은 자료/처리의 연결이며 실제 성공을 자동으로 보장하지 않는다. 직접 제작한 개념도이며 본문의 조건과 함께 읽는다."
+        }
+      ],
+      "evidence": "doc/visual-review/units/M01.04.md"
     },
     "M01.05": {
       "status": "pending",

@@ -137,7 +137,7 @@ export const authoredMetadata: AuthoredMetadata[] = [
       "소스·구성·의존성·산출물·실행 경로를 대조해 재빌드 반영과 검증 한계를 기록한다."
     ],
     "prerequisiteNote": "일반 코딩 경험과 M01.01~03의 실행 환경·native ABI 개념을 사용한다. C/C++ 문법 수업은 포함하지 않는다. CMake·colcon·ROS 설치 없이 완전한 합성 빌드 기록을 진단하며 실제 ROS 빌드·장비 실행은 요구하지 않는다.",
-    "sha256": "f9333fee16418bcbb49b18ad46fc8e2c56b1a7de59157fd595e5822aebe2d5ed",
+    "sha256": "a32b88201fdd1e221d8e76e014ae2028a076dbb39a1df3be5ae404cc65321d95",
     "reviewed": true,
     "evidenceRef": "doc/v2/work_items/M01.04.md"
   },
