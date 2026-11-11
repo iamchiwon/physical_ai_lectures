@@ -1,0 +1,101 @@
+{
+  "units": 207,
+  "reviewed": 207,
+  "illustratedUnits": 141,
+  "assets": 152,
+  "generated": 2,
+  "objectivesPracticesAndSolutionsPreserved": 207,
+  "legacySourcesUnchanged": true,
+  "svgLayout": {
+    "count": 150,
+    "overflow": [],
+    "overlap": []
+  },
+  "static": {
+    "htmlFiles": 415,
+    "links": 14296,
+    "assets": 7466,
+    "errors": [],
+    "corpus": 207
+  },
+  "date": "2026-11-11",
+  "base": "caab3d5",
+  "branch": "textbook/visual-review",
+  "mobileBrowserPages": [
+    {
+      "id": "M00.03",
+      "count": 1,
+      "overflow": false,
+      "missingAlt": false
+    },
+    {
+      "id": "M02.01",
+      "count": 1,
+      "overflow": false,
+      "missingAlt": false
+    },
+    {
+      "id": "M06.03",
+      "count": 1,
+      "overflow": false,
+      "missingAlt": false
+    },
+    {
+      "id": "M06.06",
+      "count": 2,
+      "overflow": false,
+      "missingAlt": false
+    },
+    {
+      "id": "M12.02",
+      "count": 1,
+      "overflow": false,
+      "missingAlt": false
+    },
+    {
+      "id": "M13.01",
+      "count": 2,
+      "overflow": false,
+      "missingAlt": false
+    },
+    {
+      "id": "M15.02",
+      "count": 1,
+      "overflow": false,
+      "missingAlt": false
+    },
+    {
+      "id": "M16.04",
+      "count": 2,
+      "overflow": false,
+      "missingAlt": false
+    },
+    {
+      "id": "M17.03",
+      "count": 2,
+      "overflow": false,
+      "missingAlt": false
+    }
+  ],
+  "m00CupAt320px": true,
+  "originalImageLinkOpened": true,
+  "originalStorageRestored": true,
+  "regressionTests": {
+    "passed": 188,
+    "failed": 0
+  },
+  "types": "passed",
+  "lint": "passed",
+  "build": "passed",
+  "publication": {
+    "textFiles": 3092,
+    "archiveEntries": 43
+  },
+  "generatedModel": "gpt-image-2.5-sunburst",
+  "generationMode": "bundled imagegen CLI / Images API",
+  "externalNewImages": 0,
+  "pdfEpubGenerated": false,
+  "deployed": false,
+  "originalSizeHintsInExportedHtml": 152,
+  "exportedAssetBytesMatchSource": 152
+}

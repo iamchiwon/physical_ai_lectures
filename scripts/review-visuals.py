@@ -29,10 +29,13 @@ def svg(spec):
 def apply(plan):
     topic=plan['topic'];source=ROOT/f'ebook/curriculum/{topic[:3]}/{topic}.md';raw=source.read_text();before=sha(source)
     state=ROOT/'doc/visual-review/inventory.json';prior=json.loads(state.read_text())['units'][topic]
+    if prior.get('status')=='reviewed' and not plan.get('append'):
+        raise ValueError(f'{topic}: already reviewed; use a separate append plan for additional figures')
     existing=prior.get('assets',[]) if plan.get('append') else []
     images=plan.get('images',[]);assets=list(existing)
     for i,spec in enumerate(images,len(existing)):
         name=f'{topic}-{spec.get("name",str(i+1))}';ext=spec.get('extension','svg');dest=ROOT/f'apps/web/public/textbook-visuals/{name}.{ext}'
+        if dest.exists(): raise ValueError(f'Asset already exists: {dest.name}')
         if 'rows'in spec: dest.write_text(svg(spec))
         elif 'svg'in spec: dest.write_text(spec['svg'])
         else:
@@ -59,14 +62,17 @@ def apply(plan):
             if link not in s:old.write_text(s+link)
             registry.write_text(json.dumps(d,ensure_ascii=False,indent=2)+'\n');break
     d=json.loads(state.read_text());d['units'][topic]={'status':'reviewed','source':str(source.relative_to(ROOT)),'sourceSha256':sha(source),'reason':plan['reason'],'assets':assets,'evidence':evidence};state.write_text(json.dumps(d,ensure_ascii=False,indent=2)+'\n')
-    return topic
+    changed=[str(source.relative_to(ROOT)), evidence, 'doc/visual-review/inventory.json', 'packages/shared/src/authored-data.ts']
+    changed += [a['path'] for a in assets[len(existing):]]
+    changed += [str(registry.relative_to(ROOT)),str(old.relative_to(ROOT))]
+    return topic,changed
 if __name__=='__main__':
     p=argparse.ArgumentParser();p.add_argument('plan');p.add_argument('--topic');p.add_argument('--commit',action='store_true');a=p.parse_args();plans=json.loads(Path(a.plan).read_text());plans=plans if isinstance(plans,list)else[plans]
     for plan in plans:
         if a.topic and a.topic!=plan['topic']:continue
-        topic=apply(plan)
+        topic,changed=apply(plan)
         subprocess.run(['node','scripts/prepare-authored.mjs'],cwd=ROOT,check=True,stdout=subprocess.DEVNULL)
         subprocess.run(['node','scripts/check-visuals.mjs','--partial'],cwd=ROOT,check=True)
         if a.commit:
-            subprocess.run(['git','add','ebook/curriculum','apps/web/public/textbook-visuals','doc/visual-review','doc/v2/inventory','doc/v2/work_items','packages/shared/src/authored-data.ts'],cwd=ROOT,check=True)
+            subprocess.run(['git','add',*changed],cwd=ROOT,check=True)
             subprocess.run(['git','commit','-m',f'docs({topic}): review and supply explanatory visuals'],cwd=ROOT,check=True)
