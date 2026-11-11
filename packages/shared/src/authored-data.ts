@@ -585,7 +585,7 @@ export const authoredMetadata: AuthoredMetadata[] = [
       "Jazzy ApproximateTime의 큐/허용 시차와 도착 순서 사례를 해석하고 제한된 운동 모형으로 시간 오차 예산을 계산한다."
     ],
     "prerequisiteNote": "M05.06의 시간원, M12.02의 핀홀과 M14.01의 프레임이 선수다. M13/Kalman/EKF는 필요하지 않다. 기본은 합성 시각/도착 순서의 종이 계산이며 실제 ROS나 센서 동기화를 실행하지 않는다.",
-    "sha256": "d348f166c58e8d0c7705177c3b5f4ec9a688a8fb0b62dcb98edd40dd86f10940",
+    "sha256": "1ce62604cd0d0a5966fb5804934294435251efe0d71709fb17a859624ff62987",
     "reviewed": true,
     "evidenceRef": "doc/v2/work_items/M14.03.md"
   },
