@@ -2223,7 +2223,7 @@ export const authoredMetadata: AuthoredMetadata[] = [
       "timeout/늦은 응답을 포함한 분모·지연 통계와 재연결/재시도·검증 범위를 구분한다."
     ],
     "prerequisiteNote": "M26.04의 기구/축·버전과 M04.05의 요청/만료·M34 관측/현재값 구분을 연결한다. 일반 언어/앱 코딩 입문 없이 가상 단일축 속도요청 R-UI의 화면/사건표를 분석한다. 실제 모바일/서버/ROS·장치 명령·실시간/물리 정지 검증은 수행하지 않는다.",
-    "sha256": "c449eeb1f861c42cb8ac4462662d02eee056123d8deb697e0bdcebe1caba31e1",
+    "sha256": "0a7817a30ea49a2c35f4b6690f022124f017a7cf3e8d2f5e37e1d781f5ebe343",
     "reviewed": true,
     "evidenceRef": "doc/v2/work_items/M26.05.md"
   },
