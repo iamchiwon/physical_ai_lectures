@@ -2895,7 +2895,7 @@ export const authoredMetadata: AuthoredMetadata[] = [
       "실패 재현·수정/회귀·최종 보고 패키지를 작성한다."
     ],
     "prerequisiteNote": "M29.05의 개념을 사용한다. 필요한 새 용어·기호는 본문에서 정의한다. 일반 코딩 문법/실제 장비 설치를 요구하지 않으며 합성 자료로 기본 경로를 수행한다.",
-    "sha256": "9677a1b797bb72a998aeb724193fe952ae9d9ff60ec34a2f2d53e5aa877e6494",
+    "sha256": "dd0ebf6ccd3b9e33895853f6d0ffaa4d4bab53ac4daf7643a4accb4f6280a0b0",
     "reviewed": true,
     "evidenceRef": "doc/v2/work_items/M29.06.md"
   }

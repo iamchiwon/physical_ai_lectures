@@ -2734,8 +2734,22 @@
       "evidence": "doc/visual-review/units/M29.05.md"
     },
     "M29.06": {
-      "status": "pending",
-      "source": "ebook/curriculum/M29/M29.06.md"
+      "status": "reviewed",
+      "source": "ebook/curriculum/M29/M29.06.md",
+      "sourceSha256": "dd0ebf6ccd3b9e33895853f6d0ffaa4d4bab53ac4daf7643a4accb4f6280a0b0",
+      "reason": "주차 공간과 차체 전체의 여유는 공간/파형 관계를 직접 보아야 식의 기준과 적용 범위를 혼동하지 않으므로 도식을 추가한다. 제공된 식·본문 조건과 대조했다.",
+      "assets": [
+        {
+          "path": "apps/web/public/textbook-visuals/M29.06-concept.svg",
+          "sha256": "cc312defd7c04e958d92fb31970612d30e57c9c17a99d5d7cb0bf3c543502297",
+          "method": "original-svg",
+          "model": null,
+          "prompt": null,
+          "alt": "주차 공간과 차체 전체의 여유. 본문처럼 차체 중심/축이 공간과 일치할 때 앞뒤 0.5 m, 좌우 0.25 m의 기하 차이가 생긴다. 실제 진입 경로/조향·위치 오차·동적 장애물과 문 열림 조건을 포함한 주차 가능성 판단은 아니다.",
+          "caption": "본문처럼 차체 중심/축이 공간과 일치할 때 앞뒤 0.5 m, 좌우 0.25 m의 기하 차이가 생긴다. 실제 진입 경로/조향·위치 오차·동적 장애물과 문 열림 조건을 포함한 주차 가능성 판단은 아니다. 직접 제작."
+        }
+      ],
+      "evidence": "doc/visual-review/units/M29.06.md"
     },
     "M30.01": {
       "status": "pending",
