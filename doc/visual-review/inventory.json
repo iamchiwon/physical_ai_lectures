@@ -2558,8 +2558,12 @@
       "evidence": "doc/visual-review/units/M27.05.md"
     },
     "M27.06": {
-      "status": "pending",
-      "source": "ebook/curriculum/M27/M27.06.md"
+      "status": "reviewed",
+      "source": "ebook/curriculum/M27/M27.06.md",
+      "sourceSha256": "9f0a7470e91d6448238843291af366d8cd356b6ec7af965f7eb0fa3612f6bd14",
+      "reason": "본문의 「속도를 재기 전에 같은 일을 비교하는지 확인한다」부터 「공동 기준은 숫자를 본 뒤 바꾸지 않는다」까지 시각 참조/입력 조건을 점검했다. 명시된 코드/설정·정의와 수치/판정 절차가 글 안에서 주어지고 특정 미제공 사진/그림의 식별에 의존하지 않아 이번에는 이미지를 추가하지 않는다. 공간 구조의 세부 설명은 연결된 선수 단위의 그림과 함께 읽는다.",
+      "assets": [],
+      "evidence": "doc/visual-review/units/M27.06.md"
     },
     "M28.01": {
       "status": "pending",
