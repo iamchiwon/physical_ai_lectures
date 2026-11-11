@@ -1789,7 +1789,7 @@ export const authoredMetadata: AuthoredMetadata[] = [
       "비동기/대기·분포/계측 오버헤드를 고려해 최적화 가설과 재측정 계획을 제안한다."
     ],
     "prerequisiteNote": "M05.06의 시계, M11의 추론과 M27.02의 처리량/지연을 사용한다. 측정 경계·동기/비동기와 직렬/병렬을 본문에서 보충한다. 기본은 합성 로그이며 실제 카메라·ROS/GPU 실행을 요구하지 않는다.",
-    "sha256": "da1a7bcfa8da78e0d6cad7a1cd4acd3417725df8c1dc58c0659570b1d38527e7",
+    "sha256": "3b70a5abee7cfd3f5654c336e508ae45fe876ed0a0f903b20718d2ffc50136b2",
     "reviewed": true,
     "evidenceRef": "doc/v2/work_items/M27.03.md"
   },
