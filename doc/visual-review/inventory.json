@@ -994,8 +994,12 @@
       "evidence": "doc/visual-review/units/M10.04.md"
     },
     "M10.05": {
-      "status": "pending",
-      "source": "ebook/curriculum/M10/M10.05.md"
+      "status": "reviewed",
+      "source": "ebook/curriculum/M10/M10.05.md",
+      "sourceSha256": "0218809e3f6f860bd7426cc42e2c0dd9c0b4d34a71ccfdd17647a92a575f30d5",
+      "reason": "본문의 「한 장의 화면 사이에 여러 물리 계산이 있다」부터 「같은 seed는 조건 중 하나다」까지 시각 참조/입력 조건을 점검했다. 정의와 수치/판정 절차가 글 안에서 주어지고 특정 미제공 사진/그림의 식별에 의존하지 않아 이번에는 이미지를 추가하지 않는다. 공간 구조의 세부 설명은 연결된 선수 단위의 그림과 함께 읽는다.",
+      "assets": [],
+      "evidence": "doc/visual-review/units/M10.05.md"
     },
     "M10.06": {
       "status": "pending",
