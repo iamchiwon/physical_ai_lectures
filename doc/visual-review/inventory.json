@@ -2490,8 +2490,12 @@
       "evidence": "doc/visual-review/units/M26.05.md"
     },
     "M26.06": {
-      "status": "pending",
-      "source": "ebook/curriculum/M26/M26.06.md"
+      "status": "reviewed",
+      "source": "ebook/curriculum/M26/M26.06.md",
+      "sourceSha256": "ede2c3ea746e72ec8a9abd564f660ecac77e47cb6222bc43c9d6203a5a93b4b6",
+      "reason": "본문의 「'통합 시험을 했다'보다 무엇을 비교했는지를 적는다」부터 「다음 전문화로 넘길 상태」까지 시각 참조/입력 조건을 점검했다. 제공 표·명시된 코드/설정·정의와 수치/판정 절차가 글 안에서 주어지고 특정 미제공 사진/그림의 식별에 의존하지 않아 이번에는 이미지를 추가하지 않는다. 공간 구조의 세부 설명은 연결된 선수 단위의 그림과 함께 읽는다.",
+      "assets": [],
+      "evidence": "doc/visual-review/units/M26.06.md"
     },
     "M27.01": {
       "status": "pending",
