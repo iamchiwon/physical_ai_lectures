@@ -1677,7 +1677,7 @@ export const authoredMetadata: AuthoredMetadata[] = [
       "합성 자산 명세의 결함·정적 검수·동적 관찰·실물 미확인을 구분하고 재현 가능한 검수 근거를 작성한다."
     ],
     "prerequisiteNote": "M10.05의 물리/렌더 시간, M12.02의 카메라 기하, M20.03의 데이터 메타데이터가 선수다. 변환/질량은 M10.02/.04에서 보충한다. 제공 명세의 종이 계산과 기록 검사가 기본이며 실제 USD validator·Isaac Sim·GPU나 실물 실행은 요구하지 않는다. 일반 언어/문법은 다루지 않는다.",
-    "sha256": "2f22ca11584d27c09aef39b370292e9efd9be7fac0212ce4990dedf056aa6f44",
+    "sha256": "8cfc290a4edf19c85dc4a6bc90ea7f45857adfdc93e0072ec52c1dc4c04cde5e",
     "reviewed": true,
     "evidenceRef": "doc/v2/work_items/M25.01.md"
   },
