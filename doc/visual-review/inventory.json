@@ -1578,8 +1578,22 @@
       "evidence": "doc/visual-review/units/M16.06.md"
     },
     "M17.01": {
-      "status": "pending",
-      "source": "ebook/curriculum/M17/M17.01.md"
+      "status": "reviewed",
+      "source": "ebook/curriculum/M17/M17.01.md",
+      "sourceSha256": "21ec9ea6340abc23bdb2fefbd5689135383c291facf4523a8be1cad0fe73faa0",
+      "reason": "원판 로봇의 C-space 장애물는 공간/파형 관계를 직접 보아야 식의 기준과 적용 범위를 혼동하지 않으므로 도식을 추가한다. 제공된 식·본문 조건과 대조했다.",
+      "assets": [
+        {
+          "path": "apps/web/public/textbook-visuals/M17.01-concept.svg",
+          "sha256": "62bed383c7f88f1b98e02a394357d568705c2cf9387fa47b159fca69f24336cf",
+          "method": "original-svg",
+          "model": null,
+          "prompt": null,
+          "alt": "원판 로봇의 C-space 장애물. 주황 실체는 반지름 0.3 m 장애물, 연한 원은 0.5 m로 확장한 금지 영역이다. 파란 원판 반지름은 0.2 m다. 로봇 중심을 점으로 검사할 때는 확장 영역을 사용한다. 방향·제동·추정 오차를 포함한 안전 인증은 아니다.",
+          "caption": "주황 실체는 반지름 0.3 m 장애물, 연한 원은 0.5 m로 확장한 금지 영역이다. 파란 원판 반지름은 0.2 m다. 로봇 중심을 점으로 검사할 때는 확장 영역을 사용한다. 방향·제동·추정 오차를 포함한 안전 인증은 아니다. 직접 제작."
+        }
+      ],
+      "evidence": "doc/visual-review/units/M17.01.md"
     },
     "M17.02": {
       "status": "pending",

@@ -977,7 +977,7 @@ export const authoredMetadata: AuthoredMetadata[] = [
       "격자와 로드맵의 점·간선·연결성을 판정하고 모델과 실제 이동의 한계를 설명한다."
     ],
     "prerequisiteNote": "M02의 거리/비용, M06.01의 프레임, M07.05의 추종과 M15의 지도 좌표를 연결한다. 기본 모바일 도형 검사는 제공한 footprint와 정적 도형으로 수행하며 팔의 DH/FK 전체 이수를 요구하지 않는다. configuration·충돌 공간·점/간선과 연속 구간은 본문에서 보충한다. 팔 링크의 실제 배치를 확장할 때는 M06.02와 연결한다. 실제 플래너·로봇 실행은 하지 않는다.",
-    "sha256": "5235b8ed0dc69ab1c7235f5e47f27dab0e264cd3cc5733df6a3fb7b06a72e2aa",
+    "sha256": "21ec9ea6340abc23bdb2fefbd5689135383c291facf4523a8be1cad0fe73faa0",
     "reviewed": true,
     "evidenceRef": "doc/v2/work_items/publication-source-privacy.md"
   },
