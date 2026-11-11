@@ -2377,7 +2377,7 @@ export const authoredMetadata: AuthoredMetadata[] = [
       "모달 누락과 상관오차를 포함한 비교 평가를 설계한다."
     ],
     "prerequisiteNote": "M14.04, M13.01의 개념을 사용한다. 필요한 새 용어·기호는 본문에서 정의한다. 일반 코딩 문법/실제 장비 설치를 요구하지 않으며 합성 자료로 기본 경로를 수행한다.",
-    "sha256": "b46430269533a3d624a1440fe4cb57532163b90d99e87185064a1099eaa57c63",
+    "sha256": "4d8949dd357730e812634b64b273e0e53dca4d89db291a8ba6337d435684cbee",
     "reviewed": true,
     "evidenceRef": "doc/v2/work_items/M14.05.md"
   },
