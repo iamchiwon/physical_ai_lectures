@@ -3034,8 +3034,12 @@
       "evidence": "doc/visual-review/units/M33.06.md"
     },
     "M34.01": {
-      "status": "pending",
-      "source": "ebook/curriculum/M34/M34.01.md"
+      "status": "reviewed",
+      "source": "ebook/curriculum/M34/M34.01.md",
+      "sourceSha256": "5889842420a321e2d06816ccb3c3dc68c1e85f8b3bcfde9a536a77e7b5240fd1",
+      "reason": "본문의 「화면에 값이 있다는 사실보다 출처와 시각이 먼저다」부터 「읽기 전용 표시를 실제 실행 권한과 구분한다」까지 시각 참조/입력 조건을 점검했다. 제공 표·정의와 수치/판정 절차가 글 안에서 주어지고 특정 미제공 사진/그림의 식별에 의존하지 않아 이번에는 이미지를 추가하지 않는다. 공간 구조의 세부 설명은 연결된 선수 단위의 그림과 함께 읽는다.",
+      "assets": [],
+      "evidence": "doc/visual-review/units/M34.01.md"
     },
     "M34.02": {
       "status": "pending",
