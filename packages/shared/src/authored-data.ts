@@ -1929,7 +1929,7 @@ export const authoredMetadata: AuthoredMetadata[] = [
       "작업 권한과 현재 개정의 산출물·실제 검사 근거를 대조해 통합/완료·미확인을 판정한다."
     ],
     "prerequisiteNote": "M31.04의 조건/CI·회귀/산출물이 선수다. M31.01/.02의 명세·도구 검토를 재사용한다. 벤더 독립 합성 작업표와 인수 기록을 분석하며 실제 Agent/CI/클라우드·배포/실물 실행은 요구하지 않는다. 특정 도구 설치/문법은 다루지 않는다.",
-    "sha256": "f7376c2fc3d6d0c15f038d74b6c1323fd3e2dbba76543696629dd8b173ae164f",
+    "sha256": "2690ccdc540a45ac08ee39a9d181be44c4bf240449fc781d15c198c8babd4941",
     "reviewed": true,
     "evidenceRef": "doc/v2/work_items/M31.05.md"
   },
