@@ -1407,7 +1407,7 @@
       "assets": [
         {
           "path": "apps/web/public/textbook-visuals/M15.02-concept.svg",
-          "sha256": "c22c68470ed130d7304c1fa242b4140765fda1352bfa656b00a8d4c522011492",
+          "sha256": "87dc6e79b8fd03a4db07de586bad2d7540a975414d1496d0f849b6638ab81244",
           "method": "original-svg",
           "model": null,
           "prompt": null,
