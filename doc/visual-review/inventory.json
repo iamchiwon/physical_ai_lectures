@@ -2822,8 +2822,12 @@
       "evidence": "doc/visual-review/units/M30.05.md"
     },
     "M30.06": {
-      "status": "pending",
-      "source": "ebook/curriculum/M30/M30.06.md"
+      "status": "reviewed",
+      "source": "ebook/curriculum/M30/M30.06.md",
+      "sourceSha256": "3d57a902a6ef9011b934d15872951ad851faf9f122d26c7213797a208d416656",
+      "reason": "본문의 「실행 결과를 만든 묶음과 근거를 추적한다」부터 「승격/롤백은 현재 세계에서 검증한다」까지 시각 참조/입력 조건을 점검했다. 제공 표·정의와 수치/판정 절차가 글 안에서 주어지고 특정 미제공 사진/그림의 식별에 의존하지 않아 이번에는 이미지를 추가하지 않는다. 공간 구조의 세부 설명은 연결된 선수 단위의 그림과 함께 읽는다.",
+      "assets": [],
+      "evidence": "doc/visual-review/units/M30.06.md"
     },
     "M31.01": {
       "status": "pending",
