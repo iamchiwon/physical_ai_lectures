@@ -1,0 +1,186 @@
+{
+  "scope": "기존 교재 읽기 단위의 시각 참조·이미지 파일 연결 검사. 원본/실습·해설 유지.",
+  "decision": "기존 장별 좌표/기구/데이터/시간/배포 도식을 유지하며 현재 커리큘럼의 추가 도식으로 보충한다.",
+  "units": [
+    {
+      "slug": "04_sensor_data_pipeline--chapter-1",
+      "title": "제4장 멀티모달 센서 정합과 데이터 파이프라인",
+      "source": "04_sensor_data_pipeline/chapter.md",
+      "contentSha256": "fe8f3f4a87f5e33ab591bcee879aa443a2ff2f75317b88d70f558bb105cd19d8",
+      "images": 0
+    },
+    {
+      "slug": "04_sensor_data_pipeline--chapter-2",
+      "title": "장 개요",
+      "source": "04_sensor_data_pipeline/chapter.md",
+      "contentSha256": "50e2761d6c0e40c9d5f4c4a374c1c65bb4258e01e9b31bb143e2a055057cdb56",
+      "images": 1
+    },
+    {
+      "slug": "04_sensor_data_pipeline--chapter-3",
+      "title": "학습 목표",
+      "source": "04_sensor_data_pipeline/chapter.md",
+      "contentSha256": "48c21e1ddfb8e06c203d0216681e2e40e4c141857085584516c1fc91d09f52a0",
+      "images": 0
+    },
+    {
+      "slug": "04_sensor_data_pipeline--chapter-4",
+      "title": "선수 지식과 준비물",
+      "source": "04_sensor_data_pipeline/chapter.md",
+      "contentSha256": "615dfdea57c3976b8aeeed8a2021b4e1fe91736f86e346e718eb78266ebfdf58",
+      "images": 0
+    },
+    {
+      "slug": "04_sensor_data_pipeline--chapter-5",
+      "title": "4.1 핀홀 카메라와 좌표 프레임",
+      "source": "04_sensor_data_pipeline/chapter.md",
+      "contentSha256": "b0a2cd2dfdf36586602fbec3df2a2bc99d1e6d438b076530eb045fdfddb3cc76",
+      "images": 0
+    },
+    {
+      "slug": "04_sensor_data_pipeline--chapter-6",
+      "title": "4.2 Isaac Sim/USD, ROS 2, OpenCV 좌표 변환",
+      "source": "04_sensor_data_pipeline/chapter.md",
+      "contentSha256": "3cb9ff263bb3c367d4863f4ed86ff6bcdfbce7f4c871c5f77b762c4e381f5a95",
+      "images": 1
+    },
+    {
+      "slug": "04_sensor_data_pipeline--chapter-7",
+      "title": "4.3 TF2 트리 설계",
+      "source": "04_sensor_data_pipeline/chapter.md",
+      "contentSha256": "993bb3db33054171e7aba5c34626025ea5e6c7a19636d1b103d2526291600716",
+      "images": 0
+    },
+    {
+      "slug": "04_sensor_data_pipeline--chapter-8",
+      "title": "4.4 멀티레이트 센서 시간 정합",
+      "source": "04_sensor_data_pipeline/chapter.md",
+      "contentSha256": "53b751d749e879f5528c55f3d965af7e61cd60db5ea3ff837c44421db3efc232",
+      "images": 2
+    },
+    {
+      "slug": "04_sensor_data_pipeline--chapter-9",
+      "title": "4.5 rosbag2와 MCAP 원본 기록",
+      "source": "04_sensor_data_pipeline/chapter.md",
+      "contentSha256": "1d9ed2a6b6ebaa93ab97215c81530ba9e2fea1681688617f1ff2b9d911b5e5e6",
+      "images": 0
+    },
+    {
+      "slug": "04_sensor_data_pipeline--chapter-10",
+      "title": "4.6 Domain Randomization",
+      "source": "04_sensor_data_pipeline/chapter.md",
+      "contentSha256": "04f6af7a1667100746da14f4dc6fdad95903c1757f44517671db463f2393f622",
+      "images": 1
+    },
+    {
+      "slug": "04_sensor_data_pipeline--chapter-11",
+      "title": "4.7 Rerun 기반 무결성 검사",
+      "source": "04_sensor_data_pipeline/chapter.md",
+      "contentSha256": "005651691f4df12ce4e608b5ba536e11a74c9bd0db55b648c1040026e079467f",
+      "images": 0
+    },
+    {
+      "slug": "04_sensor_data_pipeline--chapter-12",
+      "title": "4.8 구현 예제",
+      "source": "04_sensor_data_pipeline/chapter.md",
+      "contentSha256": "121f763def884e424eb964c0e1420e0f0c9285289dbb268f83ab7ff7fff97f32",
+      "images": 0
+    },
+    {
+      "slug": "04_sensor_data_pipeline--chapter-13",
+      "title": "4.9 트러블슈팅",
+      "source": "04_sensor_data_pipeline/chapter.md",
+      "contentSha256": "82a92fc927e9354a634078966b1fae2d86bbe6c9a228df3cd87d01181ebd1dbd",
+      "images": 0
+    },
+    {
+      "slug": "04_sensor_data_pipeline--chapter-14",
+      "title": "4.10 요약",
+      "source": "04_sensor_data_pipeline/chapter.md",
+      "contentSha256": "d3ec52b8da73d9e22e8e5f01fa719a8b4e42d84800b6cb7e6dc01a0f64f88702",
+      "images": 0
+    },
+    {
+      "slug": "04_sensor_data_pipeline--chapter-15",
+      "title": "4.11 확인문제",
+      "source": "04_sensor_data_pipeline/chapter.md",
+      "contentSha256": "e13c530e4089b64f2ee7ce9b8f7b342c6525e75986103bb1d55189e8fe710245",
+      "images": 0
+    },
+    {
+      "slug": "04_sensor_data_pipeline--chapter-16",
+      "title": "4.12 프로젝트 과제",
+      "source": "04_sensor_data_pipeline/chapter.md",
+      "contentSha256": "540d1d9e38085028774d69d7fabec539e5c1e479175eaa64045a280ba5d8b5a1",
+      "images": 0
+    },
+    {
+      "slug": "04_sensor_data_pipeline--chapter-17",
+      "title": "4.13 실습·평가·참고자료",
+      "source": "04_sensor_data_pipeline/chapter.md",
+      "contentSha256": "02dafc06a0142b5485e9b2af9e6797d0a55b8ec46ca5b301aaf81dc3190cb637",
+      "images": 0
+    },
+    {
+      "slug": "04_sensor_data_pipeline--labs--lab01_camera_frames-1",
+      "title": "[SIM] 실습 4-1: 카메라 투영과 프레임 정합",
+      "source": "04_sensor_data_pipeline/labs/lab01_camera_frames.md",
+      "contentSha256": "90fda25ab8da340b356e42a229629c99c3e3826e03dbef8f1764950bd55b7295",
+      "images": 0
+    },
+    {
+      "slug": "04_sensor_data_pipeline--labs--lab02_tf_sync-1",
+      "title": "[SIM] 실습 4-2: TF2와 ApproximateTime",
+      "source": "04_sensor_data_pipeline/labs/lab02_tf_sync.md",
+      "contentSha256": "096114ed3cc0e90f5d3c87046f6dc302be2738fb1e91ea86c29fd63fff299453",
+      "images": 0
+    },
+    {
+      "slug": "04_sensor_data_pipeline--labs--lab03_rosbag_mcap-1",
+      "title": "[SIM] 실습 4-3: rosbag2/MCAP 에피소드 기록",
+      "source": "04_sensor_data_pipeline/labs/lab03_rosbag_mcap.md",
+      "contentSha256": "3aa08b45ff4c64602c9bef5679dac65874ce3f867cef4b9839e9c9753f50c56c",
+      "images": 0
+    },
+    {
+      "slug": "04_sensor_data_pipeline--labs--lab04_randomization_rerun-1",
+      "title": "[SIM] 실습 4-4: Domain Randomization과 Rerun 품질 검토",
+      "source": "04_sensor_data_pipeline/labs/lab04_randomization_rerun.md",
+      "contentSha256": "326360e63567c0eb180b2b12e47487ade6d1af285cd5f4527d31494cc160a27b",
+      "images": 0
+    }
+  ],
+  "images": [
+    {
+      "unit": "04_sensor_data_pipeline--chapter-2",
+      "alt": "공간과 시간 정합 파이프라인",
+      "source": "ebook/book/04_sensor_data_pipeline/images/alignment_pipeline.svg",
+      "exists": true
+    },
+    {
+      "unit": "04_sensor_data_pipeline--chapter-6",
+      "alt": "좌표 프레임 변환",
+      "source": "ebook/book/04_sensor_data_pipeline/images/coordinate_frames.svg",
+      "exists": true
+    },
+    {
+      "unit": "04_sensor_data_pipeline--chapter-8",
+      "alt": "메시지가 거치는 네 가지 시각",
+      "source": "ebook/book/04_sensor_data_pipeline/images/timestamp_lifecycle.svg",
+      "exists": true
+    },
+    {
+      "unit": "04_sensor_data_pipeline--chapter-8",
+      "alt": "ApproximateTime과 보간",
+      "source": "ebook/book/04_sensor_data_pipeline/images/time_alignment.svg",
+      "exists": true
+    },
+    {
+      "unit": "04_sensor_data_pipeline--chapter-10",
+      "alt": "도메인 랜덤화 설계",
+      "source": "ebook/book/04_sensor_data_pipeline/images/domain_randomization.svg",
+      "exists": true
+    }
+  ],
+  "missing": []
+}
