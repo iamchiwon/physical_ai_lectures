@@ -2374,8 +2374,22 @@
       "evidence": "doc/visual-review/units/M25.04.md"
     },
     "M25.05": {
-      "status": "pending",
-      "source": "ebook/curriculum/M25/M25.05.md"
+      "status": "reviewed",
+      "source": "ebook/curriculum/M25/M25.05.md",
+      "sourceSha256": "663f071afa3598ef3f2fa80b54ce4547bfc385251dc678f7e924ba79ca7a0e94",
+      "reason": "합성 영상과 라벨을 같은 관측으로의 연결/구분은 글만으로 단계나 경계를 혼동하기 쉬워 설명 도식을 추가한다. 본문의 표·수치·문제 조건도 대조한다.",
+      "assets": [
+        {
+          "path": "apps/web/public/textbook-visuals/M25.05-concept.svg",
+          "sha256": "b1b01ef69aff11f27a94fa9b31dc64e12be32add6f9a8f159ba8b3e86f0a1183",
+          "method": "original-svg",
+          "model": null,
+          "prompt": null,
+          "alt": "합성 영상과 라벨을 같은 관측으로: 장면/랜덤 seed → Capture 시각 → 영상/깊이/라벨 → Writer/파일 검수.",
+          "caption": "각 칸은 서로 다른 역할/근거다. 아래 방향은 자료/처리의 연결이며 실제 성공을 자동으로 보장하지 않는다. 직접 제작한 개념도이며 본문의 조건과 함께 읽는다."
+        }
+      ],
+      "evidence": "doc/visual-review/units/M25.05.md"
     },
     "M25.06": {
       "status": "pending",

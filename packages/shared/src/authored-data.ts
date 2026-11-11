@@ -1733,7 +1733,7 @@ export const authoredMetadata: AuthoredMetadata[] = [
       "자산 단위 분할과 실패/누락 보존을 적용하고 생성 품질·모델 성능·실물 일반화를 구분한다."
     ],
     "prerequisiteNote": "M25.04의 고정조건/미사용 평가가 선수다. 카메라 기하와 데이터 분할은 M12.02·M20.03/.06으로 보충한다. 합성 생성 계획과 기록을 분석하며 실제 Replicator/GPU·이미지 생성·학습/실물 평가를 실행하지 않는다. 일반 언어/문법은 제외한다.",
-    "sha256": "a008578af78cc36019e55537476af1065af9dfc43da95bded1d90e35512d24e7",
+    "sha256": "663f071afa3598ef3f2fa80b54ce4547bfc385251dc678f7e924ba79ca7a0e94",
     "reviewed": true,
     "evidenceRef": "doc/v2/work_items/M25.05.md"
   },
