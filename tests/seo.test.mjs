@@ -33,9 +33,11 @@ test('preview deployments stay crawlable for noindex while omitting sitemap publ
 test('JSON-LD escapes script-breaking content without changing the data',()=>{
  const malicious={name:'</script><script>alert(1)</script>'};const text=c.serializeJsonLd(malicious);assert.ok(!text.includes('<'));assert.deepEqual(JSON.parse(text),malicious);
 });
-test('ownership verification uses configured public tokens without fabricated defaults',()=>{
- assert.deepEqual(c.siteVerification({}),{});
- assert.deepEqual(c.siteVerification({google:' test-google ',naver:'test-naver'}),{google:'test-google',other:{'naver-site-verification':'test-naver'}});
+test('the owner-supplied tag stays present alongside optional verification tokens without duplication',()=>{
+ const token='RJmko0OiPRVYace5uG1qH3IEM6sHX0IUL-USveOUdwo';
+ assert.deepEqual(c.siteVerification({}),{google:[token]});
+ assert.deepEqual(c.siteVerification({google:' test-google ',naver:'test-naver'}),{google:[token,'test-google'],other:{'naver-site-verification':'test-naver'}});
+ assert.deepEqual(c.siteVerification({google:token}),{google:[token]});
 });
 test('search snippets retain prose without raw math markup or code blocks',()=>{
  const text='좌표 변환 \\(^{A}R_B\\)은 같은 점을 다시 표현합니다. $x+y$ ```python\nsecret_code()\n``` 본문과 실습을 읽습니다.';

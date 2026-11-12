@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 
 export const siteName = "Physical AI 자습실";
 export const siteDescription = "일반 코딩 경험자를 위한 피지컬 AI 한국어 교재. ROS 2, 로봇 제어, 컴퓨터 비전, 시뮬레이션, 모방학습과 Sim2Real을 본문·실습·확인 문제로 학습합니다.";
+// Public ownership token supplied by the site owner; keep it in the rendered head.
+export const googleSiteVerification = "RJmko0OiPRVYace5uG1qH3IEM6sHX0IUL-USveOUdwo";
 
 export function siteOrigin(value = process.env.NEXT_PUBLIC_SITE_URL || "https://physical-ai.teachself.fun") {
   const url = new URL(value);
@@ -12,7 +14,8 @@ export function siteOrigin(value = process.env.NEXT_PUBLIC_SITE_URL || "https://
 }
 export const indexableDeployment = process.env.SEO_INDEXABLE !== "false" && !(process.env.CF_PAGES === "1" && Boolean(process.env.CF_PAGES_BRANCH) && process.env.CF_PAGES_BRANCH !== (process.env.SEO_PRODUCTION_BRANCH || "main"));
 export function siteVerification(values = { google: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION, naver: process.env.NEXT_PUBLIC_NAVER_SITE_VERIFICATION }): Metadata['verification'] {
-  return { ...(values.google?.trim() ? { google: values.google.trim() } : {}), ...(values.naver?.trim() ? { other: { 'naver-site-verification': values.naver.trim() } } : {}) };
+  const google = [...new Set([googleSiteVerification, values.google?.trim()].filter((value): value is string => Boolean(value)))];
+  return { google, ...(values.naver?.trim() ? { other: { 'naver-site-verification': values.naver.trim() } } : {}) };
 }
 export function absoluteUrl(path: string) { return new URL(path, `${siteOrigin()}/`).href; }
 export function canonicalPath(path: string) {

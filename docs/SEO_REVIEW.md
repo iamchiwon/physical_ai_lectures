@@ -56,3 +56,7 @@
 대표 사이트는 `https://physical-ai.teachself.fun`이다. SEO 기본값·환경 예시·향후 출판 웹 연결의 기본값을 통일했다. 이전 Pages 주소는 API CORS의 호환 허용 목록에만 남기며 대표 URL/공유 URL/사이트맵에는 사용하지 않는다. 출판 도구의 기본값만 수정했으며 PDF/EPUB를 생성하지 않았다.
 
 주소 변경 검수: 테스트197/197, 전체 빌드·SEO 전수 검사 통과. 공개412HTML의 canonical/OG/Twitter 주소와 사이트맵587개 페이지/이미지 URL, robots의 사이트맵 주소가 모두 새 origin을 사용함을 확인했다. 정적 출력에 이전 호스트 문자열은 없다. Pages 환경변수에 기존 `NEXT_PUBLIC_SITE_URL`이 설정돼 있다면 새 대표 주소로 바꾼 후 재빌드한다.
+
+## 2026-11-12 Google HTML 태그 반영
+
+사이트 소유자가 전달한 Google 확인 태그를 루트 metadata의 verification으로 출력하도록 설정했다. 별도 환경변수가 없어도 제공된 태그가 head에 들어간다. 추가 환경변수 Google 토큰/네이버 확인 설정은 유지하며 같은 Google 토큰은 중복 출력하지 않는다. 이 태그는 공개 소유확인 값이며 배포 후에도 삭제하지 않는다. 소스/정적 HTML 반영과 Search Console에서의 실제 확인 완료는 구분한다.
