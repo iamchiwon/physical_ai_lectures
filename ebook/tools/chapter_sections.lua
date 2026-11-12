@@ -39,7 +39,7 @@ function Pandoc(doc)
     return header
   end })
   local base = doc.meta['book-web-base-url'] and pandoc.utils.stringify(doc.meta['book-web-base-url'])
-    or 'https://physical-ai-learning-web.pages.dev'
+    or 'https://physical-ai.teachself.fun'
   assert(base:match('^https?://[^/]+'), 'BOOK_WEB_BASE_URL must be an absolute HTTP(S) origin or base URL')
   base = base:gsub('/+$', '')
   doc = doc:walk({ Link = function(link)

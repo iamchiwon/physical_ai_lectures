@@ -1,6 +1,6 @@
 # SEO 점검·최적화
 
-2026-11-11 · main(f441748)에서 분기한 `seo/search-discovery` 작업. 사이트 URL은 저장소의 CORS 설정과 실제 HTTP 응답으로 확인한 `https://physical-ai-learning-web.pages.dev`를 기본값으로 사용한다.
+2026-11-11 · main(f441748)에서 분기한 `seo/search-discovery` 작업. 2026-11-12 사용자 지정에 따라 대표 운영 주소를 `https://physical-ai.teachself.fun`으로 변경했다. 아래 최초 운영 점검 결과는 주소 변경 전 호스팅 환경의 기록이며, 현재 canonical·사이트맵·공유 URL은 새 대표 주소를 사용한다.
 
 ## 발견한 문제
 
@@ -23,7 +23,7 @@
 
 ## 설정과 배포 후 운영 확인
 
-- Pages 빌드 환경의 `NEXT_PUBLIC_SITE_URL`은 대표 운영 origin으로 설정한다. 경로·쿼리·fragment·계정정보는 허용하지 않는다. 커스텀 도메인을 대표로 쓸 때는 운영/미리보기 모두 같은 origin을 사용하고 다른 호스트의301 정책은 별도로 설정한다.
+- Pages 빌드 환경의 `NEXT_PUBLIC_SITE_URL`은 `https://physical-ai.teachself.fun`으로 설정한다. 기존 값이 있으면 새 주소로 바꾼 뒤 재빌드한다. 경로·쿼리·fragment·계정정보는 허용하지 않는다. 커스텀 도메인을 대표로 쓸 때는 운영/미리보기 모두 같은 origin을 사용하고 다른 호스트의301 정책은 별도로 설정한다.
 - `SEO_PRODUCTION_BRANCH` 기본값은 main이다. production 브랜치가 다르면 명시한다. CF_PAGES=1이고 브랜치가 다르면 noindex가 적용된다. 같은 production artifact의 해시 주소는 canonical로 통합한다.
 - 소유확인 값을 발급받은 경우 `NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION`, `NEXT_PUBLIC_NAVER_SITE_VERIFICATION`에 meta 태그의 content 값만 넣고 재빌드한다. 임의 토큰이나 다른 사람의 검증 정보를 만들지 않았다.
 - 배포 후 운영 `/robots.txt`, `/sitemap.xml`, 대표 단원/원고·JSON의 HTTP 상태·캐시·X-Robots-Tag를 다시 확인한다. 로컬 Python 서버는 Cloudflare `_headers`를 적용하지 않는다. Cloudflare의 관리 robots/봇 설정이 실제 Googlebot/Yeti 수집을 막는지도 운영에서 확인한다.
@@ -44,9 +44,19 @@
 - [Cloudflare Pages 헤더](https://developers.cloudflare.com/pages/configuration/headers/)
 - 설치된 Next.js16 문서의 metadataBase·sitemap/robots·JSON-LD 규약을 함께 확인했다.
 
-## 최종 검수 결과
+## 2026-11-11 SEO 검수 결과
 
 - 공개412페이지 모두 고유 제목·설명·절대 canonical·OG/Twitter·주 제목 H1 확인. 사이트맵412URL/175고유 이미지, LearningResource362개·BreadcrumbList255개 확인.
 - 테스트196/196, 타입·린트·shared/web/API dry-run 빌드, 공개본 비노출3100텍스트/43압축항목, 기존207단위/152시각자료 검사를 통과했다.
 - 정적415HTML/14296링크/7259자산 오류0. 기존 교재/현재207원고의 원본·목표/실습/해설과 학습 ID·저장 형식을 변경하지 않았다.
 - 실제 브라우저에서 JavaScript를 꺼도 홈·M00.01·기존 좌표변환 교재의 본문/제목/메타·JSON-LD가 제공됐고 query가 canonical에 섞이지 않았다. 390px에서 기존 교재 주 제목 표시를 확인했다. 브라우저 저장 상태를 정확히 복구했다.
+
+## 2026-11-12 대표 주소 변경
+
+대표 사이트는 `https://physical-ai.teachself.fun`이다. SEO 기본값·환경 예시·향후 출판 웹 연결의 기본값을 통일했다. 이전 Pages 주소는 API CORS의 호환 허용 목록에만 남기며 대표 URL/공유 URL/사이트맵에는 사용하지 않는다. 출판 도구의 기본값만 수정했으며 PDF/EPUB를 생성하지 않았다.
+
+주소 변경 검수: 테스트197/197, 전체 빌드·SEO 전수 검사 통과. 공개412HTML의 canonical/OG/Twitter 주소와 사이트맵587개 페이지/이미지 URL, robots의 사이트맵 주소가 모두 새 origin을 사용함을 확인했다. 정적 출력에 이전 호스트 문자열은 없다. Pages 환경변수에 기존 `NEXT_PUBLIC_SITE_URL`이 설정돼 있다면 새 대표 주소로 바꾼 후 재빌드한다.
+
+## 2026-11-12 Google HTML 태그 반영
+
+사이트 소유자가 전달한 Google 확인 태그를 루트 metadata의 verification으로 출력하도록 설정했다. 별도 환경변수가 없어도 제공된 태그가 head에 들어간다. 추가 환경변수 Google 토큰/네이버 확인 설정은 유지하며 같은 Google 토큰은 중복 출력하지 않는다. 이 태그는 공개 소유확인 값이며 배포 후에도 삭제하지 않는다. 소스/정적 HTML 반영과 Search Console에서의 실제 확인 완료는 구분한다.

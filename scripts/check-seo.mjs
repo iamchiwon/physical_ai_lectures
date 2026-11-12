@@ -21,6 +21,7 @@ for(const file of htmlFiles){
  const expected=rel==='index.html'?'/':'/'+rel.replace(/index\.html$/,'');
  if(rel==='404.html'||rel.startsWith('404/')||rel.startsWith('_not-found/')){assert.ok(tags.some(t=>t.name==='robots'&&t.content.includes('noindex')),rel+' must be noindex');continue;}
  pages++;assert.equal([...html.matchAll(/<h1\b/g)].length,1,rel+' must have one primary heading');
+ assert.ok(tags.some(t=>t.name==='google-site-verification'&&t.content==='RJmko0OiPRVYace5uG1qH3IEM6sHX0IUL-USveOUdwo'),rel+' owner verification tag');
  const canonical=tags.filter(t=>t.rel==='canonical');assert.equal(canonical.length,1,rel+' canonical');const url=new URL(canonical[0].href);assert.equal(url.pathname,expected,rel);assert.ok(!url.search&&!url.hash,rel);assert.ok(!canonicalSet.has(url.href),rel+' duplicate canonical');canonicalSet.add(url.href);
  const title=decode(head.match(/<title>([^<]+)<\/title>/)?.[1]??'');assert.ok(title&&title.length<180,rel);assert.ok(!titles.has(title),rel+' duplicate title');titles.add(title);
  assert.equal(tags.filter(t=>t.name==='description').length,1,rel);assert.ok(tags.find(t=>t.name==='description').content.length>=20,rel);

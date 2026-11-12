@@ -125,7 +125,7 @@ mkdir -p "$staging_dir/epub" "$staging_dir/html" "$staging_dir/pdf"
 # The authored foundation chapters use the same reviewed sources as the web reader.
 # Insert them before the original six application chapters; keep the original inputs intact.
 foundation_source="$staging_dir/e1_foundations.md"
-book_web_base_url="${BOOK_WEB_BASE_URL:-https://physical-ai-learning-web.pages.dev}"
+book_web_base_url="${BOOK_WEB_BASE_URL:-https://physical-ai.teachself.fun}"
 node "$project_root/../scripts/export-e1-book.mjs" "$foundation_source"
 sources=("${sources[@]:0:4}" "$foundation_source" "${sources[@]:4}")
 epub_sources=("${sources[@]}")
