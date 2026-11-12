@@ -32,7 +32,7 @@ npm run dev
 
 ## 운영 설정
 
-`wrangler.jsonc`의 `ALLOWED_ORIGINS`는 기본 Pages 프로젝트 `https://physical-ai-learning-web.pages.dev`로 설정되어 있습니다. 커스텀 도메인·미리보기를 사용하면 쉼표 구분 allowlist로 바꾸세요. `npm run dev`는 로컬 origin을 별도로 override합니다.
+`wrangler.jsonc`의 `ALLOWED_ORIGINS`는 기본 Pages 프로젝트 `https://physical-ai-learning-web.pages.dev`와 커스텀 도메인 `https://physical-ai.teachself.fun`을 함께 허용합니다. 추가 도메인·미리보기를 사용하면 기존 값을 유지하고 쉼표 구분 allowlist에 추가하세요. `npm run dev`는 로컬 origin을 별도로 override합니다.
 
 `apps/api`에서:
 
