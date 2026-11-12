@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 export const siteName = "Physical AI 자습실";
 export const siteDescription = "일반 코딩 경험자를 위한 피지컬 AI 한국어 교재. ROS 2, 로봇 제어, 컴퓨터 비전, 시뮬레이션, 모방학습과 Sim2Real을 본문·실습·확인 문제로 학습합니다.";
 
-export function siteOrigin(value = process.env.NEXT_PUBLIC_SITE_URL || "https://physical-ai-learning-web.pages.dev") {
+export function siteOrigin(value = process.env.NEXT_PUBLIC_SITE_URL || "https://physical-ai.teachself.fun") {
   const url = new URL(value);
   if (!['https:', 'http:'].includes(url.protocol) || url.username || url.password || url.pathname !== '/' || url.search || url.hash) {
     throw new Error("NEXT_PUBLIC_SITE_URL must be an HTTP(S) origin without credentials, path, query, or fragment");

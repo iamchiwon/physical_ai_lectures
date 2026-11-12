@@ -70,4 +70,6 @@ V2 공유 카탈로그의 기준선은 [B01 안내](doc/v2/runtime_catalog.md), 
 
 ## 검색 최적화 검증
 
+대표 사이트 주소는 `https://physical-ai.teachself.fun`입니다. Pages의 `NEXT_PUBLIC_SITE_URL`도 이 주소로 설정합니다.
+
 `npm run check:seo`는 빌드된 공개 HTML·canonical·사이트맵·이미지·메타데이터·구조화 데이터를 검사합니다. 웹 빌드 뒤 자동 실행되며, 대표 주소/미리보기 색인 정책과 배포 후 등록 절차는 [SEO 점검 기록](docs/SEO_REVIEW.md)을 참고하세요.

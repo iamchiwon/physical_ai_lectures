@@ -4,8 +4,8 @@ import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import path from 'node:path';
 const root=process.cwd();
-async function load(preview=false){
- const result=await build({stdin:{contents:'export * from "./apps/web/src/lib/seo.ts"; export * from "./apps/web/src/lib/seo-content.ts"; export {default as sitemap} from "./apps/web/src/app/sitemap.ts"; export {default as robots} from "./apps/web/src/app/robots.ts";',resolveDir:root},tsconfig:'apps/web/tsconfig.json',bundle:true,platform:'node',format:'esm',write:false,define:{'process.env.NEXT_PUBLIC_SITE_URL':JSON.stringify('https://physical-ai-learning-web.pages.dev'),'process.env.SEO_INDEXABLE':JSON.stringify('true'),'process.env.CF_PAGES':JSON.stringify(preview?'1':'0'),'process.env.CF_PAGES_BRANCH':JSON.stringify(preview?'feature/seo':'main'),'process.env.SEO_PRODUCTION_BRANCH':JSON.stringify('main')}});
+async function load(preview=false,origin='https://physical-ai.teachself.fun'){
+ const result=await build({stdin:{contents:'export * from "./apps/web/src/lib/seo.ts"; export * from "./apps/web/src/lib/seo-content.ts"; export {default as sitemap} from "./apps/web/src/app/sitemap.ts"; export {default as robots} from "./apps/web/src/app/robots.ts";',resolveDir:root},tsconfig:'apps/web/tsconfig.json',bundle:true,platform:'node',format:'esm',write:false,define:{'process.env.NEXT_PUBLIC_SITE_URL':JSON.stringify(origin),'process.env.SEO_INDEXABLE':JSON.stringify('true'),'process.env.CF_PAGES':JSON.stringify(preview?'1':'0'),'process.env.CF_PAGES_BRANCH':JSON.stringify(preview?'feature/seo':'main'),'process.env.SEO_PRODUCTION_BRANCH':JSON.stringify('main')}});
  const before=process.cwd();process.chdir(path.join(root,'apps/web'));
  try{return await import('data:text/javascript;base64,'+Buffer.from(result.outputFiles[0].text).toString('base64'));}finally{process.chdir(before);}
 }
@@ -17,7 +17,7 @@ test('canonical origins reject ambiguous URLs and paths drop navigation paramete
 test('all public learning routes have unique titles, descriptions, and absolute self canonicals',()=>{
  const pages=c.publicSeoPages();assert.equal(new Set(pages.map(p=>p.path)).size,pages.length);
  const titles=new Map();
- for(const p of pages){const m=c.pageMetadata(p);assert.ok(m.description.length>=20&&m.description.length<=160,p.path);assert.equal(m.alternates.canonical,'https://physical-ai-learning-web.pages.dev'+p.path);assert.ok(!titles.has(m.title),`${p.path}: duplicate title with ${titles.get(m.title)}`);titles.set(m.title,p.path);assert.equal(m.openGraph.url,m.alternates.canonical);assert.equal(m.twitter.card,'summary_large_image');}
+ for(const p of pages){const m=c.pageMetadata(p);assert.ok(m.description.length>=20&&m.description.length<=160,p.path);assert.equal(m.alternates.canonical,'https://physical-ai.teachself.fun'+p.path);assert.ok(!titles.has(m.title),`${p.path}: duplicate title with ${titles.get(m.title)}`);titles.set(m.title,p.path);assert.equal(m.openGraph.url,m.alternates.canonical);assert.equal(m.twitter.card,'summary_large_image');}
  assert.equal(pages.filter(p=>p.path.startsWith('/study/')).length,207);
 });
 test('sitemap includes published HTML and images but not payloads, queries, or error routes',()=>{
@@ -46,4 +46,10 @@ test('legacy snippets choose intact prose instead of leaving grammar around remo
  const p=c.pageForPath('/textbook/02_physx_simulation--chapter-6/');
  assert.ok(p.description.includes('위치(position)와 방향(orientation)의 쌍이다.'));
  assert.ok(!p.description.includes('회전행렬 는'));
+});
+
+test('the default production origin remains teachself when the environment override is absent',async()=>{
+ const defaults=await load(false,'');
+ assert.equal(defaults.siteOrigin(),'https://physical-ai.teachself.fun');
+ assert.ok(defaults.sitemap().every(row=>new URL(row.url).origin==='https://physical-ai.teachself.fun'));
 });

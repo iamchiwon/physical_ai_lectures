@@ -1,8 +1,8 @@
 {
-  "date": "2026-11-11",
-  "branch": "seo/search-discovery",
+  "date": "2026-11-12",
+  "branch": "fix/custom-domain-origin",
   "baseCommit": "f441748",
-  "canonicalOrigin": "https://physical-ai-learning-web.pages.dev",
+  "canonicalOrigin": "https://physical-ai.teachself.fun",
   "canonicalHtmlPages": 412,
   "sitemapUrls": 412,
   "uniqueTitles": 412,
@@ -12,7 +12,7 @@
   "primaryHeadingPerPublicPage": 1,
   "rawMathInDescriptions": 0,
   "tests": {
-    "passed": 196,
+    "passed": 197,
     "failed": 0
   },
   "types": "passed",
@@ -38,12 +38,12 @@
         "h1": [
           "코딩 경험에서,로봇 시스템 구현으로 이어갑니다."
         ],
-        "canonical": "https://physical-ai-learning-web.pages.dev/",
         "jsonLd": [
           "WebSite"
         ],
         "bodyCharacters": 12843,
-        "images": true
+        "images": true,
+        "canonicalPath": "/"
       },
       {
         "path": "/study/unit-m00-01-a/",
@@ -51,14 +51,14 @@
         "h1": [
           "M00.01 · Software AI와 Physical AI, 폐루프와 POMDP"
         ],
-        "canonical": "https://physical-ai-learning-web.pages.dev/study/unit-m00-01-a/",
         "jsonLd": [
           "WebSite",
           "LearningResource",
           "BreadcrumbList"
         ],
         "bodyCharacters": 7030,
-        "images": true
+        "images": true,
+        "canonicalPath": "/study/unit-m00-01-a/"
       },
       {
         "path": "/textbook/02_physx_simulation--chapter-6/",
@@ -66,20 +66,31 @@
         "h1": [
           "2.2 좌표계와 4×4 동차 변환"
         ],
-        "canonical": "https://physical-ai-learning-web.pages.dev/textbook/02_physx_simulation--chapter-6/",
         "jsonLd": [
           "WebSite",
           "LearningResource"
         ],
         "bodyCharacters": 3858,
-        "images": true
+        "images": true,
+        "canonicalPath": "/textbook/02_physx_simulation--chapter-6/"
       }
     ],
-    "mathMarkupRemoved": true
+    "mathMarkupRemoved": true,
+    "captureDate": "2026-11-11",
+    "scope": "Historical browser rendering evidence; current representative origin is checked in the exported HTML/XML."
   },
   "browserStorageRestored": true,
   "sourceTextbooksUnchanged": true,
   "deployed": false,
   "searchConsoleOrNaverSubmissionPerformed": false,
-  "fieldCoreWebVitalsMeasured": false
+  "fieldCoreWebVitalsMeasured": false,
+  "domainUpdateBaseCommit": "337b3aa",
+  "domainVerification": {
+    "date": "2026-11-12",
+    "source": "exported HTML/XML",
+    "canonicalAndSocialPages": 412,
+    "sitemapPageAndImageUrls": 587,
+    "robotsSitemapOrigin": "https://physical-ai.teachself.fun",
+    "oldHostInExport": false
+  }
 }

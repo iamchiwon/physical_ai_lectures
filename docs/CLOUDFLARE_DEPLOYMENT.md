@@ -110,6 +110,6 @@ NEXT_PUBLIC_API_BASE_URL=http://localhost:8787
 
 ## 검색 노출 설정
 
-대표 주소는 `NEXT_PUBLIC_SITE_URL`로 고정합니다(기본 `https://physical-ai-learning-web.pages.dev`). `SEO_PRODUCTION_BRANCH`는 main이 기본이며 다른 브랜치의 CF Pages 빌드는 noindex 처리됩니다. 소유확인 태그는 발급된 `NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION`, `NEXT_PUBLIC_NAVER_SITE_VERIFICATION`의 content 값으로 설정할 수 있습니다. 값 변경은 재빌드가 필요합니다.
+대표 주소는 `NEXT_PUBLIC_SITE_URL`로 고정합니다(기본 `https://physical-ai.teachself.fun`). `SEO_PRODUCTION_BRANCH`는 main이 기본이며 다른 브랜치의 CF Pages 빌드는 noindex 처리됩니다. 소유확인 태그는 발급된 `NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION`, `NEXT_PUBLIC_NAVER_SITE_VERIFICATION`의 content 값으로 설정할 수 있습니다. 값 변경은 재빌드가 필요합니다.
 
 `npm run build:web`은 canonical·사이트맵·메타데이터·H1·JSON-LD 전수 검사를 포함합니다. 배포 후 사이트맵 제출과 실제 HTTP 헤더/봇 접근 검증은 [SEO 점검 기록](SEO_REVIEW.md)의 절차를 따릅니다.
